@@ -1,0 +1,38 @@
+{
+    "我的": {
+        "recognition": "TemplateMatch",
+        "template": "wode.png",
+        "action": "Click",
+        "next": [
+            "我的积分"
+        ]
+    },
+    "我的积分": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "next": [
+            "签到",
+            "已签到"
+        ]
+    },
+    "签到": {
+        "recognition": "OCR",
+        "expected": "点击签到",
+        "action": "Click",
+        "next": [
+            "返回"
+        ]
+    },
+    "已签到": {
+        "recognition": "OCR",
+        "expected": "已签到",
+        "next": [
+            "返回"
+        ]
+    },
+    "返回": {
+        "action": "Key",
+        "key": 4
+    }
+}

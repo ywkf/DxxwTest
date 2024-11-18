@@ -1,0 +1,7 @@
+{
+    "likes": {
+        "recognition": "TemplateMatch",
+        "template": "点赞.png",
+        "action": "Click"
+    }
+}

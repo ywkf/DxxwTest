@@ -1,0 +1,32 @@
+{
+    "comment": {
+        "action": "Click",
+        "target": [
+            50,
+            1214,
+            300,
+            40
+        ],
+        "next": [
+            "输入评论"
+        ]
+    },
+    "输入评论": {
+        "action": "InputText",
+        "input_text": "成语里的中国",
+        "next": [
+            "点击发表"
+        ]
+    },
+    "点击发表": {
+        "recognition": "OCR",
+        "expected": "发表",
+        "next": [
+            "评论返回"
+        ]
+    },
+    "评论返回": {
+        "action": "Key",
+        "key": 4
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "首页": {
+        "recognition": "TemplateMatch",
+        "template": "首页.png",
+        "action": "Click",
+        "next": [
+            "点击搜索框"
+        ]
+    },
+    "点击搜索框": {
+        "action": "Click",
+        "target": [
+            170,
+            60,
+            300,
+            45
+        ],
+        "next": [
+            "点击搜索框2"
+        ]
+    },
+    "点击搜索框2": {
+        "action": "Click",
+        "target": [
+            170,
+            60,
+            300,
+            45
+        ],
+        "next": [
+            "搜索框输入"
+        ]
+    },
+    "搜索框输入": {
+        "action": "InputText",
+        "input_text": "成语里的中国",
+        "next": [
+            "点击搜索按键"
+        ]
+    },
+    "点击搜索按键": {
+        "recognition": "TemplateMatch",
+        "template": "search.png",
+        "action": "Click",
+        "next": [
+            "点击图文"
+        ]
+    },
+    "点击图文": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "next": [
+            "点击图文1"
+        ]
+    },
+    "点击图文1": {
+        "recognition": "OCR",
+        "expected": "成语里的中国",
+        "index": 1,
+        "action": "Click",
+        "next": [
+            "like"
+        ]
+    },
+    "返回1": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击图文2"
+        ]
+    },
+    "点击图文2": {
+        "recognition": "OCR",
+        "expected": "成语里的中国",
+        "index": 2,
+        "action": "Click",
+        "next": [
+            "返回2"
+        ]
+    },
+    "返回2": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击图文3"
+        ]
+    },
+    "点击图文3": {
+        "recognition": "OCR",
+        "expected": "成语里的中国",
+        "index": 1,
+        "action": "Click",
+        "next": [
+            "返回3"
+        ]
+    },
+    "返回3": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击图文4"
+        ]
+    },
+    "点击图文4": {
+        "recognition": "OCR",
+        "expected": "成语里的中国",
+        "index": 1,
+        "action": "Click",
+        "next": [
+            "返回4"
+        ]
+    },
+    "返回4": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "向上滑动"
+        ]
+    },
+    "向上滑动": {
+        "action": "Swipe",
+        "begin": [
+            100,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            100,
+            100,
+            10,
+            10
+        ],
+        "next": [
+            "点击图文1"
+        ]
+    }
+}

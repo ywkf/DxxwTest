@@ -30,6 +30,50 @@
     ],
     "task": [
         {
+            "name": "签到",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "浏览图文作品",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "浏览音视频作品",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "分享",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "点赞",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "收藏",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "发表评论",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "观看直播",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "看视频听广播",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "发布作品",
+            "entry": "MyTask1"
+        },
+        {
+            "name": "允许通知积分领取",
+            "entry": "MyTask1"
+        },
+        {
             "name": "普通任务",
             "entry": "MyTask1"
         },

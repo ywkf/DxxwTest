@@ -1,0 +1,24 @@
+{
+    "share": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "next": [
+            "分享微博"
+        ]
+    },
+    "分享微博": {
+        "recognition": "TemplateMatch",
+        "template": "微博.png",
+        "action": "Click",
+        "next": [
+            "微博登录返回"
+        ]
+    },
+    "微博登录返回": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "action": "Key",
+        "key": 4
+    }
+}

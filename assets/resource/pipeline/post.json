@@ -1,0 +1,18 @@
+{
+    "post": {
+        "recognition": "OCR",
+        "expected": "发布",
+        "action": "Click",
+        "next": [
+            "发布热聊"
+        ]
+    },
+    "发布热聊": {
+        "recognition": "OCR",
+        "expected": "热聊",
+        "action": "Click",
+        "next": [
+            ""
+        ]
+    }
+}
