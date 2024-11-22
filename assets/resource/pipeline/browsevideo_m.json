@@ -1,0 +1,74 @@
+{
+    "browsevedio_m": {
+        "next": [
+            "点击我的m"
+        ]
+    },
+    "点击我的m": {
+        "recognition": "TemplateMatch",
+        "template": "wodes.png",
+        "action": "Click",
+        "next": [
+            "点击内容v"
+        ]
+    },
+    "点击内容v": {
+        "recognition": "OCR",
+        "expected": "内容",
+        "action": "Click",
+        "next": [
+            "点击视频内容"
+        ]
+    },
+    "点击视频内容": {
+        "recognition": "OCR",
+        "expected": "视频",
+        "action": "Click",
+        "next": [
+            "点击视频m"
+        ]
+    },
+    "点击视频m": {
+        "recognition": "OCR",
+        "expected": "记录",
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "滑动浏览视频m"
+        ]
+    },
+    "滑动浏览视频m": {
+        "action": "Swipe",
+        "duration": 500,
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "post_delay": 2000,
+        "on_error": "浏览视频返回m",
+        "next": [
+            "浏览视频完成m"
+        ]
+    },
+    "浏览视频完成m": {
+        "recognition": "TemplateMatch",
+        "template": "浏览音视频完成.png",
+        "timeout": 20000,
+        "on_error": "浏览视频返回m",
+        "next": [
+            "滑动浏览视频m"
+        ]
+    },
+    "浏览视频返回m": {
+        "action": "Key",
+        "key": 4
+    }
+}

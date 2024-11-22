@@ -12,7 +12,102 @@
         "expected": "热聊",
         "action": "Click",
         "next": [
-            ""
+            "点击添加图片"
         ]
+    },
+    "点击添加图片": {
+        "recognition": "TemplateMatch",
+        "template": "添加图片或视频.png",
+        "action": "Click",
+        "next": [
+            "选择添加图片"
+        ]
+    },
+    "选择添加图片": {
+        "recognition": "OCR",
+        "expected": "图片",
+        "action": "Click",
+        "next": [
+            "点击查看图片"
+        ]
+    },
+    "点击查看图片": {
+        "recognition": "TemplateMatch",
+        "template": "照片1.png",
+        "action": "Click",
+        "next": [
+            "点击选择图片"
+        ]
+    },
+    "点击选择图片": {
+        "recognition": "TemplateMatch",
+        "template": "选择图片按钮.png",
+        "action": "Click",
+        "next": [
+            "选择图片点击确定"
+        ]
+    },
+    "选择图片点击确定": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "Click",
+        "next": [
+            "点击输入框"
+        ]
+    },
+    "点击输入框": {
+        "action": "Click",
+        "target": [
+            30,
+            160,
+            200,
+            120
+        ],
+        "next": [
+            "输入发布内容"
+        ]
+    },
+    "输入发布内容": {
+        "action": "InputText",
+        "input_text": "#随拍",
+        "next": [
+            "滑动查看话题"
+        ]
+    },
+    "滑动查看话题": {
+        "action": "Swipe",
+        "begin": [
+            100,
+            1250,
+            10,
+            10
+        ],
+        "end": [
+            100,
+            1150,
+            10,
+            10
+        ],
+        "next": [
+            "选择话题",
+            "滑动查看话题"
+        ]
+    },
+    "选择话题": {
+        "recognition": "OCR",
+        "expected": "#阳光生活记录",
+        "action": "Click",
+        "next": [
+            "点击话题发布"
+        ]
+    },
+    "点击话题发布": {
+        "recognition": "OCR",
+        "expected": "发布",
+        "action": "Click"
+    },
+    "发布已提交": {
+        "recognition": "TemplateMatch",
+        "template": "发布已提交.png"
     }
 }

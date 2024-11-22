@@ -60,7 +60,7 @@
         "index": 1,
         "action": "Click",
         "next": [
-            "like"
+            "返回1"
         ]
     },
     "返回1": {

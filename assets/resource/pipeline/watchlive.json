@@ -1,1 +1,88 @@
-{}
+{
+    "watchlive": {
+        "next": [
+            "点击我的积分"
+        ]
+    },
+    "点击我的积分": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "next": [
+            "直播上滑"
+        ]
+    },
+    "直播上滑": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "next": [
+            "去观看直播"
+        ]
+    },
+    "去观看直播": {
+        "recognition": "TemplateMatch",
+        "template": "去观看.png",
+        "action": "Click",
+        "next": [
+            "直击现场"
+        ]
+    },
+    "直击现场": {
+        "recognition": "TemplateMatch",
+        "template": "直击现场.png",
+        "action": "Click",
+        "next": [
+            "点击直播回看1"
+        ]
+    },
+    "点击直播回看1": {
+        "recognition": "OCR",
+        "expected": "回看",
+        "action": "Click",
+        "next": [
+            "完成看直播"
+        ]
+    },
+    "完成看直播1": {
+        "recognition": "TemplateMatch",
+        "template": "完成看直播.png",
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击直播回看2"
+        ]
+    },
+    "点击直播回看2": {
+        "recognition": "OCR",
+        "expected": "回看",
+        "index": 1,
+        "action": "Click",
+        "next": [
+            "完成看直播2"
+        ]
+    },
+    "完成看直播2": {
+        "recognition": "TemplateMatch",
+        "template": "完成看直播.png",
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "看直播返回"
+        ]
+    },
+    "看直播返回": {
+        "action": "Key",
+        "key": 4
+    }
+}

@@ -1,0 +1,226 @@
+{
+    "browseimagetxt_m": {
+        "recognition": "TemplateMatch",
+        "template": "wodes.png",
+        "action": "Click",
+        "next": [
+            "点击内容"
+        ]
+    },
+    "点击内容": {
+        "recognition": "OCR",
+        "expected": "内容",
+        "action": "Click",
+        "next": [
+            "点击图文内容"
+        ]
+    },
+    "点击图文内容": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "next": [
+            "图文向上滑动"
+        ]
+    },
+    "图文向上滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "next": [
+            "点击图文m"
+        ]
+    },
+    "点击图文m": {
+        "recognition": "OCR",
+        "expected": "随拍",
+        "action": "Click",
+        "target": [
+            50,
+            320,
+            600,
+            400
+        ],
+        "next": [
+            "浏览图文结束",
+            "图文点赞m",
+            "图文点赞1m"
+        ]
+    },
+    "图文点赞m": {
+        "recognition": "TemplateMatch",
+        "template": "点赞.png",
+        "action": "Click",
+        "next": [
+            "图文收藏m",
+            "图文收藏1m"
+        ]
+    },
+    "图文点赞1m": {
+        "recognition": "TemplateMatch",
+        "template": "点赞1.png",
+        "action": "Click",
+        "target": true,
+        "target_offset": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "图文收藏m",
+            "图文收藏1m"
+        ]
+    },
+    "图文收藏m": {
+        "recognition": "TemplateMatch",
+        "template": "收藏.png",
+        "action": "Click",
+        "next": [
+            "完成每日分享",
+            "图文分享m"
+        ]
+    },
+    "图文收藏1m": {
+        "recognition": "TemplateMatch",
+        "template": "收藏1.png",
+        "action": "Click",
+        "target": true,
+        "target_offset": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "完成每日分享",
+            "图文分享m"
+        ]
+    },
+    "完成每日分享": {
+        "recognition": "OCR",
+        "expected": "随拍 6",
+        "next": [
+            "图文评论m"
+        ]
+    },
+    "图文分享m": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "next": [
+            "分享到微博m"
+        ]
+    },
+    "分享到微博m": {
+        "recognition": "TemplateMatch",
+        "template": "微博.png",
+        "action": "Click",
+        "next": [
+            "分享微博完成m",
+            "分享微博登录界面m"
+        ]
+    },
+    "分享微博登录界面m": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "next": [
+            "分享成功返回m"
+        ]
+    },
+    "分享微博完成m": {
+        "recognition": "TemplateMatch",
+        "template": "完成分享.png",
+        "next": [
+            "分享成功返回m"
+        ]
+    },
+    "分享成功返回m": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "图文评论m"
+        ]
+    },
+    "图文评论m": {
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "输入评论内容m"
+        ]
+    },
+    "输入评论内容m": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "发表评论m"
+        ]
+    },
+    "发表评论m": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "next": [
+            "重置图文点赞m"
+        ]
+    },
+    "重置图文点赞m": {
+        "action": "Click",
+        "target": "图文点赞m",
+        "next": [
+            "重置图文收藏m"
+        ]
+    },
+    "重置图文收藏m": {
+        "action": "Click",
+        "target": "图文收藏m",
+        "next": [
+            "评论成功返回m"
+        ]
+    },
+    "评论成功返回m": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "滑动至下一图文m"
+        ]
+    },
+    "滑动至下一图文m": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            690,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            410,
+            10,
+            10
+        ],
+        "next": [
+            "点击图文m"
+        ]
+    },
+    "浏览图文结束": {
+        "recognition": "OCR",
+        "expected": "随拍 15 随心 5"
+    }
+}
