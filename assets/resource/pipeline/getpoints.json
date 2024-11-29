@@ -1,7 +1,10 @@
 {
     "getpoints": {
         "recognition": "TemplateMatch",
-        "template": "wode.png",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
         "action": "Click",
         "next": [
             "我的积分gp"

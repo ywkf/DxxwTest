@@ -6,7 +6,10 @@
     },
     "点击我的m": {
         "recognition": "TemplateMatch",
-        "template": "wodes.png",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
         "action": "Click",
         "next": [
             "点击内容v"
@@ -68,6 +71,13 @@
         ]
     },
     "浏览视频返回m": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "返回主页m"
+        ]
+    },
+    "返回主页m": {
         "action": "Key",
         "key": 4
     }

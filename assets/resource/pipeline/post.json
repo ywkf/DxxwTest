@@ -1,5 +1,10 @@
 {
     "post": {
+        "next": [
+            "点击发布"
+        ]
+    },
+    "点击发布": {
         "recognition": "OCR",
         "expected": "发布",
         "action": "Click",
@@ -95,7 +100,8 @@
     },
     "选择话题": {
         "recognition": "OCR",
-        "expected": "#阳光生活记录",
+        "expected": "#",
+        "index": 2,
         "action": "Click",
         "next": [
             "点击话题发布"
@@ -109,5 +115,76 @@
     "发布已提交": {
         "recognition": "TemplateMatch",
         "template": "发布已提交.png"
+    },
+    "删除发布内容": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "action": "Click",
+        "next": [
+            "点击内容p"
+        ]
+    },
+    "点击内容p": {
+        "recognition": "OCR",
+        "expected": "内容",
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "点击热聊内容p"
+        ]
+    },
+    "点击热聊内容p": {
+        "recognition": "OCR",
+        "expected": "热聊",
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "热聊向上滑动"
+        ]
+    },
+    "热聊向上滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "post_delay": 1000,
+        "next": [
+            "点击菜单p"
+        ]
+    },
+    "点击菜单p": {
+        "recognition": "TemplateMatch",
+        "template": "菜单.png",
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "点击删除p"
+        ]
+    },
+    "点击删除p": {
+        "recognition": "TemplateMatch",
+        "template": "删除.png",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "确定删除p"
+        ]
+    },
+    "确定删除p": {
+        "recognition": "TemplateMatch",
+        "template": "确定.png",
+        "action": "Click"
     }
 }

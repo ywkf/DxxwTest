@@ -1,7 +1,10 @@
 {
     "browseimagetxt_m": {
         "recognition": "TemplateMatch",
-        "template": "wodes.png",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
         "action": "Click",
         "next": [
             "点击内容"
@@ -221,6 +224,8 @@
     },
     "浏览图文结束": {
         "recognition": "OCR",
-        "expected": "随拍 15 随心 5"
+        "expected": "随拍 15 随心 5",
+        "action": "Key",
+        "key": 4
     }
 }
