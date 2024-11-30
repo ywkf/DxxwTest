@@ -1,5 +1,15 @@
 {
-    "post": {
+    "Post": {
+        "next": [
+            "点击发布"
+        ]
+    },
+    "Post1": {
+        "next": [
+            "点击发布"
+        ]
+    },
+    "Post2": {
         "next": [
             "点击发布"
         ]
@@ -116,7 +126,7 @@
         "recognition": "TemplateMatch",
         "template": "发布已提交.png"
     },
-    "删除发布内容": {
+    "DeletePost": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

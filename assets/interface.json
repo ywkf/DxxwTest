@@ -15,7 +15,7 @@
     ],
     "resource": [
         {
-            "name": "官服",
+            "name": "dxxw",
             "path": [
                 "{PROJECT_DIR}/resource"
             ]
@@ -24,76 +24,47 @@
     "task": [
         {
             "name": "启动",
-            "entry": "startup"
+            "entry": "Startup"
         },
         {
             "name": "签到",
-            "entry": "signin"
-        },
-        {
-            "name": "浏览图文作品",
-            "entry": "browseimagetxt_m"
-        },
-        {
-            "name": "浏览音视频作品",
-            "entry": "browsevideo_m"
-        },
-        {
-            "name": "观看直播",
-            "entry": "watchlive"
-        },
-        {
-            "name": "看视频听广播",
-            "entry": "watchvideoradio"
-        },
-        {
-            "name": "发布作品",
-            "entry": "post"
+            "entry": "Signin"
         },
         {
             "name": "允许通知积分领取",
-            "entry": "getpoints"
+            "entry": "GetPoints"
         },
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "浏览图文作品",
+            "entry": "BrowseImagetxt_m"
         },
         {
-            "name": "选项任务",
-            "entry": "MyTask2",
-            "option": [
-                "任务选项1"
-            ]
+            "name": "浏览音视频作品",
+            "entry": "BrowseVedio_m"
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "pipeline_override": {}
+            "name": "看视频听广播",
+            "entry": "WatchVideoradio"
+        },
+        {
+            "name": "观看直播",
+            "entry": "WatchLive"
+        },
+        {
+            "name": "发布作品",
+            "entry": "Post"
+        },
+        {
+            "name": "发布作品2",
+            "entry": "Post2"
+        },
+        {
+            "name": "删除发布内容",
+            "entry": "DeletePost"
+        },
+        {
+            "name": "删除发布内容2",
+            "entry": "点击菜单p"
         }
-    ],
-    "option": {
-        "任务选项1": {
-            "cases": [
-                {
-                    "name": "文本1",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
-                        }
-                    }
-                },
-                {
-                    "name": "文本2",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
-                        }
-                    }
-                }
-            ]
-        }
-    }
+    ]
 }

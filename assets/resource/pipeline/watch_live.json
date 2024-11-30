@@ -1,10 +1,21 @@
 {
-    "watchlive": {
+    "WatchLive": {
         "next": [
-            "点击我的积分"
+            "我的l"
         ]
     },
-    "点击我的积分": {
+    "我的l": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "action": "Click",
+        "next": [
+            "点击我的积分l"
+        ]
+    },
+    "点击我的积分l": {
         "recognition": "OCR",
         "expected": "我的积分",
         "action": "Click",

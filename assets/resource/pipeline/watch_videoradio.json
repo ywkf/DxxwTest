@@ -1,5 +1,16 @@
 {
-    "watchvideoradio": {
+    "WatchVideoradio": {
+        "next": [
+            "我的r"
+        ]
+    },
+    "我的r": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "action": "Click",
         "next": [
             "点击我的积分r"
         ]

@@ -1,5 +1,5 @@
 {
-    "getpoints": {
+    "GetPoints": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

@@ -1,4 +1,7 @@
 {
+    "Startup": {
+        "next": "StartApp"
+    },
     "StartApp": {
         "action": "StartApp",
         "package": "com.hnr.dxxw",
@@ -9,9 +12,6 @@
     "Skip": {
         "recognition": "OCR",
         "expected": "跳过",
-        "action": "Click",
-        "next": [
-            "我的"
-        ]
+        "action": "Click"
     }
 }

@@ -1,0 +1,36 @@
+{
+    "controller": {
+        "name": "安卓端"
+    },
+    "adb": {
+        "adb_path": "D:/Program Files/Netease/MuMu Player 12/shell/adb.exe",
+        "address": "127.0.0.1:16448",
+        "config": {
+            "extras": {
+                "mumu": {
+                    "enable": true,
+                    "index": 2,
+                    "path": "D:/Program Files/Netease/MuMu Player 12"
+                }
+            }
+        }
+    },
+    "resource": [
+        {
+            "name": "dxxw",
+            "path": [
+                "{PROJECT_DIR}/resource"
+            ]
+        }
+    ],
+    "task": [
+        {
+            "name": "启动",
+            "option": []
+        },
+        {
+            "name": "签到",
+            "option": []
+        }
+    ]
+}
