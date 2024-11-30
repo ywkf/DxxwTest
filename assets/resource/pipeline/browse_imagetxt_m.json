@@ -132,6 +132,12 @@
         "recognition": "TemplateMatch",
         "template": "微博.png",
         "action": "Click",
+        "roi": [
+            380,
+            766,
+            120,
+            140
+        ],
         "next": [
             "分享微博完成m",
             "分享微博登录界面m"
