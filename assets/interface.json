@@ -63,8 +63,8 @@
             "entry": "DeletePost"
         },
         {
-            "name": "删除发布内容2",
-            "entry": "点击菜单p"
+            "name": "删除发布内容2(需接 删除发布任务)",
+            "entry": "PostMenu"
         },
         {
             "name": "返回个人页",

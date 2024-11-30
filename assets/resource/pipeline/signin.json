@@ -1,11 +1,17 @@
 {
     "Signin": {
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
             "wodes_.png"
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
         "next": [
             "我的积分"
         ]

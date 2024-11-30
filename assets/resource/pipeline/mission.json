@@ -6,7 +6,7 @@
             "我的积分",
             "申请认证"
         ],
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "post_delay": 1000,
         "interrupt": [
             "Back"

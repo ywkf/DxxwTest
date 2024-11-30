@@ -1,15 +1,20 @@
 {
     "Post": {
-        "next": [
-            "点击发布"
-        ]
-    },
-    "Post1": {
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
         "next": [
             "点击发布"
         ]
     },
     "Post2": {
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
         "next": [
             "点击发布"
         ]
@@ -19,6 +24,7 @@
         "recognition": "OCR",
         "expected": "发布",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "发布热聊"
         ]
@@ -27,6 +33,7 @@
         "recognition": "OCR",
         "expected": "热聊",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "点击添加图片"
         ]
@@ -35,6 +42,8 @@
         "recognition": "TemplateMatch",
         "template": "添加图片或视频.png",
         "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
         "next": [
             "选择添加图片"
         ]
