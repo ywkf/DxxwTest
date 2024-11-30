@@ -14,6 +14,7 @@
         "recognition": "OCR",
         "expected": "我的积分",
         "action": "Click",
+        "post_delay": 2000,
         "next": [
             "向上滑动gp"
         ]
@@ -21,24 +22,25 @@
     "向上滑动gp": {
         "action": "Swipe",
         "begin": [
-            100,
-            650,
+            200,
+            1200,
             10,
             10
         ],
         "end": [
+            200,
             100,
-            50,
             10,
             10
         ],
+        "post_delay": 200,
         "next": [
             "领取积分"
         ]
     },
     "领取积分": {
-        "recognition": "TemplateMatch",
-        "template": "领取.png",
+        "recognition": "OCR",
+        "expected": "领取",
         "action": "Click",
         "next": [
             "返回gp"
