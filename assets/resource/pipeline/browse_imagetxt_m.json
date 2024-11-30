@@ -124,6 +124,7 @@
         "recognition": "TemplateMatch",
         "template": "分享.png",
         "action": "Click",
+        "post_delay": 500,
         "next": [
             "分享到微博m"
         ]
@@ -190,6 +191,7 @@
     "重置图文点赞m": {
         "action": "Click",
         "target": "图文点赞m",
+        "post_delay": 800,
         "next": [
             "重置图文收藏m"
         ]
