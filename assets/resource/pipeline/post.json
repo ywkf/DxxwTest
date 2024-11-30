@@ -15,6 +15,7 @@
         ]
     },
     "点击发布": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": "发布",
         "action": "Click",
@@ -125,7 +126,10 @@
     "发布已提交": {
         "recognition": "TemplateMatch",
         "template": "发布已提交.png",
-        "post_delay": 2000
+        "post_delay": 2000,
+        "next": [
+            "Back"
+        ]
     },
     "DeletePost": {
         "recognition": "TemplateMatch",
@@ -172,10 +176,10 @@
         ],
         "post_delay": 1000,
         "next": [
-            "点击菜单p"
+            "PostMenu"
         ]
     },
-    "点击菜单p": {
+    "PostMenu": {
         "recognition": "TemplateMatch",
         "template": "菜单.png",
         "action": "Click",

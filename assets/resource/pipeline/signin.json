@@ -25,18 +25,14 @@
         "expected": "点击签到",
         "action": "Click",
         "next": [
-            "返回"
+            "Back"
         ]
     },
     "已签到": {
         "recognition": "OCR",
         "expected": "已签到",
         "next": [
-            "返回"
+            "Back"
         ]
-    },
-    "返回": {
-        "action": "Key",
-        "key": 4
     }
 }

@@ -67,8 +67,70 @@
             "entry": "点击菜单p"
         },
         {
-            "name": "返回gp",
-            "entry": "返回gp"
+            "name": "返回个人页",
+            "entry": "Back"
+        },
+        {
+            "name": "任务",
+            "entry": "Mission",
+            "option": [
+                "SigninSwitch",
+                "GetPointsSwitch"
+            ],
+            "pipeline_override": {
+                "Signin": {},
+                "GetPoints": {},
+                "BrowseImagetxt_m": {},
+                "BrowseVedio_m": {},
+                "WatchVideoradio": {},
+                "WatchLive": {},
+                "Post": {},
+                "Post2": {},
+                "DeletePost": {},
+                "PostMenu": {}
+            }
         }
-    ]
+    ],
+    "option": {
+        "SigninSwitch": {
+            "cases": [
+                {
+                    "name": "启用",
+                    "pipeline_override": {
+                        "Signin": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "禁用",
+                    "pipeline_override": {
+                        "Signin": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "GetPointsSwitch": {
+            "cases": [
+                {
+                    "name": "启用",
+                    "pipeline_override": {
+                        "GetPoints": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "禁用",
+                    "pipeline_override": {
+                        "GetPoints": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

@@ -1,0 +1,46 @@
+{
+    "Back": {
+        "doc": "返回主界面",
+        "next": [
+            "导航栏",
+            "无导航栏"
+        ]
+    },
+    "无导航栏": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 2000,
+        "interrupt": [
+            "无导航栏"
+        ],
+        "next": [
+            "导航栏"
+        ]
+    },
+    "导航栏": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "导航栏wode.png",
+            "导航栏wodes.png",
+            "导航栏home.png",
+            "导航栏homes.png",
+            "导航栏dxt.png",
+            "导航栏dxts.png"
+        ],
+        "next": [
+            "点击个人页"
+        ]
+    },
+    "点击个人页": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "action": "Click",
+        "next": [
+            "Stop"
+        ]
+    },
+    "Stop": {}
+}

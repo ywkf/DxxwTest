@@ -44,11 +44,7 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "返回gp"
+            "Back"
         ]
-    },
-    "返回gp": {
-        "action": "Key",
-        "key": 4
     }
 }

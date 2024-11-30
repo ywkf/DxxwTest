@@ -1,10 +1,6 @@
 {
     "WatchVideoradio": {
-        "next": [
-            "我的r"
-        ]
-    },
-    "我的r": {
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
@@ -93,6 +89,7 @@
             10
         ],
         "timeout": 20000,
+        "post_delay": 5000,
         "on_error": [
             "完成看电视听广播1"
         ],
@@ -117,6 +114,7 @@
             10
         ],
         "timeout": 20000,
+        "post_delay": 5000,
         "on_error": [
             "看电视听广播超时1"
         ],
@@ -138,20 +136,12 @@
             "看电视听广播超时2"
         ],
         "next": [
-            "返回主页r"
+            "Back"
         ]
     },
     "看电视听广播超时2": {
         "next": [
-            "返回主页r"
+            "Back"
         ]
-    },
-    "返回主页r": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "wodes.png",
-            "wodes_.png"
-        ],
-        "action": "Click"
     }
 }

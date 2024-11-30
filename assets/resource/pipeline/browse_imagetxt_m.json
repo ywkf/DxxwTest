@@ -23,6 +23,7 @@
         "recognition": "OCR",
         "expected": "图文",
         "action": "Click",
+        "pre_wait_freezes": 200,
         "post_delay": 1000,
         "next": [
             "图文向上滑动"
@@ -43,6 +44,7 @@
             10
         ],
         "post_delay": 1000,
+        "post_wait_freezes": 200,
         "next": [
             "点击图文m"
         ]
@@ -57,6 +59,7 @@
             600,
             400
         ],
+        "post_delay": 1000,
         "next": [
             "浏览图文结束",
             "图文点赞m",
@@ -235,6 +238,10 @@
         "recognition": "OCR",
         "expected": "随拍 15 随心 5",
         "action": "Key",
-        "key": 4
+        "key": 4,
+        "post_delay": 1000,
+        "next": [
+            "Back"
+        ]
     }
 }
