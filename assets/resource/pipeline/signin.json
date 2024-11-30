@@ -14,6 +14,7 @@
         "recognition": "OCR",
         "expected": "我的积分",
         "action": "Click",
+        "post_delay": 500,
         "next": [
             "签到",
             "已签到"

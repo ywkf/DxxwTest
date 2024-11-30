@@ -124,7 +124,8 @@
     },
     "发布已提交": {
         "recognition": "TemplateMatch",
-        "template": "发布已提交.png"
+        "template": "发布已提交.png",
+        "post_delay": 2000
     },
     "DeletePost": {
         "recognition": "TemplateMatch",
@@ -195,6 +196,7 @@
     "确定删除p": {
         "recognition": "TemplateMatch",
         "template": "确定.png",
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 2000
     }
 }

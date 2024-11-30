@@ -5,6 +5,7 @@
     "StartApp": {
         "action": "StartApp",
         "package": "com.hnr.dxxw",
+        "post_delay": 2000,
         "next": [
             "Skip"
         ]
@@ -12,6 +13,7 @@
     "Skip": {
         "recognition": "OCR",
         "expected": "跳过",
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 1000
     }
 }

@@ -19,6 +19,7 @@
         "recognition": "OCR",
         "expected": "内容",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "点击视频内容"
         ]
@@ -27,6 +28,7 @@
         "recognition": "OCR",
         "expected": "视频",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "点击视频m"
         ]

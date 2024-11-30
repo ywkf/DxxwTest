@@ -14,6 +14,7 @@
         "recognition": "OCR",
         "expected": "内容",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "点击图文内容"
         ]
@@ -22,6 +23,7 @@
         "recognition": "OCR",
         "expected": "图文",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "图文向上滑动"
         ]
@@ -40,6 +42,7 @@
             10,
             10
         ],
+        "post_delay": 1000,
         "next": [
             "点击图文m"
         ]

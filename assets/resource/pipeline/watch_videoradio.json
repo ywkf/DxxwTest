@@ -47,7 +47,7 @@
         "recognition": "OCR",
         "expected": "去观看",
         "action": "Click",
-        "post_delay": 200,
+        "post_delay": 1000,
         "next": [
             "看电视",
             "看直播"
