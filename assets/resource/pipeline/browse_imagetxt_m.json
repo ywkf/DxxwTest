@@ -147,6 +147,7 @@
     "分享微博完成m": {
         "recognition": "TemplateMatch",
         "template": "完成分享.png",
+        "post_delay": 500,
         "next": [
             "分享成功返回m"
         ]
@@ -196,6 +197,7 @@
     "重置图文收藏m": {
         "action": "Click",
         "target": "图文收藏m",
+        "post_delay": 800,
         "next": [
             "评论成功返回m"
         ]
@@ -203,6 +205,7 @@
     "评论成功返回m": {
         "action": "Key",
         "key": 4,
+        "post_delay": 800,
         "next": [
             "滑动至下一图文m"
         ]
@@ -221,6 +224,7 @@
             10,
             10
         ],
+        "post_delay": 500,
         "next": [
             "点击图文m"
         ]
