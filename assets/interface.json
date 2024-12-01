@@ -43,6 +43,10 @@
             "entry": "BrowseVedio_m"
         },
         {
+            "name": "浏览图文和音视频作品",
+            "entry": "BrowseImagetxt_mc"
+        },
+        {
             "name": "看视频听广播",
             "entry": "WatchVideoradio"
         },
@@ -55,15 +59,11 @@
             "entry": "Post"
         },
         {
-            "name": "发布作品2",
-            "entry": "Post2"
-        },
-        {
             "name": "删除发布内容",
             "entry": "DeletePost"
         },
         {
-            "name": "删除发布内容2(需接 删除发布任务)",
+            "name": "删除发布内容2（需接 删除发布 任务）",
             "entry": "PostMenu"
         },
         {
@@ -75,7 +75,8 @@
             "entry": "Mission",
             "option": [
                 "SigninSwitch",
-                "GetPointsSwitch"
+                "GetPointsSwitch",
+                "PostSwitch"
             ],
             "pipeline_override": {
                 "Signin": {},
@@ -126,6 +127,26 @@
                     "name": "禁用",
                     "pipeline_override": {
                         "GetPoints": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "PostSwitch": {
+            "cases": [
+                {
+                    "name": "启用",
+                    "pipeline_override": {
+                        "Post": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "禁用",
+                    "pipeline_override": {
+                        "Post": {
                             "enabled": false
                         }
                     }

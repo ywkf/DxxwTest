@@ -1,5 +1,5 @@
 {
-    "BrowseImagetxt_m": {
+    "BrowseImagetxt_mc": {
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
@@ -13,29 +13,29 @@
             "Back"
         ],
         "next": [
-            "点击内容"
+            "点击内容c"
         ]
     },
-    "点击内容": {
+    "点击内容c": {
         "recognition": "OCR",
         "expected": "内容",
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "点击图文内容"
+            "点击图文内容c"
         ]
     },
-    "点击图文内容": {
+    "点击图文内容c": {
         "recognition": "OCR",
         "expected": "图文",
         "action": "Click",
         "pre_wait_freezes": 200,
         "post_delay": 1000,
         "next": [
-            "图文向上滑动"
+            "图文向上滑动c"
         ]
     },
-    "图文向上滑动": {
+    "图文向上滑动c": {
         "action": "Swipe",
         "begin": [
             200,
@@ -52,10 +52,10 @@
         "post_delay": 1000,
         "post_wait_freezes": 200,
         "next": [
-            "点击图文m"
+            "点击图文mc"
         ]
     },
-    "点击图文m": {
+    "点击图文mc": {
         "recognition": "OCR",
         "expected": "随拍",
         "action": "Click",
@@ -66,22 +66,23 @@
             400
         ],
         "post_delay": 1000,
+        "post_wait_freezes": 1000,
         "next": [
-            "浏览图文结束",
-            "图文点赞m",
-            "图文点赞1m"
+            "浏览图文结束c",
+            "图文点赞mc",
+            "图文点赞1mc"
         ]
     },
-    "图文点赞m": {
+    "图文点赞mc": {
         "recognition": "TemplateMatch",
         "template": "点赞.png",
         "action": "Click",
         "next": [
-            "图文收藏m",
-            "图文收藏1m"
+            "图文收藏mc",
+            "图文收藏1mc"
         ]
     },
-    "图文点赞1m": {
+    "图文点赞1mc": {
         "recognition": "TemplateMatch",
         "template": "点赞1.png",
         "action": "Click",
@@ -93,20 +94,20 @@
             0
         ],
         "next": [
-            "图文收藏m",
-            "图文收藏1m"
+            "图文收藏mc",
+            "图文收藏1mc"
         ]
     },
-    "图文收藏m": {
+    "图文收藏mc": {
         "recognition": "TemplateMatch",
         "template": "收藏.png",
         "action": "Click",
         "next": [
-            "完成每日分享",
-            "图文分享m"
+            "完成每日分享c",
+            "图文分享mc"
         ]
     },
-    "图文收藏1m": {
+    "图文收藏1mc": {
         "recognition": "TemplateMatch",
         "template": "收藏1.png",
         "action": "Click",
@@ -118,58 +119,58 @@
             0
         ],
         "next": [
-            "完成每日分享",
-            "图文分享m"
+            "完成每日分享c",
+            "图文分享mc"
         ]
     },
-    "完成每日分享": {
+    "完成每日分享c": {
         "recognition": "OCR",
         "expected": "随拍 6",
         "next": [
-            "图文评论m"
+            "图文评论mc"
         ]
     },
-    "图文分享m": {
+    "图文分享mc": {
         "recognition": "TemplateMatch",
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "分享到微博m"
+            "分享到微博mc"
         ]
     },
-    "分享到微博m": {
+    "分享到微博mc": {
         "recognition": "OCR",
         "expected": "微博",
         "action": "Click",
         "next": [
-            "分享微博完成m",
-            "分享微博登录界面m"
+            "分享微博完成mc",
+            "分享微博登录界面mc"
         ]
     },
-    "分享微博登录界面m": {
+    "分享微博登录界面mc": {
         "recognition": "OCR",
         "expected": "登录",
         "next": [
-            "分享成功返回m"
+            "分享成功返回mc"
         ]
     },
-    "分享微博完成m": {
+    "分享微博完成mc": {
         "recognition": "TemplateMatch",
         "template": "完成分享.png",
         "post_delay": 500,
         "next": [
-            "分享成功返回m"
+            "分享成功返回mc"
         ]
     },
-    "分享成功返回m": {
+    "分享成功返回mc": {
         "action": "Key",
         "key": 4,
         "next": [
-            "图文评论m"
+            "图文评论mc"
         ]
     },
-    "图文评论m": {
+    "图文评论mc": {
         "action": "Click",
         "target": [
             50,
@@ -178,50 +179,50 @@
             30
         ],
         "next": [
-            "输入评论内容m"
+            "输入评论内容mc"
         ]
     },
-    "输入评论内容m": {
+    "输入评论内容mc": {
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
         "next": [
-            "发表评论m"
+            "发表评论mc"
         ]
     },
-    "发表评论m": {
+    "发表评论mc": {
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
         "next": [
-            "重置图文点赞m"
+            "重置图文点赞mc"
         ]
     },
-    "重置图文点赞m": {
+    "重置图文点赞mc": {
         "action": "Click",
-        "target": "图文点赞m",
+        "target": "图文点赞mc",
         "post_delay": 800,
         "next": [
-            "重置图文收藏m"
+            "重置图文收藏mc"
         ]
     },
-    "重置图文收藏m": {
+    "重置图文收藏mc": {
         "action": "Click",
-        "target": "图文收藏m",
+        "target": "图文收藏mc",
         "post_delay": 800,
         "next": [
-            "评论成功返回m"
+            "评论成功返回mc"
         ]
     },
-    "评论成功返回m": {
+    "评论成功返回mc": {
         "action": "Key",
         "key": 4,
         "post_delay": 800,
         "next": [
-            "滑动至下一图文m"
+            "滑动至下一图文mc"
         ]
     },
-    "滑动至下一图文m": {
+    "滑动至下一图文mc": {
         "action": "Swipe",
         "begin": [
             200,
@@ -237,17 +238,26 @@
         ],
         "post_delay": 500,
         "next": [
-            "点击图文m"
+            "点击图文mc"
         ]
     },
-    "浏览图文结束": {
+    "浏览图文结束c": {
         "recognition": "OCR",
         "expected": "随心 5",
         "action": "Key",
         "key": 4,
         "post_delay": 1000,
         "next": [
-            "Back"
+            "浏览图文完成返回c"
+        ]
+    },
+    "浏览图文完成返回c": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 1000,
+        "post_wait_freezes": 1000,
+        "next": [
+            "点击视频内容"
         ]
     }
 }

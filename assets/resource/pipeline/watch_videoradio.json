@@ -78,8 +78,10 @@
         ]
     },
     "完成看电视听广播0": {
-        "recognition": "TemplateMatch",
-        "template": "完成看电视听广播.png",
+        "recognition": "OCR",
+        "expected": [
+            "完成看电视、听广播"
+        ],
         "action": "Swipe",
         "begin": [
             380,
@@ -103,8 +105,10 @@
         ]
     },
     "完成看电视听广播1": {
-        "recognition": "TemplateMatch",
-        "template": "完成看电视听广播.png",
+        "recognition": "OCR",
+        "expected": [
+            "完成看电视、听广播"
+        ],
         "action": "Swipe",
         "begin": [
             380,
@@ -133,8 +137,10 @@
         ]
     },
     "完成看电视听广播2": {
-        "recognition": "TemplateMatch",
-        "template": "完成看电视听广播.png",
+        "recognition": "OCR",
+        "expected": [
+            "完成看电视、听广播"
+        ],
         "post_delay": 2000,
         "timeout": 20000,
         "on_error": [

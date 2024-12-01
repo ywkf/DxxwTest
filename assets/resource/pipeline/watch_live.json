@@ -68,8 +68,10 @@
         ]
     },
     "完成看直播1": {
-        "recognition": "TemplateMatch",
-        "template": "完成看直播.png",
+        "recognition": "OCR",
+        "expected": [
+            "完成看直播"
+        ],
         "action": "Key",
         "key": 4,
         "post_delay": 5000,
@@ -101,8 +103,10 @@
         ]
     },
     "完成看直播2": {
-        "recognition": "TemplateMatch",
-        "template": "完成看直播.png",
+        "recognition": "OCR",
+        "expected": [
+            "完成看直播"
+        ],
         "action": "Key",
         "key": 4,
         "timeout": 20000,
