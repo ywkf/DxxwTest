@@ -1,0 +1,1764 @@
+{
+    "MergeBrowseItVL": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "ClickSubs"
+        ]
+    },
+    "ClickSubs": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "SelectDxh"
+        ]
+    },
+    "SelectDxh": {
+        "recognition": "OCR",
+        "expected": [
+            "河南信息广播"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 500,
+        "next": [
+            "SwipeUpivl"
+        ]
+    },
+    "SwipeUpivl": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "ClickImagetxtPart"
+        ]
+    },
+    "ClickImagetxtPart": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "next": [
+            "ClickIt01"
+        ]
+    },
+    "ClickIt01": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            220,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            220,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike"
+        ]
+    },
+    "ImagetxtLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtFavorite"
+        ]
+    },
+    "ImagetxtFavorite": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtShare"
+        ]
+    },
+    "ImagetxtShare": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ShareToWeibo"
+        ]
+    },
+    "ShareToWeibo": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            103,
+            148
+        ],
+        "next": [
+            "ShareToWeiboSuccess",
+            "WeiboLogin"
+        ]
+    },
+    "WeiboLogin": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack"
+        ]
+    },
+    "ShareToWeiboSuccess": {
+        "recognition": "OCR",
+        "expected": "完成分享积分+8",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack"
+        ]
+    },
+    "ShareSuccessBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ImagetxtComment"
+        ]
+    },
+    "ImagetxtComment": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment"
+        ]
+    },
+    "InputComment": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment"
+        ]
+    },
+    "SendComment": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike"
+        ]
+    },
+    "ResetLike": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "ResetFavorite"
+        ]
+    },
+    "ResetFavorite": {
+        "action": "Click",
+        "target": "ImagetxtFavorite",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack"
+        ]
+    },
+    "BrowseImagetxtBack": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt02"
+        ]
+    },
+    "ClickIt02": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            432,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            432,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike02"
+        ]
+    },
+    "ImagetxtLike02": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtFavorite02"
+        ]
+    },
+    "ImagetxtFavorite02": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtShare02"
+        ]
+    },
+    "ImagetxtShare02": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ShareToWeibo02"
+        ]
+    },
+    "ShareToWeibo02": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            103,
+            148
+        ],
+        "next": [
+            "WeiboLogin02"
+        ]
+    },
+    "WeiboLogin02": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack02"
+        ]
+    },
+    "ShareSuccessBack02": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ImagetxtComment02"
+        ]
+    },
+    "ImagetxtComment02": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment02"
+        ]
+    },
+    "InputComment02": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment02"
+        ]
+    },
+    "SendComment02": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike02"
+        ]
+    },
+    "ResetLike02": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "ResetFavorite02"
+        ]
+    },
+    "ResetFavorite02": {
+        "action": "Click",
+        "target": "ImagetxtFavorite",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack02"
+        ]
+    },
+    "BrowseImagetxtBack02": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt03"
+        ]
+    },
+    "ClickIt03": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            644,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            644,
+            685,
+            200
+        ],
+        "post_delay": 3000,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike03"
+        ]
+    },
+    "ImagetxtLike03": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtFavorite03"
+        ]
+    },
+    "ImagetxtFavorite03": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtShare03"
+        ]
+    },
+    "ImagetxtShare03": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ShareToWeibo03"
+        ]
+    },
+    "ShareToWeibo03": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            103,
+            148
+        ],
+        "next": [
+            "WeiboLogin03"
+        ]
+    },
+    "WeiboLogin03": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack03"
+        ]
+    },
+    "ShareSuccessBack03": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ImagetxtComment03"
+        ]
+    },
+    "ImagetxtComment03": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment03"
+        ]
+    },
+    "InputComment03": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment03"
+        ]
+    },
+    "SendComment03": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike03"
+        ]
+    },
+    "ResetLike03": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "ResetFavorite03"
+        ]
+    },
+    "ResetFavorite03": {
+        "action": "Click",
+        "target": "ImagetxtFavorite",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack03"
+        ]
+    },
+    "BrowseImagetxtBack03": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt04"
+        ]
+    },
+    "ClickIt04": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            850,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            850,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike04"
+        ]
+    },
+    "ImagetxtLike04": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtFavorite04"
+        ]
+    },
+    "ImagetxtFavorite04": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtShare04"
+        ]
+    },
+    "ImagetxtShare04": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ShareToWeibo04"
+        ]
+    },
+    "ShareToWeibo04": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            104,
+            148
+        ],
+        "next": [
+            "WeiboLogin04"
+        ]
+    },
+    "WeiboLogin04": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack04"
+        ]
+    },
+    "ShareSuccessBack04": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ImagetxtComment04"
+        ]
+    },
+    "ImagetxtComment04": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment04"
+        ]
+    },
+    "InputComment04": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment04"
+        ]
+    },
+    "SendComment04": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike04"
+        ]
+    },
+    "ResetLike04": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "ResetFavorite04"
+        ]
+    },
+    "ResetFavorite04": {
+        "action": "Click",
+        "target": "ImagetxtFavorite",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack04"
+        ]
+    },
+    "BrowseImagetxtBack04": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt05"
+        ]
+    },
+    "ClickIt05": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike05"
+        ]
+    },
+    "ImagetxtLike05": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtFavorite05"
+        ]
+    },
+    "ImagetxtFavorite05": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtShare05"
+        ]
+    },
+    "ImagetxtShare05": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ShareToWeibo05"
+        ]
+    },
+    "ShareToWeibo05": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            105,
+            148
+        ],
+        "next": [
+            "WeiboLogin05"
+        ]
+    },
+    "WeiboLogin05": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack05"
+        ]
+    },
+    "ShareSuccessBack05": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ImagetxtComment05"
+        ]
+    },
+    "ImagetxtComment05": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment05"
+        ]
+    },
+    "InputComment05": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment05"
+        ]
+    },
+    "SendComment05": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike05"
+        ]
+    },
+    "ResetLike05": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "ResetFavorite05"
+        ]
+    },
+    "ResetFavorite05": {
+        "action": "Click",
+        "target": "ImagetxtFavorite",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack05"
+        ]
+    },
+    "BrowseImagetxtBack05": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "SwipeUpivl01"
+        ]
+    },
+    "SwipeUpivl01": {
+        "action": "Swipe",
+        "begin": [
+            675,
+            1177,
+            10,
+            10
+        ],
+        "end": [
+            675,
+            200,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
+            "ClickIt06"
+        ]
+    },
+    "ClickIt06": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            220,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            220,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike06"
+        ]
+    },
+    "ImagetxtLike06": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtFavorite06"
+        ]
+    },
+    "ImagetxtFavorite06": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtShare06"
+        ]
+    },
+    "ImagetxtShare06": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ShareToWeibo06"
+        ]
+    },
+    "ShareToWeibo06": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            106,
+            148
+        ],
+        "next": [
+            "WeiboLogin06"
+        ]
+    },
+    "WeiboLogin06": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ShareSuccessBack06"
+        ]
+    },
+    "ShareSuccessBack06": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ImagetxtComment06"
+        ]
+    },
+    "ImagetxtComment06": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment06"
+        ]
+    },
+    "InputComment06": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment06"
+        ]
+    },
+    "SendComment06": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike06"
+        ]
+    },
+    "ResetLike06": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "ResetFavorite06"
+        ]
+    },
+    "ResetFavorite06": {
+        "action": "Click",
+        "target": "ImagetxtFavorite",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack06"
+        ]
+    },
+    "BrowseImagetxtBack06": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt07"
+        ]
+    },
+    "ClickIt07": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            432,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            432,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike07"
+        ]
+    },
+    "ImagetxtLike07": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtComment07"
+        ]
+    },
+    "ImagetxtComment07": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment07"
+        ]
+    },
+    "InputComment07": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment07"
+        ]
+    },
+    "SendComment07": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike07"
+        ]
+    },
+    "ResetLike07": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack07"
+        ]
+    },
+    "BrowseImagetxtBack07": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt08"
+        ]
+    },
+    "ClickIt08": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            644,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            644,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike08"
+        ]
+    },
+    "ImagetxtLike08": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtComment08"
+        ]
+    },
+    "ImagetxtComment08": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment08"
+        ]
+    },
+    "InputComment08": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment08"
+        ]
+    },
+    "SendComment08": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike08"
+        ]
+    },
+    "ResetLike08": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack08"
+        ]
+    },
+    "BrowseImagetxtBack08": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt09"
+        ]
+    },
+    "ClickIt09": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            850,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            850,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike09"
+        ]
+    },
+    "ImagetxtLike09": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtComment09"
+        ]
+    },
+    "ImagetxtComment09": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment09"
+        ]
+    },
+    "InputComment09": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment09"
+        ]
+    },
+    "SendComment09": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike09"
+        ]
+    },
+    "ResetLike09": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack09"
+        ]
+    },
+    "BrowseImagetxtBack09": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt10"
+        ]
+    },
+    "ClickIt10": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "post_delay": 500,
+        "post_wait_freezes": 1000,
+        "next": [
+            "ImagetxtLike10"
+        ]
+    },
+    "ImagetxtLike10": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtComment10"
+        ]
+    },
+    "ImagetxtComment10": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment10"
+        ]
+    },
+    "InputComment10": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment10"
+        ]
+    },
+    "SendComment10": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike10"
+        ]
+    },
+    "ResetLike10": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack10"
+        ]
+    },
+    "BrowseImagetxtBack10": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "SwipeUpivl02"
+        ]
+    },
+    "SwipeUpivl02": {
+        "action": "Swipe",
+        "begin": [
+            675,
+            1177,
+            10,
+            10
+        ],
+        "end": [
+            675,
+            200,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
+            "ClickIt11"
+        ]
+    },
+    "ClickIt11": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            220,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            220,
+            685,
+            200
+        ],
+        "post_delay": 1100,
+        "post_wait_freezes": 1100,
+        "next": [
+            "ImagetxtLike11"
+        ]
+    },
+    "ImagetxtLike11": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ImagetxtComment11"
+        ]
+    },
+    "ImagetxtComment11": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "InputComment11"
+        ]
+    },
+    "InputComment11": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "SendComment11"
+        ]
+    },
+    "SendComment11": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "ResetLike11"
+        ]
+    },
+    "ResetLike11": {
+        "action": "Click",
+        "target": "ImagetxtLike",
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtBack11"
+        ]
+    },
+    "BrowseImagetxtBack11": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt12"
+        ]
+    },
+    "ClickIt12": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            432,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            432,
+            685,
+            200
+        ],
+        "post_delay": 3200,
+        "post_wait_freezes": 1200,
+        "next": [
+            "BrowseImagetxtBack12"
+        ]
+    },
+    "BrowseImagetxtBack12": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt13"
+        ]
+    },
+    "ClickIt13": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            644,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            644,
+            685,
+            200
+        ],
+        "post_delay": 3200,
+        "post_wait_freezes": 1300,
+        "next": [
+            "BrowseImagetxtBack13"
+        ]
+    },
+    "BrowseImagetxtBack13": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt14"
+        ]
+    },
+    "ClickIt14": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            850,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            850,
+            685,
+            200
+        ],
+        "post_delay": 3200,
+        "post_wait_freezes": 1400,
+        "next": [
+            "BrowseImagetxtBack14"
+        ]
+    },
+    "BrowseImagetxtBack14": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt15"
+        ]
+    },
+    "ClickIt15": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "post_delay": 3200,
+        "post_wait_freezes": 1500,
+        "next": [
+            "BrowseImagetxtBack15"
+        ]
+    },
+    "BrowseImagetxtBack15": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ClickIt16"
+        ]
+    },
+    "ClickIt16": {
+        "recognition": "TemplateMatch",
+        "template": "Imagetxt.png",
+        "roi": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "action": "Click",
+        "target": [
+            15,
+            1053,
+            685,
+            200
+        ],
+        "post_delay": 3200,
+        "post_wait_freezes": 1500,
+        "next": [
+            "BrowseImagetxtBack16"
+        ]
+    },
+    "BrowseImagetxtBack16": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "BrowseImagetxtComplete"
+        ]
+    },
+    "BrowseImagetxtComplete": {
+        "post_delay": 500,
+        "next": [
+            "ClickVideoPart"
+        ]
+    },
+    "ClickVideoPart": {
+        "recognition": "OCR",
+        "expected": "视频",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ClickVideo"
+        ]
+    },
+    "ClickVideo": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "roi": [
+            38,
+            239,
+            641,
+            437
+        ],
+        "action": "Click",
+        "target": [
+            38,
+            239,
+            641,
+            437
+        ],
+        "post_delay": 3000,
+        "next": [
+            "SwipeVideo"
+        ]
+    },
+    "SwipeVideo": {
+        "action": "Swipe",
+        "duration": 500,
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "post_delay": 3000,
+        "on_error": "BroswseVideoBack",
+        "next": [
+            "BrowseVideoComplete"
+        ]
+    },
+    "BrowseVideoComplete": {
+        "recognition": "TemplateMatch",
+        "template": "浏览音视频完成.png",
+        "timeout": 20000,
+        "on_error": "BroswseVideoBack",
+        "next": [
+            "SwipeVideo"
+        ]
+    },
+    "BroswseVideoBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ClickLivePart"
+        ]
+    },
+    "ClickLivePart": {
+        "recognition": "OCR",
+        "expected": "直播",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ClickLive01"
+        ]
+    },
+    "ClickLive01": {
+        "pre_delay": 200,
+        "action": "Click",
+        "target": [
+            35,
+            238,
+            653,
+            440
+        ],
+        "next": [
+            "WatchLiveComplete01"
+        ]
+    },
+    "WatchLiveComplete01": {
+        "recognition": "OCR",
+        "expected": [
+            "完成看直播"
+        ],
+        "action": "Key",
+        "key": 4,
+        "post_delay": 5000,
+        "timeout": 20000,
+        "on_error": [
+            "LiveTimeout01"
+        ],
+        "next": [
+            "ClickLive02"
+        ]
+    },
+    "LiveTimeout01": {
+        "next": [
+            "ClickLive02"
+        ]
+    },
+    "ClickLive02": {
+        "pre_delay": 200,
+        "target": [
+            35,
+            722,
+            653,
+            440
+        ],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "WatchLiveComplete01"
+        ]
+    },
+    "WatchLiveComplete02": {
+        "recognition": "OCR",
+        "expected": [
+            "完成看直播"
+        ],
+        "action": "Key",
+        "key": 4,
+        "timeout": 20000,
+        "on_error": [
+            "LiveTimeout02"
+        ],
+        "next": [
+            "WatchLiveBack"
+        ]
+    },
+    "LiveTimeout02": {
+        "next": [
+            "WatchLiveBack"
+        ]
+    },
+    "WatchLiveBack": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 2000,
+        "next": [
+            "Back"
+        ]
+    }
+}

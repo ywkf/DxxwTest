@@ -1,5 +1,5 @@
 {
-    "BrowseVedio_m": {
+    "MergeSigninGetpoints": {
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
@@ -19,69 +19,58 @@
             "Back"
         ],
         "next": [
-            "点击内容v"
+            "MyPoints"
         ]
     },
-    "点击内容v": {
+    "MyPoints": {
         "recognition": "OCR",
-        "expected": "内容",
+        "expected": "我的积分",
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 500,
         "next": [
-            "点击视频内容"
+            "SigningIn",
+            "SignedIn"
         ]
     },
-    "点击视频内容": {
+    "SigningIn": {
         "recognition": "OCR",
-        "expected": "视频",
+        "expected": "点击签到",
         "action": "Click",
-        "post_delay": 1000,
         "next": [
-            "点击视频m"
+            "SwipeUPsg"
         ]
     },
-    "点击视频m": {
+    "SignedIn": {
         "recognition": "OCR",
-        "expected": "记录",
-        "action": "Click",
-        "post_delay": 3000,
+        "expected": "已签到",
         "next": [
-            "滑动浏览视频m"
+            "SwipeUPsg"
         ]
     },
-    "滑动浏览视频m": {
+    "SwipeUPsg": {
         "action": "Swipe",
-        "duration": 500,
         "begin": [
             200,
-            1000,
+            1200,
             10,
             10
         ],
         "end": [
             200,
-            200,
+            100,
             10,
             10
         ],
-        "post_delay": 3000,
-        "on_error": "浏览视频返回m",
+        "post_delay": 1000,
         "next": [
-            "浏览视频完成m"
+            "GettingPoints"
         ]
     },
-    "浏览视频完成m": {
+    "GettingPoints": {
         "recognition": "TemplateMatch",
-        "template": "浏览音视频完成.png",
-        "timeout": 20000,
-        "on_error": "浏览视频返回m",
-        "next": [
-            "滑动浏览视频m"
-        ]
-    },
-    "浏览视频返回m": {
-        "action": "Key",
-        "key": 4,
+        "template": "领取.png",
+        "action": "Click",
+        "post_delay": 1000,
         "next": [
             "Back"
         ]

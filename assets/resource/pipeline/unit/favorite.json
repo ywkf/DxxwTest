@@ -1,7 +1,0 @@
-{
-    "favorite": {
-        "recognition": "TemplateMatch",
-        "template": "收藏.png",
-        "action": "Click"
-    }
-}

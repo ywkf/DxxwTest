@@ -3,14 +3,6 @@
         {
             "name": "安卓端",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            }
         }
     ],
     "resource": [
@@ -63,91 +55,45 @@
             "entry": "DeletePost"
         },
         {
-            "name": "删除发布内容2（需接 删除发布 任务）",
-            "entry": "PostMenu"
+            "name": "签到和领取通知每日积分",
+            "entry": "DeletePost"
+        },
+        {
+            "name": "浏览图文、音视频和直播（选择已关注大象号）",
+            "entry": "MergeBrowseItVL",
+            "option": [
+                "DxhSwitch"
+            ]
         },
         {
             "name": "返回个人页",
             "entry": "Back"
-        },
-        {
-            "name": "任务",
-            "entry": "Mission",
-            "option": [
-                "SigninSwitch",
-                "GetPointsSwitch",
-                "PostSwitch"
-            ],
-            "pipeline_override": {
-                "Signin": {},
-                "GetPoints": {},
-                "BrowseImagetxt_m": {},
-                "BrowseVedio_m": {},
-                "WatchVideoradio": {},
-                "WatchLive": {},
-                "Post": {},
-                "Post2": {},
-                "DeletePost": {},
-                "PostMenu": {}
-            }
         }
     ],
     "option": {
-        "SigninSwitch": {
+        "DxhSwitch": {
             "cases": [
                 {
-                    "name": "启用",
+                    "name": "河南信息广播",
                     "pipeline_override": {
-                        "Signin": {
-                            "enabled": true
+                        "SelectDxh": {
+                            "expected": "河南信息广播"
                         }
                     }
                 },
                 {
-                    "name": "禁用",
+                    "name": "河南新闻广播",
                     "pipeline_override": {
-                        "Signin": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "GetPointsSwitch": {
-            "cases": [
-                {
-                    "name": "启用",
-                    "pipeline_override": {
-                        "GetPoints": {
-                            "enabled": true
+                        "SelectDxh": {
+                            "expected": "河南新闻广播"
                         }
                     }
                 },
                 {
-                    "name": "禁用",
+                    "name": "用户_1442826164161581057",
                     "pipeline_override": {
-                        "GetPoints": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "PostSwitch": {
-            "cases": [
-                {
-                    "name": "启用",
-                    "pipeline_override": {
-                        "Post": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "禁用",
-                    "pipeline_override": {
-                        "Post": {
-                            "enabled": false
+                        "SelectDxh": {
+                            "expected": "用户_14428"
                         }
                     }
                 }

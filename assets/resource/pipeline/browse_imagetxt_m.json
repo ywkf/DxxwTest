@@ -6,6 +6,12 @@
             "wodes.png",
             "wodes_.png"
         ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
@@ -20,16 +26,6 @@
         "recognition": "OCR",
         "expected": "内容",
         "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "点击图文内容"
-        ]
-    },
-    "点击图文内容": {
-        "recognition": "OCR",
-        "expected": "图文",
-        "action": "Click",
-        "pre_wait_freezes": 200,
         "post_delay": 1000,
         "next": [
             "图文向上滑动"
@@ -49,8 +45,19 @@
             10,
             10
         ],
+        "duration": 1000,
         "post_delay": 1000,
         "post_wait_freezes": 200,
+        "next": [
+            "点击图文内容"
+        ]
+    },
+    "点击图文内容": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 1000,
         "next": [
             "点击图文m"
         ]
@@ -66,6 +73,7 @@
             400
         ],
         "post_delay": 1000,
+        "post_wait_freezes": 1000,
         "next": [
             "浏览图文结束",
             "图文点赞m",

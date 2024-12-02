@@ -6,25 +6,81 @@
             "Back"
         ],
         "next": [
-            "点击发布"
+            "进入首页"
         ]
     },
-    "Post2": {
-        "post_wait_freezes": 500,
-        "post_delay": 1000,
-        "interrupt": [
-            "Back"
+    "进入首页": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "首页.png",
+            "首页0.png"
         ],
+        "action": "Click",
         "next": [
-            "点击发布"
+            "点击象小AI"
         ]
     },
-    "点击发布": {
+    "点击象小AI": {
         "enabled": true,
         "recognition": "OCR",
-        "expected": "发布",
+        "expected": "象小AI",
+        "roi": [
+            12,
+            11,
+            689,
+            118
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "next": [
+            "点击输入框p"
+        ]
+    },
+    "点击输入框p": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "输入问题p"
+        ]
+    },
+    "输入问题p": {
+        "action": "InputText",
+        "input_text": "随机一句古诗、古语或成语解读",
+        "next": [
+            "发送问题p"
+        ]
+    },
+    "发送问题p": {
+        "recognition": "TemplateMatch",
+        "template": "send.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "next": [
+            "复制回答p"
+        ]
+    },
+    "复制回答p": {
+        "recognition": "TemplateMatch",
+        "template": "copy.png",
+        "action": "Click",
+        "next": [
+            "点击发布作品p"
+        ]
+    },
+    "点击发布作品p": {
+        "recognition": "OCR",
+        "expected": "发布作品",
+        "roi": [
+            15,
+            1082,
+            685,
+            70
+        ],
+        "action": "Click",
         "next": [
             "发布热聊"
         ]
@@ -35,52 +91,12 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "点击添加图片"
-        ]
-    },
-    "点击添加图片": {
-        "recognition": "TemplateMatch",
-        "template": "添加图片或视频.png",
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "post_delay": 500,
-        "next": [
-            "选择添加图片"
-        ]
-    },
-    "选择添加图片": {
-        "recognition": "OCR",
-        "expected": "图片",
-        "action": "Click",
-        "next": [
-            "点击查看图片"
-        ]
-    },
-    "点击查看图片": {
-        "recognition": "TemplateMatch",
-        "template": "照片1.png",
-        "action": "Click",
-        "next": [
-            "点击选择图片"
-        ]
-    },
-    "点击选择图片": {
-        "recognition": "TemplateMatch",
-        "template": "选择图片按钮.png",
-        "action": "Click",
-        "next": [
-            "选择图片点击确定"
-        ]
-    },
-    "选择图片点击确定": {
-        "recognition": "OCR",
-        "expected": "确定",
-        "action": "Click",
-        "next": [
             "点击输入框"
         ]
     },
     "点击输入框": {
+        "recognition": "OCR",
+        "expected": "想说点什么吧",
         "action": "Click",
         "target": [
             30,
@@ -93,8 +109,66 @@
         ]
     },
     "输入发布内容": {
-        "action": "InputText",
-        "input_text": "#随拍",
+        "action": "Swipe",
+        "begin": [
+            61,
+            194,
+            10,
+            10
+        ],
+        "end": [
+            81,
+            194,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "next": [
+            "粘贴内容"
+        ]
+    },
+    "粘贴内容": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "粘贴未成功",
+            "点击话题"
+        ]
+    },
+    "粘贴未成功": {
+        "recognition": "TemplateMatch",
+        "template": "发布框.png",
+        "next": [
+            "输入法粘贴"
+        ]
+    },
+    "输入法粘贴": {
+        "recognition": "TemplateMatch",
+        "template": "edit.png",
+        "roi": [
+            5,
+            728,
+            709,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "点击输入法粘贴"
+        ]
+    },
+    "点击输入法粘贴": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "点击话题"
+        ]
+    },
+    "点击话题": {
+        "recognition": "OCR",
+        "expected": "#话题",
+        "action": "Click",
         "next": [
             "滑动查看话题"
         ]
@@ -133,83 +207,11 @@
         "action": "Click"
     },
     "发布已提交": {
-        "recognition": "TemplateMatch",
-        "template": "发布已提交.png",
+        "recognition": "OCR",
+        "expected": "发布已提交",
         "post_delay": 2000,
         "next": [
             "Back"
         ]
-    },
-    "DeletePost": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "wodes.png",
-            "wodes_.png"
-        ],
-        "action": "Click",
-        "next": [
-            "点击内容p"
-        ]
-    },
-    "点击内容p": {
-        "recognition": "OCR",
-        "expected": "内容",
-        "action": "Click",
-        "post_delay": 200,
-        "next": [
-            "点击热聊内容p"
-        ]
-    },
-    "点击热聊内容p": {
-        "recognition": "OCR",
-        "expected": "热聊",
-        "action": "Click",
-        "post_delay": 200,
-        "next": [
-            "热聊向上滑动"
-        ]
-    },
-    "热聊向上滑动": {
-        "action": "Swipe",
-        "begin": [
-            200,
-            1000,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            650,
-            10,
-            10
-        ],
-        "post_delay": 1000,
-        "next": [
-            "PostMenu"
-        ]
-    },
-    "PostMenu": {
-        "recognition": "TemplateMatch",
-        "template": "菜单.png",
-        "action": "Click",
-        "post_delay": 200,
-        "next": [
-            "点击删除p"
-        ]
-    },
-    "点击删除p": {
-        "recognition": "TemplateMatch",
-        "template": "删除.png",
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "确定删除p"
-        ]
-    },
-    "确定删除p": {
-        "recognition": "TemplateMatch",
-        "template": "确定.png",
-        "action": "Click",
-        "post_delay": 2000
     }
 }

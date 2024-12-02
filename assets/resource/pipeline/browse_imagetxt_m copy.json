@@ -6,6 +6,12 @@
             "wodes.png",
             "wodes_.png"
         ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
@@ -16,26 +22,39 @@
             "点击内容c"
         ]
     },
+    "点击关注列表mc": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "点击选择大象号mc"
+        ]
+    },
+    "点击选择大象号mc": {
+        "recognition": "OCR",
+        "expected": [
+            "用户_14428",
+            "河南信息广播",
+            "河南新闻广播"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "next": [
+            "向上滑动mc"
+        ]
+    },
     "点击内容c": {
         "recognition": "OCR",
         "expected": "内容",
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "点击图文内容c"
+            "向上滑动mc"
         ]
     },
-    "点击图文内容c": {
-        "recognition": "OCR",
-        "expected": "图文",
-        "action": "Click",
-        "pre_wait_freezes": 200,
-        "post_delay": 1000,
-        "next": [
-            "图文向上滑动c"
-        ]
-    },
-    "图文向上滑动c": {
+    "向上滑动mc": {
         "action": "Swipe",
         "begin": [
             200,
@@ -49,8 +68,19 @@
             10,
             10
         ],
+        "duration": 1000,
         "post_delay": 1000,
         "post_wait_freezes": 200,
+        "next": [
+            "点击图文内容c"
+        ]
+    },
+    "点击图文内容c": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 1000,
         "next": [
             "点击图文mc"
         ]
@@ -69,65 +99,29 @@
         "post_wait_freezes": 1000,
         "next": [
             "浏览图文结束c",
-            "图文点赞mc",
-            "图文点赞1mc"
+            "图文点赞mc"
         ]
     },
     "图文点赞mc": {
         "recognition": "TemplateMatch",
-        "template": "点赞.png",
-        "action": "Click",
-        "next": [
-            "图文收藏mc",
-            "图文收藏1mc"
-        ]
-    },
-    "图文点赞1mc": {
-        "recognition": "TemplateMatch",
-        "template": "点赞1.png",
-        "action": "Click",
-        "target": true,
-        "target_offset": [
-            0,
-            0,
-            0,
-            0
+        "template": [
+            "点赞.png",
+            "点赞1.png"
         ],
+        "action": "Click",
         "next": [
-            "图文收藏mc",
-            "图文收藏1mc"
+            "图文收藏mc"
         ]
     },
     "图文收藏mc": {
         "recognition": "TemplateMatch",
-        "template": "收藏.png",
-        "action": "Click",
-        "next": [
-            "完成每日分享c",
-            "图文分享mc"
-        ]
-    },
-    "图文收藏1mc": {
-        "recognition": "TemplateMatch",
-        "template": "收藏1.png",
-        "action": "Click",
-        "target": true,
-        "target_offset": [
-            0,
-            0,
-            0,
-            0
+        "template": [
+            "收藏.png",
+            "收藏1.png"
         ],
+        "action": "Click",
         "next": [
-            "完成每日分享c",
             "图文分享mc"
-        ]
-    },
-    "完成每日分享c": {
-        "recognition": "OCR",
-        "expected": "随拍 6",
-        "next": [
-            "图文评论mc"
         ]
     },
     "图文分享mc": {

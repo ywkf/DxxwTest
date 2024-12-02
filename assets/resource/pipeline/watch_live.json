@@ -6,6 +6,12 @@
             "wodes.png",
             "wodes_.png"
         ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
