@@ -1758,7 +1758,157 @@
         "key": 4,
         "post_delay": 2000,
         "next": [
+            "WatchTV"
+        ]
+    },
+    "WatchTV": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
             "Back"
+        ],
+        "next": [
+            "MypointsTV"
+        ]
+    },
+    "MypointsTV": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "SwipeUpTV"
+        ]
+    },
+    "SwipeUpTV": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 2000,
+        "next": [
+            "ClickWatching"
+        ]
+    },
+    "ClickWatching": {
+        "recognition": "OCR",
+        "expected": "去观看",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "WatchingTV"
+        ]
+    },
+    "WatchingTV": {
+        "recognition": "OCR",
+        "expected": [
+            "节目单",
+            "地市频道"
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "TVRadioComplete0"
+        ]
+    },
+    "TVRadioComplete0": {
+        "recognition": "OCR",
+        "expected": [
+            "完成看电视、听广播"
+        ],
+        "action": "Swipe",
+        "begin": [
+            380,
+            575,
+            10,
+            10
+        ],
+        "end": [
+            125,
+            575,
+            10,
+            10
+        ],
+        "timeout": 20000,
+        "post_delay": 5000,
+        "on_error": [
+            "TVRadioComplete01"
+        ],
+        "next": [
+            "TVRadioComplete02"
+        ]
+    },
+    "TVRadioComplete01": {
+        "recognition": "OCR",
+        "expected": [
+            "完成看电视、听广播"
+        ],
+        "action": "Swipe",
+        "begin": [
+            380,
+            575,
+            10,
+            10
+        ],
+        "end": [
+            125,
+            575,
+            10,
+            10
+        ],
+        "timeout": 20000,
+        "post_delay": 5000,
+        "on_error": [
+            "TVRadioTimeout01"
+        ],
+        "next": [
+            "TVRadioComplete02"
+        ]
+    },
+    "TVRadioTimeout01": {
+        "next": [
+            "TVRadioComplete02"
+        ]
+    },
+    "TVRadioComplete02": {
+        "recognition": "OCR",
+        "expected": [
+            "完成看电视、听广播"
+        ],
+        "post_delay": 2000,
+        "timeout": 20000,
+        "on_error": [
+            "TVRadioTimeout02"
+        ],
+        "next": [
+            "PublishX2"
+        ]
+    },
+    "TVRadioTimeout02": {
+        "next": [
+            "PublishX2"
         ]
     }
 }

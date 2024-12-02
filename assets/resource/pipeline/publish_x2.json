@@ -1,0 +1,400 @@
+{
+    "PublishX2": {
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "Home"
+        ]
+    },
+    "Home": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "首页.png",
+            "首页0.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ClickxxAI"
+        ]
+    },
+    "ClickxxAI": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "象小AI",
+        "roi": [
+            12,
+            11,
+            689,
+            118
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "next": [
+            "ClickInputTxt01"
+        ]
+    },
+    "ClickInputTxt01": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "InputPrompt01"
+        ]
+    },
+    "InputPrompt01": {
+        "action": "InputText",
+        "input_text": "随机一句古诗、古语或成语解读",
+        "next": [
+            "SendPrompt01"
+        ]
+    },
+    "SendPrompt01": {
+        "recognition": "TemplateMatch",
+        "template": "send.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "next": [
+            "CopyReply01"
+        ]
+    },
+    "CopyReply01": {
+        "recognition": "TemplateMatch",
+        "template": "copy.png",
+        "action": "Click",
+        "next": [
+            "ClickPublishWorks01"
+        ]
+    },
+    "ClickPublishWorks01": {
+        "recognition": "OCR",
+        "expected": "发布作品",
+        "roi": [
+            15,
+            1082,
+            685,
+            70
+        ],
+        "action": "Click",
+        "next": [
+            "Chat01"
+        ]
+    },
+    "Chat01": {
+        "recognition": "OCR",
+        "expected": "热聊",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "ClickTextBox01"
+        ]
+    },
+    "ClickTextBox01": {
+        "recognition": "OCR",
+        "expected": "想说点什么吧",
+        "action": "Click",
+        "target": [
+            30,
+            160,
+            200,
+            120
+        ],
+        "next": [
+            "InputReply01"
+        ]
+    },
+    "InputReply01": {
+        "action": "Swipe",
+        "begin": [
+            61,
+            194,
+            10,
+            10
+        ],
+        "end": [
+            81,
+            194,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "next": [
+            "PasteReply01"
+        ]
+    },
+    "PasteReply01": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "PasteFail01",
+            "ClickTopic01"
+        ]
+    },
+    "PasteFail01": {
+        "recognition": "TemplateMatch",
+        "template": "发布框.png",
+        "next": [
+            "XFPaste01"
+        ]
+    },
+    "XFPaste01": {
+        "recognition": "TemplateMatch",
+        "template": "edit.png",
+        "roi": [
+            5,
+            728,
+            709,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "ClickXFPaste01"
+        ]
+    },
+    "ClickXFPaste01": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "ClickTopic01"
+        ]
+    },
+    "ClickTopic01": {
+        "recognition": "OCR",
+        "expected": "#话题",
+        "action": "Click",
+        "next": [
+            "SwipeTopic01"
+        ]
+    },
+    "SwipeTopic01": {
+        "action": "Swipe",
+        "begin": [
+            100,
+            1250,
+            10,
+            10
+        ],
+        "end": [
+            100,
+            1150,
+            10,
+            10
+        ],
+        "next": [
+            "SelectTopic01",
+            "SwipeTopic01"
+        ]
+    },
+    "SelectTopic01": {
+        "recognition": "OCR",
+        "expected": "#",
+        "index": 2,
+        "action": "Click",
+        "next": [
+            "ClickPublish01"
+        ]
+    },
+    "ClickPublish01": {
+        "recognition": "OCR",
+        "expected": "发布",
+        "action": "Click",
+        "next": [
+            "PublishSuccess01"
+        ]
+    },
+    "PublishSuccess01": {
+        "recognition": "OCR",
+        "expected": "发布已提交",
+        "post_delay": 2000,
+        "next": [
+            "ClickInputTxt02"
+        ]
+    },
+    "ClickInputTxt02": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "InputPrompt02"
+        ]
+    },
+    "InputPrompt02": {
+        "action": "InputText",
+        "input_text": "随机一句古诗、古语或成语解读",
+        "next": [
+            "SendPrompt02"
+        ]
+    },
+    "SendPrompt02": {
+        "recognition": "TemplateMatch",
+        "template": "send.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "next": [
+            "CopyReply02"
+        ]
+    },
+    "CopyReply02": {
+        "recognition": "TemplateMatch",
+        "template": "copy.png",
+        "action": "Click",
+        "next": [
+            "ClickPublishWorks02"
+        ]
+    },
+    "ClickPublishWorks02": {
+        "recognition": "OCR",
+        "expected": "发布作品",
+        "roi": [
+            15,
+            1082,
+            685,
+            70
+        ],
+        "action": "Click",
+        "next": [
+            "Chat02"
+        ]
+    },
+    "Chat02": {
+        "recognition": "OCR",
+        "expected": "热聊",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "ClickTextBox02"
+        ]
+    },
+    "ClickTextBox02": {
+        "recognition": "OCR",
+        "expected": "想说点什么吧",
+        "action": "Click",
+        "target": [
+            30,
+            160,
+            200,
+            120
+        ],
+        "next": [
+            "InputReply02"
+        ]
+    },
+    "InputReply02": {
+        "action": "Swipe",
+        "begin": [
+            61,
+            194,
+            10,
+            10
+        ],
+        "end": [
+            81,
+            194,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "next": [
+            "PasteReply02"
+        ]
+    },
+    "PasteReply02": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "PasteFail02",
+            "ClickTopic02"
+        ]
+    },
+    "PasteFail02": {
+        "recognition": "TemplateMatch",
+        "template": "发布框.png",
+        "next": [
+            "XFPaste02"
+        ]
+    },
+    "XFPaste02": {
+        "recognition": "TemplateMatch",
+        "template": "edit.png",
+        "roi": [
+            5,
+            728,
+            709,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "ClickXFPaste02"
+        ]
+    },
+    "ClickXFPaste02": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "ClickTopic02"
+        ]
+    },
+    "ClickTopic02": {
+        "recognition": "OCR",
+        "expected": "#话题",
+        "action": "Click",
+        "next": [
+            "SwipeTopic02"
+        ]
+    },
+    "SwipeTopic02": {
+        "action": "Swipe",
+        "begin": [
+            100,
+            1250,
+            10,
+            10
+        ],
+        "end": [
+            100,
+            1150,
+            10,
+            10
+        ],
+        "next": [
+            "SelectTopic02",
+            "SwipeTopic02"
+        ]
+    },
+    "SelectTopic02": {
+        "recognition": "OCR",
+        "expected": "#",
+        "index": 2,
+        "action": "Click",
+        "next": [
+            "ClickPublish02"
+        ]
+    },
+    "ClickPublish02": {
+        "recognition": "OCR",
+        "expected": "发布",
+        "action": "Click",
+        "next": [
+            "PublishSuccess02"
+        ]
+    },
+    "PublishSuccess02": {
+        "recognition": "OCR",
+        "expected": "发布已提交",
+        "post_delay": 2000,
+        "next": [
+            "Back"
+        ]
+    }
+}

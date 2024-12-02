@@ -48,7 +48,11 @@
         },
         {
             "name": "发布作品",
-            "entry": "Post"
+            "entry": "Publish"
+        },
+        {
+            "name": "发布作品x2",
+            "entry": "PublishX2"
         },
         {
             "name": "删除发布内容",
@@ -59,8 +63,8 @@
             "entry": "DeletePost"
         },
         {
-            "name": "浏览图文、音视频和直播（选择已关注大象号）",
-            "entry": "MergeBrowseItVL",
+            "name": "浏览图文、音视频和直播（选择已关注的大象号）",
+            "entry": "MergeBrowsePublish",
             "option": [
                 "DxhSwitch"
             ]
