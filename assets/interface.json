@@ -66,7 +66,7 @@
             "entry": "MergeSigninGetpoints"
         },
         {
-            "name": "浏览图文、音视频和直播（选择已关注的大象号）",
+            "name": "一键完成浏览和发布（选择已关注的大象号）",
             "entry": "MergeBrowsePublish",
             "option": [
                 "DxhSwitch"
