@@ -54,16 +54,16 @@
             "entry": "Publish"
         },
         {
-            "name": "发布作品x2",
+            "name": "发布作品x2（建议手动发布）",
             "entry": "PublishX2"
         },
         {
-            "name": "删除发布内容",
+            "name": "删除发布内容x1（重复内容建议删除）",
             "entry": "DeletePost"
         },
         {
             "name": "签到和领取通知每日积分",
-            "entry": "DeletePost"
+            "entry": "MergeSigninGetpoints"
         },
         {
             "name": "浏览图文、音视频和直播（选择已关注的大象号）",

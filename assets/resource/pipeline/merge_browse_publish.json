@@ -92,12 +92,6 @@
             200
         ],
         "action": "Click",
-        "target": [
-            15,
-            220,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -110,7 +104,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtFavorite"
         ]
@@ -121,7 +127,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "ImagetxtShare"
         ]
@@ -216,7 +234,12 @@
     },
     "ResetLike": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "ResetFavorite"
@@ -224,7 +247,12 @@
     },
     "ResetFavorite": {
         "action": "Click",
-        "target": "ImagetxtFavorite",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack"
@@ -266,7 +294,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtFavorite02"
         ]
@@ -277,7 +317,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "ImagetxtShare02"
         ]
@@ -363,7 +415,12 @@
     },
     "ResetLike02": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "ResetFavorite02"
@@ -371,7 +428,12 @@
     },
     "ResetFavorite02": {
         "action": "Click",
-        "target": "ImagetxtFavorite",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack02"
@@ -413,7 +475,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtFavorite03"
         ]
@@ -424,7 +498,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "ImagetxtShare03"
         ]
@@ -510,7 +596,12 @@
     },
     "ResetLike03": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "ResetFavorite03"
@@ -518,7 +609,12 @@
     },
     "ResetFavorite03": {
         "action": "Click",
-        "target": "ImagetxtFavorite",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack03"
@@ -560,7 +656,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtFavorite04"
         ]
@@ -571,7 +679,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "ImagetxtShare04"
         ]
@@ -657,7 +777,12 @@
     },
     "ResetLike04": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "ResetFavorite04"
@@ -665,7 +790,12 @@
     },
     "ResetFavorite04": {
         "action": "Click",
-        "target": "ImagetxtFavorite",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack04"
@@ -707,7 +837,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtFavorite05"
         ]
@@ -718,7 +860,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "ImagetxtShare05"
         ]
@@ -804,7 +958,12 @@
     },
     "ResetLike05": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "ResetFavorite05"
@@ -812,7 +971,12 @@
     },
     "ResetFavorite05": {
         "action": "Click",
-        "target": "ImagetxtFavorite",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack05"
@@ -830,7 +994,7 @@
         "action": "Swipe",
         "begin": [
             675,
-            1177,
+            1180,
             10,
             10
         ],
@@ -855,12 +1019,6 @@
             200
         ],
         "action": "Click",
-        "target": [
-            15,
-            220,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -873,7 +1031,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtFavorite06"
         ]
@@ -884,7 +1054,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "ImagetxtShare06"
         ]
@@ -970,7 +1152,12 @@
     },
     "ResetLike06": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "ResetFavorite06"
@@ -978,7 +1165,12 @@
     },
     "ResetFavorite06": {
         "action": "Click",
-        "target": "ImagetxtFavorite",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack06"
@@ -1020,7 +1212,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtComment07"
         ]
@@ -1068,7 +1272,12 @@
     },
     "ResetLike07": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack07"
@@ -1110,7 +1319,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtComment08"
         ]
@@ -1158,7 +1379,12 @@
     },
     "ResetLike08": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack08"
@@ -1200,7 +1426,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtComment09"
         ]
@@ -1248,7 +1486,12 @@
     },
     "ResetLike09": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack09"
@@ -1290,7 +1533,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtComment10"
         ]
@@ -1338,7 +1593,12 @@
     },
     "ResetLike10": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack10"
@@ -1356,7 +1616,7 @@
         "action": "Swipe",
         "begin": [
             675,
-            1177,
+            1195,
             10,
             10
         ],
@@ -1381,12 +1641,6 @@
             200
         ],
         "action": "Click",
-        "target": [
-            15,
-            220,
-            685,
-            200
-        ],
         "post_delay": 1100,
         "post_wait_freezes": 1100,
         "next": [
@@ -1399,7 +1653,19 @@
             "点赞.png",
             "点赞1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "ImagetxtComment11"
         ]
@@ -1447,7 +1713,12 @@
     },
     "ResetLike11": {
         "action": "Click",
-        "target": "ImagetxtLike",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "BrowseImagetxtBack11"
@@ -1649,7 +1920,7 @@
     },
     "SwipeVideo": {
         "action": "Swipe",
-        "duration": 500,
+        "duration": 300,
         "begin": [
             200,
             1000,
@@ -1723,6 +1994,8 @@
         ]
     },
     "LiveTimeout01": {
+        "action": "Key",
+        "key": 4,
         "next": [
             "ClickLive02"
         ]
@@ -1738,7 +2011,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
-            "WatchLiveComplete01"
+            "WatchLiveComplete02"
         ]
     },
     "WatchLiveComplete02": {
@@ -1765,6 +2038,9 @@
         "action": "Key",
         "key": 4,
         "post_delay": 2000,
+        "interrupt": [
+            "Back"
+        ],
         "next": [
             "WatchTV"
         ]
