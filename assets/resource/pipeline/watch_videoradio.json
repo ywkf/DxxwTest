@@ -1,6 +1,14 @@
 {
     "WatchVideoradio": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "WatchVideoradio1"
+        ]
+    },
+    "WatchVideoradio1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

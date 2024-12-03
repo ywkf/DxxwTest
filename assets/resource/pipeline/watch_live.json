@@ -1,6 +1,14 @@
 {
     "WatchLive": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "WatchLive1"
+        ]
+    },
+    "WatchLive1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

@@ -1,6 +1,14 @@
 {
-    "BrowseImagetxt_m": {
+    "BrowseImagetxtM": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "BrowseImagetxtM1"
+        ]
+    },
+    "BrowseImagetxtM1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
@@ -45,7 +53,7 @@
             10,
             10
         ],
-        "duration": 1000,
+        "duration": 500,
         "post_delay": 1000,
         "post_wait_freezes": 200,
         "next": [
@@ -63,8 +71,8 @@
         ]
     },
     "点击图文m": {
-        "recognition": "OCR",
-        "expected": "随拍",
+        "recognition": "TemplateMatch",
+        "template": "top.png",
         "action": "Click",
         "target": [
             50,
@@ -250,7 +258,9 @@
     },
     "浏览图文结束": {
         "recognition": "OCR",
-        "expected": "随心 5",
+        "expected": [
+            "（结束）"
+        ],
         "action": "Key",
         "key": 4,
         "post_delay": 1000,

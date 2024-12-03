@@ -1,6 +1,14 @@
 {
     "MergeSigninGetpoints": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeSigninGetpoints1"
+        ]
+    },
+    "MergeSigninGetpoints1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

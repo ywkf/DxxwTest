@@ -1,5 +1,6 @@
 {
     "PublishX2": {
+        "enabled": true,
         "post_wait_freezes": 500,
         "post_delay": 1000,
         "interrupt": [

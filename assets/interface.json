@@ -27,16 +27,19 @@
             "entry": "GetPoints"
         },
         {
-            "name": "浏览图文作品",
-            "entry": "BrowseImagetxt_m"
+            "name": "浏览图文作品（个人号使用 需准备素材）",
+            "entry": "BrowseImagetxtM"
         },
         {
-            "name": "浏览音视频作品",
-            "entry": "BrowseVedio_m"
+            "name": "浏览音视频作品（个人号使用 需准备素材）",
+            "entry": "BrowseVedioM"
         },
         {
             "name": "浏览图文和音视频作品",
-            "entry": "BrowseImagetxt_mc"
+            "entry": "BrowseImagetxtMC",
+            "option": [
+                "MyDxhSwitch"
+            ]
         },
         {
             "name": "看视频听广播",
@@ -72,9 +75,39 @@
         {
             "name": "返回个人页",
             "entry": "Back"
-        }
+        },
+        {
+            "name": "多个任务以空格间隔",
+            "entry": "Back"
+        },
     ],
     "option": {
+        "MyDxhSwitch": {
+            "cases": [
+                {
+                    "name": "个人账号（已准备素材）",
+                    "pipeline_override": {
+                        "点击关注列表mc": {
+                            "enabled": false
+                        },
+                        "BrowseImagetxtMC1": {
+                            "next": "点击内容c"
+                        }
+                    }
+                },
+                {
+                    "name": "关注账号（默认选择关注列表第一个）",
+                    "pipeline_override": {
+                        "点击关注列表mc": {
+                            "enabled": true
+                        },
+                        "BrowseImagetxtMC1": {
+                            "next": "点击关注列表mc"
+                        }
+                    }
+                }
+            ]
+        },
         "DxhSwitch": {
             "cases": [
                 {
@@ -94,13 +127,52 @@
                     }
                 },
                 {
+                    "name": "大象新闻",
+                    "pipeline_override": {
+                        "SelectDxh": {
+                            "expected": "大象新闻"
+                        }
+                    }
+                },
+                {
+                    "name": "大象财富",
+                    "pipeline_override": {
+                        "SelectDxh": {
+                            "expected": "大象财富"
+                        }
+                    }
+                },
+                {
+                    "name": "都市频道",
+                    "pipeline_override": {
+                        "SelectDxh": {
+                            "expected": "都市频道"
+                        }
+                    }
+                },
+                {
                     "name": "用户_1442826164161581057",
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "用户_14428"
                         }
                     }
-                }
+                },
+                {
+                    "name": "Dxh",
+                    "pipeline_override": {
+                        "SelectDxh": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南新闻广播",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道"
+                            ],
+                        }
+                    }
+                },
             ]
         }
     }

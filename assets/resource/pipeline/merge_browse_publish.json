@@ -1,6 +1,14 @@
 {
-    "MergeBrowseItVL": {
+    "MergeBrowsePublish": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish1"
+        ]
+    },
+    "MergeBrowsePublish1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

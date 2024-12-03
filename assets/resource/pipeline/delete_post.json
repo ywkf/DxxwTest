@@ -1,5 +1,14 @@
 {
     "DeletePost": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "DeletePost1"
+        ]
+    },
+    "DeletePost1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

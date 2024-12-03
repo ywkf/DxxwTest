@@ -1,6 +1,14 @@
 {
-    "BrowseVedio_m": {
+    "BrowseVedioM": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "BrowseVedioM1"
+        ]
+    },
+    "BrowseVedioM1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

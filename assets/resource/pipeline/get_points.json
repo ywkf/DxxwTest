@@ -1,6 +1,14 @@
 {
     "GetPoints": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "GetPoints1"
+        ]
+    },
+    "GetPoints1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

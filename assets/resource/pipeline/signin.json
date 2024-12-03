@@ -1,6 +1,14 @@
 {
     "Signin": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "Signin1"
+        ]
+    },
+    "Signin1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",

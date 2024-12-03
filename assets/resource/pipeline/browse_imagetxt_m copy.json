@@ -1,6 +1,14 @@
 {
-    "BrowseImagetxt_mc": {
+    "BrowseImagetxtMC": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "BrowseImagetxtMC1"
+        ]
+    },
+    "BrowseImagetxtMC1": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
@@ -19,10 +27,12 @@
             "Back"
         ],
         "next": [
-            "点击内容c"
+            "点击内容c",
+            "点击关注列表mc"
         ]
     },
     "点击关注列表mc": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": "关注",
         "action": "Click",
@@ -32,13 +42,13 @@
         ]
     },
     "点击选择大象号mc": {
-        "recognition": "OCR",
-        "expected": [
-            "用户_14428",
-            "河南信息广播",
-            "河南新闻广播"
-        ],
         "action": "Click",
+        "target": [
+            24,
+            156,
+            676,
+            93
+        ],
         "post_wait_freezes": 1000,
         "post_delay": 1000,
         "next": [
