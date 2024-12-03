@@ -42,6 +42,8 @@
         ]
     },
     "点击选择大象号mc": {
+        "recognition": "OCR",
+        "expected": "用户_14428",
         "action": "Click",
         "target": [
             24,

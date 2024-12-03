@@ -83,13 +83,16 @@
         ]
     },
     "ClickIt01": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            220,
-            685,
-            200
+            228,
+            693,
+            303
         ],
         "action": "Click",
         "post_delay": 500,
@@ -267,21 +270,18 @@
         ]
     },
     "ClickIt02": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            432,
-            685,
-            200
+            536,
+            695,
+            318
         ],
         "action": "Click",
-        "target": [
-            15,
-            432,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -448,21 +448,18 @@
         ]
     },
     "ClickIt03": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            644,
-            685,
-            200
+            856,
+            696,
+            308
         ],
         "action": "Click",
-        "target": [
-            15,
-            644,
-            685,
-            200
-        ],
         "post_delay": 3000,
         "post_wait_freezes": 1000,
         "next": [
@@ -625,25 +622,41 @@
         "key": 4,
         "post_delay": 800,
         "next": [
+            "SwipeUpivl01"
+        ]
+    },
+    "SwipeUpivl01": {
+        "action": "Swipe",
+        "begin": [
+            50,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            50,
+            280,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
             "ClickIt04"
         ]
     },
     "ClickIt04": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            850,
-            685,
-            200
+            228,
+            693,
+            303
         ],
         "action": "Click",
-        "target": [
-            15,
-            850,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -810,21 +823,18 @@
         ]
     },
     "ClickIt05": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            1053,
-            685,
-            200
+            536,
+            695,
+            318
         ],
         "action": "Click",
-        "target": [
-            15,
-            1053,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -987,36 +997,20 @@
         "key": 4,
         "post_delay": 800,
         "next": [
-            "SwipeUpivl01"
-        ]
-    },
-    "SwipeUpivl01": {
-        "action": "Swipe",
-        "begin": [
-            675,
-            1180,
-            10,
-            10
-        ],
-        "end": [
-            675,
-            200,
-            10,
-            10
-        ],
-        "duration": 1200,
-        "next": [
             "ClickIt06"
         ]
     },
     "ClickIt06": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            220,
-            685,
-            200
+            856,
+            696,
+            308
         ],
         "action": "Click",
         "post_delay": 500,
@@ -1181,25 +1175,41 @@
         "key": 4,
         "post_delay": 800,
         "next": [
+            "SwipeUpivl02"
+        ]
+    },
+    "SwipeUpivl02": {
+        "action": "Swipe",
+        "begin": [
+            50,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            50,
+            280,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
             "ClickIt07"
         ]
     },
     "ClickIt07": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            432,
-            685,
-            200
+            228,
+            693,
+            303
         ],
         "action": "Click",
-        "target": [
-            15,
-            432,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -1292,21 +1302,18 @@
         ]
     },
     "ClickIt08": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            644,
-            685,
-            200
+            536,
+            695,
+            318
         ],
         "action": "Click",
-        "target": [
-            15,
-            644,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -1399,21 +1406,18 @@
         ]
     },
     "ClickIt09": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            850,
-            685,
-            200
+            856,
+            696,
+            308
         ],
         "action": "Click",
-        "target": [
-            15,
-            850,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -1502,25 +1506,41 @@
         "key": 4,
         "post_delay": 800,
         "next": [
+            "SwipeUpivl03"
+        ]
+    },
+    "SwipeUpivl03": {
+        "action": "Swipe",
+        "begin": [
+            50,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            50,
+            280,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
             "ClickIt10"
         ]
     },
     "ClickIt10": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            1053,
-            685,
-            200
+            228,
+            693,
+            303
         ],
         "action": "Click",
-        "target": [
-            15,
-            1053,
-            685,
-            200
-        ],
         "post_delay": 500,
         "post_wait_freezes": 1000,
         "next": [
@@ -1609,36 +1629,20 @@
         "key": 4,
         "post_delay": 800,
         "next": [
-            "SwipeUpivl02"
-        ]
-    },
-    "SwipeUpivl02": {
-        "action": "Swipe",
-        "begin": [
-            675,
-            1195,
-            10,
-            10
-        ],
-        "end": [
-            675,
-            200,
-            10,
-            10
-        ],
-        "duration": 1200,
-        "next": [
             "ClickIt11"
         ]
     },
     "ClickIt11": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            220,
-            685,
-            200
+            536,
+            695,
+            318
         ],
         "action": "Click",
         "post_delay": 1100,
@@ -1733,21 +1737,18 @@
         ]
     },
     "ClickIt12": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            432,
-            685,
-            200
+            856,
+            696,
+            308
         ],
         "action": "Click",
-        "target": [
-            15,
-            432,
-            685,
-            200
-        ],
         "post_delay": 3200,
         "post_wait_freezes": 1200,
         "next": [
@@ -1759,25 +1760,41 @@
         "key": 4,
         "post_delay": 800,
         "next": [
+            "SwipeUpivl04"
+        ]
+    },
+    "SwipeUpivl04": {
+        "action": "Swipe",
+        "begin": [
+            50,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            50,
+            280,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
             "ClickIt13"
         ]
     },
     "ClickIt13": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            644,
-            685,
-            200
+            228,
+            693,
+            303
         ],
         "action": "Click",
-        "target": [
-            15,
-            644,
-            685,
-            200
-        ],
         "post_delay": 3200,
         "post_wait_freezes": 1300,
         "next": [
@@ -1793,21 +1810,18 @@
         ]
     },
     "ClickIt14": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            850,
-            685,
-            200
+            536,
+            695,
+            318
         ],
         "action": "Click",
-        "target": [
-            15,
-            850,
-            685,
-            200
-        ],
         "post_delay": 3200,
         "post_wait_freezes": 1400,
         "next": [
@@ -1823,21 +1837,18 @@
         ]
     },
     "ClickIt15": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            1053,
-            685,
-            200
+            856,
+            696,
+            308
         ],
         "action": "Click",
-        "target": [
-            15,
-            1053,
-            685,
-            200
-        ],
         "post_delay": 3200,
         "post_wait_freezes": 1500,
         "next": [
@@ -1849,25 +1860,41 @@
         "key": 4,
         "post_delay": 800,
         "next": [
+            "SwipeUpivl05"
+        ]
+    },
+    "SwipeUpivl05": {
+        "action": "Swipe",
+        "begin": [
+            50,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            50,
+            280,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
             "ClickIt16"
         ]
     },
     "ClickIt16": {
-        "recognition": "TemplateMatch",
-        "template": "Imagetxt.png",
+        "recognition": "OCR",
+        "expected": [
+            "阅读量",
+            "评论"
+        ],
         "roi": [
             15,
-            1053,
-            685,
-            200
+            228,
+            693,
+            303
         ],
         "action": "Click",
-        "target": [
-            15,
-            1053,
-            685,
-            200
-        ],
         "post_delay": 3200,
         "post_wait_freezes": 1500,
         "next": [
@@ -1885,12 +1912,34 @@
     "BrowseImagetxtComplete": {
         "post_delay": 500,
         "next": [
+            "ClickAudioPart",
+            "ClickVideoPart"
+        ]
+    },
+    "ClickAudioPart": {
+        "recognition": "OCR",
+        "expected": "音频",
+        "roi": [
+            2,
+            112,
+            718,
+            110
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
             "ClickVideoPart"
         ]
     },
     "ClickVideoPart": {
         "recognition": "OCR",
         "expected": "视频",
+        "roi": [
+            2,
+            112,
+            718,
+            110
+        ],
         "action": "Click",
         "post_delay": 500,
         "next": [
@@ -1901,17 +1950,17 @@
         "recognition": "TemplateMatch",
         "template": "watch.png",
         "roi": [
-            38,
-            239,
-            641,
-            437
+            26,
+            232,
+            670,
+            484
         ],
         "action": "Click",
         "target": [
-            38,
-            239,
-            641,
-            437
+            26,
+            232,
+            670,
+            484
         ],
         "post_delay": 3000,
         "next": [
@@ -1958,6 +2007,12 @@
     "ClickLivePart": {
         "recognition": "OCR",
         "expected": "直播",
+        "roi": [
+            2,
+            112,
+            718,
+            110
+        ],
         "action": "Click",
         "post_delay": 500,
         "next": [
@@ -1968,10 +2023,10 @@
         "pre_delay": 200,
         "action": "Click",
         "target": [
-            35,
-            238,
-            653,
-            440
+            28,
+            235,
+            666,
+            495
         ],
         "next": [
             "WatchLiveComplete01"
@@ -2003,10 +2058,10 @@
     "ClickLive02": {
         "pre_delay": 200,
         "target": [
-            35,
-            722,
-            653,
-            440
+            30,
+            760,
+            665,
+            499
         ],
         "action": "Click",
         "post_delay": 5000,

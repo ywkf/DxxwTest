@@ -39,9 +39,30 @@
             "点击视频内容"
         ]
     },
+    "点击音频内容": {
+        "recognition": "OCR",
+        "expected": "音频",
+        "roi": [
+            2,
+            112,
+            718,
+            110
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "点击视频内容"
+        ]
+    },
     "点击视频内容": {
         "recognition": "OCR",
         "expected": "视频",
+        "roi": [
+            2,
+            112,
+            718,
+            110
+        ],
         "action": "Click",
         "post_delay": 1000,
         "next": [

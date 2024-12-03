@@ -77,6 +77,12 @@
     "GettingPoints": {
         "recognition": "TemplateMatch",
         "template": "领取.png",
+        "roi": [
+            0,
+            138,
+            719,
+            216
+        ],
         "action": "Click",
         "post_delay": 1000,
         "next": [

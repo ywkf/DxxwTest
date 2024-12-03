@@ -96,7 +96,7 @@
                     }
                 },
                 {
-                    "name": "关注账号（默认选择关注列表第一个）",
+                    "name": "关注账号（用户_14428）",
                     "pipeline_override": {
                         "点击关注列表mc": {
                             "enabled": true
