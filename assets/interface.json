@@ -151,6 +151,14 @@
                     }
                 },
                 {
+                    "name": "大象帮",
+                    "pipeline_override": {
+                        "SelectDxh": {
+                            "expected": "大象帮"
+                        }
+                    }
+                },
+                {
                     "name": "用户_1442826164161581057",
                     "pipeline_override": {
                         "SelectDxh": {

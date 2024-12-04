@@ -1541,8 +1541,7 @@
             303
         ],
         "action": "Click",
-        "post_delay": 500,
-        "post_wait_freezes": 1000,
+        "post_delay": 1000,
         "next": [
             "ImagetxtLike10"
         ]
@@ -1627,7 +1626,7 @@
     "BrowseImagetxtBack10": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "ClickIt11"
         ]
@@ -1645,8 +1644,7 @@
             318
         ],
         "action": "Click",
-        "post_delay": 1100,
-        "post_wait_freezes": 1100,
+        "post_delay": 1000,
         "next": [
             "ImagetxtLike11"
         ]
@@ -1731,7 +1729,7 @@
     "BrowseImagetxtBack11": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "ClickIt12"
         ]
@@ -1749,8 +1747,7 @@
             308
         ],
         "action": "Click",
-        "post_delay": 3200,
-        "post_wait_freezes": 1200,
+        "post_delay": 3500,
         "next": [
             "BrowseImagetxtBack12"
         ]
@@ -1758,7 +1755,7 @@
     "BrowseImagetxtBack12": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "SwipeUpivl04"
         ]
@@ -1795,8 +1792,7 @@
             303
         ],
         "action": "Click",
-        "post_delay": 3200,
-        "post_wait_freezes": 1300,
+        "post_delay": 3500,
         "next": [
             "BrowseImagetxtBack13"
         ]
@@ -1804,7 +1800,7 @@
     "BrowseImagetxtBack13": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "ClickIt14"
         ]
@@ -1822,8 +1818,7 @@
             318
         ],
         "action": "Click",
-        "post_delay": 3200,
-        "post_wait_freezes": 1400,
+        "post_delay": 3500,
         "next": [
             "BrowseImagetxtBack14"
         ]
@@ -1831,7 +1826,7 @@
     "BrowseImagetxtBack14": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "ClickIt15"
         ]
@@ -1849,8 +1844,7 @@
             308
         ],
         "action": "Click",
-        "post_delay": 3200,
-        "post_wait_freezes": 1500,
+        "post_delay": 3500,
         "next": [
             "BrowseImagetxtBack15"
         ]
@@ -1858,7 +1852,7 @@
     "BrowseImagetxtBack15": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "SwipeUpivl05"
         ]
@@ -1895,8 +1889,7 @@
             303
         ],
         "action": "Click",
-        "post_delay": 3200,
-        "post_wait_freezes": 1500,
+        "post_delay": 3500,
         "next": [
             "BrowseImagetxtBack16"
         ]
@@ -1904,7 +1897,7 @@
     "BrowseImagetxtBack16": {
         "action": "Key",
         "key": 4,
-        "post_delay": 800,
+        "post_delay": 500,
         "next": [
             "BrowseImagetxtComplete"
         ]
