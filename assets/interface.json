@@ -66,11 +66,20 @@
             "entry": "MergeSigninGetpoints"
         },
         {
-            "name": "一键完成浏览和发布（选择已关注的大象号）",
+            "name": "完成全部浏览和发布（选择已关注的大象号）",
             "entry": "MergeBrowsePublish",
             "option": [
                 "DxhSwitch"
             ]
+        },
+        {
+            "name": "一键完成（选择已关注的大象号）",
+            "entry": "MergeSigninGetpoints",
+            "pipeline_override": {
+                "GettingPoints": {
+                    "next": "MergeBrowsePublish"
+                }
+            }
         },
         {
             "name": "返回个人页",
