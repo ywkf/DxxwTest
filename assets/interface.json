@@ -82,6 +82,21 @@
             }
         },
         {
+            "name": "一键完成（不发布作品）",
+            "entry": "MergeSigninGetpoints",
+            "pipeline_override": {
+                "GettingPoints": {
+                    "next": "MergeBrowsePublish"
+                },
+                "TVRadioComplete02": {
+                    "next": "Back"
+                },
+                "TVRadioTimeout02": {
+                    "next": "Back"
+                }
+            }
+        },
+        {
             "name": "返回个人页",
             "entry": "Back"
         },
