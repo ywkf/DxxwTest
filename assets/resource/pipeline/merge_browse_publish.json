@@ -86,7 +86,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -96,7 +97,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike"
         ]
@@ -105,7 +105,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -273,7 +275,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -283,7 +286,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike02"
         ]
@@ -292,7 +294,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -451,7 +455,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -460,8 +465,7 @@
             308
         ],
         "action": "Click",
-        "post_delay": 3000,
-        "post_wait_freezes": 1000,
+        "post_delay": 500,
         "next": [
             "ImagetxtLike03"
         ]
@@ -470,7 +474,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -648,7 +654,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -658,7 +665,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike04"
         ]
@@ -667,7 +673,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -826,7 +834,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -836,7 +845,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike05"
         ]
@@ -845,7 +853,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1004,7 +1014,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1014,7 +1025,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike06"
         ]
@@ -1023,7 +1033,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1201,7 +1213,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1211,7 +1224,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike07"
         ]
@@ -1220,7 +1232,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1305,7 +1319,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1315,7 +1330,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike08"
         ]
@@ -1324,7 +1338,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1409,7 +1425,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1419,7 +1436,6 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "post_wait_freezes": 1000,
         "next": [
             "ImagetxtLike09"
         ]
@@ -1428,7 +1444,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1532,7 +1550,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1550,7 +1569,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1635,7 +1656,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1653,7 +1675,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
         ],
         "roi": [
             405,
@@ -1738,7 +1762,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1783,7 +1808,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1809,7 +1835,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1835,7 +1862,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,
@@ -1880,7 +1908,8 @@
         "recognition": "OCR",
         "expected": [
             "阅读量",
-            "评论"
+            "评论",
+            "阅读"
         ],
         "roi": [
             15,

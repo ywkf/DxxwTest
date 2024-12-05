@@ -84,54 +84,52 @@
         "post_wait_freezes": 1000,
         "next": [
             "浏览图文结束",
-            "图文点赞m",
-            "图文点赞1m"
+            "图文点赞m"
         ]
     },
     "图文点赞m": {
         "recognition": "TemplateMatch",
-        "template": "点赞.png",
+        "template": [
+            "点赞.png",
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
-        "next": [
-            "图文收藏m",
-            "图文收藏1m"
-        ]
-    },
-    "图文点赞1m": {
-        "recognition": "TemplateMatch",
-        "template": "点赞1.png",
-        "action": "Click",
-        "target": true,
-        "target_offset": [
-            0,
-            0,
-            0,
-            0
+        "target": [
+            652,
+            1210,
+            38,
+            42
         ],
         "next": [
-            "图文收藏m",
-            "图文收藏1m"
+            "图文收藏m"
         ]
     },
     "图文收藏m": {
         "recognition": "TemplateMatch",
-        "template": "收藏.png",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
-        "next": [
-            "完成每日分享",
-            "图文分享m"
-        ]
-    },
-    "图文收藏1m": {
-        "recognition": "TemplateMatch",
-        "template": "收藏1.png",
-        "action": "Click",
-        "target": true,
-        "target_offset": [
-            0,
-            0,
-            0,
-            0
+        "target": [
+            501,
+            1208,
+            42,
+            44
         ],
         "next": [
             "完成每日分享",
@@ -215,7 +213,12 @@
     },
     "重置图文点赞m": {
         "action": "Click",
-        "target": "图文点赞m",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "重置图文收藏m"
@@ -223,7 +226,12 @@
     },
     "重置图文收藏m": {
         "action": "Click",
-        "target": "图文收藏m",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "评论成功返回m"

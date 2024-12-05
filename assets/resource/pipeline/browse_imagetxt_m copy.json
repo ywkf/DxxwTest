@@ -118,9 +118,23 @@
         "recognition": "TemplateMatch",
         "template": [
             "点赞.png",
-            "点赞1.png"
+            "点赞1.png",
+            "like0.pmg",
+            "like1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
         ],
         "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "next": [
             "图文收藏mc"
         ]
@@ -131,7 +145,19 @@
             "收藏.png",
             "收藏1.png"
         ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
         "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "next": [
             "图文分享mc"
         ]
@@ -206,7 +232,12 @@
     },
     "重置图文点赞mc": {
         "action": "Click",
-        "target": "图文点赞mc",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
         "post_delay": 800,
         "next": [
             "重置图文收藏mc"
@@ -214,7 +245,12 @@
     },
     "重置图文收藏mc": {
         "action": "Click",
-        "target": "图文收藏mc",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
         "post_delay": 800,
         "next": [
             "评论成功返回mc"

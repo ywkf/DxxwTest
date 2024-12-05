@@ -71,7 +71,8 @@
         ],
         "post_delay": 1000,
         "next": [
-            "GettingPoints"
+            "GettingPoints",
+            "Back"
         ]
     },
     "GettingPoints": {
