@@ -41,9 +41,9 @@ def get_git_commit_count():
 
 # 创建压缩包并添加文件
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
-    add_folder_to_zip(zipf, './assets/resource_picli/base/pipeline')
-    add_folder_to_zip(zipf, './assets/resource_picli/base/image')
-    add_folder_to_zip(zipf, './assets/resource_picli/data')
+    add_folder_to_zip(zipf, './assets/resource/pipeline')
+    add_folder_to_zip(zipf, './assets/resource/image')
+    # add_folder_to_zip(zipf, './assets/resource_picli/data')
     zipf.write('./assets/interface.json', 'interface.json')
 
 with open('version.txt', 'w', encoding='utf-8') as f:
