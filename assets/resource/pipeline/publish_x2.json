@@ -59,7 +59,7 @@
         "template": "send.png",
         "action": "Click",
         "post_wait_freezes": 1000,
-        "post_delay": 3000,
+        "post_delay": 3600,
         "next": [
             "Rebuild",
             "CopyReply01"
@@ -149,8 +149,8 @@
         ]
     },
     "PasteFail01": {
-        "recognition": "TemplateMatch",
-        "template": "发布框.png",
+        "recognition": "OCR",
+        "expected": "想说点什么吧~",
         "next": [
             "XFPaste01"
         ]
@@ -253,7 +253,7 @@
         "template": "send.png",
         "action": "Click",
         "post_wait_freezes": 1000,
-        "post_delay": 3000,
+        "post_delay": 3600,
         "next": [
             "Rebuild02",
             "CopyReply02"
@@ -343,8 +343,8 @@
         ]
     },
     "PasteFail02": {
-        "recognition": "TemplateMatch",
-        "template": "发布框.png",
+        "recognition": "OCR",
+        "expected": "想说点什么吧~",
         "next": [
             "XFPaste02"
         ]
