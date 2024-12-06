@@ -27,11 +27,11 @@
             "entry": "GetPoints"
         },
         {
-            "name": "浏览图文作品（个人号使用 需准备素材）",
+            "name": "浏览图文作品（个人号）",
             "entry": "BrowseImagetxtM"
         },
         {
-            "name": "浏览音视频作品（个人号使用 需准备素材）",
+            "name": "浏览音视频作品（个人号）",
             "entry": "BrowseVedioM"
         },
         {
@@ -54,11 +54,11 @@
             "entry": "Publish"
         },
         {
-            "name": "发布作品x2（建议手动发布）",
+            "name": "发布作品x2",
             "entry": "PublishX2"
         },
         {
-            "name": "删除发布内容x1（重复内容建议删除）",
+            "name": "删除发布内容",
             "entry": "DeletePost"
         },
         {
@@ -110,10 +110,6 @@
         },
         {
             "name": "返回个人页",
-            "entry": "Back"
-        },
-        {
-            "name": "多个任务以空格间隔",
             "entry": "Back"
         }
     ],
