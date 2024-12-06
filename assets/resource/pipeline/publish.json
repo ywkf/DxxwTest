@@ -59,7 +59,7 @@
         "template": "send.png",
         "action": "Click",
         "post_wait_freezes": 1000,
-        "post_delay": 3000,
+        "post_delay": 3600,
         "next": [
             "复制回答p"
         ]
@@ -138,8 +138,8 @@
         ]
     },
     "粘贴未成功": {
-        "recognition": "TemplateMatch",
-        "template": "发布框.png",
+        "recognition": "OCR",
+        "expected": "想说点什么吧~",
         "next": [
             "输入法粘贴"
         ]
