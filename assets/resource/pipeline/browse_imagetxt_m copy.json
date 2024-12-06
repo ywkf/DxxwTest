@@ -21,7 +21,6 @@
             98
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 1000,
         "interrupt": [
             "Back"
@@ -51,7 +50,6 @@
             676,
             93
         ],
-        "post_wait_freezes": 1000,
         "post_delay": 1000,
         "next": [
             "向上滑动mc"
@@ -82,7 +80,6 @@
         ],
         "duration": 1000,
         "post_delay": 1000,
-        "post_wait_freezes": 200,
         "next": [
             "点击图文内容c"
         ]
@@ -108,7 +105,6 @@
             400
         ],
         "post_delay": 1000,
-        "post_wait_freezes": 1000,
         "next": [
             "浏览图文结束c",
             "图文点赞mc"
@@ -297,7 +293,6 @@
         "action": "Key",
         "key": 4,
         "post_delay": 1000,
-        "post_wait_freezes": 1000,
         "next": [
             "点击视频内容"
         ]

@@ -21,7 +21,6 @@
             98
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 1000,
         "interrupt": [
             "Back"
@@ -55,7 +54,6 @@
         ],
         "duration": 500,
         "post_delay": 1000,
-        "post_wait_freezes": 200,
         "next": [
             "点击图文内容"
         ]
@@ -81,7 +79,6 @@
             400
         ],
         "post_delay": 1000,
-        "post_wait_freezes": 1000,
         "next": [
             "浏览图文结束",
             "图文点赞m"

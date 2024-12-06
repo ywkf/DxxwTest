@@ -231,7 +231,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike"
@@ -411,7 +410,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike02"
@@ -591,7 +589,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike03"
@@ -790,7 +787,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike04"
@@ -970,7 +966,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike05"
@@ -1150,7 +1145,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike06"
@@ -1288,7 +1282,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike07"
@@ -1394,7 +1387,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike08"
@@ -1500,7 +1492,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike09"
@@ -1625,7 +1616,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
             "ResetLike10"
