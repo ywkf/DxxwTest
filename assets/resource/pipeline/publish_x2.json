@@ -51,6 +51,28 @@
         "action": "InputText",
         "input_text": "随机一句古诗、古语或成语解读，不要重复",
         "next": [
+            "AnalogInput01",
+            "SendPrompt01"
+        ]
+    },
+    "AnalogInput01": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "action": "InputText",
+        "input_text": "suijiyijugushijiedu",
+        "next": [
+            "AnalogInput02"
+        ]
+    },
+    "AnalogInput02": {
+        "recognition": "OCR",
+        "expected": [
+            "随机一句古诗解读",
+            "随机一句古",
+            "古诗"
+        ],
+        "action": "Click",
+        "next": [
             "SendPrompt01"
         ]
     },
@@ -145,7 +167,8 @@
         "action": "Click",
         "next": [
             "PasteFail01",
-            "ClickTopic01"
+            "ClickTopic01",
+            "Input#01"
         ]
     },
     "PasteFail01": {
@@ -174,13 +197,21 @@
         "expected": "粘贴",
         "action": "Click",
         "next": [
-            "ClickTopic01"
+            "ClickTopic01",
+            "Input#01"
         ]
     },
     "ClickTopic01": {
         "recognition": "OCR",
         "expected": "#话题",
         "action": "Click",
+        "next": [
+            "SwipeTopic01"
+        ]
+    },
+    "Input#01": {
+        "action": "InputText",
+        "input_text": "#",
         "next": [
             "SwipeTopic01"
         ]
@@ -207,7 +238,7 @@
     "SelectTopic01": {
         "recognition": "OCR",
         "expected": "#",
-        "index": 2,
+        "index": 3,
         "action": "Click",
         "next": [
             "ClickPublish01"
@@ -245,7 +276,29 @@
         "action": "InputText",
         "input_text": "随机一句古语或成语解读，不要重复",
         "next": [
+            "AnalogInput03",
             "SendPrompt02"
+        ]
+    },
+    "AnalogInput03": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "action": "InputText",
+        "input_text": "suijiyijuguyujiedu",
+        "next": [
+            "AnalogInput03"
+        ]
+    },
+    "AnalogInput04": {
+        "recognition": "OCR",
+        "expected": [
+            "随机一句古语解读",
+            "随机一句古",
+            "古语"
+        ],
+        "action": "Click",
+        "next": [
+            "SendPrompt01"
         ]
     },
     "SendPrompt02": {
@@ -339,7 +392,8 @@
         "action": "Click",
         "next": [
             "PasteFail02",
-            "ClickTopic02"
+            "ClickTopic02",
+            "Input#02"
         ]
     },
     "PasteFail02": {
@@ -368,13 +422,21 @@
         "expected": "粘贴",
         "action": "Click",
         "next": [
-            "ClickTopic02"
+            "ClickTopic02",
+            "Input#02"
         ]
     },
     "ClickTopic02": {
         "recognition": "OCR",
         "expected": "#话题",
         "action": "Click",
+        "next": [
+            "SwipeTopic02"
+        ]
+    },
+    "Input#02": {
+        "action": "InputText",
+        "input_text": "#",
         "next": [
             "SwipeTopic02"
         ]
@@ -401,7 +463,7 @@
     "SelectTopic02": {
         "recognition": "OCR",
         "expected": "#",
-        "index": 2,
+        "index": 3,
         "action": "Click",
         "next": [
             "ClickPublish02"
