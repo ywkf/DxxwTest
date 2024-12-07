@@ -91,6 +91,27 @@
             }
         },
         {
+            "name": "一键完成（跳过图文）",
+            "entry": "MergeSigninGetpoints",
+            "option": [
+                "DxhSwitch"
+            ],
+            "pipeline_override": {
+                "SwipeUpivl": {
+                    "next": "ClickVideoPart"
+                },
+                "GettingPoints": {
+                    "next": "MergeBrowsePublish"
+                },
+                "SwipeUPsg": {
+                    "next": [
+                        "GettingPoints",
+                        "MergeBrowsePublish"
+                    ]
+                }
+            }
+        },
+        {
             "name": "一键完成（不发布作品）",
             "entry": "MergeSigninGetpoints",
             "option": [

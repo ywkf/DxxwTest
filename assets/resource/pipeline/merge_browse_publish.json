@@ -233,6 +233,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent",
+            "ResetLike"
+        ]
+    },
+    "RepetitiveContent": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment",
             "ResetLike"
         ]
     },
@@ -412,6 +424,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent02",
+            "ResetLike02"
+        ]
+    },
+    "RepetitiveContent02": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment02",
             "ResetLike02"
         ]
     },
@@ -591,6 +615,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent03",
+            "ResetLike03"
+        ]
+    },
+    "RepetitiveContent03": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment03",
             "ResetLike03"
         ]
     },
@@ -789,6 +825,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent04",
+            "ResetLike04"
+        ]
+    },
+    "RepetitiveContent04": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment04",
             "ResetLike04"
         ]
     },
@@ -968,6 +1016,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent05",
+            "ResetLike05"
+        ]
+    },
+    "RepetitiveContent05": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment05",
             "ResetLike05"
         ]
     },
@@ -1147,6 +1207,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent06",
+            "ResetLike06"
+        ]
+    },
+    "RepetitiveContent06": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment06",
             "ResetLike06"
         ]
     },
@@ -1284,6 +1356,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent07",
+            "ResetLike07"
+        ]
+    },
+    "RepetitiveContent07": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment07",
             "ResetLike07"
         ]
     },
@@ -1389,6 +1473,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent08",
+            "ResetLike08"
+        ]
+    },
+    "RepetitiveContent08": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment08",
             "ResetLike08"
         ]
     },
@@ -1494,6 +1590,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent09",
+            "ResetLike09"
+        ]
+    },
+    "RepetitiveContent09": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment09",
             "ResetLike09"
         ]
     },
@@ -1618,6 +1726,18 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "RepetitiveContent10",
+            "ResetLike10"
+        ]
+    },
+    "RepetitiveContent10": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment10",
             "ResetLike10"
         ]
     },
@@ -1721,9 +1841,20 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
+            "RepetitiveContent11",
+            "ResetLike11"
+        ]
+    },
+    "RepetitiveContent11": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "ImagetxtComment11",
             "ResetLike11"
         ]
     },
@@ -1976,7 +2107,51 @@
         ],
         "post_delay": 3000,
         "next": [
+            "Landscape",
             "SwipeVideo"
+        ]
+    },
+    "Landscape": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png",
+            "like0.png",
+            "like1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "next": [
+            "LandscapeBack"
+        ]
+    },
+    "LandscapeBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "SwipeToNextVideo"
+        ]
+    },
+    "SwipeToNextVideo": {
+        "action": "Swipe",
+        "begin": [
+            350,
+            900,
+            10,
+            10
+        ],
+        "end": [
+            350,
+            585,
+            10,
+            10
+        ],
+        "next": [
+            "ClickVideo"
         ]
     },
     "SwipeVideo": {

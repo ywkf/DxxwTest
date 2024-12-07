@@ -223,6 +223,18 @@
         "template": "发表.png",
         "action": "Click",
         "next": [
+            "评论重复mc",
+            "重置图文点赞mc"
+        ]
+    },
+    "评论重复mc": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "next": [
+            "图文评论mc",
             "重置图文点赞mc"
         ]
     },
