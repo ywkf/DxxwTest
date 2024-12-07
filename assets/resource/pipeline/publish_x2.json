@@ -101,6 +101,17 @@
         "recognition": "TemplateMatch",
         "template": "copy.png",
         "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "CopyReply01"
+        ],
+        "next": [
+            "CopySuccess01"
+        ]
+    },
+    "CopySuccess01": {
+        "recognition": "OCR",
+        "expected": "复制成功",
         "next": [
             "ClickPublishWorks01"
         ]
@@ -326,6 +337,16 @@
         "recognition": "TemplateMatch",
         "template": "copy.png",
         "action": "Click",
+        "interrupt": [
+            "CopyReply02"
+        ],
+        "next": [
+            "CopySuccess02"
+        ]
+    },
+    "CopySuccess02": {
+        "recognition": "OCR",
+        "expected": "复制成功",
         "next": [
             "ClickPublishWorks02"
         ]
