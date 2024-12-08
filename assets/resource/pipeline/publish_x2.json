@@ -297,7 +297,7 @@
         "action": "InputText",
         "input_text": "suijiyijuguyujiedu",
         "next": [
-            "AnalogInput03"
+            "AnalogInput04"
         ]
     },
     "AnalogInput04": {
