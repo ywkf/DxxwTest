@@ -51,20 +51,27 @@
         "action": "InputText",
         "input_text": "随机一句古诗、古语或成语解读，不要重复",
         "next": [
-            "AnalogInput01",
+            "AnalogInputClick01",
             "SendPrompt01"
         ]
     },
-    "AnalogInput01": {
+    "AnalogInputClick01": {
         "recognition": "OCR",
         "expected": "请输入您的问题",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "AnalogInput011"
+        ]
+    },
+    "AnalogInput011": {
         "action": "InputText",
         "input_text": "suijiyijugushijiedu",
         "next": [
-            "AnalogInput02"
+            "AnalogInput012"
         ]
     },
-    "AnalogInput02": {
+    "AnalogInput012": {
         "recognition": "OCR",
         "expected": [
             "随机一句古诗解读",
@@ -287,20 +294,27 @@
         "action": "InputText",
         "input_text": "随机一句古语或成语解读，不要重复",
         "next": [
-            "AnalogInput03",
+            "AnalogInputClick02",
             "SendPrompt02"
         ]
     },
-    "AnalogInput03": {
+    "AnalogInputClick02": {
         "recognition": "OCR",
         "expected": "请输入您的问题",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "AnalogInput021"
+        ]
+    },
+    "AnalogInput021": {
         "action": "InputText",
         "input_text": "suijiyijuguyujiedu",
         "next": [
-            "AnalogInput04"
+            "AnalogInput022"
         ]
     },
-    "AnalogInput04": {
+    "AnalogInput022": {
         "recognition": "OCR",
         "expected": [
             "随机一句古语解读",
@@ -309,7 +323,7 @@
         ],
         "action": "Click",
         "next": [
-            "SendPrompt01"
+            "SendPrompt02"
         ]
     },
     "SendPrompt02": {
