@@ -2355,8 +2355,30 @@
         ],
         "action": "Click",
         "post_delay": 200,
+        "timeout": 20000,
+        "on_error": [
+            "TVRadioSwipe"
+        ],
         "next": [
             "TVRadioComplete0"
+        ]
+    },
+    "TVRadioSwipe": {
+        "action": "Swipe",
+        "begin": [
+            380,
+            575,
+            10,
+            10
+        ],
+        "end": [
+            125,
+            575,
+            10,
+            10
+        ],
+        "next": [
+            "TVRadioComplete02"
         ]
     },
     "TVRadioComplete0": {
