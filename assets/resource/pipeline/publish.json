@@ -49,7 +49,36 @@
     },
     "输入问题p": {
         "action": "InputText",
-        "input_text": "随机一句古诗、古语或成语解读，不要重复",
+        "input_text": "随机一句古语或成语解读，不要重复",
+        "next": [
+            "未输入问题",
+            "发送问题p"
+        ]
+    },
+    "未输入问题": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "输入法输入问题1"
+        ]
+    },
+    "输入法输入问题1": {
+        "action": "InputText",
+        "input_text": "suijiyijuguyujiedu",
+        "next": [
+            "输入法输入问题2"
+        ]
+    },
+    "输入法输入问题2": {
+        "recognition": "OCR",
+        "expected": [
+            "随机一句古语解读",
+            "随机一句古",
+            "古语"
+        ],
+        "action": "Click",
         "next": [
             "发送问题p"
         ]
