@@ -183,6 +183,9 @@
         "recognition": "OCR",
         "expected": "粘贴",
         "action": "Click",
+        "interrupt": [
+            "InputmethodCheck"
+        ],
         "next": [
             "PasteFail01",
             "ClickTopic01",
@@ -192,6 +195,9 @@
     "PasteFail01": {
         "recognition": "OCR",
         "expected": "想说点什么吧~",
+        "interrupt": [
+            "InputmethodCheck"
+        ],
         "next": [
             "XFPaste01"
         ]

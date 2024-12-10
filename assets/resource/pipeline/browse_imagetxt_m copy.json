@@ -206,6 +206,9 @@
             300,
             30
         ],
+        "interrupt": [
+            "InputmethodCheck"
+        ],
         "next": [
             "输入评论内容mc"
         ]

@@ -1,0 +1,49 @@
+{
+    "InputmethodCheck": {
+        "recognition": "TemplateMatch",
+        "template": "keyboard.png",
+        "roi": [
+            0,
+            0,
+            134,
+            45
+        ],
+        "action": "Swipe",
+        "begin": [
+            97,
+            22,
+            10,
+            10
+        ],
+        "end": [
+            97,
+            850,
+            10,
+            10
+        ],
+        "next": [
+            "ClickInputmethod"
+        ]
+    },
+    "ClickInputmethod": {
+        "recognition": "OCR",
+        "expected": [
+            "选择输入法",
+            "英语"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "SelectInputmethod"
+        ]
+    },
+    "SelectInputmethod": {
+        "recognition": "OCR",
+        "expected": [
+            "讯飞输入法",
+            "搜狗输入法"
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    }
+}

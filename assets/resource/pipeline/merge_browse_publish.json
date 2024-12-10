@@ -215,6 +215,9 @@
             300,
             30
         ],
+        "interrupt": [
+            "InputmethodCheck"
+        ],
         "next": [
             "InputComment"
         ]

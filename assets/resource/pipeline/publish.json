@@ -161,6 +161,9 @@
         "recognition": "OCR",
         "expected": "粘贴",
         "action": "Click",
+        "interrupt": [
+            "InputmethodCheck"
+        ],
         "next": [
             "粘贴未成功",
             "点击话题"
@@ -169,6 +172,9 @@
     "粘贴未成功": {
         "recognition": "OCR",
         "expected": "想说点什么吧~",
+        "interrupt": [
+            "InputmethodCheck"
+        ],
         "next": [
             "输入法粘贴"
         ]
