@@ -184,12 +184,12 @@
         "expected": "粘贴",
         "action": "Click",
         "interrupt": [
-            "InputmethodCheck"
+            "InputmethodCheck",
+            "Input#01"
         ],
         "next": [
             "PasteFail01",
-            "ClickTopic01",
-            "Input#01"
+            "ClickTopic01"
         ]
     },
     "PasteFail01": {
@@ -220,9 +220,12 @@
         "recognition": "OCR",
         "expected": "粘贴",
         "action": "Click",
-        "next": [
-            "ClickTopic01",
+        "interrupt": [
+            "InputmethodCheck",
             "Input#01"
+        ],
+        "next": [
+            "ClickTopic01"
         ]
     },
     "ClickTopic01": {
