@@ -35,8 +35,26 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
+        "interrupt": [
+            "DxhSwipe"
+        ],
         "next": [
             "SelectDxh"
+        ]
+    },
+    "DxhSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            500,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
         ]
     },
     "SelectDxh": {

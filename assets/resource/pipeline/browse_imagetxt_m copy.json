@@ -36,6 +36,9 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
+        "interrupt": [
+            "DxhSwipe"
+        ],
         "next": [
             "点击选择大象号mc"
         ]

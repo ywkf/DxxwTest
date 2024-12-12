@@ -302,6 +302,7 @@
     "InputPrompt02": {
         "action": "InputText",
         "input_text": "随机一句古语或成语解读，不要重复",
+        "post_delay": 500,
         "next": [
             "AnalogInputClick02",
             "SendPrompt02"
