@@ -51,11 +51,18 @@
         },
         {
             "name": "发布作品",
-            "entry": "Publish"
+            "entry": "Publish",
+            "option": [
+                "选择发布内容"
+            ]
         },
         {
             "name": "发布作品x2",
-            "entry": "PublishX2"
+            "entry": "PublishX2",
+            "option": [
+                "PublishSwitch",
+                "PublishSwitch2"
+            ]
         },
         {
             "name": "删除发布内容",
@@ -286,6 +293,122 @@
                             "input_text": "suijiyijuchengyujiedu"
                         },
                         "AnalogInput012": {
+                            "expected": [
+                                "随机一句成语解读",
+                                "随机一句成",
+                                "成语"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "PublishSwitch2": {
+            "cases": [
+                {
+                    "name": "古诗",
+                    "pipeline_override": {
+                        "InputPrompt02": {
+                            "input_text": "随机一句古诗解读，不要重复"
+                        },
+                        "AnalogInput021": {
+                            "input_text": "suijiyijugushijiedu"
+                        },
+                        "AnalogInput022": {
+                            "expected": [
+                                "随机一句古诗解读",
+                                "随机一句古",
+                                "古诗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "古语",
+                    "pipeline_override": {
+                        "InputPrompt02": {
+                            "input_text": "随机一句古语解读，不要重复"
+                        },
+                        "AnalogInput021": {
+                            "input_text": "suijiyijuguyujiedu"
+                        },
+                        "AnalogInput022": {
+                            "expected": [
+                                "随机一句古语解读",
+                                "随机一句古",
+                                "古语"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "成语",
+                    "pipeline_override": {
+                        "InputPrompt02": {
+                            "input_text": "随机一句成语解读，不要重复"
+                        },
+                        "AnalogInput021": {
+                            "input_text": "suijiyijuchengyujiedu"
+                        },
+                        "AnalogInput022": {
+                            "expected": [
+                                "随机一句成语解读",
+                                "随机一句成",
+                                "成语"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "选择发布内容": {
+            "cases": [
+                {
+                    "name": "古诗",
+                    "pipeline_override": {
+                        "输入问题p": {
+                            "input_text": "随机一句古诗解读，不要重复"
+                        },
+                        "输入法输入问题1": {
+                            "input_text": "suijiyijugushijiedu"
+                        },
+                        "输入法输入问题2": {
+                            "expected": [
+                                "随机一句古诗解读",
+                                "随机一句古",
+                                "古诗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "古语",
+                    "pipeline_override": {
+                        "输入问题p": {
+                            "input_text": "随机一句古语解读，不要重复"
+                        },
+                        "输入法输入问题1": {
+                            "input_text": "suijiyijuguyujiedu"
+                        },
+                        "输入法输入问题2": {
+                            "expected": [
+                                "随机一句古语解读",
+                                "随机一句古",
+                                "古语"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "成语",
+                    "pipeline_override": {
+                        "输入问题p": {
+                            "input_text": "随机一句成语解读，不要重复"
+                        },
+                        "输入法输入问题1": {
+                            "input_text": "suijiyijuchengyujiedu"
+                        },
+                        "输入法输入问题2": {
                             "expected": [
                                 "随机一句成语解读",
                                 "随机一句成",
