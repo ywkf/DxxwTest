@@ -26,12 +26,6 @@
         ]
     },
     "InputmethodCheck0": {
-        "roi": [
-            0,
-            0,
-            189,
-            45
-        ],
         "action": "Swipe",
         "begin": [
             97,
