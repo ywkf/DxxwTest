@@ -234,7 +234,8 @@
             30
         ],
         "interrupt": [
-            "InputmethodCheck"
+            "InputmethodCheck",
+            "InputmethodCheck0"
         ],
         "next": [
             "InputComment"
