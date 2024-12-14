@@ -210,7 +210,8 @@
             30
         ],
         "interrupt": [
-            "InputmethodCheck"
+            "InputmethodCheck",
+            "InputmethodCheck0"
         ],
         "next": [
             "输入评论内容mc"

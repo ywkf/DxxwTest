@@ -25,6 +25,30 @@
             "ClickInputmethod"
         ]
     },
+    "InputmethodCheck0": {
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "Swipe",
+        "begin": [
+            97,
+            22,
+            10,
+            10
+        ],
+        "end": [
+            97,
+            850,
+            10,
+            10
+        ],
+        "next": [
+            "ClickInputmethod"
+        ]
+    },
     "ClickInputmethod": {
         "recognition": "OCR",
         "expected": [

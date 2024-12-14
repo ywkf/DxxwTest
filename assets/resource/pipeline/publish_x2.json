@@ -185,6 +185,7 @@
         "action": "Click",
         "interrupt": [
             "InputmethodCheck",
+            "InputmethodCheck0",
             "Input#01"
         ],
         "next": [
@@ -196,7 +197,8 @@
         "recognition": "OCR",
         "expected": "想说点什么吧~",
         "interrupt": [
-            "InputmethodCheck"
+            "InputmethodCheck",
+            "InputmethodCheck0"
         ],
         "next": [
             "XFPaste01"
@@ -222,6 +224,7 @@
         "action": "Click",
         "interrupt": [
             "InputmethodCheck",
+            "InputmethodCheck0",
             "Input#01"
         ],
         "next": [

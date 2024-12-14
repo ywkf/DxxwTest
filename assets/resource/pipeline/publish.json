@@ -162,7 +162,8 @@
         "expected": "粘贴",
         "action": "Click",
         "interrupt": [
-            "InputmethodCheck"
+            "InputmethodCheck",
+            "InputmethodCheck0"
         ],
         "next": [
             "粘贴未成功",
@@ -173,7 +174,8 @@
         "recognition": "OCR",
         "expected": "想说点什么吧~",
         "interrupt": [
-            "InputmethodCheck"
+            "InputmethodCheck",
+            "InputmethodCheck0"
         ],
         "next": [
             "输入法粘贴"
