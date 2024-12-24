@@ -66,10 +66,30 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "next": [
-            "SwipeUpivl"
+            "SwipeUpivl",
+            "SelectDxh2nd"
+        ]
+    },
+    "SelectDxh2nd": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "SelectDxh"
         ]
     },
     "SwipeUpivl": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "全部"
+        ],
+        "roi": [
+            0,
+            707,
+            720,
+            558
+        ],
+        "pre_delay": 200,
         "action": "Swipe",
         "begin": [
             200,
@@ -2108,6 +2128,7 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "ErrorBackVedio",
             "ClickVideo"
         ]
     },

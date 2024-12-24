@@ -1,0 +1,47 @@
+{
+    "ErrorBackImagetxt": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish"
+        ]
+    },
+    "ErrorBackVedio": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish"
+        ]
+    },
+    "ErrorBackLive": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish"
+        ]
+    },
+    "ErrorBackRadio": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish"
+        ]
+    },
+    "ErrorBackPublish": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish"
+        ]
+    },
+}
