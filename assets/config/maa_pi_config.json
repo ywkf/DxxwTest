@@ -15,14 +15,7 @@
             }
         }
     },
-    "resource": [
-        {
-            "name": "dxxw",
-            "path": [
-                "{PROJECT_DIR}/resource"
-            ]
-        }
-    ],
+    "resource": "dxxw",
     "task": [
         {
             "name": "启动",

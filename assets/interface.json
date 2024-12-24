@@ -27,19 +27,31 @@
             "entry": "GetPoints"
         },
         {
-            "name": "浏览图文作品（个人号）",
-            "entry": "BrowseImagetxtM"
-        },
-        {
-            "name": "浏览音视频作品（个人号）",
-            "entry": "BrowseVedioM"
-        },
-        {
-            "name": "浏览图文和音视频作品",
-            "entry": "BrowseImagetxtMC",
+            "name": "浏览图文作品",
+            "entry": "MergeSigninGetpoints",
             "option": [
-                "MyDxhSwitch"
-            ]
+                "DxhSwitch"
+            ],
+            "pipeline_override": {
+                "BrowseImagetxtComplete": {
+                    "next": "Back"
+                }
+            }
+        },
+        {
+            "name": "浏览音视频作品",
+            "entry": "MergeSigninGetpoints",
+            "option": [
+                "DxhSwitch"
+            ],
+            "pipeline_override": {
+                "SwipeUpivl": {
+                    "next": "ClickVideoPart"
+                },
+                "BroswseVideoBack": {
+                    "next": "Back"
+                }
+            }
         },
         {
             "name": "看视频听广播",
@@ -47,7 +59,18 @@
         },
         {
             "name": "观看直播",
-            "entry": "WatchLive"
+            "entry": "MergeSigninGetpoints",
+            "option": [
+                "DxhSwitch"
+            ],
+            "pipeline_override": {
+                "SwipeUpivl": {
+                    "next": "ClickLivePart"
+                },
+                "WatchLiveBack": {
+                    "next": "Back"
+                }
+            }
         },
         {
             "name": "发布作品",
@@ -100,7 +123,7 @@
         },
         {
             "name": "一键完成（跳过图文）",
-            "entry": "MergeSigninGetpoints",
+            "entry": "MergeBrowsePublish",
             "option": [
                 "DxhSwitch",
                 "PublishSwitch"
@@ -108,15 +131,6 @@
             "pipeline_override": {
                 "SwipeUpivl": {
                     "next": "ClickVideoPart"
-                },
-                "GettingPoints": {
-                    "next": "MergeBrowsePublish"
-                },
-                "SwipeUPsg": {
-                    "next": [
-                        "GettingPoints",
-                        "MergeBrowsePublish"
-                    ]
                 }
             }
         },
