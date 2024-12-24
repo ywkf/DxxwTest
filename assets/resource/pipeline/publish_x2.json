@@ -318,8 +318,6 @@
         "recognition": "OCR",
         "expected": "发布",
         "action": "Click",
-        "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
         "next": [
             "PublishSuccess01"
         ]
@@ -332,7 +330,7 @@
         ],
         "post_delay": 2000,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "ClickInputTxt02"
         ]
@@ -343,7 +341,7 @@
         "action": "Click",
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "InputPrompt02"
         ]
@@ -353,7 +351,7 @@
         "input_text": "随机一句古语或成语解读，不要重复",
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "AnalogInputClick02",
             "SendPrompt02"
@@ -367,7 +365,7 @@
         "action": "Click",
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "AnalogInput021"
         ]
@@ -376,7 +374,7 @@
         "action": "InputText",
         "input_text": "suijiyijuguyujiedu",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "AnalogInput022"
         ]
@@ -390,7 +388,7 @@
         ],
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "SendPrompt02"
         ]
@@ -402,7 +400,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 3600,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "Rebuild02",
             "CopyReply02"
@@ -415,7 +413,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 5000,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "CopyReply02"
         ]
@@ -428,7 +426,7 @@
             "CopyReply02"
         ],
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "CopySuccess02"
         ]
@@ -437,7 +435,7 @@
         "recognition": "OCR",
         "expected": "复制成功",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "ClickPublishWorks02"
         ]
@@ -453,7 +451,7 @@
         ],
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "Chat02"
         ]
@@ -464,7 +462,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "ClickTextBox02"
         ]
@@ -480,7 +478,7 @@
             120
         ],
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "InputReply02"
         ]
@@ -501,7 +499,7 @@
         ],
         "duration": 1000,
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "PasteReply02"
         ]
@@ -511,7 +509,7 @@
         "expected": "粘贴",
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "PasteFail02",
             "ClickTopic02",
@@ -522,7 +520,7 @@
         "recognition": "OCR",
         "expected": "想说点什么吧~",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "XFPaste02"
         ]
@@ -538,7 +536,7 @@
         ],
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "ClickXFPaste02"
         ]
@@ -548,7 +546,7 @@
         "expected": "粘贴",
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "ClickTopic02",
             "Input#02"
@@ -559,7 +557,7 @@
         "expected": "#话题",
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "SwipeTopic02"
         ]
@@ -568,7 +566,7 @@
         "action": "InputText",
         "input_text": "#",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "SwipeTopic02"
         ]
@@ -588,7 +586,7 @@
             10
         ],
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "SelectTopic02",
             "SwipeTopic02"
@@ -600,7 +598,7 @@
         "index": 3,
         "action": "Click",
         "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
+        "on_error": "ErrorBackPublish",
         "next": [
             "ClickPublish02"
         ]
@@ -609,8 +607,6 @@
         "recognition": "OCR",
         "expected": "发布",
         "action": "Click",
-        "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
         "next": [
             "PublishSuccess02"
         ]
@@ -622,8 +618,6 @@
             "等待审核"
         ],
         "post_delay": 2000,
-        "timeout": 20000,
-        "on_error": "ErrorBackPublishX2",
         "next": [
             "Back"
         ]
