@@ -38,6 +38,8 @@
         "interrupt": [
             "DxhSwipe"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SelectDxh"
         ]
@@ -65,6 +67,8 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpivl",
             "SelectDxh2nd"
@@ -106,6 +110,8 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickImagetxtPart"
         ]
@@ -116,6 +122,8 @@
         "action": "Click",
         "pre_wait_freezes": 200,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt01"
         ]
@@ -135,6 +143,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike"
         ]
@@ -160,6 +170,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtFavorite"
         ]
@@ -183,6 +195,8 @@
             42,
             44
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtShare"
         ]
@@ -192,6 +206,8 @@
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeibo"
         ]
@@ -206,6 +222,8 @@
             103,
             148
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeiboSuccess",
             "WeiboLogin"
@@ -215,6 +233,8 @@
         "recognition": "OCR",
         "expected": "登录",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack"
         ]
@@ -223,6 +243,8 @@
         "recognition": "OCR",
         "expected": "完成分享积分+8",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack"
         ]
@@ -230,6 +252,8 @@
     "ShareSuccessBack": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment"
         ]
@@ -257,6 +281,8 @@
             "InputmethodCheck",
             "InputmethodCheck0"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment"
         ]
@@ -265,6 +291,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment"
         ]
@@ -274,6 +302,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent",
             "ResetLike"
@@ -285,6 +315,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment",
             "ResetLike"
@@ -299,6 +331,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ResetFavorite"
         ]
@@ -312,6 +346,8 @@
             44
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack"
         ]
@@ -320,6 +356,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt02"
         ]
@@ -339,6 +377,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike02"
         ]
@@ -364,6 +404,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtFavorite02"
         ]
@@ -387,6 +429,8 @@
             42,
             44
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtShare02"
         ]
@@ -396,6 +440,8 @@
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeibo02"
         ]
@@ -410,6 +456,8 @@
             103,
             148
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WeiboLogin02"
         ]
@@ -418,6 +466,8 @@
         "recognition": "OCR",
         "expected": "登录",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack02"
         ]
@@ -425,6 +475,8 @@
     "ShareSuccessBack02": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment02"
         ]
@@ -448,6 +500,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment02"
         ]
@@ -456,6 +510,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment02"
         ]
@@ -465,6 +521,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent02",
             "ResetLike02"
@@ -476,6 +534,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment02",
             "ResetLike02"
@@ -490,6 +550,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ResetFavorite02"
         ]
@@ -503,6 +565,8 @@
             44
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack02"
         ]
@@ -511,6 +575,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt03"
         ]
@@ -530,6 +596,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike03"
         ]
@@ -555,6 +623,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtFavorite03"
         ]
@@ -578,6 +648,8 @@
             42,
             44
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtShare03"
         ]
@@ -587,6 +659,8 @@
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeibo03"
         ]
@@ -601,6 +675,8 @@
             103,
             148
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WeiboLogin03"
         ]
@@ -609,6 +685,8 @@
         "recognition": "OCR",
         "expected": "登录",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack03"
         ]
@@ -616,6 +694,8 @@
     "ShareSuccessBack03": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment03"
         ]
@@ -639,6 +719,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment03"
         ]
@@ -647,6 +729,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment03"
         ]
@@ -656,6 +740,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent03",
             "ResetLike03"
@@ -667,6 +753,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment03",
             "ResetLike03"
@@ -681,6 +769,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ResetFavorite03"
         ]
@@ -694,6 +784,8 @@
             44
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack03"
         ]
@@ -702,6 +794,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpivl01"
         ]
@@ -721,6 +815,8 @@
             10
         ],
         "duration": 1200,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt04"
         ]
@@ -740,6 +836,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike04"
         ]
@@ -765,6 +863,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtFavorite04"
         ]
@@ -788,6 +888,8 @@
             42,
             44
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtShare04"
         ]
@@ -797,6 +899,8 @@
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeibo04"
         ]
@@ -811,6 +915,8 @@
             104,
             148
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WeiboLogin04"
         ]
@@ -819,6 +925,8 @@
         "recognition": "OCR",
         "expected": "登录",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack04"
         ]
@@ -826,6 +934,8 @@
     "ShareSuccessBack04": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment04"
         ]
@@ -849,6 +959,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment04"
         ]
@@ -857,6 +969,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment04"
         ]
@@ -866,6 +980,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent04",
             "ResetLike04"
@@ -877,6 +993,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment04",
             "ResetLike04"
@@ -891,6 +1009,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ResetFavorite04"
         ]
@@ -904,6 +1024,8 @@
             44
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack04"
         ]
@@ -912,6 +1034,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt05"
         ]
@@ -931,6 +1055,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike05"
         ]
@@ -956,6 +1082,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtFavorite05"
         ]
@@ -979,6 +1107,8 @@
             42,
             44
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtShare05"
         ]
@@ -988,6 +1118,8 @@
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeibo05"
         ]
@@ -1002,6 +1134,8 @@
             105,
             148
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WeiboLogin05"
         ]
@@ -1010,6 +1144,8 @@
         "recognition": "OCR",
         "expected": "登录",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack05"
         ]
@@ -1017,6 +1153,8 @@
     "ShareSuccessBack05": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment05"
         ]
@@ -1040,6 +1178,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment05"
         ]
@@ -1048,6 +1188,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment05"
         ]
@@ -1057,6 +1199,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent05",
             "ResetLike05"
@@ -1068,6 +1212,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment05",
             "ResetLike05"
@@ -1082,6 +1228,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ResetFavorite05"
         ]
@@ -1095,6 +1243,8 @@
             44
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack05"
         ]
@@ -1103,6 +1253,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt06"
         ]
@@ -1122,6 +1274,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike06"
         ]
@@ -1147,6 +1301,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtFavorite06"
         ]
@@ -1170,6 +1326,8 @@
             42,
             44
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtShare06"
         ]
@@ -1179,6 +1337,8 @@
         "template": "分享.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareToWeibo06"
         ]
@@ -1193,6 +1353,8 @@
             106,
             148
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WeiboLogin06"
         ]
@@ -1201,6 +1363,8 @@
         "recognition": "OCR",
         "expected": "登录",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ShareSuccessBack06"
         ]
@@ -1208,6 +1372,8 @@
     "ShareSuccessBack06": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment06"
         ]
@@ -1231,6 +1397,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment06"
         ]
@@ -1239,6 +1407,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment06"
         ]
@@ -1248,6 +1418,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent06",
             "ResetLike06"
@@ -1259,6 +1431,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment06",
             "ResetLike06"
@@ -1273,6 +1447,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ResetFavorite06"
         ]
@@ -1286,6 +1462,8 @@
             44
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack06"
         ]
@@ -1294,6 +1472,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpivl02"
         ]
@@ -1313,6 +1493,8 @@
             10
         ],
         "duration": 1200,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt07"
         ]
@@ -1332,6 +1514,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike07"
         ]
@@ -1357,6 +1541,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment07"
         ]
@@ -1380,6 +1566,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment07"
         ]
@@ -1388,6 +1576,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment07"
         ]
@@ -1397,6 +1587,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent07",
             "ResetLike07"
@@ -1408,6 +1600,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment07",
             "ResetLike07"
@@ -1422,6 +1616,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack07"
         ]
@@ -1430,6 +1626,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt08"
         ]
@@ -1449,6 +1647,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike08"
         ]
@@ -1474,6 +1674,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment08"
         ]
@@ -1497,6 +1699,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment08"
         ]
@@ -1505,6 +1709,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment08"
         ]
@@ -1514,6 +1720,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent08",
             "ResetLike08"
@@ -1525,6 +1733,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment08",
             "ResetLike08"
@@ -1539,6 +1749,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack08"
         ]
@@ -1547,6 +1759,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt09"
         ]
@@ -1566,6 +1780,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike09"
         ]
@@ -1591,6 +1807,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment09"
         ]
@@ -1614,6 +1832,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment09"
         ]
@@ -1622,6 +1842,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment09"
         ]
@@ -1631,6 +1853,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent09",
             "ResetLike09"
@@ -1642,6 +1866,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment09",
             "ResetLike09"
@@ -1656,6 +1882,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack09"
         ]
@@ -1664,6 +1892,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpivl03"
         ]
@@ -1683,6 +1913,8 @@
             10
         ],
         "duration": 1200,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt10"
         ]
@@ -1702,6 +1934,8 @@
         ],
         "action": "Click",
         "post_delay": 1000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike10"
         ]
@@ -1727,6 +1961,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment10"
         ]
@@ -1750,6 +1986,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment10"
         ]
@@ -1758,6 +1996,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment10"
         ]
@@ -1767,6 +2007,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent10",
             "ResetLike10"
@@ -1778,6 +2020,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment10",
             "ResetLike10"
@@ -1792,6 +2036,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack10"
         ]
@@ -1800,6 +2046,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt11"
         ]
@@ -1819,6 +2067,8 @@
         ],
         "action": "Click",
         "post_delay": 1000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtLike11"
         ]
@@ -1844,6 +2094,8 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment11"
         ]
@@ -1867,6 +2119,8 @@
             300,
             30
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "InputComment11"
         ]
@@ -1875,6 +2129,8 @@
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SendComment11"
         ]
@@ -1884,6 +2140,8 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "RepetitiveContent11",
             "ResetLike11"
@@ -1895,6 +2153,8 @@
             "不能发表重复内容",
             "重复内容"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ImagetxtComment11",
             "ResetLike11"
@@ -1909,6 +2169,8 @@
             42
         ],
         "post_delay": 800,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack11"
         ]
@@ -1917,6 +2179,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt12"
         ]
@@ -1936,6 +2200,8 @@
         ],
         "action": "Click",
         "post_delay": 3500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack12"
         ]
@@ -1944,6 +2210,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpivl04"
         ]
@@ -1963,6 +2231,8 @@
             10
         ],
         "duration": 1200,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt13"
         ]
@@ -1982,6 +2252,8 @@
         ],
         "action": "Click",
         "post_delay": 3500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack13"
         ]
@@ -1990,6 +2262,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt14"
         ]
@@ -2009,6 +2283,8 @@
         ],
         "action": "Click",
         "post_delay": 3500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack14"
         ]
@@ -2017,6 +2293,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt15"
         ]
@@ -2036,6 +2314,8 @@
         ],
         "action": "Click",
         "post_delay": 3500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack15"
         ]
@@ -2044,6 +2324,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpivl05"
         ]
@@ -2063,6 +2345,8 @@
             10
         ],
         "duration": 1200,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickIt16"
         ]
@@ -2082,6 +2366,8 @@
         ],
         "action": "Click",
         "post_delay": 3500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtBack16"
         ]
@@ -2090,12 +2376,16 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "BrowseImagetxtComplete"
         ]
     },
     "BrowseImagetxtComplete": {
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickAudioPart",
             "ClickVideoPart"
@@ -2112,6 +2402,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickVideoPart"
         ]
@@ -2127,6 +2419,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ErrorBackVedio",
             "ClickVideo"
@@ -2149,6 +2443,8 @@
             484
         ],
         "post_delay": 3000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "Landscape",
             "SwipeVideo"
@@ -2168,6 +2464,8 @@
             310,
             75
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "LandscapeBack"
         ]
@@ -2175,6 +2473,8 @@
     "LandscapeBack": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeToNextVideo"
         ]
@@ -2193,6 +2493,8 @@
             10,
             10
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickVideo"
         ]
@@ -2230,6 +2532,8 @@
     "BroswseVideoBack": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickLivePart"
         ]
@@ -2245,6 +2549,8 @@
         ],
         "action": "Click",
         "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickLive01"
         ]
@@ -2258,6 +2564,8 @@
             666,
             495
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WatchLiveComplete01"
         ]
@@ -2281,6 +2589,8 @@
     "LiveTimeout01": {
         "action": "Key",
         "key": 4,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickLive02"
         ]
@@ -2295,6 +2605,8 @@
         ],
         "action": "Click",
         "post_delay": 5000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WatchLiveComplete02"
         ]
@@ -2315,6 +2627,8 @@
         ]
     },
     "LiveTimeout02": {
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WatchLiveBack"
         ]
@@ -2326,6 +2640,8 @@
         "interrupt": [
             "Back"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WatchTV"
         ]
@@ -2349,6 +2665,8 @@
         "interrupt": [
             "Back"
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "MypointsTV"
         ]
@@ -2358,6 +2676,8 @@
         "expected": "我的积分",
         "action": "Click",
         "post_delay": 2000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "SwipeUpTV"
         ]
@@ -2377,6 +2697,8 @@
             10
         ],
         "post_delay": 2000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "ClickWatching"
         ]
@@ -2386,6 +2708,8 @@
         "expected": "去观看",
         "action": "Click",
         "post_delay": 1000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "WatchingTV"
         ]
@@ -2420,6 +2744,8 @@
             10,
             10
         ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "TVRadioComplete02"
         ]
@@ -2479,6 +2805,8 @@
         ]
     },
     "TVRadioTimeout01": {
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
         "next": [
             "TVRadioComplete02"
         ]

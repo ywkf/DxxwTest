@@ -32,16 +32,16 @@
             "Back"
         ],
         "next": [
-            "MergeBrowsePublish"
+            "WatchVideoradio"
         ]
     },
-    "ErrorBackPublish": {
+    "ErrorBackPublishX2": {
         "enabled": true,
         "interrupt": [
             "Back"
         ],
         "next": [
-            "MergeBrowsePublish"
+            "PublishX2"
         ]
     }
 }
