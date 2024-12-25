@@ -2649,7 +2649,7 @@
             "Back"
         ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackRadio",
         "next": [
             "MypointsTV"
         ]
@@ -2660,7 +2660,7 @@
         "action": "Click",
         "post_delay": 2000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackRadio",
         "next": [
             "SwipeUpTV"
         ]
@@ -2681,7 +2681,7 @@
         ],
         "post_delay": 2000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackRadio",
         "next": [
             "ClickWatching"
         ]
@@ -2692,7 +2692,7 @@
         "action": "Click",
         "post_delay": 1000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackRadio",
         "next": [
             "WatchingTV"
         ]
@@ -2727,8 +2727,6 @@
             10,
             10
         ],
-        "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
         "next": [
             "TVRadioComplete02"
         ]
@@ -2788,8 +2786,6 @@
         ]
     },
     "TVRadioTimeout01": {
-        "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
         "next": [
             "TVRadioComplete02"
         ]

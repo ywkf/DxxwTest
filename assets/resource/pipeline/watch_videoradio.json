@@ -71,6 +71,12 @@
     "点击大象台": {
         "recognition": "OCR",
         "expected": "大象台",
+        "roi": [
+            0,
+            1158,
+            719,
+            107
+        ],
         "action": "Click",
         "next": [
             "看电视"
