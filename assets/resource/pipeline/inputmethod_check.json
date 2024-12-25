@@ -23,13 +23,13 @@
     "InputmethodBox1": {
         "recognition": "OCR",
         "expected": "象小AI",
-        "action": "Click",
-        "target": [
-            171,
-            66,
-            309,
-            35
+        "roi": [
+            0,
+            0,
+            720,
+            190
         ],
+        "action": "Click",
         "post_delay": 200,
         "next": [
             "InputmethodBox2"
@@ -37,14 +37,14 @@
     },
     "InputmethodBox2": {
         "recognition": "OCR",
-        "expected": "取消",
-        "action": "Click",
-        "target": [
-            171,
-            66,
-            309,
-            35
+        "expected": "请输入您的问题",
+        "roi": [
+            1,
+            1140,
+            719,
+            125
         ],
+        "action": "Click",
         "post_delay": 200,
         "next": [
             "InputmethodCheck",
@@ -73,6 +73,7 @@
             10,
             10
         ],
+        "duration": 500,
         "next": [
             "ClickInputmethod"
         ]
@@ -91,6 +92,7 @@
             10,
             10
         ],
+        "duration": 500,
         "next": [
             "ClickInputmethod"
         ]
