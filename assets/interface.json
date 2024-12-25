@@ -203,6 +203,48 @@
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "河南信息广播"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "河南信息广播"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
+                            "expected": "河南信息广播"
                         }
                     }
                 },
@@ -210,6 +252,48 @@
                     "name": "河南卫视",
                     "pipeline_override": {
                         "SelectDxh": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "河南卫视"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
                             "expected": "河南卫视"
                         }
                     }
@@ -219,6 +303,48 @@
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "大象新闻"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "大象新闻"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
+                            "expected": "大象新闻"
                         }
                     }
                 },
@@ -226,6 +352,48 @@
                     "name": "大象财富",
                     "pipeline_override": {
                         "SelectDxh": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "大象财富"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
                             "expected": "大象财富"
                         }
                     }
@@ -235,6 +403,48 @@
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "都市报道"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "都市报道"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
+                            "expected": "都市报道"
                         }
                     }
                 },
@@ -242,6 +452,48 @@
                     "name": "大象帮",
                     "pipeline_override": {
                         "SelectDxh": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "大象帮"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
                             "expected": "大象帮"
                         }
                     }
@@ -251,6 +503,48 @@
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "潮新闻"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "潮新闻"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
+                            "expected": "潮新闻"
                         }
                     }
                 },
@@ -259,6 +553,48 @@
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "用户_14428"
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": "用户_1442826164161581057"
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
+                            "expected": "用户_1442826164161581057"
                         }
                     }
                 },
@@ -266,6 +602,174 @@
                     "name": "Dxh",
                     "pipeline_override": {
                         "SelectDxh": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorSelectDxh": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorSelectDxhLive": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh001": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh002": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh003": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh004": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh005": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh006": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh007": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh008": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh009": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh0010": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh0011": {
+                            "expected": [
+                                "用户_14428",
+                                "河南信息广播",
+                                "河南卫视",
+                                "大象新闻",
+                                "大象财富",
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
+                            ]
+                        },
+                        "ErrorImagetxtSelectDxh0012": {
                             "expected": [
                                 "用户_14428",
                                 "河南信息广播",
