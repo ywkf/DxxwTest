@@ -19,6 +19,10 @@
             "entry": "Startup"
         },
         {
+            "name": "检测输入法",
+            "entry": "InputmethodCheck00"
+        },
+        {
             "name": "签到",
             "entry": "Signin"
         },
@@ -104,12 +108,15 @@
         },
         {
             "name": "一键完成（选择已关注的大象号）",
-            "entry": "MergeSigninGetpoints",
+            "entry": "InputmethodCheck00",
             "option": [
                 "DxhSwitch",
                 "PublishSwitch"
             ],
             "pipeline_override": {
+                "SelectInputmethod": {
+                    "next": "MergeSigninGetpoints"
+                },
                 "GettingPoints": {
                     "next": "MergeBrowsePublish"
                 },

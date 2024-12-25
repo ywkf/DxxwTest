@@ -1,4 +1,56 @@
 {
+    "InputmethodCheck00": {
+        "enabled": true,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "InputmethodHome"
+        ]
+    },
+    "InputmethodHome": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "首页.png",
+            "首页0.png"
+        ],
+        "action": "Click",
+        "next": [
+            "InputmethodBox1"
+        ]
+    },
+    "InputmethodBox1": {
+        "recognition": "OCR",
+        "expected": "象小AI",
+        "action": "Click",
+        "target": [
+            171,
+            66,
+            309,
+            35
+        ],
+        "post_delay": 200,
+        "next": [
+            "InputmethodBox2"
+        ]
+    },
+    "InputmethodBox2": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "target": [
+            171,
+            66,
+            309,
+            35
+        ],
+        "post_delay": 200,
+        "next": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ]
+    },
     "InputmethodCheck": {
         "recognition": "TemplateMatch",
         "template": "keyboard.png",
@@ -62,6 +114,9 @@
             "搜狗输入法"
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_delay": 1000,
+        "next": [
+            "Stop"
+        ]
     }
 }
