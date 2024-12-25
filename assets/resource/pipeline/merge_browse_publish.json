@@ -2347,7 +2347,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackVedio",
         "next": [
             "ClickIt16"
         ]
@@ -2368,7 +2368,7 @@
         "action": "Click",
         "post_delay": 3500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackVedio",
         "next": [
             "BrowseImagetxtBack16"
         ]
@@ -2378,7 +2378,7 @@
         "key": 4,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": "ErrorBackVedio",
         "next": [
             "BrowseImagetxtComplete"
         ]
