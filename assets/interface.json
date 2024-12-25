@@ -202,10 +202,10 @@
                     }
                 },
                 {
-                    "name": "河南新闻广播",
+                    "name": "河南卫视",
                     "pipeline_override": {
                         "SelectDxh": {
-                            "expected": "河南新闻广播"
+                            "expected": "河南卫视"
                         }
                     }
                 },
@@ -226,10 +226,10 @@
                     }
                 },
                 {
-                    "name": "都市频道",
+                    "name": "都市报道",
                     "pipeline_override": {
                         "SelectDxh": {
-                            "expected": "都市频道"
+                            "expected": "都市报道"
                         }
                     }
                 },
@@ -238,6 +238,14 @@
                     "pipeline_override": {
                         "SelectDxh": {
                             "expected": "大象帮"
+                        }
+                    }
+                },
+                {
+                    "name": "潮新闻",
+                    "pipeline_override": {
+                        "SelectDxh": {
+                            "expected": "潮新闻"
                         }
                     }
                 },
@@ -256,10 +264,12 @@
                             "expected": [
                                 "用户_14428",
                                 "河南信息广播",
-                                "河南新闻广播",
+                                "河南卫视",
                                 "大象新闻",
                                 "大象财富",
-                                "都市报道"
+                                "都市报道",
+                                "大象帮",
+                                "潮新闻"
                             ]
                         }
                     }

@@ -27,6 +27,7 @@
             "Back"
         ],
         "next": [
+            "Skip2",
             "ClickSubs"
         ]
     },
@@ -2385,8 +2386,8 @@
     "BrowseImagetxtComplete": {
         "post_delay": 500,
         "next": [
-            "ClickAudioPart",
-            "ClickVideoPart"
+            "ClickVideoPart",
+            "ClickAudioPart"
         ]
     },
     "ClickAudioPart": {

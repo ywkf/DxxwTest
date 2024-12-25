@@ -7,10 +7,20 @@
         "package": "com.hnr.dxxw",
         "post_delay": 2000,
         "next": [
-            "Skip"
+            "Skip1"
         ]
     },
-    "Skip": {
+    "Skip1": {
+        "recognition": "OCR",
+        "expected": "跳过",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "Skip2",
+            "Back"
+        ]
+    },
+    "Skip2": {
         "recognition": "OCR",
         "expected": "跳过",
         "action": "Click",
