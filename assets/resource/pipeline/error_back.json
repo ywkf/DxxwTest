@@ -5,7 +5,7 @@
             "Back"
         ],
         "next": [
-            "MergeBrowsePublish"
+            "MergeBrowsePublish000"
         ]
     },
     "ErrorBackVedio": {
@@ -51,6 +51,82 @@
         ],
         "next": [
             "PublishX2"
+        ]
+    },
+    "MergeBrowsePublish000": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish1000"
+        ]
+    },
+    "MergeBrowsePublish1000": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "Skip2",
+            "ClickSubs000"
+        ]
+    },
+    "ClickSubs000": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "DxhSwipe"
+        ],
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
+        "next": [
+            "SelectDxh000"
+        ]
+    },
+    "DxhSwipe000": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            500,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "SelectDxh000": {
+        "recognition": "OCR",
+        "expected": [
+            "大象新闻"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
+        "next": [
+            "SwipeUpivl",
+            "SelectDxh2nd"
         ]
     },
     "ErrorGeneral": {
