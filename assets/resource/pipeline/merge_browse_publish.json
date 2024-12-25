@@ -2438,8 +2438,6 @@
             484
         ],
         "post_delay": 3000,
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "Landscape",
             "SwipeVideo"
@@ -2459,8 +2457,6 @@
             310,
             75
         ],
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "LandscapeBack"
         ]
@@ -2468,8 +2464,6 @@
     "LandscapeBack": {
         "action": "Key",
         "key": 4,
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "SwipeToNextVideo"
         ]
@@ -2488,8 +2482,6 @@
             10,
             10
         ],
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "ClickVideo"
         ]
@@ -2518,8 +2510,6 @@
     "BrowseVideoComplete": {
         "recognition": "TemplateMatch",
         "template": "浏览音视频完成.png",
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "SwipeVideo"
         ]
