@@ -111,7 +111,8 @@
             "entry": "InputmethodCheck00",
             "option": [
                 "DxhSwitch",
-                "PublishSwitch"
+                "PublishSwitch",
+                "输入法检测"
             ],
             "pipeline_override": {
                 "SelectInputmethod": {
@@ -143,11 +144,15 @@
         },
         {
             "name": "一键完成（不发布作品）",
-            "entry": "MergeSigninGetpoints",
+            "entry": "InputmethodCheck00",
             "option": [
-                "DxhSwitch"
+                "DxhSwitch",
+                "输入法检测"
             ],
             "pipeline_override": {
+                "SelectInputmethod": {
+                    "next": "MergeSigninGetpoints"
+                },
                 "GettingPoints": {
                     "next": "MergeBrowsePublish"
                 },
@@ -445,6 +450,26 @@
                                 "随机一句成",
                                 "成语"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "输入法检测": {
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "InputmethodCheck00": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "InputmethodCheck00": {
+                            "next": "MergeSigninGetpoints"
                         }
                     }
                 }
