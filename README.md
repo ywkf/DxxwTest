@@ -50,4 +50,3 @@ Dxxw
 ## 鸣谢
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 和 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 强力驱动！
-
