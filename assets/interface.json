@@ -115,7 +115,7 @@
         {
             "name": "一键完成（选择已关注的大象号）",
             "entry": "InputmethodCheck00",
-            "doc": "一键完成",
+            "doc": "一键完成，选择大象号、发布作品类型",
             "option": [
                 "DxhSwitch",
                 "PublishSwitch",
