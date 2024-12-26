@@ -23,6 +23,9 @@
 使用Mumu模拟器12（当前版本v4.1.6），分辨率设置为手机版 720×1280。
 需要安装第三方输入法（讯飞、搜狗），启动前需要确保模拟器键盘启用为该输入法（建议关闭输入法通知和更新）
 
+**2024.12.26 更新**
+加入了MFAWPF，现在可以运行MFAWPF.exe
+
 运行MaaPiCli.exe
 
 1.选项1自动扫描ADB
@@ -45,4 +48,5 @@ Dxxw
 
 ## 鸣谢
 
-本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
+本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 和 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 强力驱动！
+
