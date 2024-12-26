@@ -1,4 +1,10 @@
 {
+    "name": "DxxwTest",
+    "version": "0.0.81",
+    "url": "https://github.com/ywkf/DxxwTest",
+    "custom_title": "Dxxw",
+    "default_controller": "adb",
+    "lock_controller": false,
     "controller": [
         {
             "name": "安卓端",
