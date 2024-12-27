@@ -2204,6 +2204,66 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt0012",
         "next": [
+            "ImagetxtComment12"
+        ]
+    },
+    "ImagetxtComment12": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt0012",
+        "next": [
+            "InputComment12"
+        ]
+    },
+    "InputComment12": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt0012",
+        "next": [
+            "SendComment12"
+        ]
+    },
+    "SendComment12": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt0012",
+        "next": [
+            "RepetitiveContent12",
+            "BrowseImagetxtBack12"
+        ]
+    },
+    "RepetitiveContent12": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容"
+        ],
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt0011",
+        "next": [
+            "ImagetxtComment12",
             "BrowseImagetxtBack12"
         ]
     },
