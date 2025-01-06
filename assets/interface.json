@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.85",
+    "version": "0.0.86",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -27,6 +27,13 @@
         {
             "name": "检测输入法",
             "entry": "InputmethodCheck00"
+        },
+        {
+            "name": "延时/零点",
+            "entry": "Sleep",
+            "option": [
+                "SleepTime"
+            ]
         },
         {
             "name": "签到",
@@ -177,6 +184,50 @@
         }
     ],
     "option": {
+        "SleepTime": {
+            "cases": [
+                {
+                    "name": "10秒",
+                    "pipeline_override": {
+                        "Sleep": {
+                            "timeout": 10000
+                        }
+                    }
+                },
+                {
+                    "name": "10分钟",
+                    "pipeline_override": {
+                        "Sleep": {
+                            "timeout": 600000
+                        }
+                    }
+                },
+                {
+                    "name": "1小时",
+                    "pipeline_override": {
+                        "Sleep": {
+                            "timeout": 3600000
+                        }
+                    }
+                },
+                {
+                    "name": "1.5小时",
+                    "pipeline_override": {
+                        "Sleep": {
+                            "timeout": 5400000
+                        }
+                    }
+                },
+                {
+                    "name": "2小时",
+                    "pipeline_override": {
+                        "Sleep": {
+                            "timeout": 7200000
+                        }
+                    }
+                }
+            ]
+        },
         "MyDxhSwitch": {
             "cases": [
                 {

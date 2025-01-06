@@ -1,0 +1,16 @@
+{
+    "Sleep": {
+        "recognition": "OCR",
+        "expected": "0:00",
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "timeout": 600000,
+        "on_error": [
+            "Stop"
+        ]
+    }
+}
