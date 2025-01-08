@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.86",
+    "version": "0.0.87",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -25,12 +25,19 @@
             "entry": "Startup"
         },
         {
+            "name": "重启",
+            "entry": "Restart",
+            "doc": "闪退重启，自定义添加"
+        },
+        {
             "name": "检测输入法",
-            "entry": "InputmethodCheck00"
+            "entry": "InputmethodCheck00",
+            "doc": "启用第三方输入法"
         },
         {
             "name": "延时/零点",
             "entry": "Sleep",
+            "doc": "等待至零点或自定义时间",
             "option": [
                 "SleepTime"
             ]
@@ -71,7 +78,7 @@
             }
         },
         {
-            "name": "看视频听广播",
+            "name": "看电视听广播",
             "entry": "WatchVideoradio"
         },
         {
@@ -84,7 +91,7 @@
                 "SwipeUpivl": {
                     "next": "ClickLivePart"
                 },
-                "WatchLiveBack": {
+                "LiveTimeout02": {
                     "next": "Back"
                 }
             }
@@ -122,7 +129,7 @@
         {
             "name": "一键完成（选择已关注的大象号）",
             "entry": "InputmethodCheck00",
-            "doc": "一键完成，选择大象号、发布作品类型",
+            "doc": "一键完成，选择大象号、发布作品类型、是否输入法检测",
             "option": [
                 "DxhSwitch",
                 "PublishSwitch",
@@ -199,6 +206,14 @@
                     "pipeline_override": {
                         "Sleep": {
                             "timeout": 600000
+                        }
+                    }
+                },
+                {
+                    "name": "30分钟",
+                    "pipeline_override": {
+                        "Sleep": {
+                            "timeout": 1800000
                         }
                     }
                 },

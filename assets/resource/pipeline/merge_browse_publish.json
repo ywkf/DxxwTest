@@ -35,7 +35,7 @@
         "recognition": "OCR",
         "expected": "关注",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1000,
         "interrupt": [
             "DxhSwipe"
         ],
