@@ -186,6 +186,28 @@
             }
         },
         {
+            "name": "任务完成检测",
+            "entry": "TaskCheck",
+            "doc": "不检测发布任务，放在流程最后",
+            "pipeline_override": {
+                "BrowseImagetxtComplete": {
+                    "next": "TaskCheck"
+                },
+                "BroswseVideoBack": {
+                    "next": "TaskCheck"
+                },
+                "LiveTimeout02": {
+                    "next": "TaskCheck"
+                },
+                "完成看电视听广播2": {
+                    "next": "TaskCheck"
+                },
+                "看电视听广播超时2": {
+                    "next": "TaskCheck"
+                }
+            }
+        },
+        {
             "name": "返回个人页",
             "entry": "Back"
         }
