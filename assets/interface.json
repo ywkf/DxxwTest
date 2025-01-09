@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.87",
+    "version": "0.0.88",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -182,6 +182,28 @@
                 },
                 "TVRadioTimeout02": {
                     "next": "Back"
+                }
+            }
+        },
+        {
+            "name": "任务完成检测",
+            "entry": "TaskCheck",
+            "doc": "不检测发布任务，放在流程最后",
+            "pipeline_override": {
+                "BrowseImagetxtComplete": {
+                    "next": "TaskCheck"
+                },
+                "BroswseVideoBack": {
+                    "next": "TaskCheck"
+                },
+                "LiveTimeout02": {
+                    "next": "TaskCheck"
+                },
+                "完成看电视听广播2": {
+                    "next": "TaskCheck"
+                },
+                "看电视听广播超时2": {
+                    "next": "TaskCheck"
                 }
             }
         },

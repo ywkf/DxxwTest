@@ -1,0 +1,276 @@
+{
+    "TaskCheck": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "TaskMy"
+        ]
+    },
+    "TaskMy": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "TaskMyPoints"
+        ]
+    },
+    "TaskMyPoints": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 2000,
+        "interrupt": [
+            "TaskSwipe"
+        ],
+        "next": [
+            "TaskImagetxt"
+        ]
+    },
+    "TaskSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 500
+    },
+    "TaskImagetxt": {
+        "recognition": "OCR",
+        "expected": "浏览图文作品",
+        "next": [
+            "TaskImagetxtComplete",
+            "TaskImagetxtUndone"
+        ]
+    },
+    "TaskImagetxtComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "TaskImagetxt",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "TaskVideo"
+        ]
+    },
+    "TaskImagetxtUndone": {
+        "recognition": "OCR",
+        "expected": "去浏览",
+        "roi": "TaskImagetxt",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "TaskImagetxtUndoneLess",
+            "ErrorBackImagetxt"
+        ]
+    },
+    "TaskImagetxtUndoneLess": {
+        "recognition": "OCR",
+        "expected": [
+            "12/15",
+            "13/15",
+            "14/15"
+        ],
+        "roi": "TaskImagetxt",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "ErrorImagetxt0013"
+        ]
+    },
+    "TaskVideo": {
+        "recognition": "OCR",
+        "expected": "浏览音视频作品",
+        "next": [
+            "TaskVideoComplete",
+            "TaskVideoUndone"
+        ]
+    },
+    "TaskVideoComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "TaskVideo",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "interrupt": [
+            "TaskSwipe"
+        ],
+        "focus": true,
+        "next": [
+            "TaskNotification"
+        ]
+    },
+    "TaskVideoUndone": {
+        "recognition": "OCR",
+        "expected": "去浏览",
+        "roi": "TaskVideo",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "ErrorBackVedio"
+        ]
+    },
+    "TaskNotification": {
+        "recognition": "OCR",
+        "expected": "允许大象新闻",
+        "next": [
+            "TaskNotificationComplete",
+            "TaskNotificationUndone"
+        ]
+    },
+    "TaskNotificationComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "TaskNotification",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "TaskTVRadio"
+        ]
+    },
+    "TaskNotificationUndone": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": "TaskNotification",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "index": 1,
+        "action": "Click",
+        "focus": true,
+        "next": [
+            "TaskTVRadio"
+        ]
+    },
+    "TaskTVRadio": {
+        "recognition": "OCR",
+        "expected": "看电视、听广播",
+        "next": [
+            "TaskTVRadioComplete",
+            "TaskTVRadioUndone"
+        ]
+    },
+    "TaskTVRadioComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "TaskTVRadio",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "TaskLive"
+        ]
+    },
+    "TaskTVRadioUndone": {
+        "recognition": "OCR",
+        "expected": "去观看",
+        "roi": "TaskTVRadio",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "ErrorBackRadio"
+        ]
+    },
+    "TaskLive": {
+        "recognition": "OCR",
+        "expected": "看直播",
+        "next": [
+            "TaskLiveComplete",
+            "TaskLiveUndone"
+        ]
+    },
+    "TaskLiveComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "TaskLive",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "Back"
+        ]
+    },
+    "TaskLiveUndone": {
+        "recognition": "OCR",
+        "expected": "去观看",
+        "roi": "TaskLive",
+        "roi_offset": [
+            0,
+            0,
+            352,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "ErrorBackLive"
+        ]
+    }
+}
