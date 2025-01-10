@@ -78,7 +78,7 @@
         ],
         "focus": true,
         "next": [
-            "TaskVideo"
+            "TaskComment"
         ]
     },
     "TaskImagetxtUndone": {
@@ -112,6 +112,43 @@
             38
         ],
         "focus": true,
+        "next": [
+            "ErrorImagetxt0013"
+        ]
+    },
+    "TaskComment": {
+        "recognition": "OCR",
+        "expected": "评论",
+        "next": [
+            "TaskCommentCommplete",
+            "TaskCommentIndone"
+        ]
+    },
+    "TaskCommentCommplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "TaskComment",
+        "roi_offset": [
+            0,
+            0,
+            360,
+            38
+        ],
+        "focus": true,
+        "next": [
+            "TaskVideo"
+        ]
+    },
+    "TaskCommentIndone": {
+        "recognition": "OCR",
+        "expected": "去评论",
+        "roi": "TaskComment",
+        "roi_offset": [
+            0,
+            0,
+            360,
+            38
+        ],
         "next": [
             "ErrorImagetxt0013"
         ]
