@@ -23,7 +23,8 @@
         },
         {
             "name": "签到",
-            "option": []
+            "option": [],
+            "__vscExpand": false
         }
     ]
 }
