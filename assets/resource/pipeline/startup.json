@@ -29,9 +29,37 @@
             "Back"
         ]
     },
-    "Restart": {
+    "CheckDxxw": {
         "recognition": "OCR",
-        "expected": "大象新闻",
+        "expected": "大象新闻"
+    },
+    "StopApp": {
+        "recognition": "TemplateMatch",
+        "roi": "CheckDxxw",
+        "roi_offset": [
+            0,
+            -83,
+            0,
+            -83
+        ],
+        "template": "dxxw.png",
+        "action": "StopApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 3000,
+        "next": [
+            "Restart"
+        ]
+    },
+    "Restart": {
+        "recognition": "TemplateMatch",
+        "roi": "CheckDxxw",
+        "roi_offset": [
+            0,
+            -83,
+            0,
+            -83
+        ],
+        "template": "dxxw.png",
         "post_delay": 2000,
         "next": [
             "Startup"

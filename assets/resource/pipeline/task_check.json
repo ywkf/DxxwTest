@@ -2,6 +2,7 @@
     "TaskCheck": {
         "enabled": true,
         "interrupt": [
+            "StopApp",
             "Back"
         ],
         "next": [
