@@ -3,6 +3,7 @@
         "enabled": true,
         "interrupt": [
             "StopApp",
+            "Gddjt",
             "Back"
         ],
         "next": [
@@ -315,6 +316,23 @@
         "focus": true,
         "next": [
             "ErrorBackLive"
+        ]
+    },
+    "Gddjt": {
+        "recognition": "OCR",
+        "expected": "广电大讲堂",
+        "post_delay": 1000,
+        "next": [
+            "NoMyPoints"
+        ]
+    },
+    "NoMyPoints": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "inverse": true,
+        "post_delay": 1000,
+        "next": [
+            "StopApp"
         ]
     }
 }
