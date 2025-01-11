@@ -132,7 +132,7 @@
         "roi_offset": [
             0,
             0,
-            360,
+            600,
             38
         ],
         "focus": true,
@@ -147,7 +147,7 @@
         "roi_offset": [
             0,
             0,
-            360,
+            600,
             38
         ],
         "next": [
@@ -213,6 +213,9 @@
             352,
             38
         ],
+        "interrupt": [
+            "TaskSwipe"
+        ],
         "focus": true,
         "next": [
             "TaskTVRadio"
@@ -230,6 +233,9 @@
         ],
         "index": 1,
         "action": "Click",
+        "interrupt": [
+            "TaskSwipe"
+        ],
         "focus": true,
         "next": [
             "TaskTVRadio"
