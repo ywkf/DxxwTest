@@ -70,6 +70,9 @@
         "post_delay": 500,
         "timeout": 20000,
         "on_error": "ErrorBackImagetxt",
+        "focus": true,
+        "focus_succeeded": "识别进入大象号成功",
+        "focus_failed": "识别进入大象号失败，请检查所选账号是否在关注列表",
         "next": [
             "SwipeUpivl",
             "SelectDxh2nd"
@@ -125,6 +128,8 @@
         "post_delay": 500,
         "timeout": 20000,
         "on_error": "ErrorBackImagetxt",
+        "focus": true,
+        "focus_succeeded": "开始执行浏览图文任务",
         "next": [
             "ClickIt01"
         ]
@@ -2625,6 +2630,8 @@
     },
     "BrowseImagetxtComplete": {
         "post_delay": 500,
+        "focus": true,
+        "focus_succeeded": "浏览图文任务已完成",
         "next": [
             "ClickVideoPart",
             "ClickAudioPart"
@@ -2658,6 +2665,8 @@
         "post_delay": 500,
         "timeout": 20000,
         "on_error": "ErrorBackVedio",
+        "focus": true,
+        "focus_succeeded": "开始执行浏览音视频任务",
         "next": [
             "ClickVideo"
         ]
@@ -2760,6 +2769,8 @@
         "key": 4,
         "timeout": 20000,
         "on_error": "ErrorBackLive",
+        "focus": true,
+        "focus_succeeded": "浏览音视频任务已完成",
         "next": [
             "ClickLivePart"
         ]
@@ -2777,6 +2788,8 @@
         "post_delay": 500,
         "timeout": 20000,
         "on_error": "ErrorBackLive",
+        "focus": true,
+        "focus_succeeded": "开始执行观看直播任务",
         "next": [
             "ClickLive01"
         ]
@@ -2863,6 +2876,8 @@
         "action": "Key",
         "key": 4,
         "post_delay": 2000,
+        "focus": true,
+        "focus_succeeded": "观看直播任务已完成",
         "interrupt": [
             "Back"
         ],
@@ -2891,6 +2906,8 @@
         ],
         "timeout": 20000,
         "on_error": "ErrorBackRadio",
+        "focus": true,
+        "focus_succeeded": "开始执行看电视听广播任务",
         "next": [
             "MypointsTV"
         ]
@@ -3038,6 +3055,8 @@
         ],
         "post_delay": 2000,
         "timeout": 20000,
+        "focus": true,
+        "focus_succeeded": "看电视听广播任务已完成",
         "on_error": [
             "TVRadioTimeout02"
         ],
@@ -3046,6 +3065,8 @@
         ]
     },
     "TVRadioTimeout02": {
+        "focus": true,
+        "focus_succeeded": "看电视听广播任务已完成",
         "next": [
             "PublishX2"
         ]

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.92",
+    "version": "0.0.93",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -219,7 +219,8 @@
                     "name": "10秒",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 10000
+                            "timeout": 10000,
+                            "focus_tip": "等待10秒后进行..."
                         }
                     }
                 },
@@ -227,7 +228,8 @@
                     "name": "10分钟",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 600000
+                            "timeout": 600000,
+                            "focus_tip": "等待10分钟后进行..."
                         }
                     }
                 },
@@ -235,7 +237,8 @@
                     "name": "30分钟",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 1800000
+                            "timeout": 1800000,
+                            "focus_tip": "等待30分钟后进行..."
                         }
                     }
                 },
@@ -243,7 +246,8 @@
                     "name": "1小时",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 3600000
+                            "timeout": 3600000,
+                            "focus_tip": "等待1小时后进行..."
                         }
                     }
                 },
@@ -251,7 +255,8 @@
                     "name": "1.5小时",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 5400000
+                            "timeout": 5400000,
+                            "focus_tip": "等待90分钟后进行..."
                         }
                     }
                 },
@@ -259,7 +264,8 @@
                     "name": "2小时",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 7200000
+                            "timeout": 7200000,
+                            "focus_tip": "等待2小时后进行..."
                         }
                     }
                 }

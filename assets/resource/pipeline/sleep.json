@@ -9,6 +9,8 @@
             45
         ],
         "timeout": 600000,
+        "focus": true,
+        "focus_tip": "等待10分钟...",
         "on_error": [
             "Stop"
         ]

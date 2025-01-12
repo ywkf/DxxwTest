@@ -45,6 +45,8 @@
         "recognition": "OCR",
         "expected": "点击签到",
         "action": "Click",
+        "focus": true,
+        "focus_succeeded": "签到完成",
         "next": [
             "SwipeUPsg"
         ]
@@ -52,6 +54,8 @@
     "SignedIn": {
         "recognition": "OCR",
         "expected": "已签到",
+        "focus": true,
+        "focus_succeeded": "签到已完成",
         "next": [
             "SwipeUPsg"
         ]
@@ -87,6 +91,8 @@
         ],
         "action": "Click",
         "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "领取每日通知积分完成",
         "next": [
             "Back"
         ]

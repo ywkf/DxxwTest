@@ -79,6 +79,7 @@
             38
         ],
         "focus": true,
+        "focus_succeeded": "浏览图文已完成",
         "next": [
             "TaskComment"
         ]
@@ -94,9 +95,10 @@
             38
         ],
         "focus": true,
+        "focus_tip": "浏览图文未完成，前去完成",
         "next": [
             "TaskImagetxtUndoneLess",
-            "ErrorBackImagetxt"
+            "MergeBrowsePublish000"
         ]
     },
     "TaskImagetxtUndoneLess": {
@@ -137,6 +139,7 @@
             38
         ],
         "focus": true,
+        "focus_succeeded": "评论已完成",
         "next": [
             "TaskVideo"
         ]
@@ -151,6 +154,8 @@
             600,
             38
         ],
+        "focus": true,
+        "focus_tip": "评论未完成，前去完成",
         "next": [
             "ErrorImagetxt0013"
         ]
@@ -177,6 +182,7 @@
             "TaskSwipe"
         ],
         "focus": true,
+        "focus_succeeded": "浏览音视频已完成",
         "next": [
             "TaskNotification"
         ]
@@ -192,8 +198,9 @@
             38
         ],
         "focus": true,
+        "focus_tip": "浏览音视频未完成，前去完成",
         "next": [
-            "ErrorBackVedio"
+            "ErrorGeneral"
         ]
     },
     "TaskNotification": {
@@ -218,6 +225,7 @@
             "TaskSwipe"
         ],
         "focus": true,
+        "focus_succeeded": "每日通知积分已领取",
         "next": [
             "TaskTVRadio"
         ]
@@ -238,6 +246,7 @@
             "TaskSwipe"
         ],
         "focus": true,
+        "focus_succeeded": "每日通知积分已领取",
         "next": [
             "TaskTVRadio"
         ]
@@ -261,6 +270,7 @@
             38
         ],
         "focus": true,
+        "focus_succeeded": "看电视听广播已完成",
         "next": [
             "TaskLive"
         ]
@@ -276,8 +286,9 @@
             38
         ],
         "focus": true,
+        "focus_tip": "看电视听广播未完成，前去完成",
         "next": [
-            "ErrorBackRadio"
+            "WatchVideoradio"
         ]
     },
     "TaskLive": {
@@ -299,6 +310,7 @@
             38
         ],
         "focus": true,
+        "focus_succeeded": "观看直播已完成",
         "next": [
             "Back"
         ]
@@ -314,8 +326,9 @@
             38
         ],
         "focus": true,
+        "focus_tip": "观看直播未完成，前去完成",
         "next": [
-            "ErrorBackLive"
+            "ErrorGeneralLive"
         ]
     },
     "Gddjt": {
@@ -331,6 +344,8 @@
         "expected": "我的积分",
         "inverse": true,
         "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "界面异常，准备重启APP",
         "next": [
             "StopApp"
         ]
