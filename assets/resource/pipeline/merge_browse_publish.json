@@ -2631,7 +2631,7 @@
     "BrowseImagetxtComplete": {
         "post_delay": 500,
         "focus": true,
-        "focus_succeeded": "浏览图文任务已完成",
+        "focus_succeeded": "浏览图文任务完成",
         "next": [
             "ClickVideoPart",
             "ClickAudioPart"
@@ -2770,7 +2770,7 @@
         "timeout": 20000,
         "on_error": "ErrorBackLive",
         "focus": true,
-        "focus_succeeded": "浏览音视频任务已完成",
+        "focus_succeeded": "浏览音视频任务完成",
         "next": [
             "ClickLivePart"
         ]
@@ -2877,7 +2877,7 @@
         "key": 4,
         "post_delay": 2000,
         "focus": true,
-        "focus_succeeded": "观看直播任务已完成",
+        "focus_succeeded": "观看直播任务完成",
         "interrupt": [
             "Back"
         ],
@@ -3056,7 +3056,7 @@
         "post_delay": 2000,
         "timeout": 20000,
         "focus": true,
-        "focus_succeeded": "看电视听广播任务已完成",
+        "focus_succeeded": "看电视听广播任务完成",
         "on_error": [
             "TVRadioTimeout02"
         ],
@@ -3066,7 +3066,7 @@
     },
     "TVRadioTimeout02": {
         "focus": true,
-        "focus_succeeded": "看电视听广播任务已完成",
+        "focus_succeeded": "看电视听广播任务完成",
         "next": [
             "PublishX2"
         ]

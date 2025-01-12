@@ -1,5 +1,12 @@
 {
     "Sleep": {
+        "focus": true,
+        "focus_succeeded": "零点/等待10分钟...",
+        "next": [
+            "Sleeping"
+        ]
+    },
+    "Sleeping": {
         "recognition": "OCR",
         "expected": "0:00",
         "roi": [
@@ -9,8 +16,6 @@
             45
         ],
         "timeout": 600000,
-        "focus": true,
-        "focus_tip": "等待10分钟...",
         "on_error": [
             "Stop"
         ]

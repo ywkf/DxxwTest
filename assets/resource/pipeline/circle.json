@@ -1,0 +1,225 @@
+{
+    "Circle": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "DXCircle"
+        ]
+    },
+    "DXCircle": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "开始执行圈子点赞收藏任务...",
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "ClickCircle"
+        ]
+    },
+    "ClickCircle": {
+        "recognition": "OCR",
+        "expected": "大象圈",
+        "roi": [
+            0,
+            1158,
+            719,
+            107
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ClickSubsCircle"
+        ]
+    },
+    "ClickSubsCircle": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "roi": [
+            0,
+            0,
+            720,
+            129
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ClickMyCircle"
+        ]
+    },
+    "ClickMyCircle": {
+        "recognition": "OCR",
+        "expected": "我的圈子",
+        "roi": [
+            1,
+            146,
+            719,
+            108
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "CircleSwipe"
+        ],
+        "next": [
+            "ClickTheCircle"
+        ]
+    },
+    "CircleSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "ClickTheCircle": {
+        "recognition": "OCR",
+        "expected": [
+            "无线“象”往",
+            "无线",
+            "“象"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "识别进入圈子成功",
+        "next": [
+            "CircleSwipe0"
+        ]
+    },
+    "CircleSwipe0": {
+        "recognition": "OCR",
+        "expected": [
+            "关注",
+            "大象圈"
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "CircleCollect&Like"
+        ]
+    },
+    "CircleCollect&Like": {
+        "focus": true,
+        "focus_succeeded": "点赞、收藏进行中...",
+        "interrupt": [
+            "CircleSwipe"
+        ],
+        "next": [
+            "CircleCollect"
+        ]
+    },
+    "CircleCollect": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_collect.png",
+            "circle_collect1.png"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "CircleSwipe"
+        ],
+        "next": [
+            "CircleCollect0"
+        ]
+    },
+    "CircleCollect0": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_collect.png",
+            "circle_collect1.png"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "CircleSwipe"
+        ],
+        "next": [
+            "CircleLike"
+        ]
+    },
+    "CircleLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_like.png",
+            "circle_like1.png"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "CircleSwipe"
+        ],
+        "next": [
+            "CircleLike0"
+        ]
+    },
+    "CircleLike0": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_like.png",
+            "circle_like1.png"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CircleSwipe2"
+        ]
+    },
+    "CircleSwipe2": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "next": [
+            "CircleCollect&Like"
+        ]
+    }
+}

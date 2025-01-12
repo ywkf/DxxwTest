@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.93",
+    "version": "0.0.94",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -188,7 +188,7 @@
         {
             "name": "任务完成检测",
             "entry": "TaskCheck",
-            "doc": "不检测发布任务，放在流程最后",
+            "doc": "不检测发布任务，建议放在流程最后",
             "pipeline_override": {
                 "BrowseImagetxtComplete": {
                     "next": "TaskCheck"
@@ -208,6 +208,11 @@
             }
         },
         {
+            "name": "圈子点赞收藏(beta)",
+            "entry": "Circle",
+            "doc": "循环点赞收藏圈子内容，需要手动结束"
+        },
+        {
             "name": "返回个人页",
             "entry": "Back"
         }
@@ -219,8 +224,10 @@
                     "name": "10秒",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 10000,
-                            "focus_tip": "等待10秒后进行..."
+                            "focus_succeeded": "零点/等待10秒后进行..."
+                        },
+                        "Sleeping": {
+                            "timeout": 10000
                         }
                     }
                 },
@@ -228,8 +235,10 @@
                     "name": "10分钟",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 600000,
-                            "focus_tip": "等待10分钟后进行..."
+                            "focus_succeeded": "零点/等待10分钟后进行..."
+                        },
+                        "Sleeping": {
+                            "timeout": 600000
                         }
                     }
                 },
@@ -237,8 +246,10 @@
                     "name": "30分钟",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 1800000,
-                            "focus_tip": "等待30分钟后进行..."
+                            "focus_succeeded": "零点/等待30分钟后进行..."
+                        },
+                        "Sleeping": {
+                            "timeout": 1800000
                         }
                     }
                 },
@@ -246,8 +257,10 @@
                     "name": "1小时",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 3600000,
-                            "focus_tip": "等待1小时后进行..."
+                            "focus_succeeded": "零点/等待1小时后进行..."
+                        },
+                        "Sleeping": {
+                            "timeout": 3600000
                         }
                     }
                 },
@@ -255,8 +268,10 @@
                     "name": "1.5小时",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 5400000,
-                            "focus_tip": "等待90分钟后进行..."
+                            "focus_succeeded": "零点/等待90分钟后进行..."
+                        },
+                        "Sleeping": {
+                            "timeout": 5400000
                         }
                     }
                 },
@@ -264,8 +279,10 @@
                     "name": "2小时",
                     "pipeline_override": {
                         "Sleep": {
-                            "timeout": 7200000,
-                            "focus_tip": "等待2小时后进行..."
+                            "focus_succeeded": "零点/等待2小时后进行..."
+                        },
+                        "Sleeping": {
+                            "timeout": 7200000
                         }
                     }
                 }
