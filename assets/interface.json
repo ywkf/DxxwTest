@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.95",
+    "version": "0.0.96",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -210,7 +210,15 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏圈子内容，需要手动结束"
+            "doc": "循环点赞收藏圈子内容，需要手动结束",
+            "option": [
+                "CircleSwitch"
+            ]
+        },
+        {
+            "name": "圈子点赞收藏(beta)自定义",
+            "entry": "CircleSwipe0",
+            "doc": "进入圈子后再启动，循环点赞收藏圈子内容，需要手动结束"
         },
         {
             "name": "返回个人页",
@@ -218,6 +226,65 @@
         }
     ],
     "option": {
+        "CircleSwitch": {
+            "cases": [
+                {
+                    "name": "无线“象”往",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "无线“象”往",
+                                "无线",
+                                "“象"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "快乐集中营",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "快乐集中营"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "象·心力",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "象·心力",
+                                "心力"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "非常“3+4”",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "非常“3+4”",
+                                "3+4"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "随手记录生活",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "随手记录生活",
+                                "随手"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "SleepTime": {
             "cases": [
                 {

@@ -120,7 +120,7 @@
         "action": "Swipe",
         "begin": [
             200,
-            800,
+            900,
             10,
             10
         ],
@@ -133,6 +133,8 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
+        "focus": true,
+        "focus_succeeded": "开启圈子点赞收藏...",
         "next": [
             "CircleCollect&Like"
         ]
@@ -150,8 +152,7 @@
     "CircleCollect": {
         "recognition": "TemplateMatch",
         "template": [
-            "circle_collect.png",
-            "circle_collect1.png"
+            "circle_collect.png"
         ],
         "action": "Click",
         "post_delay": 500,
@@ -159,7 +160,7 @@
             "CircleSwipe"
         ],
         "next": [
-            "CircleCollect0"
+            "CircleLike"
         ]
     },
     "CircleCollect0": {
@@ -180,8 +181,7 @@
     "CircleLike": {
         "recognition": "TemplateMatch",
         "template": [
-            "circle_like.png",
-            "circle_like1.png"
+            "circle_like.png"
         ],
         "action": "Click",
         "post_delay": 500,
@@ -189,7 +189,7 @@
             "CircleSwipe"
         ],
         "next": [
-            "CircleLike0"
+            "CircleSwipe2"
         ]
     },
     "CircleLike0": {
