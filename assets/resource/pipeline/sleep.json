@@ -7,6 +7,15 @@
         ]
     },
     "Sleeping": {
+        "timeout": 600000,
+        "on_error": [
+            "Stop"
+        ],
+        "next": [
+            "Zero"
+        ]
+    },
+    "Zero": {
         "recognition": "OCR",
         "expected": "0:00",
         "roi": [
@@ -15,9 +24,7 @@
             189,
             45
         ],
-        "timeout": 600000,
-        "on_error": [
-            "Stop"
-        ]
+        "focus": true,
+        "focus_succeeded": "检测到零点，准备启动..."
     }
 }
