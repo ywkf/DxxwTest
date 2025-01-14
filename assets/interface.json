@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.98",
+    "version": "0.0.99",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -221,12 +221,12 @@
             "doc": "进入圈子后再启动，循环点赞收藏圈子内容，需要手动结束"
         },
         {
-            "name": "点赞评论",
+            "name": "点赞评论(beta)",
             "entry": "LikeComment",
             "doc": "点赞收到的评论"
         },
         {
-            "name": "回赞与收藏",
+            "name": "回赞与收藏(beta)",
             "entry": "RepkyLike",
             "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频"
         },

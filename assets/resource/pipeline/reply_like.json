@@ -46,6 +46,9 @@
         ]
     },
     "ReplyImageTxt": {
+        "on_error": [
+            "ReplyImageBack"
+        ],
         "next": [
             "EndLine",
             "ReplyImage01"
