@@ -1,0 +1,337 @@
+{
+    "RepkyLike": {
+        "enabled": true,
+        "next": [
+            "ReplyLikeSwipe"
+        ]
+    },
+    "ReplyLikeSwipe": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "图文",
+            "全部"
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "ReplyLikeImagetxtPart"
+        ]
+    },
+    "ReplyLikeImagetxtPart": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "focus": true,
+        "focus_succeeded": "开始执行回复图文任务",
+        "next": [
+            "ReplyImageTxt"
+        ]
+    },
+    "ReplyImageTxt": {
+        "next": [
+            "EndLine",
+            "ReplyImage01"
+        ]
+    },
+    "ReplyImage01": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+"
+        ],
+        "index": 0,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ReplyImageLike",
+            "ReplyImageFavorite",
+            "ReplyImageBack",
+            "ReplyImageComment"
+        ]
+    },
+    "ReplyImageLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "like0.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
+        "next": [
+            "ReplyImageFavorite",
+            "ReplyImageComment"
+        ]
+    },
+    "ReplyImageFavorite": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
+        "next": [
+            "ReplyImageComment"
+        ]
+    },
+    "ReplyImageComment": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "ReplyInputComment"
+        ]
+    },
+    "ReplyInputComment": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "ReplySendComment"
+        ]
+    },
+    "ReplySendComment": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ReplyImageBack"
+        ]
+    },
+    "ReplyImageBack": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ReplyLikeSwipe02"
+        ]
+    },
+    "ReplyLikeSwipe02": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "全部"
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "ReplyImageTxt"
+        ]
+    },
+    "EndLine": {
+        "recognition": "OCR",
+        "expected": "我也是有底线的",
+        "next": [
+            "ReplyLikeVideoPart"
+        ]
+    },
+    "ReplyLikeVideoPart": {
+        "recognition": "OCR",
+        "expected": "视频",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "focus": true,
+        "focus_succeeded": "开始执行回复视频任务",
+        "next": [
+            "ReplyVideo"
+        ]
+    },
+    "ReplyVideo": {
+        "next": [
+            "EndLine02",
+            "ReplyVideo01"
+        ]
+    },
+    "ReplyVideo01": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "ReplyVideoLike1",
+            "ReplyVideoLike",
+            "ReplyVideoCollect1",
+            "ReplyVideoCollect",
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoLike1": {
+        "recognition": "TemplateMatch",
+        "template": "video_like1g.png",
+        "roi": [
+            630,
+            536,
+            62,
+            58
+        ],
+        "green_mask": true,
+        "next": [
+            "ReplyVideoCollect1",
+            "ReplyVideoCollect",
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoCollect1": {
+        "recognition": "TemplateMatch",
+        "template": "video_collect1g.png",
+        "roi": [
+            634,
+            801,
+            56,
+            57
+        ],
+        "green_mask": true,
+        "next": [
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoLike": {
+        "target": [
+            660,
+            560,
+            10,
+            10
+        ],
+        "action": "Click",
+        "next": [
+            "ReplyVideoCollect1",
+            "ReplyVideoCollect",
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoCollect": {
+        "target": [
+            655,
+            825,
+            10,
+            10
+        ],
+        "action": "Click",
+        "next": [
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoBack": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "ReplyLikeSwipe03"
+        ]
+    },
+    "ReplyLikeSwipe03": {
+        "recognition": "OCR",
+        "expected": [
+            "视频",
+            "全部"
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            300,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "ReplyVideo"
+        ]
+    },
+    "EndLine02": {
+        "recognition": "OCR",
+        "expected": "我也是有底线的",
+        "focus": true,
+        "focus_succeeded": "回赞与收藏任务完成",
+        "next": [
+            "ReplyBack"
+        ]
+    },
+    "ReplyBack": {
+        "action": "Key",
+        "key": 4
+    }
+}

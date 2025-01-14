@@ -1,0 +1,110 @@
+{
+    "LikeComment": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MyMsg"
+        ]
+    },
+    "MyMsg": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "开始执行点赞评论任务...",
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "ClickMyMsg"
+        ]
+    },
+    "ClickMyMsg": {
+        "recognition": "OCR",
+        "expected": "我的消息",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "ClickMyComment"
+        ]
+    },
+    "ClickMyComment": {
+        "recognition": "OCR",
+        "expected": "评论",
+        "roi": [
+            0,
+            53,
+            720,
+            306
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "ClickLike01",
+            "ClickLiked"
+        ]
+    },
+    "ClickLikeAll": {
+        "next": [
+            "ClickLike01",
+            "LikeCommentSwipe"
+        ]
+    },
+    "ClickLike01": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like0.png",
+        "action": "Click",
+        "index": 0,
+        "next": [
+            "ClickLikeAll"
+        ]
+    },
+    "ClickLiked": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like1.png",
+        "index": 2,
+        "focus": true,
+        "focus_succeeded": "点赞评论任务完成",
+        "next": [
+            "Back"
+        ]
+    },
+    "LikeCommentSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1150,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "timeout": 20000,
+        "on_error": [
+            "Back"
+        ],
+        "focus": true,
+        "focus_failed": "点赞评论任务完成...",
+        "next": [
+            "ClickLike01"
+        ]
+    }
+}
