@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.99",
+    "version": "0.0.100",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -177,6 +177,12 @@
                 "GettingPoints": {
                     "next": "MergeBrowsePublish"
                 },
+                "SwipeUPsg": {
+                    "next": [
+                        "GettingPoints",
+                        "MergeBrowsePublish"
+                    ]
+                },
                 "TVRadioComplete02": {
                     "next": "Back"
                 },
@@ -236,6 +242,25 @@
         }
     ],
     "option": {
+        "是否发布作品": {
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "TVRadioComplete02": {
+                            "next": "Back"
+                        },
+                        "TVRadioTimeout02": {
+                            "next": "Back"
+                        }
+                    }
+                }
+            ]
+        },
         "CircleSwitch": {
             "cases": [
                 {
