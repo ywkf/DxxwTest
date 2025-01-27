@@ -1,0 +1,108 @@
+{
+    "Share": {
+        "next": [
+            "ReplyImageShare",
+            "ReplyVideoShare"
+        ]
+    },
+    "ReplyImageShare": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ReplyShareToWeibo"
+        ]
+    },
+    "ReplyVideoShare": {
+        "recognition": "TemplateMatch",
+        "template": "video_share0.png",
+        "roi": [
+            631,
+            941,
+            55,
+            45
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ReplyShareToWeibo"
+        ]
+    },
+    "ReplyShareToWeibo": {
+        "recognition": "OCR",
+        "expected": "微博",
+        "action": "Click",
+        "target": [
+            386,
+            769,
+            103,
+            148
+        ],
+        "next": [
+            "ReplyWeiboLogin"
+        ]
+    },
+    "ReplyWeiboLogin": {
+        "recognition": "OCR",
+        "expected": "登录",
+        "post_delay": 500,
+        "next": [
+            "ReplyShareSuccessBack"
+        ]
+    },
+    "ReplyShareSuccessBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "Share"
+        ]
+    },
+    "ImageOrVideo": {
+        "next": [
+            "ShareBackImage",
+            "ShareBackVideo"
+        ]
+    },
+    "ShareBackImage": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "next": [
+            "ReplyImageLike",
+            "ReplyImageFavorite",
+            "ReplyImageBack",
+            "ReplyImageComment"
+        ]
+    },
+    "ShareBackVideo": {
+        "recognition": "TemplateMatch",
+        "template": "video_share0.png",
+        "roi": [
+            631,
+            941,
+            55,
+            45
+        ],
+        "green_mask": true,
+        "next": [
+            "ReplyVideoLike1",
+            "ReplyVideoLike",
+            "ReplyVideoCollect1",
+            "ReplyVideoCollect",
+            "ReplyVideoBack"
+        ]
+    }
+}

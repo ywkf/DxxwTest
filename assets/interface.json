@@ -237,7 +237,23 @@
         {
             "name": "回赞与收藏(beta)",
             "entry": "RepkyLike",
-            "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频"
+            "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频",
+            "option": [
+                "是否分享"
+            ]
+        },
+        {
+            "name": "个人账号任务(beta)",
+            "entry": "BrowseImagetxtM",
+            "doc": "分享、点赞、收藏、评论个人账号的内容，\n如果选择重复运行，需要手动结束",
+            "option": [
+                "是否重复运行"
+            ]
+        },
+        {
+            "name": "分享",
+            "entry": "Share",
+            "doc": "进入对应的发布内容页面再启动，无限循环分享，需要手动结束"
         },
         {
             "name": "返回个人页",
@@ -245,6 +261,57 @@
         }
     ],
     "option": {
+        "是否重复运行": {
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "ReplyBackM": {
+                            "next": [
+                                "BrowseImagetxtM"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "是否分享": {
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "ReplyShareSuccessBack": {
+                            "next": [
+                                "ImageOrVideo"
+                            ]
+                        },
+                        "ReplyImage01": {
+                            "next": [
+                                "Share"
+                            ]
+                        },
+                        "ReplyVideoM": {
+                            "next": [
+                                "Share"
+                            ]
+                        },
+                        "ReplyVideo01": {
+                            "next": [
+                                "Share"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "是否发布作品": {
             "cases": [
                 {

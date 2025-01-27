@@ -10,7 +10,9 @@
         "expected": [
             "评论",
             "图文",
-            "全部"
+            "全部",
+            "已发布",
+            "审核中"
         ],
         "pre_delay": 200,
         "action": "Swipe",
@@ -58,7 +60,10 @@
         "recognition": "OCR",
         "expected": [
             "阅读量\\d+",
-            "评论\\d+"
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
         ],
         "index": 0,
         "action": "Click",
@@ -217,7 +222,26 @@
     "ReplyVideo": {
         "next": [
             "EndLine02",
-            "ReplyVideo01"
+            "ReplyVideo01",
+            "ReplyVideoM"
+        ]
+    },
+    "ReplyVideoM": {
+        "recognition": "OCR",
+        "expected": [
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "ReplyVideoLike1",
+            "ReplyVideoLike",
+            "ReplyVideoCollect1",
+            "ReplyVideoCollect",
+            "ReplyVideoBack"
         ]
     },
     "ReplyVideo01": {
