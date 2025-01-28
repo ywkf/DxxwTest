@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.0.100",
+    "version": "0.1.1",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -219,15 +219,31 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏圈子内容，需要手动结束",
+            "doc": "循环点赞、收藏圈子内容",
             "option": [
-                "CircleSwitch"
+                "CircleSwitch",
+                "滑动速度"
             ]
         },
         {
             "name": "圈子点赞收藏(beta)自定义",
             "entry": "CircleSwipe0",
-            "doc": "进入圈子后再启动，循环点赞收藏圈子内容，需要手动结束"
+            "doc": "进入圈子后再启动，循环点赞、收藏圈子内容，需要手动结束",
+            "option": [
+                "滑动速度"
+            ],
+            "pipeline_override": {
+                "CircleCollect&Like": {
+                    "next": [
+                        "CircleCollect"
+                    ]
+                },
+                "CircleSwipe2": {
+                    "next": [
+                        "CircleCollect&Like"
+                    ]
+                }
+            }
         },
         {
             "name": "点赞评论(beta)",
@@ -245,7 +261,7 @@
         {
             "name": "个人账号任务(beta)",
             "entry": "BrowseImagetxtM",
-            "doc": "分享、点赞、收藏、评论个人账号的内容，\n如果选择重复运行，需要手动结束",
+            "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
             "option": [
                 "是否重复运行"
             ]
@@ -261,6 +277,115 @@
         }
     ],
     "option": {
+        "滑动速度": {
+            "cases": [
+                {
+                    "name": "300",
+                    "pipeline_override": {
+                        "CircleSwipe": {
+                            "begin": [
+                                200,
+                                700,
+                                10,
+                                10
+                            ]
+                        },
+                        "CircleSwipe2": {
+                            "begin": [
+                                200,
+                                700,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "250",
+                    "pipeline_override": {
+                        "CircleSwipe": {
+                            "begin": [
+                                200,
+                                650,
+                                10,
+                                10
+                            ]
+                        },
+                        "CircleSwipe2": {
+                            "begin": [
+                                200,
+                                650,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "200",
+                    "pipeline_override": {
+                        "CircleSwipe": {
+                            "begin": [
+                                200,
+                                600,
+                                10,
+                                10
+                            ]
+                        },
+                        "CircleSwipe2": {
+                            "begin": [
+                                200,
+                                600,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "150",
+                    "pipeline_override": {
+                        "CircleSwipe": {
+                            "begin": [
+                                200,
+                                550,
+                                10,
+                                10
+                            ]
+                        },
+                        "CircleSwipe2": {
+                            "begin": [
+                                200,
+                                550,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "400",
+                    "pipeline_override": {
+                        "CircleSwipe": {
+                            "begin": [
+                                200,
+                                800,
+                                10,
+                                10
+                            ]
+                        },
+                        "CircleSwipe2": {
+                            "begin": [
+                                200,
+                                800,
+                                10,
+                                10
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "是否重复运行": {
             "cases": [
                 {
@@ -339,8 +464,9 @@
                         "ClickTheCircle": {
                             "expected": [
                                 "无线“象”往",
-                                "无线",
-                                "“象"
+                                "展示新时代河南",
+                                "中波人",
+                                "“象”"
                             ]
                         }
                     }
@@ -361,7 +487,9 @@
                         "ClickTheCircle": {
                             "expected": [
                                 "象·心力",
-                                "心力"
+                                "心力",
+                                "如朝阳与东风共起",
+                                "如朝阳"
                             ]
                         }
                     }
@@ -372,6 +500,8 @@
                         "ClickTheCircle": {
                             "expected": [
                                 "非常“3+4”",
+                                "无线发射",
+                                "友情传播",
                                 "3+4"
                             ]
                         }
@@ -384,6 +514,76 @@
                             "expected": [
                                 "随手记录生活",
                                 "随手"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "大象话题",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "大象话题"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "记录生活",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "记录生活点滴",
+                                "生活点滴",
+                                "留住美好瞬间",
+                                "美好瞬间"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "福塔-发射",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "福塔-发射",
+                                "福塔",
+                                "省发射台"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "热爱生活",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "热爱生活",
+                                "日常碎片"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "人间处处",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "人间处处",
+                                "春雨杏花急急落",
+                                "春雨杏花"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "象友汇",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "象友汇",
+                                "立足省台",
+                                "新文化"
                             ]
                         }
                     }
