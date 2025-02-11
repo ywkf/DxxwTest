@@ -2959,9 +2959,8 @@
         "recognition": "OCR",
         "expected": [
             "节目单",
-            "地市频道"
+            "市级频道"
         ],
-        "action": "Click",
         "post_delay": 200,
         "timeout": 20000,
         "on_error": [
