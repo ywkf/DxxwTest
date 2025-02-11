@@ -267,8 +267,6 @@
             "CircleSwipe"
         ],
         "next": [
-            "InImagetxt",
-            "InVideo",
             "CircleSwipe2"
         ]
     },
@@ -292,6 +290,7 @@
         ]
     },
     "InImagetxt": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "期待你",
@@ -310,13 +309,15 @@
         ]
     },
     "InVideo": {
+        "enabled": true,
         "recognition": "TemplateMatch",
-        "template": "videotag.png",
-        "roi": [
-            37,
-            1090,
-            46,
-            37
+        "template": [
+            "videotag.png",
+            "video_collect0g.png",
+            "video_collect1g.png",
+            "video_like0g.png",
+            "video_like1g.png",
+            "video_share0.png"
         ],
         "green_mask": true,
         "action": "Key",
@@ -333,6 +334,8 @@
             "CircleSwipe"
         ],
         "next": [
+            "InImagetxt",
+            "InVideo",
             "CircleCollect1",
             "CircleCollectFail",
             "CircleCollect"
@@ -350,6 +353,8 @@
         ],
         "next": [
             "CircleLike1",
+            "InImagetxt",
+            "InVideo",
             "CircleCollect"
         ]
     },

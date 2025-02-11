@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -222,7 +222,8 @@
             "doc": "循环点赞、收藏圈子内容",
             "option": [
                 "CircleSwitch",
-                "滑动速度"
+                "滑动速度",
+                "误入动态判断"
             ]
         },
         {
@@ -230,7 +231,8 @@
             "entry": "CircleSwipe0",
             "doc": "进入圈子后再启动，循环点赞、收藏圈子内容，需要手动结束",
             "option": [
-                "滑动速度"
+                "滑动速度",
+                "误入动态判断"
             ],
             "pipeline_override": {
                 "IsTop": {
@@ -288,6 +290,25 @@
         }
     ],
     "option": {
+        "误入动态判断": {
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "InImagetxt": {
+                            "enabled": false
+                        },
+                        "InVideo": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "是",
+                    "pipeline_override": {}
+                }
+            ]
+        },
         "滑动速度": {
             "cases": [
                 {
