@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -233,15 +233,11 @@
                 "滑动速度"
             ],
             "pipeline_override": {
-                "CircleCollect&Like": {
-                    "next": [
-                        "CircleCollect"
-                    ]
+                "IsTop": {
+                    "enabled": false
                 },
-                "CircleSwipe2": {
-                    "next": [
-                        "CircleCollect&Like"
-                    ]
+                "IsCompleted": {
+                    "enabled": false
                 }
             }
         },
@@ -265,6 +261,21 @@
             "option": [
                 "是否重复运行"
             ]
+        },
+        {
+            "name": "个人账号任务10s(beta)",
+            "entry": "BrowseImagetxtM",
+            "doc": "每个动态等待10s后，分享、点赞、收藏、评论\n如果选择重复运行，需要手动结束",
+            "option": [
+                "是否重复运行"
+            ],
+            "pipeline_override": {
+                "ReplyContM": {
+                    "next": [
+                        "Sleep10s"
+                    ]
+                }
+            }
         },
         {
             "name": "分享",

@@ -12,7 +12,8 @@
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
-            "wodes_.png"
+            "wodes_.png",
+            "woder.png"
         ],
         "roi": [
             25,
@@ -86,9 +87,8 @@
         "recognition": "OCR",
         "expected": [
             "节目单",
-            "地市频道"
+            "市级频道"
         ],
-        "action": "Click",
         "post_delay": 200,
         "timeout": 20000,
         "on_error": [

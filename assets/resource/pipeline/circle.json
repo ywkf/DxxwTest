@@ -181,6 +181,7 @@
         ]
     },
     "IsTop0": {
+        "enabled": false,
         "interrupt": [
             "CircleSwipe"
         ],
@@ -212,6 +213,7 @@
         ],
         "next": [
             "IsCompleted",
+            "CircleCollectFail",
             "CircleCollect"
         ]
     },
@@ -221,11 +223,36 @@
             "circle_collect.png"
         ],
         "action": "Click",
+        "focus": true,
+        "focus_succeeded": "收藏进行中...",
         "interrupt": [
             "CircleSwipe"
         ],
         "next": [
-            "CircleLike"
+            "CircleLike",
+            "IsCompleted"
+        ]
+    },
+    "CircleCollectFail": {
+        "recognition": "OCR",
+        "expected": [
+            "操作失败"
+        ],
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "next": [
+            "CircleCollect"
         ]
     },
     "CircleLike": {
@@ -234,10 +261,14 @@
             "circle_like.png"
         ],
         "action": "Click",
+        "focus": true,
+        "focus_succeeded": "点赞进行中...",
         "interrupt": [
             "CircleSwipe"
         ],
         "next": [
+            "InImagetxt",
+            "InVideo",
             "CircleSwipe2"
         ]
     },
@@ -260,12 +291,50 @@
             "CircleCollect&Like"
         ]
     },
+    "InImagetxt": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CircleCollect&Like"
+        ]
+    },
+    "InVideo": {
+        "recognition": "TemplateMatch",
+        "template": "videotag.png",
+        "roi": [
+            37,
+            1090,
+            46,
+            37
+        ],
+        "green_mask": true,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CircleCollect&Like"
+        ]
+    },
     "IsCompleted": {
+        "enabled": true,
+        "focus": true,
+        "focus_succeeded": "任务完成检测...",
         "interrupt": [
             "CircleSwipe"
         ],
         "next": [
             "CircleCollect1",
+            "CircleCollectFail",
             "CircleCollect"
         ]
     },
@@ -274,11 +343,14 @@
         "template": [
             "circle_collect1.png"
         ],
+        "focus": true,
+        "focus_succeeded": "检测到收藏",
         "interrupt": [
             "CircleSwipe"
         ],
         "next": [
-            "CircleLike1"
+            "CircleLike1",
+            "CircleCollect"
         ]
     },
     "CircleLike1": {
@@ -286,6 +358,8 @@
         "template": [
             "circle_like1.png"
         ],
+        "focus": true,
+        "focus_succeeded": "检测到点赞",
         "next": [
             "CircleSwipe3"
         ]
@@ -309,8 +383,8 @@
             "CircleCompletedBack"
         ],
         "next": [
-            "CircleCollect0",
-            "CircleLike0",
+            "CircleCollect",
+            "CircleLike",
             "CircleSwipe4"
         ]
     },
@@ -333,8 +407,8 @@
             "CircleCompletedBack"
         ],
         "next": [
-            "CircleCollect0",
-            "CircleLike0",
+            "CircleCollect",
+            "CircleLike",
             "CircleSwipe5"
         ]
     },
@@ -357,8 +431,8 @@
             "CircleCompletedBack"
         ],
         "next": [
-            "CircleCollect0",
-            "CircleLike0",
+            "CircleCollect",
+            "CircleLike",
             "CircleSwipe6"
         ]
     },
@@ -381,8 +455,8 @@
             "CircleCompletedBack"
         ],
         "next": [
-            "CircleCollect0",
-            "CircleLike0",
+            "CircleCollect",
+            "CircleLike",
             "CircleSwipe7"
         ]
     },
@@ -405,8 +479,8 @@
             "CircleCompletedBack"
         ],
         "next": [
-            "CircleCollect0",
-            "CircleLike0",
+            "CircleCollect",
+            "CircleLike",
             "CircleSwipe8"
         ]
     },
@@ -429,8 +503,8 @@
             "CircleCompletedBack"
         ],
         "next": [
-            "CircleCollect0",
-            "CircleLike0"
+            "CircleCollect",
+            "CircleLike"
         ]
     },
     "CircleCollect0": {

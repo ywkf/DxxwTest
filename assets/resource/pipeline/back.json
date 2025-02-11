@@ -35,7 +35,8 @@
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
-            "wodes_.png"
+            "wodes_.png",
+            "woder.png"
         ],
         "roi": [
             25,

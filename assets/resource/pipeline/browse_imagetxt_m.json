@@ -12,7 +12,8 @@
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
-            "wodes_.png"
+            "wodes_.png",
+            "woder.png"
         ],
         "roi": [
             25,
@@ -27,7 +28,6 @@
             "Back"
         ],
         "next": [
-            "Skip2",
             "ClickContent"
         ]
     },
@@ -108,11 +108,35 @@
         "index": 0,
         "action": "Click",
         "post_delay": 2000,
+        "timeout": 10000,
+        "on_error": [
+            "ShareMError"
+        ],
+        "next": [
+            "ShareM"
+        ]
+    },
+    "Sleep10s": {
+        "recognition": "TemplateMatch",
+        "template": "woder.png",
+        "timeout": 10000,
+        "action": "Click",
+        "on_error": [
+            "ShareMError"
+        ],
         "next": [
             "ShareM"
         ]
     },
     "ShareM": {
+        "next": [
+            "ReplyImageShareM",
+            "ReplyVideoShareM"
+        ]
+    },
+    "ShareMError": {
+        "focus": true,
+        "focus_tip": "已等待10s，开始分享...",
         "next": [
             "ReplyImageShareM",
             "ReplyVideoShareM"
