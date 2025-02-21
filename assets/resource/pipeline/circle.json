@@ -173,6 +173,32 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
+        "next": [
+            "IsLoaded",
+            "ReIn",
+            "IsTop0",
+            "CircleCollect&Like"
+        ]
+    },
+    "ReIn": {
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ClickTheCircle"
+        ]
+    },
+    "IsLoaded": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "置顶",
+            "已关注",
+            "分钟前",
+            "大象圈",
+            "官方客服",
+            "小时前"
+        ],
         "focus": true,
         "focus_succeeded": "开启圈子点赞收藏...",
         "next": [

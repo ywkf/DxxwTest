@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -285,11 +285,104 @@
             "doc": "进入对应的发布内容页面再启动，无限循环分享，需要手动结束"
         },
         {
+            "name": "最新分享(beta)",
+            "entry": "ShareMy",
+            "doc": "随处启动，最新视频分享量达到选项数量后，循环分享最新图文，需要手动结束",
+            "option": [
+                "最新视频分享量"
+            ],
+            "pipeline_override": {
+                "Share": {
+                    "next": [
+                        "ReplyImageShare",
+                        "ShareDone",
+                        "ReplyVideoShare"
+                    ]
+                },
+                "ReplyShareSuccessBack": {
+                    "next": [
+                        "ShareDone",
+                        "Share"
+                    ]
+                }
+            }
+        },
+        {
             "name": "返回个人页",
             "entry": "Back"
         }
     ],
     "option": {
+        "最新视频分享量": {
+            "cases": [
+                {
+                    "name": "150",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "150"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达150，开始图文分享"
+                        }
+                    }
+                },
+                {
+                    "name": "200",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "200"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达200，开始图文分享"
+                        }
+                    }
+                },
+                {
+                    "name": "300",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "300"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达300，开始图文分享"
+                        }
+                    }
+                },
+                {
+                    "name": "400",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "400"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达400，开始图文分享"
+                        }
+                    }
+                },
+                {
+                    "name": "500",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "500"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达500，开始图文分享"
+                        }
+                    }
+                },
+                {
+                    "name": "1000",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "1000"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达1000，开始图文分享"
+                        }
+                    }
+                }
+            ]
+        },
         "误入动态判断": {
             "cases": [
                 {
@@ -499,7 +592,11 @@
                                 "展示新时代河南",
                                 "中波人",
                                 "“象”"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 无线“象”往 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "无线“象”往 圈子任务完成"
                         }
                     }
                 },
@@ -509,7 +606,11 @@
                         "ClickTheCircle": {
                             "expected": [
                                 "快乐集中营"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 快乐集中营 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "快乐集中营 圈子任务完成"
                         }
                     }
                 },
@@ -522,7 +623,11 @@
                                 "心力",
                                 "如朝阳与东风共起",
                                 "如朝阳"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 象·心力 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "象·心力 圈子任务完成"
                         }
                     }
                 },
@@ -535,7 +640,11 @@
                                 "无线发射",
                                 "友情传播",
                                 "3+4"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 非常“3+4” 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "非常“3+4” 圈子任务完成"
                         }
                     }
                 },
@@ -546,7 +655,11 @@
                             "expected": [
                                 "随手记录生活",
                                 "随手"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 随手记录生活 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "随手记录生活 圈子任务完成"
                         }
                     }
                 },
@@ -556,7 +669,11 @@
                         "ClickTheCircle": {
                             "expected": [
                                 "大象话题"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 大象话题 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "大象话题 圈子任务完成"
                         }
                     }
                 },
@@ -569,7 +686,11 @@
                                 "生活点滴",
                                 "留住美好瞬间",
                                 "美好瞬间"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 记录生活 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "记录生活 圈子任务完成"
                         }
                     }
                 },
@@ -581,7 +702,11 @@
                                 "福塔-发射",
                                 "福塔",
                                 "省发射台"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 福塔-发射 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "福塔发射 圈子任务完成"
                         }
                     }
                 },
@@ -592,7 +717,11 @@
                             "expected": [
                                 "热爱生活",
                                 "日常碎片"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 热爱生活 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "热爱生活 圈子任务完成"
                         }
                     }
                 },
@@ -604,7 +733,11 @@
                                 "人间处处",
                                 "春雨杏花急急落",
                                 "春雨杏花"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 人间处处 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "人间处处 圈子任务完成"
                         }
                     }
                 },
@@ -616,7 +749,11 @@
                                 "象友汇",
                                 "立足省台",
                                 "新文化"
-                            ]
+                            ],
+                            "focus_succeeded": "识别进入 象友汇 圈子成功"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "象友汇 圈子任务完成"
                         }
                     }
                 }

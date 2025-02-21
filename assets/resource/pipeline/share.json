@@ -104,5 +104,134 @@
             "ReplyVideoCollect",
             "ReplyVideoBack"
         ]
+    },
+    "ShareMy": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "ShareMy01"
+        ]
+    },
+    "ShareMy01": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png",
+            "woder.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "ShareClickContent"
+        ]
+    },
+    "ShareClickContent": {
+        "recognition": "OCR",
+        "expected": "内容",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "ShareSwipeUpM"
+        ]
+    },
+    "ShareSwipeUpM": {
+        "recognition": "OCR",
+        "expected": [
+            "已发布",
+            "审核中"
+        ],
+        "roi": [
+            0,
+            707,
+            720,
+            558
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "focus": true,
+        "focus_succeeded": "识别进入个人内容成功，开始执行个人分享任务",
+        "focus_failed": "识别进入个人内容失败",
+        "next": [
+            "ShareClickVideo"
+        ]
+    },
+    "ShareClickVideo": {
+        "recognition": "OCR",
+        "expected": "视频",
+        "action": "Click",
+        "next": [
+            "ShareContM"
+        ]
+    },
+    "ShareContM": {
+        "recognition": "OCR",
+        "expected": [
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享",
+            "阅读量\\d+",
+            "评论\\d+"
+        ],
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "Share"
+        ]
+    },
+    "ShareDone": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "150"
+        ],
+        "roi": [
+            633,
+            989,
+            53,
+            34
+        ],
+        "action": "Key",
+        "key": 4,
+        "focus": true,
+        "focus_succeeded": "最新视频分享量已达150，开始图文分享",
+        "next": [
+            "ShareClickTxt"
+        ]
+    },
+    "ShareClickTxt": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "next": [
+            "ShareContM"
+        ]
     }
 }
