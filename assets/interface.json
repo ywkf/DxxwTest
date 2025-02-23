@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -194,7 +194,7 @@
         {
             "name": "任务完成检测",
             "entry": "TaskCheck",
-            "doc": "不检测发布任务，建议放在流程最后",
+            "doc": "不检测发布任务，建议放在一键完成之后",
             "pipeline_override": {
                 "BrowseImagetxtComplete": {
                     "next": "TaskCheck"
@@ -219,7 +219,7 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏(评论)圈子内容",
+            "doc": "循环点赞收藏（回复）圈子内容",
             "option": [
                 "CircleSwitch",
                 "滑动速度",
@@ -239,7 +239,7 @@
         {
             "name": "圈子点赞收藏(beta)自定义",
             "entry": "CircleSwipe0",
-            "doc": "进入圈子后再启动，循环点赞收藏(评论)圈子内容，需要手动结束",
+            "doc": "进入圈子后再启动，循环点赞收藏（回复）圈子内容，需要手动结束",
             "option": [
                 "滑动速度",
                 "是否评论",
@@ -250,7 +250,7 @@
         {
             "name": "点赞评论(beta)",
             "entry": "LikeComment",
-            "doc": "点赞(回复)收到的评论",
+            "doc": "点赞（回复）收到的评论",
             "option": [
                 "是否回复评论",
                 "是否使用XF语录功能"
@@ -404,6 +404,12 @@
                 {
                     "name": "回复\u2764",
                     "pipeline_override": {
+                        "ClickLike01": {
+                            "next": [
+                                "ReplyComment",
+                                "ClickLikeAll"
+                            ]
+                        },
                         "ReplyComment": {
                             "next": [
                                 "InputHeart"
@@ -419,12 +425,13 @@
                         },
                         "ClickLike01": {
                             "next": [
-                                "CheckLiked",
+                                "ReplyComment",
                                 "ClickLikeAll"
                             ]
                         },
                         "CCommentPublish": {
                             "next": [
+                                "RepeatComment",
                                 "ClickLikeAll"
                             ]
                         }
@@ -443,6 +450,7 @@
                     "pipeline_override": {
                         "CircleLike": {
                             "next": [
+                                "CClickComment",
                                 "CCheckLike"
                             ]
                         },

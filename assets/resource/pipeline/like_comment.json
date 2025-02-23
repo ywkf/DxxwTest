@@ -84,7 +84,7 @@
         "expected": [
             "回复评论"
         ],
-        "roi": "CheckLiked",
+        "roi": "ClickLike01",
         "roi_offset": [
             -141,
             -6,
@@ -113,6 +113,25 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
+        "next": [
+            "RepeatComment",
+            "ClickLikeAll"
+        ]
+    },
+    "RepeatComment": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容",
+            "不能发表"
+        ],
+        "action": "Click",
+        "target": [
+            310,
+            62,
+            101,
+            57
+        ],
         "next": [
             "ClickLikeAll"
         ]

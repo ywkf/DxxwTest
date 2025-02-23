@@ -11,7 +11,7 @@
     "CClickComment": {
         "recognition": "TemplateMatch",
         "template": "circle_comment.png",
-        "roi": "CCheckLike",
+        "roi": "CircleLike",
         "roi_offset": [
             0,
             0,
@@ -20,6 +20,8 @@
         ],
         "action": "Click",
         "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "评论中...",
         "next": [
             "CCommentImage",
             "CCommentVideo"
