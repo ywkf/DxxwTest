@@ -392,6 +392,7 @@
         "focus": true,
         "focus_succeeded": "检测到点赞",
         "next": [
+            "CircleCollect",
             "CircleSwipe3"
         ]
     },

@@ -1,0 +1,897 @@
+{
+    "CCheckLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_like1.png"
+        ],
+        "next": [
+            "CClickComment"
+        ]
+    },
+    "CClickComment": {
+        "recognition": "TemplateMatch",
+        "template": "circle_comment.png",
+        "roi": "CCheckLike",
+        "roi_offset": [
+            0,
+            0,
+            342,
+            2
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "CCommentImage",
+            "CCommentVideo"
+        ]
+    },
+    "CCommentImage": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "CInputCommentImage"
+        ]
+    },
+    "CInputCommentImage": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "CSendCommentImage"
+        ]
+    },
+    "CSendCommentImage": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "CCommentBack02"
+        ]
+    },
+    "CCommentVideo": {
+        "recognition": "TemplateMatch",
+        "template": "video_comment.png",
+        "roi": [
+            627,
+            668,
+            67,
+            58
+        ],
+        "threshold": 0.6,
+        "action": "Click",
+        "green_mask": true,
+        "post_delay": 500,
+        "next": [
+            "CCheckComment",
+            "CCommentVideoIn02"
+        ]
+    },
+    "CCheckComment": {
+        "recognition": "OCR",
+        "expected": [
+            "回复"
+        ],
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "检测到评论，复制评论",
+        "next": [
+            "CCopyComment"
+        ]
+    },
+    "CCopyComment": {
+        "action": "Swipe",
+        "begin": "CCheckComment",
+        "end": "CCheckComment",
+        "begin_offset": [
+            0,
+            -80,
+            0,
+            0
+        ],
+        "end_offset": [
+            0,
+            -80,
+            0,
+            0
+        ],
+        "duration": 1000,
+        "next": [
+            "CClickCopy"
+        ]
+    },
+    "CClickCopy": {
+        "recognition": "OCR",
+        "expected": "复制",
+        "action": "Click",
+        "next": [
+            "CCommentVideoIn"
+        ]
+    },
+    "CCommentVideoIn": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            35
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "CCommentPasteXF01",
+            "Comment03T",
+            "Comment14T",
+            "Comment25T",
+            "Comment010"
+        ]
+    },
+    "CCommentPasteXF01": {
+        "recognition": "TemplateMatch",
+        "template": "edit.png",
+        "roi": [
+            5,
+            728,
+            709,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "CCommentPasteXF02",
+            "Comment03T",
+            "Comment14T",
+            "Comment25T",
+            "Comment010"
+        ]
+    },
+    "CCommentPasteXF02": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CCommentVideoIn02": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            35
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "CCommentXF01",
+            "Comment03T",
+            "Comment14T",
+            "Comment25T",
+            "Comment010"
+        ]
+    },
+    "CCommentXF01": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "XF_comment.png",
+        "action": "Click",
+        "focus": true,
+        "focus_succeeded": "检测到语录功能，使用XF语录",
+        "next": [
+            "CCCommentXF02",
+            "Comment03T",
+            "Comment14T",
+            "Comment25T",
+            "Comment010"
+        ]
+    },
+    "CCCommentXF02": {
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "Dxxw2",
+            "Dxxw"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T": {
+        "recognition": "OCR",
+        "expected": [
+            ":0",
+            ":3"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "next": [
+            "Comment03T000",
+            "Comment03T001",
+            "Comment03T002",
+            "Comment03T003",
+            "Comment03T004",
+            "Comment03T005",
+            "Comment03T006",
+            "Comment03T007",
+            "Comment03T008",
+            "Comment03T009",
+            "Comment14T"
+        ]
+    },
+    "Comment14T": {
+        "recognition": "OCR",
+        "expected": [
+            ":1",
+            ":4"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "next": [
+            "Comment14T000",
+            "Comment14T001",
+            "Comment14T002",
+            "Comment14T003",
+            "Comment14T004",
+            "Comment14T005",
+            "Comment14T006",
+            "Comment14T007",
+            "Comment14T008",
+            "Comment25T009",
+            "Comment25T"
+        ]
+    },
+    "Comment25T": {
+        "recognition": "OCR",
+        "expected": [
+            ":2",
+            ":5"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "next": [
+            "Comment25T000",
+            "Comment25T001",
+            "Comment25T002",
+            "Comment25T003",
+            "Comment25T004",
+            "Comment25T005",
+            "Comment25T006",
+            "Comment25T007",
+            "Comment25T008",
+            "Comment25T009",
+            "Comment03T"
+        ]
+    },
+    "Comment03T000": {
+        "recognition": "OCR",
+        "expected": [
+            ":00",
+            ":30"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "用心记录的点滴总是值得品味",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T001": {
+        "recognition": "OCR",
+        "expected": [
+            ":01",
+            ":31"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这份沉淀感让人受益匪浅",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T002": {
+        "recognition": "OCR",
+        "expected": [
+            ":02",
+            ":32"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "您对细节的把握总是很到位",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T003": {
+        "recognition": "OCR",
+        "expected": [
+            ":03",
+            ":33"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "隔着屏幕也能感受到这份专注",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T004": {
+        "recognition": "OCR",
+        "expected": [
+            ":04",
+            ":34"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "行稳致远的智慧值得学习",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T005": {
+        "recognition": "OCR",
+        "expected": [
+            ":05",
+            ":35"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "字里行间都是宝贵经验",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T006": {
+        "recognition": "OCR",
+        "expected": [
+            ":06",
+            ":36"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "持续积累的力量令人敬佩",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T007": {
+        "recognition": "OCR",
+        "expected": [
+            ":07",
+            ":37"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "您传递的这份能量已接收",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T008": {
+        "recognition": "OCR",
+        "expected": [
+            ":08",
+            ":38"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "静水深流般的思考方式",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment03T009": {
+        "recognition": "OCR",
+        "expected": [
+            ":09",
+            ":39"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "每个阶段都有独特的价值",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T000": {
+        "recognition": "OCR",
+        "expected": [
+            ":10",
+            ":40"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这份从容感正是修炼的境界",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T001": {
+        "recognition": "OCR",
+        "expected": [
+            ":11",
+            ":41"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "感谢您愿意分享这些思考",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T002": {
+        "recognition": "OCR",
+        "expected": [
+            ":12",
+            ":42"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "行动力永远是我们的榜样！",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T003": {
+        "recognition": "OCR",
+        "expected": [
+            ":13",
+            ":43"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "认真对待生活的样子真赞",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T004": {
+        "recognition": "OCR",
+        "expected": [
+            ":14",
+            ":44"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这种持之以恒的态度太强了",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T005": {
+        "recognition": "OCR",
+        "expected": [
+            ":15",
+            ":45"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这个观点让人耳目一新！",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T006": {
+        "recognition": "OCR",
+        "expected": [
+            ":16",
+            ":46"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "平衡的智慧体现得淋漓尽致",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T007": {
+        "recognition": "OCR",
+        "expected": [
+            ":17",
+            ":47"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这种细腻观察力值得学习",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T008": {
+        "recognition": "OCR",
+        "expected": [
+            ":18",
+            ":48"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "专业度满分的分享，感谢您的时间沉淀",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment14T009": {
+        "recognition": "OCR",
+        "expected": [
+            ":19",
+            ":49"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "真诚的分享永远打动人心",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T000": {
+        "recognition": "OCR",
+        "expected": [
+            ":20",
+            ":50"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这份坚持本身就是答案",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T001": {
+        "recognition": "OCR",
+        "expected": [
+            ":21",
+            ":51"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这个视角很有启发性，学习了！",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T002": {
+        "recognition": "OCR",
+        "expected": [
+            ":22",
+            ":52"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "温润有力的表达方式",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T003": {
+        "recognition": "OCR",
+        "expected": [
+            ":23",
+            ":53"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "平凡日常中的不平凡洞察",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T004": {
+        "recognition": "OCR",
+        "expected": [
+            ":24",
+            ":54"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "从容中见智慧的表达方式！",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T005": {
+        "recognition": "OCR",
+        "expected": [
+            ":25",
+            ":55"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "时间会铭记所有的用心",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T006": {
+        "recognition": "OCR",
+        "expected": [
+            ":26",
+            ":56"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "这种踏实的风格让人安心",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T007": {
+        "recognition": "OCR",
+        "expected": [
+            ":27",
+            ":57"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "您让我有了新的理解",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T008": {
+        "recognition": "OCR",
+        "expected": [
+            ":28",
+            ":58"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "每次分享都是营养补给站",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment25T009": {
+        "recognition": "OCR",
+        "expected": [
+            ":29",
+            ":59"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "InputText",
+        "input_text": "在路上的状态就是最好的状态",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "Comment010": {
+        "action": "InputText",
+        "input_text": "字里行间感受到满满的用心！",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CCommentPublish": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "next": [
+            "CCommentBack01",
+            "CCommentBack02"
+        ]
+    },
+    "CCommentBack01": {
+        "recognition": "OCR",
+        "expected": "全部评论",
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02"
+        ]
+    },
+    "CCommentBack02": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "Stop"
+        ]
+    }
+}

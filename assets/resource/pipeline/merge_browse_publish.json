@@ -36,11 +36,30 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 2000,
+        "timeout": 20000,
+        "on_error": "ErrorBackImagetxt",
+        "next": [
+            "CheckSubs",
+            "MergeSubsBack"
+        ]
+    },
+    "MergeSubsBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ClickSubs"
+        ]
+    },
+    "CheckSubs": {
+        "recognition": "OCR",
+        "expected": [
+            "已关注",
+            "互相关注"
+        ],
         "interrupt": [
             "DxhSwipe"
         ],
-        "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "post_delay": 2000,
         "next": [
             "SelectDxh"
         ]

@@ -72,6 +72,51 @@
             "ClickLikeAll"
         ]
     },
+    "CheckLiked": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like1.png",
+        "next": [
+            "ReplyComment"
+        ]
+    },
+    "ReplyComment": {
+        "recognition": "OCR",
+        "expected": [
+            "回复评论"
+        ],
+        "roi": "CheckLiked",
+        "roi_offset": [
+            -141,
+            -6,
+            170,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "InputHeart",
+            "CCommentXF01",
+            "Comment03T",
+            "Comment14T",
+            "Comment25T",
+            "Comment010"
+        ]
+    },
+    "InputHeart": {
+        "enabled": true,
+        "action": "InputText",
+        "input_text": "\u2764",
+        "next": [
+            "LikeClickPublish"
+        ]
+    },
+    "LikeClickPublish": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "next": [
+            "ClickLikeAll"
+        ]
+    },
     "ClickLiked": {
         "recognition": "TemplateMatch",
         "template": "comment_like1.png",
