@@ -93,7 +93,6 @@
         ],
         "action": "Click",
         "next": [
-            "InputHeart01",
             "CCommentXF01",
             "CommentCommon00"
         ]
@@ -134,6 +133,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "RepeatComment",
             "ClickLikeAll"

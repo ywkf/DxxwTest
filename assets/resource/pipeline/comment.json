@@ -155,10 +155,7 @@
         ],
         "next": [
             "CCommentPasteXF01",
-            "Comment03T",
-            "Comment14T",
-            "Comment25T",
-            "Comment010"
+            "CommentCommon00"
         ]
     },
     "CCommentPasteXF01": {
@@ -173,10 +170,7 @@
         "action": "Click",
         "next": [
             "CCommentPasteXF02",
-            "Comment03T",
-            "Comment14T",
-            "Comment25T",
-            "Comment010"
+            "CommentCommon00"
         ]
     },
     "CCommentPasteXF02": {
@@ -211,7 +205,6 @@
             "InputmethodCheck0"
         ],
         "next": [
-            "CommentHeart01",
             "CCommentXF01",
             "CommentCommon01",
             "CommentCommon00"
@@ -231,20 +224,27 @@
         "focus": true,
         "focus_succeeded": "检测到语录功能，使用XF语录",
         "next": [
-            "CCCommentXF02",
             "CCCommentXFTEmoji",
-            "CommentHeart01",
+            "Comment03T",
+            "Comment14T",
+            "Comment25T",
+            "CCCommentXF02",
             "CommentCommon01",
             "CommentCommon00"
         ]
     },
     "CCCommentXF02": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "Dxxw3",
+            "dxxw3",
             "Dxxw2",
-            "Dxxw",
-            "heart",
+            "dxxw2",
+            "Dxxw1",
+            "dxxw1",
+            "评论",
+            "Emoji",
             "表情"
         ],
         "roi": [
@@ -260,13 +260,14 @@
         ]
     },
     "CCCommentXFTEmoji": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
-            "heart",
+            "Emoji",
             "表情",
-            "Dxxw3",
-            "Dxxw2",
-            "Dxxw"
+            "Dxxw1",
+            "dxxw1",
+            "评论"
         ],
         "roi": [
             5,
@@ -284,9 +285,13 @@
         "recognition": "OCR",
         "expected": [
             "Dxxw3",
+            "dxxw3",
             "Dxxw2",
-            "Dxxw",
-            "heart",
+            "dxxw2",
+            "Dxxw1",
+            "dxxw1",
+            "评论",
+            "Emoji",
             "表情"
         ],
         "roi": [
@@ -305,9 +310,13 @@
         "recognition": "OCR",
         "expected": [
             "Dxxw2",
+            "dxxw2",
             "Dxxw3",
-            "Dxxw",
-            "heart",
+            "dxxw3",
+            "Dxxw1",
+            "dxxw1",
+            "评论",
+            "Emoji",
             "表情"
         ],
         "roi": [
@@ -325,10 +334,14 @@
     "CCCommentXFT25": {
         "recognition": "OCR",
         "expected": [
-            "Dxxw",
+            "Dxxw1",
+            "dxxw1",
             "Dxxw3",
+            "dxxw3",
             "Dxxw2",
-            "heart",
+            "dxxw2",
+            "评论",
+            "Emoji",
             "表情"
         ],
         "roi": [
@@ -1002,6 +1015,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "CCommentBack01",
             "CCommentBack02"
