@@ -93,18 +93,39 @@
         ],
         "action": "Click",
         "next": [
-            "InputHeart",
+            "InputHeart01",
             "CCommentXF01",
-            "Comment03T",
-            "Comment14T",
-            "Comment25T",
-            "Comment010"
+            "CommentCommon00"
         ]
     },
-    "InputHeart": {
+    "InputHeart01": {
         "enabled": true,
-        "action": "InputText",
-        "input_text": "\u2764",
+        "recognition": "TemplateMatch",
+        "template": "Emoji.png",
+        "roi": [
+            1,
+            698,
+            719,
+            132
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "InputHeart02"
+        ]
+    },
+    "InputHeart02": {
+        "recognition": "TemplateMatch",
+        "template": "heart03.png",
+        "roi": [
+            8,
+            805,
+            709,
+            400
+        ],
+        "green_mask": true,
+        "threshold": 0.5,
+        "action": "Click",
         "next": [
             "LikeClickPublish"
         ]

@@ -211,26 +211,31 @@
             "InputmethodCheck0"
         ],
         "next": [
+            "CommentHeart01",
             "CCommentXF01",
-            "Comment03T",
-            "Comment14T",
-            "Comment25T",
-            "Comment010"
+            "CommentCommon01",
+            "CommentCommon00"
         ]
     },
     "CCommentXF01": {
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": "XF_comment.png",
+        "roi": [
+            1,
+            698,
+            719,
+            132
+        ],
         "action": "Click",
         "focus": true,
         "focus_succeeded": "检测到语录功能，使用XF语录",
         "next": [
             "CCCommentXF02",
-            "Comment03T",
-            "Comment14T",
-            "Comment25T",
-            "Comment010"
+            "CCCommentXFTEmoji",
+            "CommentHeart01",
+            "CommentCommon01",
+            "CommentCommon00"
         ]
     },
     "CCCommentXF02": {
@@ -238,10 +243,156 @@
         "expected": [
             "Dxxw3",
             "Dxxw2",
-            "Dxxw"
+            "Dxxw",
+            "heart",
+            "表情"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
         ],
         "action": "Click",
         "post_delay": 1000,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFTEmoji": {
+        "recognition": "OCR",
+        "expected": [
+            "heart",
+            "表情",
+            "Dxxw3",
+            "Dxxw2",
+            "Dxxw"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT03": {
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "Dxxw2",
+            "Dxxw",
+            "heart",
+            "表情"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT14": {
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw2",
+            "Dxxw3",
+            "Dxxw",
+            "heart",
+            "表情"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT25": {
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw",
+            "Dxxw3",
+            "Dxxw2",
+            "heart",
+            "表情"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CommentCommon01": {
+        "action": "InputText",
+        "input_text": "zilihangjianganshoudaomanmandeyongxin",
+        "next": [
+            "CommentCommon02"
+        ]
+    },
+    "CommentCommon02": {
+        "action": "Key",
+        "key": 62,
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CommentCommon00": {
+        "action": "InputText",
+        "input_text": "think",
+        "next": [
+            "CCommentPublish"
+        ]
+    },
+    "CommentHeart01": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "Emoji.png",
+        "roi": [
+            1,
+            698,
+            719,
+            132
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CommentHeart02",
+            "CommentCommon00"
+        ]
+    },
+    "CommentHeart02": {
+        "recognition": "TemplateMatch",
+        "template": "heart03.png",
+        "roi": [
+            8,
+            805,
+            709,
+            400
+        ],
+        "green_mask": true,
+        "threshold": 0.5,
+        "action": "Click",
         "next": [
             "CCommentPublish"
         ]
@@ -259,16 +410,8 @@
             45
         ],
         "next": [
-            "Comment03T000",
-            "Comment03T001",
-            "Comment03T002",
-            "Comment03T003",
-            "Comment03T004",
-            "Comment03T005",
-            "Comment03T006",
-            "Comment03T007",
-            "Comment03T008",
-            "Comment03T009",
+            "CCCommentXFT03",
+            "CommentCommon00",
             "Comment14T"
         ]
     },
@@ -285,16 +428,8 @@
             45
         ],
         "next": [
-            "Comment14T000",
-            "Comment14T001",
-            "Comment14T002",
-            "Comment14T003",
-            "Comment14T004",
-            "Comment14T005",
-            "Comment14T006",
-            "Comment14T007",
-            "Comment14T008",
-            "Comment25T009",
+            "CCCommentXFT14",
+            "CommentCommon00",
             "Comment25T"
         ]
     },
@@ -311,16 +446,8 @@
             45
         ],
         "next": [
-            "Comment25T000",
-            "Comment25T001",
-            "Comment25T002",
-            "Comment25T003",
-            "Comment25T004",
-            "Comment25T005",
-            "Comment25T006",
-            "Comment25T007",
-            "Comment25T008",
-            "Comment25T009",
+            "CCCommentXFT25",
+            "CommentCommon00",
             "Comment03T"
         ]
     },

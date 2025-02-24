@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -219,12 +219,11 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏（回复）圈子内容",
+            "doc": "循环点赞收藏（回复）圈子内容，评论需要用到XF的语录功能，需要自行添加",
             "option": [
                 "CircleSwitch",
                 "滑动速度",
                 "是否评论",
-                "是否使用XF语录功能",
                 "误入动态判断"
             ],
             "pipeline_override": {
@@ -243,17 +242,15 @@
             "option": [
                 "滑动速度",
                 "是否评论",
-                "是否使用XF语录功能",
                 "误入动态判断"
             ]
         },
         {
             "name": "点赞评论(beta)",
             "entry": "LikeComment",
-            "doc": "点赞（回复）收到的评论",
+            "doc": "点赞（回复）收到的评论，回复评论需要用到XF的语录功能，需要自行添加",
             "option": [
-                "是否回复评论",
-                "是否使用XF语录功能"
+                "是否回复评论"
             ]
         },
         {
@@ -262,7 +259,7 @@
             "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频",
             "option": [
                 "是否分享",
-                "是否使用XF语录功能"
+                "是否评论"
             ],
             "pipeline_override": {
                 "ReplyVideo01": {
@@ -302,7 +299,7 @@
             "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
             "option": [
                 "是否重复运行",
-                "是否使用XF语录功能"
+                "是否评论"
             ],
             "pipeline_override": {
                 "ShareBackVideoM": {
@@ -332,7 +329,7 @@
             "doc": "每个动态等待10s后，分享、点赞、收藏、评论\n如果选择重复运行，需要手动结束",
             "option": [
                 "是否重复运行",
-                "是否使用XF语录功能"
+                "是否评论"
             ],
             "pipeline_override": {
                 "ReplyContM": {
@@ -412,7 +409,36 @@
                         },
                         "ReplyComment": {
                             "next": [
-                                "InputHeart"
+                                "InputHeart01"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "回复表情",
+                    "pipeline_override": {
+                        "InputHeart01": {
+                            "enabled": false
+                        },
+                        "CommentHeart01": {
+                            "enabled": false
+                        },
+                        "CCommentXF01": {
+                            "next": [
+                                "CCCommentXFTEmoji",
+                                "CommentCommon00"
+                            ]
+                        },
+                        "ClickLike01": {
+                            "next": [
+                                "ReplyComment",
+                                "ClickLikeAll"
+                            ]
+                        },
+                        "CCommentPublish": {
+                            "next": [
+                                "RepeatComment",
+                                "ClickLikeAll"
                             ]
                         }
                     }
@@ -420,7 +446,10 @@
                 {
                     "name": "回复文字",
                     "pipeline_override": {
-                        "InputHeart": {
+                        "InputHeart01": {
+                            "enabled": false
+                        },
+                        "CommentHeart01": {
                             "enabled": false
                         },
                         "ClickLike01": {
@@ -446,8 +475,64 @@
                     "pipeline_override": {}
                 },
                 {
-                    "name": "是",
+                    "name": "评论\u2764",
                     "pipeline_override": {
+                        "CCommentVideoIn02": {
+                            "next": [
+                                "CommentHeart01",
+                                "CommentCommon00"
+                            ]
+                        },
+                        "CircleLike": {
+                            "next": [
+                                "CClickComment",
+                                "CCheckLike"
+                            ]
+                        },
+                        "CCommentBack02": {
+                            "next": [
+                                "CircleSwipe2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "评论表情",
+                    "pipeline_override": {
+                        "CommentHeart01": {
+                            "enabled": false
+                        },
+                        "InputHeart01": {
+                            "enabled": false
+                        },
+                        "CCommentXF01": {
+                            "next": [
+                                "CCCommentXFTEmoji",
+                                "CommentCommon00"
+                            ]
+                        },
+                        "CircleLike": {
+                            "next": [
+                                "CClickComment",
+                                "CCheckLike"
+                            ]
+                        },
+                        "CCommentBack02": {
+                            "next": [
+                                "CircleSwipe2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "评论文字",
+                    "pipeline_override": {
+                        "CommentHeart01": {
+                            "enabled": false
+                        },
+                        "InputHeart01": {
+                            "enabled": false
+                        },
                         "CircleLike": {
                             "next": [
                                 "CClickComment",
@@ -466,16 +551,16 @@
         "是否使用XF语录功能": {
             "cases": [
                 {
-                    "name": "否",
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
                     "pipeline_override": {
                         "CCommentXF01": {
                             "enabled": false
                         }
                     }
-                },
-                {
-                    "name": "是",
-                    "pipeline_override": {}
                 }
             ]
         },
@@ -552,7 +637,7 @@
         "误入动态判断": {
             "cases": [
                 {
-                    "name": "否",
+                    "name": "no",
                     "pipeline_override": {
                         "InImagetxt": {
                             "enabled": false
@@ -563,7 +648,7 @@
                     }
                 },
                 {
-                    "name": "是",
+                    "name": "yes",
                     "pipeline_override": {}
                 }
             ]
@@ -680,11 +765,11 @@
         "是否重复运行": {
             "cases": [
                 {
-                    "name": "否",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "是",
+                    "name": "yes",
                     "pipeline_override": {
                         "ReplyBackM": {
                             "next": [
@@ -698,11 +783,11 @@
         "是否分享": {
             "cases": [
                 {
-                    "name": "否",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "是",
+                    "name": "yes",
                     "pipeline_override": {
                         "ReplyShareSuccessBack": {
                             "next": [
@@ -731,11 +816,11 @@
         "是否发布作品": {
             "cases": [
                 {
-                    "name": "是",
+                    "name": "yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "否",
+                    "name": "no",
                     "pipeline_override": {
                         "TVRadioComplete02": {
                             "next": "Back"
