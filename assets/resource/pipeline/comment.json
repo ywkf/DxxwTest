@@ -85,11 +85,46 @@
         "green_mask": true,
         "post_delay": 500,
         "next": [
-            "CCheckComment",
+            "CCheckComment001",
+            "CCheckComment002",
             "CCommentVideoIn02"
         ]
     },
-    "CCheckComment": {
+    "CCheckComment001": {
+        "recognition": "OCR",
+        "expected": [
+            "作者赞过"
+        ],
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "检测到评论，复制评论",
+        "next": [
+            "CCopyComment001"
+        ]
+    },
+    "CCopyComment001": {
+        "action": "Swipe",
+        "begin": "CCheckComment001",
+        "end": "CCheckComment001",
+        "begin_offset": [
+            -10,
+            -50,
+            0,
+            0
+        ],
+        "end_offset": [
+            0,
+            -50,
+            0,
+            0
+        ],
+        "duration": 2000,
+        "next": [
+            "CClickCopy",
+            "CCommentVideoIn02"
+        ]
+    },
+    "CCheckComment002": {
         "recognition": "OCR",
         "expected": [
             "回复"
@@ -98,15 +133,15 @@
         "focus": true,
         "focus_succeeded": "检测到评论，复制评论",
         "next": [
-            "CCopyComment"
+            "CCopyComment002"
         ]
     },
-    "CCopyComment": {
+    "CCopyComment002": {
         "action": "Swipe",
-        "begin": "CCheckComment",
-        "end": "CCheckComment",
+        "begin": "CCheckComment002",
+        "end": "CCheckComment002",
         "begin_offset": [
-            0,
+            -25,
             -80,
             0,
             0
@@ -117,9 +152,10 @@
             0,
             0
         ],
-        "duration": 1000,
+        "duration": 2000,
         "next": [
-            "CClickCopy"
+            "CClickCopy",
+            "CCommentVideoIn02"
         ]
     },
     "CClickCopy": {
