@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.8",
+    "version": "0.1.10",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -573,7 +573,29 @@
                     "pipeline_override": {}
                 },
                 {
-                    "name": "评论表情",
+                    "name": "仅评论图文",
+                    "pipeline_override": {
+                        "CircleLike": {
+                            "next": [
+                                "CClickComment",
+                                "CCheckLike"
+                            ]
+                        },
+                        "CClickComment": {
+                            "next": [
+                                "CCommentImage",
+                                "CCommentVideoBack"
+                            ]
+                        },
+                        "CCommentVideoBack": {
+                            "next": [
+                                "CircleSwipe2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "视频评论表情",
                     "pipeline_override": {
                         "CCommentXF01": {
                             "next": [
@@ -595,7 +617,7 @@
                     }
                 },
                 {
-                    "name": "评论文字",
+                    "name": "视频评论文字",
                     "pipeline_override": {
                         "CCCommentXFTEmoji": {
                             "enabled": false

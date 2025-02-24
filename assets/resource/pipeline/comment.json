@@ -90,6 +90,24 @@
             "CCommentVideoIn02"
         ]
     },
+    "CCommentVideoBack": {
+        "recognition": "TemplateMatch",
+        "template": "video_comment.png",
+        "roi": [
+            627,
+            668,
+            67,
+            58
+        ],
+        "threshold": 0.6,
+        "green_mask": true,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next": [
+            "Stop"
+        ]
+    },
     "CCheckComment001": {
         "recognition": "OCR",
         "expected": [
