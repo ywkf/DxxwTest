@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -219,7 +219,7 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏（回复）圈子内容\n评论需要用到XF输入法的语录功能，需要自行添加\n视频评论库会随时间用完，有需要的可以定时更新语录库",
+            "doc": "循环点赞收藏（回复）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论库会随时间用完，有需要的可以定时更新语录库",
             "option": [
                 "CircleSwitch",
                 "滑动速度",
@@ -230,7 +230,7 @@
         {
             "name": "圈子点赞收藏(beta)自定义",
             "entry": "CircleSwipe0",
-            "doc": "进入圈子后再启动，循环点赞收藏（回复）圈子内容，需要手动结束\n评论需要用到XF输入法的语录功能，需要自行添加\n视频评论库会随时间用完，有需要的可以定时更新语录库",
+            "doc": "进入圈子后再启动，循环点赞收藏（回复）圈子内容，需要手动结束\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论库会随时间用完，有需要的可以定时更新语录库",
             "option": [
                 "滑动速度",
                 "是否评论",
@@ -248,7 +248,7 @@
         {
             "name": "点赞评论(beta)",
             "entry": "LikeComment",
-            "doc": "点赞（回复）收到的评论"
+            "doc": "点赞收到的评论"
         },
         {
             "name": "回赞与收藏(beta)",
@@ -436,6 +436,11 @@
                                 "CCommentVideoBack"
                             ]
                         },
+                        "CCommentBack02": {
+                            "next": [
+                                "CircleSwipe2"
+                            ]
+                        },
                         "CCommentVideoBack": {
                             "next": [
                                 "CircleSwipe2"
@@ -444,7 +449,7 @@
                     }
                 },
                 {
-                    "name": "评论图文和视频",
+                    "name": "评论图文和视频(beta)",
                     "pipeline_override": {
                         "CircleLike": {
                             "next": [
