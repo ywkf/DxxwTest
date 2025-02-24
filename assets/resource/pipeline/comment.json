@@ -278,7 +278,6 @@
         "focus": true,
         "focus_succeeded": "检测到语录功能，使用XF语录",
         "next": [
-            "CCCommentXFTEmoji",
             "Comment03T",
             "Comment14T",
             "Comment25T",
@@ -297,9 +296,7 @@
             "dxxw2",
             "Dxxw1",
             "dxxw1",
-            "评论",
-            "Emoji",
-            "表情"
+            "评论"
         ],
         "roi": [
             5,
@@ -344,9 +341,7 @@
             "dxxw2",
             "Dxxw1",
             "dxxw1",
-            "评论",
-            "Emoji",
-            "表情"
+            "评论"
         ],
         "roi": [
             5,
@@ -369,9 +364,7 @@
             "dxxw3",
             "Dxxw1",
             "dxxw1",
-            "评论",
-            "Emoji",
-            "表情"
+            "评论"
         ],
         "roi": [
             5,
@@ -394,9 +387,7 @@
             "dxxw3",
             "Dxxw2",
             "dxxw2",
-            "评论",
-            "Emoji",
-            "表情"
+            "评论"
         ],
         "roi": [
             5,
@@ -427,39 +418,6 @@
     "CommentCommon00": {
         "action": "InputText",
         "input_text": "think",
-        "next": [
-            "CCommentPublish"
-        ]
-    },
-    "CommentHeart01": {
-        "enabled": true,
-        "recognition": "TemplateMatch",
-        "template": "Emoji.png",
-        "roi": [
-            1,
-            698,
-            719,
-            132
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "CommentHeart02",
-            "CommentCommon00"
-        ]
-    },
-    "CommentHeart02": {
-        "recognition": "TemplateMatch",
-        "template": "heart03.png",
-        "roi": [
-            8,
-            805,
-            709,
-            400
-        ],
-        "green_mask": true,
-        "threshold": 0.5,
-        "action": "Click",
         "next": [
             "CCommentPublish"
         ]
