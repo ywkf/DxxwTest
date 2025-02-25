@@ -289,10 +289,10 @@
         ],
         "roi": "CircleCollect",
         "roi_offset": [
-            0,
-            0,
-            342,
-            2
+            -170,
+            -5,
+            350,
+            10
         ],
         "action": "Click",
         "focus": true,
