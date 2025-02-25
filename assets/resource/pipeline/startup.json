@@ -71,5 +71,22 @@
         "next": [
             "Startup"
         ]
+    },
+    "NotResponding": {
+        "recognition": "OCR",
+        "expected": [
+            "关闭应用",
+            "停止运行",
+            "应用信息"
+        ],
+        "action": "StopApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 3000,
+        "focus": true,
+        "focus_tip": "应用停止运行，正在关闭Dxxw...",
+        "next": [
+            "Restart",
+            "Startup"
+        ]
     }
 }

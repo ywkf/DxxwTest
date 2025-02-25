@@ -2,6 +2,7 @@
     "Circle": {
         "enabled": true,
         "interrupt": [
+            "NotResponding",
             "Back"
         ],
         "next": [
@@ -285,6 +286,13 @@
         "recognition": "TemplateMatch",
         "template": [
             "circle_like.png"
+        ],
+        "roi": "CircleCollect",
+        "roi_offset": [
+            0,
+            0,
+            342,
+            2
         ],
         "action": "Click",
         "focus": true,

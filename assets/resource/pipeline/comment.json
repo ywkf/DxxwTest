@@ -232,7 +232,8 @@
         "expected": "粘贴",
         "action": "Click",
         "next": [
-            "CCommentPublish"
+            "CCommentPublish",
+            "CommentCommon00"
         ]
     },
     "CCommentVideoIn02": {
@@ -305,7 +306,57 @@
             412
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 800,
+        "next": [
+            "CCCommentXF02X2",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXF02X2": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CCCommentXF02X3",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXF02X3": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
         "next": [
             "CCommentPublish"
         ]
@@ -327,7 +378,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 500,
         "next": [
             "CCommentPublish"
         ]
@@ -350,7 +401,57 @@
             412
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 800,
+        "next": [
+            "CCCommentXFT03X2",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT03X2": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CCCommentXFT03X3",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT03X3": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
         "next": [
             "CCommentPublish"
         ]
@@ -373,7 +474,57 @@
             412
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 800,
+        "next": [
+            "CCCommentXFT14X2",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT14X2": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CCCommentXFT14X3",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT14X3": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
         "next": [
             "CCommentPublish"
         ]
@@ -396,7 +547,57 @@
             412
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 800,
+        "next": [
+            "CCCommentXFT25X2",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT25X2": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw1",
+            "dxxw1",
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw2",
+            "dxxw2",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CCCommentXFT25X3",
+            "CCommentPublish"
+        ]
+    },
+    "CCCommentXFT25X3": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw1",
+            "dxxw1",
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw2",
+            "dxxw2",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "post_delay": 500,
         "next": [
             "CCommentPublish"
         ]

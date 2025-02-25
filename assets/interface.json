@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -219,21 +219,23 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏（回复）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论库会随时间用完，有需要的可以定时更新语录库",
+            "doc": "循环点赞收藏（评论）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏",
             "option": [
                 "CircleSwitch",
                 "滑动速度",
                 "是否评论",
+                "视频评论语录次数",
                 "误入动态判断"
             ]
         },
         {
             "name": "圈子点赞收藏(beta)自定义",
             "entry": "CircleSwipe0",
-            "doc": "进入圈子后再启动，循环点赞收藏（回复）圈子内容，需要手动结束\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论库会随时间用完，有需要的可以定时更新语录库",
+            "doc": "进入圈子后再启动，循环点赞收藏（评论）圈子内容，需要手动结束\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏",
             "option": [
                 "滑动速度",
                 "是否评论",
+                "视频评论语录次数",
                 "误入动态判断"
             ],
             "pipeline_override": {
@@ -256,7 +258,8 @@
             "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频\n视频评论需要用到XF输入法的语录功能，需要自行添加",
             "option": [
                 "是否分享",
-                "视频评论"
+                "视频评论",
+                "视频评论语录次数"
             ]
         },
         {
@@ -316,6 +319,48 @@
         }
     ],
     "option": {
+        "视频评论语录次数": {
+            "cases": [
+                {
+                    "name": "X1",
+                    "pipeline_override": {
+                        "CCCommentXF02X2": {
+                            "enabled": false
+                        },
+                        "CCCommentXFT03X2": {
+                            "enabled": false
+                        },
+                        "CCCommentXFT14X2": {
+                            "enabled": false
+                        },
+                        "CCCommentXFT25X2": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "X2",
+                    "pipeline_override": {
+                        "CCCommentXF02X3": {
+                            "enabled": false
+                        },
+                        "CCCommentXFT03X3": {
+                            "enabled": false
+                        },
+                        "CCCommentXFT14X3": {
+                            "enabled": false
+                        },
+                        "CCCommentXFT25X3": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "X3",
+                    "pipeline_override": {}
+                }
+            ]
+        },
         "是否评论视频": {
             "cases": [
                 {
