@@ -161,12 +161,13 @@
         "recognition": "TemplateMatch",
         "template": "video_share0.png",
         "roi": [
-            631,
-            941,
-            55,
-            45
+            626,
+            471,
+            65,
+            611
         ],
         "green_mask": true,
+        "threshold": 0.5,
         "action": "Click",
         "post_delay": 500,
         "next": [
@@ -228,12 +229,13 @@
         "recognition": "TemplateMatch",
         "template": "video_share0.png",
         "roi": [
-            631,
-            941,
-            55,
-            45
+            626,
+            471,
+            65,
+            611
         ],
         "green_mask": true,
+        "threshold": 0.5,
         "next": [
             "ReplyVideoLike1M",
             "ReplyVideoLikeM",
@@ -371,12 +373,13 @@
         "recognition": "TemplateMatch",
         "template": "video_like1g.png",
         "roi": [
-            630,
-            536,
-            62,
-            58
+            626,
+            471,
+            65,
+            611
         ],
         "green_mask": true,
+        "threshold": 0.65,
         "next": [
             "ReplyVideoCollect1M",
             "ReplyVideoCollectM",
@@ -387,23 +390,28 @@
         "recognition": "TemplateMatch",
         "template": "video_collect1g.png",
         "roi": [
-            634,
-            801,
-            56,
-            57
+            626,
+            471,
+            65,
+            611
         ],
         "green_mask": true,
+        "threshold": 0.65,
         "next": [
             "ReplyVideoBackM"
         ]
     },
     "ReplyVideoLikeM": {
-        "target": [
-            660,
-            560,
-            10,
-            10
+        "recognition": "TemplateMatch",
+        "template": "video_like0g.png",
+        "roi": [
+            626,
+            471,
+            65,
+            611
         ],
+        "green_mask": true,
+        "threshold": 0.5,
         "action": "Click",
         "next": [
             "ReplyVideoCollect1M",
@@ -412,12 +420,16 @@
         ]
     },
     "ReplyVideoCollectM": {
-        "target": [
-            655,
-            825,
-            10,
-            10
+        "recognition": "TemplateMatch",
+        "template": "video_collect0g.png",
+        "roi": [
+            626,
+            471,
+            65,
+            611
         ],
+        "green_mask": true,
+        "threshold": 0.5,
         "action": "Click",
         "next": [
             "ReplyVideoBackM"

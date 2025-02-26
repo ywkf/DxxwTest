@@ -75,15 +75,15 @@
     "NotResponding": {
         "recognition": "OCR",
         "expected": [
+            "大象新闻没有响应",
             "关闭应用",
-            "停止运行",
-            "应用信息"
+            "没有响应"
         ],
         "action": "StopApp",
         "package": "com.hnr.dxxw",
         "post_delay": 3000,
         "focus": true,
-        "focus_tip": "应用停止运行，正在关闭Dxxw...",
+        "focus_tip": "应用没有响应，正在关闭Dxxw...",
         "next": [
             "Restart",
             "Startup"

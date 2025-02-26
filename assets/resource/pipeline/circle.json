@@ -2,11 +2,57 @@
     "Circle": {
         "enabled": true,
         "interrupt": [
-            "NotResponding",
             "Back"
         ],
         "next": [
+            "CNotResponding",
             "ClickMyCircle",
+            "DXCircle"
+        ]
+    },
+    "CNotResponding": {
+        "recognition": "OCR",
+        "expected": [
+            "大象新闻没有响应",
+            "关闭应用",
+            "没有响应"
+        ],
+        "action": "StopApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 3000,
+        "focus": true,
+        "focus_tip": "应用没有响应，正在关闭Dxxw...",
+        "next": [
+            "CStartApp"
+        ]
+    },
+    "CStartApp": {
+        "action": "StartApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 3000,
+        "focus": true,
+        "focus_tip": "重新启动Dxxw...",
+        "focus_succeeded": "启动成功",
+        "next": [
+            "CSkip1"
+        ]
+    },
+    "CSkip1": {
+        "recognition": "OCR",
+        "expected": "跳过",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "CSkip2",
+            "DXCircle"
+        ]
+    },
+    "CSkip2": {
+        "recognition": "OCR",
+        "expected": "跳过",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
             "DXCircle"
         ]
     },

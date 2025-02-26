@@ -75,12 +75,12 @@
         "recognition": "TemplateMatch",
         "template": "video_comment.png",
         "roi": [
-            627,
-            668,
-            67,
-            58
+            626,
+            471,
+            65,
+            611
         ],
-        "threshold": 0.6,
+        "threshold": 0.45,
         "action": "Click",
         "green_mask": true,
         "post_delay": 500,
@@ -94,12 +94,12 @@
         "recognition": "TemplateMatch",
         "template": "video_comment.png",
         "roi": [
-            627,
-            668,
-            67,
-            58
+            626,
+            471,
+            65,
+            611
         ],
-        "threshold": 0.6,
+        "threshold": 0.45,
         "green_mask": true,
         "action": "Key",
         "key": 4,
