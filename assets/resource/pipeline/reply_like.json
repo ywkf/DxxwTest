@@ -261,10 +261,10 @@
         "recognition": "TemplateMatch",
         "template": "video_like1g.png",
         "roi": [
-            630,
-            536,
-            62,
-            58
+            626,
+            471,
+            65,
+            611
         ],
         "green_mask": true,
         "next": [
@@ -277,10 +277,10 @@
         "recognition": "TemplateMatch",
         "template": "video_collect1g.png",
         "roi": [
-            634,
-            801,
-            56,
-            57
+            626,
+            471,
+            65,
+            611
         ],
         "green_mask": true,
         "next": [
@@ -288,12 +288,16 @@
         ]
     },
     "ReplyVideoLike": {
-        "target": [
-            660,
-            560,
-            10,
-            10
+        "recognition": "TemplateMatch",
+        "template": "video_like0g.png",
+        "roi": [
+            626,
+            471,
+            65,
+            611
         ],
+        "green_mask": true,
+        "threshold": 0.5,
         "action": "Click",
         "next": [
             "ReplyVideoCollect1",
@@ -302,12 +306,16 @@
         ]
     },
     "ReplyVideoCollect": {
-        "target": [
-            655,
-            825,
-            10,
-            10
+        "recognition": "TemplateMatch",
+        "template": "video_collect0g.png",
+        "roi": [
+            626,
+            471,
+            65,
+            611
         ],
+        "green_mask": true,
+        "threshold": 0.5,
         "action": "Click",
         "next": [
             "ReplyVideoBack"

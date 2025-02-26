@@ -80,6 +80,7 @@
         ],
         "focus": true,
         "focus_succeeded": "浏览图文已完成",
+        "focus_succeeded_color": "Blue",
         "next": [
             "TaskComment"
         ]
@@ -96,6 +97,7 @@
         ],
         "focus": true,
         "focus_tip": "浏览图文未完成，前去完成",
+        "focus_tip_color": "Blue",
         "next": [
             "TaskImagetxtUndoneLess",
             "MergeBrowsePublish000"
@@ -140,6 +142,7 @@
         ],
         "focus": true,
         "focus_succeeded": "评论已完成",
+        "focus_succeeded_color": "Blue",
         "next": [
             "TaskVideo"
         ]
@@ -156,6 +159,7 @@
         ],
         "focus": true,
         "focus_tip": "评论未完成，前去完成",
+        "focus_tip_color": "Blue",
         "next": [
             "ErrorImagetxt0013"
         ]
@@ -183,6 +187,7 @@
         ],
         "focus": true,
         "focus_succeeded": "浏览音视频已完成",
+        "focus_succeeded_color": "Blue",
         "next": [
             "TaskNotification"
         ]
@@ -199,6 +204,7 @@
         ],
         "focus": true,
         "focus_tip": "浏览音视频未完成，前去完成",
+        "focus_tip_color": "Blue",
         "next": [
             "ErrorGeneral"
         ]
@@ -226,6 +232,7 @@
         ],
         "focus": true,
         "focus_succeeded": "每日通知积分已领取",
+        "focus_succeeded_color": "Blue",
         "next": [
             "TaskTVRadio"
         ]
@@ -247,6 +254,7 @@
         ],
         "focus": true,
         "focus_succeeded": "每日通知积分已领取",
+        "focus_succeeded_color": "Blue",
         "next": [
             "TaskTVRadio"
         ]
@@ -271,6 +279,7 @@
         ],
         "focus": true,
         "focus_succeeded": "看电视听广播已完成",
+        "focus_succeeded_color": "Blue",
         "next": [
             "TaskLive"
         ]
@@ -287,6 +296,7 @@
         ],
         "focus": true,
         "focus_tip": "看电视听广播未完成，前去完成",
+        "focus_tip_color": "Blue",
         "next": [
             "WatchVideoradio"
         ]
@@ -311,6 +321,7 @@
         ],
         "focus": true,
         "focus_succeeded": "观看直播已完成",
+        "focus_succeeded_color": "Blue",
         "next": [
             "Back"
         ]
@@ -327,6 +338,7 @@
         ],
         "focus": true,
         "focus_tip": "观看直播未完成，前去完成",
+        "focus_tip_color": "Blue",
         "next": [
             "ErrorGeneralLive"
         ]

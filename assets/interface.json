@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -196,6 +196,49 @@
             "entry": "TaskCheck",
             "doc": "不检测发布任务，建议放在一键完成之后",
             "pipeline_override": {
+                "TaskImagetxtComplete": {
+                    "focus_succeeded": "浏览图文已完成",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskImagetxtUndone": {
+                    "focus_tip": "浏览图文未完成，前去完成"
+                },
+                "TaskCommentCommplete": {
+                    "focus_succeeded": "评论已完成",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskCommentIndone": {
+                    "focus_tip": "评论未完成，前去完成"
+                },
+                "TaskVideoComplete": {
+                    "focus_succeeded": "浏览音视频已完成",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskVideoUndone": {
+                    "focus_tip": "浏览音视频未完成，前去完成"
+                },
+                "TaskNotificationComplete": {
+                    "focus_succeeded": "每日通知积分已领取",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskNotificationUndone": {
+                    "focus_succeeded": "每日通知积分已领取",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskTVRadioComplete": {
+                    "focus_succeeded": "看电视听广播已完成",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskTVRadioUndone": {
+                    "focus_tip": "看电视听广播未完成，前去完成"
+                },
+                "TaskLiveComplete": {
+                    "focus_succeeded": "观看直播已完成",
+                    "focus_succeeded_color": "Blue"
+                },
+                "TaskLiveUndone": {
+                    "focus_tip": "观看直播未完成，前去完成"
+                },
                 "BrowseImagetxtComplete": {
                     "next": "TaskCheck"
                 },
