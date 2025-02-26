@@ -44,6 +44,7 @@
         "post_delay": 1500,
         "next": [
             "CSkip2",
+            "ClickMyCircle",
             "DXCircle"
         ]
     },
@@ -53,6 +54,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
+            "ClickMyCircle",
             "DXCircle"
         ]
     },
@@ -179,6 +181,7 @@
         "post_delay": 1000,
         "focus": true,
         "focus_succeeded": "识别进入圈子成功",
+        "focus_succeeded_color": "Blue",
         "next": [
             "CircleSwipe0"
         ]
@@ -619,6 +622,7 @@
         "key": 4,
         "focus": true,
         "focus_succeeded": "圈子任务完成",
+        "focus_succeeded_color": "Blue",
         "next": []
     }
 }
