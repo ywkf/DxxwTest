@@ -34,10 +34,10 @@
             "的评论"
         ],
         "roi": [
-            50,
-            1215,
-            300,
-            30
+            40,
+            1200,
+            320,
+            50
         ],
         "action": "Click",
         "target": [
@@ -51,7 +51,10 @@
             "InputmethodCheck0"
         ],
         "next": [
-            "CInputCommentImage"
+            "CInputCommentImage",
+            "CCommentXF01",
+            "CommentCommon01",
+            "CommentCommon00"
         ]
     },
     "CInputCommentImage": {
@@ -1230,13 +1233,15 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "CCommentBack01",
-            "CCommentBack02"
+            "CCommentBack01"
         ]
     },
     "CCommentBack01": {
         "recognition": "OCR",
-        "expected": "全部评论",
+        "expected": [
+            "回复",
+            "作者赞过"
+        ],
         "action": "Key",
         "key": 4,
         "next": [
@@ -1244,6 +1249,12 @@
         ]
     },
     "CCommentBack02": {
+        "recognition": "OCR",
+        "expected": [
+            "已提交",
+            "发送成功",
+            "不能发表"
+        ],
         "action": "Key",
         "key": 4,
         "next": [
