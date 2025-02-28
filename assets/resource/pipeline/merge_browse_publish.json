@@ -234,49 +234,34 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
         "next": [
-            "ShareToWeibo"
+            "ShareToQQ"
         ]
     },
-    "ShareToWeibo": {
+    "ShareToQQ": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            103,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
+        "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
+        "post_delay": 2000,
         "next": [
-            "ShareToWeiboSuccess",
-            "WeiboLogin"
+            "ShareToQQSuccess",
+            "ImagetxtComment"
         ]
     },
-    "WeiboLogin": {
+    "ShareToQQSuccess": {
         "recognition": "OCR",
-        "expected": "登录",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt001",
-        "next": [
-            "ShareSuccessBack"
-        ]
-    },
-    "ShareToWeiboSuccess": {
-        "recognition": "OCR",
-        "expected": "完成分享积分+8",
-        "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt001",
-        "next": [
-            "ShareSuccessBack"
-        ]
-    },
-    "ShareSuccessBack": {
-        "action": "Key",
-        "key": 4,
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
         "next": [
@@ -468,38 +453,34 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
         "next": [
-            "ShareToWeibo02"
+            "ShareToQQ02"
         ]
     },
-    "ShareToWeibo02": {
+    "ShareToQQ02": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            103,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
+        "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
+        "post_delay": 2000,
         "next": [
-            "WeiboLogin02"
+            "ShareToQQSuccess02",
+            "ImagetxtComment02"
         ]
     },
-    "WeiboLogin02": {
+    "ShareToQQSuccess02": {
         "recognition": "OCR",
-        "expected": "登录",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt002",
-        "next": [
-            "ShareSuccessBack02"
-        ]
-    },
-    "ShareSuccessBack02": {
-        "action": "Key",
-        "key": 4,
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
         "next": [
@@ -687,38 +668,34 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
         "next": [
-            "ShareToWeibo03"
+            "ShareToQQ03"
         ]
     },
-    "ShareToWeibo03": {
+    "ShareToQQ03": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            103,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
+        "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
+        "post_delay": 2000,
         "next": [
-            "WeiboLogin03"
+            "ShareToQQSuccess03",
+            "ImagetxtComment03"
         ]
     },
-    "WeiboLogin03": {
+    "ShareToQQSuccess03": {
         "recognition": "OCR",
-        "expected": "登录",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt003",
-        "next": [
-            "ShareSuccessBack03"
-        ]
-    },
-    "ShareSuccessBack03": {
-        "action": "Key",
-        "key": 4,
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
         "next": [
@@ -927,38 +904,34 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
         "next": [
-            "ShareToWeibo04"
+            "ShareToQQ04"
         ]
     },
-    "ShareToWeibo04": {
+    "ShareToQQ04": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            104,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
+        "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
+        "post_delay": 2000,
         "next": [
-            "WeiboLogin04"
+            "ShareToQQSuccess04",
+            "ImagetxtComment04"
         ]
     },
-    "WeiboLogin04": {
+    "ShareToQQSuccess04": {
         "recognition": "OCR",
-        "expected": "登录",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt004",
-        "next": [
-            "ShareSuccessBack04"
-        ]
-    },
-    "ShareSuccessBack04": {
-        "action": "Key",
-        "key": 4,
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
         "next": [
@@ -1146,38 +1119,34 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
         "next": [
-            "ShareToWeibo05"
+            "ShareToQQ05"
         ]
     },
-    "ShareToWeibo05": {
+    "ShareToQQ05": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            105,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
+        "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
+        "post_delay": 2000,
         "next": [
-            "WeiboLogin05"
+            "ShareToQQSuccess05",
+            "ImagetxtComment05"
         ]
     },
-    "WeiboLogin05": {
+    "ShareToQQSuccess05": {
         "recognition": "OCR",
-        "expected": "登录",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt005",
-        "next": [
-            "ShareSuccessBack05"
-        ]
-    },
-    "ShareSuccessBack05": {
-        "action": "Key",
-        "key": 4,
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
         "next": [
@@ -1365,38 +1334,34 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
         "next": [
-            "ShareToWeibo06"
+            "ShareToQQ06"
         ]
     },
-    "ShareToWeibo06": {
+    "ShareToQQ06": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            106,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
+        "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
+        "post_delay": 2000,
         "next": [
-            "WeiboLogin06"
+            "ShareToQQSuccess06",
+            "ImagetxtComment06"
         ]
     },
-    "WeiboLogin06": {
+    "ShareToQQSuccess06": {
         "recognition": "OCR",
-        "expected": "登录",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorImagetxt006",
-        "next": [
-            "ShareSuccessBack06"
-        ]
-    },
-    "ShareSuccessBack06": {
-        "action": "Key",
-        "key": 4,
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
         "next": [

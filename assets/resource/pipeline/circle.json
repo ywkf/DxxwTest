@@ -257,12 +257,33 @@
         ]
     },
     "IsTop0": {
-        "enabled": false,
-        "interrupt": [
-            "CircleSwipe"
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "置顶"
+        ],
+        "roi": [
+            0,
+            220,
+            124,
+            1060
+        ],
+        "action": "Swipe",
+        "begin": [
+            200,
+            900,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            700,
+            10,
+            10
         ],
         "next": [
-            "IsTop"
+            "IsTop",
+            "CircleCollect&Like"
         ]
     },
     "IsTop": {
@@ -276,8 +297,21 @@
             124,
             1060
         ],
-        "inverse": true,
+        "action": "Swipe",
+        "begin": [
+            200,
+            900,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            700,
+            10,
+            10
+        ],
         "next": [
+            "IsTop0",
             "CircleCollect&Like"
         ]
     },
@@ -289,7 +323,6 @@
         ],
         "next": [
             "IsCompleted",
-            "CircleCollectFail",
             "CircleCollect"
         ]
     },
@@ -306,6 +339,7 @@
         ],
         "next": [
             "CircleLike",
+            "CircleCollectFail",
             "IsCompleted"
         ]
     },
@@ -323,7 +357,7 @@
         ],
         "end": [
             200,
-            400,
+            500,
             10,
             10
         ],
@@ -354,7 +388,20 @@
             "CircleSwipe2"
         ]
     },
+    "InCircle": {
+        "recognition": "OCR",
+        "expected": [
+            "我的关注"
+        ],
+        "next": [
+            "CircleSwipe2"
+        ]
+    },
     "CircleSwipe2": {
+        "recognition": "OCR",
+        "expected": [
+            "我的关注"
+        ],
         "action": "Swipe",
         "begin": [
             200,
@@ -381,10 +428,10 @@
             "的评论"
         ],
         "roi": [
-            50,
-            1215,
-            300,
-            30
+            40,
+            1200,
+            350,
+            40
         ],
         "action": "Key",
         "key": 4,
@@ -404,6 +451,7 @@
             "video_share0.png"
         ],
         "green_mask": true,
+        "threshold": 0.5,
         "action": "Key",
         "key": 4,
         "next": [

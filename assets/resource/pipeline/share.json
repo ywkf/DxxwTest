@@ -17,7 +17,7 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "ReplyShareToWeibo"
+            "ReplyShareToQQ"
         ]
     },
     "ReplyVideoShare": {
@@ -34,36 +34,38 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "ReplyShareToWeibo"
+            "ReplyShareToQQ"
         ]
     },
-    "ReplyShareToWeibo": {
+    "ReplyShareToQQ": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            103,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
-        "next": [
-            "ReplyWeiboLogin"
-        ]
-    },
-    "ReplyWeiboLogin": {
-        "recognition": "OCR",
-        "expected": "登录",
+        "action": "Click",
         "post_delay": 500,
         "next": [
-            "ReplyShareSuccessBack"
+            "ShareImageVideoExit",
+            "Share"
         ]
     },
     "ReplyShareSuccessBack": {
         "action": "Key",
         "key": 4,
         "next": [
+            "ShareImageVideoExit",
             "Share"
+        ]
+    },
+    "ShareImageVideoExit": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ShareContM"
         ]
     },
     "ImageOrVideo": {
@@ -203,7 +205,7 @@
         ],
         "index": 0,
         "action": "Click",
-        "post_delay": 2000,
+        "post_delay": 5000,
         "next": [
             "Share"
         ]

@@ -154,7 +154,7 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "ReplyShareToWeiboM"
+            "ReplyShareToQQM"
         ]
     },
     "ReplyVideoShareM": {
@@ -171,34 +171,20 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "ReplyShareToWeiboM"
+            "ReplyShareToQQM"
         ]
     },
-    "ReplyShareToWeiboM": {
+    "ReplyShareToQQM": {
         "recognition": "OCR",
-        "expected": "微博",
-        "action": "Click",
-        "target": [
-            386,
-            769,
-            103,
-            148
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
         ],
-        "next": [
-            "ReplyWeiboLoginM"
-        ]
-    },
-    "ReplyWeiboLoginM": {
-        "recognition": "OCR",
-        "expected": "登录",
+        "action": "Click",
         "post_delay": 500,
-        "next": [
-            "ReplyShareSuccessBackM"
-        ]
-    },
-    "ReplyShareSuccessBackM": {
-        "action": "Key",
-        "key": 4,
         "next": [
             "ImageOrVideoM"
         ]

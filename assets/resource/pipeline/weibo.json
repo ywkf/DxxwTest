@@ -1,0 +1,36 @@
+{
+    "Weibo": {
+        "recognition": "OCR",
+        "expected": [
+            "网页链接"
+        ],
+        "action": "Click",
+        "next": [
+            "ClickPlay"
+        ]
+    },
+    "ClickPlay": {
+        "recognition": "OCR",
+        "expected": [
+            "举报"
+        ],
+        "target": [
+            361,
+            707,
+            1,
+            1
+        ],
+        "action": "Click",
+        "post_delay": 11000,
+        "next": [
+            "WeiboBack"
+        ]
+    },
+    "WeiboBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "Weibo"
+        ]
+    }
+}
