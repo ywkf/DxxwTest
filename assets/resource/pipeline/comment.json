@@ -69,7 +69,6 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 5000,
         "next": [
             "CCommentBack02"
         ]
@@ -1240,7 +1239,11 @@
         "recognition": "OCR",
         "expected": [
             "回复",
-            "作者赞过"
+            "作者赞过",
+            "已提交",
+            "发送成功",
+            "不能发表",
+            "频率过高"
         ],
         "action": "Key",
         "key": 4,
@@ -1253,7 +1256,8 @@
         "expected": [
             "已提交",
             "发送成功",
-            "不能发表"
+            "不能发表",
+            "频率过高"
         ],
         "action": "Key",
         "key": 4,
