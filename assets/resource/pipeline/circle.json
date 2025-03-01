@@ -6,8 +6,25 @@
         ],
         "next": [
             "CNotResponding",
+            "InTheCircle",
             "ClickMyCircle",
             "DXCircle"
+        ]
+    },
+    "InTheCircle": {
+        "recognition": "OCR",
+        "expected": [
+            "我的关注",
+            "最热"
+        ],
+        "roi": [
+            0,
+            46,
+            720,
+            732
+        ],
+        "next": [
+            "CircleSwipe0"
         ]
     },
     "CNotResponding": {
