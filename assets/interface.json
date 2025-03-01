@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -243,12 +243,13 @@
         {
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
-            "doc": "循环点赞收藏（评论）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏",
+            "doc": "循环点赞收藏（评论）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
             "option": [
                 "CircleSwitch",
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
+                "至1天前",
                 "误入动态判断"
             ]
         },
@@ -362,6 +363,32 @@
         }
     ],
     "option": {
+        "至1天前": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "TheDayBefore": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "IsCompleted": {
+                            "next": [
+                                "InImagetxt",
+                                "InVideo",
+                                "TheDayBefore",
+                                "CircleCollectFail",
+                                "CircleCollect"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "视频评论语录次数": {
             "cases": [
                 {
