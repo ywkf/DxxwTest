@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.25",
+    "version": "0.1.26",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -319,6 +319,9 @@
             "name": "阅读量分享",
             "entry": "ShareContM",
             "doc": "进入个人发布内容页面，划至上方再启动，无限循环分享最上方内容，需要手动结束",
+            "option": [
+                "等待时间"
+            ],
             "pipeline_override": {
                 "ReplyShareToQQ": {
                     "next": [
