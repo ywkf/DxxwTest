@@ -12,7 +12,7 @@
     "ClickPlay": {
         "recognition": "OCR",
         "expected": [
-            "举报"
+            "打开APP"
         ],
         "target": [
             361,
