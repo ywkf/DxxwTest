@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.26",
+    "version": "0.1.27",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -319,9 +319,6 @@
             "name": "阅读量分享",
             "entry": "ShareContM",
             "doc": "进入个人发布内容页面，划至上方再启动，无限循环分享最上方内容，需要手动结束",
-            "option": [
-                "等待时间"
-            ],
             "pipeline_override": {
                 "ReplyShareToQQ": {
                     "next": [
@@ -358,7 +355,10 @@
         {
             "name": "微博阅读量",
             "entry": "Weibo",
-            "doc": "进入微博应用程序，账号对应的发布内容页面再启动，无限循环分享，需要手动结束"
+            "doc": "进入微博应用程序，账号对应的发布内容页面再启动，无限循环分享，需要手动结束",
+            "option": [
+                "等待时间"
+            ]
         },
         {
             "name": "返回个人页",
