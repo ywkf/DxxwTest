@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.27",
+    "version": "0.1.28",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -261,6 +261,7 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
+                "至1天前",
                 "误入动态判断"
             ],
             "pipeline_override": {
@@ -359,10 +360,6 @@
             "option": [
                 "等待时间"
             ]
-        },
-        {
-            "name": "返回个人页",
-            "entry": "Back"
         }
     ],
     "option": {
@@ -433,8 +430,8 @@
                     "pipeline_override": {
                         "IsCompleted": {
                             "next": [
-                                "InImagetxt",
                                 "InVideo",
+                                "InImagetxt",
                                 "TheDayBefore",
                                 "CircleCollectFail",
                                 "CircleCollect"
@@ -608,15 +605,15 @@
                         },
                         "CCommentBack02": {
                             "next": [
-                                "InImagetxt",
                                 "InVideo",
+                                "InImagetxt",
                                 "CircleSwipe2"
                             ]
                         },
                         "CCommentVideoBack": {
                             "next": [
-                                "InImagetxt",
                                 "InVideo",
+                                "InImagetxt",
                                 "CircleSwipe2"
                             ]
                         }
@@ -633,8 +630,8 @@
                         },
                         "CCommentBack02": {
                             "next": [
-                                "InImagetxt",
                                 "InVideo",
+                                "InImagetxt",
                                 "CircleSwipe2"
                             ]
                         }
