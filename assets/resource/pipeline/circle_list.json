@@ -1,0 +1,112 @@
+{
+    "CircleList": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "天天开心",
+            "莫离",
+            "蓝莲花",
+            "空白",
+            "NameList启动"
+        ],
+        "pre_delay": 500,
+        "focus": true,
+        "focus_succeeded": "识别到成员，评论中...",
+        "next": [
+            "ClickName"
+        ]
+    },
+    "ClickName": {
+        "action": "Click",
+        "target": "NameList",
+        "target_offset": [
+            100,
+            40,
+            0,
+            0
+        ],
+        "post_delay": 2000,
+        "next": [
+            "CCommentLiked",
+            "ListVideoCollect",
+            "ListImageCollect",
+            "CCommentVideo",
+            "CCommentImage"
+        ]
+    },
+    "ListImageCollect": {
+        "recognition": "TemplateMatch",
+        "template": "收藏g.png",
+        "roi": [
+            1,
+            1184,
+            719,
+            96
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "pre_delay": 500,
+        "next": [
+            "ListImageLike",
+            "CCommentImage",
+            "CCommentVideo"
+        ]
+    },
+    "ListImageLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "like0g.png",
+            "点赞 _g.png"
+        ],
+        "roi": [
+            1,
+            1184,
+            719,
+            96
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "pre_delay": 500,
+        "next": [
+            "CCommentImage",
+            "CCommentVideo"
+        ]
+    },
+    "ListVideoCollect": {
+        "recognition": "TemplateMatch",
+        "template": "video_collect0g.png",
+        "roi": [
+            620,
+            457,
+            83,
+            640
+        ],
+        "green_mask": true,
+        "threshold": 0.5,
+        "pre_delay": 500,
+        "action": "Click",
+        "next": [
+            "ListVideoLike",
+            "CCommentImage",
+            "CCommentVideo"
+        ]
+    },
+    "ListVideoLike": {
+        "recognition": "TemplateMatch",
+        "template": "video_like0g.png",
+        "roi": [
+            620,
+            457,
+            83,
+            640
+        ],
+        "green_mask": true,
+        "threshold": 0.5,
+        "pre_delay": 500,
+        "action": "Click",
+        "next": [
+            "CCommentImage",
+            "CCommentVideo"
+        ]
+    }
+}

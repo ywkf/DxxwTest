@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.28",
+    "version": "0.1.29",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -250,8 +250,14 @@
                 "是否评论",
                 "视频评论语录次数",
                 "至1天前",
+                "识别列表成员",
                 "误入动态判断"
-            ]
+            ],
+            "pipeline_override": {
+                "NameList": {
+                    "enabled": false
+                }
+            }
         },
         {
             "name": "圈子点赞收藏(beta)自定义",
@@ -262,14 +268,45 @@
                 "是否评论",
                 "视频评论语录次数",
                 "至1天前",
+                "识别列表成员",
                 "误入动态判断"
             ],
             "pipeline_override": {
+                "NameList": {
+                    "enabled": false
+                },
                 "IsTop": {
                     "enabled": false
                 },
                 "IsCompleted": {
                     "enabled": false
+                }
+            }
+        },
+        {
+            "name": "圈子点赞收藏(beta)评论列表",
+            "entry": "Circle",
+            "doc": "循环点赞收藏圈子内容，评论列表账号\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
+            "option": [
+                "CircleSwitch",
+                "滑动速度",
+                "视频评论语录次数",
+                "至1天前",
+                "误入动态判断"
+            ],
+            "pipeline_override": {
+                "NameList": {
+                    "next": [
+                        "ClickName"
+                    ]
+                },
+                "CCommentBack02": {
+                    "next": [
+                        "InVideo",
+                        "InImagetxt",
+                        "CircleCollect",
+                        "CircleSwipe2"
+                    ]
                 }
             }
         },
@@ -363,6 +400,32 @@
         }
     ],
     "option": {
+        "识别列表成员": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "NameList": {
+                            "enabled": false
+                        },
+                        "NotCCommentBack": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "NameList": {
+                            "enabled": true
+                        },
+                        "NotCCommentBack": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
         "等待时间": {
             "cases": [
                 {
@@ -434,6 +497,7 @@
                                 "InImagetxt",
                                 "TheDayBefore",
                                 "CircleCollectFail",
+                                "NameList",
                                 "CircleCollect"
                             ]
                         }
@@ -597,8 +661,16 @@
                                 "CCheckLike"
                             ]
                         },
+                        "NameList": {
+                            "next": [
+                                "CCommentImage",
+                                "CCommentVideoBack"
+                            ]
+                        },
                         "CClickComment": {
                             "next": [
+                                "NameList",
+                                "NotCCommentBack",
                                 "CCommentImage",
                                 "CCommentVideoBack"
                             ]
@@ -626,6 +698,18 @@
                             "next": [
                                 "CClickComment",
                                 "CCheckLike"
+                            ]
+                        },
+                        "NameList": {
+                            "next": [
+                                "CCommentVideo",
+                                "CCommentImage"
+                            ]
+                        },
+                        "CClickComment": {
+                            "next": [
+                                "NameList",
+                                "NotCCommentBack"
                             ]
                         },
                         "CCommentBack02": {

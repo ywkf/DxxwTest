@@ -19,12 +19,30 @@
             3
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "pre_delay": 500,
+        "post_delay": 2000,
         "focus": true,
-        "focus_succeeded": "评论中...",
+        "focus_succeeded": "进入作品",
         "next": [
             "CCommentImage",
             "CCommentVideo"
+        ]
+    },
+    "CheckName": {
+        "enabled": false,
+        "recognition": "OCR",
+        "expected": [
+            "天天开心",
+            "莫离",
+            "蓝莲花",
+            "空白",
+            "NameList启动"
+        ],
+        "focus": true,
+        "focus_succeeded": "识别到成员，评论中...",
+        "next": [
+            "CCommentVideo",
+            "CCommentImage"
         ]
     },
     "CCommentImage": {
@@ -94,6 +112,7 @@
             412
         ],
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "next": [
             "CSendCommentImage"
@@ -111,6 +130,8 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
+        "focus": true,
+        "focus_succeeded": "发表评论..",
         "next": [
             "CCommentBack02T"
         ]
@@ -127,6 +148,7 @@
         "threshold": 0.45,
         "action": "Click",
         "green_mask": true,
+        "pre_delay": 2000,
         "post_delay": 500,
         "next": [
             "CCheckComment001",
@@ -175,7 +197,7 @@
             0
         ],
         "end_offset": [
-            0,
+            -5,
             -50,
             0,
             0
@@ -209,7 +231,7 @@
             0
         ],
         "end_offset": [
-            0,
+            -20,
             -80,
             0,
             0
@@ -350,6 +372,7 @@
             412
         ],
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "next": [
             "CCCommentXF02X2",
@@ -422,6 +445,7 @@
             412
         ],
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "next": [
             "CCommentPublish"
@@ -445,6 +469,7 @@
             412
         ],
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "next": [
             "CCCommentXFT03X2",
@@ -518,6 +543,7 @@
             412
         ],
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "next": [
             "CCCommentXFT14X2",
@@ -591,6 +617,7 @@
             412
         ],
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "next": [
             "CCCommentXFT25X2",
@@ -1272,6 +1299,8 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
+        "focus": true,
+        "focus_succeeded": "发表评论...",
         "next": [
             "CCommentBack01"
         ]
@@ -1308,6 +1337,7 @@
             611
         ],
         "green_mask": true,
+        "threshold": 0.5,
         "action": "Key",
         "key": 4,
         "next": [
@@ -1323,6 +1353,30 @@
             "频率过高"
         ],
         "pre_delay": 1000,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02"
+        ]
+    },
+    "CCommentLiked": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_like1g.png",
+            "video_collect1g.png",
+            "like1g.png",
+            "收藏1g.png"
+        ],
+        "green_mask": true,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02"
+        ]
+    },
+    "NotCCommentBack": {
+        "enabled": false,
         "action": "Key",
         "key": 4,
         "next": [

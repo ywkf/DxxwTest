@@ -340,6 +340,7 @@
         ],
         "next": [
             "IsCompleted",
+            "NameList",
             "CircleCollect"
         ]
     },
@@ -404,6 +405,7 @@
             "CircleSwipe"
         ],
         "next": [
+            "NameList",
             "CircleSwipe2"
         ]
     },
@@ -413,6 +415,7 @@
             "我的关注"
         ],
         "next": [
+            "NameList",
             "CircleSwipe2"
         ]
     },
@@ -491,6 +494,7 @@
             "TheDayBefore",
             "CircleCollect1",
             "CircleCollectFail",
+            "NameList",
             "CircleCollect"
         ]
     },
@@ -529,6 +533,7 @@
             "CircleLike1",
             "InImagetxt",
             "InVideo",
+            "NameList",
             "CircleCollect"
         ]
     },
@@ -564,6 +569,7 @@
             "CircleCompletedBack"
         ],
         "next": [
+            "NameList",
             "CircleCollect",
             "CircleLike",
             "CircleSwipe4"
@@ -588,6 +594,7 @@
             "CircleCompletedBack"
         ],
         "next": [
+            "NameList",
             "CircleCollect",
             "CircleLike",
             "CircleSwipe5"
@@ -612,6 +619,7 @@
             "CircleCompletedBack"
         ],
         "next": [
+            "NameList",
             "CircleCollect",
             "CircleLike",
             "CircleSwipe6"
@@ -636,6 +644,7 @@
             "CircleCompletedBack"
         ],
         "next": [
+            "NameList",
             "CircleCollect",
             "CircleLike",
             "CircleSwipe7"
@@ -660,6 +669,7 @@
             "CircleCompletedBack"
         ],
         "next": [
+            "NameList",
             "CircleCollect",
             "CircleLike",
             "CircleSwipe8"
@@ -684,6 +694,7 @@
             "CircleCompletedBack"
         ],
         "next": [
+            "NameList",
             "CircleCollect",
             "CircleLike"
         ]

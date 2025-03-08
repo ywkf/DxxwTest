@@ -5,8 +5,20 @@
             "网页链接"
         ],
         "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 500,
         "next": [
-            "ClickPlay"
+            "ClickPlay",
+            "Link"
+        ]
+    },
+    "Link": {
+        "recognition": "OCR",
+        "expected": [
+            "网页链接"
+        ],
+        "next": [
+            "Weibo"
         ]
     },
     "ClickPlay": {

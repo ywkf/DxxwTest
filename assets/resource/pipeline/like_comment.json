@@ -150,7 +150,7 @@
             10
         ],
         "duration": 1000,
-        "timeout": 20000,
+        "timeout": 5000,
         "on_error": [
             "Back"
         ],
