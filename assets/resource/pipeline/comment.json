@@ -1369,6 +1369,7 @@
             "收藏1g.png"
         ],
         "green_mask": true,
+        "threshold": 0.55,
         "action": "Key",
         "key": 4,
         "next": [

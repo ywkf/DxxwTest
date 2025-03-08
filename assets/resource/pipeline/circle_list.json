@@ -30,20 +30,21 @@
             "CCommentLiked",
             "ListVideoCollect",
             "ListImageCollect",
+            "ListVideoLike",
+            "ListImageLike",
             "CCommentVideo",
             "CCommentImage"
         ]
     },
     "ListImageCollect": {
         "recognition": "TemplateMatch",
-        "template": "收藏g.png",
+        "template": "收藏.png",
         "roi": [
             1,
             1184,
             719,
             96
         ],
-        "green_mask": true,
         "action": "Click",
         "pre_delay": 500,
         "next": [
@@ -55,8 +56,8 @@
     "ListImageLike": {
         "recognition": "TemplateMatch",
         "template": [
-            "like0g.png",
-            "点赞 _g.png"
+            "like0.png",
+            "点赞.png"
         ],
         "roi": [
             1,
@@ -64,7 +65,6 @@
             719,
             96
         ],
-        "green_mask": true,
         "action": "Click",
         "pre_delay": 500,
         "next": [
