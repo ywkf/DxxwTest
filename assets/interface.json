@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.29",
+    "version": "0.1.30",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -286,7 +286,7 @@
         {
             "name": "圈子点赞收藏(beta)评论列表",
             "entry": "Circle",
-            "doc": "循环点赞收藏圈子内容，评论列表账号\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
+            "doc": "默认启用评论，评论列表账号\n循环点赞收藏圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
             "option": [
                 "CircleSwitch",
                 "滑动速度",
@@ -394,6 +394,8 @@
             "name": "微博阅读量",
             "entry": "Weibo",
             "doc": "进入微博应用程序，账号对应的发布内容页面再启动，无限循环分享，需要手动结束",
+            "repeatable": true,
+            "repeat_count": 2,
             "option": [
                 "等待时间"
             ]
@@ -405,7 +407,7 @@
                 {
                     "name": "no",
                     "pipeline_override": {
-                        "NameList": {
+                        "CheckNameList": {
                             "enabled": false
                         },
                         "NotCCommentBack": {
@@ -416,7 +418,7 @@
                 {
                     "name": "yes",
                     "pipeline_override": {
-                        "NameList": {
+                        "CheckNameList": {
                             "enabled": true
                         },
                         "NotCCommentBack": {
@@ -661,7 +663,7 @@
                                 "CCheckLike"
                             ]
                         },
-                        "NameList": {
+                        "CheckNameList": {
                             "next": [
                                 "CCommentImage",
                                 "CCommentVideoBack"
@@ -669,7 +671,7 @@
                         },
                         "CClickComment": {
                             "next": [
-                                "NameList",
+                                "CheckNameList",
                                 "NotCCommentBack",
                                 "CCommentImage",
                                 "CCommentVideoBack"
@@ -700,15 +702,9 @@
                                 "CCheckLike"
                             ]
                         },
-                        "NameList": {
-                            "next": [
-                                "CCommentVideo",
-                                "CCommentImage"
-                            ]
-                        },
                         "CClickComment": {
                             "next": [
-                                "NameList",
+                                "CheckNameList",
                                 "NotCCommentBack"
                             ]
                         },

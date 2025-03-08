@@ -1,5 +1,21 @@
 {
     "Weibo": {
+        "interrupt": [
+            "Playing"
+        ],
+        "next": [
+            "ClickLink"
+        ]
+    },
+    "Playing": {
+        "recognition": "OCR",
+        "expected": [
+            "打开APP"
+        ],
+        "action": "Key",
+        "key": 4
+    },
+    "ClickLink": {
         "recognition": "OCR",
         "expected": [
             "网页链接"
