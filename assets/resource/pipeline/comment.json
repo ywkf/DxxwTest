@@ -121,6 +121,7 @@
     "CInputCommentImage": {
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
+        "pre_delay": 300,
         "action": "Click",
         "next": [
             "CSendCommentImage"
