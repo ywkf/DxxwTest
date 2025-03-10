@@ -727,6 +727,7 @@
         "focus": true,
         "focus_succeeded": "圈子任务完成",
         "focus_succeeded_color": "Blue",
+        "focus_toast": "圈子任务完成",
         "next": []
     }
 }

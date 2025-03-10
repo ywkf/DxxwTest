@@ -1,7 +1,8 @@
 {
     "Weibo": {
         "interrupt": [
-            "Playing"
+            "Playing",
+            "DXW"
         ],
         "next": [
             "ClickLink"
@@ -11,6 +12,14 @@
         "recognition": "OCR",
         "expected": [
             "打开APP"
+        ],
+        "action": "Key",
+        "key": 4
+    },
+    "DXW": {
+        "recognition": "OCR",
+        "expected": [
+            "河南网络广播电视台"
         ],
         "action": "Key",
         "key": 4

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.34",
+    "version": "0.1.36",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -244,6 +244,8 @@
             "name": "圈子点赞收藏(beta)",
             "entry": "Circle",
             "doc": "循环点赞收藏（评论）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
+            "repeatable": true,
+            "repeat_count": 1,
             "option": [
                 "CircleSwitch",
                 "滑动速度",
@@ -287,6 +289,8 @@
             "name": "圈子点赞收藏(beta)评论列表",
             "entry": "Circle",
             "doc": "默认启用评论，评论列表账号\n循环点赞收藏圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
+            "repeatable": true,
+            "repeat_count": 1,
             "option": [
                 "CircleSwitch",
                 "滑动速度",
@@ -354,6 +358,20 @@
             "doc": "进入对应的发布内容页面再启动，无限循环分享，需要手动结束"
         },
         {
+            "name": "分享（自定义）",
+            "entry": "Share",
+            "doc": "进入对应的发布内容页面再启动，设置分享次数",
+            "repeatable": true,
+            "repeat_count": 100,
+            "pipeline_override": {
+                "ReplyShareToQQ": {
+                    "next": [
+                        "Stop"
+                    ]
+                }
+            }
+        },
+        {
             "name": "阅读量分享",
             "entry": "ShareContM",
             "doc": "进入个人发布内容页面，划至上方再启动，无限循环分享最上方内容，需要手动结束",
@@ -362,6 +380,20 @@
                     "next": [
                         "ShareImageVideoExit",
                         "Share"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "阅读量分享（自定义）",
+            "entry": "ShareContM",
+            "doc": "进入个人发布内容页面，划至上方再启动，无限循环分享最上方内容，设置分享次数",
+            "repeatable": true,
+            "repeat_count": 100,
+            "pipeline_override": {
+                "ShareImageVideoExit": {
+                    "next": [
+                        "Stop"
                     ]
                 }
             }
@@ -793,6 +825,17 @@
                     }
                 },
                 {
+                    "name": "800",
+                    "pipeline_override": {
+                        "ShareDone": {
+                            "expected": [
+                                "800"
+                            ],
+                            "focus_succeeded": "最新视频分享量已达800，开始图文分享"
+                        }
+                    }
+                },
+                {
                     "name": "1000",
                     "pipeline_override": {
                         "ShareDone": {
@@ -1020,7 +1063,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "无线“象”往 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "无线“象”往 圈子任务完成"
                         }
                     }
                 },
@@ -1037,7 +1081,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "随手记录生活 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "随时记录生活 圈子任务完成"
                         }
                     }
                 },
@@ -1053,7 +1098,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "大象话题 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "大象话题 圈子任务完成"
                         }
                     }
                 },
@@ -1072,7 +1118,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "记录生活 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "记录生活 圈子任务完成"
                         }
                     }
                 },
@@ -1090,7 +1137,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "福塔-发射 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "福塔-发射 圈子任务完成"
                         }
                     }
                 },
@@ -1107,7 +1155,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "热爱生活 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "热爱生活 圈子任务完成"
                         }
                     }
                 },
@@ -1123,7 +1172,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "快乐集中营 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "快乐集中营 圈子任务完成"
                         }
                     }
                 },
@@ -1142,7 +1192,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "非常“3+4” 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "非常“3+4” 圈子任务完成"
                         }
                     }
                 },
@@ -1161,7 +1212,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "象·心力 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "象·心力 圈子任务完成"
                         }
                     }
                 },
@@ -1179,7 +1231,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "人间处处 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "人间处处 圈子任务完成"
                         }
                     }
                 },
@@ -1197,7 +1250,8 @@
                         },
                         "CircleCompletedBack": {
                             "focus_succeeded": "象友汇 圈子任务完成",
-                            "focus_succeeded_color": "Blue"
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "象友汇 圈子任务完成"
                         }
                     }
                 }

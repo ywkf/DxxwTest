@@ -9,6 +9,12 @@
 成员列表可在（assets\resource\pipeline\name_list.json）
 "NameList"和"CheckNameList"中额外添加
 
+新增-圈子-运行次数
+
+新增-分享-分享次数
+
+新增-圈子-完成通知
+
 
 ### 修复 | Fix
 
