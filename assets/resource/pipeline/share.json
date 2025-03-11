@@ -191,7 +191,8 @@
         "expected": "视频",
         "action": "Click",
         "next": [
-            "ShareContM"
+            "ShareContM",
+            "ShareClickTxt"
         ]
     },
     "ShareContM": {
@@ -228,6 +229,40 @@
         "focus_succeeded": "最新视频分享量已达150，开始图文分享",
         "next": [
             "ShareClickTxt"
+        ]
+    },
+    "ShareTimeImage": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "next": [
+            "ShareTime"
+        ]
+    },
+    "ShareTime": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            ":30"
+        ],
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "Key",
+        "key": 4,
+        "focus": true,
+        "focus_succeeded": "最新图文分享已分享至半点",
+        "next": [
+            "Stop"
         ]
     },
     "ShareClickTxt": {
