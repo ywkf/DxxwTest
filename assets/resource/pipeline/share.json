@@ -183,7 +183,8 @@
         "focus_succeeded": "识别进入个人内容成功，开始执行个人分享任务",
         "focus_failed": "识别进入个人内容失败",
         "next": [
-            "ShareClickVideo"
+            "ShareClickVideo",
+            "ShareClickTxt"
         ]
     },
     "ShareClickVideo": {
@@ -191,8 +192,7 @@
         "expected": "视频",
         "action": "Click",
         "next": [
-            "ShareContM",
-            "ShareClickTxt"
+            "ShareContM"
         ]
     },
     "ShareContM": {
