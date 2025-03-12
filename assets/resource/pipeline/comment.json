@@ -90,10 +90,10 @@
         "focus": true,
         "focus_succeeded": "检测到语录功能，使用XF语录",
         "next": [
-            "CCCommentXF02VH"
+            "CCCommentXF02VHX1"
         ]
     },
-    "CCCommentXF02VH": {
+    "CCCommentXF02VHX1": {
         "enabled": true,
         "recognition": "OCR",
         "expected": [
@@ -115,10 +115,72 @@
         "pre_delay": 500,
         "post_delay": 500,
         "next": [
+            "CCCommentXF02VHX2",
+            "CSendCommentImage"
+        ]
+    },
+    "CCCommentXF02VHX2": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw2",
+            "dxxw2",
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw1",
+            "dxxw1",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "CCCommentXF02VHX3",
+            "CSendCommentImage"
+        ]
+    },
+    "CCCommentXF02VHX3": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Dxxw3",
+            "dxxw3",
+            "Dxxw1",
+            "dxxw1",
+            "Dxxw2",
+            "dxxw2",
+            "评论"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
             "CSendCommentImage"
         ]
     },
     "CInputCommentImage": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "pre_delay": 300,
+        "action": "Click",
+        "next": [
+            "CSendCommentImage",
+            "CCommentXF01VH"
+        ]
+    },
+    "CInputCommentImage02": {
         "recognition": "TemplateMatch",
         "template": "大象新语.png",
         "pre_delay": 300,

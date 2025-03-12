@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.37",
+    "version": "0.1.38",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -562,6 +562,9 @@
                         },
                         "CCCommentXFT25X2": {
                             "enabled": false
+                        },
+                        "CCCommentXF02VHX2": {
+                            "enabled": false
                         }
                     }
                 },
@@ -578,6 +581,9 @@
                             "enabled": false
                         },
                         "CCCommentXFT25X3": {
+                            "enabled": false
+                        },
+                        "CCCommentXF02VHX3": {
                             "enabled": false
                         }
                     }
