@@ -102,8 +102,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw3",
-            "dxxw3",
-            "评论"
+            "dxxw3"
         ],
         "roi": [
             5,
@@ -128,8 +127,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -154,8 +152,7 @@
             "Dxxw1",
             "dxxw1",
             "Dxxw2",
-            "dxxw2",
-            "评论"
+            "dxxw2"
         ],
         "roi": [
             5,
@@ -213,6 +210,9 @@
         "green_mask": true,
         "pre_delay": 2000,
         "post_delay": 500,
+        "on_error": [
+            "TimeCircleBack"
+        ],
         "next": [
             "CCheckComment001",
             "CCheckComment002",
@@ -425,8 +425,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -451,8 +450,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -476,8 +474,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -498,8 +495,7 @@
             "Emoji",
             "表情",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -522,8 +518,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -548,8 +543,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -573,8 +567,7 @@
             "Dxxw2",
             "dxxw2",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -596,8 +589,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -622,8 +614,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -647,8 +638,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw1",
-            "dxxw1",
-            "评论"
+            "dxxw1"
         ],
         "roi": [
             5,
@@ -670,8 +660,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw2",
-            "dxxw2",
-            "评论"
+            "dxxw2"
         ],
         "roi": [
             5,
@@ -696,8 +685,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw2",
-            "dxxw2",
-            "评论"
+            "dxxw2"
         ],
         "roi": [
             5,
@@ -721,8 +709,7 @@
             "Dxxw3",
             "dxxw3",
             "Dxxw2",
-            "dxxw2",
-            "评论"
+            "dxxw2"
         ],
         "roi": [
             5,

@@ -1,0 +1,620 @@
+{
+    "TimeCircleBack": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "video_comment.png",
+        "roi": [
+            626,
+            471,
+            65,
+            611
+        ],
+        "threshold": 0.45,
+        "green_mask": true,
+        "pre_delay": 500,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next": [
+            "TimeBefore01",
+            "TimeBefore02",
+            "TimeBefore03",
+            "TimeBefore04",
+            "TimeBefore05",
+            "TimeBefore06",
+            "TimeBefore07",
+            "TimeBefore08",
+            "TimeBefore09",
+            "TimeBefore010",
+            "TimeBefore011",
+            "TimeBefore012",
+            "TimeBefore013",
+            "TimeBefore014",
+            "TimeBefore015",
+            "TimeBefore016",
+            "TimeBefore017",
+            "TimeBefore018",
+            "TimeBefore019",
+            "TimeBefore020",
+            "TimeBefore021",
+            "TimeBefore022",
+            "TimeBefore023",
+            "TimeBefore024"
+        ]
+    },
+    "TimeBefore00": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "分钟前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到分钟前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到分钟前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore01": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "1小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到1小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到1小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore02": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "2小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到2小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到2小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore03": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "3小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到3小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到3小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore04": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "4小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到4小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到4小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore05": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "5小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到5小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到5小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore06": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "6小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到6小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到6小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore07": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "7小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到7小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到7小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore08": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "8小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到8小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到8小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore09": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "9小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到9小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到9小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore010": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "10小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到10小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到10小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore011": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "11小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到11小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到11小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore012": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "12小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到12小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到12小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore013": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "13小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到13小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到13小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore014": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "14小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到14小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到14小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore015": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "15小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到15小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到15小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore016": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "16小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到16小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到16小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore017": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "17小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到17小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到17小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore018": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "18小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到18小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到18小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore019": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "19小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到19小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到19小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore020": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "20小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到20小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到20小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore021": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "21小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到21小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到21小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore022": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "22小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到22小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到22小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore023": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "23小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到23小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到23小时前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    },
+    "TimeBefore024": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "1天前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "检测到1天前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "检测到1天前",
+        "next": [
+            "CircleCollect1",
+            "InImagetxt",
+            "InVideo",
+            "CircleCollect"
+        ]
+    }
+}

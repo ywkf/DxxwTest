@@ -1,25 +1,15 @@
-## v0.1.37
+## v0.1.39
 
 ### 新增 | Highlight
 
-新增任务-圈子点赞收藏(beta)评论列表
-
-新增选项-圈子-识别列表成员
-
-成员列表可在（assets\resource\pipeline\name_list.json）
-"NameList"和"CheckNameList"中额外添加
-
-新增-圈子-运行次数
-
-新增-分享-分享次数
-
-新增-圈子-完成通知
-
+新增选项-圈子-从时间点开始
 
 ### 修复 | Fix
 
-* 优化复制评论
-* 优化回复点赞
-* 优化微博阅读量
-* 修复分享
-* 优化图文评论逻辑
+* 修复最新分享
+* 优化圈子错误判断
+
+### 其他 | Other
+
+成员列表可在（assets\resource\pipeline\name_list.json）
+"NameList"和"CheckNameList"中额外添加

@@ -244,7 +244,53 @@
             "IsLoaded",
             "ReIn",
             "IsTop0",
+            "ToCircleTime",
             "CircleCollect&Like"
+        ]
+    },
+    "ToCircleTime": {
+        "enabled": true,
+        "interrupt": [
+            "ToCircleSwipe"
+        ],
+        "next": [
+            "ToTime"
+        ]
+    },
+    "ToTime": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "1小时前"
+        ],
+        "roi": [
+            0,
+            106,
+            270,
+            1174
+        ],
+        "focus": true,
+        "focus_succeeded": "已至1小时前",
+        "focus_succeeded_color": "Blue",
+        "focus_toast": "已至1小时前",
+        "next": [
+            "IsTop0",
+            "CircleCollect&Like"
+        ]
+    },
+    "ToCircleSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
         ]
     },
     "ReIn": {
@@ -270,6 +316,7 @@
         "focus_succeeded": "开启圈子点赞收藏...",
         "next": [
             "IsTop0",
+            "ToCircleTime",
             "CircleCollect&Like"
         ]
     },
@@ -300,6 +347,7 @@
         ],
         "next": [
             "IsTop",
+            "ToCircleTime",
             "CircleCollect&Like"
         ]
     },
@@ -329,6 +377,7 @@
         ],
         "next": [
             "IsTop0",
+            "ToCircleTime",
             "CircleCollect&Like"
         ]
     },

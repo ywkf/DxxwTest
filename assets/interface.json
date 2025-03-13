@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.38",
+    "version": "0.1.39",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -251,6 +251,7 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
+                "从时间点开始",
                 "至1天前",
                 "识别列表成员",
                 "误入动态判断"
@@ -269,6 +270,7 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
+                "从时间点开始",
                 "至1天前",
                 "识别列表成员",
                 "误入动态判断"
@@ -295,6 +297,7 @@
                 "CircleSwitch",
                 "滑动速度",
                 "视频评论语录次数",
+                "从时间点开始",
                 "至1天前",
                 "误入动态判断"
             ],
@@ -441,6 +444,306 @@
         }
     ],
     "option": {
+        "从时间点开始": {
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "ToCircleTime": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "1小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "1小时前"
+                            ],
+                            "focus_succeeded": "已至1小时前",
+                            "focus_toast": "已至1小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "2小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "2小时前"
+                            ],
+                            "focus_succeeded": "已至2小时前",
+                            "focus_toast": "已至2小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "3小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "3小时前"
+                            ],
+                            "focus_succeeded": "已至3小时前",
+                            "focus_toast": "已至3小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "4小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "4小时前"
+                            ],
+                            "focus_succeeded": "已至4小时前",
+                            "focus_toast": "已至4小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "5小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "5小时前"
+                            ],
+                            "focus_succeeded": "已至5小时前",
+                            "focus_toast": "已至5小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "6小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "6小时前"
+                            ],
+                            "focus_succeeded": "已至6小时前",
+                            "focus_toast": "已至6小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "7小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "7小时前"
+                            ],
+                            "focus_succeeded": "已至7小时前",
+                            "focus_toast": "已至7小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "8小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "8小时前"
+                            ],
+                            "focus_succeeded": "已至8小时前",
+                            "focus_toast": "已至8小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "9小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "9小时前"
+                            ],
+                            "focus_succeeded": "已至9小时前",
+                            "focus_toast": "已至9小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "10小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "10小时前"
+                            ],
+                            "focus_succeeded": "已至10小时前",
+                            "focus_toast": "已至10小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "11小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "11小时前"
+                            ],
+                            "focus_succeeded": "已至11小时前",
+                            "focus_toast": "已至11小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "12小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "12小时前"
+                            ],
+                            "focus_succeeded": "已至12小时前",
+                            "focus_toast": "已至12小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "13小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "13小时前"
+                            ],
+                            "focus_succeeded": "已至13小时前",
+                            "focus_toast": "已至13小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "14小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "14小时前"
+                            ],
+                            "focus_succeeded": "已至14小时前",
+                            "focus_toast": "已至14小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "15小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "15小时前"
+                            ],
+                            "focus_succeeded": "已至15小时前",
+                            "focus_toast": "已至15小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "16小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "16小时前"
+                            ],
+                            "focus_succeeded": "已至16小时前",
+                            "focus_toast": "已至16小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "17小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "17小时前"
+                            ],
+                            "focus_succeeded": "已至17小时前",
+                            "focus_toast": "已至17小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "18小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "18小时前"
+                            ],
+                            "focus_succeeded": "已至18小时前",
+                            "focus_toast": "已至18小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "19小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "19小时前"
+                            ],
+                            "focus_succeeded": "已至19小时前",
+                            "focus_toast": "已至19小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "20小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "20小时前"
+                            ],
+                            "focus_succeeded": "已至20小时前",
+                            "focus_toast": "已至20小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "21小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "21小时前"
+                            ],
+                            "focus_succeeded": "已至21小时前",
+                            "focus_toast": "已至21小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "22小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "22小时前"
+                            ],
+                            "focus_succeeded": "已至22小时前",
+                            "focus_toast": "已至22小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "23小时前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "23小时前"
+                            ],
+                            "focus_succeeded": "已至23小时前",
+                            "focus_toast": "已至23小时前"
+                        }
+                    }
+                },
+                {
+                    "name": "1天前",
+                    "pipeline_override": {
+                        "ToTime": {
+                            "expected": [
+                                "1天前"
+                            ],
+                            "focus_succeeded": "已至1天前",
+                            "focus_toast": "已至1天前"
+                        }
+                    }
+                }
+            ]
+        },
         "识别列表成员": {
             "cases": [
                 {
