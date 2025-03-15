@@ -8,6 +8,54 @@
             "ClickLink"
         ]
     },
+    "StartWeibo": {
+        "enabled": true,
+        "action": "StartApp",
+        "package": "com.sina.weibo",
+        "post_delay": 3000,
+        "focus": true,
+        "focus_tip": "正在打开Weibo...",
+        "focus_succeeded": "启动成功",
+        "next": [
+            "WeiboMe"
+        ]
+    },
+    "WeiboMe": {
+        "recognition": "OCR",
+        "expected": [
+            "我"
+        ],
+        "roi": [
+            1,
+            1178,
+            719,
+            102
+        ],
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ClickMyWeibo"
+        ]
+    },
+    "ClickMyWeibo": {
+        "recognition": "OCR",
+        "expected": [
+            "微博"
+        ],
+        "roi": [
+            1,
+            384,
+            717,
+            137
+        ],
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "Stop"
+        ]
+    },
     "Playing": {
         "recognition": "OCR",
         "expected": [
@@ -25,10 +73,11 @@
         "key": 4
     },
     "ClickLink": {
-        "recognition": "OCR",
-        "expected": [
-            "网页链接"
+        "recognition": "TemplateMatch",
+        "template": [
+            "WeiboLink.png"
         ],
+        "index": 0,
         "action": "Click",
         "pre_delay": 500,
         "post_delay": 500,

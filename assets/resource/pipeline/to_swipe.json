@@ -1,0 +1,93 @@
+{
+    "ToSwipe": {
+        "next": [
+            "SwipeCheckInVideo",
+            "SwippeCheckInImage",
+            "ToSwipeMy",
+            "ToSwipeMy2"
+        ]
+    },
+    "ToSwipeMy": {
+        "enabled": true,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            665,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "next": [
+            "Stop"
+        ]
+    },
+    "ToSwipeMy2": {
+        "enabled": true,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1040,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            300,
+            10,
+            10
+        ],
+        "duration": 600,
+        "post_delay": 500,
+        "next": [
+            "Stop"
+        ]
+    },
+    "SwippeCheckInImage": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            40,
+            1200,
+            350,
+            45
+        ],
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ToSwipeMy",
+            "ToSwipeMy2"
+        ]
+    },
+    "SwipeCheckInVideo": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_collect0g.png",
+            "video_collect1g.png",
+            "video_like0g.png",
+            "video_like1g.png",
+            "video_comment.png",
+            "video_share0.png",
+            "videotag.png"
+        ],
+        "green_mask": true,
+        "threshold": 0.7,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ToSwipeMy",
+            "ToSwipeMy2"
+        ]
+    }
+}

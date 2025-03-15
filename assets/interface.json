@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.39",
+    "version": "0.1.40",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -327,6 +327,7 @@
             "entry": "RepkyLike",
             "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频\n视频评论需要用到XF输入法的语录功能，需要自行添加",
             "option": [
+                "从视频开始",
                 "是否分享",
                 "视频评论",
                 "视频评论语录次数"
@@ -368,20 +369,6 @@
             }
         },
         {
-            "name": "分享（自定义）",
-            "entry": "Share",
-            "doc": "进入对应的发布内容页面再启动，设置分享次数",
-            "repeatable": true,
-            "repeat_count": 100,
-            "pipeline_override": {
-                "ReplyShareToQQ": {
-                    "next": [
-                        "Stop"
-                    ]
-                }
-            }
-        },
-        {
             "name": "阅读量分享",
             "entry": "ShareContM",
             "doc": "进入个人发布内容页面，划至上方再启动，无限循环分享最上方内容，需要手动结束",
@@ -395,18 +382,16 @@
             }
         },
         {
-            "name": "阅读量分享（自定义）",
-            "entry": "ShareContM",
-            "doc": "进入个人发布内容页面，划至上方再启动，无限循环分享最上方内容，设置分享次数",
+            "name": "分享（自定义）",
+            "entry": "ToShare",
+            "doc": "设置分享次数，Weibo分享设置1次\n作品编号为分享该页面第几个作品",
             "repeatable": true,
-            "repeat_count": 100,
-            "pipeline_override": {
-                "ShareImageVideoExit": {
-                    "next": [
-                        "Stop"
-                    ]
-                }
-            }
+            "repeat_count": 1,
+            "option": [
+                "是否阅读量",
+                "分享至",
+                "作品编号"
+            ]
         },
         {
             "name": "最新分享(beta)",
@@ -437,13 +422,244 @@
             "entry": "Weibo",
             "doc": "进入微博应用程序，账号对应的发布内容页面再启动，无限循环分享，需要手动结束",
             "repeatable": true,
-            "repeat_count": 2,
+            "repeat_count": 10,
             "option": [
                 "等待时间"
+            ]
+        },
+        {
+            "name": "微博阅读量（自定义）",
+            "entry": "Weibo",
+            "doc": "进入微博应用程序，账号对应的发布内容页面再启动，设置阅读次数\n微博编号为阅读该页面第几个微博",
+            "repeatable": true,
+            "repeat_count": 600,
+            "option": [
+                "微博编号",
+                "等待时间"
+            ],
+            "pipeline_override": {
+                "Link": {
+                    "next": [
+                        "Stop"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "进入个人微博阅读量",
+            "entry": "StartWeibo",
+            "doc": "进入微博应用程序个人微博页面，阅读最新微博分享",
+            "option": [
+                "等待时间"
+            ],
+            "pipeline_override": {
+                "ClickMyWeibo": {
+                    "next": [
+                        "Weibo"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "进入个人微博",
+            "entry": "StartWeibo",
+            "doc": "进入微博应用程序个人微博页面"
+        },
+        {
+            "name": "进入个人内容页",
+            "entry": "ToContent",
+            "doc": "进入个人内容页",
+            "option": [
+                "作品选项"
+            ]
+        },
+        {
+            "name": "滑动",
+            "entry": "ToSwipe",
+            "doc": "滑动动作",
+            "option": [
+                "滑动距离",
+                "滑动前退出作品"
             ]
         }
     ],
     "option": {
+        "微博编号": {
+            "cases": [
+                {
+                    "name": "1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "ClickLink": {
+                            "index": 1
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "ClickLink": {
+                            "index": 2
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "ClickLink": {
+                            "index": 3
+                        }
+                    }
+                }
+            ]
+        },
+        "作品编号": {
+            "cases": [
+                {
+                    "name": "1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "ToShareMy": {
+                            "index": 1
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "ToShareMy": {
+                            "index": 2
+                        }
+                    }
+                }
+            ]
+        },
+        "滑动距离": {
+            "cases": [
+                {
+                    "name": "滑动一个作品",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "滑动两个作品",
+                    "pipeline_override": {
+                        "ToSwipeMy": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "滑动前退出作品": {
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "SwipeCheckInVideo": {
+                            "enabled": false
+                        },
+                        "SwippeCheckInImage": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "作品选项": {
+            "cases": [
+                {
+                    "name": "全部",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "视频",
+                    "pipeline_override": {
+                        "ToContentAll": {
+                            "expected": [
+                                "视频"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "图文",
+                    "pipeline_override": {
+                        "ToContentAll": {
+                            "expected": [
+                                "图文"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "分享至": {
+            "cases": [
+                {
+                    "name": "QQ",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Weibo（需要安装登录）",
+                    "pipeline_override": {
+                        "ToImageShare": {
+                            "next": [
+                                "ToShareToWeibo"
+                            ]
+                        },
+                        "ToVideoShare": {
+                            "next": [
+                                "ToShareToWeibo"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "是否阅读量": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "ToShareImageVideoExit": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "从视频开始": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "ReplyLikeSwipe": {
+                            "next": [
+                                "ReplyLikeVideoPart"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "从时间点开始": {
             "cases": [
                 {
