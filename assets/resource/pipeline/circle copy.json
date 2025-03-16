@@ -1,17 +1,16 @@
 {
-    "Circle": {
+    "CCircle": {
         "enabled": true,
         "interrupt": [
             "Back"
         ],
         "next": [
-            "CNotResponding",
-            "InTheCircle",
-            "ClickMyCircle",
-            "DXCircle"
+            "CInTheCircle",
+            "CClickMyCircle",
+            "CDXCircle"
         ]
     },
-    "InTheCircle": {
+    "CInTheCircle": {
         "recognition": "OCR",
         "expected": [
             "我的关注",
@@ -26,58 +25,10 @@
         "focus": true,
         "focus_succeeded": "已在圈子中",
         "next": [
-            "CircleSwipe0"
+            "CCircleSwipe0"
         ]
     },
-    "CNotResponding": {
-        "recognition": "OCR",
-        "expected": [
-            "大象新闻没有响应",
-            "关闭应用",
-            "没有响应"
-        ],
-        "action": "StopApp",
-        "package": "com.hnr.dxxw",
-        "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "应用没有响应，正在关闭Dxxw...",
-        "next": [
-            "CStartApp"
-        ]
-    },
-    "CStartApp": {
-        "action": "StartApp",
-        "package": "com.hnr.dxxw",
-        "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "重新启动Dxxw...",
-        "focus_succeeded": "启动成功",
-        "next": [
-            "CSkip1"
-        ]
-    },
-    "CSkip1": {
-        "recognition": "OCR",
-        "expected": "跳过",
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "CSkip2",
-            "ClickMyCircle",
-            "DXCircle"
-        ]
-    },
-    "CSkip2": {
-        "recognition": "OCR",
-        "expected": "跳过",
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "ClickMyCircle",
-            "DXCircle"
-        ]
-    },
-    "DXCircle": {
+    "CDXCircle": {
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
@@ -98,10 +49,10 @@
             "Back"
         ],
         "next": [
-            "ClickCircle"
+            "CClickCircle"
         ]
     },
-    "ClickCircle": {
+    "CClickCircle": {
         "recognition": "OCR",
         "expected": "大象圈",
         "roi": [
@@ -113,10 +64,10 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "ClickSubsCircle"
+            "CClickSubsCircle"
         ]
     },
-    "ClickSubsCircle": {
+    "CClickSubsCircle": {
         "recognition": "OCR",
         "expected": "关注",
         "roi": [
@@ -128,10 +79,10 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "ClickMyCircle"
+            "CClickMyCircle"
         ]
     },
-    "ClickMyCircle": {
+    "CClickMyCircle": {
         "recognition": "OCR",
         "expected": "我的圈子",
         "roi": [
@@ -143,29 +94,14 @@
         "action": "Click",
         "post_delay": 500,
         "interrupt": [
-            "CircleSwipe"
+            "CCircleSwipe"
         ],
         "next": [
-            "ClickTheCircle",
-            "CircleSwipeS"
+            "CClickTheCircle",
+            "CCircleSwipeS"
         ]
     },
-    "CircleSwipe": {
-        "action": "Swipe",
-        "begin": [
-            200,
-            800,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            400,
-            10,
-            10
-        ]
-    },
-    "CircleSwipeS": {
+    "CCircleSwipeS": {
         "recognition": "OCR",
         "expected": "没有更多数据",
         "action": "Swipe",
@@ -182,13 +118,13 @@
             10
         ],
         "interrupt": [
-            "CircleSwipe"
+            "CCircleSwipe"
         ],
         "next": [
-            "ClickTheCircle"
+            "CClickTheCircle"
         ]
     },
-    "ClickTheCircle": {
+    "CClickTheCircle": {
         "recognition": "OCR",
         "expected": [
             "无线“象”往",
@@ -202,24 +138,10 @@
         "focus_succeeded": "识别进入圈子成功",
         "focus_succeeded_color": "Blue",
         "next": [
-            "CircleSwipe0"
+            "CCircleSwipe0"
         ]
     },
-    "IsTheCircle": {
-        "recognition": "OCR",
-        "expected": [
-            "无线“象”往",
-            "无线",
-            "“象"
-        ],
-        "roi": [
-            0,
-            35,
-            720,
-            205
-        ]
-    },
-    "CircleSwipe0": {
+    "CCircleSwipe0": {
         "recognition": "OCR",
         "expected": [
             "关注",
@@ -243,48 +165,14 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "next": [
-            "IsLoaded",
-            "ReIn",
-            "IsTop0",
-            "ToCircleTime",
-            "CircleCollect&Like"
+            "CCircleCollect&Like"
         ]
     },
-    "ToCircleTime": {
-        "enabled": true,
-        "interrupt": [
-            "ToCircleSwipe"
-        ],
-        "next": [
-            "ToTime"
-        ]
-    },
-    "ToTime": {
-        "enabled": true,
-        "recognition": "OCR",
-        "expected": [
-            "1小时前"
-        ],
-        "roi": [
-            0,
-            106,
-            270,
-            1174
-        ],
-        "focus": true,
-        "focus_succeeded": "已至1小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "已至1小时前",
-        "next": [
-            "IsTop0",
-            "CircleCollect&Like"
-        ]
-    },
-    "ToCircleSwipe": {
+    "CCircleSwipe": {
         "action": "Swipe",
         "begin": [
             200,
-            1000,
+            800,
             10,
             10
         ],
@@ -295,107 +183,17 @@
             10
         ]
     },
-    "ReIn": {
-        "enabled": true,
-        "action": "Key",
-        "key": 4,
-        "next": [
-            "ClickTheCircle"
-        ]
-    },
-    "IsLoaded": {
-        "enabled": true,
-        "recognition": "OCR",
-        "expected": [
-            "置顶",
-            "已关注",
-            "分钟前",
-            "大象圈",
-            "官方客服",
-            "小时前"
-        ],
-        "focus": true,
-        "focus_succeeded": "开启圈子点赞收藏...",
-        "next": [
-            "IsTop0",
-            "ToCircleTime",
-            "CircleCollect&Like"
-        ]
-    },
-    "IsTop0": {
-        "enabled": true,
-        "recognition": "OCR",
-        "expected": [
-            "置顶"
-        ],
-        "roi": [
-            0,
-            220,
-            124,
-            1060
-        ],
-        "action": "Swipe",
-        "begin": [
-            200,
-            900,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            700,
-            10,
-            10
-        ],
-        "next": [
-            "IsTop",
-            "ToCircleTime",
-            "CircleCollect&Like"
-        ]
-    },
-    "IsTop": {
-        "recognition": "OCR",
-        "expected": [
-            "置顶"
-        ],
-        "roi": [
-            0,
-            220,
-            124,
-            1060
-        ],
-        "action": "Swipe",
-        "begin": [
-            200,
-            900,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            700,
-            10,
-            10
-        ],
-        "next": [
-            "IsTop0",
-            "ToCircleTime",
-            "CircleCollect&Like"
-        ]
-    },
-    "CircleCollect&Like": {
+    "CCircleCollect&Like": {
         "focus": true,
         "focus_succeeded": "点赞、收藏进行中...",
         "interrupt": [
-            "CircleSwipe"
+            "CCircleSwipe"
         ],
         "next": [
-            "IsCompleted",
-            "NameList",
-            "CircleCollect"
+            "CCircleCollect"
         ]
     },
-    "CircleCollect": {
+    "CCircleCollect": {
         "recognition": "TemplateMatch",
         "template": [
             "circle_collect.png"
@@ -404,17 +202,42 @@
         "focus": true,
         "focus_succeeded": "收藏进行中...",
         "interrupt": [
-            "InVideo",
-            "InImagetxt",
-            "CircleSwipe"
+            "CInVideo",
+            "CInImagetxt",
+            "CCircleSwipe"
         ],
         "next": [
-            "CircleLike",
-            "CircleCollectFail",
-            "IsCompleted"
+            "CCircleLike",
+            "CCircleCollectFail",
+            "CIsCompleted"
         ]
     },
-    "CircleCollectFail": {
+    "CCircleLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_like.png"
+        ],
+        "roi": "CCircleCollect",
+        "roi_offset": [
+            -170,
+            -5,
+            350,
+            10
+        ],
+        "action": "Click",
+        "focus": true,
+        "focus_succeeded": "点赞进行中...",
+        "interrupt": [
+            "CInVideo",
+            "CInImagetxt",
+            "CCircleSwipe"
+        ],
+        "next": [
+            "CIsCompleted",
+            "CCircleCollect"
+        ]
+    },
+    "CCircleCollectFail": {
         "recognition": "OCR",
         "expected": [
             "操作失败"
@@ -437,68 +260,11 @@
         "focus_succeeded": "操作失败，跳过...",
         "post_delay": 2000,
         "next": [
-            "CircleCollect",
-            "IsCompleted"
+            "CCircleCollect",
+            "CIsCompleted"
         ]
     },
-    "CircleLike": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "circle_like.png"
-        ],
-        "roi": "CircleCollect",
-        "roi_offset": [
-            -170,
-            -5,
-            350,
-            10
-        ],
-        "action": "Click",
-        "focus": true,
-        "focus_succeeded": "点赞进行中...",
-        "interrupt": [
-            "InVideo",
-            "InImagetxt",
-            "CircleSwipe"
-        ],
-        "next": [
-            "CircleSwipe2"
-        ]
-    },
-    "InCircle": {
-        "recognition": "OCR",
-        "expected": [
-            "我的关注"
-        ],
-        "next": [
-            "NameList",
-            "CircleSwipe2"
-        ]
-    },
-    "CircleSwipe2": {
-        "recognition": "OCR",
-        "expected": [
-            "我的关注"
-        ],
-        "action": "Swipe",
-        "begin": [
-            200,
-            800,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            400,
-            10,
-            10
-        ],
-        "next": [
-            "IsCompleted",
-            "CircleCollect&Like"
-        ]
-    },
-    "InImagetxt": {
+    "CInImagetxt": {
         "enabled": true,
         "recognition": "OCR",
         "expected": [
@@ -519,7 +285,7 @@
             "Stop"
         ]
     },
-    "InVideo": {
+    "CInVideo": {
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
@@ -541,25 +307,24 @@
             "Stop"
         ]
     },
-    "IsCompleted": {
+    "CIsCompleted": {
         "enabled": true,
         "focus": true,
         "focus_succeeded": "任务完成检测...",
         "interrupt": [
-            "CircleErrorCheck01",
-            "InImagetxt",
-            "InVideo",
-            "CircleSwipe"
+            "CCircleErrorCheck01",
+            "CInImagetxt",
+            "CInVideo",
+            "CCircleSwipe"
         ],
         "next": [
-            "TheDayBefore",
-            "CircleCollect1",
-            "CircleCollectFail",
-            "NameList",
-            "CircleCollect"
+            "CTheDayBefore",
+            "CCircleCollectFail",
+            "CCircleCollect",
+            "CCircleSwipe1"
         ]
     },
-    "CircleErrorCheck01": {
+    "CCircleErrorCheck01": {
         "recognition": "TemplateMatch",
         "template": [
             "circle_share2.png"
@@ -584,11 +349,11 @@
             10
         ],
         "next": [
-            "CircleErrorCheck02",
+            "CCircleErrorCheck02",
             "Stop"
         ]
     },
-    "CircleErrorCheck02": {
+    "CCircleErrorCheck02": {
         "recognition": "TemplateMatch",
         "template": [
             "circle_share2.png"
@@ -613,11 +378,11 @@
             10
         ],
         "next": [
-            "CircleErrorCheck03",
+            "CCircleErrorCheck03",
             "Stop"
         ]
     },
-    "CircleErrorCheck03": {
+    "CCircleErrorCheck03": {
         "recognition": "TemplateMatch",
         "template": [
             "circle_share2.png"
@@ -637,12 +402,12 @@
         ],
         "post_delay": 2000,
         "next": [
-            "CheckInImage",
-            "CheckInVideo",
+            "CCheckInImage",
+            "CCheckInVideo",
             "Stop"
         ]
     },
-    "CheckInImage": {
+    "CCheckInImage": {
         "enabled": true,
         "recognition": "OCR",
         "expected": [
@@ -661,7 +426,7 @@
             "Stop"
         ]
     },
-    "CheckInVideo": {
+    "CCheckInVideo": {
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
@@ -681,8 +446,8 @@
             "Stop"
         ]
     },
-    "TheDayBefore": {
-        "enabled": true,
+    "CTheDayBefore": {
+        "enabled": false,
         "recognition": "OCR",
         "expected": [
             "1天前"
@@ -694,48 +459,18 @@
             1174
         ],
         "interrupt": [
-            "InImagetxt",
-            "InVideo"
+            "CInImagetxt",
+            "CInVideo"
         ],
         "focus": true,
         "focus_succeeded": "检测到一天前",
         "next": [
-            "CircleCollect1",
-            "CircleCollect"
+            "CCircleCompletedBack"
         ]
     },
-    "CircleCollect1": {
+    "CCircleSwipe1": {
         "recognition": "TemplateMatch",
-        "template": [
-            "circle_collect1.png"
-        ],
-        "focus": true,
-        "focus_succeeded": "检测到收藏",
-        "interrupt": [
-            "InImagetxt",
-            "InVideo",
-            "CircleSwipe"
-        ],
-        "next": [
-            "CircleLike1",
-            "NameList",
-            "CircleCollect"
-        ]
-    },
-    "CircleLike1": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "circle_like1.png"
-        ],
-        "focus": true,
-        "focus_succeeded": "检测到点赞",
-        "next": [
-            "CircleCollectFail",
-            "CircleCollect",
-            "CircleSwipe3"
-        ]
-    },
-    "CircleSwipe3": {
+        "template": "circle_collect1.png",
         "action": "Swipe",
         "begin": [
             200,
@@ -751,16 +486,15 @@
         ],
         "timeout": 5000,
         "on_error": [
-            "CircleCompletedBack"
+            "CCircleCompletedBack"
         ],
         "next": [
-            "NameList",
-            "CircleCollect",
-            "CircleLike",
-            "CircleSwipe4"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe2"
         ]
     },
-    "CircleSwipe4": {
+    "CCircleSwipe2": {
         "action": "Swipe",
         "begin": [
             200,
@@ -776,16 +510,15 @@
         ],
         "timeout": 5000,
         "on_error": [
-            "CircleCompletedBack"
+            "CCircleCompletedBack"
         ],
         "next": [
-            "NameList",
-            "CircleCollect",
-            "CircleLike",
-            "CircleSwipe5"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe3"
         ]
     },
-    "CircleSwipe5": {
+    "CCircleSwipe3": {
         "action": "Swipe",
         "begin": [
             200,
@@ -801,16 +534,15 @@
         ],
         "timeout": 5000,
         "on_error": [
-            "CircleCompletedBack"
+            "CCircleCompletedBack"
         ],
         "next": [
-            "NameList",
-            "CircleCollect",
-            "CircleLike",
-            "CircleSwipe6"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe4"
         ]
     },
-    "CircleSwipe6": {
+    "CCircleSwipe4": {
         "action": "Swipe",
         "begin": [
             200,
@@ -826,16 +558,15 @@
         ],
         "timeout": 5000,
         "on_error": [
-            "CircleCompletedBack"
+            "CCircleCompletedBack"
         ],
         "next": [
-            "NameList",
-            "CircleCollect",
-            "CircleLike",
-            "CircleSwipe7"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe5"
         ]
     },
-    "CircleSwipe7": {
+    "CCircleSwipe5": {
         "action": "Swipe",
         "begin": [
             200,
@@ -851,16 +582,15 @@
         ],
         "timeout": 5000,
         "on_error": [
-            "CircleCompletedBack"
+            "CCircleCompletedBack"
         ],
         "next": [
-            "NameList",
-            "CircleCollect",
-            "CircleLike",
-            "CircleSwipe8"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe6"
         ]
     },
-    "CircleSwipe8": {
+    "CCircleSwipe6": {
         "action": "Swipe",
         "begin": [
             200,
@@ -876,36 +606,62 @@
         ],
         "timeout": 5000,
         "on_error": [
-            "CircleCompletedBack"
+            "CCircleCompletedBack"
         ],
         "next": [
-            "NameList",
-            "CircleCollect",
-            "CircleLike"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe7"
         ]
     },
-    "CircleCollect0": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "circle_collect.png"
+    "CCircleSwipe7": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
         ],
-        "action": "Click",
-        "next": [
-            "CircleLike0",
-            "CircleCollect&Like"
-        ]
-    },
-    "CircleLike0": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "circle_like.png"
+        "end": [
+            200,
+            400,
+            10,
+            10
         ],
-        "action": "Click",
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
         "next": [
-            "CircleCollect&Like"
+            "CCircleCollect",
+            "CCircleLike",
+            "CCircleSwipe8"
         ]
     },
-    "CircleCompletedBack": {
+    "CCircleSwipe8": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollect",
+            "CCircleLike"
+        ]
+    },
+    "CCircleCompletedBack": {
         "action": "Key",
         "key": 4,
         "focus": true,
