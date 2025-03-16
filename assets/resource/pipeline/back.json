@@ -49,5 +49,12 @@
             "Stop"
         ]
     },
+    "ToBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "Stop"
+        ]
+    },
     "Stop": {}
 }

@@ -402,6 +402,8 @@
         "focus": true,
         "focus_succeeded": "收藏进行中...",
         "interrupt": [
+            "InVideo",
+            "InImagetxt",
             "CircleSwipe"
         ],
         "next": [
@@ -453,6 +455,8 @@
         "focus": true,
         "focus_succeeded": "点赞进行中...",
         "interrupt": [
+            "InVideo",
+            "InImagetxt",
             "CircleSwipe"
         ],
         "next": [
@@ -507,8 +511,10 @@
         ],
         "action": "Key",
         "key": 4,
+        "focus": true,
+        "focus_succeeded": "进入图文退出...",
         "next": [
-            "CircleCollect&Like"
+            "Stop"
         ]
     },
     "InVideo": {
@@ -527,8 +533,10 @@
         "threshold": 0.7,
         "action": "Key",
         "key": 4,
+        "focus": true,
+        "focus_succeeded": "进入视频退出...",
         "next": [
-            "CircleCollect&Like"
+            "Stop"
         ]
     },
     "IsCompleted": {
@@ -537,11 +545,11 @@
         "focus_succeeded": "任务完成检测...",
         "interrupt": [
             "CircleErrorCheck01",
+            "InImagetxt",
+            "InVideo",
             "CircleSwipe"
         ],
         "next": [
-            "InImagetxt",
-            "InVideo",
             "TheDayBefore",
             "CircleCollect1",
             "CircleCollectFail",
@@ -683,12 +691,14 @@
             270,
             1174
         ],
+        "interrupt": [
+            "InImagetxt",
+            "InVideo"
+        ],
         "focus": true,
         "focus_succeeded": "检测到一天前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -700,12 +710,12 @@
         "focus": true,
         "focus_succeeded": "检测到收藏",
         "interrupt": [
+            "InImagetxt",
+            "InVideo",
             "CircleSwipe"
         ],
         "next": [
             "CircleLike1",
-            "InImagetxt",
-            "InVideo",
             "NameList",
             "CircleCollect"
         ]

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.40",
+    "version": "0.1.41",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -309,8 +309,6 @@
                 },
                 "CCommentBack02": {
                     "next": [
-                        "InVideo",
-                        "InImagetxt",
                         "CircleCollect",
                         "CircleSwipe2"
                     ]
@@ -338,23 +336,9 @@
             "entry": "BrowseImagetxtM",
             "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
             "option": [
+                "浏览时间",
                 "是否重复运行"
             ]
-        },
-        {
-            "name": "个人账号任务10s(beta)",
-            "entry": "BrowseImagetxtM",
-            "doc": "每个动态等待10s后，分享、点赞、收藏、评论\n如果选择重复运行，需要手动结束",
-            "option": [
-                "是否重复运行"
-            ],
-            "pipeline_override": {
-                "ReplyContM": {
-                    "next": [
-                        "Sleep10s"
-                    ]
-                }
-            }
         },
         {
             "name": "分享",
@@ -384,7 +368,7 @@
         {
             "name": "分享（自定义）",
             "entry": "ToShare",
-            "doc": "设置分享次数，Weibo分享设置1次\n作品编号为分享该页面第几个作品",
+            "doc": "设置分享次数，Weibo分享设置1次\n作品编号为分享该页面第几个作品\n关闭阅读量，运行完成不会返回内容页，可自行添加返回任务",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -424,6 +408,7 @@
             "repeatable": true,
             "repeat_count": 10,
             "option": [
+                "微博编号",
                 "等待时间"
             ]
         },
@@ -438,7 +423,7 @@
                 "等待时间"
             ],
             "pipeline_override": {
-                "Link": {
+                "WeiboBack": {
                     "next": [
                         "Stop"
                     ]
@@ -481,9 +466,54 @@
                 "滑动距离",
                 "滑动前退出作品"
             ]
+        },
+        {
+            "name": "返回",
+            "entry": "ToBack",
+            "doc": "返回动作"
         }
     ],
     "option": {
+        "浏览时间": {
+            "cases": [
+                {
+                    "name": "3s",
+                    "pipeline_override": {
+                        "ReplyContM": {
+                            "post_delay": 5000,
+                            "focus_succeeded": "浏览3秒后，开始分享..."
+                        }
+                    }
+                },
+                {
+                    "name": "5s",
+                    "pipeline_override": {
+                        "ReplyContM": {
+                            "post_delay": 7000,
+                            "focus_succeeded": "浏览5秒后，开始分享..."
+                        }
+                    }
+                },
+                {
+                    "name": "10s",
+                    "pipeline_override": {
+                        "ReplyContM": {
+                            "post_delay": 12000,
+                            "focus_succeeded": "浏览10秒后，开始分享..."
+                        }
+                    }
+                },
+                {
+                    "name": "13s",
+                    "pipeline_override": {
+                        "ReplyContM": {
+                            "post_delay": 15000,
+                            "focus_succeeded": "浏览13秒后，开始分享..."
+                        }
+                    }
+                }
+            ]
+        },
         "微博编号": {
             "cases": [
                 {
@@ -494,7 +524,8 @@
                     "name": "2",
                     "pipeline_override": {
                         "ClickLink": {
-                            "index": 1
+                            "index": 1,
+                            "focus_succeeded": "阅读微博2"
                         }
                     }
                 },
@@ -502,7 +533,8 @@
                     "name": "3",
                     "pipeline_override": {
                         "ClickLink": {
-                            "index": 2
+                            "index": 2,
+                            "focus_succeeded": "阅读微博3"
                         }
                     }
                 },
@@ -510,7 +542,8 @@
                     "name": "4",
                     "pipeline_override": {
                         "ClickLink": {
-                            "index": 3
+                            "index": 3,
+                            "focus_succeeded": "阅读微博4"
                         }
                     }
                 }
@@ -526,7 +559,8 @@
                     "name": "2",
                     "pipeline_override": {
                         "ToShareMy": {
-                            "index": 1
+                            "index": 1,
+                            "focus_succeeded": "作品编号2"
                         }
                     }
                 },
@@ -534,7 +568,8 @@
                     "name": "3",
                     "pipeline_override": {
                         "ToShareMy": {
-                            "index": 2
+                            "index": 2,
+                            "focus_succeeded": "作品编号3"
                         }
                     }
                 }
@@ -631,6 +666,9 @@
                 {
                     "name": "no",
                     "pipeline_override": {
+                        "ToShareMy": {
+                            "post_delay": 1000
+                        },
                         "ToShareImageVideoExit": {
                             "enabled": false
                         }
@@ -1053,8 +1091,6 @@
                     "pipeline_override": {
                         "IsCompleted": {
                             "next": [
-                                "InVideo",
-                                "InImagetxt",
                                 "TheDayBefore",
                                 "CircleCollectFail",
                                 "NameList",
@@ -1125,11 +1161,13 @@
                         "ShareBackVideoM": {
                             "next": [
                                 "CCommentVideo",
+                                "ClickCommentVideo",
                                 "ReplyVideoLike1M",
                                 "ReplyVideoLikeM",
                                 "ReplyVideoCollect1M",
                                 "ReplyVideoCollectM",
-                                "ReplyVideoBackM"
+                                "ReplyVideoBackM",
+                                "CantFindComment"
                             ]
                         },
                         "CCommentBack01": {
@@ -1157,21 +1195,25 @@
                         "ReplyVideo01": {
                             "next": [
                                 "CCommentVideo",
+                                "ClickCommentVideo",
                                 "ReplyVideoLike1",
                                 "ReplyVideoLike",
                                 "ReplyVideoCollect1",
                                 "ReplyVideoCollect",
-                                "ReplyVideoBack"
+                                "ReplyVideoBack",
+                                "CantFindComment"
                             ]
                         },
                         "ReplyVideoM": {
                             "next": [
                                 "CCommentVideo",
+                                "ClickCommentVideo",
                                 "ReplyVideoLike1",
                                 "ReplyVideoLike",
                                 "ReplyVideoCollect1",
                                 "ReplyVideoCollect",
-                                "ReplyVideoBack"
+                                "ReplyVideoBack",
+                                "CantFindComment"
                             ]
                         },
                         "CCommentBack01": {
@@ -1243,15 +1285,13 @@
                         },
                         "CCommentBack02": {
                             "next": [
-                                "InVideo",
-                                "InImagetxt",
+                                "IsCompleted",
                                 "CircleSwipe2"
                             ]
                         },
                         "CCommentVideoBack": {
                             "next": [
-                                "InVideo",
-                                "InImagetxt",
+                                "IsCompleted",
                                 "CircleSwipe2"
                             ]
                         }
@@ -1274,8 +1314,7 @@
                         },
                         "CCommentBack02": {
                             "next": [
-                                "InVideo",
-                                "InImagetxt",
+                                "IsCompleted",
                                 "CircleSwipe2"
                             ]
                         }
@@ -1383,6 +1422,10 @@
         "误入动态判断": {
             "cases": [
                 {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
                     "name": "no",
                     "pipeline_override": {
                         "InImagetxt": {
@@ -1392,10 +1435,6 @@
                             "enabled": false
                         }
                     }
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {}
                 }
             ]
         },

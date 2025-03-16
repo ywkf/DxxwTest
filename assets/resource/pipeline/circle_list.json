@@ -26,6 +26,7 @@
             0
         ],
         "post_delay": 2000,
+        "timeout": 60000,
         "next": [
             "LVideoLiked",
             "LImageLiked",
@@ -33,8 +34,10 @@
             "ListImageCollect",
             "ListVideoLike",
             "ListImageLike",
+            "CCommentImage",
             "CCommentVideo",
-            "CCommentImage"
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     },
     "LImageLiked": {
@@ -95,7 +98,9 @@
         "next": [
             "ListImageLike",
             "CCommentImage",
-            "CCommentVideo"
+            "CCommentVideo",
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     },
     "ListImageLike": {
@@ -114,7 +119,9 @@
         "pre_delay": 500,
         "next": [
             "CCommentImage",
-            "CCommentVideo"
+            "CCommentVideo",
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     },
     "ListVideoCollect": {
@@ -133,7 +140,9 @@
         "next": [
             "ListVideoLike",
             "CCommentImage",
-            "CCommentVideo"
+            "CCommentVideo",
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     },
     "ListVideoLike": {
@@ -151,7 +160,9 @@
         "action": "Click",
         "next": [
             "CCommentImage",
-            "CCommentVideo"
+            "CCommentVideo",
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     }
 }

@@ -81,6 +81,8 @@
         "action": "Click",
         "pre_delay": 500,
         "post_delay": 500,
+        "focus": true,
+        "focus_succeeded": "阅读微博1",
         "next": [
             "ClickPlay",
             "Link"

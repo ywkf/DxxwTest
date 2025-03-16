@@ -365,8 +365,10 @@
         "focus": true,
         "focus_succeeded": "识别到成员，评论中...",
         "next": [
+            "CCommentImage",
             "CCommentVideo",
-            "CCommentImage"
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     }
 }

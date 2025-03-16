@@ -23,9 +23,12 @@
         "post_delay": 2000,
         "focus": true,
         "focus_succeeded": "进入作品",
+        "timeout": 60000,
         "next": [
             "CCommentImage",
-            "CCommentVideo"
+            "CCommentVideo",
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     },
     "CheckName": {
@@ -41,8 +44,10 @@
         "focus": true,
         "focus_succeeded": "识别到成员，评论中...",
         "next": [
+            "CCommentImage",
             "CCommentVideo",
-            "CCommentImage"
+            "ClickCommentVideo",
+            "CantFindComment"
         ]
     },
     "CCommentImage": {
@@ -192,6 +197,7 @@
         "action": "Click",
         "focus": true,
         "focus_succeeded": "发表评论..",
+        "timeout": 60000,
         "next": [
             "CCommentBack02T"
         ]
@@ -1351,6 +1357,7 @@
         "action": "Click",
         "focus": true,
         "focus_succeeded": "发表评论...",
+        "timeout": 60000,
         "next": [
             "CCommentBack01"
         ]
@@ -1428,6 +1435,47 @@
     },
     "NotCCommentBack": {
         "enabled": false,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02"
+        ]
+    },
+    "ClickCommentVideo": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_comment.png",
+            "video_like0g.png",
+            "video_like1g.png",
+            "video_collect0g.png",
+            "video_collect1g.png",
+            "video_share0.png"
+        ],
+        "roi": [
+            626,
+            471,
+            66,
+            611
+        ],
+        "action": "Click",
+        "target": [
+            659,
+            694,
+            1,
+            1
+        ],
+        "post_delay": 500,
+        "on_error": [
+            "TimeCircleBack"
+        ],
+        "next": [
+            "CCheckComment001",
+            "CCheckComment002",
+            "CCommentVideoIn02"
+        ]
+    },
+    "CantFindComment": {
+        "enabled": true,
         "action": "Key",
         "key": 4,
         "next": [

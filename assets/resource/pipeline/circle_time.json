@@ -2,11 +2,18 @@
     "TimeCircleBack": {
         "enabled": true,
         "recognition": "TemplateMatch",
-        "template": "video_comment.png",
+        "template": [
+            "video_comment.png",
+            "video_like0g.png",
+            "video_like1g.png",
+            "video_collect0g.png",
+            "video_collect1g.png",
+            "video_share0.png"
+        ],
         "roi": [
             626,
             471,
-            65,
+            66,
             611
         ],
         "threshold": 0.45,
@@ -60,8 +67,6 @@
         "focus_toast": "检测到分钟前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -83,8 +88,6 @@
         "focus_toast": "检测到1小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -106,8 +109,6 @@
         "focus_toast": "检测到2小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -129,8 +130,6 @@
         "focus_toast": "检测到3小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -152,8 +151,6 @@
         "focus_toast": "检测到4小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -175,8 +172,6 @@
         "focus_toast": "检测到5小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -198,8 +193,6 @@
         "focus_toast": "检测到6小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -221,8 +214,6 @@
         "focus_toast": "检测到7小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -244,8 +235,6 @@
         "focus_toast": "检测到8小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -267,8 +256,6 @@
         "focus_toast": "检测到9小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -290,8 +277,6 @@
         "focus_toast": "检测到10小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -313,8 +298,6 @@
         "focus_toast": "检测到11小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -336,8 +319,6 @@
         "focus_toast": "检测到12小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -359,8 +340,6 @@
         "focus_toast": "检测到13小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -382,8 +361,6 @@
         "focus_toast": "检测到14小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -405,8 +382,6 @@
         "focus_toast": "检测到15小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -428,8 +403,6 @@
         "focus_toast": "检测到16小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -451,8 +424,6 @@
         "focus_toast": "检测到17小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -474,8 +445,6 @@
         "focus_toast": "检测到18小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -497,8 +466,6 @@
         "focus_toast": "检测到19小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -520,8 +487,6 @@
         "focus_toast": "检测到20小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -543,8 +508,6 @@
         "focus_toast": "检测到21小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -566,8 +529,6 @@
         "focus_toast": "检测到22小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -589,8 +550,6 @@
         "focus_toast": "检测到23小时前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     },
@@ -612,8 +571,6 @@
         "focus_toast": "检测到1天前",
         "next": [
             "CircleCollect1",
-            "InImagetxt",
-            "InVideo",
             "CircleCollect"
         ]
     }
