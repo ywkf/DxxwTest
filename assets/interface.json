@@ -316,7 +316,7 @@
             }
         },
         {
-            "name": "圈子点赞收藏lite",
+            "name": "圈子点赞收藏 lite",
             "entry": "CCircle",
             "doc": "点赞收藏圈子内容\n开启至1天前，会在1天前的内容后停止",
             "repeatable": true,
