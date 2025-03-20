@@ -323,6 +323,8 @@
             "repeat_count": 1,
             "option": [
                 "CircleSwitch",
+                "是否评论lite",
+                "视频评论语录次数",
                 "至1天前"
             ]
         },
@@ -485,6 +487,35 @@
         }
     ],
     "option": {
+        "是否评论lite": {
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "评论图文和视频",
+                    "pipeline_override": {
+                        "CCircleLike": {
+                            "next": [
+                                "CClickCommentLite"
+                            ]
+                        },
+                        "CClickCommentLite": {
+                            "next": [
+                                "CheckNameList",
+                                "NotCCommentBack"
+                            ]
+                        },
+                        "CCommentBack02": {
+                            "next": [
+                                "CIsCompleted"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "浏览时间": {
             "cases": [
                 {
@@ -1656,8 +1687,7 @@
                                 "无线“象”往",
                                 "展示新时代河南",
                                 "中波人",
-                                "“象”",
-                                "我的关注"
+                                "“象”"
                             ],
                             "focus_succeeded": "已在 无线“象”往 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1682,8 +1712,7 @@
                                 "无线“象”往",
                                 "展示新时代河南",
                                 "中波人",
-                                "“象”",
-                                "我的关注"
+                                "“象”"
                             ],
                             "focus_succeeded": "已在 无线“象”往 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1709,8 +1738,7 @@
                         "InTheCircle": {
                             "expected": [
                                 "随手记录生活",
-                                "随手",
-                                "我的关注"
+                                "随手"
                             ],
                             "focus_succeeded": "已在 随手记录生活 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1731,8 +1759,7 @@
                         "CInTheCircle": {
                             "expected": [
                                 "随手记录生活",
-                                "随手",
-                                "我的关注"
+                                "随手"
                             ],
                             "focus_succeeded": "已在 随手记录生活 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1756,8 +1783,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "大象话题",
-                                "我的关注"
+                                "大象话题"
                             ],
                             "focus_succeeded": "已在 大象话题 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1776,8 +1802,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "大象话题",
-                                "我的关注"
+                                "大象话题"
                             ],
                             "focus_succeeded": "已在 大象话题 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1804,8 +1829,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "记录生活",
-                                "我的关注"
+                                "记录生活"
                             ],
                             "focus_succeeded": "已在 记录生活 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1827,8 +1851,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "记录生活",
-                                "我的关注"
+                                "记录生活"
                             ],
                             "focus_succeeded": "已在 记录生活 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1855,8 +1878,7 @@
                         "InTheCircle": {
                             "expected": [
                                 "福塔-发射",
-                                "福塔",
-                                "我的关注"
+                                "福塔"
                             ],
                             "focus_succeeded": "已在 福塔-发射 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1878,8 +1900,7 @@
                         "CInTheCircle": {
                             "expected": [
                                 "福塔-发射",
-                                "福塔",
-                                "我的关注"
+                                "福塔"
                             ],
                             "focus_succeeded": "已在 福塔-发射 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1904,8 +1925,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "热爱生活",
-                                "我的关注"
+                                "热爱生活"
                             ],
                             "focus_succeeded": "已在 热爱 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1925,8 +1945,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "热爱生活",
-                                "我的关注"
+                                "热爱生活"
                             ],
                             "focus_succeeded": "已在 热爱 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1950,8 +1969,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "快乐集中营",
-                                "我的关注"
+                                "快乐集中营"
                             ],
                             "focus_succeeded": "已在 快乐集中营 圈子中",
                             "focus_succeeded_color": "Green"
@@ -1970,8 +1988,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "快乐集中营",
-                                "我的关注"
+                                "快乐集中营"
                             ],
                             "focus_succeeded": "已在 快乐集中营 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2000,8 +2017,7 @@
                             "expected": [
                                 "非常“3+4”",
                                 "3+4",
-                                "非常",
-                                "我的关注"
+                                "非常"
                             ],
                             "focus_succeeded": "已在 非常“3+4” 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2025,8 +2041,7 @@
                             "expected": [
                                 "非常“3+4”",
                                 "3+4",
-                                "非常",
-                                "我的关注"
+                                "非常"
                             ],
                             "focus_succeeded": "已在 非常“3+4” 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2054,8 +2069,7 @@
                         "InTheCircle": {
                             "expected": [
                                 "象·心力",
-                                "心力",
-                                "我的关注"
+                                "心力"
                             ],
                             "focus_succeeded": "已在 象·心力 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2078,8 +2092,7 @@
                         "CInTheCircle": {
                             "expected": [
                                 "象·心力",
-                                "心力",
-                                "我的关注"
+                                "心力"
                             ],
                             "focus_succeeded": "已在 象·心力 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2105,8 +2118,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "人间处处",
-                                "我的关注"
+                                "人间处处"
                             ],
                             "focus_succeeded": "已在 人间处处 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2127,8 +2139,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "人间处处",
-                                "我的关注"
+                                "人间处处"
                             ],
                             "focus_succeeded": "已在 人间处处 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2154,8 +2165,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "象友汇",
-                                "我的关注"
+                                "象友汇"
                             ],
                             "focus_succeeded": "已在 象友汇 圈子中",
                             "focus_succeeded_color": "Green"
@@ -2176,8 +2186,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "象友汇",
-                                "我的关注"
+                                "象友汇"
                             ],
                             "focus_succeeded": "已在 象友汇 圈子中",
                             "focus_succeeded_color": "Green"

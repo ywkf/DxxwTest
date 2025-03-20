@@ -31,6 +31,31 @@
             "CantFindComment"
         ]
     },
+    "CClickCommentLite": {
+        "recognition": "TemplateMatch",
+        "template": "circle_comment.png",
+        "roi": "CCircleLike",
+        "roi_offset": [
+            0,
+            0,
+            342,
+            3
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 2000,
+        "focus": true,
+        "focus_succeeded": "进入作品",
+        "timeout": 30000,
+        "on_error": [
+            "ClickCommentVideo",
+            "CantFindComment"
+        ],
+        "next": [
+            "CCommentImage",
+            "CCommentVideo"
+        ]
+    },
     "CheckName": {
         "enabled": false,
         "recognition": "OCR",
@@ -533,8 +558,8 @@
             412
         ],
         "action": "Click",
-        "pre_delay": 500,
-        "post_delay": 500,
+        "pre_delay": 300,
+        "post_delay": 300,
         "next": [
             "CCCommentXFT03X2",
             "CCommentPublish"
@@ -558,7 +583,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 300,
         "next": [
             "CCCommentXFT03X3",
             "CCommentPublish"
@@ -582,7 +607,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 300,
         "next": [
             "CCommentPublish"
         ]
@@ -604,8 +629,8 @@
             412
         ],
         "action": "Click",
-        "pre_delay": 500,
-        "post_delay": 500,
+        "pre_delay": 300,
+        "post_delay": 300,
         "next": [
             "CCCommentXFT14X2",
             "CCommentPublish"
@@ -629,7 +654,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 300,
         "next": [
             "CCCommentXFT14X3",
             "CCommentPublish"
@@ -653,7 +678,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 300,
         "next": [
             "CCommentPublish"
         ]
@@ -675,8 +700,8 @@
             412
         ],
         "action": "Click",
-        "pre_delay": 500,
-        "post_delay": 500,
+        "pre_delay": 300,
+        "post_delay": 300,
         "next": [
             "CCCommentXFT25X2",
             "CCommentPublish"
@@ -700,7 +725,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 300,
         "next": [
             "CCCommentXFT25X3",
             "CCommentPublish"
@@ -724,7 +749,7 @@
             412
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 300,
         "next": [
             "CCommentPublish"
         ]
@@ -1464,6 +1489,7 @@
             1,
             1
         ],
+        "pre_delay": 300,
         "post_delay": 500,
         "on_error": [
             "TimeCircleBack"

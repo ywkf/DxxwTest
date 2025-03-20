@@ -364,11 +364,13 @@
         "pre_delay": 500,
         "focus": true,
         "focus_succeeded": "识别到成员，评论中...",
+        "on_error": [
+            "CantFindComment"
+        ],
         "next": [
             "CCommentImage",
             "CCommentVideo",
-            "ClickCommentVideo",
-            "CantFindComment"
+            "ClickCommentVideo"
         ]
     }
 }
