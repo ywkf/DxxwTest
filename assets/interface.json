@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.41",
+    "version": "0.1.45",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -496,6 +496,9 @@
                 {
                     "name": "评论图文和视频",
                     "pipeline_override": {
+                        "NotCCommentBack": {
+                            "enabled": true
+                        },
                         "CCircleLike": {
                             "next": [
                                 "CClickCommentLite"
