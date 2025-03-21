@@ -164,8 +164,36 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
+        "on_error": [
+            "CReIn"
+        ],
+        "next": [
+            "CIsLoaded"
+        ]
+    },
+    "CIsLoaded": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "置顶",
+            "已关注",
+            "分钟前",
+            "大象圈",
+            "官方客服",
+            "小时前"
+        ],
+        "focus": true,
+        "focus_succeeded": "圈子已加载...",
         "next": [
             "CCircleCollect&Like"
+        ]
+    },
+    "CReIn": {
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CClickTheCircle"
         ]
     },
     "CCircleSwipe": {

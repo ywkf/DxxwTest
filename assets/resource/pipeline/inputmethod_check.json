@@ -124,5 +124,27 @@
         "next": [
             "Stop"
         ]
+    },
+    "SwitchToiFlyIME": {
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16448",
+            "shell",
+            "ime",
+            "set",
+            "com.iflytek.inputmethod/.FlyIME"
+        ],
+        "detach": false
+    },
+    "SwitchIME": {
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "/c",
+            "adb -s {adb_address} shell ime set com.iflytek.inputmethod/.FlyIME"
+        ],
+        "detach": false
     }
 }

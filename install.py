@@ -61,6 +61,10 @@ def install_resource():
 
 def install_chores():
     shutil.copy2(
+        working_dir / "FlyIME.cmd",
+        install_path,
+    )
+    shutil.copy2(
         working_dir / "README.md",
         install_path,
     )
@@ -68,6 +72,7 @@ def install_chores():
         working_dir / "LICENSE",
         install_path,
     )
+    
 
 
 if __name__ == "__main__":
