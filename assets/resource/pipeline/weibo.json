@@ -76,7 +76,7 @@
     "ClickLink": {
         "recognition": "TemplateMatch",
         "template": [
-            "WeiboLink.png"
+            "link.png"
         ],
         "index": 0,
         "action": "Click",

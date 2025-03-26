@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.46",
+    "version": "0.1.47",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -114,7 +114,8 @@
             "option": [
                 "DxhSwitch",
                 "PublishSwitch",
-                "输入法检测"
+                "输入法检测",
+                "跳过签到"
             ],
             "pipeline_override": {
                 "SelectInputmethod": {
@@ -136,7 +137,8 @@
             "entry": "MergeBrowsePublish",
             "option": [
                 "DxhSwitch",
-                "PublishSwitch"
+                "PublishSwitch",
+                "跳过签到"
             ],
             "pipeline_override": {
                 "SwipeUpivl": {
@@ -149,7 +151,8 @@
             "entry": "InputmethodCheck00",
             "option": [
                 "DxhSwitch",
-                "输入法检测"
+                "输入法检测",
+                "跳过签到"
             ],
             "pipeline_override": {
                 "SelectInputmethod": {
@@ -3060,18 +3063,32 @@
         "输入法检测": {
             "cases": [
                 {
-                    "name": "是",
-                    "pipeline_override": {
-                        "InputmethodCheck00": {
-                            "enabled": true
-                        }
-                    }
+                    "name": "yes",
+                    "pipeline_override": {}
                 },
                 {
-                    "name": "否",
+                    "name": "no",
                     "pipeline_override": {
                         "InputmethodCheck00": {
                             "next": "MergeSigninGetpoints"
+                        }
+                    }
+                }
+            ]
+        },
+        "跳过签到": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "MergeSigninGetpoints": {
+                            "next": [
+                                "MergeBrowsePublish1"
+                            ]
                         }
                     }
                 }
