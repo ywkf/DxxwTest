@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.47",
+    "version": "0.1.48",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -418,6 +418,24 @@
             }
         },
         {
+            "name": "个人内容分享",
+            "entry": "ToContent",
+            "doc": "分享个人号内容，设置次数、时间、循环次数",
+            "repeatable": true,
+            "repeat_count": 1,
+            "option": [
+                "分享次数",
+                "分享至何时"
+            ],
+            "pipeline_override": {
+                "ToContentAll": {
+                    "next": [
+                        "ToShareC"
+                    ]
+                }
+            }
+        },
+        {
             "name": "微博阅读量",
             "entry": "Weibo",
             "doc": "进入微博应用程序，账号对应的发布内容页面再启动，无限循环分享，需要手动结束",
@@ -490,6 +508,109 @@
         }
     ],
     "option": {
+        "分享次数": {
+            "cases": [
+                {
+                    "name": "42",
+                    "pipeline_override": {
+                        "ToImageShareC43": {
+                            "enabled": false
+                        },
+                        "ToVideoShareC43": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "60",
+                    "pipeline_override": {
+                        "ToImageShareC61": {
+                            "enabled": false
+                        },
+                        "ToVideoShareC61": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "76",
+                    "pipeline_override": {
+                        "ToImageShareC77": {
+                            "enabled": false
+                        },
+                        "ToVideoShareC77": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "100",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "分享至何时": {
+            "cases": [
+                {
+                    "name": "1天前",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2天前",
+                    "pipeline_override": {
+                        "ShareDoneC": {
+                            "expected": [
+                                "2天前",
+                                "我也是有底线的"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3天前",
+                    "pipeline_override": {
+                        "ShareDoneC": {
+                            "expected": [
+                                "3天前",
+                                "我也是有底线的"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4天前",
+                    "pipeline_override": {
+                        "ShareDoneC": {
+                            "expected": [
+                                "4天前",
+                                "我也是有底线的"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2天前",
+                    "pipeline_override": {
+                        "ShareDoneC": {
+                            "expected": [
+                                "2天前",
+                                "我也是有底线的"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "全部",
+                    "pipeline_override": {
+                        "ShareDoneC": {
+                            "expected": [
+                                "我也是有底线的"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "是否评论lite": {
             "cases": [
                 {
@@ -1933,7 +2054,7 @@
                             "expected": [
                                 "热爱生活"
                             ],
-                            "focus_succeeded": "已在 热爱 圈子中",
+                            "focus_succeeded": "已在 热爱生活 圈子中",
                             "focus_succeeded_color": "Green"
                         },
                         "CClickTheCircle": {

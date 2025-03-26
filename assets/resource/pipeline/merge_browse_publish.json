@@ -86,7 +86,7 @@
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
-        "post_delay": 500,
+        "post_delay": 1000,
         "timeout": 20000,
         "on_error": "ErrorBackImagetxt",
         "focus": true,
@@ -166,7 +166,7 @@
             15,
             228,
             693,
-            303
+            320
         ],
         "action": "Click",
         "post_delay": 500,
