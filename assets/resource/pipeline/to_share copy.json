@@ -1,9 +1,53 @@
 {
     "ToShareC": {
         "next": [
-            "ToVideoShareC",
-            "ToImageShareC",
+            "TimeStart0",
             "ToShareMyC"
+        ]
+    },
+    "TimeStart0": {
+        "enabled": true,
+        "interrupt": [
+            "ToSwipeMy2C"
+        ],
+        "next": [
+            "TimeStart"
+        ]
+    },
+    "TimeStart": {
+        "recognition": "OCR",
+        "expected": [
+            "1天前"
+        ],
+        "roi": [
+            362,
+            311,
+            356,
+            969
+        ],
+        "next": [
+            "ToShareMyC"
+        ]
+    },
+    "ToSwipeMy2C": {
+        "enabled": true,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1040,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            300,
+            10,
+            10
+        ],
+        "duration": 600,
+        "post_delay": 500,
+        "next": [
+            "Stop"
         ]
     },
     "ToShareMyC": {

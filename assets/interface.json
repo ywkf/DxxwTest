@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.54",
+    "version": "0.1.55",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -425,6 +425,7 @@
             "repeat_count": 1,
             "option": [
                 "分享次数",
+                "从何时开始",
                 "分享至何时"
             ],
             "pipeline_override": {
@@ -508,6 +509,122 @@
         }
     ],
     "option": {
+        "从何时开始": {
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "TimeStart0": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "1天前",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2天前",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "2天前"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3天前",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "3天前"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4天前",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "4天前"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-28",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-28"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-25",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-25"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-20",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-20"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-15",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-15"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-10",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-10"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-05",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-05"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "-01",
+                    "pipeline_override": {
+                        "TimeStart": {
+                            "expected": [
+                                "-01"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "分享次数": {
             "cases": [
                 {
