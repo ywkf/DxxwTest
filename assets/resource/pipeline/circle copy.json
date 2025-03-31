@@ -477,13 +477,10 @@
     "CTheDayBefore": {
         "enabled": false,
         "interrupt": [
-            "CInImagetxt",
-            "CInVideo",
             "CCircleSwipe"
         ],
         "next": [
             "CTheDayBefore2",
-            "CCircleCollectFail",
             "CCircleCollect"
         ]
     },
