@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.59",
+    "version": "0.1.60",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -1506,6 +1506,9 @@
                                 "NameList",
                                 "CircleCollect"
                             ]
+                        },
+                        "CTheDayBefore": {
+                            "enabled": true
                         }
                     }
                 }
