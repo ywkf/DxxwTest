@@ -223,8 +223,37 @@
         "focus": true,
         "focus_succeeded": "发表评论..",
         "timeout": 60000,
+        "interrupt": [
+            "CReComment"
+        ],
         "next": [
             "CCommentBack02T"
+        ]
+    },
+    "CReComment": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表"
+        ],
+        "pre_delay": 5000,
+        "next": [
+            "CReCommentImage"
+        ]
+    },
+    "CReCommentImage": {
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "post_delay": 1000,
+        "next": [
+            "CCommentXF01VH",
+            "CommentCommon01",
+            "CInputCommentImage",
+            "CommentCommon00"
         ]
     },
     "CCommentVideo": {
@@ -1431,7 +1460,6 @@
         "expected": [
             "发送成功",
             "已提交",
-            "不能发表",
             "频率过高"
         ],
         "pre_delay": 1000,

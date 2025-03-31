@@ -476,6 +476,19 @@
     },
     "CTheDayBefore": {
         "enabled": false,
+        "interrupt": [
+            "CInImagetxt",
+            "CInVideo",
+            "CCircleSwipe"
+        ],
+        "next": [
+            "CTheDayBefore2",
+            "CCircleCollectFail",
+            "CCircleCollect"
+        ]
+    },
+    "CTheDayBefore2": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "1天前"
