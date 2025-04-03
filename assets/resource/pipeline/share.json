@@ -24,10 +24,10 @@
         "recognition": "TemplateMatch",
         "template": "video_share0.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.45,
@@ -94,10 +94,10 @@
         "recognition": "TemplateMatch",
         "template": "video_share0.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "threshold": 0.45,
         "green_mask": true,

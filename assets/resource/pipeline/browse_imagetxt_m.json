@@ -139,10 +139,10 @@
         "recognition": "TemplateMatch",
         "template": "video_share0.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.5,
@@ -193,10 +193,10 @@
         "recognition": "TemplateMatch",
         "template": "video_share0.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.5,
@@ -337,10 +337,10 @@
         "recognition": "TemplateMatch",
         "template": "video_like1g.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.65,
@@ -354,10 +354,10 @@
         "recognition": "TemplateMatch",
         "template": "video_collect1g.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.65,
@@ -369,10 +369,10 @@
         "recognition": "TemplateMatch",
         "template": "video_like0g.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.5,
@@ -387,10 +387,10 @@
         "recognition": "TemplateMatch",
         "template": "video_collect0g.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.5,

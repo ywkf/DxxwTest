@@ -1,7 +1,7 @@
-## v0.1.50
+## v0.1.62
 ### 新增 | Highlight
 
-新增任务-个人内容分享
+适配客户端v5.6.0
 
 ### 修复 | Fix
 
@@ -16,4 +16,4 @@
 成员列表可在（assets\resource\pipeline\name_list.json）
 "NameList"和"CheckNameList"中额外添加
 
-调整MFAWPF版本为最新
+迁移至MFAAvalonia

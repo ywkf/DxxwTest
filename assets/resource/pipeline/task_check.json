@@ -62,7 +62,7 @@
     },
     "TaskImagetxt": {
         "recognition": "OCR",
-        "expected": "浏览图文作品",
+        "expected": "浏览内容",
         "next": [
             "TaskImagetxtComplete",
             "TaskImagetxtUndone"
@@ -75,11 +75,11 @@
         "roi_offset": [
             0,
             0,
-            352,
-            38
+            392,
+            44
         ],
         "focus": true,
-        "focus_succeeded": "浏览图文已完成",
+        "focus_succeeded": "浏览内容已完成",
         "focus_succeeded_color": "Blue",
         "next": [
             "TaskComment"
@@ -92,34 +92,14 @@
         "roi_offset": [
             0,
             0,
-            352,
-            38
+            392,
+            44
         ],
         "focus": true,
-        "focus_tip": "浏览图文未完成，前去完成",
+        "focus_tip": "浏览内容未完成，前去完成",
         "focus_tip_color": "Blue",
         "next": [
-            "TaskImagetxtUndoneLess",
             "MergeBrowsePublish000"
-        ]
-    },
-    "TaskImagetxtUndoneLess": {
-        "recognition": "OCR",
-        "expected": [
-            "12/15",
-            "13/15",
-            "14/15"
-        ],
-        "roi": "TaskImagetxt",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "focus": true,
-        "next": [
-            "ErrorImagetxt0013"
         ]
     },
     "TaskComment": {
@@ -144,7 +124,7 @@
         "focus_succeeded": "评论已完成",
         "focus_succeeded_color": "Blue",
         "next": [
-            "TaskVideo"
+            "TaskNotification"
         ]
     },
     "TaskCommentIndone": {
@@ -164,58 +144,18 @@
             "ErrorImagetxt0013"
         ]
     },
-    "TaskVideo": {
-        "recognition": "OCR",
-        "expected": "浏览音视频作品",
-        "next": [
-            "TaskVideoComplete",
-            "TaskVideoUndone"
-        ]
-    },
-    "TaskVideoComplete": {
-        "recognition": "OCR",
-        "expected": "已领取",
-        "roi": "TaskVideo",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "interrupt": [
-            "TaskSwipe"
-        ],
-        "focus": true,
-        "focus_succeeded": "浏览音视频已完成",
-        "focus_succeeded_color": "Blue",
-        "next": [
-            "TaskNotification"
-        ]
-    },
-    "TaskVideoUndone": {
-        "recognition": "OCR",
-        "expected": "去浏览",
-        "roi": "TaskVideo",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "focus": true,
-        "focus_tip": "浏览音视频未完成，前去完成",
-        "focus_tip_color": "Blue",
-        "next": [
-            "ErrorGeneral"
-        ]
-    },
     "TaskNotification": {
         "recognition": "OCR",
         "expected": "允许大象新闻",
         "next": [
             "TaskNotificationComplete",
-            "TaskNotificationUndone"
+            "TaskNotificationUndone",
+            "NoGetPoints"
         ]
+    },
+    "NoGetPoints": {
+        "focus": true,
+        "focus_tip": "未领取每日通知积分已领取，请手动领取"
     },
     "TaskNotificationComplete": {
         "recognition": "OCR",
@@ -223,7 +163,7 @@
         "roi": "TaskNotification",
         "roi_offset": [
             0,
-            0,
+            -10,
             352,
             38
         ],
@@ -234,7 +174,7 @@
         "focus_succeeded": "每日通知积分已领取",
         "focus_succeeded_color": "Blue",
         "next": [
-            "TaskTVRadio"
+            "Back"
         ]
     },
     "TaskNotificationUndone": {
@@ -243,12 +183,11 @@
         "roi": "TaskNotification",
         "roi_offset": [
             0,
-            0,
+            -10,
             352,
             38
         ],
         "index": 1,
-        "action": "Click",
         "interrupt": [
             "TaskSwipe"
         ],
@@ -256,91 +195,7 @@
         "focus_succeeded": "每日通知积分已领取",
         "focus_succeeded_color": "Blue",
         "next": [
-            "TaskTVRadio"
-        ]
-    },
-    "TaskTVRadio": {
-        "recognition": "OCR",
-        "expected": "看电视、听广播",
-        "next": [
-            "TaskTVRadioComplete",
-            "TaskTVRadioUndone"
-        ]
-    },
-    "TaskTVRadioComplete": {
-        "recognition": "OCR",
-        "expected": "已领取",
-        "roi": "TaskTVRadio",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "focus": true,
-        "focus_succeeded": "看电视听广播已完成",
-        "focus_succeeded_color": "Blue",
-        "next": [
-            "TaskLive"
-        ]
-    },
-    "TaskTVRadioUndone": {
-        "recognition": "OCR",
-        "expected": "去观看",
-        "roi": "TaskTVRadio",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "focus": true,
-        "focus_tip": "看电视听广播未完成，前去完成",
-        "focus_tip_color": "Blue",
-        "next": [
-            "WatchVideoradio"
-        ]
-    },
-    "TaskLive": {
-        "recognition": "OCR",
-        "expected": "看直播",
-        "next": [
-            "TaskLiveComplete",
-            "TaskLiveUndone"
-        ]
-    },
-    "TaskLiveComplete": {
-        "recognition": "OCR",
-        "expected": "已领取",
-        "roi": "TaskLive",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "focus": true,
-        "focus_succeeded": "观看直播已完成",
-        "focus_succeeded_color": "Blue",
-        "next": [
             "Back"
-        ]
-    },
-    "TaskLiveUndone": {
-        "recognition": "OCR",
-        "expected": "去观看",
-        "roi": "TaskLive",
-        "roi_offset": [
-            0,
-            0,
-            352,
-            38
-        ],
-        "focus": true,
-        "focus_tip": "观看直播未完成，前去完成",
-        "focus_tip_color": "Blue",
-        "next": [
-            "ErrorGeneralLive"
         ]
     },
     "Gddjt": {

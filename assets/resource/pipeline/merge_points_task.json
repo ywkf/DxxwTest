@@ -1,0 +1,99 @@
+{
+    "MergePointsTask": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergePointsTask1"
+        ]
+    },
+    "MergePointsTask1": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "Skip2",
+            "CMyPoints"
+        ]
+    },
+    "CMyPoints": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CSigningIn",
+            "CSignedIn"
+        ]
+    },
+    "CSigningIn": {
+        "recognition": "OCR",
+        "expected": "点击签到",
+        "action": "Click",
+        "focus": true,
+        "focus_succeeded": "签到完成",
+        "next": [
+            "CSwipeUPsg"
+        ]
+    },
+    "CSignedIn": {
+        "recognition": "OCR",
+        "expected": "已签到",
+        "focus": true,
+        "focus_succeeded": "签到已完成",
+        "next": [
+            "CSwipeUPsg"
+        ]
+    },
+    "CSwipeUPsg": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000,
+        "next": [
+            "CGettingPoints",
+            "Back"
+        ]
+    },
+    "CGettingPoints": {
+        "recognition": "TemplateMatch",
+        "template": "领取.png",
+        "roi": [
+            528,
+            634,
+            159,
+            380
+        ],
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "领取每日通知积分完成",
+        "next": [
+            "BrowseImagetxtM1"
+        ]
+    }
+}

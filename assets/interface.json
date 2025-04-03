@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.60",
+    "version": "0.1.62",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -43,203 +43,17 @@
             ]
         },
         {
-            "name": "签到",
-            "entry": "Signin"
-        },
-        {
-            "name": "允许通知积分领取",
-            "entry": "GetPoints"
-        },
-        {
-            "name": "浏览图文作品",
-            "entry": "MergeBrowsePublish",
-            "option": [
-                "DxhSwitch"
-            ],
-            "pipeline_override": {
-                "BrowseImagetxtComplete": {
-                    "next": "Back"
-                }
-            }
-        },
-        {
-            "name": "浏览音视频作品",
-            "entry": "MergeBrowsePublish",
-            "option": [
-                "DxhSwitch"
-            ],
-            "pipeline_override": {
-                "SwipeUpivl": {
-                    "next": "ClickVideoPart"
-                },
-                "BroswseVideoBack": {
-                    "next": "Back"
-                }
-            }
-        },
-        {
-            "name": "看电视听广播",
-            "entry": "WatchVideoradio"
-        },
-        {
-            "name": "观看直播",
-            "entry": "MergeBrowsePublish",
-            "option": [
-                "DxhSwitch"
-            ],
-            "pipeline_override": {
-                "SwipeUpivl": {
-                    "next": "ClickLivePart"
-                },
-                "LiveTimeout02": {
-                    "next": "Back"
-                }
-            }
-        },
-        {
-            "name": "签到和领取通知每日积分",
-            "entry": "MergeSigninGetpoints"
-        },
-        {
-            "name": "完成全部浏览和发布（选择已关注的大象号）",
-            "entry": "MergeBrowsePublish",
-            "option": [
-                "DxhSwitch"
-            ]
-        },
-        {
-            "name": "一键完成（选择已关注的大象号）",
-            "entry": "InputmethodCheck00",
-            "doc": "一键完成，选择大象号、发布作品类型、是否输入法检测",
-            "option": [
-                "DxhSwitch",
-                "PublishSwitch",
-                "输入法检测",
-                "跳过签到"
-            ],
-            "pipeline_override": {
-                "SelectInputmethod": {
-                    "next": "MergeSigninGetpoints"
-                },
-                "GettingPoints": {
-                    "next": "MergeBrowsePublish"
-                },
-                "SwipeUPsg": {
-                    "next": [
-                        "GettingPoints",
-                        "MergeBrowsePublish"
-                    ]
-                }
-            }
-        },
-        {
-            "name": "一键完成（跳过图文）",
-            "entry": "MergeBrowsePublish",
-            "option": [
-                "DxhSwitch",
-                "PublishSwitch",
-                "跳过签到"
-            ],
-            "pipeline_override": {
-                "SwipeUpivl": {
-                    "next": "ClickVideoPart"
-                }
-            }
-        },
-        {
             "name": "一键完成（不发布作品）",
             "entry": "InputmethodCheck00",
             "option": [
                 "DxhSwitch",
+                "任务完成检测",
                 "输入法检测",
                 "跳过签到"
             ],
             "pipeline_override": {
                 "SelectInputmethod": {
-                    "next": "MergeSigninGetpoints"
-                },
-                "GettingPoints": {
-                    "next": "MergeBrowsePublish"
-                },
-                "SwipeUPsg": {
-                    "next": [
-                        "GettingPoints",
-                        "MergeBrowsePublish"
-                    ]
-                },
-                "TVRadioComplete02": {
-                    "next": "Back"
-                },
-                "TVRadioTimeout02": {
-                    "next": "Back"
-                }
-            }
-        },
-        {
-            "name": "任务完成检测",
-            "entry": "TaskCheck",
-            "doc": "不检测发布任务，建议放在一键完成之后",
-            "pipeline_override": {
-                "TaskImagetxtComplete": {
-                    "focus_succeeded": "浏览图文已完成",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskImagetxtUndone": {
-                    "focus_tip": "浏览图文未完成，前去完成"
-                },
-                "TaskCommentCommplete": {
-                    "focus_succeeded": "评论已完成",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskCommentIndone": {
-                    "focus_tip": "评论未完成，前去完成"
-                },
-                "TaskVideoComplete": {
-                    "focus_succeeded": "浏览音视频已完成",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskVideoUndone": {
-                    "focus_tip": "浏览音视频未完成，前去完成"
-                },
-                "TaskNotificationComplete": {
-                    "focus_succeeded": "每日通知积分已领取",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskNotificationUndone": {
-                    "focus_succeeded": "每日通知积分已领取",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskTVRadioComplete": {
-                    "focus_succeeded": "看电视听广播已完成",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskTVRadioUndone": {
-                    "focus_tip": "看电视听广播未完成，前去完成"
-                },
-                "TaskLiveComplete": {
-                    "focus_succeeded": "观看直播已完成",
-                    "focus_succeeded_color": "Blue"
-                },
-                "TaskLiveUndone": {
-                    "focus_tip": "观看直播未完成，前去完成"
-                },
-                "BrowseImagetxtComplete": {
-                    "next": "TaskCheck"
-                },
-                "BroswseVideoBack": {
-                    "next": "TaskCheck"
-                },
-                "WatchLiveBack": {
-                    "next": "TaskCheck"
-                },
-                "LiveTimeout02": {
-                    "next": "TaskCheck"
-                },
-                "完成看电视听广播2": {
-                    "next": "TaskCheck"
-                },
-                "看电视听广播超时2": {
-                    "next": "TaskCheck"
+                    "next": "MergePointsTask"
                 }
             }
         },
@@ -321,7 +135,7 @@
         {
             "name": "圈子点赞收藏 lite",
             "entry": "CCircle",
-            "doc": "点赞收藏圈子内容\n开启至1天前，会在1天前的内容后停止",
+            "doc": "点赞收藏圈子内容，默认评论列表账号\n开启至1天前，会在1天前的内容后停止",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -392,30 +206,6 @@
                 "分享至",
                 "作品编号"
             ]
-        },
-        {
-            "name": "最新分享(beta)",
-            "entry": "ShareMy",
-            "doc": "随处启动，最新视频分享量达到选项数量后，循环分享最新图文，需要手动结束",
-            "option": [
-                "最新视频分享量"
-            ],
-            "pipeline_override": {
-                "Share": {
-                    "next": [
-                        "ReplyImageShare",
-                        "ShareDone",
-                        "ReplyVideoShare"
-                    ]
-                },
-                "ReplyShareToQQ": {
-                    "next": [
-                        "ShareDone",
-                        "ShareImageVideoExit",
-                        "Share"
-                    ]
-                }
-            }
         },
         {
             "name": "个人内容分享",
@@ -3432,7 +3222,7 @@
                     "name": "no",
                     "pipeline_override": {
                         "InputmethodCheck00": {
-                            "next": "MergeSigninGetpoints"
+                            "next": "MergePointsTask"
                         }
                     }
                 }
@@ -3447,9 +3237,27 @@
                 {
                     "name": "yes",
                     "pipeline_override": {
-                        "MergeSigninGetpoints": {
+                        "MergePointsTask": {
                             "next": [
                                 "MergeBrowsePublish1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "任务完成检测": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "BrowseImagetxtComplete": {
+                            "next": [
+                                "TaskCheck"
                             ]
                         }
                     }

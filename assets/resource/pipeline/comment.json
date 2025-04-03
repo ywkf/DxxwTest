@@ -100,6 +100,7 @@
             "InputmethodCheck0"
         ],
         "next": [
+            "CCommentVideoD",
             "CInputCommentImage",
             "CCommentXF01VH",
             "CommentCommon01",
@@ -203,6 +204,20 @@
         "pre_delay": 300,
         "action": "Click",
         "next": [
+            "CClickXinyuComment"
+        ]
+    },
+    "CClickXinyuComment": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "CSendCommentImage",
             "CCommentXF01VH"
         ]
@@ -251,19 +266,40 @@
         "post_delay": 1000,
         "next": [
             "CCommentXF01VH",
-            "CommentCommon01",
             "CInputCommentImage",
+            "CommentCommon01",
             "CommentCommon00"
+        ]
+    },
+    "CCommentVideoD": {
+        "recognition": "OCR",
+        "expected": [
+            "全部评论"
+        ],
+        "roi": [
+            201,
+            406,
+            302,
+            92
+        ],
+        "pre_delay": 300,
+        "on_error": [
+            "TimeCircleBack"
+        ],
+        "next": [
+            "CCheckComment001",
+            "CCheckComment002",
+            "CCommentVideoIn02"
         ]
     },
     "CCommentVideo": {
         "recognition": "TemplateMatch",
         "template": "video_comment.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "threshold": 0.45,
         "action": "Click",
@@ -283,10 +319,10 @@
         "recognition": "TemplateMatch",
         "template": "video_comment.png",
         "roi": [
-            626,
-            471,
-            65,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "threshold": 0.45,
         "green_mask": true,
@@ -1442,10 +1478,10 @@
             "video_share0.png"
         ],
         "roi": [
-            626,
-            471,
-            66,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "green_mask": true,
         "threshold": 0.5,
@@ -1505,10 +1541,10 @@
             "video_share0.png"
         ],
         "roi": [
-            626,
-            471,
-            66,
-            611
+            597,
+            494,
+            84,
+            517
         ],
         "action": "Click",
         "target": [

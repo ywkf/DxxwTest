@@ -148,7 +148,7 @@
         "timeout": 20000,
         "on_error": "ErrorBackImagetxt",
         "focus": true,
-        "focus_succeeded": "开始执行浏览图文任务",
+        "focus_succeeded": "开始执行浏览任务",
         "next": [
             "ClickIt01"
         ]
@@ -305,6 +305,20 @@
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
+        "next": [
+            "InputCommentD"
+        ]
+    },
+    "InputCommentD": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
         "next": [
             "SendComment"
         ]
@@ -523,6 +537,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
         "next": [
+            "InputCommentD02"
+        ]
+    },
+    "InputCommentD02": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment02"
         ]
     },
@@ -739,6 +767,20 @@
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
+        "next": [
+            "InputCommentD03"
+        ]
+    },
+    "InputCommentD03": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
         "next": [
             "SendComment03"
         ]
@@ -978,6 +1020,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
         "next": [
+            "InputCommentD04"
+        ]
+    },
+    "InputCommentD04": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment04"
         ]
     },
@@ -1194,6 +1250,20 @@
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
+        "next": [
+            "InputCommentD05"
+        ]
+    },
+    "InputCommentD05": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
         "next": [
             "SendComment05"
         ]
@@ -1412,6 +1482,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
         "next": [
+            "InputCommentD06"
+        ]
+    },
+    "InputCommentD06": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment06"
         ]
     },
@@ -1583,6 +1667,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt007",
         "next": [
+            "InputCommentD07"
+        ]
+    },
+    "InputCommentD07": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment07"
         ]
     },
@@ -1718,6 +1816,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt008",
         "next": [
+            "InputCommentD08"
+        ]
+    },
+    "InputCommentD08": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment08"
         ]
     },
@@ -1852,6 +1964,20 @@
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt009",
+        "next": [
+            "InputCommentD09"
+        ]
+    },
+    "InputCommentD09": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
         "next": [
             "SendComment09"
         ]
@@ -2009,6 +2135,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt0010",
         "next": [
+            "InputCommentD10"
+        ]
+    },
+    "InputCommentD10": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment10"
         ]
     },
@@ -2144,6 +2284,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt0011",
         "next": [
+            "InputCommentD11"
+        ]
+    },
+    "InputCommentD11": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment11"
         ]
     },
@@ -2251,6 +2405,20 @@
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt0012",
+        "next": [
+            "InputCommentD12"
+        ]
+    },
+    "InputCommentD12": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
         "next": [
             "SendComment12"
         ]
@@ -2366,6 +2534,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt0013",
         "next": [
+            "InputCommentD13"
+        ]
+    },
+    "InputCommentD13": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment13"
         ]
     },
@@ -2458,6 +2640,20 @@
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt0014",
+        "next": [
+            "InputCommentD14"
+        ]
+    },
+    "InputCommentD14": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
         "next": [
             "SendComment14"
         ]
@@ -2552,6 +2748,20 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt0015",
         "next": [
+            "InputCommentD15"
+        ]
+    },
+    "InputCommentD15": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "SendComment15"
         ]
     },
@@ -2605,8 +2815,6 @@
             10
         ],
         "duration": 1200,
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "ClickIt16"
         ]
@@ -2628,8 +2836,6 @@
         ],
         "action": "Click",
         "post_delay": 3500,
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
         "next": [
             "BrowseImagetxtBack16"
         ]
@@ -2638,8 +2844,141 @@
         "action": "Key",
         "key": 4,
         "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
+        "next": [
+            "ClickIt17"
+        ]
+    },
+    "ClickIt17": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "roi": [
+            15,
+            536,
+            695,
+            318
+        ],
+        "action": "Click",
+        "post_delay": 3500,
+        "next": [
+            "BrowseImagetxtBack17"
+        ]
+    },
+    "BrowseImagetxtBack17": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next": [
+            "ClickIt18"
+        ]
+    },
+    "ClickIt18": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "roi": [
+            15,
+            856,
+            696,
+            308
+        ],
+        "action": "Click",
+        "post_delay": 3500,
+        "next": [
+            "BrowseImagetxtBack18"
+        ]
+    },
+    "BrowseImagetxtBack18": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next": [
+            "SwipeUpivl06"
+        ]
+    },
+    "SwipeUpivl06": {
+        "action": "Swipe",
+        "begin": [
+            50,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            50,
+            250,
+            10,
+            10
+        ],
+        "duration": 1200,
+        "next": [
+            "ClickIt19"
+        ]
+    },
+    "ClickIt19": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "roi": [
+            15,
+            228,
+            693,
+            303
+        ],
+        "action": "Click",
+        "post_delay": 3500,
+        "next": [
+            "BrowseImagetxtBack19"
+        ]
+    },
+    "BrowseImagetxtBack19": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next": [
+            "ClickIt20"
+        ]
+    },
+    "ClickIt20": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "roi": [
+            15,
+            536,
+            695,
+            318
+        ],
+        "action": "Click",
+        "post_delay": 3500,
+        "next": [
+            "BrowseImagetxtBack20"
+        ]
+    },
+    "BrowseImagetxtBack20": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
         "next": [
             "BrowseImagetxtComplete"
         ]
@@ -2647,443 +2986,9 @@
     "BrowseImagetxtComplete": {
         "post_delay": 500,
         "focus": true,
-        "focus_succeeded": "浏览图文任务完成",
+        "focus_succeeded": "浏览任务完成",
         "next": [
-            "ClickVideoPart",
-            "ClickAudioPart"
-        ]
-    },
-    "ClickAudioPart": {
-        "recognition": "OCR",
-        "expected": "音频",
-        "roi": [
-            2,
-            112,
-            718,
-            110
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "ClickVideoPart"
-        ]
-    },
-    "ClickVideoPart": {
-        "recognition": "OCR",
-        "expected": "视频",
-        "roi": [
-            2,
-            112,
-            718,
-            110
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorBackVedio",
-        "focus": true,
-        "focus_succeeded": "开始执行浏览音视频任务",
-        "next": [
-            "ClickVideo"
-        ]
-    },
-    "ClickVideo": {
-        "recognition": "TemplateMatch",
-        "template": "watch.png",
-        "roi": [
-            26,
-            232,
-            670,
-            484
-        ],
-        "action": "Click",
-        "target": [
-            26,
-            232,
-            670,
-            484
-        ],
-        "post_delay": 3000,
-        "next": [
-            "Landscape",
-            "SwipeVideo"
-        ]
-    },
-    "Landscape": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "点赞.png",
-            "点赞1.png",
-            "like0.png",
-            "like1.png"
-        ],
-        "roi": [
-            405,
-            1188,
-            310,
-            75
-        ],
-        "next": [
-            "LandscapeBack"
-        ]
-    },
-    "LandscapeBack": {
-        "action": "Key",
-        "key": 4,
-        "next": [
-            "SwipeToNextVideo"
-        ]
-    },
-    "SwipeToNextVideo": {
-        "action": "Swipe",
-        "begin": [
-            350,
-            900,
-            10,
-            10
-        ],
-        "end": [
-            350,
-            585,
-            10,
-            10
-        ],
-        "next": [
-            "ClickVideo"
-        ]
-    },
-    "SwipeVideo": {
-        "action": "Swipe",
-        "duration": 300,
-        "begin": [
-            200,
-            1000,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            200,
-            10,
-            10
-        ],
-        "post_delay": 3000,
-        "on_error": "BroswseVideoBack",
-        "next": [
-            "BrowseVideoComplete"
-        ]
-    },
-    "BrowseVideoComplete": {
-        "recognition": "TemplateMatch",
-        "template": "浏览音视频完成.png",
-        "next": [
-            "SwipeVideo"
-        ]
-    },
-    "BroswseVideoBack": {
-        "action": "Key",
-        "key": 4,
-        "timeout": 20000,
-        "on_error": "ErrorBackLive",
-        "focus": true,
-        "focus_succeeded": "浏览音视频任务完成",
-        "next": [
-            "ClickLivePart"
-        ]
-    },
-    "ClickLivePart": {
-        "recognition": "OCR",
-        "expected": "直播",
-        "roi": [
-            2,
-            112,
-            718,
-            110
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "timeout": 20000,
-        "on_error": "ErrorBackLive",
-        "focus": true,
-        "focus_succeeded": "开始执行观看直播任务",
-        "next": [
-            "ClickLive01"
-        ]
-    },
-    "ClickLive01": {
-        "pre_delay": 200,
-        "action": "Click",
-        "target": [
-            28,
-            235,
-            666,
-            495
-        ],
-        "timeout": 20000,
-        "on_error": [
-            "LiveTimeout01"
-        ],
-        "next": [
-            "WatchLiveComplete01"
-        ]
-    },
-    "WatchLiveComplete01": {
-        "recognition": "OCR",
-        "expected": [
-            "完成看直播"
-        ],
-        "action": "Key",
-        "key": 4,
-        "post_delay": 5000,
-        "timeout": 20000,
-        "on_error": [
-            "LiveTimeout01"
-        ],
-        "next": [
-            "ClickLive02"
-        ]
-    },
-    "LiveTimeout01": {
-        "action": "Key",
-        "key": 4,
-        "timeout": 20000,
-        "on_error": "ErrorBackLive",
-        "next": [
-            "ClickLive02"
-        ]
-    },
-    "ClickLive02": {
-        "pre_delay": 200,
-        "target": [
-            30,
-            760,
-            665,
-            499
-        ],
-        "action": "Click",
-        "post_delay": 5000,
-        "timeout": 20000,
-        "on_error": "LiveTimeout02",
-        "next": [
-            "WatchLiveComplete02"
-        ]
-    },
-    "WatchLiveComplete02": {
-        "recognition": "OCR",
-        "expected": [
-            "完成看直播"
-        ],
-        "action": "Key",
-        "key": 4,
-        "timeout": 20000,
-        "on_error": [
-            "LiveTimeout02"
-        ],
-        "next": [
-            "WatchLiveBack"
-        ]
-    },
-    "LiveTimeout02": {
-        "next": [
-            "WatchLiveBack"
-        ]
-    },
-    "WatchLiveBack": {
-        "action": "Key",
-        "key": 4,
-        "post_delay": 2000,
-        "focus": true,
-        "focus_succeeded": "观看直播任务完成",
-        "interrupt": [
             "Back"
-        ],
-        "next": [
-            "WatchTV"
-        ]
-    },
-    "WatchTV": {
-        "enabled": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "wodes.png",
-            "wodes_.png"
-        ],
-        "roi": [
-            25,
-            1162,
-            679,
-            98
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "post_delay": 1000,
-        "interrupt": [
-            "Back"
-        ],
-        "timeout": 20000,
-        "on_error": "ErrorBackRadio",
-        "focus": true,
-        "focus_succeeded": "开始执行看电视听广播任务",
-        "next": [
-            "MypointsTV"
-        ]
-    },
-    "MypointsTV": {
-        "recognition": "OCR",
-        "expected": "我的积分",
-        "action": "Click",
-        "post_delay": 2000,
-        "timeout": 20000,
-        "on_error": "ErrorBackRadio",
-        "next": [
-            "SwipeUpTV"
-        ]
-    },
-    "SwipeUpTV": {
-        "action": "Swipe",
-        "begin": [
-            200,
-            1200,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            100,
-            10,
-            10
-        ],
-        "post_delay": 2000,
-        "timeout": 20000,
-        "on_error": "ErrorBackRadio",
-        "next": [
-            "ClickWatching"
-        ]
-    },
-    "ClickWatching": {
-        "recognition": "OCR",
-        "expected": "去观看",
-        "action": "Click",
-        "post_delay": 1000,
-        "timeout": 20000,
-        "on_error": "ErrorBackRadio",
-        "next": [
-            "WatchingTV"
-        ]
-    },
-    "WatchingTV": {
-        "recognition": "OCR",
-        "expected": [
-            "节目单",
-            "市级频道"
-        ],
-        "post_delay": 200,
-        "timeout": 20000,
-        "on_error": [
-            "TVRadioSwipe"
-        ],
-        "next": [
-            "TVRadioComplete0"
-        ]
-    },
-    "TVRadioSwipe": {
-        "action": "Swipe",
-        "begin": [
-            380,
-            575,
-            10,
-            10
-        ],
-        "end": [
-            125,
-            575,
-            10,
-            10
-        ],
-        "next": [
-            "TVRadioComplete02"
-        ]
-    },
-    "TVRadioComplete0": {
-        "recognition": "OCR",
-        "expected": [
-            "完成看电视、听广播"
-        ],
-        "action": "Swipe",
-        "begin": [
-            380,
-            575,
-            10,
-            10
-        ],
-        "end": [
-            125,
-            575,
-            10,
-            10
-        ],
-        "timeout": 20000,
-        "post_delay": 5000,
-        "on_error": [
-            "TVRadioComplete01"
-        ],
-        "next": [
-            "TVRadioComplete02"
-        ]
-    },
-    "TVRadioComplete01": {
-        "recognition": "OCR",
-        "expected": [
-            "完成看电视、听广播"
-        ],
-        "action": "Swipe",
-        "begin": [
-            380,
-            575,
-            10,
-            10
-        ],
-        "end": [
-            125,
-            575,
-            10,
-            10
-        ],
-        "timeout": 20000,
-        "post_delay": 5000,
-        "on_error": [
-            "TVRadioTimeout01"
-        ],
-        "next": [
-            "TVRadioComplete02"
-        ]
-    },
-    "TVRadioTimeout01": {
-        "next": [
-            "TVRadioComplete02"
-        ]
-    },
-    "TVRadioComplete02": {
-        "recognition": "OCR",
-        "expected": [
-            "完成看电视、听广播"
-        ],
-        "post_delay": 2000,
-        "timeout": 20000,
-        "focus": true,
-        "focus_succeeded": "看电视听广播任务完成",
-        "on_error": [
-            "TVRadioTimeout02"
-        ],
-        "next": [
-            "PublishX2"
-        ]
-    },
-    "TVRadioTimeout02": {
-        "focus": true,
-        "focus_succeeded": "看电视听广播任务完成",
-        "next": [
-            "PublishX2"
         ]
     }
 }
