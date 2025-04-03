@@ -54,19 +54,14 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        os: [win, osx, linux]
-        arch: [arm64, x86_64]
+        os: [win, linux]
+        arch: [x86_64]
       fail-fast: false
 
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
-      - name: Install
-        shell: bash
-        run: |
-          python ./install.py ${{ needs.meta.outputs.tag }}
 
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
@@ -85,6 +80,14 @@ jobs:
           latest: true  
           out-file-path: "MFA"  
           extract: true     
+  
+
+      - name: Install
+        shell: bash
+        run: |
+          python ./install.py ${{ needs.meta.outputs.tag }}
+          cp MFA/MFAWPF.exe install
+
 
       - name: Download MFA
         if: ${{ matrix.os != 'android' }}
@@ -100,7 +103,7 @@ jobs:
         if: ${{ matrix.os != 'android' }}
         shell: bash
         run: |
-          cp MFA/MFAWPF.exe install
+          
           rm -rf MFAAvalonia/resource/base/model
           cp -r MFAAvalonia/* install
 
