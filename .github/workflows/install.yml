@@ -103,8 +103,8 @@ jobs:
           cp -r MFAAvalonia/!(*.zip) install/
           
           # 选择性复制资源目录
-          mkdir -p install/resource
-          cp -r MFAAvalonia/resource/!(base/model) install/resource/
+          rm -rf MFAAvalonia/resource/base/model
+          cp -r MFAAvalonia/* install
 
       - uses: actions/upload-artifact@v4
         with:
