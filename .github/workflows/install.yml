@@ -94,8 +94,17 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           cp MFA/MFAWPF.exe install
-          rm -rf MFAAvalonia/resource/base/model
-          cp -r MFAAvalonia/* install
+          
+          # 清空install目录确保干净
+          find install -mindepth 1 -delete
+          
+          # 复制时排除.zip文件
+          shopt -s extglob  # 启用扩展glob模式
+          cp -r MFAAvalonia/!(*.zip) install/
+          
+          # 选择性复制资源目录
+          mkdir -p install/resource
+          cp -r MFAAvalonia/resource/!(base/model) install/resource/
 
       - uses: actions/upload-artifact@v4
         with:
@@ -128,18 +137,6 @@ jobs:
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
-          cp MFA/MFAWPF.exe install
-          
-          # 清空install目录确保干净
-          find install -mindepth 1 -delete
-          
-          # 复制时排除.zip文件
-          shopt -s extglob  # 启用扩展glob模式
-          cp -r MFAAvalonia/!(*.zip) install/
-          
-          # 选择性复制资源目录
-          mkdir -p install/resource
-          cp -r MFAAvalonia/resource/!(base/model) install/resource/
 
       - uses: actions/upload-artifact@v4
         with:
