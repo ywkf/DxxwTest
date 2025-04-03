@@ -1632,6 +1632,48 @@
         "timeout": 20000,
         "on_error": "ErrorImagetxt007",
         "next": [
+            "ImagetxtShare07"
+        ]
+    },
+    "ImagetxtShare07": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt007",
+        "next": [
+            "ShareToQQ07"
+        ]
+    },
+    "ShareToQQ07": {
+        "recognition": "OCR",
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
+        ],
+        "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt007",
+        "post_delay": 2000,
+        "next": [
+            "ShareToQQSuccess07",
+            "ImagetxtComment07"
+        ]
+    },
+    "ShareToQQSuccess07": {
+        "recognition": "OCR",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
+        "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt007",
+        "next": [
             "ImagetxtComment07"
         ]
     },
@@ -1778,6 +1820,48 @@
             38,
             42
         ],
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt008",
+        "next": [
+            "ImagetxtShare08"
+        ]
+    },
+    "ImagetxtShare08": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt008",
+        "next": [
+            "ShareToQQ08"
+        ]
+    },
+    "ShareToQQ08": {
+        "recognition": "OCR",
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
+        ],
+        "action": "Click",
+        "timeout": 20000,
+        "on_error": "ErrorImagetxt008",
+        "post_delay": 2000,
+        "next": [
+            "ShareToQQSuccess08",
+            "ImagetxtComment08"
+        ]
+    },
+    "ShareToQQSuccess08": {
+        "recognition": "OCR",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
+        "post_delay": 500,
         "timeout": 20000,
         "on_error": "ErrorImagetxt008",
         "next": [
@@ -2916,7 +3000,7 @@
         ],
         "end": [
             50,
-            250,
+            230,
             10,
             10
         ],
