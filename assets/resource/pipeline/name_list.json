@@ -368,8 +368,8 @@
             "CantFindComment"
         ],
         "next": [
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo"
         ]
     }

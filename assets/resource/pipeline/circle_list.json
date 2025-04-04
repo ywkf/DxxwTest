@@ -34,8 +34,8 @@
             "ListImageCollect",
             "ListVideoLike",
             "ListImageLike",
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -97,8 +97,8 @@
         "pre_delay": 500,
         "next": [
             "ListImageLike",
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -118,8 +118,8 @@
         "action": "Click",
         "pre_delay": 500,
         "next": [
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -139,8 +139,8 @@
         "action": "Click",
         "next": [
             "ListVideoLike",
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -159,8 +159,8 @@
         "pre_delay": 500,
         "action": "Click",
         "next": [
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]

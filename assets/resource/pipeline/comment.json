@@ -25,8 +25,8 @@
         "focus_succeeded": "进入作品",
         "timeout": 60000,
         "next": [
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -52,8 +52,8 @@
             "CantFindComment"
         ],
         "next": [
-            "CCommentImage",
-            "CCommentVideo"
+            "CCommentVideo",
+            "CCommentImage"
         ]
     },
     "CheckName": {
@@ -69,8 +69,8 @@
         "focus": true,
         "focus_succeeded": "识别到成员，评论中...",
         "next": [
-            "CCommentImage",
             "CCommentVideo",
+            "CCommentImage",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -94,7 +94,7 @@
             300,
             30
         ],
-        "post_delay": 1000,
+        "post_delay": 1200,
         "interrupt": [
             "InputmethodCheck",
             "InputmethodCheck0"
@@ -282,7 +282,7 @@
             302,
             92
         ],
-        "pre_delay": 300,
+        "pre_delay": 500,
         "on_error": [
             "TimeCircleBack"
         ],
