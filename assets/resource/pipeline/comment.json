@@ -233,7 +233,10 @@
     },
     "CSendCommentImage": {
         "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "template": [
+            "发表0.png",
+            "发表.png"
+        ],
         "action": "Click",
         "focus": true,
         "focus_succeeded": "发表评论..",
@@ -1444,7 +1447,10 @@
     },
     "CCommentPublish": {
         "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "template": [
+            "发表0.png",
+            "发表.png"
+        ],
         "action": "Click",
         "focus": true,
         "focus_succeeded": "发表评论...",

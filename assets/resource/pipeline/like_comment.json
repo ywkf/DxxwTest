@@ -99,7 +99,10 @@
     },
     "LikeClickPublish": {
         "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "template": [
+            "发表0.png",
+            "发表.png"
+        ],
         "action": "Click",
         "post_delay": 1000,
         "next": [
