@@ -230,7 +230,6 @@
         "focus": true,
         "focus_succeeded": "收藏进行中...",
         "interrupt": [
-            "CInVideo",
             "CInImagetxt",
             "CCircleSwipe"
         ],
@@ -256,7 +255,6 @@
         "focus": true,
         "focus_succeeded": "点赞进行中...",
         "interrupt": [
-            "CInVideo",
             "CInImagetxt",
             "CCircleSwipe"
         ],
@@ -308,7 +306,7 @@
         "action": "Key",
         "key": 4,
         "focus": true,
-        "focus_succeeded": "进入图文退出...",
+        "focus_succeeded": "进入作品退出...",
         "next": [
             "Stop"
         ]
@@ -342,7 +340,6 @@
         "interrupt": [
             "CCircleErrorCheck01",
             "CInImagetxt",
-            "CInVideo",
             "CCircleSwipe"
         ],
         "next": [
@@ -431,7 +428,6 @@
         "post_delay": 2000,
         "next": [
             "CCheckInImage",
-            "CCheckInVideo",
             "Stop"
         ]
     },
@@ -497,8 +493,7 @@
             1174
         ],
         "interrupt": [
-            "CInImagetxt",
-            "CInVideo"
+            "CInImagetxt"
         ],
         "focus": true,
         "focus_succeeded": "检测到一天前",

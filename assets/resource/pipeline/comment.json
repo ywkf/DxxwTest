@@ -282,7 +282,8 @@
             302,
             92
         ],
-        "pre_delay": 500,
+        "pre_delay": 400,
+        "post_delay": 400,
         "on_error": [
             "TimeCircleBack"
         ],

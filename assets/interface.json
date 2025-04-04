@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.75",
+    "version": "0.1.76",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -251,21 +251,6 @@
                 "WeiboBack": {
                     "next": [
                         "Stop"
-                    ]
-                }
-            }
-        },
-        {
-            "name": "进入个人微博阅读量",
-            "entry": "StartWeibo",
-            "doc": "进入微博应用程序个人微博页面，阅读最新微博分享",
-            "option": [
-                "等待时间"
-            ],
-            "pipeline_override": {
-                "ClickMyWeibo": {
-                    "next": [
-                        "Weibo"
                     ]
                 }
             }
