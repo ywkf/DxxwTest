@@ -25,8 +25,8 @@
         "focus_succeeded": "进入作品",
         "timeout": 60000,
         "next": [
-            "CCommentVideo",
             "CCommentImage",
+            "CCommentVideo",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -52,8 +52,8 @@
             "CantFindComment"
         ],
         "next": [
-            "CCommentVideo",
-            "CCommentImage"
+            "CCommentImage",
+            "CCommentVideo"
         ]
     },
     "CheckName": {
@@ -69,8 +69,8 @@
         "focus": true,
         "focus_succeeded": "识别到成员，评论中...",
         "next": [
-            "CCommentVideo",
             "CCommentImage",
+            "CCommentVideo",
             "ClickCommentVideo",
             "CantFindComment"
         ]
@@ -94,7 +94,7 @@
             300,
             30
         ],
-        "post_delay": 1200,
+        "post_delay": 1500,
         "interrupt": [
             "InputmethodCheck",
             "InputmethodCheck0"
@@ -305,7 +305,7 @@
             84,
             517
         ],
-        "threshold": 0.45,
+        "threshold": 0.6,
         "action": "Click",
         "green_mask": true,
         "pre_delay": 2000,
@@ -328,7 +328,7 @@
             84,
             517
         ],
-        "threshold": 0.45,
+        "threshold": 0.6,
         "green_mask": true,
         "action": "Key",
         "key": 4,
@@ -1491,7 +1491,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.5,
+        "threshold": 0.6,
         "action": "Key",
         "key": 4,
         "next": [
@@ -1522,7 +1522,7 @@
             "收藏1g.png"
         ],
         "green_mask": true,
-        "threshold": 0.55,
+        "threshold": 0.6,
         "action": "Key",
         "key": 4,
         "next": [

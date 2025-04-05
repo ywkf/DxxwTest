@@ -145,7 +145,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.5,
+        "threshold": 0.6,
         "action": "Click",
         "post_delay": 500,
         "next": [
@@ -199,7 +199,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.5,
+        "threshold": 0.6,
         "next": [
             "ReplyVideoLike1M",
             "ReplyVideoLikeM",
@@ -291,7 +291,10 @@
     },
     "ReplySendCommentM": {
         "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "template": [
+            "发表0.png",
+            "发表.png"
+        ],
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -375,7 +378,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.5,
+        "threshold": 0.6,
         "action": "Click",
         "next": [
             "ReplyVideoCollect1M",
@@ -393,7 +396,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.5,
+        "threshold": 0.6,
         "action": "Click",
         "next": [
             "ReplyVideoBackM"

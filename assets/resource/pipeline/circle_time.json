@@ -16,7 +16,7 @@
             84,
             517
         ],
-        "threshold": 0.45,
+        "threshold": 0.6,
         "green_mask": true,
         "pre_delay": 500,
         "action": "Key",

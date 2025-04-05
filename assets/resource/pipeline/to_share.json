@@ -51,7 +51,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.45,
+        "threshold": 0.6,
         "action": "Click",
         "post_delay": 500,
         "next": [

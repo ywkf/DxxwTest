@@ -3064,6 +3064,35 @@
         "key": 4,
         "post_delay": 500,
         "next": [
+            "ClickIt21"
+        ]
+    },
+    "ClickIt21": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "roi": [
+            15,
+            856,
+            696,
+            308
+        ],
+        "action": "Click",
+        "post_delay": 3500,
+        "next": [
+            "BrowseImagetxtBack21"
+        ]
+    },
+    "BrowseImagetxtBack21": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next": [
             "BrowseImagetxtComplete"
         ]
     },
