@@ -76,7 +76,7 @@
         ],
         "post_delay": 1000,
         "next": [
-            "CGettingPoints",
+            "MTaskNotification",
             "Back"
         ]
     },
@@ -92,8 +92,71 @@
         "post_delay": 1000,
         "focus": true,
         "focus_succeeded": "领取每日通知积分完成",
+        "interrupt": [
+            "Back"
+        ],
         "next": [
-            "BrowseImagetxtM1"
+            "MergeBrowsePublish1"
+        ]
+    },
+    "MTaskNotification": {
+        "recognition": "OCR",
+        "expected": "允许大象新闻",
+        "next": [
+            "MTaskNotificationComplete",
+            "MTaskNotificationUndone",
+            "NoGetPoints"
+        ]
+    },
+    "MNoGetPoints": {
+        "focus": true,
+        "focus_tip": "未领取每日通知积分已领取，请手动领取",
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish1"
+        ]
+    },
+    "MTaskNotificationComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "MTaskNotification",
+        "roi_offset": [
+            0,
+            -10,
+            352,
+            38
+        ],
+        "focus": true,
+        "focus_succeeded": "每日通知积分已领取",
+        "focus_succeeded_color": "Blue",
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish1"
+        ]
+    },
+    "MTaskNotificationUndone": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": "MTaskNotification",
+        "roi_offset": [
+            0,
+            -10,
+            352,
+            38
+        ],
+        "index": 1,
+        "focus": true,
+        "focus_succeeded": "每日通知积分已领取",
+        "focus_succeeded_color": "Blue",
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "MergeBrowsePublish1"
         ]
     }
 }

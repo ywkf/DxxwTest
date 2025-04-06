@@ -227,7 +227,10 @@
     },
     "发表评论mc": {
         "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "template": [
+            "发表0.png",
+            "发表.png"
+        ],
         "action": "Click",
         "next": [
             "评论重复mc",
