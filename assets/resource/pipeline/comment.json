@@ -521,7 +521,7 @@
         "recognition": "OCR",
         "expected": "粘贴",
         "action": "InputText",
-        "input_text": "。",
+        "input_text": ".",
         "next": [
             "CCommentPublish",
             "CommentCommon00"
