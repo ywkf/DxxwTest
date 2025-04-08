@@ -110,7 +110,7 @@
     },
     "MNoGetPoints": {
         "focus": true,
-        "focus_tip": "未领取每日通知积分已领取，请手动领取",
+        "focus_tip": "未领取每日通知积分，请手动领取",
         "interrupt": [
             "Back"
         ],
@@ -148,7 +148,7 @@
             352,
             38
         ],
-        "index": 1,
+        "action": "Click",
         "focus": true,
         "focus_succeeded": "每日通知积分已领取",
         "focus_succeeded_color": "Blue",

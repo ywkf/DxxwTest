@@ -251,12 +251,21 @@
     "CReComment": {
         "recognition": "OCR",
         "expected": [
-            "不能发表"
+            "不能发表",
+            "复制粘贴",
+            "其他用户一样"
         ],
         "pre_delay": 5000,
         "next": [
             "CReCommentImage"
         ]
+    },
+    "OcrChinese": {
+        "recognition": "OCR",
+        "expected": [
+            "[\u4e00-\u9fa5]"
+        ],
+        "next": []
     },
     "CReCommentImage": {
         "action": "Click",
@@ -338,6 +347,7 @@
         ]
     },
     "CCheckComment001": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "作者赞过"
@@ -346,7 +356,27 @@
         "focus": true,
         "focus_succeeded": "检测到评论，复制评论",
         "next": [
+            "CCopyComment001d",
             "CCopyComment001"
+        ]
+    },
+    "CCopyComment001d": {
+        "recognition": "OCR",
+        "expected": [
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": "CCheckComment001",
+        "roi_offset": [
+            -26,
+            -68,
+            60,
+            30
+        ],
+        "action": "Swipe",
+        "duration": 2000,
+        "next": [
+            "CClickCopy",
+            "CCommentVideoIn02"
         ]
     },
     "CCopyComment001": {
@@ -372,6 +402,7 @@
         ]
     },
     "CCheckComment002": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "回复"
@@ -380,7 +411,27 @@
         "focus": true,
         "focus_succeeded": "检测到评论，复制评论",
         "next": [
+            "CCopyComment002d",
             "CCopyComment002"
+        ]
+    },
+    "CCopyComment002d": {
+        "recognition": "OCR",
+        "expected": [
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": "CCheckComment002",
+        "roi_offset": [
+            -26,
+            -68,
+            60,
+            30
+        ],
+        "action": "Swipe",
+        "duration": 2000,
+        "next": [
+            "CClickCopy",
+            "CCommentVideoIn02"
         ]
     },
     "CCopyComment002": {
@@ -460,6 +511,17 @@
         "recognition": "OCR",
         "expected": "粘贴",
         "action": "Click",
+        "next": [
+            "CCommentPasteEdit",
+            "CCommentXF01",
+            "CommentCommon00"
+        ]
+    },
+    "CCommentPasteEdit": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "InputText",
+        "input_text": "。",
         "next": [
             "CCommentPublish",
             "CommentCommon00"
@@ -1463,9 +1525,13 @@
         "recognition": "OCR",
         "expected": [
             "已提交",
+            "完成评论",
             "发送成功",
             "不能发表",
-            "频率过高"
+            "复制粘贴",
+            "其他用户一样",
+            "频率过高",
+            "慢慢酝酿"
         ],
         "pre_delay": 1500,
         "action": "Key",

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.79",
+    "version": "0.1.80",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -68,6 +68,7 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
+                "复制评论",
                 "从时间点开始",
                 "至1天前",
                 "识别列表成员",
@@ -87,6 +88,7 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
+                "复制评论",
                 "从时间点开始",
                 "至1天前",
                 "识别列表成员",
@@ -114,6 +116,7 @@
                 "CircleSwitch",
                 "滑动速度",
                 "视频评论语录次数",
+                "复制评论",
                 "从时间点开始",
                 "至1天前",
                 "误入动态判断"
@@ -142,6 +145,7 @@
                 "CircleSwitch",
                 "是否评论lite",
                 "视频评论语录次数",
+                "复制评论",
                 "至1天前"
             ]
         },
@@ -284,6 +288,25 @@
         }
     ],
     "option": {
+        "复制评论": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "CCheckComment001": {
+                            "enabled": false
+                        },
+                        "CCheckComment002": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        },
         "从何时开始": {
             "cases": [
                 {
