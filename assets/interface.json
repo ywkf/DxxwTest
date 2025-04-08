@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.80",
+    "version": "0.1.82",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -674,6 +674,11 @@
                             "next": [
                                 "CIsCompleted"
                             ]
+                        },
+                        "CCommentBack02L": {
+                            "next": [
+                                "CIsCompletedL"
+                            ]
                         }
                     }
                 }
@@ -1291,6 +1296,9 @@
                         },
                         "CTheDayBefore": {
                             "enabled": false
+                        },
+                        "CTheDayBeforeL": {
+                            "enabled": false
                         }
                     }
                 },
@@ -1306,6 +1314,9 @@
                             ]
                         },
                         "CTheDayBefore": {
+                            "enabled": true
+                        },
+                        "CTheDayBeforeL": {
                             "enabled": true
                         }
                     }

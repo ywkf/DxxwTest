@@ -245,7 +245,8 @@
             "CReComment"
         ],
         "next": [
-            "CCommentBack02T"
+            "CCommentBack02T",
+            "CCommentLimitedIT"
         ]
     },
     "CReComment": {
@@ -1518,7 +1519,8 @@
         "focus_succeeded": "发表评论...",
         "timeout": 60000,
         "next": [
-            "CCommentBack01"
+            "CCommentBack01",
+            "CCommentLimitedV"
         ]
     },
     "CCommentBack01": {
@@ -1531,6 +1533,7 @@
             "复制粘贴",
             "其他用户一样",
             "频率过高",
+            "停一停",
             "慢慢酝酿"
         ],
         "pre_delay": 1500,
@@ -1569,13 +1572,62 @@
         "expected": [
             "发送成功",
             "已提交",
-            "频率过高"
+            "频率过高",
+            "停一停"
         ],
         "pre_delay": 1000,
         "action": "Key",
         "key": 4,
         "next": [
             "CCommentBack02"
+        ]
+    },
+    "CCommentLimitedIT": {
+        "recognition": "OCR",
+        "expected": [
+            "评论数爆仓"
+        ],
+        "pre_delay": 1000,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02L"
+        ]
+    },
+    "CCommentLimitedV": {
+        "recognition": "OCR",
+        "expected": [
+            "评论数爆仓"
+        ],
+        "pre_delay": 1000,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02VL"
+        ]
+    },
+    "CCommentBack02VL": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_comment.png",
+            "video_like0g.png",
+            "video_like1g.png",
+            "video_collect0g.png",
+            "video_collect1g.png",
+            "video_share0.png"
+        ],
+        "roi": [
+            597,
+            494,
+            84,
+            517
+        ],
+        "green_mask": true,
+        "threshold": 0.6,
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CCommentBack02L"
         ]
     },
     "CCommentLiked": {
@@ -1646,6 +1698,11 @@
         ]
     },
     "CCommentBack02": {
+        "next": [
+            "Stop"
+        ]
+    },
+    "CCommentBack02L": {
         "next": [
             "Stop"
         ]
