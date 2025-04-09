@@ -114,8 +114,7 @@
     "SelectInputmethod": {
         "recognition": "OCR",
         "expected": [
-            "讯飞输入法",
-            "搜狗输入法"
+            "讯飞输入法"
         ],
         "action": "Click",
         "post_delay": 1000,

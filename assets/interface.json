@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.82",
+    "version": "0.1.83",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -45,11 +45,12 @@
         {
             "name": "一键完成（不发布作品）",
             "entry": "InputmethodCheck00",
+            "doc": "选择任务前检测，若检测到已完成即该任务完成",
             "option": [
                 "DxhSwitch",
+                "签到",
                 "任务完成检测",
-                "输入法检测",
-                "跳过签到"
+                "输入法检测"
             ],
             "pipeline_override": {
                 "SelectInputmethod": {
@@ -146,7 +147,8 @@
                 "是否评论lite",
                 "视频评论语录次数",
                 "复制评论",
-                "至1天前"
+                "至1天前",
+                "每日分享任务"
             ]
         },
         {
@@ -288,8 +290,56 @@
         }
     ],
     "option": {
+        "仅签到": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "MTaskNotificationComplete": {
+                            "next": [
+                                "Back"
+                            ]
+                        },
+                        "MTaskNotificationUndone": {
+                            "next": [
+                                "Back"
+                            ]
+                        },
+                        "MNoGetPoints": {
+                            "next": [
+                                "Back"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "每日分享任务": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "CCircleShare0": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        },
         "复制评论": {
             "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
                 {
                     "name": "no",
                     "pipeline_override": {
@@ -300,10 +350,6 @@
                             "enabled": false
                         }
                     }
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {}
                 }
             ]
         },
@@ -3247,14 +3293,34 @@
                 }
             ]
         },
-        "跳过签到": {
+        "签到": {
             "cases": [
                 {
-                    "name": "no",
+                    "name": "是",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "仅签到",
+                    "pipeline_override": {
+                        "MTaskNotificationComplete": {
+                            "next": [
+                                "Back"
+                            ]
+                        },
+                        "MTaskNotificationUndone": {
+                            "next": [
+                                "Back"
+                            ]
+                        },
+                        "MNoGetPoints": {
+                            "next": [
+                                "Back"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "跳过签到",
                     "pipeline_override": {
                         "MergePointsTask": {
                             "next": [
@@ -3268,11 +3334,21 @@
         "任务完成检测": {
             "cases": [
                 {
-                    "name": "no",
+                    "name": "否",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "任务前检测",
+                    "pipeline_override": {
+                        "MergePointsTask": {
+                            "next": [
+                                "TaskCheck"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "任务后检测",
                     "pipeline_override": {
                         "BrowseImagetxtComplete": {
                             "next": [

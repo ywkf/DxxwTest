@@ -185,7 +185,65 @@
         "focus": true,
         "focus_succeeded": "圈子已加载...",
         "next": [
+            "CCircleShare0",
             "CCircleCollect&Like"
+        ]
+    },
+    "CCircleShare0": {
+        "enabled": true,
+        "focus": true,
+        "focus_succeeded": "每日分享任务",
+        "next": [
+            "CCircleShare"
+        ]
+    },
+    "CCircleShare": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "circle_share.png",
+        "roi": [
+            560,
+            225,
+            160,
+            1055
+        ],
+        "interrupt": [
+            "CCircleSwipe"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CCircleShareToQQ"
+        ]
+    },
+    "CCircleShareToQQ": {
+        "recognition": "OCR",
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
+        ],
+        "action": "Click",
+        "post_delay": 1800,
+        "timeout": 6000,
+        "on_error": [
+            "CCircleCollect&Like"
+        ],
+        "next": [
+            "CCircleShareDone"
+        ]
+    },
+    "CCircleShareDone": {
+        "recognition": "OCR",
+        "expected": [
+            "完成分享积分"
+        ],
+        "pre_delay": 1000,
+        "post_delay": 500,
+        "next": [
+            "CCircleShare"
         ]
     },
     "CReIn": {

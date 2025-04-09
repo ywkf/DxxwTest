@@ -1590,6 +1590,8 @@
         "pre_delay": 1000,
         "action": "Key",
         "key": 4,
+        "focus": true,
+        "focus_succeeded": "评论至上限，关闭评论",
         "next": [
             "CCommentBack02L"
         ]
@@ -1602,6 +1604,8 @@
         "pre_delay": 1000,
         "action": "Key",
         "key": 4,
+        "focus": true,
+        "focus_succeeded": "评论至上限，关闭评论",
         "next": [
             "CCommentBack02VL"
         ]
