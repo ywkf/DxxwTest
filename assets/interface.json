@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.84",
+    "version": "0.1.85",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -139,7 +139,7 @@
         {
             "name": "圈子点赞收藏 lite",
             "entry": "CCircle",
-            "doc": "点赞收藏圈子内容，默认评论列表账号\n开启至1天前，会在1天前的内容后停止",
+            "doc": "点赞收藏圈子内容，默认评论列表账号\n选择1天前，会在1天前的内容后停止\n评论达到每日上限后不再评论",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -1307,7 +1307,7 @@
         "何时结束": {
             "cases": [
                 {
-                    "name": "否",
+                    "name": "默认",
                     "pipeline_override": {
                         "TheDayBefore": {
                             "enabled": false
@@ -1359,12 +1359,14 @@
                         "TheDayBefore": {
                             "expected": [
                                 "2天前"
-                            ]
+                            ],
+                            "focus_succeeded": "检测到2天前"
                         },
                         "CTheDayBefore2": {
                             "expected": [
                                 "2天前"
-                            ]
+                            ],
+                            "focus_succeeded": "检测到2天前"
                         }
                     }
                 },
@@ -1388,12 +1390,14 @@
                         "TheDayBefore": {
                             "expected": [
                                 "3天前"
-                            ]
+                            ],
+                            "focus_succeeded": "检测到3天前"
                         },
                         "CTheDayBefore2": {
                             "expected": [
                                 "3天前"
-                            ]
+                            ],
+                            "focus_succeeded": "检测到3天前"
                         }
                     }
                 }

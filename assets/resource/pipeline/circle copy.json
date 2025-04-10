@@ -649,7 +649,7 @@
             "CInImagetxt"
         ],
         "focus": true,
-        "focus_succeeded": "检测到一天前",
+        "focus_succeeded": "检测到1天前",
         "next": [
             "CCircleCompletedBack"
         ]
