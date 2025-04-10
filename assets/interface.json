@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.83",
+    "version": "0.1.84",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -71,7 +71,7 @@
                 "视频评论语录次数",
                 "复制评论",
                 "从时间点开始",
-                "至1天前",
+                "何时结束",
                 "识别列表成员",
                 "误入动态判断"
             ],
@@ -91,7 +91,7 @@
                 "视频评论语录次数",
                 "复制评论",
                 "从时间点开始",
-                "至1天前",
+                "何时结束",
                 "识别列表成员",
                 "误入动态判断"
             ],
@@ -119,7 +119,7 @@
                 "视频评论语录次数",
                 "复制评论",
                 "从时间点开始",
-                "至1天前",
+                "何时结束",
                 "误入动态判断"
             ],
             "pipeline_override": {
@@ -146,8 +146,8 @@
                 "CircleSwitch",
                 "是否评论lite",
                 "视频评论语录次数",
+                "何时结束",
                 "复制评论",
-                "至1天前",
                 "每日分享任务"
             ]
         },
@@ -290,34 +290,6 @@
         }
     ],
     "option": {
-        "仅签到": {
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "MTaskNotificationComplete": {
-                            "next": [
-                                "Back"
-                            ]
-                        },
-                        "MTaskNotificationUndone": {
-                            "next": [
-                                "Back"
-                            ]
-                        },
-                        "MNoGetPoints": {
-                            "next": [
-                                "Back"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
         "每日分享任务": {
             "cases": [
                 {
@@ -1332,10 +1304,10 @@
                 }
             ]
         },
-        "至1天前": {
+        "何时结束": {
             "cases": [
                 {
-                    "name": "no",
+                    "name": "否",
                     "pipeline_override": {
                         "TheDayBefore": {
                             "enabled": false
@@ -1349,7 +1321,7 @@
                     }
                 },
                 {
-                    "name": "yes",
+                    "name": "1天前",
                     "pipeline_override": {
                         "IsCompleted": {
                             "next": [
@@ -1364,6 +1336,64 @@
                         },
                         "CTheDayBeforeL": {
                             "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "2天前",
+                    "pipeline_override": {
+                        "IsCompleted": {
+                            "next": [
+                                "TheDayBefore",
+                                "CircleCollectFail",
+                                "NameList",
+                                "CircleCollect"
+                            ]
+                        },
+                        "CTheDayBefore": {
+                            "enabled": true
+                        },
+                        "CTheDayBeforeL": {
+                            "enabled": true
+                        },
+                        "TheDayBefore": {
+                            "expected": [
+                                "2天前"
+                            ]
+                        },
+                        "CTheDayBefore2": {
+                            "expected": [
+                                "2天前"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3天前",
+                    "pipeline_override": {
+                        "IsCompleted": {
+                            "next": [
+                                "TheDayBefore",
+                                "CircleCollectFail",
+                                "NameList",
+                                "CircleCollect"
+                            ]
+                        },
+                        "CTheDayBefore": {
+                            "enabled": true
+                        },
+                        "CTheDayBeforeL": {
+                            "enabled": true
+                        },
+                        "TheDayBefore": {
+                            "expected": [
+                                "3天前"
+                            ]
+                        },
+                        "CTheDayBefore2": {
+                            "expected": [
+                                "3天前"
+                            ]
                         }
                     }
                 }
@@ -3304,17 +3334,17 @@
                     "pipeline_override": {
                         "MTaskNotificationComplete": {
                             "next": [
-                                "Back"
+                                "PointsBack"
                             ]
                         },
                         "MTaskNotificationUndone": {
                             "next": [
-                                "Back"
+                                "PointsBack"
                             ]
                         },
                         "MNoGetPoints": {
                             "next": [
-                                "Back"
+                                "PointsBack"
                             ]
                         }
                     }

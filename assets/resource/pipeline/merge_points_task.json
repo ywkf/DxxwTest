@@ -158,5 +158,10 @@
         "next": [
             "MergeBrowsePublish1"
         ]
+    },
+    "PointsBack": {
+        "action": "Key",
+        "key": 4,
+        "next": []
     }
 }
