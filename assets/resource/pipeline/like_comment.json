@@ -5,6 +5,7 @@
             "Back"
         ],
         "next": [
+            "ClickMyMsg",
             "MyMsg"
         ]
     },

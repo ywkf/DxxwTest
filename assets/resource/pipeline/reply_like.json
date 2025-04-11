@@ -153,6 +153,20 @@
         "template": "大象新语.png",
         "action": "Click",
         "next": [
+            "ReplyInputComment2"
+        ]
+    },
+    "ReplyInputComment2": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
             "ReplySendComment"
         ]
     },

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.85",
+    "version": "0.1.86",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -155,6 +155,23 @@
             "name": "点赞评论(beta)",
             "entry": "LikeComment",
             "doc": "点赞收到的评论"
+        },
+        {
+            "name": "点赞回复评论(beta)",
+            "entry": "CLikeComment",
+            "doc": "点赞收到的评论，并进入账号评论",
+            "pipeline_override": {
+                "CCommentBack02": {
+                    "next": [
+                        "ReplyCommentBack"
+                    ]
+                },
+                "CCommentBack02L": {
+                    "next": [
+                        "ReplyCommentBackD"
+                    ]
+                }
+            }
         },
         {
             "name": "回赞与收藏(beta)",

@@ -1,0 +1,781 @@
+{
+    "CLikeComment": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "CClickMyComment",
+            "CClickMyMsg",
+            "CMyMsg"
+        ]
+    },
+    "CMyMsg": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "focus": true,
+        "focus_succeeded": "开始执行点赞和回复评论任务...",
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "CClickMyMsg"
+        ]
+    },
+    "CClickMyMsg": {
+        "recognition": "OCR",
+        "expected": "我的消息",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "CClickMyComment"
+        ]
+    },
+    "CClickMyComment": {
+        "recognition": "OCR",
+        "expected": "评论",
+        "roi": [
+            0,
+            53,
+            720,
+            306
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "timeout": 6000,
+        "on_error": [
+            "CLikeCommentSwipe"
+        ],
+        "next": [
+            "CClickLike01"
+        ]
+    },
+    "CClickLikeAll": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like0.png",
+        "roi": [
+            0,
+            405,
+            720,
+            875
+        ],
+        "interrupt": [
+            "CReplyLikeSwipeD"
+        ],
+        "next": [
+            "CClickLike01"
+        ]
+    },
+    "CClickLikeAllD": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like0.png",
+        "roi": [
+            0,
+            405,
+            720,
+            875
+        ],
+        "interrupt": [
+            "CReplyLikeSwipeD"
+        ],
+        "next": [
+            "CClickLike01D"
+        ]
+    },
+    "CReplyLikeSwipeD": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "CClickLike01": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like0.png",
+        "roi": [
+            0,
+            405,
+            720,
+            875
+        ],
+        "action": "Click",
+        "index": 0,
+        "timeout": 6000,
+        "on_error": [
+            "CLikeCommentSwipe"
+        ],
+        "next": [
+            "CReplyComment",
+            "CClickLikeAll"
+        ]
+    },
+    "CClickLike01D": {
+        "recognition": "TemplateMatch",
+        "template": "comment_like0.png",
+        "roi": [
+            0,
+            405,
+            720,
+            875
+        ],
+        "action": "Click",
+        "index": 0,
+        "timeout": 6000,
+        "on_error": [
+            "CLikeCommentSwipe"
+        ],
+        "next": [
+            "CClickLikeAllD"
+        ]
+    },
+    "CReplyComment": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "天天开心",
+            "莫离",
+            "蓝莲花",
+            "44",
+            "lonely",
+            "安心",
+            "abc杨",
+            "aniren",
+            "blackjones",
+            "dxy",
+            "JJin",
+            "LBKHL",
+            "lbssn",
+            "leejo",
+            "LGW",
+            "LionGalaxy",
+            "ME",
+            "Colourful",
+            "核桃",
+            "pinksnower",
+            "QXxsc心中有爱",
+            "Smiler",
+            "today",
+            "WWY",
+            "Xxi",
+            "Zachary",
+            "Zcc",
+            "Zll",
+            "Zqq",
+            "Zz",
+            "ZzZz",
+            "R",
+            "阿来无敌",
+            "阿文啊",
+            "啊斗斗",
+            "爱吃",
+            "爱在鹤城",
+            "安然竞汗",
+            "宝仔fan",
+            "博哥健身",
+            "不卑不亢",
+            "查理66",
+            "拆家小能手",
+            "超级山",
+            "陈丽平",
+            "晨曦JZ",
+            "赤膊上阵",
+            "楚风汉韵",
+            "春春春春",
+            "大海",
+            "大师好",
+            "大王米粒",
+            "党政",
+            "东方慕言",
+            "独钓寒江",
+            "读书人",
+            "杜文豪用户",
+            "多米诺骨牌",
+            "朵斯提",
+            "番茄",
+            "芳 芳",
+            "风中百合",
+            "風 雲",
+            "風",
+            "雲",
+            "冯涛",
+            "浮云艳儿",
+            "葛耀昕",
+            "隔壁二傻",
+            "庚申",
+            "海阳",
+            "海洋微风",
+            "寒雨连江",
+            "贾正武",
+            "捡到星星的碎片",
+            "见微知萌",
+            "江湖客",
+            "静等花开",
+            "军培",
+            "浚县孙不二",
+            "开心就好好",
+            "开心小马",
+            "孔祥安",
+            "快睡",
+            "蓝色的鱼",
+            "蓝颜达格",
+            "李吉艳",
+            "李木子",
+            "李少东",
+            "李烁",
+            "李腾",
+            "刘超波",
+            "刘红",
+            "卢卫东",
+            "马慧",
+            "马瑛",
+            "鸣蝉",
+            "茉莉鱼",
+            "陌上花开",
+            "莫红军",
+            "木子悦",
+            "慕颜",
+            "奶油豆包",
+            "霓影芳菲",
+            "宁黎涛",
+            "怦然心懂",
+            "山景",
+            "平平淡淡才是真",
+            "七七四十九吖",
+            "淇水汤汤",
+            "轻松",
+            "邱玉涛",
+            "秋天的星空",
+            "仁者乐山",
+            "三少君",
+            "山野樵夫",
+            "时越",
+            "薯条爱吃板栗",
+            "水里养鲨鱼",
+            "孙小麦",
+            "涛声依旧",
+            "涛声",
+            "天下太平",
+            "王木木",
+            "王腾飞",
+            "五六月fa",
+            "王小妮",
+            "向阳",
+            "骁",
+            "小灰灰爱生活",
+            "小贾哥",
+            "谢发发",
+            "幸幸",
+            "雪纳瑞",
+            "杨先生",
+            "杨莹",
+            "洋洋吃不饱",
+            "一路生花",
+            "一条小鱼",
+            "一叶知秋",
+            "一壮",
+            "伊岷",
+            "尹喵喵",
+            "映山红",
+            "永不消逝的电波",
+            "用户_11788",
+            "用户_11876",
+            "用户_11889",
+            "用户_11918",
+            "用户",
+            "用户_14428",
+            "倚树听泉",
+            "豫见钰见",
+            "袁建",
+            "月光中的九色鹿",
+            "月啦啦",
+            "云倦风轻",
+            "云上学习",
+            "云深不知处",
+            "再飞一会儿",
+            "枣尚豪",
+            "张忠伟",
+            "致远",
+            "中波",
+            "中波之家",
+            "中一",
+            "周宗新",
+            "追星星的蜗牛",
+            "空白"
+        ],
+        "roi": "CClickLike01",
+        "roi_offset": [
+            -210,
+            -330,
+            400,
+            124
+        ],
+        "action": "Click",
+        "next": [
+            "CReplyCommentSwipe"
+        ]
+    },
+    "CReplyCommentSwipe": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "图文",
+            "全部",
+            "已发布",
+            "审核中"
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "CReplyImage",
+            "CReplyVideo",
+            "NoContent"
+        ]
+    },
+    "NoContent": {
+        "recognition": "OCR",
+        "expected": [
+            "暂无数据"
+        ],
+        "next": [
+            "ReplyCommentBack"
+        ]
+    },
+    "CReplyImage": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "CReplyImageLike",
+            "CReplyImageLiked"
+        ]
+    },
+    "CReplyVideo": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "timeout": 6000,
+        "on_error": [
+            "CReplyVideoImageBack"
+        ],
+        "next": [
+            "CReplyVideoLike",
+            "CReplyVideoLike1"
+        ]
+    },
+    "CReplyImageLike": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "like0.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "next": [
+            "CReplyImageFavorite",
+            "CCommentImage"
+        ]
+    },
+    "CReplyImageFavorite": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "next": [
+            "CCommentImage"
+        ]
+    },
+    "CReplyImageLiked": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "like1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "next": [
+            "CCheckCommentImage"
+        ]
+    },
+    "CCheckCommentImage": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_comment.png",
+            "comment1.png"
+        ],
+        "roi": [
+            0,
+            1186,
+            483,
+            94
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 3000,
+        "on_error": [
+            "CReplyVideoImageBack"
+        ],
+        "next": [
+            "CCheckMyName",
+            "CCheckMyNameNone",
+            "CCommentImage"
+        ]
+    },
+    "CCheckCommentVideo": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            40,
+            1200,
+            320,
+            50
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "post_delay": 1500,
+        "timeout": 3000,
+        "on_error": [
+            "CheckBack02"
+        ],
+        "next": [
+            "CCheckMyName",
+            "CCheckMyNameNone",
+            "CCommentVideoD"
+        ]
+    },
+    "CCheckMyName": {
+        "recognition": "OCR",
+        "expected": [
+            "用户_14"
+        ],
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CheckBack02",
+            "CReplyCommentSwipeD"
+        ]
+    },
+    "CCheckMyNameNone": {
+        "recognition": "OCR",
+        "expected": [
+            "我也是有底线的"
+        ],
+        "next": [
+            "CCommentVideoD",
+            "CCommentImage"
+        ]
+    },
+    "CheckBack01": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CheckBack02"
+        ]
+    },
+    "CheckBack02": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            40,
+            1200,
+            320,
+            50
+        ],
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "CReplyCommentSwipeD"
+        ]
+    },
+    "CReplyVideoLike1": {
+        "recognition": "TemplateMatch",
+        "template": "video_like1g.png",
+        "roi": [
+            597,
+            494,
+            84,
+            517
+        ],
+        "green_mask": true,
+        "threshold": 0.65,
+        "next": [
+            "CCheckCommentVideo"
+        ]
+    },
+    "CReplyVideoLike": {
+        "recognition": "TemplateMatch",
+        "template": "video_like0g.png",
+        "roi": [
+            597,
+            494,
+            84,
+            517
+        ],
+        "green_mask": true,
+        "threshold": 0.75,
+        "action": "Click",
+        "next": [
+            "CReplyVideoCollect",
+            "CCommentImage"
+        ]
+    },
+    "CReplyVideoCollect": {
+        "recognition": "TemplateMatch",
+        "template": "video_collect0g.png",
+        "roi": [
+            597,
+            494,
+            84,
+            517
+        ],
+        "green_mask": true,
+        "threshold": 0.65,
+        "action": "Click",
+        "next": [
+            "CCommentImage"
+        ]
+    },
+    "CReplyVideoImageBack": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "CReplyCommentSwipeD"
+        ]
+    },
+    "CReplyCommentSwipe0": {
+        "action": "Swipe",
+        "begin": [
+            400,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "CReplyCommentSwipeD": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "next": [
+            "CheckYesterday",
+            "CReplyImage",
+            "CReplyVideo"
+        ]
+    },
+    "CheckYesterday": {
+        "recognition": "OCR",
+        "expected": [
+            "4天前"
+        ],
+        "next": [
+            "ReplyCommentBack"
+        ]
+    },
+    "CReplyImage2": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读量\\d+",
+            "评论\\d+",
+            "\\d+评论",
+            "\\d+点赞",
+            "\\d+分享"
+        ],
+        "index": 1,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "CCommentImage"
+        ]
+    },
+    "CReplyVideo2": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "index": 1,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "CCommentImage",
+            "CantFindComment"
+        ]
+    },
+    "ReplyCommentBack": {
+        "action": "Key",
+        "key": 4,
+        "timeout": 3000,
+        "on_error": [
+            "CLikeCommentSwipe"
+        ],
+        "next": [
+            "CClickLike01"
+        ]
+    },
+    "ReplyCommentBackD": {
+        "action": "Key",
+        "key": 4,
+        "timeout": 3000,
+        "on_error": [
+            "CLikeCommentSwipe"
+        ],
+        "next": [
+            "CClickLike01D"
+        ]
+    },
+    "CLikeCommentSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "timeout": 3000,
+        "on_error": [
+            "Back"
+        ],
+        "next": [
+            "CClickLike01",
+            "CLikeCommentSwipe02"
+        ]
+    },
+    "CLikeCommentSwipe02": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "timeout": 3000,
+        "on_error": [
+            "Back"
+        ],
+        "next": [
+            "CClickLike01",
+            "CLikeCommentSwipe03"
+        ]
+    },
+    "CLikeCommentSwipe03": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            900,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "duration": 1000,
+        "timeout": 3000,
+        "on_error": [
+            "Back"
+        ],
+        "focus": true,
+        "focus_failed": "点赞评论任务完成...",
+        "next": [
+            "CClickLike01"
+        ]
+    }
+}
