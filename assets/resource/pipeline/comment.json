@@ -548,13 +548,32 @@
             30
         ],
         "interrupt": [
+            "ReClickComment",
             "InputmethodCheck",
             "InputmethodCheck0"
         ],
         "next": [
-            "CCommentXF01",
-            "CommentCommon01",
-            "CommentCommon00"
+            "CCommentXF01"
+        ]
+    },
+    "ReClickComment": {
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            35
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
         ]
     },
     "CCommentXF01": {

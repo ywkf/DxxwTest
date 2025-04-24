@@ -1,0 +1,516 @@
+{
+    "CirclePublish": {
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "LoadPicture",
+            "CirclePublish0"
+        ]
+    },
+    "LoadPicture": {
+        "enabled": true,
+        "action": "StartApp",
+        "package": "com.android.gallery3d",
+        "post_delay": 3000,
+        "next": [
+            "LoadDxxw"
+        ]
+    },
+    "LoadDxxw": {
+        "action": "StartApp",
+        "package": "com.hnr.dxxw",
+        "interrupt": [
+            "Back"
+        ],
+        "post_delay": 3000,
+        "next": [
+            "CirclePublish0"
+        ]
+    },
+    "CirclePublish0": {
+        "recognition": "OCR",
+        "expected": [
+            "发布"
+        ],
+        "roi": [
+            0,
+            0,
+            720,
+            176
+        ],
+        "action": "Click",
+        "next": [
+            "PublishVideo"
+        ]
+    },
+    "PublishVideo": {
+        "recognition": "OCR",
+        "expected": [
+            "视频"
+        ],
+        "action": "Click",
+        "next": [
+            "SwitchFolder"
+        ]
+    },
+    "SwitchFolder": {
+        "recognition": "OCR",
+        "expected": [
+            "全部"
+        ],
+        "roi": [
+            0,
+            0,
+            720,
+            158
+        ],
+        "action": "Click",
+        "next": [
+            "SelectFolder"
+        ]
+    },
+    "SelectFolder": {
+        "recognition": "OCR",
+        "expected": [
+            "圈子作品1"
+        ],
+        "action": "Click",
+        "next": [
+            "SelectWork01"
+        ]
+    },
+    "SelectWork01": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "roi": [
+            139,
+            168,
+            96,
+            97
+        ],
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            185,
+            215,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork02": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            430,
+            215,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork03": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            671,
+            216,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork04": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            185,
+            458,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork05": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            430,
+            458,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork06": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            671,
+            457,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork07": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            185,
+            700,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork08": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            430,
+            701,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork09": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            671,
+            702,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork10": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            185,
+            946,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork11": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            430,
+            945,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "SelectWork12": {
+        "recognition": "TemplateMatch",
+        "template": "select.png",
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            671,
+            944,
+            1,
+            1
+        ],
+        "next": [
+            "ClickConfirm"
+        ]
+    },
+    "ClickConfirm": {
+        "recognition": "OCR",
+        "expected": [
+            "确定\\(1\\)"
+        ],
+        "roi": [
+            0,
+            1176,
+            720,
+            104
+        ],
+        "action": "Click",
+        "next": [
+            "InputTitle"
+        ]
+    },
+    "InputTitle": {
+        "recognition": "OCR",
+        "expected": [
+            "输入标题"
+        ],
+        "action": "Click",
+        "next": [
+            "PublishXF01"
+        ]
+    },
+    "PublishXF01": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "XF_comment.png",
+        "roi": [
+            1,
+            698,
+            719,
+            132
+        ],
+        "action": "Click",
+        "focus": true,
+        "focus_succeeded": "检测到语录功能，使用XF语录",
+        "next": [
+            "PublishXF02Tag",
+            "PublishXF02Title"
+        ]
+    },
+    "PublishXF02Tag": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "Tag1"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "PublishXF02Title"
+        ]
+    },
+    "PublishXF02Title": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "标题1"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "XFBack01"
+        ]
+    },
+    "XFBack01": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "XFBack02"
+        ]
+    },
+    "XFBack02": {
+        "action": "Key",
+        "key": 4,
+        "interrupt": [
+            "PublishSwipeUp"
+        ],
+        "next": [
+            "SelectCircle"
+        ]
+    },
+    "PublishSwipeUp": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            900,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "SelectCircle": {
+        "recognition": "OCR",
+        "expected": [
+            "选择圈子"
+        ],
+        "action": "Click",
+        "interrupt": [
+            "PublishSwipeUp"
+        ],
+        "next": [
+            "PublishClickCircle"
+        ]
+    },
+    "PublishClickCircle": {
+        "recognition": "OCR",
+        "expected": [
+            "无线“象”往",
+            "展示新时代河南",
+            "中波人",
+            "“象”"
+        ],
+        "action": "Click",
+        "focus": true,
+        "focus_succeeded": "已选择 无线“象”往 圈子",
+        "focus_succeeded_color": "Green",
+        "next": [
+            "SelectTag01"
+        ]
+    },
+    "SelectTag01": {
+        "recognition": "OCR",
+        "expected": [
+            "标签和关键词"
+        ],
+        "action": "Click",
+        "next": [
+            "SelectTag02"
+        ]
+    },
+    "SelectTag02": {
+        "recognition": "OCR",
+        "expected": [
+            "选择标签"
+        ],
+        "action": "Click",
+        "next": [
+            "SelectTag03"
+        ]
+    },
+    "SelectTag03": {
+        "recognition": "OCR",
+        "expected": [
+            "社会"
+        ],
+        "action": "Click",
+        "next": [
+            "SelectTag04"
+        ]
+    },
+    "SelectTag04": {
+        "recognition": "OCR",
+        "expected": [
+            "环境保护"
+        ],
+        "action": "Click",
+        "next": [
+            "SelectTag05"
+        ]
+    },
+    "SelectTag05": {
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "action": "Click",
+        "interrupt": [
+            "PublishSwipeUp"
+        ],
+        "next": [
+            "PClickPublish"
+        ]
+    },
+    "PClickPublish": {
+        "recognition": "OCR",
+        "expected": [
+            "发布"
+        ],
+        "roi": [
+            358,
+            1127,
+            362,
+            153
+        ],
+        "action": "Click",
+        "next": [
+            "ConfirmPublish"
+        ]
+    },
+    "ConfirmPublish": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "roi": [
+            81,
+            704,
+            560,
+            124
+        ],
+        "action": "Click",
+        "timeout": 60000,
+        "next": [
+            "PublishDone"
+        ]
+    },
+    "PublishDone": {
+        "recognition": "OCR",
+        "expected": [
+            "点击查看"
+        ],
+        "roi": [
+            537,
+            188,
+            183,
+            199
+        ],
+        "focus": true,
+        "focus_succeeded": "发布完成",
+        "focus_succeeded_color": "Blue",
+        "next": [
+            "Stop"
+        ]
+    }
+}
