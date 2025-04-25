@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.90",
+    "version": "0.1.91",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -2297,6 +2297,13 @@
                             ],
                             "focus_succeeded": "已在 大象话题 圈子中",
                             "focus_succeeded_color": "Green"
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "大象话题"
+                            ],
+                            "focus_succeeded": "已选择 大象话题 圈子",
+                            "focus_succeeded_color": "Green"
                         }
                     }
                 },
@@ -2740,6 +2747,72 @@
                                 "象友汇"
                             ],
                             "focus_succeeded": "已选择 象友汇 圈子",
+                            "focus_succeeded_color": "Green"
+                        }
+                    }
+                },
+                {
+                    "name": "自定义(圈子内启动)",
+                    "pipeline_override": {
+                        "ClickTheCircle": {
+                            "expected": [
+                                "加入",
+                                "最新",
+                                "最热",
+                                "我的关注",
+                                "关注"
+                            ],
+                            "focus_succeeded": "进入圈子成功",
+                            "focus_succeeded_color": "Green"
+                        },
+                        "CircleCompletedBack": {
+                            "focus_succeeded": "圈子任务完成",
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "圈子任务完成"
+                        },
+                        "InTheCircle": {
+                            "expected": [
+                                "加入",
+                                "最新",
+                                "最热",
+                                "我的关注",
+                                "关注"
+                            ],
+                            "focus_succeeded": "已在圈子中",
+                            "focus_succeeded_color": "Green"
+                        },
+                        "CClickTheCircle": {
+                            "expected": [
+                                "加入",
+                                "最新",
+                                "最热",
+                                "我的关注",
+                                "关注"
+                            ],
+                            "focus_succeeded": "进入圈子成功",
+                            "focus_succeeded_color": "Green"
+                        },
+                        "CCircleCompletedBack": {
+                            "focus_succeeded": "圈子任务完成",
+                            "focus_succeeded_color": "Blue",
+                            "focus_toast": "圈子任务完成"
+                        },
+                        "CInTheCircle": {
+                            "expected": [
+                                "加入",
+                                "最新",
+                                "最热",
+                                "我的关注",
+                                "关注"
+                            ],
+                            "focus_succeeded": "已在圈子中",
+                            "focus_succeeded_color": "Green"
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "圈友加入"
+                            ],
+                            "focus_succeeded": "已选择默认圈子",
                             "focus_succeeded_color": "Green"
                         }
                     }
