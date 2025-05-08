@@ -7,6 +7,17 @@
             "succeeded": "打开yezi，获取号码"
         },
         "next": [
+            "GetCodePage"
+        ]
+    },
+    "GetCodePage":{
+        "recognition": "OCR",
+        "expected":[
+            "短信取码"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next":[
             "YeziSwipe"
         ]
     },
@@ -46,9 +57,23 @@
             "获取号码"
         ],
         "action": "Click",
-        "post_delay": 1500,
+        "post_delay": 1000,
         "next": [
+            "NoBalance",
             "CopyNumber"
+        ]
+    },
+    "NoBalance":{
+        "recognition": "OCR",
+        "expected":[
+            "可用余额不足",
+            "余额不足"
+        ],
+        "focus": {
+            "succeeded": "[color:Blue]余额不足，已停止[/color]"
+        },
+        "next":[
+            "Stop"
         ]
     },
     "CopyNumber": {
@@ -198,6 +223,10 @@
         ]
     },
     "StartYezi02": {
+        "recognition": "OCR",
+        "expected":[
+            "发送成功"
+        ],
         "action": "StartApp",
         "package": "yezi.com",
         "post_delay": 1500,
@@ -209,6 +238,7 @@
             "StartYezi"
         ],
         "next": [
+            "GetCodeFail",
             "GetCode"
         ]
     },
@@ -222,6 +252,16 @@
         ],
         "next": [
             "CilckCopyCode"
+        ]
+    },
+    "GetCodeFail": {
+        "recognition": "OCR",
+        "expected": [
+            "失败",
+            "验证码验证失败"
+        ],
+        "next": [
+            "StartYezi"
         ]
     },
     "YeziSwipeCopyCode": {
@@ -338,6 +378,7 @@
         "post_delay": 1000,
         "next": [
             "ClickAgreeD",
+            "GetCodeFail",
             "ClickInviteCode",
             "Waslogin"
         ]
@@ -482,7 +523,7 @@
             "账号已被邀请"
         ],
         "focus": {
-            "succeeded": "完成邀请"
+            "succeeded": "[color:blue]完成邀请[/color]"
         },
         "next": [
             "InviteDoneBack"
