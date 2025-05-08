@@ -10,8 +10,9 @@
             "NameList启动"
         ],
         "pre_delay": 500,
-        "focus": true,
-        "focus_succeeded": "识别到成员，评论中...",
+        "focus": {
+            "succeeded": "识别到成员，评论中..."
+        },
         "next": [
             "ClickName"
         ]
@@ -55,8 +56,9 @@
         ],
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "已点赞，返回",
+        "focus": {
+            "succeeded": "已点赞，返回"
+        },
         "next": [
             "CCommentBack02"
         ]
@@ -78,8 +80,9 @@
         "threshold": 0.6,
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "已点赞，返回",
+        "focus": {
+            "succeeded": "已点赞，返回"
+        },
         "next": [
             "CCommentBack02"
         ]

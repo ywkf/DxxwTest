@@ -19,8 +19,9 @@
         "index": 0,
         "action": "Click",
         "post_delay": 5000,
-        "focus": true,
-        "focus_succeeded": "作品编号1",
+        "focus": {
+            "succeeded": "作品编号1"
+        },
         "next": [
             "ToVideoShare",
             "ToImageShare"

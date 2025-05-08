@@ -181,8 +181,9 @@
         ],
         "pre_delay": 500,
         "post_delay": 1500,
-        "focus": true,
-        "focus_succeeded": "识别到成员，进入评论中...",
+        "focus": {
+            "succeeded": "识别到成员，进入评论中..."
+        },
         "next": [
             "ClickName"
         ]
@@ -362,8 +363,9 @@
             "空白"
         ],
         "pre_delay": 500,
-        "focus": true,
-        "focus_succeeded": "识别到成员，评论中...",
+        "focus": {
+            "succeeded": "识别到成员，评论中..."
+        },
         "on_error": [
             "CantFindComment"
         ],

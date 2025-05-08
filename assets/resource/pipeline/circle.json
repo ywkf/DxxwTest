@@ -23,8 +23,9 @@
             719,
             216
         ],
-        "focus": true,
-        "focus_succeeded": "已在圈子中",
+        "focus": {
+            "succeeded": "已在圈子中"
+        },
         "next": [
             "CircleSwipe0"
         ]
@@ -39,8 +40,9 @@
         "action": "StopApp",
         "package": "com.hnr.dxxw",
         "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "应用没有响应，正在关闭Dxxw...",
+        "focus": {
+            "start": "应用没有响应，正在关闭Dxxw..."
+        },
         "next": [
             "CStartApp"
         ]
@@ -49,9 +51,10 @@
         "action": "StartApp",
         "package": "com.hnr.dxxw",
         "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "重新启动Dxxw...",
-        "focus_succeeded": "启动成功",
+        "focus": {
+            "start": "重新启动Dxxw..."
+        },
+        "succeeded": "启动成功",
         "next": [
             "CSkip1"
         ]
@@ -92,8 +95,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "开始执行圈子点赞收藏任务...",
+        "focus": {
+            "succeeded": "开始执行圈子点赞收藏任务..."
+        },
         "interrupt": [
             "Back"
         ],
@@ -198,9 +202,10 @@
         ],
         "action": "Click",
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "识别进入圈子成功",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "识别进入圈子成功"
+        },
+        "succeeded_color": "Blue",
         "next": [
             "CircleSwipe0"
         ]
@@ -271,10 +276,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "已至1小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "已至1小时前",
+        "focus": {
+            "succeeded": "[color:blue]已至1小时前[/color]",
+            "toast": "已至1小时前"
+        },
         "next": [
             "IsTop0",
             "CircleCollect&Like"
@@ -314,8 +319,9 @@
             "官方客服",
             "小时前"
         ],
-        "focus": true,
-        "focus_succeeded": "开启圈子点赞收藏...",
+        "focus": {
+            "succeeded": "开启圈子点赞收藏..."
+        },
         "next": [
             "IsTop0",
             "ToCircleTime",
@@ -384,8 +390,9 @@
         ]
     },
     "CircleCollect&Like": {
-        "focus": true,
-        "focus_succeeded": "点赞、收藏进行中...",
+        "focus": {
+            "succeeded": "点赞、收藏进行中..."
+        },
         "interrupt": [
             "CircleSwipe"
         ],
@@ -401,8 +408,9 @@
             "circle_collect.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "收藏进行中...",
+        "focus": {
+            "succeeded": "收藏进行中..."
+        },
         "interrupt": [
             "InImagetxt",
             "CircleSwipe"
@@ -431,9 +439,10 @@
             10,
             10
         ],
-        "focus": true,
         "pre_delay": 1500,
-        "focus_succeeded": "操作失败，跳过...",
+        "focus": {
+            "succeeded": "操作失败，跳过..."
+        },
         "post_delay": 2000,
         "next": [
             "CircleCollect",
@@ -453,8 +462,9 @@
             10
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "点赞进行中...",
+        "focus": {
+            "succeeded": "点赞进行中..."
+        },
         "interrupt": [
             "InImagetxt",
             "CircleSwipe"
@@ -511,8 +521,9 @@
         ],
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "进入作品退出...",
+        "focus": {
+            "succeeded": "进入作品退出..."
+        },
         "next": [
             "Stop"
         ]
@@ -533,16 +544,18 @@
         "threshold": 0.7,
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "进入视频退出...",
+        "focus": {
+            "succeeded": "进入视频退出..."
+        },
         "next": [
             "Stop"
         ]
     },
     "IsCompleted": {
         "enabled": true,
-        "focus": true,
-        "focus_succeeded": "任务完成检测...",
+        "focus": {
+            "succeeded": "任务完成检测..."
+        },
         "interrupt": [
             "CircleErrorCheck01",
             "InImagetxt",
@@ -692,8 +705,9 @@
         "interrupt": [
             "InImagetxt"
         ],
-        "focus": true,
-        "focus_succeeded": "检测到1天前",
+        "focus": {
+            "succeeded": "检测到1天前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -704,8 +718,9 @@
         "template": [
             "circle_collect1.png"
         ],
-        "focus": true,
-        "focus_succeeded": "检测到收藏",
+        "focus": {
+            "succeeded": "检测到收藏"
+        },
         "interrupt": [
             "InImagetxt",
             "CircleSwipe"
@@ -721,8 +736,9 @@
         "template": [
             "circle_like1.png"
         ],
-        "focus": true,
-        "focus_succeeded": "检测到点赞",
+        "focus": {
+            "succeeded": "检测到点赞"
+        },
         "next": [
             "CircleCollectFail",
             "CircleCollect",
@@ -902,10 +918,10 @@
     "CircleCompletedBack": {
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "圈子任务完成",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "圈子任务完成",
+        "focus": {
+            "succeeded": "[color:blue]圈子任务完成[/color]",
+            "toast": "圈子任务完成"
+        },
         "next": []
     }
 }

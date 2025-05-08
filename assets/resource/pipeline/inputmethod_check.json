@@ -16,8 +16,9 @@
             "首页0.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "开始输入法检测",
+        "focus": {
+            "succeeded": "开始输入法检测"
+        },
         "next": [
             "InputmethodBox1"
         ]
@@ -118,8 +119,9 @@
         ],
         "action": "Click",
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "输入法已开启",
+        "focus": {
+            "succeeded": "输入法已开启"
+        },
         "next": [
             "Stop"
         ]

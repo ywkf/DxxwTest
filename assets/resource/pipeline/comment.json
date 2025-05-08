@@ -21,8 +21,9 @@
         "action": "Click",
         "pre_delay": 500,
         "post_delay": 2000,
-        "focus": true,
-        "focus_succeeded": "进入作品",
+        "focus": {
+            "succeeded": "进入作品"
+        },
         "timeout": 60000,
         "next": [
             "CCommentImage",
@@ -44,8 +45,9 @@
         "action": "Click",
         "pre_delay": 500,
         "post_delay": 2000,
-        "focus": true,
-        "focus_succeeded": "进入作品",
+        "focus": {
+            "succeeded": "进入作品"
+        },
         "timeout": 30000,
         "on_error": [
             "ClickCommentVideo",
@@ -66,8 +68,9 @@
             "空白",
             "NameList启动"
         ],
-        "focus": true,
-        "focus_succeeded": "识别到成员，评论中...",
+        "focus": {
+            "succeeded": "识别到成员，评论中..."
+        },
         "next": [
             "CCommentImage",
             "CCommentVideo",
@@ -118,8 +121,9 @@
             132
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "检测到语录功能，使用XF语录",
+        "focus": {
+            "succeeded": "检测到语录功能，使用XF语录"
+        },
         "next": [
             "CCCommentXF02VHX1"
         ]
@@ -238,8 +242,9 @@
             "发表.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "发表评论..",
+        "focus": {
+            "succeeded": "发表评论.."
+        },
         "timeout": 60000,
         "interrupt": [
             "CReComment"
@@ -354,8 +359,9 @@
             "作者赞过"
         ],
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "检测到评论，复制评论",
+        "focus": {
+            "succeeded": "检测到评论，复制评论"
+        },
         "next": [
             "CCopyComment001d",
             "CCopyComment001"
@@ -409,8 +415,9 @@
             "回复"
         ],
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "检测到评论，复制评论",
+        "focus": {
+            "succeeded": "检测到评论，复制评论"
+        },
         "next": [
             "CCopyComment002d",
             "CCopyComment002"
@@ -587,8 +594,9 @@
             132
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "检测到语录功能，使用XF语录",
+        "focus": {
+            "succeeded": "检测到语录功能，使用XF语录"
+        },
         "next": [
             "Comment03T",
             "Comment14T",
@@ -1534,8 +1542,9 @@
             "发表.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "发表评论...",
+        "focus": {
+            "succeeded": "发表评论..."
+        },
         "timeout": 60000,
         "next": [
             "CCommentBack01",
@@ -1611,8 +1620,9 @@
         "pre_delay": 1000,
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "评论至上限，关闭评论",
+        "focus": {
+            "succeeded": "评论至上限，关闭评论"
+        },
         "next": [
             "CCommentBack02L"
         ]
@@ -1625,8 +1635,9 @@
         "pre_delay": 1000,
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "评论至上限，关闭评论",
+        "focus": {
+            "succeeded": "评论至上限，关闭评论"
+        },
         "next": [
             "CCommentBack02VL"
         ]

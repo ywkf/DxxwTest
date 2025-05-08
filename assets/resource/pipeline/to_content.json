@@ -69,9 +69,10 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
-        "focus": true,
-        "focus_succeeded": "进入个人内容成功",
-        "focus_failed": "进入个人内容失败",
+        "focus": {
+            "succeeded": "进入个人内容成功",
+            "failed": "进入个人内容失败"
+        },
         "next": [
             "ToContentAll"
         ]

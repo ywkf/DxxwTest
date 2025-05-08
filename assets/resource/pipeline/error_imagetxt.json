@@ -1,8 +1,9 @@
 {
     "ErrorImagetxt001": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文01出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文01出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -133,8 +134,9 @@
     },
     "ErrorImagetxt002": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文02出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文02出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -265,8 +267,9 @@
     },
     "ErrorImagetxt003": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文03出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文03出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -397,8 +400,9 @@
     },
     "ErrorImagetxt004": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文04出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文04出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -529,8 +533,9 @@
     },
     "ErrorImagetxt005": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文05出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文05出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -682,8 +687,9 @@
     },
     "ErrorImagetxt006": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文06出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文06出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -835,8 +841,9 @@
     },
     "ErrorImagetxt007": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文07出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文07出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -1009,8 +1016,9 @@
     },
     "ErrorImagetxt008": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文08出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文08出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -1183,8 +1191,9 @@
     },
     "ErrorImagetxt009": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文09出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文09出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -1357,8 +1366,9 @@
     },
     "ErrorImagetxt0010": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文10出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文10出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -1552,8 +1562,9 @@
     },
     "ErrorImagetxt0011": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文11出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文11出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -1747,8 +1758,9 @@
     },
     "ErrorImagetxt0012": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文12出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文12出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -1942,8 +1954,9 @@
     },
     "ErrorImagetxt0013": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "恢复浏览图文13",
+        "focus": {
+            "start": "恢复浏览图文13"
+        },
         "interrupt": [
             "Back"
         ],
@@ -2079,8 +2092,9 @@
     },
     "ErrorImagetxt0014": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "恢复浏览图文14",
+        "focus": {
+            "start": "恢复浏览图文14"
+        },
         "interrupt": [
             "Back"
         ],
@@ -2216,8 +2230,9 @@
     },
     "ErrorImagetxt0015": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "恢复浏览图文15",
+        "focus": {
+            "start": "恢复浏览图文15"
+        },
         "interrupt": [
             "Back"
         ],

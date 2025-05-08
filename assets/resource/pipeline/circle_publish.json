@@ -76,9 +76,9 @@
             "圈子作品1"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "选择 圈子作品1",
-        "focus_succeeded_color": "Orange",
+        "focus": {
+            "succeeded": "[color:orange]选择 圈子作品1[/color]"
+        },
         "next": [
             "SelectWork01"
         ]
@@ -100,9 +100,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品01",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]作品01[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -118,9 +118,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品02",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品02[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -136,9 +136,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品03",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品03[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -154,9 +154,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品04",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品04[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -172,9 +172,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品05",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品05[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -190,9 +190,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品06",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品06[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -208,9 +208,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品07",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品07[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -226,9 +226,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品08",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品08[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -244,9 +244,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品09",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品09[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -262,9 +262,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品10",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品10[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -280,9 +280,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品11",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品11[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -298,9 +298,9 @@
             1,
             1
         ],
-        "focus": true,
-        "focus_succeeded": "选择作品12",
-        "focus_succeeded_color": "Deepskyblue",
+        "focus": {
+            "succeeded": "[color:deepskyblue]选择作品12[/color]"
+        },
         "next": [
             "ClickConfirm"
         ]
@@ -343,7 +343,7 @@
         ],
         "action": "Click",
         "focus": true,
-        "focus_succeeded": "检测到语录功能，使用XF语录",
+        "succeeded": "检测到语录功能，使用XF语录",
         "next": [
             "PublishXF02Tag",
             "PublishXF02Title"
@@ -442,8 +442,8 @@
         ],
         "action": "Click",
         "focus": true,
-        "focus_succeeded": "已选择 无线“象”往 圈子",
-        "focus_succeeded_color": "Green",
+        "succeeded": "已选择 无线“象”往 圈子",
+        "succeeded_color": "Green",
         "next": [
             "SelectTag01"
         ]
@@ -547,8 +547,8 @@
         ],
         "post_delay": 6000,
         "focus": true,
-        "focus_succeeded": "发布完成",
-        "focus_succeeded_color": "Blue",
+        "succeeded": "发布完成",
+        "succeeded_color": "Blue",
         "next": [
             "Stop"
         ]

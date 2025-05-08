@@ -45,8 +45,9 @@
         "recognition": "OCR",
         "expected": "点击签到",
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "签到完成",
+        "focus": {
+            "succeeded": "签到完成"
+        },
         "next": [
             "CSwipeUPsg"
         ]
@@ -54,8 +55,9 @@
     "CSignedIn": {
         "recognition": "OCR",
         "expected": "已签到",
-        "focus": true,
-        "focus_succeeded": "签到已完成",
+        "focus": {
+            "succeeded": "签到已完成"
+        },
         "next": [
             "CSwipeUPsg"
         ]
@@ -90,8 +92,9 @@
             380
         ],
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "领取每日通知积分完成",
+        "focus": {
+            "succeeded": "领取每日通知积分完成"
+        },
         "interrupt": [
             "Back"
         ],
@@ -109,8 +112,9 @@
         ]
     },
     "MNoGetPoints": {
-        "focus": true,
-        "focus_tip": "未领取每日通知积分，请手动领取",
+        "focus": {
+            "start": "未领取每日通知积分，请手动领取"
+        },
         "interrupt": [
             "Back"
         ],
@@ -128,9 +132,9 @@
             352,
             38
         ],
-        "focus": true,
-        "focus_succeeded": "每日通知积分已领取",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
         "interrupt": [
             "Back"
         ],
@@ -149,9 +153,9 @@
             38
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "每日通知积分已领取",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
         "interrupt": [
             "Back"
         ],

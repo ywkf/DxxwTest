@@ -1,8 +1,9 @@
 {
     "ErrorBackImagetxt": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览图文出错，尝试恢复",
+        "focus": {
+            "start": "浏览图文出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -12,8 +13,9 @@
     },
     "ErrorBackVedio": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "浏览音视频出错，尝试恢复",
+        "focus": {
+            "start": "浏览音视频出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -23,8 +25,9 @@
     },
     "ErrorBackLive": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "观看直播出错，尝试恢复",
+        "focus": {
+            "start": "观看直播出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -34,8 +37,9 @@
     },
     "ErrorBackRadio": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "看电视听广播出错，尝试恢复",
+        "focus": {
+            "start": "看电视听广播出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -45,8 +49,9 @@
     },
     "ErrorBackPublish": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "发布作品出错，尝试恢复",
+        "focus": {
+            "start": "发布作品出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],
@@ -56,8 +61,9 @@
     },
     "ErrorBackPublishX2": {
         "enabled": true,
-        "focus": true,
-        "focus_tip": "发布作品X2出错，尝试恢复",
+        "focus": {
+            "start": "发布作品X2出错，尝试恢复"
+        },
         "interrupt": [
             "Back"
         ],

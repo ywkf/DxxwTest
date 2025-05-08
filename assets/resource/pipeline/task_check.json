@@ -78,9 +78,9 @@
             392,
             44
         ],
-        "focus": true,
-        "focus_succeeded": "浏览内容已完成",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]浏览内容已完成[/color]"
+        },
         "next": [
             "TaskComment"
         ]
@@ -95,9 +95,9 @@
             392,
             44
         ],
-        "focus": true,
-        "focus_tip": "浏览内容未完成，前去完成",
-        "focus_tip_color": "Blue",
+        "focus": {
+            "start": "[color:blue]浏览内容未完成，前去完成[/color]"
+        },
         "next": [
             "MergeBrowsePublish000"
         ]
@@ -120,9 +120,9 @@
             600,
             38
         ],
-        "focus": true,
-        "focus_succeeded": "评论已完成",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]评论已完成[/color]"
+        },
         "next": [
             "TaskNotification"
         ]
@@ -137,9 +137,9 @@
             600,
             38
         ],
-        "focus": true,
-        "focus_tip": "评论未完成，前去完成",
-        "focus_tip_color": "Blue",
+        "focus": {
+            "start": "[color:blue]评论未完成，前去完成[/color]"
+        },
         "next": [
             "ErrorImagetxt0013"
         ]
@@ -154,8 +154,9 @@
         ]
     },
     "NoGetPoints": {
-        "focus": true,
-        "focus_tip": "未领取每日通知积分已领取，请手动领取"
+        "focus": {
+            "start": "未领取每日通知积分已领取，请手动领取"
+        }
     },
     "TaskNotificationComplete": {
         "recognition": "OCR",
@@ -170,9 +171,9 @@
         "interrupt": [
             "TaskSwipe"
         ],
-        "focus": true,
-        "focus_succeeded": "每日通知积分已领取",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
         "next": [
             "Back"
         ]
@@ -191,9 +192,9 @@
         "interrupt": [
             "TaskSwipe"
         ],
-        "focus": true,
-        "focus_succeeded": "每日通知积分已领取",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
         "next": [
             "Back"
         ]
@@ -211,8 +212,9 @@
         "expected": "我的积分",
         "inverse": true,
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "界面异常，准备重启APP",
+        "focus": {
+            "succeeded": "界面异常，准备重启APP"
+        },
         "next": [
             "StopApp"
         ]

@@ -179,9 +179,10 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
-        "focus": true,
-        "focus_succeeded": "识别进入个人内容成功，开始执行个人分享任务",
-        "focus_failed": "识别进入个人内容失败",
+        "focus": {
+            "succeeded": "识别进入个人内容成功，开始执行个人分享任务",
+            "failed": "识别进入个人内容失败"
+        },
         "next": [
             "ShareClickVideo",
             "ShareClickTxt"
@@ -225,8 +226,9 @@
         ],
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "最新视频分享量已达150，开始图文分享",
+        "focus": {
+            "succeeded": "最新视频分享量已达150，开始图文分享"
+        },
         "next": [
             "ShareClickTxt"
         ]
@@ -259,8 +261,9 @@
         ],
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "最新图文分享已分享至半点",
+        "focus": {
+            "succeeded": "最新图文分享已分享至半点"
+        },
         "next": [
             "Stop"
         ]

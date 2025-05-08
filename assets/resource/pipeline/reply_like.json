@@ -41,8 +41,9 @@
         "action": "Click",
         "pre_wait_freezes": 200,
         "post_delay": 500,
-        "focus": true,
-        "focus_succeeded": "开始执行回复图文任务",
+        "focus": {
+            "succeeded": "开始执行回复图文任务"
+        },
         "next": [
             "ReplyImageTxt"
         ]
@@ -230,8 +231,9 @@
         "action": "Click",
         "pre_wait_freezes": 200,
         "post_delay": 500,
-        "focus": true,
-        "focus_succeeded": "开始执行回复视频任务",
+        "focus": {
+            "succeeded": "开始执行回复视频任务"
+        },
         "next": [
             "ReplyVideo"
         ]
@@ -376,8 +378,9 @@
     "EndLine02": {
         "recognition": "OCR",
         "expected": "我也是有底线的",
-        "focus": true,
-        "focus_succeeded": "回赞与收藏任务完成",
+        "focus": {
+            "succeeded": "回赞与收藏任务完成"
+        },
         "next": [
             "ReplyBack"
         ]

@@ -6,9 +6,10 @@
         "action": "StartApp",
         "package": "com.hnr.dxxw",
         "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "正在启动Dxxw...",
-        "focus_succeeded": "启动成功",
+        "focus": {
+            "start": "正在启动Dxxw...",
+            "succeeded": "启动成功"
+        },
         "next": [
             "Skip1"
         ]
@@ -49,8 +50,9 @@
         "action": "StopApp",
         "package": "com.hnr.dxxw",
         "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "正在关闭Dxxw...",
+        "focus": {
+            "start": "正在关闭Dxxw..."
+        },
         "next": [
             "Restart"
         ]
@@ -66,8 +68,9 @@
         ],
         "template": "dxxw.png",
         "post_delay": 2000,
-        "focus": true,
-        "focus_tip": "准备重启Dxxw",
+        "focus": {
+            "start": "准备重启Dxxw"
+        },
         "next": [
             "Startup"
         ]
@@ -82,8 +85,9 @@
         "action": "StopApp",
         "package": "com.hnr.dxxw",
         "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "应用没有响应，正在关闭Dxxw...",
+        "focus": {
+            "start": "应用没有响应，正在关闭Dxxw..."
+        },
         "next": [
             "Restart",
             "Startup"

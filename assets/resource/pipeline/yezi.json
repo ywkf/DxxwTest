@@ -1,0 +1,552 @@
+{
+    "StartYezi": {
+        "action": "StartApp",
+        "package": "yezi.com",
+        "post_delay": 2000,
+        "focus": {
+            "succeeded": "打开yezi，获取号码"
+        },
+        "next": [
+            "YeziSwipe"
+        ]
+    },
+    "YeziSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "next": [
+            "OutNumber"
+        ]
+    },
+    "OutNumber": {
+        "recognition": "OCR",
+        "expected": [
+            "拉黑号码"
+        ],
+        "action": "Click",
+        "next": [
+            "GetNumber"
+        ]
+    },
+    "GetNumber": {
+        "recognition": "OCR",
+        "expected": [
+            "获取号码"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "CopyNumber"
+        ]
+    },
+    "CopyNumber": {
+        "recognition": "OCR",
+        "expected": [
+            "复制号码"
+        ],
+        "action": "Click",
+        "next": [
+            "OpenDxxw"
+        ]
+    },
+    "OpenDxxw": {
+        "action": "StartApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 2000,
+        "focus": {
+            "succeeded": "打开Dxxw，准备注册"
+        },
+        "interrupt":[
+            "Waslogin"
+        ],
+        "next": [
+            "IsLogin",
+            "ClickLogin"
+        ]
+    },
+    "ClickLogin": {
+        "recognition": "OCR",
+        "expected": [
+            "登录/注册"
+        ],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "ClickAgree"
+        ]
+    },
+    "Waslogin":{
+        "recognition": "OCR",
+        "expected":[
+            "用户_",
+            "申请认证"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]账号已登录或已被邀请[/color]"
+        },
+        "next":[
+            "ClickSetup"
+        ]
+    },
+    "IsLogin":{
+        "recognition": "OCR",
+        "expected":[
+            "免密登录"
+        ],
+        "action": "Click",
+        "target": [85, 121, 1, 1],
+        "next":[
+            "ClickLogin"
+        ]
+    },
+    "ClickAgree": {
+        "recognition": "TemplateMatch",
+        "template": "gouxuan.png",
+        "roi": [
+            49,
+            1061,
+            46,
+            51
+        ],
+        "action": "Click",
+        "next": [
+            "ClickPhone"
+        ]
+    },
+    "ClickPhone": {
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "Click",
+        "next": [
+            "PhonePasteXF01"
+        ]
+    },
+    "PhonePasteXF01": {
+        "recognition": "TemplateMatch",
+        "template": "edit.png",
+        "roi": [
+            5,
+            728,
+            709,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "PhonePasteXF02"
+        ]
+    },
+    "PhonePasteXF02": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "PhonePasteXF03"
+        ]
+    },
+    "PhonePasteXF03": {
+        "recognition": "OCR",
+        "expected": "返回",
+        "roi": [
+            586,
+            1121,
+            134,
+            159
+        ],
+        "action": "Click",
+        "next": [
+            "PhonePasteXF04"
+        ]
+    },
+    "PhonePasteXF04": {
+        "recognition": "OCR",
+        "expected": "完成",
+        "roi": [
+            603,
+            1047,
+            117,
+            114
+        ],
+        "action": "Click",
+        "next": [
+            "ClickGetCode"
+        ]
+    },
+    "ClickGetCode": {
+        "recognition": "OCR",
+        "expected": [
+            "获取验证码"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "StartYezi02"
+        ]
+    },
+    "StartYezi02": {
+        "action": "StartApp",
+        "package": "yezi.com",
+        "post_delay": 1500,
+        "focus": {
+            "succeeded": "打开yezi，等待验证码..."
+        },
+        "timeout": 120000,
+        "on_error":[
+            "StartYezi"
+        ],
+        "next": [
+            "GetCode"
+        ]
+    },
+    "GetCode": {
+        "recognition": "OCR",
+        "expected": [
+            "释放成功"
+        ],
+        "interrupt":[
+            "YeziSwipeCopyCode"
+        ],
+        "next": [
+            "CilckCopyCode"
+        ]
+    },
+    "YeziSwipeCopyCode": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 300
+    },
+    "CilckCopyCode": {
+        "recognition": "OCR",
+        "expected": [
+            "复制Code"
+        ],
+        "pre_delay": 500,
+        "action": "Click",
+        "next": [
+            "StartDxxw02"
+        ]
+    },
+    "StartDxxw02": {
+        "action": "StartApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 1500,
+        "focus": {
+            "succeeded": "打开Dxxw，输入验证码"
+        },
+        "next": [
+            "ClickLoginCode"
+        ]
+    },
+    "ClickLoginCode": {
+        "recognition": "OCR",
+        "expected": [
+            "请输入验证码",
+            "请输人验证码"
+        ],
+        "action": "Click",
+        "next": [
+            "CodePasteXF01"
+        ]
+    },
+    "CodePasteXF01": {
+        "recognition": "TemplateMatch",
+        "template": "edit.png",
+        "roi": [
+            5,
+            728,
+            709,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "CodePasteXF02"
+        ]
+    },
+    "CodePasteXF02": {
+        "recognition": "OCR",
+        "expected": "粘贴",
+        "action": "Click",
+        "next": [
+            "CodePasteXF03"
+        ]
+    },
+    "CodePasteXF03": {
+        "recognition": "OCR",
+        "expected": "返回",
+        "roi": [
+            586,
+            1121,
+            134,
+            159
+        ],
+        "action": "Click",
+        "next": [
+            "CodePasteXF04"
+        ]
+    },
+    "CodePasteXF04": {
+        "recognition": "OCR",
+        "expected": "完成",
+        "roi": [
+            603,
+            1047,
+            117,
+            114
+        ],
+        "action": "Click",
+        "next": [
+            "ClickLogin2"
+        ]
+    },
+    "ClickLogin2": {
+        "recognition": "OCR",
+        "expected": [
+            "登录"
+        ],
+        "roi": [
+            120,
+            743,
+            483,
+            135
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "ClickAgreeD",
+            "ClickInviteCode",
+            "Waslogin"
+        ]
+    },
+    "ClickAgreeD": {
+        "recognition": "OCR",
+        "expected": [
+            "请先勾选"
+        ],
+        "action": "Click",
+        "target": [
+            70,
+            1087,
+            1,
+            1
+        ]
+    },
+    "ClickInviteCode": {
+        "recognition": "OCR",
+        "expected": [
+            "请输入邀请码"
+        ],
+        "action": "Click",
+        "target": [
+            109,
+            445,
+            1,
+            1
+        ],
+        "next": [
+            "InviteXF01",
+            "InputInviteCode"
+        ]
+    },
+    "InputInviteCode": {
+        "enabled": false,
+        "action": "InputText",
+        "input_text": "rhzJmE",
+        "next": [
+            "ClickInviteConfirm"
+        ]
+    },
+    "InviteXF01": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "XF_comment.png",
+        "roi": [
+            1,
+            698,
+            719,
+            132
+        ],
+        "action": "Click",
+        "focus": {
+            "succeeded": "输入邀请码"
+        },
+        "next": [
+            "InviteXF02"
+        ]
+    },
+    "InviteXF02": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "邀请",
+            "邀请码"
+        ],
+        "roi": [
+            5,
+            862,
+            715,
+            412
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "ClickInviteConfirm"
+        ]
+    },
+    "ClickInviteConfirm": {
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "action": "Click",
+        "next": [
+            "ImageCode"
+        ]
+    },
+    "ImageCode": {
+        "recognition": "OCR",
+        "expected": [
+            "拖动滑块完成拼图"
+        ],
+        "timeout": 300000,
+        "interrupt":[
+            "SwipeImageCodeAuto",
+            "RefreshImageCode"
+        ],
+        "next": [
+            "SwipeImageCode"
+        ]
+    },
+    "SwipeImageCodeAuto":{
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "code01.png",
+            "code02.png",
+            "code03.png",
+            "code04.png",
+            "code05.png",
+            "code06.png",
+            "code07.png",
+            "code08.png",
+            "code09.png",
+            "code10.png",
+            "code11.png",
+            "code12.png",
+            "code13.png",
+            "code14.png"
+        ],
+        "action": "Swipe",
+        "begin": [120, 805, 1, 1],
+        "end": true,
+        "duration": 800
+    },
+    "RefreshImageCode":{
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "refresh.png",
+        "roi": [553, 858, 54, 56],
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "SwipeImageCode": {
+        "recognition": "OCR",
+        "expected": [
+            "验证成功",
+            "确定",
+            "账号已被邀请"
+        ],
+        "focus": {
+            "succeeded": "完成邀请"
+        },
+        "next": [
+            "InviteDoneBack"
+        ]
+    },
+    "InviteDoneBack": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "ClickSetup"
+        ]
+    },
+    "ClickSetup": {
+        "recognition": "TemplateMatch",
+        "template": "setup.png",
+        "roi": [
+            632,
+            88,
+            81,
+            79
+        ],
+        "action": "Click",
+        "next": [
+            "SetupSwipe"
+        ]
+    },
+    "SetupSwipe": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "next": [
+            "ExitLogin01"
+        ]
+    },
+    "ExitLogin01": {
+        "recognition": "OCR",
+        "expected": [
+            "退出登录"
+        ],
+        "action": "Click",
+        "next": [
+            "ExitLogin02"
+        ]
+    },
+    "ExitLogin02": {
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "action": "Click",
+        "next": [
+            "Stop"
+        ]
+    }
+}

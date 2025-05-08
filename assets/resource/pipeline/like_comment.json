@@ -24,8 +24,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "开始执行点赞评论任务...",
+        "focus": {
+            "succeeded": "开始执行点赞评论任务..."
+        },
         "interrupt": [
             "Back"
         ],
@@ -133,8 +134,9 @@
         "recognition": "TemplateMatch",
         "template": "comment_like1.png",
         "index": 2,
-        "focus": true,
-        "focus_succeeded": "点赞评论任务完成",
+        "focus": {
+            "succeeded": "点赞评论任务完成"
+        },
         "next": [
             "Back"
         ]
@@ -158,8 +160,9 @@
         "on_error": [
             "Back"
         ],
-        "focus": true,
-        "focus_failed": "点赞评论任务完成...",
+        "focus": {
+            "failed": "点赞评论任务完成..."
+        },
         "next": [
             "ClickLike01"
         ]

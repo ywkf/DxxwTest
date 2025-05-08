@@ -22,8 +22,9 @@
             719,
             216
         ],
-        "focus": true,
-        "focus_succeeded": "已在圈子中",
+        "focus": {
+            "succeeded": "已在圈子中"
+        },
         "next": [
             "CCircleSwipe0"
         ]
@@ -43,8 +44,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "开始执行圈子点赞收藏任务...",
+        "focus": {
+            "succeeded": "开始执行圈子点赞收藏任务..."
+        },
         "interrupt": [
             "Back"
         ],
@@ -134,9 +136,9 @@
         ],
         "action": "Click",
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "识别进入圈子成功",
-        "focus_succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]识别进入圈子成功[/color]"
+        },
         "next": [
             "CCircleSwipe0"
         ]
@@ -182,8 +184,9 @@
             "官方客服",
             "小时前"
         ],
-        "focus": true,
-        "focus_succeeded": "圈子已加载...",
+        "focus": {
+            "succeeded": "圈子已加载..."
+        },
         "next": [
             "CCircleShare0",
             "CCircleCollect&Like"
@@ -191,8 +194,9 @@
     },
     "CCircleShare0": {
         "enabled": true,
-        "focus": true,
-        "focus_succeeded": "每日分享任务",
+        "focus": {
+            "succeeded": "每日分享任务"
+        },
         "next": [
             "CCircleShare"
         ]
@@ -270,8 +274,9 @@
         ]
     },
     "CCircleCollect&Like": {
-        "focus": true,
-        "focus_succeeded": "点赞、收藏进行中...",
+        "focus": {
+            "succeeded": "点赞、收藏进行中..."
+        },
         "interrupt": [
             "CCircleSwipe"
         ],
@@ -285,8 +290,9 @@
             "circle_collect.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "收藏进行中...",
+        "focus": {
+            "succeeded": "收藏进行中..."
+        },
         "interrupt": [
             "CInImagetxt",
             "CCircleSwipe"
@@ -310,8 +316,9 @@
             10
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "点赞进行中...",
+        "focus": {
+            "succeeded": "点赞进行中..."
+        },
         "interrupt": [
             "CInImagetxt",
             "CCircleSwipe"
@@ -327,8 +334,9 @@
             "circle_collect.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "收藏进行中...",
+        "focus": {
+            "succeeded": "收藏进行中..."
+        },
         "interrupt": [
             "CInImagetxt",
             "CCircleSwipe"
@@ -352,8 +360,9 @@
             10
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "点赞进行中...",
+        "focus": {
+            "succeeded": "点赞进行中..."
+        },
         "interrupt": [
             "CInImagetxt",
             "CCircleSwipe"
@@ -381,9 +390,10 @@
             10,
             10
         ],
-        "focus": true,
         "pre_delay": 1500,
-        "focus_succeeded": "操作失败，跳过...",
+        "focus": {
+            "succeeded": "操作失败，跳过..."
+        },
         "post_delay": 2000,
         "next": [
             "CCircleCollect",
@@ -408,9 +418,10 @@
             10,
             10
         ],
-        "focus": true,
         "pre_delay": 1500,
-        "focus_succeeded": "操作失败，跳过...",
+        "focus": {
+            "succeeded": "操作失败，跳过..."
+        },
         "post_delay": 2000,
         "next": [
             "CCircleCollectL",
@@ -432,8 +443,9 @@
         ],
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "进入作品退出...",
+        "focus": {
+            "succeeded": "进入作品退出..."
+        },
         "next": [
             "Stop"
         ]
@@ -454,16 +466,18 @@
         "threshold": 0.7,
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "进入视频退出...",
+        "focus": {
+            "succeeded": "进入视频退出..."
+        },
         "next": [
             "Stop"
         ]
     },
     "CIsCompleted": {
         "enabled": true,
-        "focus": true,
-        "focus_succeeded": "任务完成检测...",
+        "focus": {
+            "succeeded": "任务完成检测..."
+        },
         "interrupt": [
             "CCircleErrorCheck01",
             "CInImagetxt",
@@ -478,8 +492,9 @@
     },
     "CIsCompletedL": {
         "enabled": true,
-        "focus": true,
-        "focus_succeeded": "任务完成检测...",
+        "focus": {
+            "succeeded": "任务完成检测..."
+        },
         "interrupt": [
             "CCircleErrorCheck01",
             "CInImagetxt",
@@ -648,8 +663,9 @@
         "interrupt": [
             "CInImagetxt"
         ],
-        "focus": true,
-        "focus_succeeded": "检测到1天前",
+        "focus": {
+            "succeeded": "检测到1天前"
+        },
         "next": [
             "CCircleCompletedBack"
         ]
@@ -1043,10 +1059,10 @@
     "CCircleCompletedBack": {
         "action": "Key",
         "key": 4,
-        "focus": true,
-        "focus_succeeded": "圈子任务完成",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "圈子任务完成",
+        "focus": {
+            "succeeded": "[color:blue]圈子任务完成[/color]",
+            "toast": "圈子任务完成"
+        },
         "next": []
     }
 }

@@ -25,8 +25,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
-        "focus": true,
-        "focus_succeeded": "开始执行点赞和回复评论任务...",
+        "focus": {
+            "succeeded": "开始执行点赞和回复评论任务..."
+        },
         "interrupt": [
             "Back"
         ],
@@ -772,8 +773,9 @@
         "on_error": [
             "Back"
         ],
-        "focus": true,
-        "focus_failed": "点赞评论任务完成...",
+        "focus": {
+            "failed": "点赞评论任务完成..."
+        },
         "next": [
             "CClickLike01"
         ]

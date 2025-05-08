@@ -17,8 +17,9 @@
             "首页0.png"
         ],
         "action": "Click",
-        "focus": true,
-        "focus_succeeded": "开始执行发布作品X2任务",
+        "focus": {
+            "succeeded": "开始执行发布作品X2任务"
+        },
         "next": [
             "ClickxxAI"
         ]
@@ -297,8 +298,9 @@
         "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorBackPublish",
-        "focus": true,
-        "focus_succeeded": "发布作品1已完成",
+        "focus": {
+            "succeeded": "发布作品1已完成"
+        },
         "next": [
             "ClickInputTxt02"
         ]
@@ -308,8 +310,9 @@
         "expected": "请输入您的问题",
         "action": "Click",
         "post_delay": 500,
-        "focus": true,
-        "focus_succeeded": "开始执行发布作品2",
+        "focus": {
+            "succeeded": "开始执行发布作品2"
+        },
         "next": [
             "InputPrompt02"
         ]
@@ -554,8 +557,9 @@
             "等待审核"
         ],
         "post_delay": 2000,
-        "focus": true,
-        "focus_succeeded": "发布作品2已完成",
+        "focus": {
+            "succeeded": "发布作品2已完成"
+        },
         "next": [
             "Back"
         ]

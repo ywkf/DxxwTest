@@ -89,9 +89,10 @@
         "post_delay": 1000,
         "timeout": 20000,
         "on_error": "ErrorBackImagetxt",
-        "focus": true,
-        "focus_succeeded": "识别进入大象号成功",
-        "focus_failed": "识别进入大象号失败，请检查所选账号是否在关注列表",
+        "focus": {
+            "succeeded": "识别进入大象号成功",
+            "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
+        },
         "next": [
             "SwipeUpivl",
             "SelectDxh2nd"
@@ -147,8 +148,9 @@
         "post_delay": 500,
         "timeout": 20000,
         "on_error": "ErrorBackImagetxt",
-        "focus": true,
-        "focus_succeeded": "开始执行浏览任务",
+        "focus": {
+            "succeeded": "开始执行浏览任务"
+        },
         "next": [
             "ClickIt01"
         ]
@@ -3098,8 +3100,9 @@
     },
     "BrowseImagetxtComplete": {
         "post_delay": 500,
-        "focus": true,
-        "focus_succeeded": "浏览任务完成",
+        "focus": {
+            "succeeded": "浏览任务完成"
+        },
         "next": [
             "Back"
         ]

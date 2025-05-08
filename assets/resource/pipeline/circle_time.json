@@ -61,10 +61,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到分钟前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到分钟前",
+        "focus": {
+            "succeeded": "[color:blue]检测到分钟前[/color]",
+            "toast": "检测到分钟前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -82,10 +82,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到1小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到1小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到1小时前[/color]",
+            "toast": "检测到1小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -103,10 +103,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到2小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到2小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到2小时前[/color]",
+            "toast": "检测到2小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -124,10 +124,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到3小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到3小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到3小时前[/color]",
+            "toast": "检测到3小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -145,10 +145,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到4小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到4小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到4小时前[/color]",
+            "toast": "检测到4小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -166,10 +166,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到5小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到5小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到5小时前[/color]",
+            "toast": "检测到5小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -187,10 +187,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到6小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到6小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到6小时前[/color]",
+            "toast": "检测到6小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -208,10 +208,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到7小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到7小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到7小时前[/color]",
+            "toast": "检测到7小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -229,10 +229,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到8小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到8小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到8小时前[/color]",
+            "toast": "检测到8小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -250,10 +250,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到9小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到9小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到9小时前[/color]",
+            "toast": "检测到9小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -271,10 +271,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到10小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到10小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到10小时前[/color]",
+            "toast": "检测到10小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -292,10 +292,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到11小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到11小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到11小时前[/color]",
+            "toast": "检测到11小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -313,10 +313,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到12小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到12小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到12小时前[/color]",
+            "toast": "检测到12小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -334,10 +334,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到13小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到13小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到13小时前[/color]",
+            "toast": "检测到13小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -355,10 +355,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到14小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到14小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到14小时前[/color]",
+            "toast": "检测到14小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -376,10 +376,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到15小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到15小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到15小时前[/color]",
+            "toast": "检测到15小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -397,10 +397,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到16小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到16小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到16小时前[/color]",
+            "toast": "检测到16小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -418,10 +418,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到17小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到17小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到17小时前[/color]",
+            "toast": "检测到17小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -439,10 +439,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到18小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到18小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到18小时前[/color]",
+            "toast": "检测到18小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -460,10 +460,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到19小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到19小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到19小时前[/color]",
+            "toast": "检测到19小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -481,10 +481,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到20小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到20小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到20小时前[/color]",
+            "toast": "检测到20小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -502,10 +502,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到21小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到21小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到21小时前[/color]",
+            "toast": "检测到21小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -523,10 +523,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到22小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到22小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到22小时前[/color]",
+            "toast": "检测到22小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -544,10 +544,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到23小时前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到23小时前",
+        "focus": {
+            "succeeded": "[color:blue]检测到23小时前[/color]",
+            "toast": "检测到23小时前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"
@@ -565,10 +565,10 @@
             270,
             1174
         ],
-        "focus": true,
-        "focus_succeeded": "检测到1天前",
-        "focus_succeeded_color": "Blue",
-        "focus_toast": "检测到1天前",
+        "focus": {
+            "succeeded": "[color:blue]检测到1天前[/color]",
+            "toast": "检测到1天前"
+        },
         "next": [
             "CircleCollect1",
             "CircleCollect"

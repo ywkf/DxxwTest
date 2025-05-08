@@ -1,7 +1,8 @@
 {
     "Sleep": {
-        "focus": true,
-        "focus_succeeded": "零点/等待10分钟...",
+        "focus": {
+            "succeeded": "零点/等待10分钟..."
+        },
         "next": [
             "Sleeping"
         ]
@@ -24,7 +25,8 @@
             189,
             45
         ],
-        "focus": true,
-        "focus_succeeded": "检测到零点，准备启动..."
+        "focus": {
+            "succeeded": "检测到零点，准备启动..."
+        }
     }
 }

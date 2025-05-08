@@ -69,16 +69,18 @@
         "duration": 300,
         "post_delay": 500,
         "post_wait_freezes": 200,
-        "focus": true,
-        "focus_succeeded": "识别进入个人内容成功，开始执行个人账号任务",
-        "focus_failed": "识别进入个人内容失败",
+        "focus": {
+            "succeeded": "识别进入个人内容成功，开始执行个人账号任务",
+            "failed": "识别进入个人内容失败"
+        },
         "next": [
             "ReplyMyContent"
         ]
     },
     "ReplyMyContent": {
-        "focus": true,
-        "focus_failed": "识别错误，尝试恢复...",
+        "focus": {
+            "failed": "识别错误，尝试恢复..."
+        },
         "on_error": [
             "ReplyImageBackM",
             "BrowseImagetxtM"
@@ -108,8 +110,9 @@
         "index": 0,
         "action": "Click",
         "post_delay": 2000,
-        "focus": true,
-        "focus_succeeded": "浏览2秒后，开始分享...",
+        "focus": {
+            "succeeded": "浏览2秒后，开始分享..."
+        },
         "next": [
             "ShareM"
         ]
@@ -413,8 +416,9 @@
     "EndLineM": {
         "recognition": "OCR",
         "expected": "我也是有底线的",
-        "focus": true,
-        "focus_succeeded": "个人账号任务完成",
+        "focus": {
+            "succeeded": "个人账号任务完成"
+        },
         "next": [
             "ReplyBackM"
         ]

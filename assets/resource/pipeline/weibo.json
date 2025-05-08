@@ -14,9 +14,10 @@
         "action": "StartApp",
         "package": "com.sina.weibo",
         "post_delay": 3000,
-        "focus": true,
-        "focus_tip": "正在打开Weibo...",
-        "focus_succeeded": "启动成功",
+        "focus": {
+            "start": "正在打开Weibo...",
+            "succeeded": "启动成功"
+        },
         "next": [
             "WeiboMe"
         ]
@@ -82,8 +83,9 @@
         "action": "Click",
         "pre_delay": 500,
         "post_delay": 500,
-        "focus": true,
-        "focus_succeeded": "阅读微博1",
+        "focus": {
+            "succeeded": "阅读微博1"
+        },
         "next": [
             "ClickPlay",
             "Link"
