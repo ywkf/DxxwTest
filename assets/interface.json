@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.93",
+    "version": "0.1.94",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -379,7 +379,7 @@
                                 "圈子作品2"
                             ],
                             "focus": {
-                                "succeeded": "选择 圈子作品2"
+                                "succeeded": "[color:orange]选择 圈子作品2[/color]"
                             }
                         }
                     }
@@ -392,7 +392,7 @@
                                 "圈子作品3"
                             ],
                             "focus": {
-                                "succeeded": "选择 圈子作品3"
+                                "succeeded": "[color:orange]选择 圈子作品3[/color]"
                             }
                         }
                     }
@@ -405,7 +405,7 @@
                                 "圈子作品4"
                             ],
                             "focus": {
-                                "succeeded": "选择 圈子作品4"
+                                "succeeded": "[color:orange]选择 圈子作品4[/color]"
                             }
                         }
                     }
@@ -418,7 +418,7 @@
                                 "圈子作品5"
                             ],
                             "focus": {
-                                "succeeded": "选择 圈子作品5"
+                                "succeeded": "[color:orange]选择 圈子作品5[/color]"
                             }
                         }
                     }

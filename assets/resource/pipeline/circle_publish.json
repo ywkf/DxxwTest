@@ -101,7 +101,7 @@
             1
         ],
         "focus": {
-            "succeeded": "[color:deepskyblue]作品01[/color]"
+            "succeeded": "[color:deepskyblue]选择作品01[/color]"
         },
         "next": [
             "ClickConfirm"
@@ -546,9 +546,9 @@
             199
         ],
         "post_delay": 6000,
-        "focus": true,
-        "succeeded": "发布完成",
-        "succeeded_color": "Blue",
+        "focus": {
+            "succeeded": "[color:blue]发布完成[/color]"
+        },
         "next": [
             "Stop"
         ]
