@@ -92,5 +92,26 @@
             "Restart",
             "Startup"
         ]
+    },
+    "ReStartDxxw01":{
+        "action": "StopApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 6000,
+        "focus": {
+            "start": "重启Dxxw..."
+        },
+        "next": [
+             "ReStartDxxw02"
+        ]
+        
+    },
+    "ReStartDxxw02":{
+        "action": "StartApp",
+        "package": "com.hnr.dxxw",
+        "post_delay": 6000,
+        "next": [
+            "Stop"
+        ]
+        
     }
 }

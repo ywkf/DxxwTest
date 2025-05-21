@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.94",
+    "version": "0.1.95",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -26,8 +26,8 @@
         },
         {
             "name": "重启",
-            "entry": "Restart",
-            "doc": "闪退重启，自定义添加"
+            "entry": "ReStartDxxw01",
+            "doc": "重启，自定义添加"
         },
         {
             "name": "检测输入法",
