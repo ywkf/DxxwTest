@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.95",
+    "version": "0.1.96",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -27,7 +27,10 @@
         {
             "name": "重启",
             "entry": "ReStartDxxw01",
-            "doc": "重启，自定义添加"
+            "doc": "重启，自定义添加",
+            "option": [
+                "等待重启时间"
+            ]
         },
         {
             "name": "检测输入法",
@@ -330,6 +333,59 @@
         }
     ],
     "option": {
+        "等待重启时间": {
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "1分钟",
+                    "pipeline_override": {
+                        "ReStartDxxw01":{
+                            "post_delay": 60000,
+                            "focus": {
+                                "start": "[color:blue]关闭Dxxw，1分钟后重启...[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2分钟",
+                    "pipeline_override": {
+                        "ReStartDxxw01":{
+                            "post_delay": 120000,
+                            "focus": {
+                                "start": "[color:blue]关闭Dxxw，2分钟后重启...[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3分钟",
+                    "pipeline_override": {
+                        "ReStartDxxw01":{
+                            "post_delay": 180000,
+                            "focus": {
+                                "start": "[color:blue]关闭Dxxw，3分钟后重启...[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5分钟",
+                    "pipeline_override": {
+                        "ReStartDxxw01":{
+                            "post_delay":300000,
+                            "focus": {
+                                "start": "[color:blue]关闭Dxxw，5分钟后重启...[/color]"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
         "滑动验证": {
             "cases": [
                 {

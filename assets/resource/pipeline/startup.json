@@ -98,7 +98,7 @@
         "package": "com.hnr.dxxw",
         "post_delay": 6000,
         "focus": {
-            "start": "重启Dxxw..."
+            "start": "[color:blue]关闭Dxxw，等待重启...[/color]"
         },
         "next": [
              "ReStartDxxw02"
@@ -109,6 +109,9 @@
         "action": "StartApp",
         "package": "com.hnr.dxxw",
         "post_delay": 6000,
+        "focus": {
+            "start": "[color:blue]启动Dxxw...[/color]"
+        },
         "next": [
             "Stop"
         ]
