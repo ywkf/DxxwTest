@@ -66,8 +66,10 @@
     "NoBalance":{
         "recognition": "OCR",
         "expected":[
+            "没有余额",
             "可用余额不足",
-            "余额不足"
+            "余额不足",
+            "可用额不定"
         ],
         "focus": {
             "succeeded": "[color:Blue]余额不足，已停止[/color]"
@@ -94,11 +96,30 @@
             "succeeded": "打开Dxxw，准备注册"
         },
         "interrupt":[
-            "Waslogin"
+            "Waslogin",
+            "InviteMy"
         ],
         "next": [
             "IsLogin",
             "ClickLogin"
+        ]
+    },
+    "InviteMy": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "OpenDxxw"
         ]
     },
     "ClickLogin": {
