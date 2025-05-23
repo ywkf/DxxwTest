@@ -102,19 +102,45 @@
         },
         "next": [
              "ReStartDxxw02"
-        ]
-        
+        ]       
     },
     "ReStartDxxw02":{
         "action": "StartApp",
         "package": "com.hnr.dxxw",
-        "post_delay": 6000,
+        "post_delay": 10000,
+        "timeout": 60000,
         "focus": {
             "start": "[color:blue]启动Dxxw...[/color]"
         },
         "next": [
+            "ReStartDxxw03"
+        ]
+    },
+    "ReStartDxxw03":{
+        "recognition": "OCR",
+        "expected":[
+            "跳过"
+        ],
+        "post_delay": 6000,
+        "next":[
+            "ReStartDxxw04"
+        ]
+    },
+    "ReStartDxxw04":{
+        "recognition": "OCR",
+        "expected":[
+            "首页",
+            "我的"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "post_delay": 3000,
+        "next":[
             "Stop"
         ]
-        
     }
 }
