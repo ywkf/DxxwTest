@@ -113,7 +113,8 @@
             "start": "[color:blue]启动Dxxw...[/color]"
         },
         "next": [
-            "ReStartDxxw03"
+            "ReStartDxxw03",
+            "ReStartDxxw04"
         ]
     },
     "ReStartDxxw03":{
