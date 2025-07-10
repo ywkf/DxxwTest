@@ -79,17 +79,14 @@
         ]
     },
     "CCommentImage": {
-        "recognition": "OCR",
-        "expected": [
-            "期待你",
-            "的评论"
+        "recognition": "TemplateMatch",
+        "template": [
+            "like0.png",
+            "like1.png",
+            "circle_collect.png",
+            "circle_collect1.png"
         ],
-        "roi": [
-            40,
-            1200,
-            320,
-            50
-        ],
+        "roi": [399, 1193, 321, 87],
         "action": "Click",
         "target": [
             50,
@@ -103,11 +100,7 @@
             "InputmethodCheck0"
         ],
         "next": [
-            "CCommentVideoD",
-            "CInputCommentImage",
-            "CCommentXF01VH",
-            "CommentCommon01",
-            "CommentCommon00"
+            "CInputCommentImage"
         ]
     },
     "CCommentXF01VH": {
@@ -353,7 +346,7 @@
         ]
     },
     "CCheckComment001": {
-        "enabled": true,
+        "enabled": false,
         "recognition": "OCR",
         "expected": [
             "作者赞过"
@@ -409,7 +402,7 @@
         ]
     },
     "CCheckComment002": {
-        "enabled": true,
+        "enabled": false,
         "recognition": "OCR",
         "expected": [
             "回复"

@@ -916,12 +916,18 @@
         ]
     },
     "CircleCompletedBack": {
-        "action": "Key",
-        "key": 4,
         "focus": {
             "succeeded": "[color:blue]圈子任务完成[/color]",
             "toast": "圈子任务完成"
         },
+        "next": [
+            "CircleCompletedBack02"
+        ]
+    },
+    "CircleCompletedBack02": {
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
         "next": []
     }
 }

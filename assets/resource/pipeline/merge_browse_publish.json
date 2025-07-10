@@ -1048,7 +1048,20 @@
         "on_error": "ErrorImagetxt004",
         "next": [
             "RepetitiveContent04",
+            "WaitComment04",
             "ResetLike04"
+        ]
+    },
+    "WaitComment04":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "ImagetxtComment04",
+            "ResetLike"
         ]
     },
     "RepetitiveContent04": {
@@ -1737,7 +1750,20 @@
         "on_error": "ErrorImagetxt007",
         "next": [
             "RepetitiveContent07",
+            "WaitComment07",
             "ResetLike07"
+        ]
+    },
+    "WaitComment07":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "ImagetxtComment07",
+            "ResetLike"
         ]
     },
     "RepetitiveContent07": {
@@ -2247,7 +2273,20 @@
         "on_error": "ErrorImagetxt0010",
         "next": [
             "RepetitiveContent10",
+            "WaitComment10",
             "ResetLike10"
+        ]
+    },
+    "WaitComment10":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "ImagetxtComment10",
+            "ResetLike"
         ]
     },
     "RepetitiveContent10": {

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.1.99",
+    "version": "0.2.0",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -72,7 +72,6 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
-                "复制评论",
                 "从时间点开始",
                 "何时结束",
                 "识别列表成员",
@@ -92,7 +91,6 @@
                 "滑动速度",
                 "是否评论",
                 "视频评论语录次数",
-                "复制评论",
                 "从时间点开始",
                 "何时结束",
                 "识别列表成员",
@@ -120,7 +118,6 @@
                 "圈子选择",
                 "滑动速度",
                 "视频评论语录次数",
-                "复制评论",
                 "从时间点开始",
                 "何时结束",
                 "误入动态判断"
@@ -150,8 +147,8 @@
                 "是否评论lite",
                 "视频评论语录次数",
                 "何时结束",
-                "复制评论",
-                "每日分享任务"
+                "每日分享任务",
+                "圈子完成返回"
             ]
         },
         {
@@ -183,23 +180,6 @@
             ]
         },
         {
-            "name": "点赞回复评论(beta)",
-            "entry": "CLikeComment",
-            "doc": "点赞收到的评论，并进入账号评论",
-            "pipeline_override": {
-                "CCommentBack02": {
-                    "next": [
-                        "ReplyCommentBack"
-                    ]
-                },
-                "CCommentBack02L": {
-                    "next": [
-                        "ReplyCommentBackD"
-                    ]
-                }
-            }
-        },
-        {
             "name": "回赞与收藏(beta)",
             "entry": "RepkyLike",
             "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频\n视频评论需要用到XF输入法的语录功能，需要自行添加",
@@ -223,8 +203,8 @@
             "name": "进入个人内容页",
             "entry": "ToContent",
             "doc": "进入个人内容页",
-            "option": [
-                "作品选项"
+            "advanced": [
+                "全部","视频","图文"
             ]
         },
         {
@@ -242,7 +222,62 @@
             "doc": "返回动作"
         }
     ],
+    "advanced": {
+        "全部": {
+            "field": "ce",
+            "type": "string",
+            "default": "全部",
+            "pipeline_override": {
+                "ToContentAll": {
+                    "expected": [
+                        "全部"
+                    ]
+                }
+            }
+        },
+        "视频": {
+            "field": "ce",
+            "type": "string",
+            "default": "全部",
+            "pipeline_override": {
+                "ToContentAll": {
+                    "expected": [
+                        "视频"
+                    ]
+                }
+            }
+        },
+        "视频": {
+            "field": "ce",
+            "type": "string",
+            "default": "图文",
+            "pipeline_override": {
+                "ToContentAll": {
+                    "expected": [
+                        "图文"
+                    ]
+                }
+            }
+        }
+    },
     "option": {
+        "圈子完成返回": {
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "CircleCompletedBack02": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "等待重启时间": {
             "cases": [
                 {
@@ -889,6 +924,42 @@
                 {
                     "name": "否",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "评论图文",
+                    "pipeline_override": {
+                        "NotCCommentBack": {
+                            "enabled": true
+                        },
+                        "CCircleLike": {
+                            "next": [
+                                "CClickCommentLite"
+                            ]
+                        },
+                        "CClickCommentLite": {
+                            "next": [
+                                "CheckNameList",
+                                "NotCCommentBack"
+                            ]
+                        },
+                        "CheckNameList": {
+                            "next": [
+                                "CCommentImage",
+                                "NotCCommentVideoBack"
+                            ]
+                        },
+                        "CCommentBack02": {
+                            "next": [
+                                "CIsCompleted"
+                            ]
+                        },
+                        "CCommentBack02L": {
+                            "next": [
+                                "CIsCompletedL"
+                            ]
+                        }
+                        
+                    }
                 },
                 {
                     "name": "评论图文和视频",

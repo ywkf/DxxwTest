@@ -316,7 +316,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.6,
+        "threshold": 0.45,
         "action": "Click",
         "next": [
             "ReplyVideoCollect1",
@@ -334,7 +334,7 @@
             517
         ],
         "green_mask": true,
-        "threshold": 0.6,
+        "threshold": 0.45,
         "action": "Click",
         "next": [
             "ReplyVideoBack"
