@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -42,7 +42,7 @@
             "entry": "Sleep",
             "doc": "等待至零点或自定义时间",
             "option": [
-                "SleepTime"
+                "延后时间"
             ]
         },
         {
@@ -79,7 +79,7 @@
         {
             "name": "圈子点赞收藏(自定义) lite",
             "entry": "CCircle",
-            "doc": "点击高级设置输入圈子名称",
+            "doc": "点击高级设置输入圈子名称（测试）",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -107,7 +107,7 @@
             ]
         },
         {
-            "name": "点赞评论(beta)",
+            "name": "点赞评论",
             "entry": "LikeComment",
             "doc": "点赞收到的评论"
         },
@@ -178,14 +178,9 @@
                 "无线“象”往"
             ],
             "pipeline_override": {
-                "CClickCircle":{
+                "ClickCircle":{
                     "next":[
-                        "CircleClickSearch"
-                    ]
-                },
-                "CircleInputName": {
-                    "input_text": [
-                        "{自定义圈子}"
+                        "ClickAllCircle"
                     ]
                 },
                 "ClickTheCircle": {
@@ -1260,10 +1255,6 @@
             "doc": "跳过图文，从视频开始任务",
             "cases": [
                 {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
                     "name": "yes",
                     "pipeline_override": {
                         "ReplyLikeSwipe": {
@@ -1272,6 +1263,10 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {}
                 }
             ]
         },
@@ -3108,7 +3103,7 @@
                 }
             ]
         },
-        "SleepTime": {
+        "延后时间": {
             "cases": [
                 {
                     "name": "10秒",

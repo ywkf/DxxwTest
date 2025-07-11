@@ -120,6 +120,22 @@
             "ClickSubsCircle"
         ]
     },
+    "ClickAllCircle": {
+        "recognition": "OCR",
+        "expected": "圈子",
+        "roi": [
+            0,
+            0,
+            720,
+            129
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "ClickTheCircle",
+            "CircleSwipeS"
+        ]
+    },
     "ClickSubsCircle": {
         "recognition": "OCR",
         "expected": "关注",
