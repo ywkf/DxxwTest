@@ -241,8 +241,19 @@
     "ReplyVideo": {
         "next": [
             "EndLine02",
+            "ReplyEndDay",
             "ReplyVideo01",
             "ReplyVideoM"
+        ]
+    },
+    "ReplyEndDay":{
+        "recognition": "OCR",
+        "expected":[
+            "4天前"
+        ],
+        "roi": [142, 666, 99, 614],
+        "next":[
+            "ReplyBack"
         ]
     },
     "ReplyVideoM": {

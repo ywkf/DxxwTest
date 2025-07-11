@@ -100,7 +100,11 @@
             "InputmethodCheck0"
         ],
         "next": [
-            "CInputCommentImage"
+            "CCommentVideoD",
+            "CInputCommentImage",
+            "CCommentXF01VH",
+            "CommentCommon01",
+            "CommentCommon00"
         ]
     },
     "CCommentXF01VH": {

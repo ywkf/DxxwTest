@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.0",
+    "version": "0.2.3",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -74,6 +74,20 @@
                 "何时结束",
                 "每日分享任务",
                 "圈子完成返回"
+            ]
+        },
+        {
+            "name": "圈子点赞收藏(自定义) lite",
+            "entry": "CCircle",
+            "doc": "点击高级设置输入圈子名称",
+            "repeatable": true,
+            "repeat_count": 1,
+            "option": [
+                "是否评论lite",
+                "视频评论语录次数",
+                "何时结束",
+                "每日分享任务",
+                "圈子完成返回"
             ],
             "advanced": [
                 "自定义圈子"
@@ -98,16 +112,6 @@
             "doc": "点赞收到的评论"
         },
         {
-            "name": "邀请",
-            "entry": "StartYezi",
-            "doc": "退出登录后在主页启动，邀请码在XF语录创建邀请分组\n滑动验证自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
-            "repeatable": true,
-            "repeat_count": 1,
-            "option": [
-                "滑动验证"
-            ]
-        },
-        {
             "name": "回赞与收藏(beta)",
             "entry": "RepkyLike",
             "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频\n视频评论需要用到XF输入法的语录功能，需要自行添加",
@@ -115,7 +119,18 @@
                 "从视频开始",
                 "是否分享",
                 "视频评论",
-                "视频评论语录次数"
+                "视频评论语录次数",
+                "至何时结束"
+            ]
+        },
+        {
+            "name": "邀请",
+            "entry": "StartYezi",
+            "doc": "退出登录后在主页启动，邀请码在XF语录创建邀请分组\n滑动验证自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
+            "repeatable": true,
+            "repeat_count": 1,
+            "option": [
+                "滑动验证"
             ]
         },
         {
@@ -152,6 +167,7 @@
     ],
     "advanced": {
         "自定义圈子": {
+            "doc": "输入圈子名称",
             "field": [
                 "自定义圈子"
             ],
@@ -159,7 +175,7 @@
                 "string"
             ],
             "default": [
-                ""
+                "无线“象”往"
             ],
             "pipeline_override": {
                 "CClickCircle":{
@@ -678,11 +694,17 @@
                 }
             ]
         },
-        "分享至何时": {
+        "至何时结束": {
             "cases": [
                 {
                     "name": "1天前",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "ReplyEndDay":{
+                            "expected":[
+                                "1天前"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "2天前",
@@ -691,6 +713,11 @@
                             "expected": [
                                 "2天前",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "2天前"
                             ]
                         }
                     }
@@ -703,6 +730,11 @@
                                 "3天前",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "3天前"
+                            ]
                         }
                     }
                 },
@@ -713,6 +745,11 @@
                             "expected": [
                                 "4天前",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "4天前"
                             ]
                         }
                     }
@@ -725,6 +762,11 @@
                                 "12-01",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "11-30"
+                            ]
                         }
                     }
                 },
@@ -735,6 +777,11 @@
                             "expected": [
                                 "11-01",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "10-31"
                             ]
                         }
                     }
@@ -747,6 +794,11 @@
                                 "10-01",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "09-30"
+                            ]
                         }
                     }
                 },
@@ -757,6 +809,11 @@
                             "expected": [
                                 "09-01",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "08-31"
                             ]
                         }
                     }
@@ -769,6 +826,11 @@
                                 "08-01",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "07-31"
+                            ]
                         }
                     }
                 },
@@ -779,6 +841,11 @@
                             "expected": [
                                 "07-01",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "06-30"
                             ]
                         }
                     }
@@ -791,6 +858,11 @@
                                 "06-01",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "05-31"
+                            ]
                         }
                     }
                 },
@@ -801,6 +873,11 @@
                             "expected": [
                                 "05-01",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "04-30"
                             ]
                         }
                     }
@@ -813,6 +890,11 @@
                                 "04-01",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "03-31"
+                            ]
                         }
                     }
                 },
@@ -823,6 +905,11 @@
                             "expected": [
                                 "03-01",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "02-28"
                             ]
                         }
                     }
@@ -835,6 +922,11 @@
                                 "02-01",
                                 "我也是有底线的"
                             ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "01-31"
+                            ]
                         }
                     }
                 },
@@ -845,6 +937,11 @@
                             "expected": [
                                 "01-01",
                                 "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
+                                "12-30"
                             ]
                         }
                     }
