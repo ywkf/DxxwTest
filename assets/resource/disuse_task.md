@@ -87,4 +87,79 @@
     "name": "进入个人微博",
     "entry": "StartWeibo",
     "doc": "进入微博应用程序个人微博页面"
-}
+},
+{
+            "name": "圈子点赞收藏(beta)",
+            "entry": "Circle",
+            "doc": "循环点赞收藏（评论）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
+            "repeatable": true,
+            "repeat_count": 1,
+            "option": [
+                "圈子选择",
+                "滑动速度",
+                "是否评论",
+                "视频评论语录次数",
+                "从时间点开始",
+                "何时结束",
+                "识别列表成员",
+                "误入动态判断"
+            ],
+            "pipeline_override": {
+                "NameList": {
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "name": "圈子点赞收藏(beta)自定义",
+            "entry": "CircleSwipe0",
+            "doc": "进入圈子后再启动，循环点赞收藏（评论）圈子内容，需要手动结束\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏",
+            "option": [
+                "滑动速度",
+                "是否评论",
+                "视频评论语录次数",
+                "从时间点开始",
+                "何时结束",
+                "识别列表成员",
+                "误入动态判断"
+            ],
+            "pipeline_override": {
+                "NameList": {
+                    "enabled": false
+                },
+                "IsTop": {
+                    "enabled": false
+                },
+                "IsCompleted": {
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "name": "圈子点赞收藏(beta)评论列表",
+            "entry": "Circle",
+            "doc": "默认启用评论，评论列表账号\n循环点赞收藏圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
+            "repeatable": true,
+            "repeat_count": 1,
+            "option": [
+                "圈子选择",
+                "滑动速度",
+                "视频评论语录次数",
+                "从时间点开始",
+                "何时结束",
+                "误入动态判断"
+            ],
+            "pipeline_override": {
+                "NameList": {
+                    "next": [
+                        "ClickName"
+                    ]
+                },
+                "CCommentBack02": {
+                    "next": [
+                        "CircleCollect",
+                        "CircleSwipe2"
+                    ]
+                }
+            }
+        },

@@ -1,0 +1,56 @@
+{
+    
+    "CircleClickSearch":{
+        "recognition": "TemplateMatch",
+        "template": "searchc.png",
+        "roi": [75, 43, 126, 99],
+        "action": "Click",
+        "next":[
+            "CircleClickSearch2"
+        ]
+    },
+    "CircleClickSearch2":{
+        "recognition": "OCR",
+        "expected":[
+            "历史记录",
+            "取消"
+        ],
+        "pre_delay": 1000,
+        "action": "Click",
+        "target": [270, 93, 1, 1],
+        "next":[
+            "CircleInputName"
+        ]
+    },
+    "CircleInputName":{
+        "action": "InputText",
+        "input_text": "无线“象”往",
+        "next":[
+            "CircleInputNameEnter"
+        ]
+    },
+    "CircleInputNameEnter":{
+        "recognition": "OCR",
+        "expected":[
+            "搜索"
+        ],
+        "roi": [598, 1156, 122, 124],
+        "action": "Click",
+        "next":[
+            "CiickDXCircle"
+        ]
+    },
+    "CiickDXCircle":{
+        "recognition": "OCR",
+        "expected":[
+            "大象圈",
+            "大象"
+        ],
+        "roi": [1, 148, 719, 78],
+        "action": "Click",
+        "post_delay": 2000,
+        "next":[
+            "ClickTheCircle"
+        ]
+    }
+}

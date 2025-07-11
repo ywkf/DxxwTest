@@ -50,7 +50,7 @@
             "entry": "InputmethodCheck00",
             "doc": "选择任务前检测，若检测到已完成即该任务完成",
             "option": [
-                "DxhSwitch",
+                "账号选择",
                 "签到",
                 "任务完成检测",
                 "输入法检测"
@@ -58,81 +58,6 @@
             "pipeline_override": {
                 "SelectInputmethod": {
                     "next": "MergePointsTask"
-                }
-            }
-        },
-        {
-            "name": "圈子点赞收藏(beta)",
-            "entry": "Circle",
-            "doc": "循环点赞收藏（评论）圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
-            "repeatable": true,
-            "repeat_count": 1,
-            "option": [
-                "圈子选择",
-                "滑动速度",
-                "是否评论",
-                "视频评论语录次数",
-                "从时间点开始",
-                "何时结束",
-                "识别列表成员",
-                "误入动态判断"
-            ],
-            "pipeline_override": {
-                "NameList": {
-                    "enabled": false
-                }
-            }
-        },
-        {
-            "name": "圈子点赞收藏(beta)自定义",
-            "entry": "CircleSwipe0",
-            "doc": "进入圈子后再启动，循环点赞收藏（评论）圈子内容，需要手动结束\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏",
-            "option": [
-                "滑动速度",
-                "是否评论",
-                "视频评论语录次数",
-                "从时间点开始",
-                "何时结束",
-                "识别列表成员",
-                "误入动态判断"
-            ],
-            "pipeline_override": {
-                "NameList": {
-                    "enabled": false
-                },
-                "IsTop": {
-                    "enabled": false
-                },
-                "IsCompleted": {
-                    "enabled": false
-                }
-            }
-        },
-        {
-            "name": "圈子点赞收藏(beta)评论列表",
-            "entry": "Circle",
-            "doc": "默认启用评论，评论列表账号\n循环点赞收藏圈子内容\n视频评论需要用到XF输入法的语录功能，需要自行添加\n视频评论语录次数 需要设置语录发送方式为 手动上屏\n开启至1天前，会在1天前的内容后停止",
-            "repeatable": true,
-            "repeat_count": 1,
-            "option": [
-                "圈子选择",
-                "滑动速度",
-                "视频评论语录次数",
-                "从时间点开始",
-                "何时结束",
-                "误入动态判断"
-            ],
-            "pipeline_override": {
-                "NameList": {
-                    "next": [
-                        "ClickName"
-                    ]
-                },
-                "CCommentBack02": {
-                    "next": [
-                        "CircleCollect",
-                        "CircleSwipe2"
-                    ]
                 }
             }
         },
@@ -149,6 +74,9 @@
                 "何时结束",
                 "每日分享任务",
                 "圈子完成返回"
+            ],
+            "advanced": [
+                "自定义圈子"
             ]
         },
         {
@@ -203,8 +131,8 @@
             "name": "进入个人内容页",
             "entry": "ToContent",
             "doc": "进入个人内容页",
-            "advanced": [
-                "全部","视频","图文"
+            "option": [
+                "作品选项"
             ]
         },
         {
@@ -223,38 +151,51 @@
         }
     ],
     "advanced": {
-        "全部": {
-            "field": "ce",
-            "type": "string",
-            "default": "全部",
+        "自定义圈子": {
+            "field": [
+                "自定义圈子"
+            ],
+            "type": [
+                "string"
+            ],
+            "default": [
+                ""
+            ],
             "pipeline_override": {
-                "ToContentAll": {
-                    "expected": [
-                        "全部"
+                "CClickCircle":{
+                    "next":[
+                        "CircleClickSearch"
                     ]
+                },
+                "CircleInputName": {
+                    "input_text": [
+                        "{自定义圈子}"
+                    ]
+                },
+                "ClickTheCircle": {
+                    "expected": [
+                        "{自定义圈子}"
+                    ],
+                    "focus": {
+                        "succeeded": "[color:green]识别进入 {自定义圈子} 圈子成功[/color]"
+                    }
                 }
             }
         },
-        "视频": {
-            "field": "ce",
-            "type": "string",
-            "default": "全部",
+        "自定义滑动距离": {
+            "field": [
+                "自定义滑动距离"
+            ],
+            "type": [
+                "int"
+            ],
+            "default": [
+                ""
+            ],
             "pipeline_override": {
                 "ToContentAll": {
                     "expected": [
-                        "视频"
-                    ]
-                }
-            }
-        },
-        "视频": {
-            "field": "ce",
-            "type": "string",
-            "default": "图文",
-            "pipeline_override": {
-                "ToContentAll": {
-                    "expected": [
-                        "图文"
+                        "{作品页面1}"
                     ]
                 }
             }
@@ -545,6 +486,7 @@
             ]
         },
         "每日分享任务": {
+            "doc": "在圈子中完成每日的分享任务",
             "cases": [
                 {
                     "name": "no",
@@ -920,6 +862,7 @@
             ]
         },
         "是否评论lite": {
+            "doc": "默认评论列表账号，视频评论过多有禁言风险",
             "cases": [
                 {
                     "name": "否",
@@ -1217,6 +1160,7 @@
             ]
         },
         "从视频开始": {
+            "doc": "跳过图文，从视频开始任务",
             "cases": [
                 {
                     "name": "no",
@@ -1661,6 +1605,7 @@
             ]
         },
         "何时结束": {
+            "doc": "识别到对应的日期结束",
             "cases": [
                 {
                     "name": "默认",
@@ -2298,6 +2243,7 @@
             ]
         },
         "圈子选择": {
+            "doc": "选择需要点赞的圈子\n自定义 需要手动进入圈子再启动，发布任务不可选",
             "cases": [
                 {
                     "name": "无线“象”往",
@@ -3173,7 +3119,8 @@
                 }
             ]
         },
-        "DxhSwitch": {
+        "账号选择": {
+            "doc": "选择进行任务的账号，需要关注该账号",
             "cases": [
                 {
                     "name": "河南信息广播",
