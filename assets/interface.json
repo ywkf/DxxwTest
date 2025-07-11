@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -77,7 +77,7 @@
             ]
         },
         {
-            "name": "圈子点赞收藏(自定义) lite",
+            "name": "圈子点赞收藏(自定义)",
             "entry": "CCircle",
             "doc": "点击高级设置输入圈子名称（测试）",
             "repeatable": true,
@@ -167,7 +167,7 @@
     ],
     "advanced": {
         "自定义圈子": {
-            "doc": "输入圈子名称",
+            "doc": "输入圈子名称（热榜中）",
             "field": [
                 "自定义圈子"
             ],
@@ -175,20 +175,26 @@
                 "string"
             ],
             "default": [
-                "无线“象”往"
+                "人间处处"
             ],
             "pipeline_override": {
-                "ClickCircle":{
-                    "next":[
-                        "ClickAllCircle"
+                "CClickCircle": {
+                    "next": [
+                        "CClickAllCircle"
                     ]
                 },
-                "ClickTheCircle": {
+                "CClickTheCircle": {
                     "expected": [
                         "{自定义圈子}"
                     ],
                     "focus": {
                         "succeeded": "[color:green]识别进入 {自定义圈子} 圈子成功[/color]"
+                    }
+                },
+                "CCircleCompletedBack": {
+                    "focus": {
+                        "succeeded": "[color:blue]{自定义圈子} 圈子任务完成[/color]",
+                        "toast": "{自定义圈子} 圈子任务完成"
                     }
                 }
             }

@@ -69,6 +69,25 @@
             "CClickSubsCircle"
         ]
     },
+    "CClickAllCircle": {
+        "recognition": "OCR",
+        "expected": "圈子",
+        "roi": [
+            0,
+            0,
+            720,
+            129
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "interrupt": [
+            "CCircleSwipe"
+        ],
+        "next": [
+            "CClickTheCircle",
+            "CCircleSwipeS"
+        ]
+    },
     "CClickSubsCircle": {
         "recognition": "OCR",
         "expected": "关注",
