@@ -251,7 +251,10 @@
         "expected":[
             "4天前"
         ],
-        "roi": [142, 666, 99, 614],
+        "roi": [0, 671, 720, 609],
+        "focus": {
+            "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
+        },
         "next":[
             "ReplyBack"
         ]
@@ -303,6 +306,7 @@
         "template": "video_collect1g.png",
         "roi": [601, 764, 80, 77],
         "green_mask": true,
+        "threshold": 0.6,
         "next": [
             "ReplyVideoBack"
         ]
@@ -367,10 +371,11 @@
         ]
     },
     "EndLine02": {
+        "enabled": false,
         "recognition": "OCR",
         "expected": "我也是有底线的",
         "focus": {
-            "succeeded": "回赞与收藏任务完成"
+            "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
         },
         "next": [
             "ReplyBack"

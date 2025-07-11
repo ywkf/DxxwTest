@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -124,6 +124,15 @@
             ]
         },
         {
+            "name": "个人账号任务(beta)",
+            "entry": "BrowseImagetxtM",
+            "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
+            "option": [
+                "浏览时间",
+                "是否重复运行"
+            ]
+        },
+        {
             "name": "邀请",
             "entry": "StartYezi",
             "doc": "退出登录后在主页启动，邀请码在XF语录创建邀请分组\n滑动验证自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
@@ -131,15 +140,6 @@
             "repeat_count": 1,
             "option": [
                 "滑动验证"
-            ]
-        },
-        {
-            "name": "个人账号任务(beta)",
-            "entry": "BrowseImagetxtM",
-            "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
-            "option": [
-                "浏览时间",
-                "是否重复运行"
             ]
         },
         {
@@ -702,7 +702,7 @@
                     "pipeline_override": {
                         "ReplyEndDay":{
                             "expected":[
-                                "1天前"
+                                "2天前"
                             ]
                         }
                     }
@@ -718,7 +718,7 @@
                         },
                         "ReplyEndDay":{
                             "expected":[
-                                "2天前"
+                                "3天前"
                             ]
                         }
                     }
@@ -729,22 +729,6 @@
                         "ShareDoneC": {
                             "expected": [
                                 "3天前",
-                                "我也是有底线的"
-                            ]
-                        },
-                        "ReplyEndDay":{
-                            "expected":[
-                                "3天前"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4天前",
-                    "pipeline_override": {
-                        "ShareDoneC": {
-                            "expected": [
-                                "4天前",
                                 "我也是有底线的"
                             ]
                         },
@@ -952,6 +936,11 @@
                     "pipeline_override": {
                         "ShareDoneC": {
                             "expected": [
+                                "我也是有底线的"
+                            ]
+                        },
+                        "ReplyEndDay":{
+                            "expected":[
                                 "我也是有底线的"
                             ]
                         }
