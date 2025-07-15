@@ -2019,12 +2019,12 @@
     "ErrorImagetxtSelectDxh0013": {
         "recognition": "OCR",
         "expected": [
+            "河南信息广播",
             "大象财富",
             "中波之家",
             "大象时政",
             "都市报道",
-            "河南卫视",
-            "河南信息广播"
+            "河南卫视"
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
@@ -2157,12 +2157,12 @@
     "ErrorImagetxtSelectDxh0014": {
         "recognition": "OCR",
         "expected": [
+            "河南信息广播",
             "大象财富",
             "中波之家",
             "大象时政",
             "都市报道",
-            "河南卫视",
-            "河南信息广播"
+            "河南卫视"
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
@@ -2295,12 +2295,12 @@
     "ErrorImagetxtSelectDxh0015": {
         "recognition": "OCR",
         "expected": [
+            "河南信息广播",
             "大象财富",
             "中波之家",
             "大象时政",
             "都市报道",
-            "河南卫视",
-            "河南信息广播"
+            "河南卫视"
         ],
         "action": "Click",
         "post_wait_freezes": 1000,

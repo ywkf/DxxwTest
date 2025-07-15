@@ -39,6 +39,9 @@
             720,
             176
         ],
+        "interrupt":[
+            "Back"
+        ],
         "action": "Click",
         "next": [
             "PublishVideo"

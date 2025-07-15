@@ -1076,6 +1076,7 @@
         ]
     },
     "CCircleCompletedBack": {
+        "enabled": true,
         "action": "Key",
         "key": 4,
         "focus": {
