@@ -329,7 +329,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
         "next": [
@@ -341,8 +341,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
         "next": [
@@ -560,7 +563,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
         "next": [
@@ -572,8 +575,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
         "next": [
@@ -791,7 +797,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
         "next": [
@@ -803,8 +809,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
         "next": [
@@ -1043,7 +1052,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
         "next": [
@@ -1068,8 +1077,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
         "next": [
@@ -1287,7 +1299,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
         "next": [
@@ -1299,8 +1311,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
         "next": [
@@ -1518,7 +1533,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
         "next": [
@@ -1530,8 +1545,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
         "next": [
@@ -1745,7 +1763,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt007",
         "next": [
@@ -1770,8 +1788,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt007",
         "next": [
@@ -1949,7 +1970,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt008",
         "next": [
@@ -1961,8 +1982,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt008",
         "next": [
@@ -2098,7 +2122,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt009",
         "next": [
@@ -2110,8 +2134,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt009",
         "next": [
@@ -2268,7 +2295,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0010",
         "next": [
@@ -2293,8 +2320,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0010",
         "next": [
@@ -2430,7 +2460,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0011",
         "next": [
@@ -2442,8 +2472,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0011",
         "next": [
@@ -2552,7 +2585,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0012",
         "next": [
@@ -2564,8 +2597,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0012",
         "next": [
@@ -2680,7 +2716,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0013",
         "next": [
@@ -2692,8 +2728,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0013",
         "next": [
@@ -2787,7 +2826,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0014",
         "next": [
@@ -2799,8 +2838,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0014",
         "next": [
@@ -2894,7 +2936,7 @@
         "recognition": "TemplateMatch",
         "template": "发表.png",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 800,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0015",
         "next": [
@@ -2906,8 +2948,11 @@
         "recognition": "OCR",
         "expected": [
             "不能发表重复内容",
-            "重复内容"
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
         ],
+        "post_delay": 2000,
         "timeout": 20000,
         "on_error": "ErrorImagetxt0015",
         "next": [

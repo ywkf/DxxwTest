@@ -1,0 +1,893 @@
+{
+    "TaskAll": {
+        "enabled": true,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "输入法进入首页"
+        ]
+    },
+    "输入法进入首页": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "首页.png",
+            "首页0.png"
+        ],
+        "action": "Click",
+        "focus": {
+            "succeeded": "开始输入法检测"
+        },
+        "next": [
+            "输入法点击象小AI"
+        ]
+    },
+    "输入法点击象小AI": {
+        "recognition": "OCR",
+        "expected": "象小AI",
+        "roi": [
+            0,
+            0,
+            720,
+            190
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "输入法点击输入框"
+        ]
+    },
+    "输入法点击输入框": {
+        "recognition": "OCR",
+        "expected": "请输入您的问题",
+        "roi": [
+            1,
+            1140,
+            719,
+            125
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "键盘图标检查",
+            "下拉界面"
+        ]
+    },
+    "键盘图标检查": {
+        "recognition": "TemplateMatch",
+        "template": "keyboard.png",
+        "roi": [
+            0,
+            0,
+            189,
+            45
+        ],
+        "action": "Swipe",
+        "begin": [
+            97,
+            22,
+            10,
+            10
+        ],
+        "end": [
+            97,
+            850,
+            10,
+            10
+        ],
+        "duration": 500,
+        "next": [
+            "点击选择输入法"
+        ]
+    },
+    "下拉界面": {
+        "action": "Swipe",
+        "begin": [
+            97,
+            22,
+            10,
+            10
+        ],
+        "end": [
+            97,
+            850,
+            10,
+            10
+        ],
+        "duration": 500,
+        "next": [
+            "点击选择输入法"
+        ]
+    },
+    "点击选择输入法": {
+        "recognition": "OCR",
+        "expected": [
+            "选择输入法",
+            "英语"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "选择XF输入法"
+        ]
+    },
+    "选择XF输入法": {
+        "recognition": "OCR",
+        "expected": [
+            "讯飞输入法"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "focus": {
+            "succeeded": "输入法已开启"
+        },
+        "next": [
+            "输入法返回"
+        ]
+    },
+    "输入法返回":{
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "领取积分开始"
+        ]
+    },
+    "检查输入法-领取积分":{
+
+
+
+
+
+
+
+
+
+
+
+    },
+    "领取积分开始": {
+        "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "领取积分进入我的"
+        ]
+    },
+    "领取积分进入我的": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "点击我的积分"
+        ]
+    },
+    "点击我的积分": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "点击签到",
+            "领取积分已签到"
+        ]
+    },
+    "点击签到": {
+        "recognition": "OCR",
+        "expected": "点击签到",
+        "action": "Click",
+        "focus": {
+            "succeeded": "签到完成"
+        },
+        "next": [
+            "签到后滑动"
+        ]
+    },
+    "领取积分已签到": {
+        "recognition": "OCR",
+        "expected": "已签到",
+        "focus": {
+            "succeeded": "签到已完成"
+        },
+        "next": [
+            "签到后滑动"
+        ]
+    },
+    "签到后滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000,
+        "next": [
+            "允许大象新闻",
+            "Back"
+        ]
+    },
+    "允许大象新闻": {
+        "recognition": "OCR",
+        "expected": "允许大象新闻",
+        "next": [
+            "积分已领取",
+            "积分未领取",
+            "积分领取失败"
+        ]
+    },
+    "积分领取失败": {
+        "focus": {
+            "start": "[color:blue]未领取每日通知积分，请手动领取[/color]"
+        },
+        "next":[
+            "领取积分返回"
+        ]
+    },
+    "积分已领取": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "允许大象新闻",
+        "roi_offset": [
+            0,
+            -10,
+            352,
+            38
+        ],
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "领取积分返回"
+        ]
+    },
+    "积分未领取": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": "允许大象新闻",
+        "roi_offset": [
+            0,
+            -10,
+            352,
+            38
+        ],
+        "action": "Click",
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "领取积分返回"
+        ]
+    },
+    "领取积分返回": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "每日任务开始"
+        ]
+    },
+    "领取积分-每日任务":{
+
+
+
+
+
+
+
+
+
+
+
+
+    },
+    "每日任务开始": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "点击关注列表"
+        ]
+    },
+    "点击关注列表": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "检查关注列表",
+            "关注列表返回"
+        ]
+    },
+    "关注列表返回": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击关注列表"
+        ]
+    },
+    "检查关注列表": {
+        "recognition": "OCR",
+        "expected": [
+            "已关注",
+            "互相关注"
+        ],
+        "interrupt": [
+            "关注列表滑动"
+        ],
+        "post_delay": 2000,
+        "next": [
+            "选择大象号"
+        ]
+    },
+    "关注列表滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            500,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "选择大象号": {
+        "recognition": "OCR",
+        "expected": [
+            "河南交通广播"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "focus": {
+            "succeeded": "识别进入大象号成功",
+            "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
+        },
+        "next": [
+            "大象号初始滑动",
+            "选择大象号2nd"
+        ]
+    },
+    "选择大象号2nd": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "选择大象号"
+        ]
+    },
+    "大象号初始滑动": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "全部"
+        ],
+        "roi": [
+            0,
+            707,
+            720,
+            558
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "点击图文部分"
+        ]
+    },
+    "点击图文部分": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "focus": {
+            "succeeded": "开始执行浏览任务"
+        },
+        "next": [
+            "点击作品01"
+        ]
+    },
+    "点击作品01": {
+        "recognition": "OCR",
+        "expected": [
+            "河南交通广播"
+        ],
+        "roi": [2, 215, 718, 604],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 10000,
+        "on_error":[
+            "图文评论点击输入框if"
+        ],
+        "next": [
+            "完成浏览内容积分+3"
+        ]
+    },
+    "完成浏览内容积分+3":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "完成浏览内容积分+3",
+            "完成浏览内容积分"
+        ],
+        "next":[
+            "图文点赞"
+        ]
+    },
+    "图文点赞": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "点赞.png",
+            "点赞1.png",
+            "like0.png",
+            "like1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
+        "next": [
+            "图文收藏"
+        ]
+    },
+    "图文收藏": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "收藏.png",
+            "收藏1.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
+        "next": [
+            "图文分享"
+        ]
+    },
+    "图文分享": {
+        "recognition": "TemplateMatch",
+        "template": "分享.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "图文分享到QQ"
+        ]
+    },
+    "图文分享到QQ": {
+        "recognition": "OCR",
+        "expected": "QQ",
+        "roi": [
+            1,
+            662,
+            719,
+            615
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "图文分享到QQ成功",
+            "图文评论点击输入框"
+        ]
+    },
+    "图文分享到QQ成功": {
+        "recognition": "OCR",
+        "expected": [
+            "完成分享积分+8",
+            "分享操作正在后台进行"
+        ],
+        "post_delay": 500,
+        "next": [
+            "图文评论点击输入框"
+        ]
+    },
+    "图文评论点击输入框": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "点击大象新语"
+        ]
+    },
+    "点击大象新语": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "点击大象新语评论"
+        ]
+    },
+    "点击大象新语评论": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
+            "点击发表评论"
+        ]
+    },
+    "点击发表评论": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "发送成功",
+            "评论重复内容提示",
+            "评论频率过高提示",
+            "换一篇提示"
+        ]
+    },
+    "发送成功":{
+        "recognition": "OCR",
+        "expected":[
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "timeout": 6000,
+        "on_error":[
+            "重置点赞"
+        ],
+        "next":[
+            "完成评论积分+5"
+        ]
+    },
+    "完成评论积分+5":{
+        "recognition": "OCR",
+        "expected":[
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "next":[
+            "重置点赞"
+        ]
+    },
+    "评论重复内容提示": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
+        ],
+        "post_delay": 2000,
+        "next": [
+            "图文评论点击输入框",
+            "重置点赞"
+        ]
+    },
+    "评论频率过高提示":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "图文评论点击输入框",
+            "重置点赞"
+        ]
+    },
+    "换一篇提示":{
+        "recognition": "OCR",
+        "expected": [
+            "换一篇"
+        ],
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "图文评论点击输入框if": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "点击大象新语if"
+        ]
+    },
+    "点击大象新语if": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "点击大象新语评论if"
+        ]
+    },
+    "点击大象新语评论if": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
+            "点击发表评论if"
+        ]
+    },
+    "点击发表评论if": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "发送成功if",
+            "评论重复内容提示if",
+            "评论频率过高提示if",
+            "换一篇提示if"
+        ]
+    },
+    "发送成功if":{
+        "recognition": "OCR",
+        "expected":[
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "timeout": 6000,
+        "on_error":[
+            "每日任务完成"
+        ],
+        "next":[
+            "完成评论积分+5if"
+        ]
+    },
+    "完成评论积分+5if":{
+        "recognition": "OCR",
+        "expected":[
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "next":[
+            "重置点赞"
+        ]
+    },
+    "评论重复内容提示if": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
+        ],
+        "post_delay": 2000,
+        "next": [
+            "图文评论点击输入框if",
+            "重置点赞"
+        ]
+    },
+    "评论频率过高提示if":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "图文评论点击输入框if",
+            "重置点赞"
+        ]
+    },
+    "换一篇提示if":{
+        "recognition": "OCR",
+        "expected": [
+            "换一篇"
+        ],
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "重置点赞": {
+        "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
+        "post_delay": 800,
+        "next": [
+            "重置收藏"
+        ]
+    },
+    "重置收藏": {
+        "action": "Click",
+        "target": [
+            501,
+            1208,
+            42,
+            44
+        ],
+        "post_delay": 800,
+        "next": [
+            "作品完成返回01"
+        ]
+    },
+    "作品完成返回01": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "图文滑动x1"
+        ]
+    },
+    "识别大象号00":{
+        "enabled": false,
+        "recognition": "OCR",
+        "expected":[
+            "河南交通广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 0,
+        "next":[
+            "识别大象号01"
+        ]
+    },
+    "识别大象号01":{
+        "enabled": false,
+        "recognition": "OCR",
+        "expected":[
+            "河南交通广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 1,
+        "next":[
+            "图文滑动x1"
+        ]
+    },
+    "图文滑动x1":{
+        "recognition": "OCR",
+        "expected":[
+            "河南交通广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Swipe",
+        "begin": true,
+        "end": "点击作品01",
+        "duration": 1000,
+        "post_delay": 500,
+        "next": [
+            "点击作品01"
+        ]
+    },
+    "每日任务完成": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "focus": {
+            "succeeded": "每日任务完成"
+        },
+        "next": [
+            "Back"
+        ]
+    }
+}

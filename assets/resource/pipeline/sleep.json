@@ -1,4 +1,9 @@
 {
+    "Awake":{
+        "next":[
+            "Sleep"
+        ]
+    },
     "Sleep": {
         "focus": {
             "succeeded": "零点/等待10分钟..."
@@ -10,7 +15,7 @@
     "Sleeping": {
         "timeout": 600000,
         "on_error": [
-            "Stop"
+            "StartTask"
         ],
         "next": [
             "Zero"
@@ -27,6 +32,14 @@
         ],
         "focus": {
             "succeeded": "检测到零点，准备启动..."
-        }
+        },
+        "next":[
+            "StartTask"
+        ]
+    },
+    "StartTask":{
+        "next": [
+            "Startup"
+        ]
     }
 }

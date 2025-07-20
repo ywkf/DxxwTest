@@ -21,7 +21,7 @@
         "post_delay": 1500,
         "next": [
             "Skip2",
-            "Back"
+            "ReStartDxxw04"
         ]
     },
     "Skip2": {
@@ -30,7 +30,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "Back"
+            "ReStartDxxw04"
         ]
     },
     "CheckDxxw": {

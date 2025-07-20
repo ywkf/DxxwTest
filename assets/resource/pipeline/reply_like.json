@@ -66,6 +66,7 @@
             "\\d+点赞",
             "\\d+分享"
         ],
+        "order_by": "Vertical",
         "index": 0,
         "action": "Click",
         "post_delay": 2000,
@@ -251,7 +252,7 @@
         "expected":[
             "4天前"
         ],
-        "roi": [0, 671, 720, 609],
+        "roi": [2, 747, 718, 533],
         "focus": {
             "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
         },
@@ -266,6 +267,7 @@
             "\\d+点赞",
             "\\d+分享"
         ],
+        "order_by": "Vertical",
         "index": 0,
         "action": "Click",
         "post_delay": 2000,
@@ -280,6 +282,8 @@
     "ReplyVideo01": {
         "recognition": "TemplateMatch",
         "template": "watch.png",
+        "order_by": "Vertical",
+        "index": 0,
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -356,25 +360,14 @@
         ]
     },
     "ReplyLikeSwipe03": {
-        "recognition": "OCR",
-        "expected": [
-            "视频",
-            "全部"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "order_by": "Vertical",
+        "index": 1,
         "pre_delay": 200,
         "action": "Swipe",
-        "begin": [
-            200,
-            800,
-            10,
-            10
-        ],
-        "end": [
-            200,
-            300,
-            10,
-            10
-        ],
+        "begin": true,
+        "end": "ReplyVideo01",
         "duration": 1000,
         "interrupt":[
             "ReplyVideoBack"

@@ -308,6 +308,7 @@
         "template": [
             "circle_collect.png"
         ],
+        "order_by": "Vertical",
         "action": "Click",
         "focus": {
             "succeeded": "收藏进行中..."
