@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.10",
+    "version": "0.2.11",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -118,6 +118,9 @@
                 "视频评论",
                 "视频评论语录次数",
                 "至何时结束"
+            ],
+            "advanced": [
+                "自定义账号"
             ]
         },
         {
@@ -151,6 +154,8 @@
             "name": "滑动",
             "entry": "ToSwipe",
             "doc": "滑动动作",
+            "repeatable": true,
+            "repeat_count": 1,
             "option": [
                 "滑动距离",
                 "滑动前退出作品"
@@ -159,6 +164,8 @@
         {
             "name": "返回",
             "entry": "ToBack",
+            "repeatable": true,
+            "repeat_count": 1,
             "doc": "返回动作"
         }
     ],
@@ -192,6 +199,34 @@
                     "focus": {
                         "succeeded": "[color:blue]{自定义圈子} 圈子任务完成[/color]",
                         "toast": "{自定义圈子} 圈子任务完成"
+                    }
+                }
+            }
+        },
+        "自定义账号": {
+            "doc": "输入账号名称（已关注）",
+            "field": [
+                "自定义账号"
+            ],
+            "type": [
+                "string"
+            ],
+            "default": [
+                ""
+            ],
+            "pipeline_override": {
+                "回赞选择大象号": {
+                    "expected": [
+                        "{自定义账号}"
+                    ],
+                    "focus": {
+                        "succeeded": "[color:green]识别进入 {自定义账号} 主页成功[/color]",
+                        "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
+                    }
+                },
+                "ReplyEndDay": {
+                    "focus": {
+                        "succeeded": "[color:green]{自定义账号} 回赞与收藏任务完成[/color]"
                     }
                 }
             }

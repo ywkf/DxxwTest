@@ -653,9 +653,11 @@
             "复制粘贴",
             "一样哦"
         ],
+        "action": "Click",
+        "target": [197, 1230, 1, 1],
         "post_delay": 2000,
         "next": [
-            "图文评论点击输入框",
+            "点击大象新语",
             "重置点赞"
         ]
     },
@@ -674,7 +676,7 @@
     "换一篇提示":{
         "recognition": "OCR",
         "expected": [
-            "换一篇"
+            "换篇再聊"
         ],
         "next": [
             "重置点赞"
@@ -775,9 +777,11 @@
             "复制粘贴",
             "一样哦"
         ],
+        "action": "Click",
+        "target": [197, 1230, 1, 1],
         "post_delay": 2000,
         "next": [
-            "图文评论点击输入框if",
+            "点击大象新语if",
             "重置点赞"
         ]
     },
@@ -796,7 +800,7 @@
     "换一篇提示if":{
         "recognition": "OCR",
         "expected": [
-            "换一篇"
+            "换篇再聊"
         ],
         "next": [
             "重置点赞"
@@ -879,12 +883,65 @@
             "点击作品01"
         ]
     },
+    "作品完成返回01if": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "图文滑动x1if"
+        ]
+    },
+    "图文滑动x1if":{
+        "recognition": "OCR",
+        "expected":[
+            "河南交通广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Swipe",
+        "begin": true,
+        "end": "点击作品01",
+        "duration": 1000,
+        "post_delay": 500,
+        "next": [
+            "点击作品01if"
+        ]
+    },
+    "点击作品01if": {
+        "recognition": "OCR",
+        "expected": [
+            "河南交通广播"
+        ],
+        "roi": [2, 215, 718, 604],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 10000,
+        "on_error":[
+            "图文评论点击输入框if"
+        ],
+        "next": [
+            "完成浏览内容积分+3if"
+        ]
+    },
+    "完成浏览内容积分+3if":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "完成浏览内容积分+3",
+            "完成浏览内容积分"
+        ],
+        "next":[
+            "作品完成返回01if"
+        ]
+    },
     "每日任务完成": {
         "action": "Key",
         "key": 4,
         "post_delay": 800,
         "focus": {
-            "succeeded": "每日任务完成"
+            "succeeded": "[color:blue]每日任务完成[/color]"
         },
         "next": [
             "Back"
