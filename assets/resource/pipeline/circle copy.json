@@ -1050,6 +1050,222 @@
         "next": [
             "CCircleCollectL",
             "CCircleLikeL",
+            "CCircleSwipe7L01"
+        ]
+    },
+    "CCircleSwipe7L01": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L02"
+        ]
+    },
+    "CCircleSwipe7L02": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L03"
+        ]
+    },
+    "CCircleSwipe7L03": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L04"
+        ]
+    },
+    "CCircleSwipe7L04": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L05"
+        ]
+    },
+    "CCircleSwipe7L05": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L06"
+        ]
+    },
+    "CCircleSwipe7L06": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L07"
+        ]
+    },
+    "CCircleSwipe7L07": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L08"
+        ]
+    },
+    "CCircleSwipe7L08": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
+            "CCircleSwipe7L09"
+        ]
+    },
+    "CCircleSwipe7L09": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "CCircleCompletedBack"
+        ],
+        "next": [
+            "CCircleCollectL",
+            "CCircleLikeL",
             "CCircleSwipe8L"
         ]
     },

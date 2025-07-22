@@ -26,7 +26,147 @@
             "Back"
         ],
         "next": [
+            "回赞进入消息",
             "回赞点击关注列表"
+        ]
+    },
+    "回赞进入消息":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "我的消息"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next":[
+            "回赞新粉丝",
+            "回赞我的消息"
+        ]
+    },
+    "我的消息滑动刷新":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "我的消息"
+        ],
+        "action": "Swipe",
+        "begin": [343, 286, 1, 1],
+        "end": [356, 1211, 1, 1],
+        "post_delay": 2000,
+        "interrupt":[
+            "我的消息滑动刷新2"
+        ],
+        "next":[
+            "回赞新粉丝"
+        ]
+    },
+    "我的消息滑动刷新2":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "我的消息"
+        ],
+        "action": "Swipe",
+        "begin": [343, 286, 1, 1],
+        "end": [356, 1211, 1, 1]
+    },
+    "回赞新粉丝":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "新粉丝"
+        ],
+        "roi": [0, 132, 720, 225],
+        "action": "Click",
+        "timeout": 6000,
+        "on_error":[
+            "回赞任务完成"
+        ],
+        "next":[
+            "点击去看看"
+        ]
+    },
+    "点击去看看":{
+        "recognition": "OCR",
+        "expected":[
+            "去看看"
+        ],
+        "roi": [540, 129, 180, 1151],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 2000,
+        "next":[
+            "ReplyLikeSwipe"
+        ]
+    },
+    "回赞我的消息":{
+        "recognition": "OCR",
+        "expected":[
+            "我的消息"
+        ],
+        "roi": [0, 53, 720, 92],
+        "order_by": "Vertical",
+        "next":[
+            "回赞消息滑动"
+        ]
+    },
+    "回赞消息滑动":{
+        "recognition": "OCR",
+        "expected":[
+            "其他消息"
+        ],
+        "action": "Swipe",
+        "begin": true,
+        "end": "回赞我的消息",
+        "duration": 1000,
+        "post_delay": 1000,
+        "timeout": 6000,
+        "on_error":[
+            "回赞任务完成"
+        ],
+        "next":[
+            "点击消息"
+        ]
+    },
+    "点击消息":{
+        "recognition": "TemplateMatch",
+        "template": "msg01.png",
+        "roi": [604, 240, 116, 1040],
+        "action": "Click",
+        "post_delay": 1000,
+        "next":[
+            "进入消息"
+        ]
+    },
+    "进入消息":{
+        "recognition": "TemplateMatch",
+        "template": "添加.png",
+        "roi": [546, 1177, 174, 103],
+        "next":[
+            "点击头像"
+        ]
+    },
+    "点击头像":{
+        "recognition": "TemplateMatch",
+        "template": "头像.png",
+        "roi": [0, 145, 129, 1038],
+        "threshold":0.1,
+        "action": "Click",
+        "post_delay": 1000,
+        "next":[
+            "点击头像进入账号",
+            "进入消息"
+        ]
+    },
+    "点击头像进入账号":{
+        "recognition": "OCR",
+        "expected":[
+            "更新提醒"
+        ],
+        "roi": [0, 40, 720, 77],
+        "post_delay": 1000,
+        "next":[
+            "ReplyLikeSwipe"
         ]
     },
     "回赞点击关注列表": {
@@ -76,7 +216,7 @@
         "action": "Swipe",
         "begin": [
             200,
-            500,
+            800,
             10,
             10
         ],
@@ -85,7 +225,9 @@
             400,
             10,
             10
-        ]
+        ],
+        "duration": 1200,
+        "post_delay": 1000
     },
     "回赞选择大象号": {
         "recognition": "OCR",
@@ -118,8 +260,10 @@
             "图文",
             "全部",
             "已发布",
-            "审核中"
+            "审核中",
+            "更新提醒"
         ],
+        "roi": [0, 40, 720, 835],
         "pre_delay": 200,
         "action": "Swipe",
         "begin": [
@@ -359,9 +503,6 @@
             "4天前"
         ],
         "roi": [2, 747, 718, 533],
-        "focus": {
-            "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
-        },
         "next":[
             "ReplyBack"
         ]
@@ -495,8 +636,56 @@
         ]
     },
     "ReplyBack": {
-        "enabled": false,
+        "enabled": true,
         "action": "Key",
-        "key": 4
+        "key": 4,
+        "focus": {
+            "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
+        },
+        "timeout": 6000,
+        "on_error":[
+            "回赞任务完成"
+        ],
+        "next":[
+            "回赞返回消息",
+            "回赞粉丝滑动"
+        ]
+    },
+    "回赞返回消息":{
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 2000,
+        "timeout": 6000,
+        "on_error":[
+            "回赞进入主页"
+        ],
+        "next":[
+            "回赞我的消息"
+        ]
+    },
+    "回赞粉丝滑动":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "去看看"
+        ],
+        "order_by": "Vertical",
+        "index": 1,
+        "begin": true,
+        "end": "点击去看看",
+        "post_delay": 1000,
+        "next":[
+            "点击去看看"
+        ]
+    },
+    "回赞任务完成": {
+        "enabled": true,
+        "focus": {
+            "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
+        },
+        "next":[
+            
+        ]
     }
 }

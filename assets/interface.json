@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.11",
+    "version": "0.2.12",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -111,12 +111,11 @@
         {
             "name": "回赞与收藏(beta)",
             "entry": "RepkyLike",
-            "doc": "进入对应的账号页面再启动，点赞收藏评论账号内所有图文和视频\n视频评论需要用到XF输入法的语录功能，需要自行添加",
+            "doc": "进入对应的账号页面再启动或进入高级设置输入已关注账号名称，点赞收藏账号内容\n也可以回赞消息和新粉丝",
             "option": [
+                "回赞账号",
                 "从视频开始",
                 "是否分享",
-                "视频评论",
-                "视频评论语录次数",
                 "至何时结束"
             ],
             "advanced": [
@@ -251,6 +250,57 @@
         }
     },
     "option": {
+        "回赞账号": {
+            "doc": "新粉丝：进入新粉丝账号回赞\n消息账号：进入接到消息的账号回赞",
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                        "回赞进入消息":{
+                            "enabled": false
+                        },
+                        "ReplyBack":{
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "新粉丝",
+                    "pipeline_override": {
+                        "回赞进入消息":{
+                            "next":[
+                                "回赞新粉丝"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "消息账号",
+                    "pipeline_override": {
+                        "回赞进入消息":{
+                            "next":[
+                                "回赞我的消息"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "新粉丝和消息账号",
+                    "pipeline_override": {
+                        "回赞进入消息":{
+                            "next":[
+                                "回赞我的消息"
+                            ]
+                        },
+                        "回赞消息滑动":{
+                            "on_error":[
+                                "我的消息滑动刷新"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "圈子完成返回": {
             "cases": [
                 {
