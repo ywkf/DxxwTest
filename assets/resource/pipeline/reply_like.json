@@ -257,14 +257,9 @@
     "ReplyLikeSwipe": {
         "recognition": "OCR",
         "expected": [
-            "评论",
-            "图文",
-            "全部",
-            "已发布",
-            "审核中",
             "更新提醒"
         ],
-        "roi": [0, 40, 720, 835],
+        "roi": [0, 40, 720, 77],
         "pre_delay": 200,
         "action": "Swipe",
         "begin": [
