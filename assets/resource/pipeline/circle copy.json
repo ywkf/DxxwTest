@@ -1294,12 +1294,18 @@
     },
     "CCircleCompletedBack": {
         "enabled": true,
-        "action": "Key",
-        "key": 4,
         "focus": {
             "succeeded": "[color:blue]圈子任务完成[/color]",
             "toast": "圈子任务完成"
         },
+        "next": [
+            "CCircleCompletedBack00"
+        ]
+    },
+    "CCircleCompletedBack00": {
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
         "next": []
     }
 }
