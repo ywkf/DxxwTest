@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.16",
+    "version": "0.2.17",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",

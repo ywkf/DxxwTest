@@ -1,6 +1,9 @@
 {
     "RepkyLike": {
         "enabled": true,
+        "interrupt": [
+            "Back"
+        ],
         "next": [
             "ReplyLikeSwipe",
             "回赞检查关注列表",
