@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.17",
+    "version": "0.2.18",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -133,11 +133,12 @@
         },
         {
             "name": "邀请",
-            "entry": "StartYezi",
+            "entry": "Invite",
             "doc": "退出登录后在主页启动，邀请码在XF语录创建邀请分组\n滑动验证自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
+                "账号输入",
                 "滑动验证"
             ]
         },
@@ -250,6 +251,37 @@
         }
     },
     "option": {
+        "账号输入": {
+            "doc": "手动:自行输入账号和验证码",
+            "cases": [
+                {
+                    "name": "手动",
+                    "pipeline_override": {
+                        "StartYezi":{
+                            "enabled": false
+                        },
+                        "ClickPhone":{
+                            "next":[
+                                "手动输入手机号"
+                            ]
+                        },
+                        "ClickGetCode":{
+                            "next":[
+                                "输入验证码"
+                            ]
+                        },
+                        "GetCodeFail":{
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yezi",
+                    "pipeline_override": {
+                    }
+                }
+            ]
+        },
         "回赞账号": {
             "doc": "新粉丝：进入新粉丝账号回赞\n消息账号：进入接到消息的账号回赞",
             "cases": [
@@ -420,6 +452,7 @@
             ]
         },
         "滑动验证": {
+            "doc": "自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
             "cases": [
                 {
                     "name": "手动",
