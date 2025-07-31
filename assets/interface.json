@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.19",
+    "version": "0.2.20",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -1416,6 +1416,11 @@
                     "name": "yes",
                     "pipeline_override": {
                         "ReplyLikeSwipe": {
+                            "next": [
+                                "ReplyLikeVideoPart"
+                            ]
+                        },
+                        "ReplyLikeSwipeVideo": {
                             "next": [
                                 "ReplyLikeVideoPart"
                             ]
