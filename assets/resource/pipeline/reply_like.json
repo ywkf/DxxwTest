@@ -6,6 +6,7 @@
         ],
         "next": [
             "ReplyLikeSwipe",
+            "ReplyLikeSwipeVideo",
             "回赞检查关注列表",
             "回赞进入主页"
         ]
@@ -256,6 +257,33 @@
         "key": 4,
         "next": [
             "回赞选择大象号"
+        ]
+    },
+    "ReplyLikeSwipeVideo": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "watch.png"
+        ],
+        "roi": [0, 120, 720, 1035],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "ReplyLikeImagetxtPart"
         ]
     },
     "ReplyLikeSwipe": {
