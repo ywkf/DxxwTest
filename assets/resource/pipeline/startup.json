@@ -140,6 +140,39 @@
             98
         ],
         "post_delay": 3000,
+        "timeout": 16000,
+        "on_error":[
+            "Stop"
+        ],
+        "next":[
+            "关闭升级弹窗"
+        ]
+    },
+    "关闭升级弹窗":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "发现新版本",
+            "立即升级"
+        ],
+        "roi": [108, 305, 498, 651],
+        "action": "Click",
+        "target": [359, 1030, 1, 1],
+        "next":[
+            "关闭升级弹窗2",
+            "Stop"
+        ]
+    },
+    "关闭升级弹窗2":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "发现新版本",
+            "立即升级"
+        ],
+        "roi": [108, 305, 498, 651],
+        "action": "Click",
+        "target": [359, 1030, 1, 1],
         "next":[
             "Stop"
         ]

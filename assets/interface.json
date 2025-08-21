@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.20",
+    "version": "0.2.21",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -373,6 +373,11 @@
                     "name": "yes",
                     "pipeline_override": {
                         "ReStartDxxw04":{
+                            "on_error":[
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "关闭升级弹窗":{
                             "next":[
                                 "InputmethodCheck00"
                             ]
@@ -445,6 +450,28 @@
                             "post_delay":300000,
                             "focus": {
                                 "start": "[color:blue]关闭Dxxw，5分钟后重启...[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8分钟",
+                    "pipeline_override": {
+                        "ReStartDxxw01":{
+                            "post_delay":480000,
+                            "focus": {
+                                "start": "[color:blue]关闭Dxxw，8分钟后重启...[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "10分钟",
+                    "pipeline_override": {
+                        "ReStartDxxw01":{
+                            "post_delay":600000,
+                            "focus": {
+                                "start": "[color:blue]关闭Dxxw，10分钟后重启...[/color]"
                             }
                         }
                     }
