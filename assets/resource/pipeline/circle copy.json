@@ -6,6 +6,7 @@
         ],
         "next": [
             "CInTheCircle",
+            "我的圈子",
             "CClickMyCircle",
             "CDXCircle"
         ]
@@ -66,7 +67,25 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
+            "我的圈子",
             "CClickSubsCircle"
+        ]
+    },
+    "我的圈子":{
+        "enabled": false,
+        "recognition": "OCR",
+        "expected":[
+            "我的圈子"
+        ],
+        "roi": [18, 153, 137, 54],
+        "action": "Click",
+        "target": [86, 277, 1, 1],
+        "post_delay": 1000,
+        "focus": {
+            "succeeded": "[color:blue]识别进入圈子1成功[/color]"
+        },
+        "next": [
+            "CCircleSwipe0"
         ]
     },
     "CClickAllCircle": {
@@ -104,14 +123,10 @@
         ]
     },
     "CClickMyCircle": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": "我的圈子",
-        "roi": [
-            1,
-            146,
-            719,
-            108
-        ],
+        "roi": [113, 185, 144, 54],
         "action": "Click",
         "post_delay": 500,
         "interrupt": [
@@ -166,7 +181,8 @@
         "recognition": "OCR",
         "expected": [
             "关注",
-            "大象圈"
+            "大象圈",
+            "动态"
         ],
         "pre_delay": 200,
         "action": "Swipe",
@@ -208,6 +224,7 @@
         },
         "next": [
             "CCircleShare0",
+            "新版圈子识别",
             "CCircleCollect&Like"
         ]
     },
@@ -223,13 +240,11 @@
     "CCircleShare": {
         "enabled": true,
         "recognition": "TemplateMatch",
-        "template": "circle_share.png",
-        "roi": [
-            560,
-            225,
-            160,
-            1055
+        "template": [
+            "circle_share.png",
+            "圈子分享.png"
         ],
+        "roi": [455, 128, 265, 1152],
         "interrupt": [
             "CCircleSwipe"
         ],
@@ -252,6 +267,7 @@
         "post_delay": 1800,
         "timeout": 6000,
         "on_error": [
+            "新版圈子识别",
             "CCircleCollect&Like"
         ],
         "next": [
@@ -293,6 +309,17 @@
         ]
     },
     "CCircleCollect&Like": {
+        "recognition": "OCR",
+        "expected": [
+            "我的关注",
+            "最热"
+        ],
+        "roi": [
+            1,
+            23,
+            719,
+            216
+        ],
         "focus": {
             "succeeded": "点赞、收藏进行中..."
         },
@@ -303,6 +330,7 @@
             "CCircleCollect"
         ]
     },
+    
     "CCircleCollect": {
         "recognition": "TemplateMatch",
         "template": [
@@ -471,7 +499,7 @@
         ]
     },
     "CInVideo": {
-        "enabled": true,
+        "enabled": false,
         "recognition": "TemplateMatch",
         "template": [
             "video_collect0g.png",
@@ -493,6 +521,7 @@
             "Stop"
         ]
     },
+    
     "CIsCompleted": {
         "enabled": true,
         "focus": {
@@ -524,10 +553,12 @@
             "CTheDayBeforeL",
             "CCircleCollectFailL",
             "CCircleCollectL",
+            "CCircleSwipe1",
             "CCircleSwipe1L"
         ]
     },
     "CCircleErrorCheck01": {
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
             "circle_share2.png"
@@ -655,6 +686,7 @@
         ],
         "next": [
             "CTheDayBefore2",
+            "新版圈子识别",
             "CCircleCollect"
         ]
     },
@@ -665,6 +697,7 @@
         ],
         "next": [
             "CTheDayBefore2",
+            "新版圈子识别",
             "CCircleCollectL"
         ]
     },
@@ -883,9 +916,106 @@
             "CCircleLike"
         ]
     },
+    "新版圈子识别":{
+        "enabled": false,
+        "recognition": "OCR",
+        "expected":[
+            "动态"
+        ],
+        "roi": [17, 155, 119, 61],
+        "interrupt": [
+            "CCircleSwipe"
+        ],
+        "next":[
+            "圈子点赞"
+        ]
+    },
+    "圈子点赞":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "圈子点赞.png"
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "interrupt": [
+            "CInImagetxt",
+            "CCircleSwipe"
+        ],
+        "next": [
+            "圈子收藏菜单"
+        ]
+    },
+    "圈子收藏菜单":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "圈子收藏菜单.png"
+        ],
+        "roi": "圈子点赞",
+        "roi_offset": [
+            515,
+            0,
+            40,
+            27
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "next":[
+            "圈子收藏",
+            "圈子已收藏"
+        ]
+    },
+    "圈子收藏":{
+        "recognition": "OCR",
+        "expected":[
+            "加入收藏",
+            "加人收藏"
+        ],
+        "roi": [1, 971, 719, 179],
+        "action": "Click",
+        "interrupt": [
+            "CInImagetxt",
+            "CCircleSwipe"
+        ],
+        "next":[
+            "圈子完成判断",
+            "圈子点赞"
+        ]
+    },
+    "圈子已收藏":{
+        "recognition": "OCR",
+        "expected":[
+            "取消收藏"
+        ],
+        "roi": [1, 971, 719, 179],
+        "action": "Click",
+        "target": [504, 169, 1, 1],
+        "interrupt": [
+            "CInImagetxt",
+            "CCircleSwipe"
+        ],
+        "next":[
+            "圈子完成判断",
+            "圈子点赞"
+        ]
+    },
+    "圈子完成判断": {
+        "enabled": true,
+        "focus": {
+            "succeeded": "任务完成检测..."
+        },
+        "interrupt": [
+            "CInImagetxt",
+            "CCircleSwipe"
+        ],
+        "next": [
+            "CTheDayBefore",
+            "圈子点赞",
+            "CCircleSwipe1L"
+        ]
+    },
     "CCircleSwipe1L": {
         "recognition": "TemplateMatch",
-        "template": "circle_collect1.png",
+        "template": "圈子点赞1.png",
         "action": "Swipe",
         "begin": [
             200,
@@ -904,8 +1034,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe2L"
         ]
     },
@@ -928,8 +1057,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe3L"
         ]
     },
@@ -952,8 +1080,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe4L"
         ]
     },
@@ -976,8 +1103,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe5L"
         ]
     },
@@ -1000,8 +1126,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe6L"
         ]
     },
@@ -1024,8 +1149,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L"
         ]
     },
@@ -1048,8 +1172,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L01"
         ]
     },
@@ -1072,8 +1195,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L02"
         ]
     },
@@ -1096,8 +1218,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L03"
         ]
     },
@@ -1120,8 +1241,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L04"
         ]
     },
@@ -1144,8 +1264,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L05"
         ]
     },
@@ -1168,8 +1287,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L06"
         ]
     },
@@ -1192,8 +1310,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L07"
         ]
     },
@@ -1216,8 +1333,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L08"
         ]
     },
@@ -1240,8 +1356,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe7L09"
         ]
     },
@@ -1264,8 +1379,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL",
+            "圈子点赞",
             "CCircleSwipe8L"
         ]
     },
@@ -1288,8 +1402,7 @@
             "CCircleCompletedBack"
         ],
         "next": [
-            "CCircleCollectL",
-            "CCircleLikeL"
+            "圈子点赞"
         ]
     },
     "CCircleCompletedBack": {

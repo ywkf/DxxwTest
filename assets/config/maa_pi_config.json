@@ -19,7 +19,8 @@
     "task": [
         {
             "name": "重启",
-            "option": []
+            "option": [],
+            "__vscKey": "f0b1a984-107d-423b-944b-9ef79e302446"
         }
     ]
 }

@@ -44,6 +44,7 @@
         ],
         "action": "Click",
         "next": [
+            "新版发布",
             "PublishVideo"
         ]
     },
@@ -55,6 +56,65 @@
         "action": "Click",
         "next": [
             "SwitchFolder"
+        ]
+    },
+    "新版发布":{
+        "enabled": false,
+        "recognition": "OCR",
+        "expected":[
+            "输入标题",
+            "输人标题",
+            "限28个字"
+        ],
+        "roi": [0, 118, 720, 98],
+        "next":[
+            "发布视频"
+        ]
+    },
+    "发布视频": {
+        "recognition": "OCR",
+        "expected": [
+            "视频"
+        ],
+        "action": "Click",
+        "next": [
+            "点击选择作品"
+        ]
+    },
+    "点击选择作品":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [142, 481, 1, 1],
+        "focus": {
+            "succeeded": "[color:orange]选择 视频1[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击下一步1":{
+        "recognition": "OCR",
+        "expected":[
+            "下一步"
+        ],
+        "roi": [359, 57, 361, 70],
+        "action": "Click",
+        "next":[
+            "点击下一步2"
+        ]
+    },
+    "点击下一步2":{
+        "recognition": "OCR",
+        "expected":[
+            "下一步"
+        ],
+        "roi": [359, 57, 361, 70],
+        "action": "Click",
+        "next":[
+            "InputTitle"
         ]
     },
     "SwitchFolder": {
@@ -410,17 +470,35 @@
     "PublishSwipeUp": {
         "action": "Swipe",
         "begin": [
-            200,
+            300,
             900,
             10,
             10
         ],
         "end": [
-            200,
+            300,
             400,
             10,
             10
-        ]
+        ],
+        "duration": 500
+    },
+    "圈子类型上滑": {
+        "enabled": false,
+        "action": "Swipe",
+        "begin": [
+            100,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            100,
+            400,
+            10,
+            10
+        ],
+        "duration": 500
     },
     "SelectCircle": {
         "recognition": "OCR",
@@ -429,9 +507,26 @@
         ],
         "action": "Click",
         "interrupt": [
+            "圈子类型上滑",
             "PublishSwipeUp"
         ],
         "next": [
+            "选择圈子类型",
+            "PublishClickCircle"
+        ]
+    },
+    "选择圈子类型":{
+        "enabled": false,
+        "recognition": "OCR",
+        "expected":[
+            "摄影"
+        ],
+        "roi": [1, 255, 193, 1025],
+        "action": "Click",
+        "interrupt": [
+            "PublishSwipeUp"
+        ],
+        "next":[
             "PublishClickCircle"
         ]
     },
@@ -501,6 +596,35 @@
             "PublishSwipeUp"
         ],
         "next": [
+            "PClickPublish"
+        ]
+    },
+    "AI生成":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "AI生成"
+        ],
+        "roi": [1, 614, 237, 666],
+        "next":[
+            "启用AI生成开关"
+        ]
+    },
+    "启用AI生成开关":{
+        "recognition": "TemplateMatch",
+        "template": "AI生成开关.png",
+        "roi": "AI生成",
+        "roi_offset": [
+            570,
+            -20,
+            50,
+            50
+        ],
+        "action": "Click",
+        "interrupt": [
+            "PublishSwipeUp"
+        ],
+        "next":[
             "PClickPublish"
         ]
     },

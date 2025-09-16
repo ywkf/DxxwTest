@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.22",
+    "version": "0.2.23",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -65,6 +65,7 @@
             "repeatable": true,
             "repeat_count": 1,
             "option": [
+                "客户端版本",
                 "圈子选择",
                 "是否评论lite",
                 "视频评论语录次数",
@@ -97,10 +98,12 @@
             "repeatable": true,
             "repeat_count": 1,
             "option": [
+                "客户端版本",
                 "圈子选择",
                 "作品相册",
                 "发布作品编号",
-                "加载素材"
+                "启用AI生成",
+                "加载素材"   
             ]
         },
         {
@@ -251,6 +254,56 @@
         }
     },
     "option": {
+        "客户端版本":{
+            "doc": "客户端版本v5.6.0以上为新版",
+            "cases": [
+                {
+                    "name": "旧版",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "新版",
+                    "pipeline_override": {
+                        "我的圈子":{
+                            "enabled": true
+                        },
+                        "新版圈子识别":{
+                            "enabled": true
+                        },
+                        "新版发布":{
+                            "enabled": true
+                        },
+                        "圈子类型上滑":{
+                            "enabled": true
+                        },
+                        "选择圈子类型":{
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "启用AI生成":{
+            "doc": "发布作品是否启用AI生成开关",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "SelectTag05":{
+                            "next":[
+                                "AI生成"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "账号输入": {
             "doc": "手动:自行输入账号和验证码",
             "cases": [
@@ -587,6 +640,12 @@
                             "next": [
                                 "SelectWork02"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [321, 483, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频2[/color]"
+                            }, 
                         }
                     }
                 },
@@ -597,6 +656,12 @@
                             "next": [
                                 "SelectWork03"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [505, 483, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频3[/color]"
+                            }, 
                         }
                     }
                 },
@@ -607,6 +672,12 @@
                             "next": [
                                 "SelectWork04"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [686, 482, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频4[/color]"
+                            }, 
                         }
                     }
                 },
@@ -617,6 +688,12 @@
                             "next": [
                                 "SelectWork05"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [140, 663, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频5[/color]"
+                            }, 
                         }
                     }
                 },
@@ -627,6 +704,12 @@
                             "next": [
                                 "SelectWork06"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [324, 665, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频6[/color]"
+                            }, 
                         }
                     }
                 },
@@ -637,6 +720,12 @@
                             "next": [
                                 "SelectWork07"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [506, 662, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频7[/color]"
+                            }, 
                         }
                     }
                 },
@@ -647,6 +736,12 @@
                             "next": [
                                 "SelectWork08"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [689, 665, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频8[/color]"
+                            }, 
                         }
                     }
                 },
@@ -657,6 +752,12 @@
                             "next": [
                                 "SelectWork09"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [142, 845, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频9[/color]"
+                            }, 
                         }
                     }
                 },
@@ -667,6 +768,12 @@
                             "next": [
                                 "SelectWork10"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [325, 846, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频10[/color]"
+                            }, 
                         }
                     }
                 },
@@ -677,6 +784,12 @@
                             "next": [
                                 "SelectWork11"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [508, 842, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频11[/color]"
+                            }, 
                         }
                     }
                 },
@@ -687,6 +800,12 @@
                             "next": [
                                 "SelectWork12"
                             ]
+                        },
+                        "点击选择作品":{
+                            "target": [687, 841, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:orange]选择 视频12[/color]"
+                            }, 
                         }
                     }
                 }
@@ -2525,7 +2644,7 @@
             ]
         },
         "圈子选择": {
-            "doc": "选择需要点赞的圈子\n自定义 需要手动进入圈子再启动，发布任务不可选",
+            "doc": "选择需要点赞的圈子\n新版客户端选择圈子1-5\n自定义 需要手动进入圈子再启动，发布任务不可选",
             "cases": [
                 {
                     "name": "无线“象”往",
@@ -2585,6 +2704,11 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 无线“象”往 圈子中[/color]"
                             }
+                        },
+                        "选择圈子类型":{
+                            "expected": [
+                                "机构"
+                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [
@@ -2707,6 +2831,11 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 大象话题 圈子中[/color]"
                             }
+                        },
+                        "选择圈子类型":{
+                            "expected": [
+                                "时事"
+                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [
@@ -2834,6 +2963,11 @@
                                 "succeeded": "[color:green]已在 福塔-发射 圈子中[/color]"
                             }
                         },
+                        "选择圈子类型":{
+                            "expected": [
+                                "机构"
+                            ]
+                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "福塔-发射",
@@ -2894,6 +3028,11 @@
                                 "succeeded": "[color:green]已在 热爱生活 圈子中[/color]"
                             }
                         },
+                        "选择圈子类型":{
+                            "expected": [
+                                "休闲"
+                            ]
+                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "热爱生活"
@@ -2950,6 +3089,11 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 快乐集中营 圈子中[/color]"
                             }
+                        },
+                        "选择圈子类型":{
+                            "expected": [
+                                "休闲"
+                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [
@@ -3018,6 +3162,11 @@
                                 "succeeded": "[color:green]已在 非常“3+4” 圈子中[/color]"
                             }
                         },
+                        "选择圈子类型":{
+                            "expected": [
+                                "机构"
+                            ]
+                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "非常“3+4”",
@@ -3084,6 +3233,11 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 象·心力 圈子中[/color]"
                             }
+                        },
+                        "选择圈子类型":{
+                            "expected": [
+                                "休闲"
+                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [
@@ -3208,6 +3362,11 @@
                                 "succeeded": "[color:green]已在 象友汇 圈子中[/color]"
                             }
                         },
+                        "选择圈子类型":{
+                            "expected": [
+                                "文化"
+                            ]
+                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "象友汇"
@@ -3215,6 +3374,55 @@
                             "focus": {
                                 "succeeded": "[color:green]已选择 象友汇 圈子[/color]"
                             }
+                        }
+                    }
+                },
+                {
+                    "name": "圈子1",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "圈子2",
+                    "pipeline_override": {
+                        "我的圈子":{
+                            "target": [220, 278, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:blue]识别进入圈子2成功[/color]"
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "圈子3",
+                    "pipeline_override": {
+                        "我的圈子":{
+                            "target": [359, 275, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:blue]识别进入圈子3成功[/color]"
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "圈子4",
+                    "pipeline_override": {
+                        "我的圈子":{
+                            "target": [492, 278, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:blue]识别进入圈子4成功[/color]"
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "圈子5",
+                    "pipeline_override": {
+                        "我的圈子":{
+                            "target": [630, 279, 1, 1],
+                            "focus": {
+                                "succeeded": "[color:blue]识别进入圈子5成功[/color]"
+                            },
                         }
                     }
                 },
