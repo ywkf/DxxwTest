@@ -519,7 +519,7 @@
         "enabled": false,
         "recognition": "OCR",
         "expected":[
-            "摄影"
+            "机构"
         ],
         "roi": [1, 255, 193, 1025],
         "action": "Click",

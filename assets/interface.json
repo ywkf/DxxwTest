@@ -645,7 +645,7 @@
                             "target": [321, 483, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频2[/color]"
-                            }, 
+                            } 
                         }
                     }
                 },
@@ -661,7 +661,7 @@
                             "target": [505, 483, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频3[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -677,7 +677,7 @@
                             "target": [686, 482, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频4[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -693,7 +693,7 @@
                             "target": [140, 663, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频5[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -709,7 +709,7 @@
                             "target": [324, 665, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频6[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -725,7 +725,7 @@
                             "target": [506, 662, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频7[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -741,7 +741,7 @@
                             "target": [689, 665, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频8[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -757,7 +757,7 @@
                             "target": [142, 845, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频9[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -773,7 +773,7 @@
                             "target": [325, 846, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频10[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -789,7 +789,7 @@
                             "target": [508, 842, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频11[/color]"
-                            }, 
+                            }
                         }
                     }
                 },
@@ -805,7 +805,7 @@
                             "target": [687, 841, 1, 1],
                             "focus": {
                                 "succeeded": "[color:orange]选择 视频12[/color]"
-                            }, 
+                            }
                         }
                     }
                 }
@@ -2705,11 +2705,6 @@
                                 "succeeded": "[color:green]已在 无线“象”往 圈子中[/color]"
                             }
                         },
-                        "选择圈子类型":{
-                            "expected": [
-                                "机构"
-                            ]
-                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "无线“象”往",
@@ -2773,6 +2768,11 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 随手记录生活 圈子中[/color]"
                             }
+                        },
+                        "选择圈子类型":{
+                            "expected": [
+                                "摄影"
+                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [
@@ -2900,6 +2900,11 @@
                                 "succeeded": "[color:green]已在 记录生活 圈子中[/color]"
                             }
                         },
+                        "选择圈子类型":{
+                            "expected": [
+                                "摄影"
+                            ]
+                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "记录生活"
@@ -2962,11 +2967,6 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 福塔-发射 圈子中[/color]"
                             }
-                        },
-                        "选择圈子类型":{
-                            "expected": [
-                                "机构"
-                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [
@@ -3162,11 +3162,6 @@
                                 "succeeded": "[color:green]已在 非常“3+4” 圈子中[/color]"
                             }
                         },
-                        "选择圈子类型":{
-                            "expected": [
-                                "机构"
-                            ]
-                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "非常“3+4”",
@@ -3301,6 +3296,11 @@
                                 "succeeded": "[color:green]已在 人间处处 圈子中[/color]"
                             }
                         },
+                        "选择圈子类型":{
+                            "expected": [
+                                "摄影"
+                            ]
+                        },
                         "PublishClickCircle": {
                             "expected": [
                                 "人间处处"
@@ -3389,7 +3389,7 @@
                             "target": [220, 278, 1, 1],
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子2成功[/color]"
-                            },
+                            }
                         }
                     }
                 },
@@ -3400,7 +3400,7 @@
                             "target": [359, 275, 1, 1],
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子3成功[/color]"
-                            },
+                            }
                         }
                     }
                 },
@@ -3411,7 +3411,7 @@
                             "target": [492, 278, 1, 1],
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子4成功[/color]"
-                            },
+                            }
                         }
                     }
                 },
@@ -3422,7 +3422,7 @@
                             "target": [630, 279, 1, 1],
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子5成功[/color]"
-                            },
+                            }
                         }
                     }
                 },
