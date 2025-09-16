@@ -259,6 +259,9 @@
                 {
                     "name": "旧版",
                     "pipeline_override": {
+                        "新版圈子识别":{
+                            "enabled": false
+                        }
                     }
                 },
                 {

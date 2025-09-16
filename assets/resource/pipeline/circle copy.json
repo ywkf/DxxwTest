@@ -919,7 +919,7 @@
         ]
     },
     "新版圈子识别":{
-        "enabled": true,
+        "enabled": false,
         "recognition": "OCR",
         "expected":[
             "动态"
