@@ -309,6 +309,7 @@
         ]
     },
     "CCircleCollect&Like": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "我的关注",
@@ -332,6 +333,7 @@
     },
     
     "CCircleCollect": {
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
             "circle_collect.png"
@@ -917,7 +919,7 @@
         ]
     },
     "新版圈子识别":{
-        "enabled": false,
+        "enabled": true,
         "recognition": "OCR",
         "expected":[
             "动态"
@@ -939,11 +941,28 @@
         "action": "Click",
         "interrupt": [
             "CInImagetxt",
+            "圈子菜单遮挡滑动",
             "CCircleSwipe"
         ],
         "next": [
             "圈子收藏菜单"
         ]
+    },
+    "圈子菜单遮挡滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            450,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 500
     },
     "圈子收藏菜单":{
         "recognition": "TemplateMatch",
@@ -953,9 +972,9 @@
         "roi": "圈子点赞",
         "roi_offset": [
             515,
-            0,
+            -100,
             40,
-            27
+            100
         ],
         "order_by": "Vertical",
         "action": "Click",

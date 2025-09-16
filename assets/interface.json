@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.23",
+    "version": "0.2.25",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -61,14 +61,13 @@
         {
             "name": "圈子点赞收藏 lite",
             "entry": "CCircle",
-            "doc": "点赞收藏圈子内容，默认评论列表账号\n选择1天前，会在1天前的内容后停止\n评论达到每日上限后不再评论",
+            "doc": "点赞收藏圈子内容，默认评论列表账号\n选择1天前，会在1天前的内容后停止\n评论达到每日上限后不再评论\n新版客户端圈子选择1-5",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
                 "客户端版本",
                 "圈子选择",
                 "是否评论lite",
-                "视频评论语录次数",
                 "何时结束",
                 "每日分享任务",
                 "圈子完成返回"
@@ -81,8 +80,8 @@
             "repeatable": true,
             "repeat_count": 1,
             "option": [
+                "客户端版本",
                 "是否评论lite",
-                "视频评论语录次数",
                 "何时结束",
                 "每日分享任务",
                 "圈子完成返回"
@@ -279,13 +278,19 @@
                         },
                         "选择圈子类型":{
                             "enabled": true
+                        },
+                        "CCircleCollect&Like":{
+                            "enabled": false
+                        },
+                        "CCircleCollect":{
+                            "enabled": false
                         }
                     }
                 }
             ]
         },
         "启用AI生成":{
-            "doc": "发布作品是否启用AI生成开关",
+            "doc": "发布作品是否启用AI生成开关（新版客户端）",
             "cases": [
                 {
                     "name": "no",
@@ -3435,7 +3440,8 @@
                                 "最新",
                                 "最热",
                                 "我的关注",
-                                "关注"
+                                "关注",
+                                "动态"
                             ],
                             "focus": {
                                 "succeeded": "进入圈子成功[/color]"
@@ -3453,7 +3459,8 @@
                                 "最新",
                                 "最热",
                                 "我的关注",
-                                "关注"
+                                "关注",
+                                "动态"
                             ],
                             "focus": {
                                 "succeeded": "[color:green]已在圈子中[/color]"
@@ -3465,7 +3472,8 @@
                                 "最新",
                                 "最热",
                                 "我的关注",
-                                "关注"
+                                "关注",
+                                "动态"
                             ],
                             "focus": {
                                 "succeeded": "进入圈子成功[/color]"
@@ -3483,7 +3491,8 @@
                                 "最新",
                                 "最热",
                                 "我的关注",
-                                "关注"
+                                "关注",
+                                "动态"
                             ],
                             "focus": {
                                 "succeeded": "[color:green]已在圈子中[/color]"
