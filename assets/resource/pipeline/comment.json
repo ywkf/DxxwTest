@@ -58,6 +58,56 @@
             "CCommentVideo"
         ]
     },
+    "圈子评论": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": "圈子评论.png",
+        "roi": "圈子点赞",
+        "roi_offset": [
+            0,
+            0,
+            342,
+            3
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 2000,
+        "focus": {
+            "succeeded": "进入作品"
+        },
+        "timeout": 30000,
+        "on_error": [
+            "ClickCommentVideo"
+        ],
+        "next": [
+            "CInputCommentImage",
+            "圈子评论视频返回"
+        ]
+    },
+    "圈子评论视频返回":{
+        "recognition": "OCR",
+        "expected":[
+            "全部评论"
+        ],
+        "roi": [0, 407, 720, 153],
+        "action": "Click",
+        "target": [152, 142, 1, 1],
+        "next":[
+            "圈子评论视频返回2"
+        ]
+    },
+    "圈子评论视频返回2":{
+        "recognition": "OCR",
+        "expected":[
+            "连播"
+        ],
+        "roi": [0, 43, 720, 155],
+        "action": "Key",
+        "key": 4,
+        "next":[
+            "圈子完成判断"
+        ]
+    },
     "CheckName": {
         "enabled": false,
         "recognition": "OCR",
@@ -108,7 +158,7 @@
         ]
     },
     "CCommentXF01VH": {
-        "enabled": true,
+        "enabled": false,
         "recognition": "TemplateMatch",
         "template": "XF_comment.png",
         "roi": [
@@ -220,6 +270,7 @@
         ],
         "next": [
             "CSendCommentImage",
+            "重新点击大象智语评论",
             "CCommentXF01VH"
         ]
     },
@@ -229,10 +280,24 @@
         "pre_delay": 300,
         "action": "Click",
         "next": [
+            "CSendCommentImage",
+            "重新点击大象智语评论"
+        ]
+    },
+    "重新点击大象智语评论":{
+        "recognition": "OCR",
+        "expected":[
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": [21, 385, 574, 119],
+        "action": "Click",
+        "next":[
             "CSendCommentImage"
         ]
     },
     "CSendCommentImage": {
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
             "发表0.png",
@@ -911,6 +976,7 @@
         ]
     },
     "CommentCommon01": {
+        "enabled": false,
         "action": "InputText",
         "input_text": "zilihangjianganshoudaomanmandeyongxin",
         "next": [
@@ -925,6 +991,7 @@
         ]
     },
     "CommentCommon00": {
+        "enabled": false,
         "action": "InputText",
         "input_text": "think",
         "next": [

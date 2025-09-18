@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.26",
+    "version": "0.2.27",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -23,7 +23,7 @@
         {
             "name": "开始唤醒",
             "entry": "Awake",
-            "doc": "自定义添加，确保已安装XF输入法",
+            "doc": "自定义添加,确保已安装XF输入法（设置-关闭ai和通知）",
             "option": [
                 "启动方式",
                 "等待重启时间",
@@ -267,6 +267,9 @@
                 {
                     "name": "新版",
                     "pipeline_override": {
+                        "点击动态":{
+                            "enabled": true
+                        },
                         "我的圈子":{
                             "enabled": true
                         },
@@ -284,6 +287,18 @@
                         },
                         "选择圈子类型":{
                             "enabled": true
+                        },
+                        "已在圈子中":{
+                            "enabled": true
+                        },
+                        "CInTheCircle":{
+                            "enabled": false
+                        },
+                        "CClickMyCircle":{
+                            "enabled": false
+                        },
+                        "CClickSubsCircle":{
+                            "enabled": false
                         },
                         "CCircleCollect&Like":{
                             "enabled": false
@@ -1312,32 +1327,25 @@
                     }
                 },
                 {
-                    "name": "评论图文和视频",
+                    "name": "评论图文（新版）",
                     "pipeline_override": {
+                        "圈子评论":{
+                            "enabled": true
+                        },
                         "NotCCommentBack": {
                             "enabled": true
                         },
-                        "CCircleLike": {
-                            "next": [
-                                "CClickCommentLite"
-                            ]
-                        },
-                        "CClickCommentLite": {
-                            "next": [
-                                "CheckNameList",
-                                "NotCCommentBack"
-                            ]
-                        },
                         "CCommentBack02": {
                             "next": [
-                                "CIsCompleted"
+                                "圈子完成判断"
                             ]
                         },
                         "CCommentBack02L": {
                             "next": [
-                                "CIsCompletedL"
+                                "圈子完成判断"
                             ]
                         }
+                        
                     }
                 }
             ]

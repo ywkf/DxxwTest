@@ -178,3 +178,32 @@
                 "自定义账号"
             ]
         },
+                {
+                    "name": "评论图文和视频",
+                    "pipeline_override": {
+                        "NotCCommentBack": {
+                            "enabled": true
+                        },
+                        "CCircleLike": {
+                            "next": [
+                                "CClickCommentLite"
+                            ]
+                        },
+                        "CClickCommentLite": {
+                            "next": [
+                                "CheckNameList",
+                                "NotCCommentBack"
+                            ]
+                        },
+                        "CCommentBack02": {
+                            "next": [
+                                "CIsCompleted"
+                            ]
+                        },
+                        "CCommentBack02L": {
+                            "next": [
+                                "CIsCompletedL"
+                            ]
+                        }
+                    }
+                }
