@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.25",
+    "version": "0.2.26",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -268,6 +268,9 @@
                     "name": "新版",
                     "pipeline_override": {
                         "我的圈子":{
+                            "enabled": true
+                        },
+                        "圈子加载识别":{
                             "enabled": true
                         },
                         "新版圈子识别":{
@@ -3118,8 +3121,7 @@
                     "pipeline_override": {
                         "ClickTheCircle": {
                             "expected": [
-                                "非常“3+4”",
-                                "无线发射",
+                                "非常“3\\+4”",
                                 "友情传播",
                                 "3+4"
                             ],
@@ -3135,7 +3137,7 @@
                         },
                         "InTheCircle": {
                             "expected": [
-                                "非常“3+4”",
+                                "非常“3\\+4”",
                                 "3+4",
                                 "非常"
                             ],
@@ -3145,8 +3147,7 @@
                         },
                         "CClickTheCircle": {
                             "expected": [
-                                "非常“3+4”",
-                                "无线发射",
+                                "非常“3\\+4”",
                                 "友情传播",
                                 "3+4"
                             ],
@@ -3162,7 +3163,7 @@
                         },
                         "CInTheCircle": {
                             "expected": [
-                                "非常“3+4”",
+                                "非常“3\\+4”",
                                 "3+4",
                                 "非常"
                             ],
@@ -3172,7 +3173,7 @@
                         },
                         "PublishClickCircle": {
                             "expected": [
-                                "非常“3+4”",
+                                "非常“3\\+4”",
                                 "3+4",
                                 "非常"
                             ],

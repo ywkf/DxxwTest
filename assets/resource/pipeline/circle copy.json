@@ -217,10 +217,193 @@
             "分钟前",
             "大象圈",
             "官方客服",
-            "小时前"
+            "小时前",
+            "天前"
+        ],
+        "next": [
+            "圈子加载识别",
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "圈子加载识别":{
+        "enabled": false,
+        "next":[
+            "无限象往",
+            "非常3+4",
+            "象心力",
+            "快乐集中营",
+            "随手记录生活",
+            "记录生活",
+            "福塔-发射",
+            "热爱生活",
+            "人间处处",
+            "象友汇",
+            "大象话题",
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "无限象往":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "无线“象”往"
         ],
         "focus": {
-            "succeeded": "圈子已加载..."
+            "succeeded": "[color:blue]无线“象”往 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "非常3+4":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "非常“3\\+4”"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]非常“3+4” 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "象心力":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "象·心力"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]象·心力 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "快乐集中营":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "快乐集中营"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]快乐集中营 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "随手记录生活":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "随手记录生活"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]随手记录生活 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "记录生活":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "@记录生活"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]@记录生活 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "福塔-发射":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "福塔-发射"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]福塔-发射 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "热爱生活":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "热爱生活"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]热爱生活 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "人间处处":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "人间处处"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]人间处处 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "象友汇":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "象友汇"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]象友汇 圈子已加载...[/color]"
+        },
+        "next": [
+            "CCircleShare0",
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ]
+    },
+    "大象话题":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "大象话题"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]大象话题 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
