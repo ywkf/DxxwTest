@@ -1,6 +1,7 @@
 {
     "Invite":{
         "next":[
+            "打开浏览器",
             "StartYezi",
             "OpenDxxw"
         ]
@@ -268,6 +269,7 @@
             "failed": "[color:blue]未识别到正确的验证码[/color]"
         },
         "next": [
+            "打开浏览器2",
             "StartYezi02"
         ]
     },
@@ -651,5 +653,417 @@
         "next": [
             "Stop"
         ]
+    },
+    "打开浏览器":{
+        "enabled": false,
+        "action": "StartApp",
+        "package": "mark.via",
+        "post_delay": 2000,
+        "next":[
+            "打开浏览器上滑0"
+        ]
+    },
+    "打开浏览器上滑0":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "next":[
+            "打开浏览器上滑"
+        ]
+    },
+    "打开浏览器上滑":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "next":[
+            "识别识别码ed",
+            "获取号码"
+        ]
+    },
+    "识别识别码ed":{
+        "recognition": "OCR",
+        "expected":[
+            "识别码"
+        ],
+        "roi": [2, 559, 718, 721],
+        "next":[
+            "识别识别码ed2",
+            "获取号码"
+        ]
+    },
+    "识别识别码ed2":{
+        "recognition": "OCR",
+        "expected":[
+            "^\\d{6}$"
+        ],
+        "roi": "识别识别码ed",
+        "roi_offset": [
+            -20,
+            0,
+            90,
+            350
+        ],
+        "interrupt":[
+            "向左滑动"
+        ],
+        "next":[
+            "点击拉黑"
+        ]
+    },
+    "超时拉黑":{
+        "recognition": "OCR",
+        "expected":[
+            "^1[3-9]\\d{9}$"
+        ],
+        "interrupt":[
+            "向左滑动"
+        ],
+        "next":[
+            "点击拉黑"
+        ]
+    },
+    "点击拉黑":{
+        "recognition": "OCR",
+        "expected":[
+            "拉黑"
+        ],
+        "roi": [2, 559, 718, 721],
+        "action": "Click",
+        "interrupt":[
+            "向右滑动"
+        ],
+        "next":[
+            "识别项目ID"
+        ]
+    },
+    "识别项目ID":{
+        "recognition": "OCR",
+        "expected":[
+            "项目",
+            "ID"
+        ],
+        "next":[
+            "获取号码"
+        ]
+    },
+    "获取号码":{
+        "recognition": "OCR",
+        "expected":[
+            "获取号码"
+        ],
+        "action": "Click",
+        "post_delay": 800,
+        "next":[
+            "NoBalance",
+            "未选择项目",
+            "没有取到",
+            "获取向右滑动",
+            "识别运营商",
+            "识别号码ed"
+        ]
+    },
+    "获取向右滑动":{
+        "recognition": "OCR",
+        "expected":[
+            "^状态$",
+            "^操作$"
+        ],
+        "roi": [3, 902, 717, 378],
+        "action": "Swipe",
+        "begin": [
+            80,
+            1050,
+            10,
+            10
+        ],      
+        "end": [
+            630,
+            1050,
+            10,
+            10
+        ],
+        "next":[
+            "识别运营商",
+            "识别号码ed"
+        ]
+    },
+    "识别号码ed":{
+        "recognition": "OCR",
+        "expected":[
+            "^号码$"
+        ],
+        "next":[
+            "复制向上滑动"
+        ]
+    },
+    "没有取到":{
+        "recognition": "OCR",
+        "expected":[
+            "有取到手机号",
+            "请重新尝试"
+        ],
+        "post_delay": 8000,
+        "next":[
+            "获取号码"
+        ]
+    },
+    "向下滑动":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            800,
+            10,
+            10
+        ]
+    },
+    "未选择项目":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "请选择要获取的项目"
+        ],
+        "interrupt":[
+            "向下滑动"
+        ],
+        "focus": {
+            "succeeded": "[color:Blue]未选择项目[/color]"
+        },
+        "next":[
+            "Stop",
+            "搜索项目"
+        ]
+    },
+    "搜索项目":{
+        "recognition": "OCR",
+        "expected":[
+            "搜索项目"
+        ],
+        "next":[
+            "输入项目名称"
+        ]
+    },
+    "输入项目名称":{
+        "recognition": "OCR",
+        "expected":[
+            "请输入项目名"
+        ],
+        "action": "Click",
+        "next":[
+            "输入项目名称2"
+        ]
+    },
+    "输入项目名称2":{
+        "action": "InputText",
+        "input_text": "大象新闻",
+        "next":[
+            "点击dxxw"
+        ]
+    },
+    "点击dxxw":{
+        "recognition": "OCR",
+        "expected":[
+            "大象新闻"
+        ],
+        "action": "Click",
+        "next":[
+
+        ]
+    },
+    "识别运营商":{
+        "recognition": "OCR",
+        "expected":[
+            "运营商"
+        ],
+        "roi": [3, 902, 717, 378],
+        "action": "Swipe",
+        "begin": true,
+        "end": [
+            80,
+            1050,
+            10,
+            10
+        ],
+        "duration": 300,
+        "next":[
+            "复制向上滑动"
+        ]
+    },
+    "复制向上滑动":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "next":[
+            "识别号码"
+        ]
+    },
+    "向左滑动":{
+        "action": "Swipe",
+        "begin": [
+            630,
+            1050,
+            10,
+            10
+        ],
+        "end": [
+            80,
+            1050,
+            10,
+            10
+        ]
+    },
+    "向右滑动":{
+        "action": "Swipe",
+        "begin": [
+            80,
+            1050,
+            10,
+            10
+        ],      
+        "end": [
+            630,
+            1050,
+            10,
+            10
+        ]
+    },
+    "识别号码":{
+        "recognition": "OCR",
+        "expected":[
+            "^号码$"
+        ],
+        "roi": [0, 770, 720, 510],
+        "next":[
+            "复制号码"
+        ]
+    },
+    "复制号码":{
+        "recognition": "OCR",
+        "expected":[
+            "^1[3-9]\\d{9}$"
+        ],
+        "roi": "识别号码",
+        "roi_offset": [
+            -40,
+            0,
+            200,
+            300
+        ],
+        "action": "Click",
+        "next":[
+            "OpenDxxw"
+        ]
+    },
+    "打开浏览器2":{
+        "enabled": false,
+        "action": "StartApp",
+        "package": "mark.via",
+        "post_delay": 1500,
+        "next":[
+            "打开浏览器上滑20"
+        ]
+    },
+    "打开浏览器上滑20":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            150,
+            200,
+            10,
+            10
+        ],
+        "next":[
+            "打开浏览器上滑2"
+        ]
+    },
+    "打开浏览器上滑2":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            150,
+            200,
+            10,
+            10
+        ],
+        "timeout": 360000,
+        "on_error":[
+
+        ],
+        "next":[
+            "识别识别码"
+        ]
+    },
+    "识别识别码":{
+        "recognition": "OCR",
+        "expected":[
+            "识别码"
+        ],
+        "roi": [2, 559, 718, 721],
+        "next":[
+            "复制验证码"
+        ]
+    },
+    "复制验证码":{
+        "recognition": "OCR",
+        "expected":[
+            "^\\d{6}$"
+        ],
+        "roi": "识别识别码",
+        "roi_offset": [
+            -20,
+            0,
+            90,
+            350
+        ],
+        "action": "Click",
+        "next":[
+            "StartDxxw02"
+        ]
     }
+
 }

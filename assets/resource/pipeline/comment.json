@@ -59,7 +59,7 @@
         ]
     },
     "圈子评论": {
-        "enabled": true,
+        "enabled": false,
         "recognition": "TemplateMatch",
         "template": "圈子评论.png",
         "roi": "圈子点赞",
