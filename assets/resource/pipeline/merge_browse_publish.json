@@ -244,12 +244,7 @@
     "ShareToQQ": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt001",
@@ -482,12 +477,7 @@
     "ShareToQQ02": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt002",
@@ -716,12 +706,7 @@
     "ShareToQQ03": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt003",
@@ -971,12 +956,7 @@
     "ShareToQQ04": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt004",
@@ -1218,12 +1198,7 @@
     "ShareToQQ05": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt005",
@@ -1452,12 +1427,7 @@
     "ShareToQQ06": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt006",
@@ -1682,12 +1652,7 @@
     "ShareToQQ07": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt007",
@@ -1889,12 +1854,7 @@
     "ShareToQQ08": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "timeout": 20000,
         "on_error": "ErrorImagetxt008",
