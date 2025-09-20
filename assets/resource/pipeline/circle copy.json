@@ -1665,7 +1665,7 @@
     "CCircleCompletedBack": {
         "enabled": true,
         "focus": {
-            "succeeded": "[color:blue]圈子任务完成[/color]",
+            "succeeded": "[color:]圈子任务完成[/color]",
             "toast": "圈子任务完成"
         },
         "next": [

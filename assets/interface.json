@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.28",
+    "version": "0.2.29",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -2744,6 +2744,11 @@
                             "focus": {
                                 "succeeded": "[color:green]已在 无线“象”往 圈子中[/color]"
                             }
+                        },
+                        "选择圈子类型":{
+                            "expected": [
+                                "机构"
+                            ]
                         },
                         "PublishClickCircle": {
                             "expected": [

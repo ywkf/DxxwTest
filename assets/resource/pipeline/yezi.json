@@ -285,6 +285,7 @@
         ]
     },
     "StartYezi02": {
+        "enabled": true,
         "recognition": "OCR",
         "expected":[
             "发送成功"
