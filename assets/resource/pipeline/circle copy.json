@@ -475,9 +475,9 @@
         ]
     },
     "CCircleShareToQQ": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "圈子分享QQ.png"
+        "recognition": "OCR",
+        "expected":[
+            "QQ"
         ],
         "roi": [1, 387, 719, 893],
         "action": "Click",
@@ -1662,7 +1662,7 @@
     "CCircleCompletedBack": {
         "enabled": true,
         "focus": {
-            "succeeded": "[color:]圈子任务完成[/color]",
+            "succeeded": "[color:green]圈子任务完成[/color]",
             "toast": "圈子任务完成"
         },
         "next": [

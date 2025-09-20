@@ -40,12 +40,7 @@
     "ReplyShareToQQ": {
         "recognition": "OCR",
         "expected": "QQ",
-        "roi": [
-            1,
-            662,
-            719,
-            615
-        ],
+        "roi": [1, 387, 719, 893],
         "action": "Click",
         "post_delay": 500,
         "next": [

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.30",
+    "version": "0.2.31",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -3479,7 +3479,7 @@
                         },
                         "CircleCompletedBack": {
                             "focus": {
-                                "succeeded": "[color:blue]圈子任务完成[/color]",
+                                "succeeded": "[color:green]圈子任务完成[/color]",
                                 "toast": "圈子任务完成"
                             }
                         },
@@ -3511,7 +3511,7 @@
                         },
                         "CCircleCompletedBack": {
                             "focus": {
-                                "succeeded": "[color:blue]圈子任务完成[/color]",
+                                "succeeded": "[color:green]圈子任务完成[/color]",
                                 "toast": "圈子任务完成"
                             }
                         },
