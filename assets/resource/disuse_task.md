@@ -206,4 +206,16 @@
                             ]
                         }
                     }
+                },
+
+                {
+                    "name": "yezi",
+                    "pipeline_override": {
+                        "打开浏览器":{
+                            "enabled": false
+                        },
+                        "打开浏览器2":{
+                            "enabled": false
+                        }
+                    }
                 }

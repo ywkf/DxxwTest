@@ -1,13 +1,14 @@
 {
     "Invite":{
         "next":[
+            "打开易码",
             "打开浏览器",
             "StartYezi",
             "OpenDxxw"
         ]
     },
     "StartYezi": {
-        "enabled": true,
+        "enabled": false,
         "action": "StartApp",
         "package": "yezi.com",
         "post_delay": 2000,
@@ -269,6 +270,7 @@
             "failed": "[color:blue]未识别到正确的验证码[/color]"
         },
         "next": [
+            "打开易码2",
             "打开浏览器2",
             "StartYezi02"
         ]
@@ -285,7 +287,7 @@
         ]
     },
     "StartYezi02": {
-        "enabled": true,
+        "enabled": false,
         "recognition": "OCR",
         "expected":[
             "发送成功"
@@ -325,6 +327,7 @@
             "验证码验证失败"
         ],
         "next": [
+            "打开易码2",
             "StartYezi"
         ]
     },
@@ -1065,6 +1068,137 @@
         "next":[
             "StartDxxw02"
         ]
-    }
+    },
 
+
+    "打开易码":{
+        "enabled": false,
+        "action": "StartApp",
+        "package": "com.ejiema.ec",
+        "post_delay": 2000,
+        "next":[
+            "e拉黑号码"
+        ]
+    },
+    "e拉黑号码":{
+        "recognition": "OCR",
+        "expected":[
+            "拉黑号码"
+        ],
+        "action": "Click",
+        "next":[
+            "e屏蔽成功"
+        ]
+    },
+    "e屏蔽成功":{
+        "recognition": "OCR",
+        "expected":[
+            "确定"
+        ],
+        "pre_delay": 2000,
+        "action": "Click",
+        "next":[
+            "e获取号码"
+        ]
+    },
+    "e获取号码":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "获取号码"
+        ],
+        "action": "Click",
+        "next":[
+            "e长按号码"
+        ]
+    },
+    "e长按号码":{
+        "recognition": "OCR",
+        "expected":[
+            "^1[3-9]\\d{9}$"
+        ],
+        "action": "LongPress",
+        "post_delay": 500,
+        "next":[
+            "e复制号码"
+        ]
+    },
+    "e复制号码":{
+        "recognition": "OCR",
+        "expected":[
+            "复制"
+        ],
+        "action": "Click",
+        "next":[
+            "OpenDxxw"
+        ]
+    },
+    "打开易码2":{
+        "enabled": true,
+        "action": "StartApp",
+        "package": "com.ejiema.ec",
+        "post_delay": 2000,
+        "next":[
+            "e点击收取短信"
+        ]
+    },
+    "e点击收取短信":{
+        "recognition": "OCR",
+        "expected":[
+            "收取短信"
+        ],
+        "action": "Click",
+        "pre_delay": 10000,
+        "next":[
+            "e超时或未收到",
+            "e验证码"
+        ]
+    },
+    "e超时或未收到":{
+        "recognition": "OCR",
+        "expected":[
+            "尚未收到包含关键字",
+            "请5秒后再收取"
+        ],
+        "next":[
+            "e拉黑号码"
+        ]
+    },
+    "e验证码":{
+        "recognition": "OCR",
+        "expected":[
+            "验证码"
+        ],
+        "next":[
+            "e长按验证码"
+        ]
+    },
+    "e长按验证码":{
+        "recognition": "OCR",
+        "expected":[
+            "^\\d{6}$"
+        ],
+        "roi": "e验证码",
+        "roi_offset": [
+            82,
+            0,
+            -383,
+            0
+        ],
+        "action": "LongPress",
+        "post_delay": 500,
+        "next":[
+            "e复制验证码"
+        ]
+    },
+    "e复制验证码":{
+        "recognition": "OCR",
+        "expected":[
+            "复制"
+        ],
+        "action": "Click",
+        "next":[
+            "StartDxxw02"
+        ]
+    }
 }

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.31",
+    "version": "0.2.32",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -361,29 +361,35 @@
                     }
                 },
                 {
+                    "name": "ema",
+                    "pipeline_override": {
+                        "打开易码":{
+                            "enabled": true
+                        },
+                        "打开浏览器":{
+                            "enabled": false
+                        },
+                        "打开浏览器2":{
+                            "enabled": false
+                        }
+                    }
+                },
+                {
                     "name": "haozhu",
                     "pipeline_override": {
                         "打开浏览器":{
                             "enabled": true
                         },
                         "打开浏览器2":{
+                            "enabled": false
+                        },
+                        "打开易码":{
                             "enabled": true
                         },
                         "StartYezi":{
                             "enabled": false
                         },
                         "StartYezi02":{
-                            "enabled": false
-                        }
-                    }
-                },
-                {
-                    "name": "yezi",
-                    "pipeline_override": {
-                        "打开浏览器":{
-                            "enabled": false
-                        },
-                        "打开浏览器2":{
                             "enabled": false
                         }
                     }

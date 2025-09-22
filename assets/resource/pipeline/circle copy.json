@@ -290,7 +290,7 @@
             "无线“象”往"
         ],
         "focus": {
-            "succeeded": "[color:blue]无线“象”往 圈子已加载...[/color]"
+            "succeeded": "[color:green]无线“象”往 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -305,7 +305,7 @@
             "非常“3\\+4”"
         ],
         "focus": {
-            "succeeded": "[color:blue]非常“3+4” 圈子已加载...[/color]"
+            "succeeded": "[color:green]非常“3+4” 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -320,7 +320,7 @@
             "象·心力"
         ],
         "focus": {
-            "succeeded": "[color:blue]象·心力 圈子已加载...[/color]"
+            "succeeded": "[color:green]象·心力 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -335,7 +335,7 @@
             "快乐集中营"
         ],
         "focus": {
-            "succeeded": "[color:blue]快乐集中营 圈子已加载...[/color]"
+            "succeeded": "[color:green]快乐集中营 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -350,7 +350,7 @@
             "随手记录生活"
         ],
         "focus": {
-            "succeeded": "[color:blue]随手记录生活 圈子已加载...[/color]"
+            "succeeded": "[color:green]随手记录生活 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -365,7 +365,7 @@
             "@记录生活"
         ],
         "focus": {
-            "succeeded": "[color:blue]@记录生活 圈子已加载...[/color]"
+            "succeeded": "[color:green]@记录生活 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -380,7 +380,7 @@
             "福塔-发射"
         ],
         "focus": {
-            "succeeded": "[color:blue]福塔-发射 圈子已加载...[/color]"
+            "succeeded": "[color:green]福塔-发射 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -395,7 +395,7 @@
             "热爱生活"
         ],
         "focus": {
-            "succeeded": "[color:blue]热爱生活 圈子已加载...[/color]"
+            "succeeded": "[color:green]热爱生活 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -410,7 +410,7 @@
             "人间处处"
         ],
         "focus": {
-            "succeeded": "[color:blue]人间处处 圈子已加载...[/color]"
+            "succeeded": "[color:green]人间处处 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -425,7 +425,7 @@
             "象友汇"
         ],
         "focus": {
-            "succeeded": "[color:blue]象友汇 圈子已加载...[/color]"
+            "succeeded": "[color:green]象友汇 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
@@ -440,7 +440,7 @@
             "大象话题"
         ],
         "focus": {
-            "succeeded": "[color:blue]大象话题 圈子已加载...[/color]"
+            "succeeded": "[color:green]大象话题 圈子已加载...[/color]"
         },
         "next": [
             "CCircleShare0",
