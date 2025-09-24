@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.32",
+    "version": "0.2.33",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -3421,6 +3421,12 @@
                 {
                     "name": "圈子1",
                     "pipeline_override": {
+                        "CCircleCompletedBack": {
+                            "focus": {
+                                "succeeded": "[color:green]圈子1任务完成[/color]",
+                                "toast": "圈子1任务完成"
+                            }
+                        }
                     }
                 },
                 {
@@ -3430,6 +3436,12 @@
                             "target": [220, 278, 1, 1],
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子2成功[/color]"
+                            }
+                        },
+                        "CCircleCompletedBack": {
+                            "focus": {
+                                "succeeded": "[color:green]圈子2任务完成[/color]",
+                                "toast": "圈子2任务完成"
                             }
                         }
                     }
@@ -3442,6 +3454,12 @@
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子3成功[/color]"
                             }
+                        },
+                        "CCircleCompletedBack": {
+                            "focus": {
+                                "succeeded": "[color:green]圈子3任务完成[/color]",
+                                "toast": "圈子3任务完成"
+                            }
                         }
                     }
                 },
@@ -3453,6 +3471,12 @@
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子4成功[/color]"
                             }
+                        },
+                        "CCircleCompletedBack": {
+                            "focus": {
+                                "succeeded": "[color:green]圈子4任务完成[/color]",
+                                "toast": "圈子4任务完成"
+                            }
                         }
                     }
                 },
@@ -3463,6 +3487,12 @@
                             "target": [630, 279, 1, 1],
                             "focus": {
                                 "succeeded": "[color:blue]识别进入圈子5成功[/color]"
+                            }
+                        },
+                        "CCircleCompletedBack": {
+                            "focus": {
+                                "succeeded": "[color:green]圈子5任务完成[/color]",
+                                "toast": "圈子5任务完成"
                             }
                         }
                     }

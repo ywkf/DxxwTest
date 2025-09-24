@@ -901,6 +901,7 @@
     "CTheDayBefore": {
         "enabled": false,
         "interrupt": [
+            "加载失败重试",
             "CCircleSwipe"
         ],
         "next": [
@@ -1255,6 +1256,29 @@
             "圈子点赞"
         ]
     },
+    "加载失败重试":{
+        "recognition": "OCR",
+        "expected":[
+            "加载失败，请点我重试",
+            "加载失败"
+        ],
+        "action": "Click",
+        "post_delay": 2000
+    },
+    "加载失败重试2":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "加载失败，请点我重试",
+            "加载失败"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next":[
+            "圈子点赞",
+            "圈子完成判断"
+        ]
+    },
     "圈子完成判断": {
         "enabled": true,
         "interrupt": [
@@ -1264,6 +1288,7 @@
         "next": [
             "CTheDayBefore",
             "圈子点赞",
+            "加载失败重试2",
             "CCircleSwipe1L"
         ]
     },
