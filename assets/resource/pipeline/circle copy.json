@@ -642,7 +642,8 @@
     "CCircleCollectFail": {
         "recognition": "OCR",
         "expected": [
-            "操作失败"
+            "操作失败",
+            "未知错误"
         ],
         "action": "Swipe",
         "begin": [
@@ -670,7 +671,8 @@
     "CCircleCollectFailL": {
         "recognition": "OCR",
         "expected": [
-            "操作失败"
+            "操作失败",
+            "未知错误"
         ],
         "action": "Swipe",
         "begin": [

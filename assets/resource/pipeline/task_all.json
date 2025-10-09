@@ -382,7 +382,7 @@
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
-        "post_delay": 1000,
+        "post_delay": 8000,
         "focus": {
             "succeeded": "识别进入大象号成功",
             "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
@@ -518,6 +518,7 @@
             42,
             44
         ],
+        "post_wait_freezes": 2000,
         "next": [
             "图文分享"
         ]
@@ -526,9 +527,21 @@
         "recognition": "TemplateMatch",
         "template": "分享.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "post_delay": 500,
         "next": [
-            "图文分享到QQ"
+            "图文分享到QQ",
+            "收藏未知错误"
+        ]
+    },
+    "收藏未知错误":{
+        "recognition": "OCR",
+        "expected":[
+            "未知错误"
+        ],
+        "post_delay": 2000,
+        "next":[
+            "图文评论点击输入框"
         ]
     },
     "图文分享到QQ": {
@@ -663,7 +676,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 2000,
+        "post_delay": 6000,
         "next": [
             "点击大象新语",
             "重置点赞"
@@ -835,6 +848,7 @@
             42,
             44
         ],
+        "post_wait_freezes": 2000,
         "post_delay": 800,
         "next": [
             "作品完成返回01"
