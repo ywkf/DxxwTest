@@ -45,6 +45,63 @@
             "succeeded": "已在圈子中"
         },
         "next": [
+            "圈子刷新成功",
+            "新版圈子刷新"
+        ]
+    },
+    "新版圈子刷新":{
+        "enabled": true,
+        "action": "Swipe",
+        "begin": [
+            200,
+            750,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            1100,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_wait_freezes": 2000,
+        "post_delay": 2000,
+        "interrupt":[
+            "圈子刷新re"
+        ],
+        "next":[
+            "圈子刷新成功"
+        ]
+    },
+    "圈子刷新re":{
+        "action": "Swipe",
+        "begin": [
+            200,
+            750,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            1100,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_wait_freezes": 2000
+    },
+    "圈子刷新成功":{
+        "recognition": "OCR",
+        "expected":[
+            "@",
+            "\\d{2}-\\d{2}",
+            "刚刚",
+            "\\d+分钟前",
+            "\\d+小时前",
+            "\\d+天前"
+        ],
+        "next":[
             "CCircleSwipe0"
         ]
     },
@@ -117,10 +174,10 @@
         "target": [86, 277, 1, 1],
         "post_delay": 1000,
         "focus": {
-            "succeeded": "[color:blue]识别进入圈子1成功[/color]"
+            "succeeded": "[color:green]识别进入圈子1成功[/color]"
         },
         "next": [
-            "CCircleSwipe0"
+            "已在圈子中"
         ]
     },
     "CClickAllCircle": {
@@ -1689,7 +1746,7 @@
     "CCircleCompletedBack": {
         "enabled": true,
         "focus": {
-            "succeeded": "[color:green]圈子任务完成[/color]",
+            "succeeded": "[color:blue]圈子任务完成[/color]",
             "toast": "圈子任务完成"
         },
         "next": [
