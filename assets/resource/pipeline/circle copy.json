@@ -1212,9 +1212,10 @@
     "圈子点赞":{
         "recognition": "TemplateMatch",
         "template": [
-            "圈子点赞.png"
+            "圈子点赞g.png"
         ],
         "order_by": "Vertical",
+        "green_mask": true,
         "action": "Click",
         "interrupt": [
             "CInImagetxt",
@@ -1230,11 +1231,12 @@
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
-            "圈子点赞.png"
+            "圈子点赞g.png"
         ],
         "roi": "圈子点赞",
         "order_by": "Vertical",
-        "threshold": 0.3,
+        "threshold": 0.5,
+        "green_mask": true,
         "action": "Click",
         "interrupt": [
             "CInImagetxt",
@@ -1263,7 +1265,7 @@
     "圈子收藏菜单":{
         "recognition": "TemplateMatch",
         "template": [
-            "圈子收藏菜单.png"
+            "圈子收藏菜单g.png"
         ],
         "roi": "圈子点赞",
         "roi_offset": [
@@ -1273,10 +1275,59 @@
             150
         ],
         "order_by": "Vertical",
+        "green_mask": true,
+        "threshold": 0.99,
         "action": "Click",
+        "interrupt":[
+            "进入发布退出",
+            "CInImagetxt"
+        ],
         "next":[
             "圈子收藏",
-            "圈子已收藏"
+            "圈子已收藏",
+            "圈子收藏菜单re"
+        ]
+    },
+    "圈子收藏菜单re":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "圈子收藏菜单g.png"
+        ],
+        "roi": "圈子点赞",
+        "roi_offset": [
+            515,
+            -150,
+            40,
+            150
+        ],
+        "order_by": "Vertical",
+        "green_mask": true,
+        "threshold": 0.99,
+        "action": "Click",
+        "interrupt":[
+            "进入发布退出",
+            "CInImagetxt"
+        ],
+        "next":[
+            "圈子收藏",
+            "圈子已收藏",
+            "圈子完成判断",
+            "圈子点赞"
+        ]
+    },
+    "进入发布退出":{
+        "recognition": "OCR",
+        "expected":[
+            "分享您想说的话...",
+            "若稿件含AI生成内容"
+        ],
+        "action": "Key",
+        "key": 4,
+        "focus": {
+            "succeeded": "进入发布退出..."
+        },
+        "next": [
+            "Stop"
         ]
     },
     "圈子收藏":{

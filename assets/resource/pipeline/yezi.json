@@ -263,7 +263,7 @@
             "获取验证码"
         ],
         "action": "Click",
-        "post_delay": 1500,
+        "post_delay": 30000,
         "timeout": 300000,
         "focus": {
             "succeeded": "[color:blue]请输入验证码[/color]",
@@ -1147,6 +1147,12 @@
         "expected":[
             "收取短信"
         ],
+        "roi": [
+            0,
+            900,
+            720,
+            500
+        ],
         "action": "Click",
         "pre_delay": 10000,
         "next":[
@@ -1155,6 +1161,28 @@
         ]
     },
     "e超时或未收到":{
+        "recognition": "OCR",
+        "expected":[
+            "尚未收到包含关键字",
+            "请5秒后再收取"
+        ],
+        "post_delay": 20000,
+        "next":[
+            "e点击收取短信2"
+        ]
+    },
+    "e点击收取短信2":{
+        "recognition": "OCR",
+        "expected":[
+            "收取短信"
+        ],
+        "action": "Click",
+        "next":[
+            "e超时或未收到2",
+            "e验证码"
+        ]
+    },
+    "e超时或未收到2":{
         "recognition": "OCR",
         "expected":[
             "尚未收到包含关键字",

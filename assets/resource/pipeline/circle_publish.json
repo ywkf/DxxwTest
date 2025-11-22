@@ -594,6 +594,7 @@
             "环境保护"
         ],
         "action": "Click",
+        "pre_delay": 1000,
         "next": [
             "SelectTag05"
         ]

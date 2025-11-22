@@ -333,7 +333,7 @@
         "recognition": "OCR",
         "expected": "关注",
         "action": "Click",
-        "post_delay": 2000,
+        "post_delay": 8000,
         "next": [
             "检查关注列表",
             "关注列表返回"
@@ -382,7 +382,7 @@
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
-        "post_delay": 8000,
+        "post_delay": 1000,
         "focus": {
             "succeeded": "识别进入大象号成功",
             "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
