@@ -66,7 +66,7 @@
             "获取号码"
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 2000,
         "next": [
             "NoBalance",
             "CopyNumber"
@@ -1128,6 +1128,7 @@
         "expected":[
             "复制"
         ],
+        "pre_delay": 1500,
         "action": "Click",
         "next":[
             "OpenDxxw"
@@ -1154,7 +1155,8 @@
             500
         ],
         "action": "Click",
-        "pre_delay": 10000,
+        "pre_delay": 8000,
+        "post_delay": 2000,
         "next":[
             "e超时或未收到",
             "e验证码"
@@ -1195,7 +1197,7 @@
     "e验证码":{
         "recognition": "OCR",
         "expected":[
-            "验证码"
+            "证码"
         ],
         "next":[
             "e长按验证码"
@@ -1208,9 +1210,9 @@
         ],
         "roi": "e验证码",
         "roi_offset": [
-            82,
+            55,
             0,
-            -383,
+            -400,
             0
         ],
         "action": "LongPress",
@@ -1224,6 +1226,7 @@
         "expected":[
             "复制"
         ],
+        "pre_delay": 1500,
         "action": "Click",
         "next":[
             "StartDxxw02"
