@@ -85,7 +85,7 @@ jobs:
         with:
           repository: SweetSmellFox/MFAAvalonia
           fileName: "MFAAvalonia-*-win-x64*"
-          tag: "v1.6.9"
+          latest: true
           out-file-path: "MFAAvalonia"
           extract: true
 
