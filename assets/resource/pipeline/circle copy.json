@@ -1235,7 +1235,7 @@
         ],
         "roi": "圈子点赞",
         "order_by": "Vertical",
-        "threshold": 0.5,
+        "threshold": 0.4,
         "green_mask": true,
         "action": "Click",
         "interrupt": [
@@ -1280,6 +1280,7 @@
         "action": "Click",
         "interrupt":[
             "进入发布退出",
+            "进入分享页退出",
             "CInImagetxt"
         ],
         "next":[
@@ -1306,6 +1307,7 @@
         "action": "Click",
         "interrupt":[
             "进入发布退出",
+            "进入分享页退出",
             "CInImagetxt"
         ],
         "next":[
@@ -1315,12 +1317,31 @@
             "圈子点赞"
         ]
     },
+    "进入分享页退出":{
+        "recognition": "OCR",
+        "expected":[
+            "分享给好友",
+            "不感兴趣"
+        ],
+        "roi": [
+            0,
+            800,
+            720,
+            500
+        ],
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "Stop"
+        ]
+    },
     "进入发布退出":{
         "recognition": "OCR",
         "expected":[
             "分享您想说的话...",
             "若稿件含AI生成内容"
         ],
+        "pre_delay": 500,
         "action": "Key",
         "key": 4,
         "focus": {
