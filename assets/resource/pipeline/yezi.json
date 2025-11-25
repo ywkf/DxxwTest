@@ -1221,6 +1221,24 @@
             "e复制验证码"
         ]
     },
+
+
+    "复制测试c":{
+        "action": "Key",
+        "key": 278,
+        "next":[
+            "复制测试v"
+        ]
+    },
+    "复制测试v":{
+        "action": "Key",
+        "key": 279,
+        "next":[
+            
+        ]
+    },
+
+
     "e复制验证码":{
         "recognition": "OCR",
         "expected":[

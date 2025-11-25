@@ -57,7 +57,9 @@
         "interrupt":[
             "Back"
         ],
+        "pre_delay": 800,
         "action": "Click",
+        "post_delay": 800,
         "next": [
             "新版发布",
             "PublishVideo"

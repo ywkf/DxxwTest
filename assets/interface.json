@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.39",
+    "version": "0.2.40",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -54,9 +54,17 @@
             "option": [
                 "账号选择",
                 "签到",
-                "任务完成检测",
+                "每日任务检测",
                 "输入法检测"
-            ]
+            ],
+            "pipeline_override": {
+                "TaskImagetxtUndone": {
+                    "next": "每日任务开始re"
+                },
+                "TaskCommentIndone":{
+                    "next": "每日任务开始re"
+                }
+            }
         },
         {
             "name": "圈子点赞收藏 lite",
@@ -3720,6 +3728,15 @@
                         "图文滑动x1":{
                             "expected": "河南交通广播"
                         },
+                        "选择大象号re":{
+                            "expected": "河南信息广播"
+                        },
+                        "点击作品01re":{
+                            "expected": "河南信息广播"
+                        },
+                        "图文滑动x1re":{
+                            "expected": "河南信息广播"
+                        },
                         "SelectDxh": {
                             "expected": "河南交通广播"
                         },
@@ -3778,6 +3795,15 @@
                         },
                         "图文滑动x1":{
                             "expected": "河南信息广播"
+                        },
+                        "选择大象号re":{
+                            "expected": "河南交通广播"
+                        },
+                        "点击作品01re":{
+                            "expected": "河南交通广播"
+                        },
+                        "图文滑动x1re":{
+                            "expected": "河南交通广播"
                         },
                         "SelectDxh": {
                             "expected": "河南信息广播"
@@ -3838,6 +3864,15 @@
                         "图文滑动x1":{
                             "expected": "河南卫视"
                         },
+                        "选择大象号re":{
+                            "expected": "河南信息广播"
+                        },
+                        "点击作品01re":{
+                            "expected": "河南信息广播"
+                        },
+                        "图文滑动x1re":{
+                            "expected": "河南信息广播"
+                        },
                         "SelectDxh": {
                             "expected": "河南卫视"
                         },
@@ -3896,6 +3931,15 @@
                         },
                         "图文滑动x1":{
                             "expected": "大象新闻"
+                        },
+                        "选择大象号re":{
+                            "expected": "河南交通广播"
+                        },
+                        "点击作品01re":{
+                            "expected": "河南交通广播"
+                        },
+                        "图文滑动x1re":{
+                            "expected": "河南交通广播"
                         },
                         "SelectDxh": {
                             "expected": "大象新闻"
@@ -3956,6 +4000,15 @@
                         "图文滑动x1":{
                             "expected": "大象财富"
                         },
+                        "选择大象号re":{
+                            "expected": "河南信息广播"
+                        },
+                        "点击作品01re":{
+                            "expected": "河南信息广播"
+                        },
+                        "图文滑动x1re":{
+                            "expected": "河南信息广播"
+                        },
                         "SelectDxh": {
                             "expected": "大象财富"
                         },
@@ -4014,6 +4067,15 @@
                         },
                         "图文滑动x1":{
                             "expected": "都市报道"
+                        },
+                        "选择大象号re":{
+                            "expected": "河南交通广播"
+                        },
+                        "点击作品01re":{
+                            "expected": "河南交通广播"
+                        },
+                        "图文滑动x1re":{
+                            "expected": "河南交通广播"
                         },
                         "SelectDxh": {
                             "expected": "都市报道"
@@ -4641,6 +4703,35 @@
                             ]
                         },
                         "BrowseImagetxtComplete": {
+                            "next": [
+                                "TaskCheck"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "每日任务检测": {
+            "doc": "选择任务前检测，若检测到已完成即该任务完成",
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "任务前检测",
+                    "pipeline_override": {
+                        "领取积分开始":{
+                            "next": [
+                                "TaskCheck"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "任务后检测",
+                    "pipeline_override": {
+                        "每日任务完成":{
                             "next": [
                                 "TaskCheck"
                             ]

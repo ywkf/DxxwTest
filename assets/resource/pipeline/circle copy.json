@@ -1339,9 +1339,10 @@
         "recognition": "OCR",
         "expected":[
             "分享您想说的话...",
-            "若稿件含AI生成内容"
+            "若稿件含AI生成内容",
+            "你在哪里"
         ],
-        "pre_delay": 500,
+        "pre_delay": 800,
         "action": "Key",
         "key": 4,
         "focus": {
@@ -1412,6 +1413,11 @@
     },
     "圈子完成判断": {
         "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "热门",
+            "最热"
+        ],
         "interrupt": [
             "CInImagetxt",
             "CCircleSwipe"

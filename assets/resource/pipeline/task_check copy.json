@@ -1,0 +1,459 @@
+{
+    "每日任务开始re": {
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "interrupt": [
+            "Back"
+        ],
+        "next": [
+            "点击关注列表re"
+        ]
+    },
+    "点击关注列表re": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 8000,
+        "next": [
+            "检查关注列表re",
+            "关注列表返回re"
+        ]
+    },
+    "关注列表返回re": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击关注列表re"
+        ]
+    },
+    "检查关注列表re": {
+        "recognition": "OCR",
+        "expected": [
+            "已关注",
+            "互相关注"
+        ],
+        "interrupt": [
+            "关注列表滑动"
+        ],
+        "post_delay": 2000,
+        "next": [
+            "选择大象号re"
+        ]
+    },
+    "选择大象号re": {
+        "recognition": "OCR",
+        "expected": [
+            "河南信息广播"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "focus": {
+            "succeeded": "识别进入大象号成功",
+            "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
+        },
+        "next": [
+            "大象号初始滑动re",
+            "选择大象号2ndre"
+        ]
+    },
+    "选择大象号2ndre": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "选择大象号re"
+        ]
+    },
+    "大象号初始滑动re": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "全部"
+        ],
+        "roi": [
+            0,
+            707,
+            720,
+            558
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "点击图文部分re"
+        ]
+    },
+    "点击图文部分re": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "focus": {
+            "succeeded": "开始执行浏览任务"
+        },
+        "next": [
+            "点击作品01re"
+        ]
+    },
+    "点击作品01re": {
+        "recognition": "OCR",
+        "expected": [
+            "河南信息广播"
+        ],
+        "roi": [2, 215, 718, 604],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 10000,
+        "on_error":[
+            "图文评论点击输入框ifre"
+        ],
+        "next": [
+            "完成浏览内容积分+3re"
+        ]
+    },
+    "完成浏览内容积分+3re":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "完成浏览内容积分+3",
+            "完成浏览内容积分"
+        ],
+        "next":[
+            "图文评论点击输入框re"
+        ]
+    },
+    "图文评论点击输入框re": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "点击大象新语re"
+        ]
+    },
+    "点击大象新语re": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "点击大象新语评论re"
+        ]
+    },
+    "点击大象新语评论re": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            476,
+            1,
+            1
+        ],
+        "next": [
+            "点击发表评论re",
+            "重新点击大象心语评论re"
+        ]
+    },
+    "重新点击大象心语评论re":{
+        "recognition": "OCR",
+        "expected":[
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": [21, 385, 574, 119],
+        "action": "Click",
+        "next":[
+            "点击发表评论re"
+        ]
+    },
+    "点击发表评论re": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "发送成功re",
+            "评论重复内容提示re",
+            "评论频率过高提示re",
+            "换一篇提示re"
+        ]
+    },
+    "发送成功re":{
+        "recognition": "OCR",
+        "expected":[
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "timeout": 6000,
+        "on_error":[
+            "重置点赞re"
+        ],
+        "next":[
+            "完成评论积分+5re"
+        ]
+    },
+    "完成评论积分+5re":{
+        "recognition": "OCR",
+        "expected":[
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "next":[
+            "重置点赞re"
+        ]
+    },
+    "评论重复内容提示re": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
+        ],
+        "action": "Click",
+        "target": [197, 1230, 1, 1],
+        "post_delay": 6000,
+        "next": [
+            "点击大象新语re",
+            "重置点赞re"
+        ]
+    },
+    "评论频率过高提示re":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "图文评论点击输入框re",
+            "重置点赞re"
+        ]
+    },
+    "换一篇提示re":{
+        "recognition": "OCR",
+        "expected": [
+            "换篇再聊"
+        ],
+        "next": [
+            "重置点赞re"
+        ]
+    },
+    "图文评论点击输入框ifre": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "interrupt": [
+            "InputmethodCheck",
+            "InputmethodCheck0"
+        ],
+        "next": [
+            "点击大象新语ifre"
+        ]
+    },
+    "点击大象新语ifre": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "next": [
+            "点击大象新语评论ifre"
+        ]
+    },
+    "点击大象新语评论ifre": {
+        "recognition": "TemplateMatch",
+        "template": "大象新语.png",
+        "action": "Click",
+        "target": [
+            42,
+            473,
+            1,
+            1
+        ],
+        "next": [
+            "点击发表评论ifre"
+        ]
+    },
+    "点击发表评论ifre": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "发送成功ifre",
+            "评论重复内容提示ifre",
+            "评论频率过高提示ifre",
+            "换一篇提示ifre"
+        ]
+    },
+    "发送成功ifre":{
+        "recognition": "OCR",
+        "expected":[
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "timeout": 6000,
+        "on_error":[
+            "每日任务完成re"
+        ],
+        "next":[
+            "完成评论积分+5ifre"
+        ]
+    },
+    "完成评论积分+5ifre":{
+        "recognition": "OCR",
+        "expected":[
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "next":[
+            "重置点赞re"
+        ]
+    },
+    "评论重复内容提示ifre": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
+        ],
+        "action": "Click",
+        "target": [197, 1230, 1, 1],
+        "post_delay": 2000,
+        "next": [
+            "点击大象新语ifre",
+            "重置点赞re"
+        ]
+    },
+    "评论频率过高提示ifre":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 60000,
+        "next": [
+            "图文评论点击输入框ifre",
+            "重置点赞re"
+        ]
+    },
+    "换一篇提示ifre":{
+        "recognition": "OCR",
+        "expected": [
+            "换篇再聊"
+        ],
+        "next": [
+            "重置点赞re"
+        ]
+    },
+    "重置点赞re": {
+        "post_delay": 800,
+        "next": [
+            "作品完成返回01re"
+        ]
+    },
+    "作品完成返回01re": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "图文滑动x1re"
+        ]
+    },
+    "图文滑动x1re":{
+        "recognition": "OCR",
+        "expected":[
+            "河南信息广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Swipe",
+        "begin": true,
+        "end": "点击作品01re",
+        "duration": 1000,
+        "post_delay": 500,
+        "next": [
+            "点击作品01re"
+        ]
+    },
+    "每日任务完成re": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "focus": {
+            "succeeded": "[color:blue]每日任务完成[/color]"
+        },
+        "next": [
+            "Back"
+        ]
+    }
+}
