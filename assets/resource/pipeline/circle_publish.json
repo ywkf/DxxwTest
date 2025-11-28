@@ -522,6 +522,7 @@
         "expected": [
             "选择圈子"
         ],
+        "pre_delay": 800,
         "action": "Click",
         "interrupt": [
             "圈子类型上滑",
@@ -595,8 +596,8 @@
         "expected": [
             "环境保护"
         ],
-        "action": "Click",
         "pre_delay": 1000,
+        "action": "Click",
         "next": [
             "SelectTag05"
         ]
@@ -606,13 +607,23 @@
         "expected": [
             "确定"
         ],
+        "pre_delay": 1000,
         "action": "Click",
         "interrupt": [
+            "标签再次确定",
             "PublishSwipeUp"
         ],
         "next": [
             "PClickPublish"
         ]
+    },
+    "标签再次确定":{
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "pre_delay": 1000,
+        "action": "Click"
     },
     "AI生成":{
         "enabled": true,

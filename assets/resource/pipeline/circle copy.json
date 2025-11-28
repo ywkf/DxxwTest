@@ -1235,7 +1235,7 @@
         ],
         "roi": "圈子点赞",
         "order_by": "Vertical",
-        "threshold": 0.4,
+        "threshold": 0.5,
         "green_mask": true,
         "action": "Click",
         "interrupt": [

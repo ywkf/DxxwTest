@@ -477,10 +477,10 @@
         "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
-            "点赞.png",
-            "点赞1.png",
-            "like0.png",
-            "like1.png"
+            "like0g.png",
+            "like1g.png",
+            "n点赞g.png",
+            "n点赞1g.png"
         ],
         "roi": [
             405,
@@ -488,6 +488,8 @@
             310,
             75
         ],
+        "green_mask": true,
+        "pre_delay": 800,
         "action": "Click",
         "target": [
             652,
@@ -502,8 +504,10 @@
     "图文收藏": {
         "recognition": "TemplateMatch",
         "template": [
-            "收藏.png",
-            "收藏1.png"
+            "收藏g.png",
+            "收藏1g.png",
+            "n收藏g.png",
+            "n收藏1g.png"
         ],
         "roi": [
             405,
@@ -511,6 +515,8 @@
             310,
             75
         ],
+        "green_mask": true,
+        "pre_delay": 800,
         "action": "Click",
         "target": [
             501,
@@ -525,14 +531,29 @@
     },
     "图文分享": {
         "recognition": "TemplateMatch",
-        "template": "分享.png",
+        "template": [
+            "n分享.png"
+        ],
+        "roi": [1, 1188, 719, 92],
+        "pre_delay": 1000,
         "action": "Click",
-        "post_wait_freezes": 1000,
         "post_delay": 500,
+        "interrupt":[
+            "再次点击分享"
+        ],
         "next": [
             "图文分享到QQ",
             "收藏未知错误"
         ]
+    },
+    "再次点击分享":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "n分享.png"
+        ],
+        "roi": [1, 1188, 719, 92],
+        "pre_delay": 1000,
+        "action": "Click"
     },
     "收藏未知错误":{
         "recognition": "OCR",
@@ -548,6 +569,7 @@
         "recognition": "OCR",
         "expected": "QQ",
         "roi": [1, 387, 719, 893],
+        "pre_delay": 1000,
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -571,7 +593,9 @@
         "recognition": "OCR",
         "expected": [
             "期待你",
-            "的评论"
+            "的评论",
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
         ],
         "roi": [
             50,
@@ -579,6 +603,7 @@
             300,
             30
         ],
+        "pre_delay": 800,
         "action": "Click",
         "target": [
             50,
@@ -676,7 +701,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 6000,
+        "post_delay": 10000,
         "next": [
             "点击大象新语",
             "重置点赞"
@@ -708,7 +733,9 @@
         "recognition": "OCR",
         "expected": [
             "期待你",
-            "的评论"
+            "的评论",
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
         ],
         "roi": [
             50,
@@ -716,6 +743,7 @@
             300,
             30
         ],
+        "pre_delay": 800,
         "action": "Click",
         "target": [
             50,
@@ -800,7 +828,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 2000,
+        "post_delay": 10000,
         "next": [
             "点击大象新语if",
             "重置点赞"
@@ -849,7 +877,7 @@
             44
         ],
         "post_wait_freezes": 2000,
-        "post_delay": 800,
+        "post_delay": 1000,
         "next": [
             "作品完成返回01"
         ]
