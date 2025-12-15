@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.44",
+    "version": "0.2.46",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -74,7 +74,6 @@
             "repeat_count": 1,
             "option": [
                 "客户端版本",
-                "圈子选择",
                 "是否评论lite",
                 "何时结束",
                 "每日分享任务",
@@ -103,8 +102,8 @@
             "repeatable": true,
             "repeat_count": 1,
             "option": [
-                "客户端版本",
-                "圈子选择",
+                "客户端版本(发布)",
+                "发布作品编号",
                 "加载素材"   
             ]
         },
@@ -275,9 +274,7 @@
                 {
                     "name": "旧版",
                     "option":[
-                        "作品相册",
-                        "发布作品编号",
-                        "启用AI生成"
+                        "圈子选择"
                     ],
                     "pipeline_override": {
                         "新版圈子识别":{
@@ -289,6 +286,71 @@
                     "name": "新版",
                     "option": [
                         "新版圈子选择"
+                    ],
+                    "pipeline_override": {
+                        "点击动态":{
+                            "enabled": true
+                        },
+                        "我的圈子":{
+                            "enabled": true
+                        },
+                        "圈子加载识别":{
+                            "enabled": true
+                        },
+                        "新版圈子识别":{
+                            "enabled": true
+                        },
+                        "新版发布":{
+                            "enabled": true
+                        },
+                        "圈子类型上滑":{
+                            "enabled": true
+                        },
+                        "选择圈子类型":{
+                            "enabled": true
+                        },
+                        "已在圈子中":{
+                            "enabled": true
+                        },
+                        "CInTheCircle":{
+                            "enabled": false
+                        },
+                        "CClickMyCircle":{
+                            "enabled": false
+                        },
+                        "CClickSubsCircle":{
+                            "enabled": false
+                        },
+                        "CCircleCollect&Like":{
+                            "enabled": false
+                        },
+                        "CCircleCollect":{
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "客户端版本(发布)":{
+            "description": "客户端版本v5.6.0以上为新版",
+            "cases": [
+                {
+                    "name": "旧版",
+                    "option":[
+                        "圈子选择",
+                        "作品相册"
+                    ],
+                    "pipeline_override": {
+                        "新版圈子识别":{
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "新版",
+                    "option": [
+                        "新版圈子选择",
+                        "启用AI生成"
                     ],
                     "pipeline_override": {
                         "点击动态":{
@@ -3259,7 +3321,6 @@
             "type": "input",
             "label": "自定义圈子",
             "description": "输入圈子名称（热榜中）",
-            "icon": "扳手.png",
             "inputs": [
                 {
                 "name": "圈子名称",
@@ -4008,85 +4069,6 @@
                             ],
                             "focus": {
                                 "succeeded": "[color:green]已选择 象友汇 圈子[/color]"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "圈子1",
-                    "pipeline_override": {
-                        "CCircleCompletedBack": {
-                            "focus": {
-                                "succeeded": "[color:blue]圈子1任务完成[/color]",
-                                "toast": "圈子1任务完成"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "圈子2",
-                    "pipeline_override": {
-                        "我的圈子":{
-                            "target": [220, 278, 1, 1],
-                            "focus": {
-                                "succeeded": "[color:green]识别进入圈子2成功[/color]"
-                            }
-                        },
-                        "CCircleCompletedBack": {
-                            "focus": {
-                                "succeeded": "[color:blue]圈子2任务完成[/color]",
-                                "toast": "圈子2任务完成"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "圈子3",
-                    "pipeline_override": {
-                        "我的圈子":{
-                            "target": [359, 275, 1, 1],
-                            "focus": {
-                                "succeeded": "[color:green]识别进入圈子3成功[/color]"
-                            }
-                        },
-                        "CCircleCompletedBack": {
-                            "focus": {
-                                "succeeded": "[color:blue]圈子3任务完成[/color]",
-                                "toast": "圈子3任务完成"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "圈子4",
-                    "pipeline_override": {
-                        "我的圈子":{
-                            "target": [492, 278, 1, 1],
-                            "focus": {
-                                "succeeded": "[color:green]识别进入圈子4成功[/color]"
-                            }
-                        },
-                        "CCircleCompletedBack": {
-                            "focus": {
-                                "succeeded": "[color:blue]圈子4任务完成[/color]",
-                                "toast": "圈子4任务完成"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "圈子5",
-                    "pipeline_override": {
-                        "我的圈子":{
-                            "target": [630, 279, 1, 1],
-                            "focus": {
-                                "succeeded": "[color:green]识别进入圈子5成功[/color]"
-                            }
-                        },
-                        "CCircleCompletedBack": {
-                            "focus": {
-                                "succeeded": "[color:blue]圈子5任务完成[/color]",
-                                "toast": "圈子5任务完成"
                             }
                         }
                     }
