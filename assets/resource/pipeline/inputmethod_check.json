@@ -121,9 +121,25 @@
             "succeeded": "输入法已开启"
         },
         "next": [
+            "输入法返回1"
+        ]
+    },
+    "输入法返回1":{
+        "action": "Key",
+        "key": 4,
+        "next":[
+            "输入法返回2"
+        ]
+    },
+    "输入法返回2":{
+        "action": "Key",
+        "key": 4,
+        "next":[
             "Stop"
         ]
     },
+
+
     "SwitchToiFlyIME": {
         "action": "Command",
         "exec": "Adb",

@@ -317,7 +317,8 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "next": [
-            "ReplyLikeImagetxtPart"
+            "ReplyLikeImagetxtPart",
+            "EndLine"
         ]
     },
     "ReplyLikeImagetxtPart": {
@@ -510,7 +511,8 @@
             "\\d{2}-\\d{2}?\\d{2}:\\d{2}"
         ],
         "next": [
-            "ReplyLikeVideoPart"
+            "ReplyLikeVideoPart",
+            "EndLine02"
         ]
     },
     "ReplyLikeVideoPart": {
@@ -675,7 +677,7 @@
             "\\d{2}-\\d{2}?\\d{2}:\\d{2}"
         ],
         "focus": {
-            "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
+            "succeeded": "[color:blue]点赞与收藏任务完成[/color]"
         },
         "next": [
             "账号点赞完成返回",

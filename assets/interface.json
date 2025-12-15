@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.50",
+    "version": "0.2.51",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -87,7 +87,6 @@
             "repeatable": true,
             "repeat_count": 1,
             "option": [
-                "客户端版本",
                 "自定义圈子",
                 "是否评论lite",
                 "何时结束",
@@ -967,6 +966,9 @@
                 {
                     "name": "新粉丝",
                     "pipeline_override": {
+                        "账号点赞完成返回":{
+                            "enabled": false
+                        },
                         "回赞进入消息":{
                             "next":[
                                 "回赞新粉丝"
@@ -983,6 +985,9 @@
                 {
                     "name": "消息账号",
                     "pipeline_override": {
+                        "账号点赞完成返回":{
+                            "enabled": false
+                        },
                         "回赞进入消息":{
                             "next":[
                                 "回赞我的消息"
@@ -996,6 +1001,9 @@
                 {
                     "name": "新粉丝和消息账号",
                     "pipeline_override": {
+                        "账号点赞完成返回":{
+                            "enabled": false
+                        },
                         "回赞进入消息":{
                             "next":[
                                 "回赞我的消息"
@@ -1067,6 +1075,37 @@
                         "启动后密码点击登录":{
                             "next":[
                                 "InputmethodCheck00"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "关闭输入法（需登录）",
+                    "pipeline_override": {
+                        "ReStartDxxw05":{
+                            "next":[
+                                "已登录账号",
+                                "启动后登录账号",
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "已登录账号":{
+                            "next":[
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "启动后密码点击登录":{
+                            "next":[
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "SelectInputmethod": {
+                            "recognition": "OCR",
+                            "expected": [
+                                "英语（美国）",
+                                "SogouIME",
+                                "SogoulME",
+                                "chuizi"
                             ]
                         }
                     }
