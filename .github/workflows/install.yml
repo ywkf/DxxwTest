@@ -49,7 +49,14 @@ jobs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
 
-  windows:
+  name: Build and Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+windows:
   needs: meta
   runs-on: windows-latest
   strategy:
