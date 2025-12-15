@@ -77,7 +77,7 @@
             "登录/注册"
         ],
         "action": "Click",
-        "post_delay": 5000,
+        "post_delay": 2400,
         "next": [
             "点击密码登录"
         ]
@@ -87,6 +87,7 @@
         "expected":[
             "密码登录"
         ],
+        "pre_delay": 1000,
         "action": "Click",
         "next":[
             "点击阅读并同意"
@@ -188,7 +189,8 @@
         "action": "InputText",
         "input_text": "12345678",
         "next":[
-            "输入完成返回"
+            "输入完成返回",
+            "密码点击登录"
         ]
     },
     "输入完成返回":{
@@ -216,7 +218,7 @@
             135
         ],
         "action": "Click",
-        "post_delay": 5000,
+        "post_delay": 3000,
         "next": [
             "点击关注列表like"
         ]
@@ -224,6 +226,7 @@
     "点击关注列表like": {
         "recognition": "OCR",
         "expected": "关注",
+        "pre_delay": 1000,
         "action": "Click",
         "post_delay": 3000,
         "next": [

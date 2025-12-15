@@ -542,6 +542,9 @@
         "order_by": "Vertical",
         "index": 1,
         "roi": [0, 245, 720, 1035],
+        "focus": {
+            "succeeded": "[color:blue]当天已完成[/color]"
+        },
         "next":[
             "账号点赞完成返回",
             "ReplyBack"
