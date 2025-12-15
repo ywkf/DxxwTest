@@ -90,7 +90,7 @@ jobs:
           repository: SweetSmellFox/MFAAvalonia
           fileName: "MFAAvalonia-*-win-x64*"
           latest: true
-          out-file-path: "MFAAvalonia"
+          out-file-path: "MFA"
           extract: true
 
       # 清理下载的压缩包
@@ -98,11 +98,12 @@ jobs:
         shell: bash
         run: |
           echo "Cleaning up downloaded archives..."
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}" 2>/dev/null || true
           rm -f MFAWPF/*.zip MFAWPF/*.tar.gz 2>/dev/null || true
-          rm -f MFAAvalonia/*.zip MFAAvalonia/*.tar.gz 2>/dev/null || true
 
-      # 安装主程序（Full版本的基础）
-      - name: Install main application
+      # 安装主程序
+      - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
@@ -110,45 +111,65 @@ jobs:
           # 确保install目录存在
           mkdir -p install
           
-          # 复制MFAWPF到install目录（Full版本）
-          if [ -f "MFAWPF/MFAWPF.exe" ]; then
-            echo "Copying MFAWPF.exe to install directory..."
-            cp -v "MFAWPF/MFAWPF.exe" "install/"
-            # 复制MFAWPF的dll文件
-            find MFAWPF -name "*.dll" -type f -exec cp -v {} "install/" 2>/dev/null || true
+          # 参考项目的方式：完整复制MFA目录
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            # 使用cp -rpvn MFA/. install/ 确保完整复制
+            cp -rpvn MFA/. install/
+            
+            # 检查是否成功复制了MFAAvalonia.exe
+            if [ -f "install/MFAAvalonia.exe" ]; then
+              echo "✅ MFAAvalonia.exe copied successfully"
+            else
+              echo "❌ MFAAvalonia.exe not found after copy"
+              echo "MFA directory contents:"
+              find MFA -type f -name "*.exe" | while read f; do
+                echo "  - $f"
+              done
+            fi
+          else
+            echo "MFA directory not found"
           fi
           
-          # 复制MFAAvalonia到install目录（Full版本）
-          if [ -d "MFAAvalonia" ]; then
-            echo "Copying MFAAvalonia files to install directory..."
-            # 复制MFAAvalonia.exe
-            if [ -f "MFAAvalonia/MFAAvalonia.exe" ]; then
-              cp -v "MFAAvalonia/MFAAvalonia.exe" "install/"
-            fi
-            # 复制所有dll文件
-            find MFAAvalonia -name "*.dll" -type f -exec cp -v {} "install/" 2>/dev/null || true
-            # 复制配置文件
-            find MFAAvalonia \( -name "*.json" -o -name "*.config" -o -name "*.deps.json" \) -type f -exec cp -v {} "install/" 2>/dev/null || true
+          # 如果需要，也复制MFAWPF
+          if [ -d "MFAWPF" ]; then
+            echo "Copying MFAWPF files..."
+            cp -rpvn MFAWPF/. install/
           fi
 
-      # 创建CLI版本（Lite版本）- 不包含GUI文件
+      # 创建CLI版本（Lite版本）
       - name: Create CLI version
         shell: bash
         run: |
           echo "Creating CLI version..."
           mkdir -p install-cli
           
-          # 复制主程序文件，排除GUI相关文件
+          # 复制主程序文件到install-cli
           if [ -d "install" ]; then
-            # 复制所有文件
+            # 先复制所有文件
             cp -rpvn install/. install-cli/
             
-            # 删除GUI可执行文件（Lite版本不包含）
-            rm -f install-cli/MFAWPF.exe 2>/dev/null || true
-            rm -f install-cli/MFAAvalonia.exe 2>/dev/null || true
+            # 删除GUI可执行文件和相关文件
+            echo "Removing GUI files for Lite version..."
             
-            # 可以添加其他需要删除的GUI相关文件
+            # 删除MFAAvalonia相关文件
+            rm -f install-cli/MFAAvalonia.exe 2>/dev/null || true
+            rm -f install-cli/MFAAvalonia.* 2>/dev/null || true
+            rm -f install-cli/*Avalonia*.dll 2>/dev/null || true
+            rm -f install-cli/*Avalonia*.pdb 2>/dev/null || true
+                    
+            # 删除其他可能的GUI依赖
+            find install-cli -name "*Presentation*.dll" -delete 2>/dev/null || true
+            find install-cli -name "*WindowsBase*.dll" -delete 2>/dev/null || true
+            find install-cli -name "*Xaml*.dll" -delete 2>/dev/null || true
+            
             echo "GUI files removed for Lite version"
+            
+            # 验证Lite版本
+            echo "Lite version executables:"
+            find install-cli -name "*.exe" -type f | while read exe; do
+              echo "  - $(basename "$exe")"
+            done
           else
             echo "Warning: install directory not found"
           fi
@@ -158,35 +179,46 @@ jobs:
         shell: bash
         run: |
           echo "=== Full Version (install) ==="
-          echo "Executables:"
+          echo "Directory size:"
+          du -sh install/
+          echo ""
+          echo "Executables found:"
           find install -name "*.exe" -type f | while read exe; do
-            echo "  - $(basename "$exe")"
+            size=$(stat -f%z "$exe" 2>/dev/null || stat -c%s "$exe" 2>/dev/null)
+            echo "  - $(basename "$exe") (${size} bytes)"
           done
+          echo ""
+          echo "DLL files count:"
+          find install -name "*.dll" -type f | wc -l
           echo ""
           
           echo "=== Lite Version (install-cli) ==="
-          echo "Executables:"
-          find install-cli -name "*.exe" -type f | while read exe; do
-            echo "  - $(basename "$exe")"
-          done
-          
-          echo ""
-          echo "=== Summary ==="
-          echo "Full version size:"
-          du -sh install/
-          echo "Lite version size:"
+          echo "Directory size:"
           du -sh install-cli/
+          echo ""
+          echo "Executables found:"
+          find install-cli -name "*.exe" -type f | while read exe; do
+            size=$(stat -f%z "$exe" 2>/dev/null || stat -c%s "$exe" 2>/dev/null)
+            echo "  - $(basename "$exe") (${size} bytes)"
+          done
+          echo ""
+          echo "Checking for MFAAvalonia in Lite version (should NOT exist):"
+          if [ -f "install-cli/MFAAvalonia.exe" ]; then
+            echo "❌ ERROR: MFAAvalonia.exe still exists in Lite version!"
+          else
+            echo "✅ Good: MFAAvalonia.exe not found in Lite version"
+          fi
 
       # 上传Full版本（包含所有GUI）
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaDxxw-win-${{ matrix.arch }}-Full
+          name: MaaDxxw-win-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}-Full
           path: "install"
 
       # 上传Lite版本（不包含GUI，只有CLI）
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaDxxw-win-${{ matrix.arch }}-Lite
+          name: MaaDxxw-win-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}-Lite
           path: "install-cli"
 
   ubuntu:
