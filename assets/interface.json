@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.51",
+    "version": "0.2.52",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -42,7 +42,7 @@
                 "输入法检测"
             ],
             "pipeline_override": {
-                "SelectInputmethod": {
+                "输入法返回2": {
                     "next": "MergePointsTask"
                 }
             }
@@ -340,9 +340,6 @@
                         "作品相册"
                     ],
                     "pipeline_override": {
-                        "新版圈子识别":{
-                            "enabled": false
-                        }
                     }
                 },
                 {
@@ -351,18 +348,6 @@
                         "启用AI生成"
                     ],
                     "pipeline_override": {
-                        "点击动态":{
-                            "enabled": true
-                        },
-                        "我的圈子":{
-                            "enabled": true
-                        },
-                        "圈子加载识别":{
-                            "enabled": true
-                        },
-                        "新版圈子识别":{
-                            "enabled": true
-                        },
                         "新版发布":{
                             "enabled": true
                         },
@@ -371,24 +356,6 @@
                         },
                         "选择圈子类型":{
                             "enabled": true
-                        },
-                        "已在圈子中":{
-                            "enabled": true
-                        },
-                        "CInTheCircle":{
-                            "enabled": false
-                        },
-                        "CClickMyCircle":{
-                            "enabled": false
-                        },
-                        "CClickSubsCircle":{
-                            "enabled": false
-                        },
-                        "CCircleCollect&Like":{
-                            "enabled": false
-                        },
-                        "CCircleCollect":{
-                            "enabled": false
                         }
                     }
                 }
@@ -407,6 +374,7 @@
                     "pipeline_override": {
                         "准备发布":{
                             "next":[
+                                "[JumpBack]PublishSwipeUp",
                                 "AI生成"
                             ]
                         }
@@ -3355,17 +3323,57 @@
                 }
             ]
         },
+        "账号登录": {
+            "type": "input",
+            "label": "账号登录",
+            "description": "输入账号密码登录",
+            "inputs": [
+                {
+                    "name": "账号",
+                    "label": "$账号",
+                    "description": "账号",
+                    "default": "11111111111",
+                    "pipeline_type": "string",
+                    "verify": "^1[3-9]\\d{9}$"
+                },
+                {
+                    "name": "密码",
+                    "label": "$密码",
+                    "description": "密码",
+                    "default": "12345678",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "启动后输入手机号": {
+                    "input_text": [
+                        "{账号}"
+                    ],
+                    "focus": {
+                        "succeeded": "[color:green]{账号} 登录中...[/color]"
+                    }
+                },
+                "启动后输入密码": {
+                    "input_text": [
+                        "{密码}"
+                    ],
+                    "focus": {
+                        "succeeded": "[color:green]{账号} 登录中...[/color]"
+                    }
+                }
+            }
+        },
         "自定义圈子": {
             "type": "input",
             "label": "自定义圈子",
             "description": "输入圈子名称（热榜中）",
             "inputs": [
                 {
-                "name": "圈子名称",
-                "label": "$圈子名称",
-                "description": "圈子名称",
-                "default": "无线“象”往",
-                "pipeline_type": "string"
+                    "name": "圈子名称",
+                    "label": "$圈子名称",
+                    "description": "圈子名称",
+                    "default": "无线“象”往",
+                    "pipeline_type": "string"
                 }
             ],
             "pipeline_override": {
