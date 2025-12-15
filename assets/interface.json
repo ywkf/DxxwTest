@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.46",
+    "version": "0.2.50",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -103,6 +103,7 @@
             "repeat_count": 1,
             "option": [
                 "客户端版本(发布)",
+                "圈子选择(发布)",
                 "发布作品编号",
                 "加载素材"   
             ]
@@ -337,7 +338,6 @@
                 {
                     "name": "旧版",
                     "option":[
-                        "圈子选择",
                         "作品相册"
                     ],
                     "pipeline_override": {
@@ -349,7 +349,6 @@
                 {
                     "name": "新版",
                     "option": [
-                        "新版圈子选择",
                         "启用AI生成"
                     ],
                     "pipeline_override": {
@@ -3353,7 +3352,7 @@
             }
         },
         "圈子选择": {
-            "description": "选择需要点赞的圈子\n新版客户端选择圈子1-5\n自定义 需要手动进入圈子再启动，发布任务不可选",
+            "description": "选择需要点赞的圈子\n新版客户端选择圈子1-5\n自定义 需要手动进入圈子再启动",
             "cases": [
                 {
                     "name": "无线“象”往",
@@ -4230,6 +4229,215 @@
                             "focus": {
                                 "succeeded": "[color:blue]圈子5任务完成[/color]",
                                 "toast": "圈子5任务完成"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "圈子选择(发布)": {
+            "description": "选择需要发布的圈子",
+            "cases": [
+                {
+                    "name": "无线“象”往",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "机构"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "无线“象”往",
+                                "展示新时代河南"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 无线“象”往 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "随手记录生活",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "摄影"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "随手记录生活",
+                                "随手"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 随手记录生活 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "大象话题",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "时事"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "大象话题"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 大象话题 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "记录生活",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "摄影"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "记录生活"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 记录生活 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "福塔-发射",
+                    "pipeline_override": {
+                        
+                        "PublishClickCircle": {
+                            "expected": [
+                                "福塔-发射",
+                                "福塔"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 福塔-发射 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "热爱生活",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "休闲"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "热爱生活"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 热爱生活 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "快乐集中营",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "休闲"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "快乐集中营"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 快乐集中营 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "非常“3+4”",
+                    "pipeline_override": {
+                        
+                        "PublishClickCircle": {
+                            "expected": [
+                                "非常“3\\+4”",
+                                "3+4",
+                                "非常"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 非常“3+4” 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "象·心力",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "休闲"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "象·心力",
+                                "心力"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 象·心力 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "人间处处",
+                    "pipeline_override": {
+                        
+                        "选择圈子类型":{
+                            "expected": [
+                                "摄影"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "人间处处"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 人间处处 圈子[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "象友汇",
+                    "pipeline_override": {
+                        "选择圈子类型":{
+                            "expected": [
+                                "文化"
+                            ]
+                        },
+                        "PublishClickCircle": {
+                            "expected": [
+                                "象友汇"
+                            ],
+                            "focus": {
+                                "succeeded": "[color:green]已选择 象友汇 圈子[/color]"
                             }
                         }
                     }
