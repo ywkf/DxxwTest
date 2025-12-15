@@ -145,16 +145,14 @@
             30
         ],
         "post_delay": 1500,
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
             "CCommentVideoD",
             "CInputCommentImage",
             "CCommentXF01VH",
             "CommentCommon01",
-            "CommentCommon00"
+            "CommentCommon00",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "CCommentXF01VH": {
@@ -308,12 +306,10 @@
             "succeeded": "发表评论.."
         },
         "timeout": 60000,
-        "interrupt": [
-            "CReComment"
-        ],
         "next": [
             "CCommentBack02T",
-            "CCommentLimitedIT"
+            "CCommentLimitedIT",
+            "[JumpBack]CReComment"
         ]
     },
     "CReComment": {
@@ -553,13 +549,11 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
             "CCommentPasteXF01",
-            "CommentCommon00"
+            "CommentCommon00",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "CCommentPasteXF01": {
@@ -616,13 +610,11 @@
             300,
             30
         ],
-        "interrupt": [
-            "ReClickComment",
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "CCommentXF01"
+            "CCommentXF01",
+            "[JumpBack]ReClickComment",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "ReClickComment": {

@@ -1,14 +1,12 @@
 {
     "RepkyLike": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "ReplyLikeSwipe",
             "ReplyLikeSwipeVideo",
             "回赞检查关注列表",
-            "回赞进入主页"
+            "回赞进入主页",
+            "[JumpBack]Back"
         ]
     },
     "回赞进入主页": {
@@ -26,12 +24,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "回赞进入消息",
-            "回赞点击关注列表"
+            "回赞点击关注列表",
+            "[JumpBack]Back"
         ]
     },
     "回赞进入消息":{
@@ -57,11 +53,9 @@
         "begin": [343, 286, 1, 1],
         "end": [356, 1211, 1, 1],
         "post_delay": 2000,
-        "interrupt":[
-            "我的消息滑动刷新2"
-        ],
-        "next":[
-            "回赞新粉丝"
+        "next": [
+            "回赞新粉丝",
+            "[JumpBack]我的消息滑动刷新2"
         ]
     },
     "我的消息滑动刷新2":{
@@ -87,7 +81,8 @@
             "回赞任务完成"
         ],
         "next":[
-            "点击去看看"
+            "点击去看看",
+            "点击小时前"
         ]
     },
     "点击去看看":{
@@ -96,6 +91,19 @@
             "去看看"
         ],
         "roi": [540, 129, 180, 1151],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 2000,
+        "next":[
+            "ReplyLikeSwipe"
+        ]
+    },
+    "点击小时前":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "\\d+小时前"
+        ],
         "order_by": "Vertical",
         "action": "Click",
         "post_delay": 2000,
@@ -209,13 +217,12 @@
             "粉丝列表"
         ],
         "roi": [0, 42, 720, 100],
-        "interrupt": [
-            "回赞关注列表滑动"
-        ],
         "post_delay": 2000,
         "next": [
             "点击去看看",
-            "回赞选择大象号"
+            "点击小时前",
+            "回赞选择大象号",
+            "[JumpBack]回赞关注列表滑动"
         ]
     },
     "回赞关注列表滑动": {
@@ -420,12 +427,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "ReplyInputComment"
+            "ReplyInputComment",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "ReplyInputComment": {
@@ -499,7 +504,11 @@
     },
     "EndLine": {
         "recognition": "OCR",
-        "expected": "我也是有底线的",
+        "expected": [
+            "我也是有底线的",
+            "暂无数据",
+            "\\d{2}-\\d{2}?\\d{2}:\\d{2}"
+        ],
         "next": [
             "ReplyLikeVideoPart"
         ]
@@ -528,12 +537,13 @@
     "ReplyEndDay":{
         "recognition": "OCR",
         "expected":[
-            "4天前"
+            "\\d+天前"
         ],
         "order_by": "Vertical",
         "index": 1,
         "roi": [0, 245, 720, 1035],
         "next":[
+            "账号点赞完成返回",
             "ReplyBack"
         ]
     },
@@ -576,6 +586,7 @@
         "template": "video_like1g.png",
         "roi": [598, 503, 84, 85],
         "green_mask": true,
+        "threshold": 0.89,
         "next": [
             "ReplyVideoCollect1",
             "ReplyVideoCollect",
@@ -587,7 +598,7 @@
         "template": "video_collect1g.png",
         "roi": [601, 764, 80, 77],
         "green_mask": true,
-        "threshold": 0.6,
+        "threshold": 0.89,
         "next": [
             "ReplyVideoBack"
         ]
@@ -646,22 +657,25 @@
         "begin": true,
         "end": "ReplyVideo01",
         "duration": 1000,
-        "interrupt":[
-            "ReplyVideoBack"
-        ],
         "post_delay": 800,
         "next": [
-            "ReplyVideo"
+            "ReplyVideo",
+            "[JumpBack]ReplyVideoBack"
         ]
     },
     "EndLine02": {
-        "enabled": false,
+        "enabled": true,
         "recognition": "OCR",
-        "expected": "我也是有底线的",
+        "expected": [
+            "我也是有底线的",
+            "暂无数据",
+            "\\d{2}-\\d{2}?\\d{2}:\\d{2}"
+        ],
         "focus": {
             "succeeded": "[color:blue]回赞与收藏任务完成[/color]"
         },
         "next": [
+            "账号点赞完成返回",
             "ReplyBack"
         ]
     },
@@ -675,7 +689,8 @@
         ],
         "next":[
             "回赞返回消息",
-            "回赞粉丝滑动"
+            "回赞粉丝滑动",
+            "回赞粉丝滑动t"
         ]
     },
     "回赞返回消息":{
@@ -710,6 +725,22 @@
         "post_delay": 1000,
         "next":[
             "点击去看看"
+        ]
+    },
+    "回赞粉丝滑动t":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "\\d+小时前"
+        ],
+        "order_by": "Vertical",
+        "action": "Swipe",
+        "index": 1,
+        "begin": true,
+        "end": "点击小时前",
+        "post_delay": 1000,
+        "next":[
+            "点击小时前"
         ]
     },
     "回赞任务完成": {

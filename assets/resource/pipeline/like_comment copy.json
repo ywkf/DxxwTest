@@ -1,13 +1,11 @@
 {
     "CLikeComment": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "CClickMyComment",
             "CClickMyMsg",
-            "CMyMsg"
+            "CMyMsg",
+            "[JumpBack]Back"
         ]
     },
     "CMyMsg": {
@@ -28,11 +26,9 @@
         "focus": {
             "succeeded": "开始执行点赞和回复评论任务..."
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "CClickMyMsg"
+            "CClickMyMsg",
+            "[JumpBack]Back"
         ]
     },
     "CClickMyMsg": {
@@ -72,11 +68,9 @@
             720,
             875
         ],
-        "interrupt": [
-            "CReplyLikeSwipeD"
-        ],
         "next": [
-            "CClickLike01"
+            "CClickLike01",
+            "[JumpBack]CReplyLikeSwipeD"
         ]
     },
     "CClickLikeAllD": {
@@ -88,11 +82,9 @@
             720,
             875
         ],
-        "interrupt": [
-            "CReplyLikeSwipeD"
-        ],
         "next": [
-            "CClickLike01D"
+            "CClickLike01D",
+            "[JumpBack]CReplyLikeSwipeD"
         ]
     },
     "CReplyLikeSwipeD": {

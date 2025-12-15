@@ -106,11 +106,9 @@
     },
     "ShareMy": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ShareMy01"
+            "ShareMy01",
+            "[JumpBack]Back"
         ]
     },
     "ShareMy01": {
@@ -129,11 +127,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ShareClickContent"
+            "ShareClickContent",
+            "[JumpBack]Back"
         ]
     },
     "ShareClickContent": {

@@ -1,11 +1,9 @@
 {
     "DeletePost": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "DeletePost1"
+            "DeletePost1",
+            "[JumpBack]Back"
         ]
     },
     "DeletePost1": {

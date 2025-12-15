@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.41",
+    "version": "0.2.42",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -23,18 +23,18 @@
         {
             "name": "开始唤醒",
             "entry": "Awake",
-            "doc": "自定义添加,确保已安装XF输入法（设置-关闭ai和通知）",
+            "description": "自定义添加,确保已安装XF输入法（设置-关闭ai和通知）",
             "option": [
                 "启动方式",
                 "等待重启时间",
                 "延时/零点",
-                "启用输入法"
+                "启动后"
             ]
         },
         {
             "name": "一键完成（不发布作品）",
             "entry": "InputmethodCheck00",
-            "doc": "选择任务前检测，若检测到已完成即该任务完成",
+            "description": "选择任务前检测，若检测到已完成即该任务完成",
             "option": [
                 "账号选择",
                 "签到",
@@ -50,7 +50,7 @@
         {
             "name": "每日任务(beta)",
             "entry": "TaskAll",
-            "doc": "测试版本，最好在每日未浏览作品时执行",
+            "description": "测试版本，最好在每日未浏览作品时执行",
             "option": [
                 "账号选择",
                 "签到",
@@ -69,7 +69,7 @@
         {
             "name": "圈子点赞收藏 lite",
             "entry": "CCircle",
-            "doc": "点赞收藏圈子内容，默认评论列表账号\n选择1天前，会在1天前的内容后停止\n评论达到每日上限后不再评论\n新版客户端圈子选择1-5",
+            "description": "点赞收藏圈子内容，默认评论列表账号\n选择1天前，会在1天前的内容后停止\n评论达到每日上限后不再评论\n新版客户端圈子选择1-5",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -84,7 +84,7 @@
         {
             "name": "圈子点赞收藏(自定义)",
             "entry": "CCircle",
-            "doc": "点击高级设置输入圈子名称（测试）",
+            "description": "点击高级设置输入圈子名称（测试）",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -101,7 +101,7 @@
         {
             "name": "圈子 发布作品",
             "entry": "CirclePublish",
-            "doc": "在主页启动，发布视频作品到圈子\n需求准备素材至模拟器共享文件夹-“圈子作品1”文件夹，以及XF语录“Tag1”、“标题1”\n每次准备好素材后发布需要打开图库加载一次，或者第一个发布任务打开加载素材选项\n编号顺序为九宫格左上为1号",
+            "description": "在主页启动，发布视频作品到圈子\n需求准备素材至模拟器共享文件夹-“圈子作品1”文件夹，以及XF语录“Tag1”、“标题1”\n每次准备好素材后发布需要打开图库加载一次，或者第一个发布任务打开加载素材选项\n编号顺序为九宫格左上为1号",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -116,12 +116,12 @@
         {
             "name": "点赞评论",
             "entry": "LikeComment",
-            "doc": "点赞收到的评论"
+            "description": "点赞收到的评论"
         },
         {
             "name": "回赞与收藏(beta)",
             "entry": "RepkyLike",
-            "doc": "进入对应的账号页面再启动或进入高级设置输入已关注账号名称，点赞收藏账号内容\n也可以回赞消息和新粉丝",
+            "description": "进入对应的账号页面再启动或进入高级设置输入已关注账号名称，点赞收藏账号内容\n也可以回赞消息和新粉丝",
             "option": [
                 "回赞账号",
                 "至何时结束",
@@ -133,55 +133,34 @@
             ]
         },
         {
-            "name": "个人账号任务(beta)",
-            "entry": "BrowseImagetxtM",
-            "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
+            "name": "点赞100",
+            "entry": "Like100",
+            "description": "点赞收藏+100，每个分组+25",
             "option": [
-                "浏览时间",
-                "是否重复运行"
+                "账号分组",
+                "至何时结束",
+                "从视频开始"
+            ],
+            "advanced": [
+                "账号",
+                "密码"
             ]
         },
         {
             "name": "邀请",
             "entry": "Invite",
-            "doc": "退出登录后在主页启动，邀请码在XF语录创建邀请分组\n滑动验证自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
+            "description": "退出登录后在主页启动，邀请码在XF语录创建邀请分组\n滑动验证自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
                 "账号输入",
                 "滑动验证"
             ]
-        },
-        {
-            "name": "进入个人内容页",
-            "entry": "ToContent",
-            "doc": "进入个人内容页",
-            "option": [
-                "作品选项"
-            ]
-        },
-        {
-            "name": "滑动",
-            "entry": "ToSwipe",
-            "doc": "滑动动作",
-            "repeatable": true,
-            "repeat_count": 1,
-            "option": [
-                "滑动距离",
-                "滑动前退出作品"
-            ]
-        },
-        {
-            "name": "返回",
-            "entry": "ToBack",
-            "repeatable": true,
-            "repeat_count": 1,
-            "doc": "返回动作"
         }
     ],
     "advanced": {
         "自定义圈子": {
-            "doc": "输入圈子名称（热榜中）",
+            "description": "输入圈子名称（热榜中）",
             "field": [
                 "自定义圈子"
             ],
@@ -214,7 +193,7 @@
             }
         },
         "自定义账号": {
-            "doc": "输入账号名称（已关注） 回赞账号需选择默认",
+            "description": "输入账号名称（已关注） 回赞账号需选择默认",
             "field": [
                 "自定义账号"
             ],
@@ -241,6 +220,44 @@
                 }
             }
         },
+        "账号": {
+            "description": "输入账号",
+            "field": [
+                "账号"
+            ],
+            "type": [
+                "string"
+            ],
+            "default": [
+                ""
+            ],
+            "pipeline_override": {
+                "启动后输入手机号": {
+                    "input_text": [
+                        "{账号}"
+                    ]
+                }
+            }
+        },
+        "密码": {
+            "description": "输入密码",
+            "field": [
+                "密码"
+            ],
+            "type": [
+                "string"
+            ],
+            "default": [
+                ""
+            ],
+            "pipeline_override": {
+                "启动后输入密码": {
+                    "input_text": [
+                        "{密码}"
+                    ]
+                }
+            }
+        },
         "自定义滑动距离": {
             "field": [
                 "自定义滑动距离"
@@ -262,7 +279,7 @@
     },
     "option": {
         "客户端版本":{
-            "doc": "客户端版本v5.6.0以上为新版",
+            "description": "客户端版本v5.6.0以上为新版",
             "cases": [
                 {
                     "name": "旧版",
@@ -319,7 +336,7 @@
             ]
         },
         "启用AI生成":{
-            "doc": "发布作品是否启用AI生成开关（新版客户端）",
+            "description": "发布作品是否启用AI生成开关（新版客户端）",
             "cases": [
                 {
                     "name": "no",
@@ -329,7 +346,7 @@
                 {
                     "name": "yes",
                     "pipeline_override": {
-                        "SelectTag05":{
+                        "准备发布":{
                             "next":[
                                 "AI生成"
                             ]
@@ -338,8 +355,477 @@
                 }
             ]
         },
+        "账号分组":{
+            "description": "每组25个",
+            "cases": [
+                {
+                    "name": "分组1",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "分组2",
+                    "pipeline_override": {
+                        "输入手机号001":{
+                            "input_text": "16239139949",
+                            "focus": {
+                                "succeeded": "[color:blue]16239139949 登录[/color]"
+                            }
+                        },
+                        "输入手机号002":{
+                            "input_text": "16220249428",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249428 登录[/color]"
+                            }
+                        },
+                        "输入手机号003":{
+                            "input_text": "16794061949",
+                            "focus": {
+                                "succeeded": "[color:blue]16794061949 登录[/color]"
+                            }
+                        },"输入手机号004":{
+                            "input_text": "16220249769",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249769 登录[/color]"
+                            }
+                        },
+                        "输入手机号005":{
+                            "input_text": "16229699336",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699336 登录[/color]"
+                            }
+                        },
+                        "输入手机号006":{
+                            "input_text": "16223272709",
+                            "focus": {
+                                "succeeded": "[color:blue]16223272709 登录[/color]"
+                            }
+                        },
+                        "输入手机号007":{
+                            "input_text": "13262568694",
+                            "focus": {
+                                "succeeded": "[color:blue]13262568694 登录[/color]"
+                            }
+                        },
+                        "输入手机号008":{
+                            "input_text": "16774780766",
+                            "focus": {
+                                "succeeded": "[color:blue]16774780766 登录[/color]"
+                            }
+                        },"输入手机号009":{
+                            "input_text": "16229699260",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699260 登录[/color]"
+                            }
+                        },
+                        "输入手机号010":{
+                            "input_text": "13729622751",
+                            "focus": {
+                                "succeeded": "[color:blue]13729622751 登录[/color]"
+                            }
+                        },
+                        "输入手机号011":{
+                            "input_text": "17029745437",
+                            "focus": {
+                                "succeeded": "[color:blue]17029745437 登录[/color]"
+                            }
+                        },
+                        "输入手机号012":{
+                            "input_text": "16229699984",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699984 登录[/color]"
+                            }
+                        },
+                        "输入手机号013":{
+                            "input_text": "16220966084",
+                            "focus": {
+                                "succeeded": "[color:blue]16220966084 登录[/color]"
+                            }
+                        },
+                        "输入手机号014":{
+                            "input_text": "16700470228",
+                            "focus": {
+                                "succeeded": "[color:blue]16700470228 登录[/color]"
+                            }
+                        },
+                        "输入手机号015":{
+                            "input_text": "16220967197",
+                            "focus": {
+                                "succeeded": "[color:blue]16220967197 登录[/color]"
+                            }
+                        },
+                        "输入手机号016":{
+                            "input_text": "16700472332",
+                            "focus": {
+                                "succeeded": "[color:blue]16700472332 登录[/color]"
+                            }
+                        },
+                        "输入手机号017":{
+                            "input_text": "18577533454",
+                            "focus": {
+                                "succeeded": "[color:blue]18577533454 登录[/color]"
+                            }
+                        },
+                        "输入手机号018":{
+                            "input_text": "17028129124",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129124 登录[/color]"
+                            }
+                        },
+                        "输入手机号019":{
+                            "input_text": "19020638137",
+                            "focus": {
+                                "succeeded": "[color:blue]19020638137 登录[/color]"
+                            }
+                        },
+                        "输入手机号020":{
+                            "input_text": "17028129184",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129184 登录[/color]"
+                            }
+                        },
+                        "输入手机号021":{
+                            "input_text": "16223053850",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053850 登录[/color]"
+                            }
+                        },
+                        "输入手机号022":{
+                            "input_text": "16270847534",
+                            "focus": {
+                                "succeeded": "[color:blue]16270847534 登录[/color]"
+                            }
+                        },
+                        "输入手机号023":{
+                            "input_text": "16297152423",
+                            "focus": {
+                                "succeeded": "[color:blue]16297152423 登录[/color]"
+                            }
+                        },
+                        "输入手机号024":{
+                            "input_text": "16289050630",
+                            "focus": {
+                                "succeeded": "[color:blue]16289050630 登录[/color]"
+                            }
+                        },
+                        "输入手机号025":{
+                            "input_text": "16294677553",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677553 登录[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "分组3",
+                    "pipeline_override": {
+                        "输入手机号001":{
+                            "input_text": "16794060446",
+                            "focus": {
+                                "succeeded": "[color:blue]16794060446 登录[/color]"
+                            }
+                        },
+                        "输入手机号002":{
+                            "input_text": "16229699253",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699253 登录[/color]"
+                            }
+                        },
+                        "输入手机号003":{
+                            "input_text": "16794066639",
+                            "focus": {
+                                "succeeded": "[color:blue]16794066639 登录[/color]"
+                            }
+                        },"输入手机号004":{
+                            "input_text": "16229699157",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699157 登录[/color]"
+                            }
+                        },
+                        "输入手机号005":{
+                            "input_text": "16261858472",
+                            "focus": {
+                                "succeeded": "[color:blue]16261858472 登录[/color]"
+                            }
+                        },
+                        "输入手机号006":{
+                            "input_text": "18941000849",
+                            "focus": {
+                                "succeeded": "[color:blue]18941000849 登录[/color]"
+                            }
+                        },
+                        "输入手机号007":{
+                            "input_text": "16229699421",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699421 登录[/color]"
+                            }
+                        },
+                        "输入手机号008":{
+                            "input_text": "16229699223",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699223 登录[/color]"
+                            }
+                        },"输入手机号009":{
+                            "input_text": "16223053934",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053934 登录[/color]"
+                            }
+                        },
+                        "输入手机号010":{
+                            "input_text": "16220249298",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249298 登录[/color]"
+                            }
+                        },
+                        "输入手机号011":{
+                            "input_text": "16220963087",
+                            "focus": {
+                                "succeeded": "[color:blue]16220963087 登录[/color]"
+                            }
+                        },
+                        "输入手机号012":{
+                            "input_text": "16223055742",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055742 登录[/color]"
+                            }
+                        },
+                        "输入手机号013":{
+                            "input_text": "16223053990",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053990 登录[/color]"
+                            }
+                        },
+                        "输入手机号014":{
+                            "input_text": "16220249020",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249020 登录[/color]"
+                            }
+                        },
+                        "输入手机号015":{
+                            "input_text": "16223054421",
+                            "focus": {
+                                "succeeded": "[color:blue]16223054421 登录[/color]"
+                            }
+                        },
+                        "输入手机号016":{
+                            "input_text": "16700472653",
+                            "focus": {
+                                "succeeded": "[color:blue]16700472653 登录[/color]"
+                            }
+                        },
+                        "输入手机号017":{
+                            "input_text": "16223053932",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053932 登录[/color]"
+                            }
+                        },
+                        "输入手机号018":{
+                            "input_text": "16229699675",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699675 登录[/color]"
+                            }
+                        },
+                        "输入手机号019":{
+                            "input_text": "16220248942",
+                            "focus": {
+                                "succeeded": "[color:blue]16220248942 登录[/color]"
+                            }
+                        },
+                        "输入手机号020":{
+                            "input_text": "17607757019",
+                            "focus": {
+                                "succeeded": "[color:blue]17607757019 登录[/color]"
+                            }
+                        },
+                        "输入手机号021":{
+                            "input_text": "17028129831",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129831 登录[/color]"
+                            }
+                        },
+                        "输入手机号022":{
+                            "input_text": "16223055823",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055823 登录[/color]"
+                            }
+                        },
+                        "输入手机号023":{
+                            "input_text": "18577563246",
+                            "focus": {
+                                "succeeded": "[color:blue]18577563246 登录[/color]"
+                            }
+                        },
+                        "输入手机号024":{
+                            "input_text": "16220249048",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249048 登录[/color]"
+                            }
+                        },
+                        "输入手机号025":{
+                            "input_text": "17028127465",
+                            "focus": {
+                                "succeeded": "[color:blue]17028127465 登录[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "分组4",
+                    "pipeline_override": {
+                        "输入手机号001":{
+                            "input_text": "13469535162",
+                            "focus": {
+                                "succeeded": "[color:blue]13469535162 登录[/color]"
+                            }
+                        },
+                        "输入手机号002":{
+                            "input_text": "16294677534",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677534 登录[/color]"
+                            }
+                        },
+                        "输入手机号003":{
+                            "input_text": "16223055712",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055712 登录[/color]"
+                            }
+                        },"输入手机号004":{
+                            "input_text": "17028233275",
+                            "focus": {
+                                "succeeded": "[color:blue]17028233275 登录[/color]"
+                            }
+                        },
+                        "输入手机号005":{
+                            "input_text": "17022349379",
+                            "focus": {
+                                "succeeded": "[color:blue]17022349379 登录[/color]"
+                            }
+                        },
+                        "输入手机号006":{
+                            "input_text": "17601300598",
+                            "focus": {
+                                "succeeded": "[color:blue]17601300598 登录[/color]"
+                            }
+                        },
+                        "输入手机号007":{
+                            "input_text": "16220966095",
+                            "focus": {
+                                "succeeded": "[color:blue]16220966095 登录[/color]"
+                            }
+                        },
+                        "输入手机号008":{
+                            "input_text": "17689839863",
+                            "focus": {
+                                "succeeded": "[color:blue]17689839863 登录[/color]"
+                            }
+                        },"输入手机号009":{
+                            "input_text": "16220960275",
+                            "focus": {
+                                "succeeded": "[color:blue]16220960275 登录[/color]"
+                            }
+                        },
+                        "输入手机号010":{
+                            "input_text": "16229699342",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699342 登录[/color]"
+                            }
+                        },
+                        "输入手机号011":{
+                            "input_text": "16267616224",
+                            "focus": {
+                                "succeeded": "[color:blue]16267616224 登录[/color]"
+                            }
+                        },
+                        "输入手机号012":{
+                            "input_text": "17028129437",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129437 登录[/color]"
+                            }
+                        },
+                        "输入手机号013":{
+                            "input_text": "16223055704",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055704 登录[/color]"
+                            }
+                        },
+                        "输入手机号014":{
+                            "input_text": "19317482853",
+                            "focus": {
+                                "succeeded": "[color:blue]19317482853 登录[/color]"
+                            }
+                        },
+                        "输入手机号015":{
+                            "input_text": "16294677655",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677655 登录[/color]"
+                            }
+                        },
+                        "输入手机号016":{
+                            "input_text": "16700471828",
+                            "focus": {
+                                "succeeded": "[color:blue]16700471828 登录[/color]"
+                            }
+                        },
+                        "输入手机号017":{
+                            "input_text": "13211452042",
+                            "focus": {
+                                "succeeded": "[color:blue]13211452042 登录[/color]"
+                            }
+                        },
+                        "输入手机号018":{
+                            "input_text": "16261858468",
+                            "focus": {
+                                "succeeded": "[color:blue]16261858468 登录[/color]"
+                            }
+                        },
+                        "输入手机号019":{
+                            "input_text": "16220249875",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249875 登录[/color]"
+                            }
+                        },
+                        "输入手机号020":{
+                            "input_text": "16220249581",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249581 登录[/color]"
+                            }
+                        },
+                        "输入手机号021":{
+                            "input_text": "16700471848",
+                            "focus": {
+                                "succeeded": "[color:blue]16700471848 登录[/color]"
+                            }
+                        },
+                        "输入手机号022":{
+                            "input_text": "16229699801",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699801 登录[/color]"
+                            }
+                        },
+                        "输入手机号023":{
+                            "input_text": "16229699224",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699224 登录[/color]"
+                            }
+                        },
+                        "输入手机号024":{
+                            "input_text": "16220249628",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249628 登录[/color]"
+                            }
+                        },
+                        "输入手机号025":{
+                            "input_text": "15678530946",
+                            "focus": {
+                                "succeeded": "[color:blue]15678530946 登录[/color]"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
         "账号输入": {
-            "doc": "手动:自行输入账号和验证码",
+            "description": "手动:自行输入账号和验证码",
             "cases": [
                 {
                     "name": "手动",
@@ -405,7 +891,7 @@
             ]
         },
         "回赞账号": {
-            "doc": "新粉丝：进入新粉丝账号回赞\n消息账号：进入接到消息的账号回赞",
+            "description": "新粉丝：进入新粉丝账号回赞\n消息账号：进入接到消息的账号回赞",
             "cases": [
                 {
                     "name": "默认",
@@ -484,22 +970,75 @@
                 }
             ]
         },
+        "启动后": {
+            "description": "启动后操作，启用输入法需已登录",
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "登录用户",
+                    "pipeline_override": {
+                        "ReStartDxxw05":{
+                            "next":[
+                                "已登录账号",
+                                "启动后登录账号"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "启用输入法（需登录）",
+                    "pipeline_override": {
+                        "ReStartDxxw05":{
+                            "next":[
+                                "已登录账号",
+                                "启动后登录账号",
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "已登录账号":{
+                            "next":[
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "启动后密码点击登录":{
+                            "next":[
+                                "InputmethodCheck00"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "启用输入法": {
             "cases": [
                 {
                     "name": "no",
                     "pipeline_override": {
+                        "InputmethodCheck00":{
+                            "enabled": false
+                        }
                     }
                 },
                 {
                     "name": "yes",
                     "pipeline_override": {
-                        "ReStartDxxw04":{
-                            "on_error":[
+                        "ReStartDxxw05":{
+                            "next":[
+                                "已登录账号",
+                                "启动后登录账号",
                                 "InputmethodCheck00"
                             ]
                         },
-                        "关闭升级弹窗":{
+                        "已登录账号":{
+                            "next":[
+                                "InputmethodCheck00"
+                            ]
+                        },
+                        "启动后密码点击登录":{
                             "next":[
                                 "InputmethodCheck00"
                             ]
@@ -601,7 +1140,7 @@
             ]
         },
         "滑动验证": {
-            "doc": "自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
+            "description": "自动准确率不高，可以选择手动并在5分钟内操作，超时会停止该次任务",
             "cases": [
                 {
                     "name": "手动",
@@ -881,7 +1420,7 @@
             ]
         },
         "每日分享任务": {
-            "doc": "在圈子中完成每日的分享任务",
+            "description": "在圈子中完成每日的分享任务",
             "cases": [
                 {
                     "name": "no",
@@ -1337,7 +1876,7 @@
             ]
         },
         "是否评论lite": {
-            "doc": "默认评论列表账号，视频评论过多有禁言风险",
+            "description": "默认评论列表账号，视频评论过多有禁言风险",
             "cases": [
                 {
                     "name": "否",
@@ -1628,18 +2167,20 @@
             ]
         },
         "从视频开始": {
-            "doc": "跳过图文，从视频开始任务",
+            "description": "跳过图文，从视频开始任务",
             "cases": [
                 {
                     "name": "yes",
                     "pipeline_override": {
                         "ReplyLikeSwipe": {
                             "next": [
+                                "EndLine02",
                                 "ReplyLikeVideoPart"
                             ]
                         },
                         "ReplyLikeSwipeVideo": {
                             "next": [
+                                "EndLine02",
                                 "ReplyLikeVideoPart"
                             ]
                         }
@@ -2078,7 +2619,7 @@
             ]
         },
         "何时结束": {
-            "doc": "识别到对应的日期结束",
+            "description": "识别到对应的日期结束",
             "cases": [
                 {
                     "name": "默认",
@@ -2716,7 +3257,7 @@
             ]
         },
         "圈子选择": {
-            "doc": "选择需要点赞的圈子\n新版客户端选择圈子1-5\n自定义 需要手动进入圈子再启动，发布任务不可选",
+            "description": "选择需要点赞的圈子\n新版客户端选择圈子1-5\n自定义 需要手动进入圈子再启动，发布任务不可选",
             "cases": [
                 {
                     "name": "无线“象”往",
@@ -3595,7 +4136,7 @@
             ]
         },
         "延时/零点": {
-            "doc": "等待至零点或自定义时间",
+            "description": "等待至零点或自定义时间",
             "cases": [
                 {
                     "name": "否",
@@ -3714,7 +4255,7 @@
             ]
         },
         "账号选择": {
-            "doc": "选择进行任务的账号，需要关注该账号",
+            "description": "选择进行任务的账号，需要关注该账号",
             "cases": [
                 {
                     "name": "河南交通广播",
@@ -4637,21 +5178,6 @@
                             "next":[
                                 "Stop"
                             ]
-                        },
-                        "MTaskNotificationComplete": {
-                            "next": [
-                                "PointsBack"
-                            ]
-                        },
-                        "MTaskNotificationUndone": {
-                            "next": [
-                                "PointsBack"
-                            ]
-                        },
-                        "MNoGetPoints": {
-                            "next": [
-                                "PointsBack"
-                            ]
                         }
                     }
                 },
@@ -4673,7 +5199,7 @@
             ]
         },
         "任务完成检测": {
-            "doc": "选择任务前检测，若检测到已完成即该任务完成",
+            "description": "选择任务前检测，若检测到已完成即该任务完成",
             "cases": [
                 {
                     "name": "否",
@@ -4712,7 +5238,7 @@
             ]
         },
         "每日任务检测": {
-            "doc": "选择任务前检测，若检测到已完成即该任务完成",
+            "description": "选择任务前检测，若检测到已完成即该任务完成",
             "cases": [
                 {
                     "name": "否",

@@ -15,11 +15,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "点击关注列表re"
+            "点击关注列表re",
+            "[JumpBack]Back"
         ]
     },
     "点击关注列表re": {
@@ -45,12 +43,10 @@
             "已关注",
             "互相关注"
         ],
-        "interrupt": [
-            "关注列表滑动"
-        ],
         "post_delay": 2000,
         "next": [
-            "选择大象号re"
+            "选择大象号re",
+            "[JumpBack]关注列表滑动"
         ]
     },
     "选择大象号re": {
@@ -173,12 +169,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "点击大象新语re"
+            "点击大象新语re",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "点击大象新语re": {
@@ -313,12 +307,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "点击大象新语ifre"
+            "点击大象新语ifre",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "点击大象新语ifre": {

@@ -1,12 +1,10 @@
 {
     "CirclePublish": {
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "LoadPicture",
             "关闭发布成功分享ed",
-            "CirclePublish0"
+            "CirclePublish0",
+            "[JumpBack]Back"
         ]
     },
     "LoadPicture": {
@@ -21,13 +19,11 @@
     "LoadDxxw": {
         "action": "StartApp",
         "package": "com.hnr.dxxw",
-        "interrupt": [
-            "Back"
-        ],
         "post_delay": 3000,
         "next": [
             "关闭发布成功分享ed",
-            "CirclePublish0"
+            "CirclePublish0",
+            "[JumpBack]Back"
         ]
     },
     "关闭发布成功分享ed":{
@@ -54,15 +50,13 @@
             720,
             176
         ],
-        "interrupt":[
-            "Back"
-        ],
         "pre_delay": 800,
         "action": "Click",
         "post_delay": 800,
         "next": [
             "新版发布",
-            "PublishVideo"
+            "PublishVideo",
+            "[JumpBack]Back"
         ]
     },
     "PublishVideo": {
@@ -477,11 +471,9 @@
     "XFBack02": {
         "action": "Key",
         "key": 4,
-        "interrupt": [
-            "PublishSwipeUp"
-        ],
         "next": [
-            "SelectCircle"
+            "SelectCircle",
+            "[JumpBack]PublishSwipeUp"
         ]
     },
     "PublishSwipeUp": {
@@ -524,13 +516,11 @@
         ],
         "pre_delay": 800,
         "action": "Click",
-        "interrupt": [
-            "圈子类型上滑",
-            "PublishSwipeUp"
-        ],
         "next": [
             "选择圈子类型",
-            "PublishClickCircle"
+            "PublishClickCircle",
+            "[JumpBack]圈子类型上滑",
+            "[JumpBack]PublishSwipeUp"
         ]
     },
     "选择圈子类型":{
@@ -541,11 +531,9 @@
         ],
         "roi": [1, 255, 193, 1025],
         "action": "Click",
-        "interrupt": [
-            "PublishSwipeUp"
-        ],
-        "next":[
-            "PublishClickCircle"
+        "next": [
+            "PublishClickCircle",
+            "[JumpBack]PublishSwipeUp"
         ]
     },
     "PublishClickCircle": {
@@ -558,10 +546,12 @@
         "succeeded": "已选择 无线“象”往 圈子",
         "succeeded_color": "Green",
         "next": [
+            "准备发布",
             "SelectTag01"
         ]
     },
     "SelectTag01": {
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "标签和关键词"
@@ -609,12 +599,9 @@
         ],
         "pre_delay": 1000,
         "action": "Click",
-        "interrupt": [
-            "标签再次确定",
-            "PublishSwipeUp"
-        ],
         "next": [
-            "PClickPublish"
+            "准备发布",
+            "[JumpBack]标签再次确定"
         ]
     },
     "标签再次确定":{
@@ -624,6 +611,24 @@
         ],
         "pre_delay": 1000,
         "action": "Click"
+    },
+    "准备发布":{
+        "recognition": "OCR",
+        "expected":[
+            "仅我可见",
+            "原创"
+        ],
+        "roi": [
+            0,
+            1000,
+            720,
+            1280
+        ],
+        "next": [
+            "PClickPublish",
+            "[JumpBack]标签再次确定",
+            "[JumpBack]PublishSwipeUp"
+        ]
     },
     "AI生成":{
         "enabled": true,
@@ -647,11 +652,9 @@
             50
         ],
         "action": "Click",
-        "interrupt": [
-            "PublishSwipeUp"
-        ],
-        "next":[
-            "PClickPublish"
+        "next": [
+            "PClickPublish",
+            "[JumpBack]PublishSwipeUp"
         ]
     },
     "PClickPublish": {

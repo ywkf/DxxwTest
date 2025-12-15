@@ -12,13 +12,11 @@
         "focus": {
             "succeeded": "打开Dxxw，准备注册"
         },
-        "interrupt":[
-            "WasloginD",
-            "InviteMyD"
-        ],
         "next": [
             "IsLoginD",
-            "ClickLoginD"
+            "ClickLoginD",
+            "[JumpBack]WasloginD",
+            "[JumpBack]InviteMyD"
         ]
     },
     "InviteMyD": {
@@ -469,12 +467,10 @@
             "拖动滑块完成拼图"
         ],
         "timeout": 300000,
-        "interrupt":[
-            "SwipeImageCodeAutoD",
-            "RefreshImageCodeD"
-        ],
         "next": [
-            "SwipeImageCodeD"
+            "SwipeImageCodeD",
+            "[JumpBack]SwipeImageCodeAutoD",
+            "[JumpBack]RefreshImageCodeD"
         ]
     },
     "SwipeImageCodeAutoD":{

@@ -1,0 +1,733 @@
+{
+    "Like100":{
+        "next":[
+            "点击登录",
+            "[JumpBack]退出账号",
+            "[JumpBack]Back"
+        ]
+    },
+    "退出账号":{
+        "recognition": "OCR",
+        "expected":[
+            "申请认证"
+        ],
+        "next":[
+            "点击系统设置"
+        ]
+    },
+    "点击系统设置": {
+        "recognition": "TemplateMatch",
+        "template": "setup.png",
+        "roi": [
+            632,
+            88,
+            81,
+            79
+        ],
+        "action": "Click",
+        "next": [
+            "设置滑动"
+        ]
+    },
+    "设置滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            200,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "next": [
+            "点击退出登录"
+        ]
+    },
+    "点击退出登录": {
+        "recognition": "OCR",
+        "expected": [
+            "退出登录"
+        ],
+        "action": "Click",
+        "next": [
+            "确定退出登录"
+        ]
+    },
+    "确定退出登录": {
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "action": "Click",
+        "next": [
+            "Stop"
+        ]
+    },
+
+
+    "点击登录": {
+        "recognition": "OCR",
+        "expected": [
+            "登录/注册"
+        ],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "点击密码登录"
+        ]
+    },
+    "点击密码登录":{
+        "recognition": "OCR",
+        "expected":[
+            "密码登录"
+        ],
+        "action": "Click",
+        "next":[
+            "点击阅读并同意"
+        ]
+    },
+    "点击阅读并同意": {
+        "recognition": "TemplateMatch",
+        "template": "gouxuan.png",
+        "roi": [
+            49,
+            1061,
+            46,
+            51
+        ],
+        "action": "Click",
+        "next": [
+            "点击手机号输入框"
+        ]
+    },
+    "点击手机号输入框": {
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "Click",
+        "timeout": 6000,
+        "on_error":[
+            "Like100完成"
+        ],
+        "next": [
+            "输入手机号001",
+            "输入手机号002",
+            "输入手机号003",
+            "输入手机号004",
+            "输入手机号005",
+            "输入手机号006",
+            "输入手机号007",
+            "输入手机号008",
+            "输入手机号009",
+            "输入手机号010",
+            "输入手机号011",
+            "输入手机号012",
+            "输入手机号013",
+            "输入手机号014",
+            "输入手机号015",
+            "输入手机号016",
+            "输入手机号017",
+            "输入手机号018",
+            "输入手机号019",
+            "输入手机号020",
+            "输入手机号021",
+            "输入手机号022",
+            "输入手机号023",
+            "输入手机号024",
+            "输入手机号025"
+        ]
+    },
+    "Like100完成":{
+        "action": "Click",
+        "target": [87, 122, 1, 1],
+        "focus": {
+            "succeeded": "[color:blue]Like100完成[/color]"
+        }
+    },
+    "输入手机号001":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16220961643",
+        "focus": {
+            "succeeded": "[color:blue]16220961643 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "点击密码输入框": {
+        "recognition": "OCR",
+        "expected": [
+            "请输入密码",
+            "请输人密码"
+        ],
+        "action": "Click",
+        "next": [
+            "输入密码"
+        ]
+    },
+    "输入密码":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入密码",
+            "请输人密码"
+        ],
+        "action": "InputText",
+        "input_text": "12345678",
+        "next":[
+            "输入完成返回"
+        ]
+    },
+    "输入完成返回":{
+        "recognition": "OCR",
+        "expected": [
+            "符",
+            "@",
+            "中文"
+        ],
+        "action": "Key",
+        "key": 4,
+        "next":[
+            "密码点击登录"
+        ]
+    },
+    "密码点击登录": {
+        "recognition": "OCR",
+        "expected": [
+            "登录"
+        ],
+        "roi": [
+            120,
+            743,
+            483,
+            135
+        ],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "点击关注列表like"
+        ]
+    },
+    "点击关注列表like": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "检查关注列表like"
+        ]
+    },
+    "检查关注列表like": {
+        "recognition": "OCR",
+        "expected": [
+            "已关注"
+        ],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "点击账号",
+            "[JumpBack]检查关注列表like"
+        ]
+    },
+    "点击账号":{
+        "recognition": "OCR",
+        "expected": [
+            "用户14",
+            "用户_14",
+            "lbssn",
+            "ibssn",
+            "五六月fa",
+            "LBKHL",
+            "七七四十九吖",
+            "七七四十九叶"
+        ],
+        "roi": "检查关注列表like",
+        "roi_offset": [
+            -570,
+            -40,
+            460, 
+            80
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "账号初始滑动"
+        ]
+    },
+
+
+    "账号初始滑动": {
+        "recognition": "OCR",
+        "expected": [
+            "更新提醒"
+        ],
+        "roi": [0, 40, 720, 77],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "ReplyLikeVideoPart"
+        ]
+    },
+
+
+
+
+    "账号点赞完成返回":{
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
+        "timeout": 3600,
+        "on_error":[
+            "重新关注"
+        ],
+        "next":[
+            "检查关注列表like"
+        ]
+    },
+    "重新关注":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "关注.png"
+        ],
+        "roi": [536, 130, 184, 1150],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "timeout": 3600,
+        "on_error":[
+            "Like100"
+        ],
+        "next":[
+            "重新关注",
+            "[JumpBack]错误进入账号"
+        ]
+    },
+    "错误进入账号":{
+        "recognition": "OCR",
+        "expected": [
+            "更新提醒"
+        ],
+        "roi": [0, 40, 720, 77],
+        "action": "Key",
+        "key": 4
+    },
+
+
+
+    "输入手机号002":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16223053961",
+        "focus": {
+            "succeeded": "[color:blue]16223053961 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号003":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16220249071",
+        "focus": {
+            "succeeded": "[color:blue]16220249071 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号004":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "19247220856",
+        "focus": {
+            "succeeded": "[color:blue]19247220856 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号005":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "17722288334",
+        "focus": {
+            "succeeded": "[color:blue]17722288334 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号006":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "17788887340",
+        "focus": {
+            "succeeded": "[color:blue]17788887340 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号007":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "17727641992",
+        "focus": {
+            "succeeded": "[color:blue]17727641992 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号008":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "17722288531",
+        "focus": {
+            "succeeded": "[color:blue]17722288531 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号009":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "18122370144",
+        "focus": {
+            "succeeded": "[color:blue]18122370144 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号010":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "19002000654",
+        "focus": {
+            "succeeded": "[color:blue]19002000654 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号011":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16294677554",
+        "focus": {
+            "succeeded": "[color:blue]16294677554 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号012":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16223053859",
+        "focus": {
+            "succeeded": "[color:blue]16223053859 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号013":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "18577563274",
+        "focus": {
+            "succeeded": "[color:blue]18577563274 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号014":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16794062375",
+        "focus": {
+            "succeeded": "[color:blue]16794062375 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号015":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16220249878",
+        "focus": {
+            "succeeded": "[color:blue]16220249878 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号016":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16220249642",
+        "focus": {
+            "succeeded": "[color:blue]16220249642 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号017":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16297152389",
+        "focus": {
+            "succeeded": "[color:blue]16297152389 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号018":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "17027415960",
+        "focus": {
+            "succeeded": "[color:blue]17027415960 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号019":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16260654304",
+        "focus": {
+            "succeeded": "[color:blue]16260654304 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号020":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16223055905",
+        "focus": {
+            "succeeded": "[color:blue]16223055905 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号021":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16220964658",
+        "focus": {
+            "succeeded": "[color:blue]16220964658 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号022":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "17025427680",
+        "focus": {
+            "succeeded": "[color:blue]17025427680 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号023":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16229699420",
+        "focus": {
+            "succeeded": "[color:blue]16229699420 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号024":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16229699795",
+        "focus": {
+            "succeeded": "[color:blue]16229699795 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    },
+    "输入手机号025":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "16220249374",
+        "focus": {
+            "succeeded": "[color:blue]16220249374 登录[/color]"
+        },
+        "max_hit":1,
+        "next":[
+            "点击密码输入框"
+        ]
+    }
+    
+}

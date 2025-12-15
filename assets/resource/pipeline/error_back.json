@@ -4,11 +4,9 @@
         "focus": {
             "start": "浏览图文出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "MergeBrowsePublish000"
+            "MergeBrowsePublish000",
+            "[JumpBack]Back"
         ]
     },
     "ErrorBackVedio": {
@@ -16,11 +14,9 @@
         "focus": {
             "start": "浏览音视频出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorGeneral"
+            "ErrorGeneral",
+            "[JumpBack]Back"
         ]
     },
     "ErrorBackLive": {
@@ -28,56 +24,16 @@
         "focus": {
             "start": "观看直播出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorGeneralLive"
-        ]
-    },
-    "ErrorBackRadio": {
-        "enabled": true,
-        "focus": {
-            "start": "看电视听广播出错，尝试恢复"
-        },
-        "interrupt": [
-            "Back"
-        ],
-        "next": [
-            "WatchVideoradio"
-        ]
-    },
-    "ErrorBackPublish": {
-        "enabled": true,
-        "focus": {
-            "start": "发布作品出错，尝试恢复"
-        },
-        "interrupt": [
-            "Back"
-        ],
-        "next": [
-            "Publish"
-        ]
-    },
-    "ErrorBackPublishX2": {
-        "enabled": true,
-        "focus": {
-            "start": "发布作品X2出错，尝试恢复"
-        },
-        "interrupt": [
-            "Back"
-        ],
-        "next": [
-            "PublishX2"
+            "ErrorGeneralLive",
+            "[JumpBack]Back"
         ]
     },
     "MergeBrowsePublish000": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "MergeBrowsePublish1000"
+            "MergeBrowsePublish1000",
+            "[JumpBack]Back"
         ]
     },
     "MergeBrowsePublish1000": {
@@ -95,12 +51,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ClickSubs000"
+            "ClickSubs000",
+            "[JumpBack]Back"
         ]
     },
     "ClickSubs000": {
@@ -108,13 +62,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "SelectDxh000"
+            "SelectDxh000",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "DxhSwipe000": {
@@ -141,7 +93,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl",
             "SelectDxh2nd"
@@ -149,11 +101,9 @@
     },
     "ErrorGeneral": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorGeneral1"
+            "ErrorGeneral1",
+            "[JumpBack]Back"
         ]
     },
     "ErrorGeneral1": {
@@ -171,11 +121,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorClickSubs"
+            "ErrorClickSubs",
+            "[JumpBack]Back"
         ]
     },
     "ErrorClickSubs": {
@@ -183,13 +131,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorSelectDxh"
+            "ErrorSelectDxh",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorDxhSwipe": {
@@ -216,7 +162,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorSwipeUpivl",
             "ErrorSelectDxh2nd"
@@ -259,16 +205,14 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": []
     },
     "ErrorGeneralLive": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorGeneralLive1"
+            "ErrorGeneralLive1",
+            "[JumpBack]Back"
         ]
     },
     "ErrorGeneralLive1": {
@@ -286,11 +230,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorClickSubsLive"
+            "ErrorClickSubsLive",
+            "[JumpBack]Back"
         ]
     },
     "ErrorClickSubsLive": {
@@ -298,13 +240,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorSelectDxhLive"
+            "ErrorSelectDxhLive",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorDxhSwipeLive": {
@@ -331,7 +271,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorSwipeUpivlLive",
             "ErrorSelectDxh2ndLive"
@@ -374,7 +314,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": []
     }
 }

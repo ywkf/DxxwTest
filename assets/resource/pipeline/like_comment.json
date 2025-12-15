@@ -1,12 +1,10 @@
 {
     "LikeComment": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "ClickMyMsg",
-            "MyMsg"
+            "MyMsg",
+            "[JumpBack]Back"
         ]
     },
     "MyMsg": {
@@ -27,11 +25,9 @@
         "focus": {
             "succeeded": "开始执行点赞评论任务..."
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ClickMyMsg"
+            "ClickMyMsg",
+            "[JumpBack]Back"
         ]
     },
     "ClickMyMsg": {

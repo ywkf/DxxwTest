@@ -2,11 +2,9 @@
     "InputmethodCheck00": {
         "enabled": true,
         "post_delay": 1000,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "InputmethodHome"
+            "InputmethodHome",
+            "[JumpBack]Back"
         ]
     },
     "InputmethodHome": {

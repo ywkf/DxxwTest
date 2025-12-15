@@ -10,11 +10,9 @@
         "action": "Key",
         "key": 4,
         "post_delay": 1000,
-        "interrupt": [
-            "NoNavigation"
-        ],
         "next": [
-            "Navigation"
+            "Navigation",
+            "[JumpBack]NoNavigation"
         ]
     },
     "Navigation": {

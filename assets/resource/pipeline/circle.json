@@ -1,14 +1,12 @@
 {
     "Circle": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "CNotResponding",
             "InTheCircle",
             "ClickMyCircle",
-            "DXCircle"
+            "DXCircle",
+            "[JumpBack]Back"
         ]
     },
     "InTheCircle": {
@@ -98,11 +96,9 @@
         "focus": {
             "succeeded": "开始执行圈子点赞收藏任务..."
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ClickCircle"
+            "ClickCircle",
+            "[JumpBack]Back"
         ]
     },
     "ClickCircle": {
@@ -162,12 +158,10 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "CircleSwipe"
-        ],
         "next": [
             "ClickTheCircle",
-            "CircleSwipeS"
+            "CircleSwipeS",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "CircleSwipe": {
@@ -201,11 +195,9 @@
             10,
             10
         ],
-        "interrupt": [
-            "CircleSwipe"
-        ],
         "next": [
-            "ClickTheCircle"
+            "ClickTheCircle",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "ClickTheCircle": {
@@ -274,11 +266,9 @@
     },
     "ToCircleTime": {
         "enabled": true,
-        "interrupt": [
-            "ToCircleSwipe"
-        ],
         "next": [
-            "ToTime"
+            "ToTime",
+            "[JumpBack]ToCircleSwipe"
         ]
     },
     "ToTime": {
@@ -410,13 +400,11 @@
         "focus": {
             "succeeded": "点赞、收藏进行中..."
         },
-        "interrupt": [
-            "CircleSwipe"
-        ],
         "next": [
             "IsCompleted",
             "NameList",
-            "CircleCollect"
+            "CircleCollect",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "CircleCollect": {
@@ -428,14 +416,12 @@
         "focus": {
             "succeeded": "收藏进行中..."
         },
-        "interrupt": [
-            "InImagetxt",
-            "CircleSwipe"
-        ],
         "next": [
             "CircleLike",
             "CircleCollectFail",
-            "IsCompleted"
+            "IsCompleted",
+            "[JumpBack]InImagetxt",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "CircleCollectFail": {
@@ -482,12 +468,10 @@
         "focus": {
             "succeeded": "点赞进行中..."
         },
-        "interrupt": [
-            "InImagetxt",
-            "CircleSwipe"
-        ],
         "next": [
-            "CircleSwipe2"
+            "CircleSwipe2",
+            "[JumpBack]InImagetxt",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "InCircle": {
@@ -573,17 +557,15 @@
         "focus": {
             "succeeded": "任务完成检测..."
         },
-        "interrupt": [
-            "CircleErrorCheck01",
-            "InImagetxt",
-            "CircleSwipe"
-        ],
         "next": [
             "TheDayBefore",
             "CircleCollect1",
             "CircleCollectFail",
             "NameList",
-            "CircleCollect"
+            "CircleCollect",
+            "[JumpBack]CircleErrorCheck01",
+            "[JumpBack]InImagetxt",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "CircleErrorCheck01": {
@@ -719,15 +701,13 @@
             270,
             1174
         ],
-        "interrupt": [
-            "InImagetxt"
-        ],
         "focus": {
             "succeeded": "检测到1天前"
         },
         "next": [
             "CircleCollect1",
-            "CircleCollect"
+            "CircleCollect",
+            "[JumpBack]InImagetxt"
         ]
     },
     "CircleCollect1": {
@@ -738,14 +718,12 @@
         "focus": {
             "succeeded": "检测到收藏"
         },
-        "interrupt": [
-            "InImagetxt",
-            "CircleSwipe"
-        ],
         "next": [
             "CircleLike1",
             "NameList",
-            "CircleCollect"
+            "CircleCollect",
+            "[JumpBack]InImagetxt",
+            "[JumpBack]CircleSwipe"
         ]
     },
     "CircleLike1": {

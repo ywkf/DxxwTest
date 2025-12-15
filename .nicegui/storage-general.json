@@ -1,12 +1,1 @@
-{
-    "controller_type": "Adb",
-    "adb_path": "D:\\Program Files\\Netease\\MuMu Player 12\\shell\\adb.exe",
-    "adb_address": "127.0.0.1:16448",
-    "adb_config": "{'extras': {'mumu': {'enable': True, 'index': 2, 'path': 'D:/Program Files/Netease/MuMu Player 12'}}}",
-    "hwnd": "",
-    "win32_screencap": 4,
-    "win32_input": 1,
-    "window_name": "",
-    "resource_dir": "",
-    "task_entry": "post"
-}
+{"controller_type":"Adb","adb_path":"D:\\Program Files\\Netease\\MuMu Player 12\\shell\\adb.exe","adb_address":"127.0.0.1:16480","adb_config":"{\"extras\": {\"mumu\": {\"enable\": true, \"index\": 3, \"path\": \"D:/Program Files/Netease/MuMu Player 12\"}}}","hwnd":"","win32_screencap":4,"win32_input":1,"window_name":"","resource_dir":"D:\\maaPro\\DxxwTest\\assets\\resource","task_entry":"ReStartDxxw04","win32_mouse":1,"win32_keyboard":1,"agent_identifier":"","task_pipeline_override":"{}"}

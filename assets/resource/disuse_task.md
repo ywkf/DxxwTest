@@ -219,3 +219,39 @@
                         }
                     }
                 }
+
+                {
+                    "name": "个人账号任务(beta)",
+                    "entry": "BrowseImagetxtM",
+                    "doc": "分享、点赞、收藏、评论个人账号中的内容\n如果选择重复运行，需要手动结束",
+                    "option": [
+                        "浏览时间",
+                        "是否重复运行"
+                    ]
+                },
+                {
+                    "name": "进入个人内容页",
+                    "entry": "ToContent",
+                    "doc": "进入个人内容页",
+                    "option": [
+                        "作品选项"
+                    ]
+                },
+                {
+                    "name": "滑动",
+                    "entry": "ToSwipe",
+                    "doc": "滑动动作",
+                    "repeatable": true,
+                    "repeat_count": 1,
+                    "option": [
+                        "滑动距离",
+                        "滑动前退出作品"
+                    ]
+                },
+                {
+                    "name": "返回",
+                    "entry": "ToBack",
+                    "repeatable": true,
+                    "repeat_count": 1,
+                    "doc": "返回动作"
+                }

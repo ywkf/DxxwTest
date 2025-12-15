@@ -1,11 +1,9 @@
 {
     "BrowseImagetxtMC": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "BrowseImagetxtMC1"
+            "BrowseImagetxtMC1",
+            "[JumpBack]Back"
         ]
     },
     "BrowseImagetxtMC1": {
@@ -22,12 +20,10 @@
         ],
         "action": "Click",
         "post_delay": 1000,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "点击内容c",
-            "点击关注列表mc"
+            "点击关注列表mc",
+            "[JumpBack]Back"
         ]
     },
     "点击关注列表mc": {
@@ -36,11 +32,9 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "next": [
-            "点击选择大象号mc"
+            "点击选择大象号mc",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "点击选择大象号mc": {
@@ -209,12 +203,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "输入评论内容mc"
+            "输入评论内容mc",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "输入评论内容mc": {

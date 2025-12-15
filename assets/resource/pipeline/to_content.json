@@ -1,11 +1,9 @@
 {
     "ToContent": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ToContentMy"
+            "ToContentMy",
+            "[JumpBack]Back"
         ]
     },
     "ToContentMy": {
@@ -24,11 +22,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ToClickContent"
+            "ToClickContent",
+            "[JumpBack]Back"
         ]
     },
     "ToClickContent": {

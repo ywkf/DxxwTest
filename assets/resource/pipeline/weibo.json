@@ -1,12 +1,10 @@
 {
     "Weibo": {
-        "interrupt": [
-            "Playing",
-            "DXW",
-            "WeiboMe"
-        ],
         "next": [
-            "ClickLink"
+            "ClickLink",
+            "[JumpBack]Playing",
+            "[JumpBack]DXW",
+            "[JumpBack]WeiboMe"
         ]
     },
     "StartWeibo": {

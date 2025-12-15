@@ -1,11 +1,9 @@
 {
     "BrowseImagetxtM": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "BrowseImagetxtM1"
+            "BrowseImagetxtM1",
+            "[JumpBack]Back"
         ]
     },
     "BrowseImagetxtM1": {
@@ -24,11 +22,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ClickContent"
+            "ClickContent",
+            "[JumpBack]Back"
         ]
     },
     "ClickContent": {
@@ -271,12 +267,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "ReplyInputCommentM"
+            "ReplyInputCommentM",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "ReplyInputCommentM": {

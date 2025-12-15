@@ -104,13 +104,11 @@
         "focus": {
             "succeeded": "打开Dxxw，准备注册"
         },
-        "interrupt":[
-            "Waslogin",
-            "InviteMy"
-        ],
         "next": [
             "IsLogin",
-            "ClickLogin"
+            "ClickLogin",
+            "[JumpBack]Waslogin",
+            "[JumpBack]InviteMy"
         ]
     },
     "InviteMy": {
@@ -312,11 +310,9 @@
         "expected": [
             "释放成功"
         ],
-        "interrupt":[
-            "YeziSwipeCopyCode"
-        ],
         "next": [
-            "CilckCopyCode"
+            "CilckCopyCode",
+            "[JumpBack]YeziSwipeCopyCode"
         ]
     },
     "GetCodeFail": {
@@ -543,12 +539,10 @@
             "拖动滑块完成拼图"
         ],
         "timeout": 300000,
-        "interrupt":[
-            "SwipeImageCodeAuto",
-            "RefreshImageCode"
-        ],
         "next": [
-            "SwipeImageCode"
+            "SwipeImageCode",
+            "[JumpBack]SwipeImageCodeAuto",
+            "[JumpBack]RefreshImageCode"
         ]
     },
     "SwipeImageCodeAuto":{
@@ -727,11 +721,9 @@
             90,
             350
         ],
-        "interrupt":[
-            "向左滑动"
-        ],
-        "next":[
-            "点击拉黑"
+        "next": [
+            "点击拉黑",
+            "[JumpBack]向左滑动"
         ]
     },
     "超时拉黑":{
@@ -739,11 +731,9 @@
         "expected":[
             "^1[3-9]\\d{9}$"
         ],
-        "interrupt":[
-            "向左滑动"
-        ],
-        "next":[
-            "点击拉黑"
+        "next": [
+            "点击拉黑",
+            "[JumpBack]向左滑动"
         ]
     },
     "点击拉黑":{
@@ -753,11 +743,9 @@
         ],
         "roi": [2, 559, 718, 721],
         "action": "Click",
-        "interrupt":[
-            "向右滑动"
-        ],
-        "next":[
-            "识别项目ID"
+        "next": [
+            "识别项目ID",
+            "[JumpBack]向右滑动"
         ]
     },
     "识别项目ID":{
@@ -852,15 +840,13 @@
         "expected":[
             "请选择要获取的项目"
         ],
-        "interrupt":[
-            "向下滑动"
-        ],
         "focus": {
             "succeeded": "[color:Blue]未选择项目[/color]"
         },
-        "next":[
+        "next": [
             "Stop",
-            "搜索项目"
+            "搜索项目",
+            "[JumpBack]向下滑动"
         ]
     },
     "搜索项目":{

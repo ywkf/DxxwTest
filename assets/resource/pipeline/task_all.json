@@ -2,11 +2,9 @@
     "TaskAll": {
         "enabled": true,
         "post_delay": 1000,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "输入法进入首页"
+            "输入法进入首页",
+            "[JumpBack]Back"
         ]
     },
     "输入法进入首页": {
@@ -148,11 +146,9 @@
     },
     "领取积分开始": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "领取积分进入我的"
+            "领取积分进入我的",
+            "[JumpBack]Back"
         ]
     },
     "领取积分进入我的": {
@@ -170,11 +166,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "点击我的积分"
+            "点击我的积分",
+            "[JumpBack]Back"
         ]
     },
     "点击我的积分": {
@@ -258,11 +252,9 @@
         "focus": {
             "succeeded": "[color:blue]每日通知积分已领取[/color]"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "领取积分返回"
+            "领取积分返回",
+            "[JumpBack]Back"
         ]
     },
     "积分未领取": {
@@ -279,11 +271,9 @@
         "focus": {
             "succeeded": "[color:blue]每日通知积分已领取[/color]"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "领取积分返回"
+            "领取积分返回",
+            "[JumpBack]Back"
         ]
     },
     "领取积分返回": {
@@ -322,11 +312,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "点击关注列表"
+            "点击关注列表",
+            "[JumpBack]Back"
         ]
     },
     "点击关注列表": {
@@ -352,12 +340,10 @@
             "已关注",
             "互相关注"
         ],
-        "interrupt": [
-            "关注列表滑动"
-        ],
         "post_delay": 2000,
         "next": [
-            "选择大象号"
+            "选择大象号",
+            "[JumpBack]关注列表滑动"
         ]
     },
     "关注列表滑动": {
@@ -526,7 +512,8 @@
         ],
         "post_wait_freezes": 2000,
         "next": [
-            "图文分享"
+            "图文分享",
+            "图文评论点击输入框"
         ]
     },
     "图文分享": {
@@ -538,12 +525,10 @@
         "pre_delay": 1000,
         "action": "Click",
         "post_delay": 500,
-        "interrupt":[
-            "再次点击分享"
-        ],
         "next": [
             "图文分享到QQ",
-            "收藏未知错误"
+            "收藏未知错误",
+            "[JumpBack]再次点击分享"
         ]
     },
     "再次点击分享":{
@@ -611,12 +596,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "点击大象新语"
+            "点击大象新语",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "点击大象新语": {
@@ -751,12 +734,10 @@
             300,
             30
         ],
-        "interrupt": [
-            "InputmethodCheck",
-            "InputmethodCheck0"
-        ],
         "next": [
-            "点击大象新语if"
+            "点击大象新语if",
+            "[JumpBack]InputmethodCheck",
+            "[JumpBack]InputmethodCheck0"
         ]
     },
     "点击大象新语if": {

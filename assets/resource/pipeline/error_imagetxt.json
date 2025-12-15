@@ -4,11 +4,9 @@
         "focus": {
             "start": "浏览图文01出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1001"
+            "ErrorImagetxt1001",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1001": {
@@ -26,12 +24,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs001"
+            "ErrorImagetxtClickSubs001",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs001": {
@@ -39,13 +35,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh001"
+            "ErrorImagetxtSelectDxh001",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe001": {
@@ -72,7 +66,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl001",
             "ErrorImagetxtSelectDxh2nd001"
@@ -115,7 +109,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart001"
         ]
@@ -127,7 +121,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt01"
         ]
@@ -137,11 +131,9 @@
         "focus": {
             "start": "浏览图文02出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1002"
+            "ErrorImagetxt1002",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1002": {
@@ -159,12 +151,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs002"
+            "ErrorImagetxtClickSubs002",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs002": {
@@ -172,13 +162,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh002"
+            "ErrorImagetxtSelectDxh002",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe002": {
@@ -205,7 +193,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl002",
             "ErrorImagetxtSelectDxh2nd002"
@@ -248,7 +236,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart002"
         ]
@@ -260,7 +248,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt02"
         ]
@@ -270,11 +258,9 @@
         "focus": {
             "start": "浏览图文03出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1003"
+            "ErrorImagetxt1003",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1003": {
@@ -292,12 +278,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs003"
+            "ErrorImagetxtClickSubs003",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs003": {
@@ -305,13 +289,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh003"
+            "ErrorImagetxtSelectDxh003",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe003": {
@@ -338,7 +320,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl003",
             "ErrorImagetxtSelectDxh2nd003"
@@ -381,7 +363,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart003"
         ]
@@ -393,7 +375,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt03"
         ]
@@ -403,11 +385,9 @@
         "focus": {
             "start": "浏览图文04出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1004"
+            "ErrorImagetxt1004",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1004": {
@@ -425,12 +405,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs004"
+            "ErrorImagetxtClickSubs004",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs004": {
@@ -438,13 +416,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh004"
+            "ErrorImagetxtSelectDxh004",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe004": {
@@ -471,7 +447,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl004",
             "ErrorImagetxtSelectDxh2nd004"
@@ -514,7 +490,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart004"
         ]
@@ -526,7 +502,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 1000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl01"
         ]
@@ -536,11 +512,9 @@
         "focus": {
             "start": "浏览图文05出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1005"
+            "ErrorImagetxt1005",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1005": {
@@ -558,12 +532,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs005"
+            "ErrorImagetxtClickSubs005",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs005": {
@@ -571,13 +543,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh005"
+            "ErrorImagetxtSelectDxh005",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe005": {
@@ -604,7 +574,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl005",
             "ErrorImagetxtSelectDxh2nd005"
@@ -647,7 +617,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart005"
         ]
@@ -659,7 +629,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl01005"
         ]
@@ -680,7 +650,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt05"
         ]
@@ -690,11 +660,9 @@
         "focus": {
             "start": "浏览图文06出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1006"
+            "ErrorImagetxt1006",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1006": {
@@ -712,12 +680,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs006"
+            "ErrorImagetxtClickSubs006",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs006": {
@@ -725,13 +691,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh006"
+            "ErrorImagetxtSelectDxh006",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe006": {
@@ -758,7 +722,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl006",
             "ErrorImagetxtSelectDxh2nd006"
@@ -801,7 +765,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart006"
         ]
@@ -813,7 +777,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 1000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl01006"
         ]
@@ -834,7 +798,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt06"
         ]
@@ -844,11 +808,9 @@
         "focus": {
             "start": "浏览图文07出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1007"
+            "ErrorImagetxt1007",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1007": {
@@ -866,12 +828,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs007"
+            "ErrorImagetxtClickSubs007",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs007": {
@@ -879,13 +839,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh007"
+            "ErrorImagetxtSelectDxh007",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe007": {
@@ -912,7 +870,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl007",
             "ErrorImagetxtSelectDxh2nd007"
@@ -955,7 +913,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart007"
         ]
@@ -967,7 +925,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl01007"
         ]
@@ -988,7 +946,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl02007"
         ]
@@ -1009,7 +967,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt07"
         ]
@@ -1019,11 +977,9 @@
         "focus": {
             "start": "浏览图文08出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1008"
+            "ErrorImagetxt1008",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1008": {
@@ -1041,12 +997,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs008"
+            "ErrorImagetxtClickSubs008",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs008": {
@@ -1054,13 +1008,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh008"
+            "ErrorImagetxtSelectDxh008",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe008": {
@@ -1087,7 +1039,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl008",
             "ErrorImagetxtSelectDxh2nd008"
@@ -1130,7 +1082,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart008"
         ]
@@ -1142,7 +1094,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl01008"
         ]
@@ -1163,7 +1115,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl02008"
         ]
@@ -1184,7 +1136,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt08"
         ]
@@ -1194,11 +1146,9 @@
         "focus": {
             "start": "浏览图文09出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt1009"
+            "ErrorImagetxt1009",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt1009": {
@@ -1216,12 +1166,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs009"
+            "ErrorImagetxtClickSubs009",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs009": {
@@ -1229,13 +1177,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh009"
+            "ErrorImagetxtSelectDxh009",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe009": {
@@ -1262,7 +1208,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl009",
             "ErrorImagetxtSelectDxh2nd009"
@@ -1305,7 +1251,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart009"
         ]
@@ -1317,7 +1263,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 1000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl01009"
         ]
@@ -1338,7 +1284,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl02009"
         ]
@@ -1359,7 +1305,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt09"
         ]
@@ -1369,11 +1315,9 @@
         "focus": {
             "start": "浏览图文10出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt10010"
+            "ErrorImagetxt10010",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt10010": {
@@ -1391,12 +1335,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs0010"
+            "ErrorImagetxtClickSubs0010",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs0010": {
@@ -1404,13 +1346,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh0010"
+            "ErrorImagetxtSelectDxh0010",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe0010": {
@@ -1437,7 +1377,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl0010",
             "ErrorImagetxtSelectDxh2nd0010"
@@ -1480,7 +1420,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart0010"
         ]
@@ -1492,7 +1432,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl010010"
         ]
@@ -1513,7 +1453,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl020010"
         ]
@@ -1534,7 +1474,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl030010"
         ]
@@ -1555,7 +1495,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt10"
         ]
@@ -1565,11 +1505,9 @@
         "focus": {
             "start": "浏览图文11出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt10011"
+            "ErrorImagetxt10011",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt10011": {
@@ -1587,12 +1525,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs0011"
+            "ErrorImagetxtClickSubs0011",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs0011": {
@@ -1600,13 +1536,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh0011"
+            "ErrorImagetxtSelectDxh0011",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe0011": {
@@ -1633,7 +1567,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl0011",
             "ErrorImagetxtSelectDxh2nd0011"
@@ -1676,7 +1610,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart0011"
         ]
@@ -1688,7 +1622,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl010011"
         ]
@@ -1709,7 +1643,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl020011"
         ]
@@ -1730,7 +1664,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl030011"
         ]
@@ -1751,7 +1685,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt11"
         ]
@@ -1761,11 +1695,9 @@
         "focus": {
             "start": "浏览图文12出错，尝试恢复"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt10012"
+            "ErrorImagetxt10012",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt10012": {
@@ -1783,12 +1715,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs0012"
+            "ErrorImagetxtClickSubs0012",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs0012": {
@@ -1796,13 +1726,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh0012"
+            "ErrorImagetxtSelectDxh0012",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe0012": {
@@ -1829,7 +1757,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl0012",
             "ErrorImagetxtSelectDxh2nd0012"
@@ -1872,7 +1800,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart0012"
         ]
@@ -1884,7 +1812,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 1000,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl010012"
         ]
@@ -1905,7 +1833,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl020012"
         ]
@@ -1926,7 +1854,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "SwipeUpivl030012"
         ]
@@ -1947,7 +1875,7 @@
         ],
         "duration": 1200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt12"
         ]
@@ -1957,11 +1885,9 @@
         "focus": {
             "start": "恢复浏览图文13"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt10013"
+            "ErrorImagetxt10013",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt10013": {
@@ -1979,12 +1905,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs0013"
+            "ErrorImagetxtClickSubs0013",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs0013": {
@@ -1992,13 +1916,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh0013"
+            "ErrorImagetxtSelectDxh0013",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe0013": {
@@ -2031,7 +1953,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl0013",
             "ErrorImagetxtSelectDxh2nd0013"
@@ -2074,7 +1996,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart0013"
         ]
@@ -2086,7 +2008,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt13"
         ]
@@ -2096,11 +2018,9 @@
         "focus": {
             "start": "恢复浏览图文14"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt10014"
+            "ErrorImagetxt10014",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt10014": {
@@ -2118,12 +2038,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs0014"
+            "ErrorImagetxtClickSubs0014",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs0014": {
@@ -2131,13 +2049,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh0014"
+            "ErrorImagetxtSelectDxh0014",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe0014": {
@@ -2169,7 +2085,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl0014",
             "ErrorImagetxtSelectDxh2nd0014"
@@ -2212,7 +2128,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart0014"
         ]
@@ -2224,7 +2140,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt14"
         ]
@@ -2234,11 +2150,9 @@
         "focus": {
             "start": "恢复浏览图文15"
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "ErrorImagetxt10015"
+            "ErrorImagetxt10015",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxt10015": {
@@ -2256,12 +2170,10 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 500,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "Skip2",
-            "ErrorImagetxtClickSubs0015"
+            "ErrorImagetxtClickSubs0015",
+            "[JumpBack]Back"
         ]
     },
     "ErrorImagetxtClickSubs0015": {
@@ -2269,13 +2181,11 @@
         "expected": "关注",
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "DxhSwipe"
-        ],
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
-            "ErrorImagetxtSelectDxh0015"
+            "ErrorImagetxtSelectDxh0015",
+            "[JumpBack]DxhSwipe"
         ]
     },
     "ErrorImagetxtDxhSwipe0015": {
@@ -2307,7 +2217,7 @@
         "post_wait_freezes": 1000,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtSwipeUpivl0015",
             "ErrorImagetxtSelectDxh2nd0015"
@@ -2350,7 +2260,7 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ErrorImagetxtClickImagetxtPart0015"
         ]
@@ -2362,7 +2272,7 @@
         "pre_wait_freezes": 200,
         "post_delay": 500,
         "timeout": 20000,
-        "on_error": "ErrorBackImagetxt",
+        "on_error": ["ErrorBackImagetxt"],
         "next": [
             "ClickIt15"
         ]

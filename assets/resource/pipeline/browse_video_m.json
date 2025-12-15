@@ -1,11 +1,9 @@
 {
     "BrowseVedioM": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "BrowseVedioM1"
+            "BrowseVedioM1",
+            "[JumpBack]Back"
         ]
     },
     "BrowseVedioM1": {
@@ -23,11 +21,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1000,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "点击内容v"
+            "点击内容v",
+            "[JumpBack]Back"
         ]
     },
     "点击内容v": {
@@ -94,7 +90,7 @@
             10
         ],
         "post_delay": 3000,
-        "on_error": "浏览视频返回m",
+        "on_error": ["浏览视频返回m"],
         "next": [
             "浏览视频完成m"
         ]
@@ -103,7 +99,7 @@
         "recognition": "TemplateMatch",
         "template": "浏览音视频完成.png",
         "timeout": 20000,
-        "on_error": "浏览视频返回m",
+        "on_error": ["浏览视频返回m"],
         "next": [
             "滑动浏览视频m"
         ]

@@ -1,15 +1,13 @@
 {
     "CCircle": {
         "enabled": true,
-        "interrupt": [
-            "Back"
-        ],
         "next": [
             "已在圈子中",
             "CInTheCircle",
             "我的圈子",
             "CClickMyCircle",
-            "CDXCircle"
+            "CDXCircle",
+            "[JumpBack]Back"
         ]
     },
     "CInTheCircle": {
@@ -67,11 +65,9 @@
         "duration": 300,
         "post_wait_freezes": 2000,
         "post_delay": 2000,
-        "interrupt":[
-            "圈子刷新re"
-        ],
-        "next":[
-            "圈子刷新成功"
+        "next": [
+            "圈子刷新成功",
+            "[JumpBack]圈子刷新re"
         ]
     },
     "圈子刷新re":{
@@ -123,11 +119,9 @@
         "focus": {
             "succeeded": "开始执行圈子点赞收藏任务..."
         },
-        "interrupt": [
-            "Back"
-        ],
         "next": [
-            "CClickCircle"
+            "CClickCircle",
+            "[JumpBack]Back"
         ]
     },
     "CClickCircle": {
@@ -191,12 +185,10 @@
         ],
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "CCircleSwipe"
-        ],
         "next": [
             "CClickTheCircle",
-            "CCircleSwipeS"
+            "CCircleSwipeS",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CClickSubsCircle": {
@@ -222,12 +214,10 @@
         "roi": [113, 185, 144, 54],
         "action": "Click",
         "post_delay": 500,
-        "interrupt": [
-            "CCircleSwipe"
-        ],
         "next": [
             "CClickTheCircle",
-            "CCircleSwipeS"
+            "CCircleSwipeS",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleSwipeS": {
@@ -246,11 +236,9 @@
             10,
             10
         ],
-        "interrupt": [
-            "CCircleSwipe"
-        ],
         "next": [
-            "CClickTheCircle"
+            "CClickTheCircle",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CClickTheCircle": {
@@ -522,13 +510,11 @@
             "圈子分享.png"
         ],
         "roi": [455, 128, 265, 1152],
-        "interrupt": [
-            "CCircleSwipe"
-        ],
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "CCircleShareToQQ"
+            "CCircleShareToQQ",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleShareToQQ": {
@@ -598,11 +584,9 @@
         "focus": {
             "succeeded": "点赞、收藏进行中..."
         },
-        "interrupt": [
-            "CCircleSwipe"
-        ],
         "next": [
-            "CCircleCollect"
+            "CCircleCollect",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     
@@ -617,14 +601,12 @@
         "focus": {
             "succeeded": "收藏进行中..."
         },
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CCircleLike",
             "CCircleCollectFail",
-            "CIsCompleted"
+            "CIsCompleted",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleLike": {
@@ -643,13 +625,11 @@
         "focus": {
             "succeeded": "点赞进行中..."
         },
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CIsCompleted",
-            "CCircleCollect"
+            "CCircleCollect",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleCollectL": {
@@ -661,14 +641,12 @@
         "focus": {
             "succeeded": "收藏进行中..."
         },
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CCircleLikeL",
             "CCircleCollectFailL",
-            "CIsCompletedL"
+            "CIsCompletedL",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleLikeL": {
@@ -687,13 +665,11 @@
         "focus": {
             "succeeded": "点赞进行中..."
         },
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CIsCompletedL",
-            "CCircleCollectL"
+            "CCircleCollectL",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleCollectFail": {
@@ -805,16 +781,14 @@
         "focus": {
             "succeeded": "任务完成检测..."
         },
-        "interrupt": [
-            "CCircleErrorCheck01",
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CTheDayBefore",
             "CCircleCollectFail",
             "CCircleCollect",
-            "CCircleSwipe1"
+            "CCircleSwipe1",
+            "[JumpBack]CCircleErrorCheck01",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CIsCompletedL": {
@@ -822,17 +796,15 @@
         "focus": {
             "succeeded": "任务完成检测..."
         },
-        "interrupt": [
-            "CCircleErrorCheck01",
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CTheDayBeforeL",
             "CCircleCollectFailL",
             "CCircleCollectL",
             "CCircleSwipe1",
-            "CCircleSwipe1L"
+            "CCircleSwipe1L",
+            "[JumpBack]CCircleErrorCheck01",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleErrorCheck01": {
@@ -959,25 +931,21 @@
     },
     "CTheDayBefore": {
         "enabled": false,
-        "interrupt": [
-            "加载失败重试",
-            "CCircleSwipe"
-        ],
         "next": [
             "CTheDayBefore2",
             "圈子点赞",
-            "CCircleCollect"
+            "CCircleCollect",
+            "[JumpBack]加载失败重试",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CTheDayBeforeL": {
         "enabled": false,
-        "interrupt": [
-            "CCircleSwipe"
-        ],
         "next": [
             "CTheDayBefore2",
             "圈子点赞",
-            "CCircleCollectL"
+            "CCircleCollectL",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CTheDayBefore2": {
@@ -992,14 +960,12 @@
             270,
             1174
         ],
-        "interrupt": [
-            "CInImagetxt"
-        ],
         "focus": {
             "succeeded": "检测到1天前"
         },
         "next": [
-            "CCircleCompletedBack"
+            "CCircleCompletedBack",
+            "[JumpBack]CInImagetxt"
         ]
     },
     "CCircleSwipe1": {
@@ -1202,11 +1168,9 @@
             "动态"
         ],
         "roi": [17, 155, 119, 61],
-        "interrupt": [
-            "CCircleSwipe"
-        ],
-        "next":[
-            "圈子点赞"
+        "next": [
+            "圈子点赞",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "圈子点赞":{
@@ -1217,14 +1181,12 @@
         "order_by": "Vertical",
         "green_mask": true,
         "action": "Click",
-        "interrupt": [
-            "CInImagetxt",
-            "圈子菜单遮挡滑动"
-        ],
         "post_delay": 850,
         "next": [
             "圈子点赞re",
-            "圈子收藏菜单"
+            "圈子收藏菜单",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]圈子菜单遮挡滑动"
         ]
     },
     "圈子点赞re":{
@@ -1238,12 +1200,10 @@
         "threshold": 0.5,
         "green_mask": true,
         "action": "Click",
-        "interrupt": [
-            "CInImagetxt",
-            "圈子菜单遮挡滑动"
-        ],
         "next": [
-            "圈子收藏菜单"
+            "圈子收藏菜单",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]圈子菜单遮挡滑动"
         ]
     },
     "圈子菜单遮挡滑动": {
@@ -1278,15 +1238,13 @@
         "green_mask": true,
         "threshold": 0.99,
         "action": "Click",
-        "interrupt":[
-            "进入发布退出",
-            "进入分享页退出",
-            "CInImagetxt"
-        ],
-        "next":[
+        "next": [
             "圈子收藏",
             "圈子已收藏",
-            "圈子收藏菜单re"
+            "圈子收藏菜单re",
+            "[JumpBack]进入发布退出",
+            "[JumpBack]进入分享页退出",
+            "[JumpBack]CInImagetxt"
         ]
     },
     "圈子收藏菜单re":{
@@ -1305,16 +1263,14 @@
         "green_mask": true,
         "threshold": 0.99,
         "action": "Click",
-        "interrupt":[
-            "进入发布退出",
-            "进入分享页退出",
-            "CInImagetxt"
-        ],
-        "next":[
+        "next": [
             "圈子收藏",
             "圈子已收藏",
             "圈子完成判断",
-            "圈子点赞"
+            "圈子点赞",
+            "[JumpBack]进入发布退出",
+            "[JumpBack]进入分享页退出",
+            "[JumpBack]CInImagetxt"
         ]
     },
     "进入分享页退出":{
@@ -1360,14 +1316,12 @@
         ],
         "roi": [1, 971, 719, 179],
         "action": "Click",
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
-        "next":[
+        "next": [
             "圈子评论",
             "圈子完成判断",
-            "圈子点赞"
+            "圈子点赞",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "圈子已收藏":{
@@ -1378,14 +1332,12 @@
         "roi": [1, 971, 719, 179],
         "action": "Click",
         "target": [504, 169, 1, 1],
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
-        "next":[
+        "next": [
             "圈子评论",
             "圈子完成判断",
-            "圈子点赞"
+            "圈子点赞",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "加载失败重试":{
@@ -1418,15 +1370,13 @@
             "热门",
             "最热"
         ],
-        "interrupt": [
-            "CInImagetxt",
-            "CCircleSwipe"
-        ],
         "next": [
             "CTheDayBefore",
             "圈子点赞",
             "加载失败重试2",
-            "CCircleSwipe1L"
+            "CCircleSwipe1L",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
         ]
     },
     "CCircleSwipe1L": {
