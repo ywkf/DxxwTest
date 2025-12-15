@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.42",
+    "version": "0.2.43",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -140,10 +140,6 @@
                 "账号分组",
                 "至何时结束",
                 "从视频开始"
-            ],
-            "advanced": [
-                "账号",
-                "密码"
             ]
         },
         {
