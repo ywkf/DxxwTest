@@ -506,11 +506,28 @@
     },
 
 
+    "关注列表返回p":{
+        "recognition": "OCR",
+        "expected":[
+            "关注列表"
+        ],
+        "action": "Key",
+        "key": 4,
+        "next":[
+            "点击首页p"
+        ]
+    },
     "点击首页p":{
-        "enabled": false,
+        "enabled": true,
         "recognition": "OCR",
         "expected":[
             "首页"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
         ],
         "action": "Click",
         "next":[
@@ -536,6 +553,8 @@
             "用户14"
         ],
         "action": "Click",
+        "post_delay": 500,
+        "post_wait_freezes":1000,
         "next":[
             "点击关注p1",
             "点击Xp1"
@@ -544,7 +563,9 @@
     "点击关注p1":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注"
+            "\\+关注",
+            "十关注",
+            "十关注"
         ],
         "action": "Click",
         "next":[
@@ -570,6 +591,8 @@
             "ibssn"
         ],
         "action": "Click",
+        "post_delay": 500,
+        "post_wait_freezes":1000,
         "next":[
             "点击关注p2",
             "点击Xp2"
@@ -578,7 +601,9 @@
     "点击关注p2":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注"
+            "\\+关注",
+            "十关注",
+            "十关注"
         ],
         "action": "Click",
         "next":[
@@ -603,6 +628,8 @@
             "五六月fa"
         ],
         "action": "Click",
+        "post_delay": 500,
+        "post_wait_freezes":1000,
         "next":[
             "点击关注p3",
             "点击Xp3"
@@ -611,7 +638,9 @@
     "点击关注p3":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注"
+            "\\+关注",
+            "十关注",
+            "十关注"
         ],
         "action": "Click",
         "next":[
@@ -621,11 +650,13 @@
     "点击Xp3":{
         "recognition": "OCR",
         "expected":[
-            "取消"
+            "已关注",
+            "己关注"
         ],
         "action": "Click",
+        "target": [552, 97, 1, 1],
         "next":[
-            "点击我的p"
+            "点击账号p4"
         ]
     }, 
 
@@ -636,6 +667,8 @@
             "LBKHL"
         ],
         "action": "Click",
+        "post_delay": 500,
+        "post_wait_freezes":1000,
         "next":[
             "点击关注p4",
             "点击Xp4"
@@ -644,7 +677,9 @@
     "点击关注p4":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注"
+            "\\+关注",
+            "十关注",
+            "十关注"
         ],
         "action": "Click",
         "next":[
@@ -669,6 +704,8 @@
             "七七四十九"
         ],
         "action": "Click",
+        "post_delay": 500,
+        "post_wait_freezes":1000,
         "next":[
             "点击关注p5",
             "点击Xp5"
@@ -677,7 +714,9 @@
     "点击关注p5":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注"
+            "\\+关注",
+            "十关注",
+            "十关注"
         ],
         "action": "Click",
         "next":[
@@ -685,6 +724,57 @@
         ]
     },
     "点击Xp5":{
+        "recognition": "OCR",
+        "expected":[
+            "已关注",
+            "己关注"
+        ],
+        "action": "Click",
+        "target": [552, 97, 1, 1],
+        "next":[
+            "点击取消p"
+        ]
+    },
+
+    "点击账号p6":{
+        "recognition": "OCR",
+        "expected":[
+            " "
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "post_wait_freezes":1000,
+        "next":[
+            "点击关注p6",
+            "点击Xp6"
+        ]
+    },
+    "点击关注p6":{
+        "recognition": "OCR",
+        "expected":[
+            "\\+关注",
+            "十关注",
+            "十关注"
+        ],
+        "action": "Click",
+        "next":[
+            "点击Xp6"
+        ]
+    },
+    "点击Xp6":{
+        "recognition": "OCR",
+        "expected":[
+            "已关注",
+            "己关注"
+        ],
+        "action": "Click",
+        "target": [552, 97, 1, 1],
+        "next":[
+            "点击取消p"
+        ]
+    },
+
+    "点击取消p":{
         "recognition": "OCR",
         "expected":[
             "取消"
@@ -701,9 +791,15 @@
         "expected":[
             "我的"
         ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
         "action": "Click",
         "next":[
-            "退出账号p"
+            "Stop"
         ]
     },
 

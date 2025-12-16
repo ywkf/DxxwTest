@@ -160,10 +160,11 @@
         "action": "Click",
         "target": [87, 122, 1, 1],
         "focus": {
-            "succeeded": "[color:blue]Like100完成[/color]"
+            "succeeded": "[color:blue]Like100完成1[/color]"
         }
     },
     "输入手机号001":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -172,7 +173,7 @@
         "action": "InputText",
         "input_text": "16220961643",
         "focus": {
-            "succeeded": "[color:blue]16220961643 登录01[/color]"
+            "succeeded": "[color:blue]16220961643 登录1 01[/color]"
         },
         "max_hit":1,
         "next":[
@@ -229,7 +230,7 @@
             135
         ],
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 3600,
         "next": [
             "点击关注列表like"
         ]
@@ -237,9 +238,23 @@
     "点击关注列表like": {
         "recognition": "OCR",
         "expected": "关注",
+        "roi": [0, 326, 720, 235],
         "pre_delay": 1000,
         "action": "Click",
         "post_delay": 3000,
+        "next": [
+            "检测账号是否关注",
+            "[JumpBack]点击关注列表like",
+            "[JumpBack]关注列表返回p"
+        ]
+    },
+    "检测账号是否关注":{
+        "recognition": "OCR",
+        "expected": [
+            "用户14",
+            "用户_14"
+        ],
+        "order_by": "Vertical",
         "next": [
             "检查关注列表like"
         ]
@@ -360,7 +375,7 @@
         "index": 1,
         "roi": [0, 245, 720, 1035],
         "focus": {
-            "succeeded": "[color:blue]当天点赞已完成[/color]"
+            "succeeded": "[color:green]当天点赞已完成[/color]"
         },
         "next":[
             "账号点赞完成返回"
@@ -376,7 +391,6 @@
         "next": [
             "视频已点赞",
             "视频点赞",
-            "视频已收藏",
             "视频收藏",
             "视频完成返回"
         ]
@@ -412,7 +426,6 @@
         "threshold": 0.45,
         "action": "Click",
         "next": [
-            "视频已收藏",
             "视频收藏",
             "视频完成返回"
         ]
@@ -533,6 +546,7 @@
 
 
     "输入手机号002":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -541,7 +555,7 @@
         "action": "InputText",
         "input_text": "16223053961",
         "focus": {
-            "succeeded": "[color:blue]16223053961 登录02[/color]"
+            "succeeded": "[color:blue]16223053961 登录1 02[/color]"
         },
         "max_hit":1,
         "next":[
@@ -549,6 +563,7 @@
         ]
     },
     "输入手机号003":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -557,7 +572,7 @@
         "action": "InputText",
         "input_text": "16220249071",
         "focus": {
-            "succeeded": "[color:blue]16220249071 登录03[/color]"
+            "succeeded": "[color:blue]16220249071 登录1 03[/color]"
         },
         "max_hit":1,
         "next":[
@@ -565,6 +580,7 @@
         ]
     },
     "输入手机号004":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -573,7 +589,7 @@
         "action": "InputText",
         "input_text": "19247220856",
         "focus": {
-            "succeeded": "[color:blue]19247220856 登录04[/color]"
+            "succeeded": "[color:blue]19247220856 登录1 04[/color]"
         },
         "max_hit":1,
         "next":[
@@ -581,6 +597,7 @@
         ]
     },
     "输入手机号005":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -589,7 +606,7 @@
         "action": "InputText",
         "input_text": "17722288334",
         "focus": {
-            "succeeded": "[color:blue]17722288334 登录05[/color]"
+            "succeeded": "[color:blue]17722288334 登录1 05[/color]"
         },
         "max_hit":1,
         "next":[
@@ -597,6 +614,7 @@
         ]
     },
     "输入手机号006":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -605,7 +623,7 @@
         "action": "InputText",
         "input_text": "17788887340",
         "focus": {
-            "succeeded": "[color:blue]17788887340 登录06[/color]"
+            "succeeded": "[color:blue]17788887340 登录1 06[/color]"
         },
         "max_hit":1,
         "next":[
@@ -613,6 +631,7 @@
         ]
     },
     "输入手机号007":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -621,7 +640,7 @@
         "action": "InputText",
         "input_text": "17727641992",
         "focus": {
-            "succeeded": "[color:blue]17727641992 登录07[/color]"
+            "succeeded": "[color:blue]17727641992 登录1 07[/color]"
         },
         "max_hit":1,
         "next":[
@@ -629,6 +648,7 @@
         ]
     },
     "输入手机号008":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -637,7 +657,7 @@
         "action": "InputText",
         "input_text": "17722288531",
         "focus": {
-            "succeeded": "[color:blue]17722288531 登录08[/color]"
+            "succeeded": "[color:blue]17722288531 登录1 08[/color]"
         },
         "max_hit":1,
         "next":[
@@ -645,6 +665,7 @@
         ]
     },
     "输入手机号009":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -653,7 +674,7 @@
         "action": "InputText",
         "input_text": "18122370144",
         "focus": {
-            "succeeded": "[color:blue]18122370144 登录09[/color]"
+            "succeeded": "[color:blue]18122370144 登录1 09[/color]"
         },
         "max_hit":1,
         "next":[
@@ -661,6 +682,7 @@
         ]
     },
     "输入手机号010":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -669,7 +691,7 @@
         "action": "InputText",
         "input_text": "19002000654",
         "focus": {
-            "succeeded": "[color:blue]19002000654 登录10[/color]"
+            "succeeded": "[color:blue]19002000654 登录1 10[/color]"
         },
         "max_hit":1,
         "next":[
@@ -677,6 +699,7 @@
         ]
     },
     "输入手机号011":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -685,7 +708,7 @@
         "action": "InputText",
         "input_text": "16294677554",
         "focus": {
-            "succeeded": "[color:blue]16294677554 登录11[/color]"
+            "succeeded": "[color:blue]16294677554 登录1 11[/color]"
         },
         "max_hit":1,
         "next":[
@@ -693,6 +716,7 @@
         ]
     },
     "输入手机号012":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -701,7 +725,7 @@
         "action": "InputText",
         "input_text": "16223053859",
         "focus": {
-            "succeeded": "[color:blue]16223053859 登录12[/color]"
+            "succeeded": "[color:blue]16223053859 登录1 12[/color]"
         },
         "max_hit":1,
         "next":[
@@ -709,6 +733,7 @@
         ]
     },
     "输入手机号013":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -717,7 +742,7 @@
         "action": "InputText",
         "input_text": "18577563274",
         "focus": {
-            "succeeded": "[color:blue]18577563274 登录13[/color]"
+            "succeeded": "[color:blue]18577563274 登录1 13[/color]"
         },
         "max_hit":1,
         "next":[
@@ -725,6 +750,7 @@
         ]
     },
     "输入手机号014":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -733,7 +759,7 @@
         "action": "InputText",
         "input_text": "16794062375",
         "focus": {
-            "succeeded": "[color:blue]16794062375 登录14[/color]"
+            "succeeded": "[color:blue]16794062375 登录1 14[/color]"
         },
         "max_hit":1,
         "next":[
@@ -741,6 +767,7 @@
         ]
     },
     "输入手机号015":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -749,7 +776,7 @@
         "action": "InputText",
         "input_text": "16220249878",
         "focus": {
-            "succeeded": "[color:blue]16220249878 登录15[/color]"
+            "succeeded": "[color:blue]16220249878 登录1 15[/color]"
         },
         "max_hit":1,
         "next":[
@@ -757,6 +784,7 @@
         ]
     },
     "输入手机号016":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -765,7 +793,7 @@
         "action": "InputText",
         "input_text": "16220249642",
         "focus": {
-            "succeeded": "[color:blue]16220249642 登录16[/color]"
+            "succeeded": "[color:blue]16220249642 登录1 16[/color]"
         },
         "max_hit":1,
         "next":[
@@ -773,6 +801,7 @@
         ]
     },
     "输入手机号017":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -781,7 +810,7 @@
         "action": "InputText",
         "input_text": "16297152389",
         "focus": {
-            "succeeded": "[color:blue]16297152389 登录17[/color]"
+            "succeeded": "[color:blue]16297152389 登录1 17[/color]"
         },
         "max_hit":1,
         "next":[
@@ -789,6 +818,7 @@
         ]
     },
     "输入手机号018":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -797,7 +827,7 @@
         "action": "InputText",
         "input_text": "17027415960",
         "focus": {
-            "succeeded": "[color:blue]17027415960 登录18[/color]"
+            "succeeded": "[color:blue]17027415960 登录1 18[/color]"
         },
         "max_hit":1,
         "next":[
@@ -805,6 +835,7 @@
         ]
     },
     "输入手机号019":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -813,7 +844,7 @@
         "action": "InputText",
         "input_text": "16260654304",
         "focus": {
-            "succeeded": "[color:blue]16260654304 登录19[/color]"
+            "succeeded": "[color:blue]16260654304 登录1 19[/color]"
         },
         "max_hit":1,
         "next":[
@@ -821,6 +852,7 @@
         ]
     },
     "输入手机号020":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -829,7 +861,7 @@
         "action": "InputText",
         "input_text": "16223055905",
         "focus": {
-            "succeeded": "[color:blue]16223055905 登录20[/color]"
+            "succeeded": "[color:blue]16223055905 登录1 20[/color]"
         },
         "max_hit":1,
         "next":[
@@ -837,6 +869,7 @@
         ]
     },
     "输入手机号021":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -845,7 +878,7 @@
         "action": "InputText",
         "input_text": "16220964658",
         "focus": {
-            "succeeded": "[color:blue]16220964658 登录21[/color]"
+            "succeeded": "[color:blue]16220964658 登录1 21[/color]"
         },
         "max_hit":1,
         "next":[
@@ -853,6 +886,7 @@
         ]
     },
     "输入手机号022":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -861,7 +895,7 @@
         "action": "InputText",
         "input_text": "17025427680",
         "focus": {
-            "succeeded": "[color:blue]17025427680 登录22[/color]"
+            "succeeded": "[color:blue]17025427680 登录1 22[/color]"
         },
         "max_hit":1,
         "next":[
@@ -869,6 +903,7 @@
         ]
     },
     "输入手机号023":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -877,7 +912,7 @@
         "action": "InputText",
         "input_text": "16229699420",
         "focus": {
-            "succeeded": "[color:blue]16229699420 登录23[/color]"
+            "succeeded": "[color:blue]16229699420 登录1 23[/color]"
         },
         "max_hit":1,
         "next":[
@@ -885,6 +920,7 @@
         ]
     },
     "输入手机号024":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -893,7 +929,7 @@
         "action": "InputText",
         "input_text": "16229699795",
         "focus": {
-            "succeeded": "[color:blue]16229699795 登录24[/color]"
+            "succeeded": "[color:blue]16229699795 登录1 24[/color]"
         },
         "max_hit":1,
         "next":[
@@ -901,6 +937,7 @@
         ]
     },
     "输入手机号025":{
+        "enabled": true,
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
@@ -909,7 +946,7 @@
         "action": "InputText",
         "input_text": "16220249374",
         "focus": {
-            "succeeded": "[color:blue]16220249374 登录25[/color]"
+            "succeeded": "[color:blue]16220249374 登录1 25[/color]"
         },
         "max_hit":1,
         "next":[
