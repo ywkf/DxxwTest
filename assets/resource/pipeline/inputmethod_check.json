@@ -139,19 +139,45 @@
         ]
     },
 
-
+    "切换输入法":{
+        "next":[
+            "SwitchToiFlyIME",
+            "SwitchToSogouIME"
+        ]
+    },
     "SwitchToiFlyIME": {
+        "enabled": true,
         "action": "Command",
         "exec": "Adb",
         "args": [
             "-s",
-            "127.0.0.1:16448",
+            "127.0.0.1:16480",
             "shell",
             "ime",
             "set",
             "com.iflytek.inputmethod/.FlyIME"
         ],
-        "detach": false
+        "detach": false,
+        "next":[
+            "Stop"
+        ]
+    },
+    "SwitchToSogouIME": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.sohu.inputmethod.sogou.chuizi/com.sohu.inputmethod.sogou.SogouIME"
+        ],
+        "detach": false,
+        "next":[
+            "Stop"
+        ]
     },
     "SwitchIME": {
         "action": "Command",

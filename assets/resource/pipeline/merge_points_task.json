@@ -1,0 +1,160 @@
+{
+    "MergePointsTask": {
+        "enabled": true,
+        "next": [
+            "MergePointsTask1",
+            "[JumpBack]Back"
+        ]
+    },
+    
+    "MergePointsTask1": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "next": [
+            "Skip2",
+            "CMyPoints",
+            "[JumpBack]Back"
+        ]
+    },
+    "CMyPoints": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "CSigningIn",
+            "CSignedIn"
+        ]
+    },
+    "CSigningIn": {
+        "recognition": "OCR",
+        "expected": "点击签到",
+        "action": "Click",
+        "focus": {
+            "succeeded": "签到完成"
+        },
+        "next": [
+            "CSwipeUPsg"
+        ]
+    },
+    "CSignedIn": {
+        "recognition": "OCR",
+        "expected": "已签到",
+        "focus": {
+            "succeeded": "签到已完成"
+        },
+        "next": [
+            "CSwipeUPsg"
+        ]
+    },
+    "CSwipeUPsg": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000,
+        "next": [
+            "MTaskNotification",
+            "Back"
+        ]
+    },
+    "CGettingPoints": {
+        "recognition": "TemplateMatch",
+        "template": "领取.png",
+        "roi": [
+            528,
+            634,
+            159,
+            380
+        ],
+        "post_delay": 1000,
+        "focus": {
+            "succeeded": "领取每日通知积分完成"
+        },
+        "next": [
+            "MergeBrowsePublish1",
+            "[JumpBack]Back"
+        ]
+    },
+    "MTaskNotification": {
+        "recognition": "OCR",
+        "expected": "允许大象新闻",
+        "next": [
+            "MTaskNotificationComplete",
+            "MTaskNotificationUndone",
+            "NoGetPoints"
+        ]
+    },
+    "MNoGetPoints": {
+        "focus": {
+            "start": "未领取每日通知积分，请手动领取"
+        },
+        "next": [
+            "MergeBrowsePublish1",
+            "[JumpBack]Back"
+        ]
+    },
+    "MTaskNotificationComplete": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "MTaskNotification",
+        "roi_offset": [
+            0,
+            -10,
+            352,
+            38
+        ],
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
+        "next": [
+            "MergeBrowsePublish1",
+            "[JumpBack]Back"
+        ]
+    },
+    "MTaskNotificationUndone": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": "MTaskNotification",
+        "roi_offset": [
+            0,
+            -10,
+            352,
+            38
+        ],
+        "action": "Click",
+        "focus": {
+            "succeeded": "[color:blue]每日通知积分已领取[/color]"
+        },
+        "next": [
+            "MergeBrowsePublish1",
+            "[JumpBack]Back"
+        ]
+    },
+    "PointsBack": {
+        "action": "Key",
+        "key": 4,
+        "next": []
+    }
+}

@@ -106,12 +106,148 @@
             "点击下一步1"
         ]
     },
+    "点击选择作品02":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [321, 483, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频2[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品03":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [505, 483, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频3[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品04":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [686, 482, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频4[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品05":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [140, 663, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频5[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品06":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [324, 665, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频6[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品07":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [506, 662, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频7[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品08":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [689, 665, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频8[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品09":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [142, 845, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频9[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
+    "点击选择作品10":{
+        "recognition": "OCR",
+        "expected":[
+            "全部视频"
+        ],
+        "action": "Click",
+        "target": [325, 846, 1, 1],
+        "max_hit":1,
+        "focus": {
+            "succeeded": "[color:orange]选择 视频10[/color]"
+        },
+        "next":[
+            "点击下一步1"
+        ]
+    },
     "点击下一步1":{
         "recognition": "OCR",
         "expected":[
             "下一步"
         ],
         "roi": [359, 57, 361, 70],
+        "pre_delay": 500,
         "action": "Click",
         "next":[
             "点击下一步2"
@@ -123,6 +259,7 @@
             "下一步"
         ],
         "roi": [359, 57, 361, 70],
+        "pre_delay": 500,
         "action": "Click",
         "next":[
             "InputTitle"
@@ -400,6 +537,7 @@
         "expected": [
             "输入标题"
         ],
+        "pre_delay": 500,
         "action": "Click",
         "next": [
             "PublishXF01"

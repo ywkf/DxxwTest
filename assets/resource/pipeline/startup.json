@@ -199,6 +199,46 @@
             "Stop"
         ]
     },
+    "启动开启输入法": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.iflytek.inputmethod/.FlyIME"
+        ],
+        "focus": {
+            "启动开启输入法.Action.Succeeded": "[color:blue]已开启输入法[/color]"
+        },
+        "detach": false,
+        "next":[
+            "Stop"
+        ]
+    },
+    "启动关闭输入法": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.sohu.inputmethod.sogou.chuizi/com.sohu.inputmethod.sogou.SogouIME"
+        ],
+        "detach": false,
+        "focus": {
+            "启动关闭输入法.Action.Succeeded": "[color:blue]已关闭输入法[/color]"
+        },
+        "next":[
+            "启动后点击密码登录"
+        ]
+    },
 
     "已登录账号":{
         "enabled": true,
@@ -223,6 +263,24 @@
         "action": "Click",
         "post_delay": 2600,
         "next": [
+            "启动关闭输入法0",
+            "启动后点击密码登录"
+        ]
+    },
+    "启动关闭输入法0": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.sohu.inputmethod.sogou.chuizi/com.sohu.inputmethod.sogou.SogouIME"
+        ],
+        "detach": false,
+        "next":[
             "启动后点击密码登录"
         ]
     },

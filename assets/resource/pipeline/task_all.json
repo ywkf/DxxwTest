@@ -3,8 +3,29 @@
         "enabled": true,
         "post_delay": 1000,
         "next": [
+            "输入法检测开启",
             "输入法进入首页",
             "[JumpBack]Back"
+        ]
+    },
+    "输入法检测开启": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.iflytek.inputmethod/.FlyIME"
+        ],
+        "detach": false,
+        "focus": {
+            "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
+        },
+        "next":[
+            "领取积分开始"
         ]
     },
     "输入法进入首页": {
@@ -525,6 +546,7 @@
         "pre_delay": 1000,
         "action": "Click",
         "post_delay": 500,
+        "max_hit":8,
         "next": [
             "图文分享到QQ",
             "收藏未知错误",
@@ -670,6 +692,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
+        "max_hit":10,
         "next":[
             "重置点赞"
         ]

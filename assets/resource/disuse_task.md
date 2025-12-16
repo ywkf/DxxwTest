@@ -257,3 +257,5 @@
                 }
 
                 cp MFAAvalonia/MFAAvalonia.exe MFAAvalonia/MFAUpdater.exe MFAAvalonia/MFAUpdater.runtimeconfig.json MFAAvalonia/av_libglesv2.dll MFAAvalonia/libHarfBuzzSharp.dll MFAAvalonia/libonigwrap.dll MFAAvalonia/libSkiaSharp.dll MFAAvalonia/uiohook.dll install/
+
+                ".\FlyIME.cmd" -noWindow

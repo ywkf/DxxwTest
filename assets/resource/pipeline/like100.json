@@ -90,6 +90,16 @@
         "pre_delay": 1000,
         "action": "Click",
         "next":[
+            "检测忘记密码",
+            "[JumpBack]点击密码登录"
+        ]
+    },
+    "检测忘记密码":{
+        "recognition": "OCR",
+        "expected":[
+            "忘记密码"
+        ],
+        "next":[
             "点击阅读并同意"
         ]
     },
@@ -162,7 +172,7 @@
         "action": "InputText",
         "input_text": "16220961643",
         "focus": {
-            "succeeded": "[color:blue]16220961643 登录[/color]"
+            "succeeded": "[color:blue]16220961643 登录01[/color]"
         },
         "max_hit":1,
         "next":[
@@ -194,6 +204,7 @@
         ]
     },
     "输入完成返回":{
+        "enabled": false,
         "recognition": "OCR",
         "expected": [
             "符",
@@ -281,7 +292,7 @@
             "更新提醒"
         ],
         "roi": [0, 40, 720, 77],
-        "pre_delay": 200,
+        "pre_delay": 500,
         "action": "Swipe",
         "begin": [
             200,
@@ -299,11 +310,181 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "next": [
-            "ReplyLikeVideoPart"
+            "点击视频标签",
+            "检测当天视频",
+            "[JumpBack]账号初始滑动"
         ]
     },
-
-
+    "点击视频标签": {
+        "recognition": "OCR",
+        "expected": "视频",
+        "roi": [0, 111, 720, 120],
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "focus": {
+            "succeeded": "开始执行点赞视频任务"
+        },
+        "next": [
+            "点赞视频检测"
+        ]
+    },
+    "点赞视频检测": {
+        "next": [
+            "检测当天视频",
+            "检测当天完成",
+            "识别视频标识"
+        ]
+    },
+    "检测当天视频": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "我也是有底线的",
+            "暂无数据",
+            "\\d{2}-\\d{2}?\\d{2}:\\d{2}"
+        ],
+        "focus": {
+            "succeeded": "当天未发布视频"
+        },
+        "next": [
+            "账号点赞完成返回"
+        ]
+    },
+    "检测当天完成":{
+        "recognition": "OCR",
+        "expected":[
+            "\\d+天前"
+        ],
+        "order_by": "Vertical",
+        "index": 1,
+        "roi": [0, 245, 720, 1035],
+        "focus": {
+            "succeeded": "[color:blue]当天点赞已完成[/color]"
+        },
+        "next":[
+            "账号点赞完成返回"
+        ]
+    },
+    "识别视频标识": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "视频已点赞",
+            "视频点赞",
+            "视频已收藏",
+            "视频收藏",
+            "视频完成返回"
+        ]
+    },
+    "视频已点赞": {
+        "recognition": "TemplateMatch",
+        "template": "video_like1g.png",
+        "roi": [598, 503, 84, 85],
+        "green_mask": true,
+        "threshold": 0.89,
+        "next": [
+            "视频已收藏",
+            "视频收藏",
+            "视频完成返回"
+        ]
+    },
+    "视频已收藏": {
+        "recognition": "TemplateMatch",
+        "template": "video_collect1g.png",
+        "roi": [601, 764, 80, 77],
+        "green_mask": true,
+        "threshold": 0.89,
+        "next": [
+            "视频二次完成返回",
+            "视频完成返回"
+        ]
+    },
+    "视频点赞": {
+        "recognition": "TemplateMatch",
+        "template": "video_like0g.png",
+        "roi": [598, 503, 84, 85],
+        "green_mask": true,
+        "threshold": 0.45,
+        "action": "Click",
+        "next": [
+            "视频已收藏",
+            "视频收藏",
+            "视频完成返回"
+        ]
+    },
+    "视频收藏": {
+        "recognition": "TemplateMatch",
+        "template": "video_collect0g.png",
+        "roi": [601, 764, 80, 77],
+        "green_mask": true,
+        "threshold": 0.45,
+        "action": "Click",
+        "next": [
+            "视频完成返回"
+        ]
+    },
+    "视频完成返回": {
+        "recognition": "OCR",
+        "expected":[
+            "期待你查重",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1165,
+            400,
+            100
+        ],
+        "pre_delay": 1000,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 1000,
+        "next": [
+            "视频滑动03"
+        ]
+    },
+    "视频滑动03": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "order_by": "Vertical",
+        "index": 1,
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": true,
+        "end": "识别视频标识",
+        "duration": 1000,
+        "post_delay": 800,
+        "next": [
+            "点赞视频检测",
+            "[JumpBack]视频完成返回"
+        ]
+    },
+    "视频二次完成返回": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "期待你查重",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1165,
+            400,
+            100
+        ],
+        "pre_delay": 1000,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 1000,
+        "next": [
+            "账号点赞完成返回"
+        ]
+    },
 
 
     "账号点赞完成返回":{
@@ -319,15 +500,17 @@
         ]
     },
     "重新关注":{
-        "recognition": "TemplateMatch",
-        "template": [
-            "关注.png"
+        "recognition": "OCR",
+        "expected":[
+            "\\+关注",
+            "十关注",
+            "十关注"
         ],
         "roi": [536, 130, 184, 1150],
         "order_by": "Vertical",
         "index": 0,
         "action": "Click",
-        "timeout": 3600,
+        "timeout": 3000,
         "on_error":[
             "Like100"
         ],
@@ -342,6 +525,7 @@
             "更新提醒"
         ],
         "roi": [0, 40, 720, 77],
+        "pre_delay": 1000,
         "action": "Key",
         "key": 4
     },
@@ -357,7 +541,7 @@
         "action": "InputText",
         "input_text": "16223053961",
         "focus": {
-            "succeeded": "[color:blue]16223053961 登录[/color]"
+            "succeeded": "[color:blue]16223053961 登录02[/color]"
         },
         "max_hit":1,
         "next":[
@@ -373,7 +557,7 @@
         "action": "InputText",
         "input_text": "16220249071",
         "focus": {
-            "succeeded": "[color:blue]16220249071 登录[/color]"
+            "succeeded": "[color:blue]16220249071 登录03[/color]"
         },
         "max_hit":1,
         "next":[
@@ -389,7 +573,7 @@
         "action": "InputText",
         "input_text": "19247220856",
         "focus": {
-            "succeeded": "[color:blue]19247220856 登录[/color]"
+            "succeeded": "[color:blue]19247220856 登录04[/color]"
         },
         "max_hit":1,
         "next":[
@@ -405,7 +589,7 @@
         "action": "InputText",
         "input_text": "17722288334",
         "focus": {
-            "succeeded": "[color:blue]17722288334 登录[/color]"
+            "succeeded": "[color:blue]17722288334 登录05[/color]"
         },
         "max_hit":1,
         "next":[
@@ -421,7 +605,7 @@
         "action": "InputText",
         "input_text": "17788887340",
         "focus": {
-            "succeeded": "[color:blue]17788887340 登录[/color]"
+            "succeeded": "[color:blue]17788887340 登录06[/color]"
         },
         "max_hit":1,
         "next":[
@@ -437,7 +621,7 @@
         "action": "InputText",
         "input_text": "17727641992",
         "focus": {
-            "succeeded": "[color:blue]17727641992 登录[/color]"
+            "succeeded": "[color:blue]17727641992 登录07[/color]"
         },
         "max_hit":1,
         "next":[
@@ -453,7 +637,7 @@
         "action": "InputText",
         "input_text": "17722288531",
         "focus": {
-            "succeeded": "[color:blue]17722288531 登录[/color]"
+            "succeeded": "[color:blue]17722288531 登录08[/color]"
         },
         "max_hit":1,
         "next":[
@@ -469,7 +653,7 @@
         "action": "InputText",
         "input_text": "18122370144",
         "focus": {
-            "succeeded": "[color:blue]18122370144 登录[/color]"
+            "succeeded": "[color:blue]18122370144 登录09[/color]"
         },
         "max_hit":1,
         "next":[
@@ -485,7 +669,7 @@
         "action": "InputText",
         "input_text": "19002000654",
         "focus": {
-            "succeeded": "[color:blue]19002000654 登录[/color]"
+            "succeeded": "[color:blue]19002000654 登录10[/color]"
         },
         "max_hit":1,
         "next":[
@@ -501,7 +685,7 @@
         "action": "InputText",
         "input_text": "16294677554",
         "focus": {
-            "succeeded": "[color:blue]16294677554 登录[/color]"
+            "succeeded": "[color:blue]16294677554 登录11[/color]"
         },
         "max_hit":1,
         "next":[
@@ -517,7 +701,7 @@
         "action": "InputText",
         "input_text": "16223053859",
         "focus": {
-            "succeeded": "[color:blue]16223053859 登录[/color]"
+            "succeeded": "[color:blue]16223053859 登录12[/color]"
         },
         "max_hit":1,
         "next":[
@@ -533,7 +717,7 @@
         "action": "InputText",
         "input_text": "18577563274",
         "focus": {
-            "succeeded": "[color:blue]18577563274 登录[/color]"
+            "succeeded": "[color:blue]18577563274 登录13[/color]"
         },
         "max_hit":1,
         "next":[
@@ -549,7 +733,7 @@
         "action": "InputText",
         "input_text": "16794062375",
         "focus": {
-            "succeeded": "[color:blue]16794062375 登录[/color]"
+            "succeeded": "[color:blue]16794062375 登录14[/color]"
         },
         "max_hit":1,
         "next":[
@@ -565,7 +749,7 @@
         "action": "InputText",
         "input_text": "16220249878",
         "focus": {
-            "succeeded": "[color:blue]16220249878 登录[/color]"
+            "succeeded": "[color:blue]16220249878 登录15[/color]"
         },
         "max_hit":1,
         "next":[
@@ -581,7 +765,7 @@
         "action": "InputText",
         "input_text": "16220249642",
         "focus": {
-            "succeeded": "[color:blue]16220249642 登录[/color]"
+            "succeeded": "[color:blue]16220249642 登录16[/color]"
         },
         "max_hit":1,
         "next":[
@@ -597,7 +781,7 @@
         "action": "InputText",
         "input_text": "16297152389",
         "focus": {
-            "succeeded": "[color:blue]16297152389 登录[/color]"
+            "succeeded": "[color:blue]16297152389 登录17[/color]"
         },
         "max_hit":1,
         "next":[
@@ -613,7 +797,7 @@
         "action": "InputText",
         "input_text": "17027415960",
         "focus": {
-            "succeeded": "[color:blue]17027415960 登录[/color]"
+            "succeeded": "[color:blue]17027415960 登录18[/color]"
         },
         "max_hit":1,
         "next":[
@@ -629,7 +813,7 @@
         "action": "InputText",
         "input_text": "16260654304",
         "focus": {
-            "succeeded": "[color:blue]16260654304 登录[/color]"
+            "succeeded": "[color:blue]16260654304 登录19[/color]"
         },
         "max_hit":1,
         "next":[
@@ -645,7 +829,7 @@
         "action": "InputText",
         "input_text": "16223055905",
         "focus": {
-            "succeeded": "[color:blue]16223055905 登录[/color]"
+            "succeeded": "[color:blue]16223055905 登录20[/color]"
         },
         "max_hit":1,
         "next":[
@@ -661,7 +845,7 @@
         "action": "InputText",
         "input_text": "16220964658",
         "focus": {
-            "succeeded": "[color:blue]16220964658 登录[/color]"
+            "succeeded": "[color:blue]16220964658 登录21[/color]"
         },
         "max_hit":1,
         "next":[
@@ -677,7 +861,7 @@
         "action": "InputText",
         "input_text": "17025427680",
         "focus": {
-            "succeeded": "[color:blue]17025427680 登录[/color]"
+            "succeeded": "[color:blue]17025427680 登录22[/color]"
         },
         "max_hit":1,
         "next":[
@@ -693,7 +877,7 @@
         "action": "InputText",
         "input_text": "16229699420",
         "focus": {
-            "succeeded": "[color:blue]16229699420 登录[/color]"
+            "succeeded": "[color:blue]16229699420 登录23[/color]"
         },
         "max_hit":1,
         "next":[
@@ -709,7 +893,7 @@
         "action": "InputText",
         "input_text": "16229699795",
         "focus": {
-            "succeeded": "[color:blue]16229699795 登录[/color]"
+            "succeeded": "[color:blue]16229699795 登录24[/color]"
         },
         "max_hit":1,
         "next":[
@@ -725,7 +909,7 @@
         "action": "InputText",
         "input_text": "16220249374",
         "focus": {
-            "succeeded": "[color:blue]16220249374 登录[/color]"
+            "succeeded": "[color:blue]16220249374 登录25[/color]"
         },
         "max_hit":1,
         "next":[
