@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.53",
+    "version": "0.2.54",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -129,7 +129,7 @@
             "description": "点赞收藏+100，每个分组+25（需要关闭输入法）",
             "option": [
                 "账号分组",
-                "何时结束"
+                "至作品时间"
             ]
         },
         {
@@ -1895,7 +1895,7 @@
                 }
             ]
         },
-        "何时结束": {
+        "至作品时间": {
             "cases": [
                 {
                     "name": "当天",
