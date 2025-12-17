@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.55",
+    "version": "0.2.56",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -39,7 +39,7 @@
                 "账号选择",
                 "签到",
                 "每日任务检测",
-                "输入法检测"
+                "启用输入法"
             ],
             "pipeline_override": {
                 "TaskImagetxtUndone": {
@@ -457,7 +457,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成2[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成2[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -615,7 +615,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成3[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成3[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -773,7 +773,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成4[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成4[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -941,7 +941,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成2[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成2[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1011,7 +1011,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成2[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成2[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1081,7 +1081,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成4[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成4[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1151,7 +1151,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成5[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成5[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1221,7 +1221,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成6[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成6[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1291,7 +1291,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成7[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成7[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1361,7 +1361,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成8[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成8[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1431,7 +1431,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成9[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成9[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -1501,7 +1501,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:blue]Like100完成10[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成10[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -3559,86 +3559,6 @@
                 }
             ]
         },
-        "是否评论视频": {
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "ShareBackVideoM": {
-                            "next": [
-                                "CCommentVideo",
-                                "ClickCommentVideo",
-                                "ReplyVideoLike1M",
-                                "ReplyVideoLikeM",
-                                "ReplyVideoCollect1M",
-                                "ReplyVideoCollectM",
-                                "ReplyVideoBackM",
-                                "CantFindComment"
-                            ]
-                        },
-                        "CCommentBack01": {
-                            "next": [
-                                "ReplyVideoLike1M",
-                                "ReplyVideoLikeM",
-                                "ReplyVideoCollect1M",
-                                "ReplyVideoCollectM",
-                                "ReplyVideoBackM"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "视频评论": {
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "ReplyVideo01": {
-                            "next": [
-                                "CCommentVideo",
-                                "ClickCommentVideo",
-                                "ReplyVideoLike1",
-                                "ReplyVideoLike",
-                                "ReplyVideoCollect1",
-                                "ReplyVideoCollect",
-                                "ReplyVideoBack",
-                                "CantFindComment"
-                            ]
-                        },
-                        "ReplyVideoM": {
-                            "next": [
-                                "CCommentVideo",
-                                "ClickCommentVideo",
-                                "ReplyVideoLike1",
-                                "ReplyVideoLike",
-                                "ReplyVideoCollect1",
-                                "ReplyVideoCollect",
-                                "ReplyVideoBack",
-                                "CantFindComment"
-                            ]
-                        },
-                        "CCommentBack01": {
-                            "next": [
-                                "ReplyVideoLike1",
-                                "ReplyVideoLike",
-                                "ReplyVideoCollect1",
-                                "ReplyVideoCollect",
-                                "ReplyVideoBack"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
         "是否回复评论": {
             "cases": [
                 {
@@ -3965,24 +3885,6 @@
                                 800,
                                 10,
                                 10
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "是否重复运行": {
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "ReplyBackM": {
-                            "next": [
-                                "BrowseImagetxtM"
                             ]
                         }
                     }
@@ -5391,9 +5293,6 @@
                     "pipeline_override": {
                         "点击关注列表mc": {
                             "enabled": false
-                        },
-                        "BrowseImagetxtMC1": {
-                            "next": "点击内容c"
                         }
                     }
                 },
@@ -6126,7 +6025,7 @@
                 }
             ]
         },
-        "输入法检测": {
+        "启用输入法": {
             "cases": [
                 {
                     "name": "yes",
@@ -6173,11 +6072,6 @@
                         "领取积分开始":{
                             "next": [
                                 "每日任务开始"
-                            ]
-                        },  
-                        "MergePointsTask": {
-                            "next": [
-                                "MergeBrowsePublish1"
                             ]
                         }
                     }

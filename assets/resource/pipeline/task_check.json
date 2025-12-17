@@ -93,7 +93,7 @@
             "start": "[color:blue]浏览内容未完成，前去完成[/color]"
         },
         "next": [
-            "MergeBrowsePublish000"
+            "每日任务开始"
         ]
     },
     "TaskComment": {
@@ -135,7 +135,7 @@
             "start": "[color:blue]评论未完成，前去完成[/color]"
         },
         "next": [
-            "ErrorImagetxt0013"
+            "每日任务开始"
         ]
     },
     "TaskNotification": {

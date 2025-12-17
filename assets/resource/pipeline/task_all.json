@@ -8,6 +8,8 @@
             "[JumpBack]Back"
         ]
     },
+
+
     "输入法检测开启": {
         "enabled": true,
         "action": "Command",
@@ -28,7 +30,10 @@
             "领取积分开始"
         ]
     },
+
+
     "输入法进入首页": {
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": [
             "首页.png",
@@ -436,12 +441,14 @@
         "post_delay": 500,
         "post_wait_freezes": 200,
         "next": [
-            "点击图文部分"
+            "点击图文部分",
+            "[JumpBack]大象号初始滑动"
         ]
     },
     "点击图文部分": {
         "recognition": "OCR",
         "expected": "图文",
+        "roi": [0, 111, 720, 120],
         "action": "Click",
         "pre_wait_freezes": 200,
         "post_delay": 500,
@@ -463,21 +470,19 @@
         "post_delay": 500,
         "timeout": 10000,
         "on_error":[
-            "图文评论点击输入框if"
+            "返回点击作品"
         ],
         "next": [
-            "完成浏览内容积分+3"
+            "图文点赞",
+            "图文分享",
+            "图文评论点击输入框"
         ]
     },
-    "完成浏览内容积分+3":{
-        "enabled": true,
-        "recognition": "OCR",
-        "expected":[
-            "完成浏览内容积分+3",
-            "完成浏览内容积分"
-        ],
+    "返回点击作品":{
+        "action": "Key",
+        "key": 4,
         "next":[
-            "图文点赞"
+            "点击作品01"
         ]
     },
     "图文点赞": {
@@ -504,34 +509,7 @@
             38,
             42
         ],
-        "next": [
-            "图文收藏"
-        ]
-    },
-    "图文收藏": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "收藏g.png",
-            "收藏1g.png",
-            "n收藏g.png",
-            "n收藏1g.png"
-        ],
-        "roi": [
-            405,
-            1188,
-            310,
-            75
-        ],
-        "green_mask": true,
-        "pre_delay": 800,
-        "action": "Click",
-        "target": [
-            501,
-            1208,
-            42,
-            44
-        ],
-        "post_wait_freezes": 2000,
+        "max_hit":6,
         "next": [
             "图文分享",
             "图文评论点击输入框"
@@ -546,7 +524,7 @@
         "pre_delay": 1000,
         "action": "Click",
         "post_delay": 500,
-        "max_hit":8,
+        "max_hit":9,
         "next": [
             "图文分享到QQ",
             "收藏未知错误",
@@ -664,11 +642,25 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 800,
+        "timeout": 10000,
+        "on_error":[
+            "作品完成返回01if"
+        ],
         "next": [
             "发送成功",
             "评论重复内容提示",
             "评论频率过高提示",
-            "换一篇提示"
+            "换一篇提示",
+            "[JumpBack]再次点击发表评论"
+        ]
+    },
+    "再次点击发表评论": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "Stop"
         ]
     },
     "发送成功":{
@@ -678,25 +670,12 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "timeout": 6000,
-        "on_error":[
-            "重置点赞"
-        ],
-        "next":[
-            "完成评论积分+5"
-        ]
-    },
-    "完成评论积分+5":{
-        "recognition": "OCR",
-        "expected":[
-            "完成评论积分+5",
-            "完成评论积分"
-        ],
-        "max_hit":10,
+        "max_hit":11,
         "next":[
             "重置点赞"
         ]
     },
+
     "评论重复内容提示": {
         "recognition": "OCR",
         "expected": [
@@ -719,7 +698,7 @@
             "停一停",
             "好评论需要慢慢酝酿"
         ],
-        "post_delay": 60000,
+        "post_delay": 42000,
         "next": [
             "图文评论点击输入框",
             "重置点赞"
@@ -734,131 +713,7 @@
             "重置点赞"
         ]
     },
-    "图文评论点击输入框if": {
-        "enabled": true,
-        "recognition": "OCR",
-        "expected": [
-            "期待你",
-            "的评论",
-            "[一-龥]",
-            "[\u4e00-\u9fa5]"
-        ],
-        "roi": [
-            50,
-            1215,
-            300,
-            30
-        ],
-        "pre_delay": 800,
-        "action": "Click",
-        "target": [
-            50,
-            1215,
-            300,
-            30
-        ],
-        "next": [
-            "点击大象新语if",
-            "[JumpBack]InputmethodCheck",
-            "[JumpBack]InputmethodCheck0"
-        ]
-    },
-    "点击大象新语if": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
-        "action": "Click",
-        "next": [
-            "点击大象新语评论if"
-        ]
-    },
-    "点击大象新语评论if": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
-        "action": "Click",
-        "target": [
-            42,
-            473,
-            1,
-            1
-        ],
-        "next": [
-            "点击发表评论if"
-        ]
-    },
-    "点击发表评论if": {
-        "recognition": "TemplateMatch",
-        "template": "发表.png",
-        "action": "Click",
-        "post_delay": 800,
-        "next": [
-            "发送成功if",
-            "评论重复内容提示if",
-            "评论频率过高提示if",
-            "换一篇提示if"
-        ]
-    },
-    "发送成功if":{
-        "recognition": "OCR",
-        "expected":[
-            "发送成功",
-            "完成评论积分+5",
-            "完成评论积分"
-        ],
-        "timeout": 6000,
-        "on_error":[
-            "每日任务完成"
-        ],
-        "next":[
-            "完成评论积分+5if"
-        ]
-    },
-    "完成评论积分+5if":{
-        "recognition": "OCR",
-        "expected":[
-            "完成评论积分+5",
-            "完成评论积分"
-        ],
-        "next":[
-            "重置点赞"
-        ]
-    },
-    "评论重复内容提示if": {
-        "recognition": "OCR",
-        "expected": [
-            "不能发表重复内容",
-            "重复内容",
-            "复制粘贴",
-            "一样哦"
-        ],
-        "action": "Click",
-        "target": [197, 1230, 1, 1],
-        "post_delay": 10000,
-        "next": [
-            "点击大象新语if",
-            "重置点赞"
-        ]
-    },
-    "评论频率过高提示if":{
-        "recognition": "OCR",
-        "expected": [
-            "停一停",
-            "好评论需要慢慢酝酿"
-        ],
-        "post_delay": 60000,
-        "next": [
-            "图文评论点击输入框if",
-            "重置点赞"
-        ]
-    },
-    "换一篇提示if":{
-        "recognition": "OCR",
-        "expected": [
-            "换篇再聊"
-        ],
-        "next": [
-            "重置点赞"
-        ]
-    },
+    
     "重置点赞": {
         "action": "Click",
         "target": [
@@ -869,20 +724,6 @@
         ],
         "post_delay": 800,
         "next": [
-            "重置收藏"
-        ]
-    },
-    "重置收藏": {
-        "action": "Click",
-        "target": [
-            501,
-            1208,
-            42,
-            44
-        ],
-        "post_wait_freezes": 2000,
-        "post_delay": 1000,
-        "next": [
             "作品完成返回01"
         ]
     },
@@ -891,32 +732,6 @@
         "key": 4,
         "post_delay": 800,
         "next": [
-            "图文滑动x1"
-        ]
-    },
-    "识别大象号00":{
-        "enabled": false,
-        "recognition": "OCR",
-        "expected":[
-            "河南交通广播"
-        ],
-        "roi": [3, 213, 717, 1067],
-        "order_by": "Vertical",
-        "index": 0,
-        "next":[
-            "识别大象号01"
-        ]
-    },
-    "识别大象号01":{
-        "enabled": false,
-        "recognition": "OCR",
-        "expected":[
-            "河南交通广播"
-        ],
-        "roi": [3, 213, 717, 1067],
-        "order_by": "Vertical",
-        "index": 1,
-        "next":[
             "图文滑动x1"
         ]
     },
@@ -937,6 +752,8 @@
             "点击作品01"
         ]
     },
+
+
     "作品完成返回01if": {
         "action": "Key",
         "key": 4,
@@ -973,7 +790,7 @@
         "post_delay": 500,
         "timeout": 10000,
         "on_error":[
-            "图文评论点击输入框if"
+            "每日任务完成"
         ],
         "next": [
             "完成浏览内容积分+3if"

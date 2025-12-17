@@ -578,13 +578,62 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "ReplyVideoLike1",
-            "ReplyVideoLike",
-            "ReplyVideoCollect1",
-            "ReplyVideoCollect",
+            "ReplyVideoLike1Color",
+            "ReplyVideoLikeColor",
+            "ReplyVideoCollect1Color",
+            "ReplyVideoCollectColor",
             "ReplyVideoBack"
         ]
     },
+
+    "ReplyVideoLike1Color": {
+        "recognition": "ColorMatch",
+        "roi": [623, 533, 33, 26],
+        "upper":[255,0,0],
+        "lower":[255,0,0],
+        "connected": true,
+        "next": [
+            "ReplyVideoCollect1Color",
+            "ReplyVideoCollectColor",
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoCollect1Color": {
+        "recognition": "ColorMatch",
+        "roi": [631, 797, 20, 18],
+        "upper":[248,184,39],
+        "lower":[248,184,39],
+        "connected": true,
+        "next": [
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoLikeColor": {
+        "recognition": "ColorMatch",
+        "roi": [623, 533, 33, 26],
+        "upper":[255,255,255],
+        "lower":[255,255,255],
+        "connected": true,
+        "action": "Click",
+        "next": [
+            "ReplyVideoCollect1Color",
+            "ReplyVideoCollectColor",
+            "ReplyVideoBack"
+        ]
+    },
+    "ReplyVideoCollectColor": {
+        "recognition": "ColorMatch",
+        "roi": [631, 797, 20, 18],
+        "upper":[255,255,255],
+        "lower":[255,255,255],
+        "connected": true,
+        "action": "Click",
+        "next": [
+            "ReplyVideoBack"
+        ]
+    },
+
+
     "ReplyVideoLike1": {
         "recognition": "TemplateMatch",
         "template": "video_like1g.png",

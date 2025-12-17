@@ -230,7 +230,9 @@
             135
         ],
         "action": "Click",
-        "post_delay": 3600,
+        "post_delay": 3000,
+        "post_wait_freezes":1000,
+        "timeout": 30000,
         "next": [
             "点击关注列表like"
         ]
@@ -389,12 +391,62 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "视频已点赞",
-            "视频点赞",
-            "视频收藏",
+            "视频已点赞Color",
+            "视频点赞Color",
+            "视频收藏Color",
             "视频完成返回"
         ]
     },
+
+
+    "视频已点赞Color": {
+        "recognition": "ColorMatch",
+        "roi": [623, 533, 33, 26],
+        "upper":[255,0,0],
+        "lower":[255,0,0],
+        "connected": true,
+        "next": [
+            "视频已收藏Color",
+            "视频收藏Color",
+            "视频完成返回"
+        ]
+    },
+    "视频已收藏Color": {
+        "recognition": "ColorMatch",
+        "roi": [631, 797, 20, 18],
+        "upper":[248,184,39],
+        "lower":[248,184,39],
+        "connected": true,
+        "next": [
+            "视频二次完成返回",
+            "视频完成返回"
+        ]
+    },
+    "视频点赞Color": {
+        "recognition": "ColorMatch",
+        "roi": [623, 533, 33, 26],
+        "upper":[255,255,255],
+        "lower":[255,255,255],
+        "connected": true,
+        "action": "Click",
+        "next": [
+            "视频收藏Color",
+            "视频完成返回"
+        ]
+    },
+    "视频收藏Color": {
+        "recognition": "ColorMatch",
+        "roi": [631, 797, 20, 18],
+        "upper":[255,255,255],
+        "lower":[255,255,255],
+        "connected": true,
+        "action": "Click",
+        "next": [
+            "视频完成返回"
+        ]
+    },
+
+
     "视频已点赞": {
         "recognition": "TemplateMatch",
         "template": "video_like1g.png",
