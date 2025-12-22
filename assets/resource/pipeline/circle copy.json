@@ -1180,14 +1180,41 @@
         ],
         "order_by": "Vertical",
         "green_mask": true,
+        "pre_delay": 300,
         "action": "Click",
         "post_delay": 850,
         "next": [
-            "圈子点赞re",
-            "圈子收藏菜单",
+            "圈子已点赞reColor",
+            "[JumpBack]圈子点赞re",
             "[JumpBack]CInImagetxt",
+            "圈子收藏菜单",
             "[JumpBack]圈子菜单遮挡滑动"
         ]
+    },
+    "圈子已点赞reColor":{
+        "enabled": true,
+        "roi": "圈子点赞",
+        "order_by": "Vertical",
+        "recognition": "ColorMatch",
+        "upper":[84,144,184],
+        "lower":[84,144,184],
+        "connected": true,
+        "next":[
+            "圈子收藏菜单",
+            "[JumpBack]圈子菜单遮挡滑动"
+        ]
+    },
+    "圈子点赞reColor":{
+        "enabled": true,
+        "roi": "圈子点赞",
+        "order_by": "Vertical",
+        "recognition": "ColorMatch",
+        "upper":[84,144,184],
+        "lower":[84,144,184],
+        "connected": true,
+        "inverse": true,
+        "action": "Click",
+        "target": "圈子点赞"
     },
     "圈子点赞re":{
         "enabled": true,
@@ -1197,14 +1224,10 @@
         ],
         "roi": "圈子点赞",
         "order_by": "Vertical",
-        "threshold": 0.5,
+        "threshold": 0.3,
         "green_mask": true,
         "action": "Click",
-        "next": [
-            "圈子收藏菜单",
-            "[JumpBack]CInImagetxt",
-            "[JumpBack]圈子菜单遮挡滑动"
-        ]
+        "post_delay": 850
     },
     "圈子菜单遮挡滑动": {
         "action": "Swipe",

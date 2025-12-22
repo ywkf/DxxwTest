@@ -598,21 +598,75 @@
         ],
         "next": [
             "点击大象新语",
-            "[JumpBack]InputmethodCheck",
-            "[JumpBack]InputmethodCheck0"
+            "[JumpBack]图文评论再次点击输入框",
+            "[JumpBack]输入法检测开启re"
         ]
     },
+    "图文评论再次点击输入框": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论",
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "pre_delay": 800,
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ]
+    },
+    "输入法检测开启re": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.iflytek.inputmethod/.FlyIME"
+        ],
+        "detach": false,
+        "focus": {
+            "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
+        }
+    },
     "点击大象新语": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
+        "roi": [
+            0,
+            650,
+            720,
+            80
+        ],
+        "pre_delay": 500,
         "action": "Click",
         "next": [
             "点击大象新语评论"
         ]
     },
     "点击大象新语评论": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
         "action": "Click",
         "target": [
             42,

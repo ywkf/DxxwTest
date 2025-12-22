@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.56",
+    "version": "0.2.57",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -1011,7 +1011,7 @@
                     "pipeline_override": {
                         "Like100完成":{
                             "focus": {
-                                "succeeded": "[color:#ff9966]Like100完成2[/color]"
+                                "succeeded": "[color:#ff9966]Like100完成3[/color]"
                             }
                         },
                         "输入手机号001":{
@@ -4035,6 +4035,16 @@
                         "set",
                         "com.iflytek.inputmethod/.FlyIME"
                     ]
+                },
+                "输入法检测开启re": {
+                    "args": [
+                        "-s",
+                        "127.0.0.1:{端口号}",
+                        "shell",
+                        "ime",
+                        "set",
+                        "com.iflytek.inputmethod/.FlyIME"
+                    ]
                 }
             }
         },
@@ -6042,9 +6052,6 @@
                             "next": [
                                 "领取积分开始"
                             ]
-                        },
-                        "InputmethodCheck00": {
-                            "next": "MergePointsTask"
                         }
                     }
                 }
@@ -6089,11 +6096,6 @@
                     "name": "任务前检测",
                     "pipeline_override": {
                         "领取积分开始":{
-                            "next": [
-                                "TaskCheck"
-                            ]
-                        },  
-                        "MergePointsTask": {
                             "next": [
                                 "TaskCheck"
                             ]

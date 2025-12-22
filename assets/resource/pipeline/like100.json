@@ -3,7 +3,24 @@
         "next":[
             "点击登录",
             "[JumpBack]退出账号",
+            "[JumpBack]登录页面返回",
             "[JumpBack]Back"
+        ]
+    },
+    "Like100错误跳过":{
+        "focus": {
+            "succeeded": "[color:#2f90ba]任务出错，跳过该账号[/color]"
+        },
+        "next":[
+            "Like100"
+        ]
+    },
+    "Like100账号完成":{
+        "focus": {
+            "succeeded": "[color:#9966cc]该账号点赞已完成[/color]"
+        },
+        "next":[
+            "Like100"
         ]
     },
     "退出账号":{
@@ -14,6 +31,15 @@
         "next":[
             "点击系统设置"
         ]
+    },
+    "登录页面返回":{
+        "recognition": "OCR",
+        "expected":[
+            "还没有账号？",
+            "立即注册"
+        ],
+        "action": "Click",
+        "target": [87, 122, 1, 1]
     },
     "点击系统设置": {
         "recognition": "TemplateMatch",
@@ -77,11 +103,22 @@
             "登录/注册"
         ],
         "action": "Click",
+        "post_wait_freezes":1000,
         "post_delay": 2400,
         "next": [
             "点击密码登录"
         ]
     },
+    "点击登录re": {
+        "recognition": "OCR",
+        "expected": [
+            "登录/注册"
+        ],
+        "action": "Click",
+        "post_wait_freezes":1000,
+        "post_delay": 2400
+    },
+
     "点击密码登录":{
         "recognition": "OCR",
         "expected":[
@@ -91,8 +128,17 @@
         "action": "Click",
         "next":[
             "检测忘记密码",
-            "[JumpBack]点击密码登录"
+            "[JumpBack]点击密码登录re",
+            "[JumpBack]点击登录re"
         ]
+    },
+    "点击密码登录re":{
+        "recognition": "OCR",
+        "expected":[
+            "密码登录"
+        ],
+        "pre_delay": 1000,
+        "action": "Click"
     },
     "检测忘记密码":{
         "recognition": "OCR",
@@ -114,17 +160,83 @@
         ],
         "action": "Click",
         "next": [
-            "点击手机号输入框"
+            "点击手机号输入框前置"
         ]
     },
-    "点击手机号输入框": {
+
+
+    "点击登录re2": {
+        "recognition": "OCR",
+        "expected": [
+            "登录/注册"
+        ],
+        "action": "Click",
+        "post_wait_freezes":1000,
+        "post_delay": 2400,
+        "next": [
+            "点击密码登录re2"
+        ]
+    },
+    "点击密码登录re2":{
+        "recognition": "OCR",
+        "expected":[
+            "密码登录"
+        ],
+        "pre_delay": 1000,
+        "action": "Click",
+        "next":[
+            "检测忘记密码re",
+            "[JumpBack]点击密码登录re",
+            "[JumpBack]点击登录re"
+        ]
+    },
+    "检测忘记密码re":{
+        "recognition": "OCR",
+        "expected":[
+            "忘记密码"
+        ],
+        "next":[
+            "点击阅读并同意re"
+        ]
+    },
+    "点击阅读并同意re": {
+        "recognition": "TemplateMatch",
+        "template": "gouxuan.png",
+        "roi": [
+            49,
+            1061,
+            46,
+            51
+        ],
+        "action": "Click",
+        "next": [
+            "点击手机号输入框前置"
+        ]
+    },
+    "点击手机号输入框前置": {
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
             "请输人手机号"
         ],
         "action": "Click",
-        "timeout": 6000,
+        "post_wait_freezes":1000,
+        "next": [
+            "点击手机号输入框",
+            "[JumpBack]点击登录re2"
+        ]
+    },
+    "点击手机号输入框": {
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
+        ],
+        "pre_delay": 500,
+        "action": "Click",
+        "timeout": 12000,
         "on_error":[
             "Like100完成"
         ],
@@ -160,7 +272,7 @@
         "action": "Click",
         "target": [87, 122, 1, 1],
         "focus": {
-            "succeeded": "[color:blue]Like100完成1[/color]"
+            "succeeded": "[color:#ff9966]Like100完成1[/color]"
         }
     },
     "输入手机号001":{
@@ -168,8 +280,11 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
+        "pre_delay": 500,
         "action": "InputText",
         "input_text": "16220961643",
         "focus": {
@@ -186,6 +301,7 @@
             "请输入密码",
             "请输人密码"
         ],
+        "pre_delay": 500,
         "action": "Click",
         "next": [
             "输入密码"
@@ -195,12 +311,14 @@
         "recognition": "OCR",
         "expected": [
             "请输入密码",
-            "请输人密码"
+            "请输人密码",
+            "输入密码",
+            "输人密码"
         ],
+        "pre_delay": 500,
         "action": "InputText",
         "input_text": "12345678",
         "next":[
-            "输入完成返回",
             "密码点击登录"
         ]
     },
@@ -230,16 +348,20 @@
             135
         ],
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 2000,
         "post_wait_freezes":1000,
         "timeout": 30000,
+        "on_error":[
+            "点击密码输入框",
+            "Like100错误跳过"
+        ],
         "next": [
             "点击关注列表like"
         ]
     },
     "点击关注列表like": {
         "recognition": "OCR",
-        "expected": "关注",
+        "expected": "^关注$",
         "roi": [0, 326, 720, 235],
         "pre_delay": 1000,
         "action": "Click",
@@ -264,12 +386,16 @@
     "检查关注列表like": {
         "recognition": "OCR",
         "expected": [
-            "已关注"
+            "已关注",
+            "己关注"
         ],
         "order_by": "Vertical",
         "index": 0,
         "action": "Click",
         "post_delay": 2000,
+        "on_error":[
+            "Like100错误跳过"
+        ],
         "next": [
             "点击账号",
             "[JumpBack]检查关注列表like"
@@ -347,6 +473,10 @@
         ]
     },
     "点赞视频检测": {
+        "timeout": 30000,
+        "on_error":[
+            "Like100错误跳过"
+        ],
         "next": [
             "检测当天视频",
             "检测当天完成",
@@ -362,7 +492,7 @@
             "\\d{2}-\\d{2}?\\d{2}:\\d{2}"
         ],
         "focus": {
-            "succeeded": "当天未发布视频"
+            "succeeded": "[color:green]当天未发布视频[/color]"
         },
         "next": [
             "账号点赞完成返回"
@@ -394,7 +524,19 @@
             "视频已点赞Color",
             "视频点赞Color",
             "视频收藏Color",
-            "视频完成返回"
+            "视频完成返回",
+            "[JumpBack]再次识别视频标识"
+        ]
+    },
+    "再次识别视频标识": {
+        "recognition": "TemplateMatch",
+        "template": "watch.png",
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "Stop"
         ]
     },
 
@@ -546,6 +688,9 @@
         "action": "Key",
         "key": 4,
         "post_delay": 1000,
+        "focus": {
+            "succeeded": "[color:green]已完成点赞，返回[/color]"
+        },
         "next": [
             "账号点赞完成返回"
         ]
@@ -577,7 +722,7 @@
         "action": "Click",
         "timeout": 3000,
         "on_error":[
-            "Like100"
+            "Like100账号完成"
         ],
         "next":[
             "重新关注",
@@ -602,7 +747,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16223053961",
@@ -619,7 +766,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16220249071",
@@ -636,7 +785,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "19247220856",
@@ -653,7 +804,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "17722288334",
@@ -670,7 +823,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "17788887340",
@@ -687,7 +842,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "17727641992",
@@ -704,7 +861,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "17722288531",
@@ -721,7 +880,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "18122370144",
@@ -738,7 +899,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "19002000654",
@@ -755,7 +918,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16294677554",
@@ -772,7 +937,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16223053859",
@@ -789,7 +956,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "18577563274",
@@ -806,7 +975,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16794062375",
@@ -823,7 +994,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16220249878",
@@ -840,7 +1013,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16220249642",
@@ -857,7 +1032,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16297152389",
@@ -874,7 +1051,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "17027415960",
@@ -891,7 +1070,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16260654304",
@@ -908,7 +1089,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16223055905",
@@ -925,7 +1108,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16220964658",
@@ -942,7 +1127,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "17025427680",
@@ -959,7 +1146,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16229699420",
@@ -976,7 +1165,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16229699795",
@@ -993,7 +1184,9 @@
         "recognition": "OCR",
         "expected": [
             "请输入手机号",
-            "请输人手机号"
+            "请输人手机号",
+            "输入手机号",
+            "输人手机号"
         ],
         "action": "InputText",
         "input_text": "16220249374",
