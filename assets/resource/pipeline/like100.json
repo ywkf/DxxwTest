@@ -16,9 +16,16 @@
         ]
     },
     "Like100账号完成":{
+        "timeout": 6000,
         "focus": {
             "succeeded": "[color:#9966cc]该账号点赞已完成[/color]"
         },
+        "next":[
+            "Like100账号完成2"
+        ]
+    },
+    "Like100账号完成2":{
+        "max_hit":25,
         "next":[
             "Like100"
         ]
@@ -160,7 +167,39 @@
         ],
         "action": "Click",
         "next": [
-            "点击手机号输入框前置"
+            "点击手机号输入框前置",
+            "[JumpBack]点击登录2"
+        ]
+    },
+    "点击登录2": {
+        "recognition": "OCR",
+        "expected": [
+            "登录/注册"
+        ],
+        "action": "Click",
+        "post_wait_freezes":1000,
+        "post_delay": 2400,
+        "next": [
+            "点击密码登录2"
+        ]
+    },
+    "点击密码登录2":{
+        "recognition": "OCR",
+        "expected":[
+            "密码登录"
+        ],
+        "pre_delay": 1000,
+        "action": "Click",
+        "next":[
+            "检测忘记密码2",
+            "[JumpBack]点击密码登录re",
+            "[JumpBack]点击登录re"
+        ]
+    },
+    "检测忘记密码2":{
+        "recognition": "OCR",
+        "expected":[
+            "忘记密码"
         ]
     },
 
@@ -208,10 +247,7 @@
             46,
             51
         ],
-        "action": "Click",
-        "next": [
-            "点击手机号输入框前置"
-        ]
+        "action": "Click"
     },
     "点击手机号输入框前置": {
         "recognition": "OCR",
@@ -372,6 +408,7 @@
             "[JumpBack]关注列表返回p"
         ]
     },
+    
     "检测账号是否关注":{
         "recognition": "OCR",
         "expected": [
@@ -383,11 +420,30 @@
             "检查关注列表like"
         ]
     },
+
+
+    "点击特定账号":{
+        "recognition": "OCR",
+        "expected": [
+            "用户14",
+            "用户_14"
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "账号初始滑动",
+            "[JumpBack]加载异常刷新"
+        ]
+    },
+
+
     "检查关注列表like": {
         "recognition": "OCR",
         "expected": [
             "已关注",
-            "己关注"
+            "己关注",
+            "互相关注"
         ],
         "order_by": "Vertical",
         "index": 0,
@@ -398,8 +454,20 @@
         ],
         "next": [
             "点击账号",
-            "[JumpBack]检查关注列表like"
+            "[JumpBack]检查关注列表likere"
         ]
+    },
+    "检查关注列表likere": {
+        "recognition": "OCR",
+        "expected": [
+            "已关注",
+            "己关注",
+            "互相关注"
+        ],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_delay": 1000
     },
     "点击账号":{
         "recognition": "OCR",
@@ -424,8 +492,17 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "账号初始滑动"
+            "账号初始滑动",
+            "[JumpBack]加载异常刷新"
         ]
+    },
+    "加载异常刷新":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "^刷新$"
+        ],
+        "action": "Click"
     },
 
 
@@ -652,8 +729,26 @@
         "key": 4,
         "post_delay": 1000,
         "next": [
-            "视频滑动03"
+            "视频滑动03",
+            "[JumpBack]视频完成返回re"
         ]
+    },
+    "视频完成返回re": {
+        "recognition": "OCR",
+        "expected":[
+            "期待你查重",
+            "的评论"
+        ],
+        "roi": [
+            50,
+            1165,
+            400,
+            100
+        ],
+        "pre_delay": 1000,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 1000
     },
     "视频滑动03": {
         "recognition": "TemplateMatch",
@@ -668,7 +763,7 @@
         "post_delay": 800,
         "next": [
             "点赞视频检测",
-            "[JumpBack]视频完成返回"
+            "[JumpBack]视频完成返回re"
         ]
     },
     "视频二次完成返回": {
@@ -697,6 +792,16 @@
     },
 
 
+    "特定账号点赞完成返回":{
+        "enabled": true,
+        "action": "Key",
+        "key": 4,
+        "next":[
+            "Like100账号完成"
+        ]
+    },
+
+
     "账号点赞完成返回":{
         "enabled": true,
         "action": "Key",
@@ -714,7 +819,10 @@
         "expected":[
             "\\+关注",
             "十关注",
-            "十关注"
+            "十关注",
+            "\\+回关",
+            "十回关",
+            "十回关"
         ],
         "roi": [536, 130, 184, 1150],
         "order_by": "Vertical",

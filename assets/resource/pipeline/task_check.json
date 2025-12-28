@@ -52,6 +52,7 @@
             10,
             10
         ],
+        "duration": 300,
         "post_delay": 500
     },
     "TaskImagetxt": {
@@ -118,7 +119,8 @@
             "succeeded": "[color:blue]评论已完成[/color]"
         },
         "next": [
-            "TaskNotification"
+            "TaskNotification",
+            "[JumpBack]TaskSwipe"
         ]
     },
     "TaskCommentIndone": {

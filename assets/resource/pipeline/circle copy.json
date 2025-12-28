@@ -598,6 +598,7 @@
         ],
         "order_by": "Vertical",
         "action": "Click",
+        "post_delay": 500,
         "focus": {
             "succeeded": "收藏进行中..."
         },
@@ -617,13 +618,39 @@
         "roi": "CCircleCollect",
         "roi_offset": [
             -170,
+            -6,
+            150,
+            40
+        ],
+        "action": "Click",
+        "threshold":0.6,
+        "focus": {
+            "succeeded": "点赞进行中..."
+        },
+        "next": [
+            "CCircleLikere",
+            "CIsCompleted",
+            "CCircleCollect",
+            "[JumpBack]CInImagetxt",
+            "[JumpBack]CCircleSwipe"
+        ]
+    },
+    "CCircleLikere": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "circle_like.png"
+        ],
+        "roi": "CCircleCollect",
+        "roi_offset": [
+            -170,
             -5,
             350,
             10
         ],
         "action": "Click",
+        "threshold":0.6,
         "focus": {
-            "succeeded": "点赞进行中..."
+            "succeeded": "再次点赞..."
         },
         "next": [
             "CIsCompleted",
@@ -1319,7 +1346,9 @@
         "expected":[
             "分享您想说的话...",
             "若稿件含AI生成内容",
-            "你在哪里"
+            "你在哪里",
+            "^已加入$",
+            "^己加入$"
         ],
         "pre_delay": 800,
         "action": "Key",
