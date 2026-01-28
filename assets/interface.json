@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.59",
+    "version": "0.2.60",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -118,9 +118,6 @@
                 "至何时结束",
                 "从视频开始",
                 "是否分享"
-            ],
-            "advanced": [
-                "自定义账号"
             ]
         },
         {
@@ -2798,7 +2795,7 @@
             ]
         },
         "回赞账号": {
-            "description": "新粉丝：进入新粉丝账号回赞\n消息账号：进入接到消息的账号回赞",
+            "description": "新粉丝：进入新粉丝账号回赞\n消息账号：进入接到消息的账号回赞\n默认进入官方账号或手动进入账号主页启动",
             "cases": [
                 {
                     "name": "默认",
@@ -2852,6 +2849,17 @@
                             "on_error":[
                                 "我的消息滑动刷新"
                             ]
+                        }
+                    }
+                },
+                {
+                    "name": "自定义",
+                    "option":[
+                        "自定义账号"
+                    ],
+                    "pipeline_override": {
+                        "回赞进入消息":{
+                            "enabled": false
                         }
                     }
                 }
@@ -5435,7 +5443,7 @@
                 {
                     "name": "端口号",
                     "label": "$端口号",
-                    "description": "输入模拟器端口号，可在模拟器 问题诊断-网络信息-ADB调试端口 查看",
+                    "description": "输入模拟器端口号，可在模拟器 问题诊断-网络信息-ADB调试端口 查看\n需要设置adb环境变量",
                     "default": "16480",
                     "pipeline_type": "string"
                 }
@@ -5490,6 +5498,36 @@
                         "set",
                         "com.iflytek.inputmethod/.FlyIME"
                     ]
+                }
+            }
+        },
+        "自定义账号": {
+            "type": "input",
+            "label": "自定义账号",
+            "description": "输入账号名称（已关注）",
+            "inputs": [
+                {
+                    "name": "账号名称",
+                    "label": "$账号名称",
+                    "description": "账号名称",
+                    "default": "河南信息广播",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "回赞选择大象号": {
+                    "expected": [
+                        "{账号名称}"
+                    ],
+                    "focus": {
+                        "succeeded": "[color:green]识别进入 {账号名称} 主页成功[/color]",
+                        "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
+                    }
+                },
+                "ReplyEndDay": {
+                    "focus": {
+                        "succeeded": "[color:green]{账号名称} 回赞与收藏任务完成[/color]"
+                    }
                 }
             }
         },
