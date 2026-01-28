@@ -762,7 +762,9 @@
         "recognition": "OCR",
         "expected": [
             "期待你查重0%的评论",
-            "期待你香重0%的评论"
+            "期待你香重0%的评论",
+            "更新提醒",
+            "连播"
         ],
         "roi": [
             40,
@@ -1207,10 +1209,20 @@
         ],
         "order_by": "Vertical",
         "green_mask": true,
-        "pre_delay": 300,
+        "next": [
+            "圈子点赞colorLine"
+        ]
+    },
+    "圈子点赞colorLine":{
+        "enabled": true,
+        "roi": "圈子点赞",
+        "order_by": "Vertical",
+        "recognition": "ColorMatch",
+        "upper":[102,102,102],
+        "lower":[102,102,102],
         "action": "Click",
         "post_delay": 850,
-        "next": [
+        "next":[
             "圈子已点赞reColor",
             "[JumpBack]圈子点赞re",
             "[JumpBack]CInImagetxt",
@@ -1245,14 +1257,11 @@
     },
     "圈子点赞re":{
         "enabled": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "圈子点赞g.png"
-        ],
         "roi": "圈子点赞",
         "order_by": "Vertical",
-        "threshold": 0.3,
-        "green_mask": true,
+        "recognition": "ColorMatch",
+        "upper":[102,102,102],
+        "lower":[102,102,102],
         "action": "Click",
         "post_delay": 850
     },
@@ -1287,14 +1296,25 @@
         "order_by": "Vertical",
         "green_mask": true,
         "threshold": 0.99,
-        "action": "Click",
         "next": [
+            "圈子收藏菜单colorLine"
+        ]
+    },
+    "圈子收藏菜单colorLine":{
+        "enabled": true,
+        "roi": "圈子收藏菜单",
+        "order_by": "Vertical",
+        "recognition": "ColorMatch",
+        "upper":[102,102,102],
+        "lower":[102,102,102],
+        "connected": true,
+        "action": "Click",
+        "next":[
             "圈子收藏",
             "圈子已收藏",
-            "圈子收藏菜单re",
+            "[JumpBack]CInImagetxt",
             "[JumpBack]进入发布退出",
-            "[JumpBack]进入分享页退出",
-            "[JumpBack]CInImagetxt"
+            "[JumpBack]进入分享页退出"
         ]
     },
     "圈子收藏菜单re":{
@@ -1348,7 +1368,8 @@
             "若稿件含AI生成内容",
             "你在哪里",
             "^已加入$",
-            "^己加入$"
+            "^己加入$",
+            "更新提醒"
         ],
         "pre_delay": 800,
         "action": "Key",

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.58",
+    "version": "0.2.59",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -130,7 +130,9 @@
             "option": [
                 "账号分组",
                 "特定账号",
-                "至作品时间"
+                "至作品时间",
+                "作品浏览时间",
+                "检测当日完成"
             ]
         },
         {
@@ -393,7 +395,8 @@
                 {
                     "name": "10",
                     "option":[
-                        "账号分组10"
+                        "账号分组10",
+                        "从账号开始"
                     ],
                     "pipeline_override": {
                         "Like100账号完成2":{
@@ -445,6 +448,57 @@
                             "enabled": false
                         }
                     }
+                },
+                {
+                    "name": "1",
+                    "option":[
+                        "选择账号"
+                    ],
+                    "pipeline_override": {
+                        "点击手机号输入框":{
+                            "next": [
+                                "输入手机号001"
+                            ]
+                        },
+                        "输入手机号001":{
+                            "max_hit":1
+                        },
+                        "Like100账号完成":{
+                            "next":[
+                                "Stop"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "从账号开始":{
+            "description": "从该组第几个账号开始，默认全部",
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "06",
+                    "pipeline_override": {
+                        "输入手机号001":{
+                            "enabled": false
+                        },
+                        "输入手机号002":{
+                            "enabled": false
+                        },
+                        "输入手机号003":{
+                            "enabled": false
+                        },
+                        "输入手机号004":{
+                            "enabled": false
+                        },
+                        "输入手机号005":{
+                            "enabled": false
+                        }
+                    }
                 }
             ]
         },
@@ -452,8 +506,166 @@
             "description": "每组25个",
             "cases": [
                 {
+                    "name": "分组0",
+                    "pipeline_override": {
+                    }
+                },
+                {
                     "name": "分组1",
                     "pipeline_override": {
+                        "Like100完成":{
+                            "focus": {
+                                "succeeded": "[color:#ff9966]Like100完成1[/color]"
+                            }
+                        },
+                        "输入手机号001":{
+                            "input_text": "17017424890",
+                            "focus": {
+                                "succeeded": "[color:blue]17017424890 登录1 01[/color]"
+                            }
+                        },
+                        "输入手机号002":{
+                            "input_text": "16220249428",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249428 登录1 02[/color]"
+                            }
+                        },
+                        "输入手机号003":{
+                            "input_text": "16794061949",
+                            "focus": {
+                                "succeeded": "[color:blue]16794061949 登录1 03[/color]"
+                            }
+                        },"输入手机号004":{
+                            "input_text": "16220249769",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249769 登录1 04[/color]"
+                            }
+                        },
+                        "输入手机号005":{
+                            "input_text": "16229699336",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699336 登录1 05[/color]"
+                            }
+                        },
+                        "输入手机号006":{
+                            "input_text": "16223272709",
+                            "focus": {
+                                "succeeded": "[color:blue]16223272709 登录1 06[/color]"
+                            }
+                        },
+                        "输入手机号007":{
+                            "input_text": "13262568694",
+                            "focus": {
+                                "succeeded": "[color:blue]13262568694 登录1 07[/color]"
+                            }
+                        },
+                        "输入手机号008":{
+                            "input_text": "16774780766",
+                            "focus": {
+                                "succeeded": "[color:blue]16774780766 登录1 08[/color]"
+                            }
+                        },"输入手机号009":{
+                            "input_text": "16229699260",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699260 登录1 09[/color]"
+                            }
+                        },
+                        "输入手机号010":{
+                            "input_text": "13729622751",
+                            "focus": {
+                                "succeeded": "[color:blue]13729622751 登录1 10[/color]"
+                            }
+                        },
+                        "输入手机号011":{
+                            "input_text": "17029745437",
+                            "focus": {
+                                "succeeded": "[color:blue]17029745437 登录1 11[/color]"
+                            }
+                        },
+                        "输入手机号012":{
+                            "input_text": "16229699984",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699984 登录1 12[/color]"
+                            }
+                        },
+                        "输入手机号013":{
+                            "input_text": "16220966084",
+                            "focus": {
+                                "succeeded": "[color:blue]16220966084 登录1 13[/color]"
+                            }
+                        },
+                        "输入手机号014":{
+                            "input_text": "16700470228",
+                            "focus": {
+                                "succeeded": "[color:blue]16700470228 登录1 14[/color]"
+                            }
+                        },
+                        "输入手机号015":{
+                            "input_text": "16220967197",
+                            "focus": {
+                                "succeeded": "[color:blue]16220967197 登录1 15[/color]"
+                            }
+                        },
+                        "输入手机号016":{
+                            "input_text": "16700472332",
+                            "focus": {
+                                "succeeded": "[color:blue]16700472332 登录1 16[/color]"
+                            }
+                        },
+                        "输入手机号017":{
+                            "input_text": "18577533454",
+                            "focus": {
+                                "succeeded": "[color:blue]18577533454 登录1 17[/color]"
+                            }
+                        },
+                        "输入手机号018":{
+                            "input_text": "17028129124",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129124 登录1 18[/color]"
+                            }
+                        },
+                        "输入手机号019":{
+                            "input_text": "19020638137",
+                            "focus": {
+                                "succeeded": "[color:blue]19020638137 登录1 19[/color]"
+                            }
+                        },
+                        "输入手机号020":{
+                            "input_text": "17028129184",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129184 登录1 20[/color]"
+                            }
+                        },
+                        "输入手机号021":{
+                            "input_text": "16223053850",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053850 登录1 21[/color]"
+                            }
+                        },
+                        "输入手机号022":{
+                            "input_text": "16270847534",
+                            "focus": {
+                                "succeeded": "[color:blue]16270847534 登录1 22[/color]"
+                            }
+                        },
+                        "输入手机号023":{
+                            "input_text": "16297152423",
+                            "focus": {
+                                "succeeded": "[color:blue]16297152423 登录1 23[/color]"
+                            }
+                        },
+                        "输入手机号024":{
+                            "input_text": "16289050630",
+                            "focus": {
+                                "succeeded": "[color:blue]16289050630 登录1 24[/color]"
+                            }
+                        },
+                        "输入手机号025":{
+                            "input_text": "16294677553",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677553 登录1 25[/color]"
+                            }
+                        }
                     }
                 },
                 {
@@ -465,151 +677,151 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16239139949",
+                            "input_text": "16794060446",
                             "focus": {
-                                "succeeded": "[color:blue]16239139949 登录2 01[/color]"
+                                "succeeded": "[color:blue]16794060446 登录2 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "16220249428",
+                            "input_text": "16229699253",
                             "focus": {
-                                "succeeded": "[color:blue]16220249428 登录2 02[/color]"
+                                "succeeded": "[color:blue]16229699253 登录2 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "16794061949",
+                            "input_text": "16794066639",
                             "focus": {
-                                "succeeded": "[color:blue]16794061949 登录2 03[/color]"
+                                "succeeded": "[color:blue]16794066639 登录2 03[/color]"
                             }
                         },"输入手机号004":{
-                            "input_text": "16220249769",
+                            "input_text": "16229699157",
                             "focus": {
-                                "succeeded": "[color:blue]16220249769 登录2 04[/color]"
+                                "succeeded": "[color:blue]16229699157 登录2 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "16229699336",
+                            "input_text": "16261858472",
                             "focus": {
-                                "succeeded": "[color:blue]16229699336 登录2 05[/color]"
+                                "succeeded": "[color:blue]16261858472 登录2 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "16223272709",
+                            "input_text": "16222435316",
                             "focus": {
-                                "succeeded": "[color:blue]16223272709 登录2 06[/color]"
+                                "succeeded": "[color:blue]16222435316 登录2 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "13262568694",
+                            "input_text": "16229699421",
                             "focus": {
-                                "succeeded": "[color:blue]13262568694 登录2 07[/color]"
+                                "succeeded": "[color:blue]16229699421 登录2 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16774780766",
+                            "input_text": "16229699223",
                             "focus": {
-                                "succeeded": "[color:blue]16774780766 登录2 08[/color]"
+                                "succeeded": "[color:blue]16229699223 登录2 08[/color]"
                             }
                         },"输入手机号009":{
-                            "input_text": "16229699260",
+                            "input_text": "16223053934",
                             "focus": {
-                                "succeeded": "[color:blue]16229699260 登录2 09[/color]"
+                                "succeeded": "[color:blue]16223053934 登录2 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "13729622751",
+                            "input_text": "16220249298",
                             "focus": {
-                                "succeeded": "[color:blue]13729622751 登录2 10[/color]"
+                                "succeeded": "[color:blue]16220249298 登录2 10[/color]"
                             }
                         },
                         "输入手机号011":{
-                            "input_text": "17029745437",
+                            "input_text": "16220963087",
                             "focus": {
-                                "succeeded": "[color:blue]17029745437 登录2 11[/color]"
+                                "succeeded": "[color:blue]16220963087 登录2 11[/color]"
                             }
                         },
                         "输入手机号012":{
-                            "input_text": "16229699984",
+                            "input_text": "16223055742",
                             "focus": {
-                                "succeeded": "[color:blue]16229699984 登录2 12[/color]"
+                                "succeeded": "[color:blue]16223055742 登录2 12[/color]"
                             }
                         },
                         "输入手机号013":{
-                            "input_text": "16220966084",
+                            "input_text": "16223053990",
                             "focus": {
-                                "succeeded": "[color:blue]16220966084 登录2 13[/color]"
+                                "succeeded": "[color:blue]16223053990 登录2 13[/color]"
                             }
                         },
                         "输入手机号014":{
-                            "input_text": "16700470228",
+                            "input_text": "16220249020",
                             "focus": {
-                                "succeeded": "[color:blue]16700470228 登录2 14[/color]"
+                                "succeeded": "[color:blue]16220249020 登录2 14[/color]"
                             }
                         },
                         "输入手机号015":{
-                            "input_text": "16220967197",
+                            "input_text": "16223054421",
                             "focus": {
-                                "succeeded": "[color:blue]16220967197 登录2 15[/color]"
+                                "succeeded": "[color:blue]16223054421 登录2 15[/color]"
                             }
                         },
                         "输入手机号016":{
-                            "input_text": "16700472332",
+                            "input_text": "16700472653",
                             "focus": {
-                                "succeeded": "[color:blue]16700472332 登录2 16[/color]"
+                                "succeeded": "[color:blue]16700472653 登录2 16[/color]"
                             }
                         },
                         "输入手机号017":{
-                            "input_text": "18577533454",
+                            "input_text": "16223053932",
                             "focus": {
-                                "succeeded": "[color:blue]18577533454 登录2 17[/color]"
+                                "succeeded": "[color:blue]16223053932 登录2 17[/color]"
                             }
                         },
                         "输入手机号018":{
-                            "input_text": "17028129124",
+                            "input_text": "16229699675",
                             "focus": {
-                                "succeeded": "[color:blue]17028129124 登录2 18[/color]"
+                                "succeeded": "[color:blue]16229699675 登录2 18[/color]"
                             }
                         },
                         "输入手机号019":{
-                            "input_text": "19020638137",
+                            "input_text": "16220248942",
                             "focus": {
-                                "succeeded": "[color:blue]19020638137 登录2 19[/color]"
+                                "succeeded": "[color:blue]16220248942 登录2 19[/color]"
                             }
                         },
                         "输入手机号020":{
-                            "input_text": "17028129184",
+                            "input_text": "17607757019",
                             "focus": {
-                                "succeeded": "[color:blue]17028129184 登录2 20[/color]"
+                                "succeeded": "[color:blue]17607757019 登录2 20[/color]"
                             }
                         },
                         "输入手机号021":{
-                            "input_text": "16223053850",
+                            "input_text": "17028129831",
                             "focus": {
-                                "succeeded": "[color:blue]16223053850 登录2 21[/color]"
+                                "succeeded": "[color:blue]17028129831 登录2 21[/color]"
                             }
                         },
                         "输入手机号022":{
-                            "input_text": "16270847534",
+                            "input_text": "16223055823",
                             "focus": {
-                                "succeeded": "[color:blue]16270847534 登录2 22[/color]"
+                                "succeeded": "[color:blue]16223055823 登录2 22[/color]"
                             }
                         },
                         "输入手机号023":{
-                            "input_text": "16297152423",
+                            "input_text": "18577563246",
                             "focus": {
-                                "succeeded": "[color:blue]16297152423 登录2 23[/color]"
+                                "succeeded": "[color:blue]18577563246 登录2 23[/color]"
                             }
                         },
                         "输入手机号024":{
-                            "input_text": "16289050630",
+                            "input_text": "16220249048",
                             "focus": {
-                                "succeeded": "[color:blue]16289050630 登录2 24[/color]"
+                                "succeeded": "[color:blue]16220249048 登录2 24[/color]"
                             }
                         },
                         "输入手机号025":{
-                            "input_text": "16294677553",
+                            "input_text": "17028127465",
                             "focus": {
-                                "succeeded": "[color:blue]16294677553 登录2 25[/color]"
+                                "succeeded": "[color:blue]17028127465 登录2 25[/color]"
                             }
                         }
                     }
@@ -623,309 +835,151 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16794060446",
-                            "focus": {
-                                "succeeded": "[color:blue]16794060446 登录3 01[/color]"
-                            }
-                        },
-                        "输入手机号002":{
-                            "input_text": "16229699253",
-                            "focus": {
-                                "succeeded": "[color:blue]16229699253 登录3 02[/color]"
-                            }
-                        },
-                        "输入手机号003":{
-                            "input_text": "16794066639",
-                            "focus": {
-                                "succeeded": "[color:blue]16794066639 登录3 03[/color]"
-                            }
-                        },"输入手机号004":{
-                            "input_text": "16229699157",
-                            "focus": {
-                                "succeeded": "[color:blue]16229699157 登录3 04[/color]"
-                            }
-                        },
-                        "输入手机号005":{
-                            "input_text": "16261858472",
-                            "focus": {
-                                "succeeded": "[color:blue]16261858472 登录3 05[/color]"
-                            }
-                        },
-                        "输入手机号006":{
-                            "input_text": "18941000849",
-                            "focus": {
-                                "succeeded": "[color:blue]18941000849 登录3 06[/color]"
-                            }
-                        },
-                        "输入手机号007":{
-                            "input_text": "16229699421",
-                            "focus": {
-                                "succeeded": "[color:blue]16229699421 登录3 07[/color]"
-                            }
-                        },
-                        "输入手机号008":{
-                            "input_text": "16229699223",
-                            "focus": {
-                                "succeeded": "[color:blue]16229699223 登录3 08[/color]"
-                            }
-                        },"输入手机号009":{
-                            "input_text": "16223053934",
-                            "focus": {
-                                "succeeded": "[color:blue]16223053934 登录3 09[/color]"
-                            }
-                        },
-                        "输入手机号010":{
-                            "input_text": "16220249298",
-                            "focus": {
-                                "succeeded": "[color:blue]16220249298 登录3 10[/color]"
-                            }
-                        },
-                        "输入手机号011":{
-                            "input_text": "16220963087",
-                            "focus": {
-                                "succeeded": "[color:blue]16220963087 登录3 11[/color]"
-                            }
-                        },
-                        "输入手机号012":{
-                            "input_text": "16223055742",
-                            "focus": {
-                                "succeeded": "[color:blue]16223055742 登录3 12[/color]"
-                            }
-                        },
-                        "输入手机号013":{
-                            "input_text": "16223053990",
-                            "focus": {
-                                "succeeded": "[color:blue]16223053990 登录3 13[/color]"
-                            }
-                        },
-                        "输入手机号014":{
-                            "input_text": "16220249020",
-                            "focus": {
-                                "succeeded": "[color:blue]16220249020 登录3 14[/color]"
-                            }
-                        },
-                        "输入手机号015":{
-                            "input_text": "16223054421",
-                            "focus": {
-                                "succeeded": "[color:blue]16223054421 登录3 15[/color]"
-                            }
-                        },
-                        "输入手机号016":{
-                            "input_text": "16700472653",
-                            "focus": {
-                                "succeeded": "[color:blue]16700472653 登录3 16[/color]"
-                            }
-                        },
-                        "输入手机号017":{
-                            "input_text": "16223053932",
-                            "focus": {
-                                "succeeded": "[color:blue]16223053932 登录3 17[/color]"
-                            }
-                        },
-                        "输入手机号018":{
-                            "input_text": "16229699675",
-                            "focus": {
-                                "succeeded": "[color:blue]16229699675 登录3 18[/color]"
-                            }
-                        },
-                        "输入手机号019":{
-                            "input_text": "16220248942",
-                            "focus": {
-                                "succeeded": "[color:blue]16220248942 登录3 19[/color]"
-                            }
-                        },
-                        "输入手机号020":{
-                            "input_text": "17607757019",
-                            "focus": {
-                                "succeeded": "[color:blue]17607757019 登录3 20[/color]"
-                            }
-                        },
-                        "输入手机号021":{
-                            "input_text": "17028129831",
-                            "focus": {
-                                "succeeded": "[color:blue]17028129831 登录3 21[/color]"
-                            }
-                        },
-                        "输入手机号022":{
-                            "input_text": "16223055823",
-                            "focus": {
-                                "succeeded": "[color:blue]16223055823 登录3 22[/color]"
-                            }
-                        },
-                        "输入手机号023":{
-                            "input_text": "18577563246",
-                            "focus": {
-                                "succeeded": "[color:blue]18577563246 登录3 23[/color]"
-                            }
-                        },
-                        "输入手机号024":{
-                            "input_text": "16220249048",
-                            "focus": {
-                                "succeeded": "[color:blue]16220249048 登录3 24[/color]"
-                            }
-                        },
-                        "输入手机号025":{
-                            "input_text": "17028127465",
-                            "focus": {
-                                "succeeded": "[color:blue]17028127465 登录3 25[/color]"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "分组4",
-                    "pipeline_override": {
-                        "Like100完成":{
-                            "focus": {
-                                "succeeded": "[color:#ff9966]Like100完成4[/color]"
-                            }
-                        },
-                        "输入手机号001":{
                             "input_text": "13469535162",
                             "focus": {
-                                "succeeded": "[color:blue]13469535162 登录4 01[/color]"
+                                "succeeded": "[color:blue]13469535162 登录3 01[/color]"
                             }
                         },
                         "输入手机号002":{
                             "input_text": "16294677534",
                             "focus": {
-                                "succeeded": "[color:blue]16294677534 登录4 02[/color]"
+                                "succeeded": "[color:blue]16294677534 登录3 02[/color]"
                             }
                         },
                         "输入手机号003":{
                             "input_text": "16223055712",
                             "focus": {
-                                "succeeded": "[color:blue]16223055712 登录4 03[/color]"
+                                "succeeded": "[color:blue]16223055712 登录3 03[/color]"
                             }
                         },"输入手机号004":{
                             "input_text": "17028233275",
                             "focus": {
-                                "succeeded": "[color:blue]17028233275 登录4 04[/color]"
+                                "succeeded": "[color:blue]17028233275 登录3 04[/color]"
                             }
                         },
                         "输入手机号005":{
                             "input_text": "17022349379",
                             "focus": {
-                                "succeeded": "[color:blue]17022349379 登录4 05[/color]"
+                                "succeeded": "[color:blue]17022349379 登录3 05[/color]"
                             }
                         },
                         "输入手机号006":{
                             "input_text": "17601300598",
                             "focus": {
-                                "succeeded": "[color:blue]17601300598 登录4 06[/color]"
+                                "succeeded": "[color:blue]17601300598 登录3 06[/color]"
                             }
                         },
                         "输入手机号007":{
                             "input_text": "16220966095",
                             "focus": {
-                                "succeeded": "[color:blue]16220966095 登录4 07[/color]"
+                                "succeeded": "[color:blue]16220966095 登录3 07[/color]"
                             }
                         },
                         "输入手机号008":{
                             "input_text": "17689839863",
                             "focus": {
-                                "succeeded": "[color:blue]17689839863 登录4 08[/color]"
+                                "succeeded": "[color:blue]17689839863 登录3 08[/color]"
                             }
                         },"输入手机号009":{
                             "input_text": "16220960275",
                             "focus": {
-                                "succeeded": "[color:blue]16220960275 登录4 09[/color]"
+                                "succeeded": "[color:blue]16220960275 登录3 09[/color]"
                             }
                         },
                         "输入手机号010":{
                             "input_text": "16229699342",
                             "focus": {
-                                "succeeded": "[color:blue]16229699342 登录4 10[/color]"
+                                "succeeded": "[color:blue]16229699342 登录3 10[/color]"
                             }
                         },
                         "输入手机号011":{
                             "input_text": "16267616224",
                             "focus": {
-                                "succeeded": "[color:blue]16267616224 登录4 11[/color]"
+                                "succeeded": "[color:blue]16267616224 登录3 11[/color]"
                             }
                         },
                         "输入手机号012":{
                             "input_text": "17028129437",
                             "focus": {
-                                "succeeded": "[color:blue]17028129437 登录4 12[/color]"
+                                "succeeded": "[color:blue]17028129437 登录3 12[/color]"
                             }
                         },
                         "输入手机号013":{
                             "input_text": "16223055704",
                             "focus": {
-                                "succeeded": "[color:blue]16223055704 登录4 13[/color]"
+                                "succeeded": "[color:blue]16223055704 登录3 13[/color]"
                             }
                         },
                         "输入手机号014":{
                             "input_text": "19317482853",
                             "focus": {
-                                "succeeded": "[color:blue]19317482853 登录4 14[/color]"
+                                "succeeded": "[color:blue]19317482853 登录3 14[/color]"
                             }
                         },
                         "输入手机号015":{
                             "input_text": "16294677655",
                             "focus": {
-                                "succeeded": "[color:blue]16294677655 登录4 15[/color]"
+                                "succeeded": "[color:blue]16294677655 登录3 15[/color]"
                             }
                         },
                         "输入手机号016":{
                             "input_text": "16700471828",
                             "focus": {
-                                "succeeded": "[color:blue]16700471828 登录4 16[/color]"
+                                "succeeded": "[color:blue]16700471828 登录3 16[/color]"
                             }
                         },
                         "输入手机号017":{
                             "input_text": "13211452042",
                             "focus": {
-                                "succeeded": "[color:blue]13211452042 登录4 17[/color]"
+                                "succeeded": "[color:blue]13211452042 登录3 17[/color]"
                             }
                         },
                         "输入手机号018":{
                             "input_text": "16261858468",
                             "focus": {
-                                "succeeded": "[color:blue]16261858468 登录4 18[/color]"
+                                "succeeded": "[color:blue]16261858468 登录3 18[/color]"
                             }
                         },
                         "输入手机号019":{
                             "input_text": "16220249875",
                             "focus": {
-                                "succeeded": "[color:blue]16220249875 登录4 19[/color]"
+                                "succeeded": "[color:blue]16220249875 登录3 19[/color]"
                             }
                         },
                         "输入手机号020":{
                             "input_text": "16220249581",
                             "focus": {
-                                "succeeded": "[color:blue]16220249581 登录4 20[/color]"
+                                "succeeded": "[color:blue]16220249581 登录3 20[/color]"
                             }
                         },
                         "输入手机号021":{
                             "input_text": "16700471848",
                             "focus": {
-                                "succeeded": "[color:blue]16700471848 登录4 21[/color]"
+                                "succeeded": "[color:blue]16700471848 登录3 21[/color]"
                             }
                         },
                         "输入手机号022":{
                             "input_text": "16229699801",
                             "focus": {
-                                "succeeded": "[color:blue]16229699801 登录4 22[/color]"
+                                "succeeded": "[color:blue]16229699801 登录3 22[/color]"
                             }
                         },
                         "输入手机号023":{
                             "input_text": "16229699224",
                             "focus": {
-                                "succeeded": "[color:blue]16229699224 登录4 23[/color]"
+                                "succeeded": "[color:blue]16229699224 登录3 23[/color]"
                             }
                         },
                         "输入手机号024":{
                             "input_text": "16220249628",
                             "focus": {
-                                "succeeded": "[color:blue]16220249628 登录4 24[/color]"
+                                "succeeded": "[color:blue]16220249628 登录3 24[/color]"
                             }
                         },
                         "输入手机号025":{
                             "input_text": "15678530946",
                             "focus": {
-                                "succeeded": "[color:blue]15678530946 登录4 25[/color]"
+                                "succeeded": "[color:blue]15678530946 登录3 25[/color]"
                             }
                         }
                     }
@@ -936,8 +990,78 @@
             "description": "每组10个",
             "cases": [
                 {
+                    "name": "分组0",
+                    "pipeline_override": {
+                    }
+                },
+                {
                     "name": "分组1",
                     "pipeline_override": {
+                        "Like100完成":{
+                            "focus": {
+                                "succeeded": "[color:#ff9966]Like100完成1[/color]"
+                            }
+                        },
+                        "输入手机号001":{
+                            "input_text": "16294677554",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677554 登录1 01[/color]"
+                            }
+                        },
+                        "输入手机号002":{
+                            "input_text": "16223053859",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053859 登录1 02[/color]"
+                            }
+                        },
+                        "输入手机号003":{
+                            "input_text": "18577563274",
+                            "focus": {
+                                "succeeded": "[color:blue]18577563274 登录1 03[/color]"
+                            }
+                        },
+                        "输入手机号004":{
+                            "input_text": "16794062375",
+                            "focus": {
+                                "succeeded": "[color:blue]16794062375 登录1 04[/color]"
+                            }
+                        },
+                        "输入手机号005":{
+                            "input_text": "16220249878",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249878 登录1 05[/color]"
+                            }
+                        },
+                        "输入手机号006":{
+                            "input_text": "16220249642",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249642 登录1 06[/color]"
+                            }
+                        },
+                        "输入手机号007":{
+                            "input_text": "16297152389",
+                            "focus": {
+                                "succeeded": "[color:blue]16297152389 登录1 07[/color]"
+                            }
+                        },
+                        "输入手机号008":{
+                            "input_text": "17027415960",
+                            "focus": {
+                                "succeeded": "[color:blue]17027415960 登录1 08[/color]"
+                            }
+                        },
+                        "输入手机号009":{
+                            "input_text": "16260654304",
+                            "focus": {
+                                "succeeded": "[color:blue]16260654304 登录1 09[/color]"
+                            }
+                        },
+                        "输入手机号010":{
+                            "input_text": "16223055905",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055905 登录1 10[/color]"
+                            }
+                        }
                     }
                 },
                 {
@@ -949,63 +1073,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16294677554",
+                            "input_text": "16220964658",
                             "focus": {
-                                "succeeded": "[color:blue]16294677554 登录2 01[/color]"
+                                "succeeded": "[color:blue]16220964658 登录2 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "16223053859",
+                            "input_text": "17025427680",
                             "focus": {
-                                "succeeded": "[color:blue]16223053859 登录2 02[/color]"
+                                "succeeded": "[color:blue]17025427680 登录2 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "18577563274",
+                            "input_text": "16229699420",
                             "focus": {
-                                "succeeded": "[color:blue]18577563274 登录2 03[/color]"
+                                "succeeded": "[color:blue]16229699420 登录2 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "16794062375",
+                            "input_text": "16229699795",
                             "focus": {
-                                "succeeded": "[color:blue]16794062375 登录2 04[/color]"
+                                "succeeded": "[color:blue]16229699795 登录2 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "16220249878",
+                            "input_text": "16220249374",
                             "focus": {
-                                "succeeded": "[color:blue]16220249878 登录2 05[/color]"
+                                "succeeded": "[color:blue]16220249374 登录2 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "16220249642",
+                            "input_text": "17017424890",
                             "focus": {
-                                "succeeded": "[color:blue]16220249642 登录2 06[/color]"
+                                "succeeded": "[color:blue]17017424890 登录2 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16297152389",
+                            "input_text": "16220249428",
                             "focus": {
-                                "succeeded": "[color:blue]16297152389 登录2 07[/color]"
+                                "succeeded": "[color:blue]16220249428 登录2 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "17027415960",
+                            "input_text": "16794061949",
                             "focus": {
-                                "succeeded": "[color:blue]17027415960 登录2 08[/color]"
+                                "succeeded": "[color:blue]16794061949 登录2 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "16260654304",
+                            "input_text": "16220249769",
                             "focus": {
-                                "succeeded": "[color:blue]16260654304 登录2 09[/color]"
+                                "succeeded": "[color:blue]16220249769 登录2 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "16223055905",
+                            "input_text": "16229699336",
                             "focus": {
-                                "succeeded": "[color:blue]16223055905 登录2 10[/color]"
+                                "succeeded": "[color:blue]16229699336 登录2 10[/color]"
                             }
                         }
                     }
@@ -1019,63 +1143,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16220964658",
+                            "input_text": "16223272709",
                             "focus": {
-                                "succeeded": "[color:blue]16220964658 登录3 01[/color]"
+                                "succeeded": "[color:blue]16223272709 登录3 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "17025427680",
+                            "input_text": "13262568694",
                             "focus": {
-                                "succeeded": "[color:blue]17025427680 登录3 02[/color]"
+                                "succeeded": "[color:blue]13262568694 登录3 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "16229699420",
+                            "input_text": "16774780766",
                             "focus": {
-                                "succeeded": "[color:blue]16229699420 登录3 03[/color]"
+                                "succeeded": "[color:blue]16774780766 登录3 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "16229699795",
+                            "input_text": "16229699260",
                             "focus": {
-                                "succeeded": "[color:blue]16229699795 登录3 04[/color]"
+                                "succeeded": "[color:blue]16229699260 登录3 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "16220249374",
+                            "input_text": "13729622751",
                             "focus": {
-                                "succeeded": "[color:blue]16220249374 登录3 05[/color]"
+                                "succeeded": "[color:blue]13729622751 登录3 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "16239139949",
+                            "input_text": "17029745437",
                             "focus": {
-                                "succeeded": "[color:blue]16239139949 登录3 06[/color]"
+                                "succeeded": "[color:blue]17029745437 登录3 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16220249428",
+                            "input_text": "16229699984",
                             "focus": {
-                                "succeeded": "[color:blue]16220249428 登录3 07[/color]"
+                                "succeeded": "[color:blue]16229699984 登录3 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16794061949",
+                            "input_text": "16220966084",
                             "focus": {
-                                "succeeded": "[color:blue]16794061949 登录3 08[/color]"
+                                "succeeded": "[color:blue]16220966084 登录3 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "16220249769",
+                            "input_text": "16700470228",
                             "focus": {
-                                "succeeded": "[color:blue]16220249769 登录3 09[/color]"
+                                "succeeded": "[color:blue]16700470228 登录3 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "16229699336",
+                            "input_text": "16220967197",
                             "focus": {
-                                "succeeded": "[color:blue]16229699336 登录3 10[/color]"
+                                "succeeded": "[color:blue]16220967197 登录3 10[/color]"
                             }
                         }
                     }
@@ -1089,63 +1213,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16223272709",
+                            "input_text": "16700472332",
                             "focus": {
-                                "succeeded": "[color:blue]16223272709 登录4 01[/color]"
+                                "succeeded": "[color:blue]16700472332 登录4 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "13262568694",
+                            "input_text": "18577533454",
                             "focus": {
-                                "succeeded": "[color:blue]13262568694 登录4 02[/color]"
+                                "succeeded": "[color:blue]18577533454 登录4 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "16774780766",
+                            "input_text": "17028129124",
                             "focus": {
-                                "succeeded": "[color:blue]16774780766 登录4 03[/color]"
+                                "succeeded": "[color:blue]17028129124 登录4 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "16229699260",
+                            "input_text": "19020638137",
                             "focus": {
-                                "succeeded": "[color:blue]16229699260 登录4 04[/color]"
+                                "succeeded": "[color:blue]19020638137 登录4 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "13729622751",
+                            "input_text": "17028129184",
                             "focus": {
-                                "succeeded": "[color:blue]13729622751 登录4 05[/color]"
+                                "succeeded": "[color:blue]17028129184 登录4 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "17029745437",
+                            "input_text": "16223053850",
                             "focus": {
-                                "succeeded": "[color:blue]17029745437 登录4 06[/color]"
+                                "succeeded": "[color:blue]16223053850 登录4 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16229699984",
+                            "input_text": "16270847534",
                             "focus": {
-                                "succeeded": "[color:blue]16229699984 登录4 07[/color]"
+                                "succeeded": "[color:blue]16270847534 登录4 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16220966084",
+                            "input_text": "16297152423",
                             "focus": {
-                                "succeeded": "[color:blue]16220966084 登录4 08[/color]"
+                                "succeeded": "[color:blue]16297152423 登录4 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "16700470228",
+                            "input_text": "16289050630",
                             "focus": {
-                                "succeeded": "[color:blue]16700470228 登录4 09[/color]"
+                                "succeeded": "[color:blue]16289050630 登录4 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "16220967197",
+                            "input_text": "16294677553",
                             "focus": {
-                                "succeeded": "[color:blue]16220967197 登录4 10[/color]"
+                                "succeeded": "[color:blue]16294677553 登录4 10[/color]"
                             }
                         }
                     }
@@ -1159,63 +1283,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16700472332",
+                            "input_text": "16794060446",
                             "focus": {
-                                "succeeded": "[color:blue]16700472332 登录5 01[/color]"
+                                "succeeded": "[color:blue]16794060446 登录5 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "18577533454",
+                            "input_text": "16229699253",
                             "focus": {
-                                "succeeded": "[color:blue]18577533454 登录5 02[/color]"
+                                "succeeded": "[color:blue]16229699253 登录5 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "17028129124",
+                            "input_text": "16794066639",
                             "focus": {
-                                "succeeded": "[color:blue]17028129124 登录5 03[/color]"
+                                "succeeded": "[color:blue]16794066639 登录5 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "19020638137",
+                            "input_text": "16229699157",
                             "focus": {
-                                "succeeded": "[color:blue]19020638137 登录5 04[/color]"
+                                "succeeded": "[color:blue]16229699157 登录5 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "17028129184",
+                            "input_text": "16261858472",
                             "focus": {
-                                "succeeded": "[color:blue]17028129184 登录5 05[/color]"
+                                "succeeded": "[color:blue]16261858472 登录5 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "16223053850",
+                            "input_text": "16222435316",
                             "focus": {
-                                "succeeded": "[color:blue]16223053850 登录5 06[/color]"
+                                "succeeded": "[color:blue]16222435316 登录5 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16270847534",
+                            "input_text": "16229699421",
                             "focus": {
-                                "succeeded": "[color:blue]16270847534 登录5 07[/color]"
+                                "succeeded": "[color:blue]16229699421 登录5 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16297152423",
+                            "input_text": "16229699223",
                             "focus": {
-                                "succeeded": "[color:blue]16297152423 登录5 08[/color]"
+                                "succeeded": "[color:blue]16229699223 登录5 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "16289050630",
+                            "input_text": "16223053934",
                             "focus": {
-                                "succeeded": "[color:blue]16289050630 登录5 09[/color]"
+                                "succeeded": "[color:blue]16223053934 登录5 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "16294677553",
+                            "input_text": "16220249298",
                             "focus": {
-                                "succeeded": "[color:blue]16294677553 登录5 10[/color]"
+                                "succeeded": "[color:blue]16220249298 登录5 10[/color]"
                             }
                         }
                     }
@@ -1229,63 +1353,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16794060446",
+                            "input_text": "16220963087",
                             "focus": {
-                                "succeeded": "[color:blue]16794060446 登录6 01[/color]"
+                                "succeeded": "[color:blue]16220963087 登录6 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "16229699253",
+                            "input_text": "16223055742",
                             "focus": {
-                                "succeeded": "[color:blue]16229699253 登录6 02[/color]"
+                                "succeeded": "[color:blue]16223055742 登录6 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "16794066639",
+                            "input_text": "16223053990",
                             "focus": {
-                                "succeeded": "[color:blue]16794066639 登录6 03[/color]"
+                                "succeeded": "[color:blue]16223053990 登录6 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "16229699157",
+                            "input_text": "16220249020",
                             "focus": {
-                                "succeeded": "[color:blue]16229699157 登录6 04[/color]"
+                                "succeeded": "[color:blue]16220249020 登录6 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "16261858472",
+                            "input_text": "16223054421",
                             "focus": {
-                                "succeeded": "[color:blue]16261858472 登录6 05[/color]"
+                                "succeeded": "[color:blue]16223054421 登录6 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "18941000849",
+                            "input_text": "16700472653",
                             "focus": {
-                                "succeeded": "[color:blue]18941000849 登录6 06[/color]"
+                                "succeeded": "[color:blue]16700472653 登录6 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16229699421",
+                            "input_text": "16223053932",
                             "focus": {
-                                "succeeded": "[color:blue]16229699421 登录6 07[/color]"
+                                "succeeded": "[color:blue]16223053932 登录6 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16229699223",
+                            "input_text": "16229699675",
                             "focus": {
-                                "succeeded": "[color:blue]16229699223 登录6 08[/color]"
+                                "succeeded": "[color:blue]16229699675 登录6 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "16223053934",
+                            "input_text": "16220248942",
                             "focus": {
-                                "succeeded": "[color:blue]16223053934 登录6 09[/color]"
+                                "succeeded": "[color:blue]16220248942 登录6 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "16220249298",
+                            "input_text": "17607757019",
                             "focus": {
-                                "succeeded": "[color:blue]16220249298 登录6 10[/color]"
+                                "succeeded": "[color:blue]17607757019 登录6 10[/color]"
                             }
                         }
                     }
@@ -1299,63 +1423,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "16220963087",
+                            "input_text": "17028129831",
                             "focus": {
-                                "succeeded": "[color:blue]16220963087 登录7 01[/color]"
+                                "succeeded": "[color:blue]17028129831 登录7 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "16223055742",
+                            "input_text": "16223055823",
                             "focus": {
-                                "succeeded": "[color:blue]16223055742 登录7 02[/color]"
+                                "succeeded": "[color:blue]16223055823 登录7 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "16223053990",
+                            "input_text": "18577563246",
                             "focus": {
-                                "succeeded": "[color:blue]16223053990 登录7 03[/color]"
+                                "succeeded": "[color:blue]18577563246 登录7 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "16220249020",
+                            "input_text": "16220249048",
                             "focus": {
-                                "succeeded": "[color:blue]16220249020 登录7 04[/color]"
+                                "succeeded": "[color:blue]16220249048 登录7 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "16223054421",
+                            "input_text": "17028127465",
                             "focus": {
-                                "succeeded": "[color:blue]16223054421 登录7 05[/color]"
+                                "succeeded": "[color:blue]17028127465 登录7 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "16700472653",
+                            "input_text": "13469535162",
                             "focus": {
-                                "succeeded": "[color:blue]16700472653 登录7 06[/color]"
+                                "succeeded": "[color:blue]13469535162 登录7 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16223053932",
+                            "input_text": "16294677534",
                             "focus": {
-                                "succeeded": "[color:blue]16223053932 登录7 07[/color]"
+                                "succeeded": "[color:blue]16294677534 登录7 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16229699675",
+                            "input_text": "16223055712",
                             "focus": {
-                                "succeeded": "[color:blue]16229699675 登录7 08[/color]"
+                                "succeeded": "[color:blue]16223055712 登录7 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "16220248942",
+                            "input_text": "17028233275",
                             "focus": {
-                                "succeeded": "[color:blue]16220248942 登录7 09[/color]"
+                                "succeeded": "[color:blue]17028233275 登录7 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "17607757019",
+                            "input_text": "17022349379",
                             "focus": {
-                                "succeeded": "[color:blue]17607757019 登录7 10[/color]"
+                                "succeeded": "[color:blue]17022349379 登录7 10[/color]"
                             }
                         }
                     }
@@ -1369,63 +1493,63 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "17028129831",
+                            "input_text": "17601300598",
                             "focus": {
-                                "succeeded": "[color:blue]17028129831 登录8 01[/color]"
+                                "succeeded": "[color:blue]17601300598 登录8 01[/color]"
                             }
                         },
                         "输入手机号002":{
-                            "input_text": "16223055823",
+                            "input_text": "16220966095",
                             "focus": {
-                                "succeeded": "[color:blue]16223055823 登录8 02[/color]"
+                                "succeeded": "[color:blue]16220966095 登录8 02[/color]"
                             }
                         },
                         "输入手机号003":{
-                            "input_text": "18577563246",
+                            "input_text": "17689839863",
                             "focus": {
-                                "succeeded": "[color:blue]18577563246 登录8 03[/color]"
+                                "succeeded": "[color:blue]17689839863 登录8 03[/color]"
                             }
                         },
                         "输入手机号004":{
-                            "input_text": "16220249048",
+                            "input_text": "16220960275",
                             "focus": {
-                                "succeeded": "[color:blue]16220249048 登录8 04[/color]"
+                                "succeeded": "[color:blue]16220960275 登录8 04[/color]"
                             }
                         },
                         "输入手机号005":{
-                            "input_text": "17028127465",
+                            "input_text": "16229699342",
                             "focus": {
-                                "succeeded": "[color:blue]17028127465 登录8 05[/color]"
+                                "succeeded": "[color:blue]16229699342 登录8 05[/color]"
                             }
                         },
                         "输入手机号006":{
-                            "input_text": "13469535162",
+                            "input_text": "16267616224",
                             "focus": {
-                                "succeeded": "[color:blue]13469535162 登录8 06[/color]"
+                                "succeeded": "[color:blue]16267616224 登录8 06[/color]"
                             }
                         },
                         "输入手机号007":{
-                            "input_text": "16294677534",
+                            "input_text": "17028129437",
                             "focus": {
-                                "succeeded": "[color:blue]16294677534 登录8 07[/color]"
+                                "succeeded": "[color:blue]17028129437 登录8 07[/color]"
                             }
                         },
                         "输入手机号008":{
-                            "input_text": "16223055712",
+                            "input_text": "16223055704",
                             "focus": {
-                                "succeeded": "[color:blue]16223055712 登录8 08[/color]"
+                                "succeeded": "[color:blue]16223055704 登录8 08[/color]"
                             }
                         },
                         "输入手机号009":{
-                            "input_text": "17028233275",
+                            "input_text": "19317482853",
                             "focus": {
-                                "succeeded": "[color:blue]17028233275 登录8 09[/color]"
+                                "succeeded": "[color:blue]19317482853 登录8 09[/color]"
                             }
                         },
                         "输入手机号010":{
-                            "input_text": "17022349379",
+                            "input_text": "16294677655",
                             "focus": {
-                                "succeeded": "[color:blue]17022349379 登录8 10[/color]"
+                                "succeeded": "[color:blue]16294677655 登录8 10[/color]"
                             }
                         }
                     }
@@ -1439,133 +1563,1168 @@
                             }
                         },
                         "输入手机号001":{
-                            "input_text": "17601300598",
-                            "focus": {
-                                "succeeded": "[color:blue]17601300598 登录9 01[/color]"
-                            }
-                        },
-                        "输入手机号002":{
-                            "input_text": "16220966095",
-                            "focus": {
-                                "succeeded": "[color:blue]16220966095 登录9 02[/color]"
-                            }
-                        },
-                        "输入手机号003":{
-                            "input_text": "17689839863",
-                            "focus": {
-                                "succeeded": "[color:blue]17689839863 登录9 03[/color]"
-                            }
-                        },
-                        "输入手机号004":{
-                            "input_text": "16220960275",
-                            "focus": {
-                                "succeeded": "[color:blue]16220960275 登录9 04[/color]"
-                            }
-                        },
-                        "输入手机号005":{
-                            "input_text": "16229699342",
-                            "focus": {
-                                "succeeded": "[color:blue]16229699342 登录9 05[/color]"
-                            }
-                        },
-                        "输入手机号006":{
-                            "input_text": "16267616224",
-                            "focus": {
-                                "succeeded": "[color:blue]16267616224 登录9 06[/color]"
-                            }
-                        },
-                        "输入手机号007":{
-                            "input_text": "17028129437",
-                            "focus": {
-                                "succeeded": "[color:blue]17028129437 登录9 07[/color]"
-                            }
-                        },
-                        "输入手机号008":{
-                            "input_text": "16223055704",
-                            "focus": {
-                                "succeeded": "[color:blue]16223055704 登录9 08[/color]"
-                            }
-                        },
-                        "输入手机号009":{
-                            "input_text": "19317482853",
-                            "focus": {
-                                "succeeded": "[color:blue]19317482853 登录9 09[/color]"
-                            }
-                        },
-                        "输入手机号010":{
-                            "input_text": "16294677655",
-                            "focus": {
-                                "succeeded": "[color:blue]16294677655 登录9 10[/color]"
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "分组10",
-                    "pipeline_override": {
-                        "Like100完成":{
-                            "focus": {
-                                "succeeded": "[color:#ff9966]Like100完成10[/color]"
-                            }
-                        },
-                        "输入手机号001":{
                             "input_text": "16700471828",
                             "focus": {
-                                "succeeded": "[color:blue]16700471828 登录10 01[/color]"
+                                "succeeded": "[color:blue]16700471828 登录9 01[/color]"
                             }
                         },
                         "输入手机号002":{
                             "input_text": "13211452042",
                             "focus": {
-                                "succeeded": "[color:blue]13211452042 登录10 02[/color]"
+                                "succeeded": "[color:blue]13211452042 登录9 02[/color]"
                             }
                         },
                         "输入手机号003":{
                             "input_text": "16261858468",
                             "focus": {
-                                "succeeded": "[color:blue]16261858468 登录10 03[/color]"
+                                "succeeded": "[color:blue]16261858468 登录9 03[/color]"
                             }
                         },
                         "输入手机号004":{
                             "input_text": "16220249875",
                             "focus": {
-                                "succeeded": "[color:blue]16220249875 登录10 04[/color]"
+                                "succeeded": "[color:blue]16220249875 登录9 04[/color]"
                             }
                         },
                         "输入手机号005":{
                             "input_text": "16220249581",
                             "focus": {
-                                "succeeded": "[color:blue]16220249581 登录10 05[/color]"
+                                "succeeded": "[color:blue]16220249581 登录9 05[/color]"
                             }
                         },
                         "输入手机号006":{
                             "input_text": "16700471848",
                             "focus": {
-                                "succeeded": "[color:blue]16700471848 登录10 06[/color]"
+                                "succeeded": "[color:blue]16700471848 登录9 06[/color]"
                             }
                         },
                         "输入手机号007":{
                             "input_text": "16229699801",
                             "focus": {
-                                "succeeded": "[color:blue]16229699801 登录10 07[/color]"
+                                "succeeded": "[color:blue]16229699801 登录9 07[/color]"
                             }
                         },
                         "输入手机号008":{
                             "input_text": "16229699224",
                             "focus": {
-                                "succeeded": "[color:blue]16229699224 登录10 08[/color]"
+                                "succeeded": "[color:blue]16229699224 登录9 08[/color]"
                             }
                         },
                         "输入手机号009":{
                             "input_text": "16220249628",
                             "focus": {
-                                "succeeded": "[color:blue]16220249628 登录10 09[/color]"
+                                "succeeded": "[color:blue]16220249628 登录9 09[/color]"
                             }
                         },
                         "输入手机号010":{
                             "input_text": "15678530946",
                             "focus": {
-                                "succeeded": "[color:blue]15678530946 登录10 10[/color]"
+                                "succeeded": "[color:blue]15678530946 登录9 10[/color]"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "选择账号":{
+            "description": "选择特定账号",
+            "cases": [
+                {
+                    "name": "001 16220961643",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220961643",
+                            "focus": {
+                                "succeeded": "[color:blue]16220961643 登录001[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "002 16223053961",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223053961",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053961 登录002[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "003 16220249071",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249071",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249071 登录003[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "004 19247220856",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "19247220856",
+                            "focus": {
+                                "succeeded": "[color:blue]19247220856 登录004[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "005 17722288334",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17722288334",
+                            "focus": {
+                                "succeeded": "[color:blue]17722288334 登录005[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "006 17788887340",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17788887340",
+                            "focus": {
+                                "succeeded": "[color:blue]17788887340 登录006[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "007 17727641992",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17727641992",
+                            "focus": {
+                                "succeeded": "[color:blue]17727641992 登录007[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "008 17722288531",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17722288531",
+                            "focus": {
+                                "succeeded": "[color:blue]17722288531 登录008[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "009 18122370144",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "18122370144",
+                            "focus": {
+                                "succeeded": "[color:blue]18122370144 登录009[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "010 19002000654",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "19002000654",
+                            "focus": {
+                                "succeeded": "[color:blue]19002000654 登录010[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "011 16294677554",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16294677554",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677554 登录011[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "012 16223053859",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223053859",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053859 登录012[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "013 18577563274",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "18577563274",
+                            "focus": {
+                                "succeeded": "[color:blue]18577563274 登录013[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "014 16794062375",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16794062375",
+                            "focus": {
+                                "succeeded": "[color:blue]16794062375 登录014[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "015 16220249878",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249878",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249878 登录015[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "016 16220249642",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249642",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249642 登录016[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "017 16297152389",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16297152389",
+                            "focus": {
+                                "succeeded": "[color:blue]16297152389 登录017[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "018 17027415960",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17027415960",
+                            "focus": {
+                                "succeeded": "[color:blue]17027415960 登录018[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "019 16260654304",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16260654304",
+                            "focus": {
+                                "succeeded": "[color:blue]16260654304 登录019[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "020 16223055905",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223055905",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055905 登录020[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "021 16220964658",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220964658",
+                            "focus": {
+                                "succeeded": "[color:blue]16220964658 登录021[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "022 17025427680",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17025427680",
+                            "focus": {
+                                "succeeded": "[color:blue]17025427680 登录022[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "023 16229699420",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699420",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699420 登录023[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "024 16229699795",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699795",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699795 登录024[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "025 16220249374",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249374",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249374 登录025[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "026 17017424890",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17017424890",
+                            "focus": {
+                                "succeeded": "[color:blue]17017424890 登录026[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "027 16220249428",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249428",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249428 登录027[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "028 16794061949",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16794061949",
+                            "focus": {
+                                "succeeded": "[color:blue]16794061949 登录028[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "029 16220249769",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249769",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249769 登录029[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "030 16229699336",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699336",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699336 登录030[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "031 16223272709",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223272709",
+                            "focus": {
+                                "succeeded": "[color:blue]16223272709 登录031[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "032 16220249881",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249881",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249881 登录032[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "033 16774780766",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16774780766",
+                            "focus": {
+                                "succeeded": "[color:blue]16774780766 登录033[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "034 16229699260",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699260",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699260 登录034[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "035 13729622751",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "13729622751",
+                            "focus": {
+                                "succeeded": "[color:blue]13729622751 登录035[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "036 17029745437",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17029745437",
+                            "focus": {
+                                "succeeded": "[color:blue]17029745437 登录036[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "037 16229699984",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699984",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699984 登录037[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "038 16220966084",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220966084",
+                            "focus": {
+                                "succeeded": "[color:blue]16220966084 登录038[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "039 16700470228",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16700470228",
+                            "focus": {
+                                "succeeded": "[color:blue]16700470228 登录039[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "040 16220967197",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220967197",
+                            "focus": {
+                                "succeeded": "[color:blue]16220967197 登录040[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "041 16700472332",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16700472332",
+                            "focus": {
+                                "succeeded": "[color:blue]16700472332 登录041[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "042 18577533454",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "18577533454",
+                            "focus": {
+                                "succeeded": "[color:blue]18577533454 登录042[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "043 17028129124",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17028129124",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129124 登录043[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "044 19020638137",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "19020638137",
+                            "focus": {
+                                "succeeded": "[color:blue]19020638137 登录044[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "045 17028129184",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17028129184",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129184 登录045[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "046 16223053850",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223053850",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053850 登录046[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "047 16270847534",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16270847534",
+                            "focus": {
+                                "succeeded": "[color:blue]16270847534 登录047[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "048 16297152423",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16297152423",
+                            "focus": {
+                                "succeeded": "[color:blue]16297152423 登录048[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "049 16289050630",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16289050630",
+                            "focus": {
+                                "succeeded": "[color:blue]16289050630 登录049[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "050 16294677553",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16294677553",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677553 登录050[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "051 16794060446",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16794060446",
+                            "focus": {
+                                "succeeded": "[color:blue]16794060446 登录051[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "052 16229699253",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699253",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699253 登录052[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "053 16794066639",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16794066639",
+                            "focus": {
+                                "succeeded": "[color:blue]16794066639 登录053[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "054 16229699157",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699157",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699157 登录054[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "055 16261858472",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16261858472",
+                            "focus": {
+                                "succeeded": "[color:blue]16261858472 登录055[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "056 16222435316",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16222435316",
+                            "focus": {
+                                "succeeded": "[color:blue]16222435316 登录056[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "057 16229699421",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699421",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699421 登录057[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "058 16229699223",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699223",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699223 登录058[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "059 16223053934",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223053934",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053934 登录059[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "060 16220249298",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249298",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249298 登录060[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "061 16220963087",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220963087",
+                            "focus": {
+                                "succeeded": "[color:blue]16220963087 登录061[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "062 16223055742",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223055742",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055742 登录062[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "063 16223053990",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223053990",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053990 登录063[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "064 16220249020",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249020",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249020 登录064[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "065 16223054421",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223054421",
+                            "focus": {
+                                "succeeded": "[color:blue]16223054421 登录065[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "066 16700472653",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16700472653",
+                            "focus": {
+                                "succeeded": "[color:blue]16700472653 登录066[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "067 16223053932",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223053932",
+                            "focus": {
+                                "succeeded": "[color:blue]16223053932 登录067[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "068 16229699675",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699675",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699675 登录068[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "069 16220248942",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220248942",
+                            "focus": {
+                                "succeeded": "[color:blue]16220248942 登录069[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "070 17607757019",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17607757019",
+                            "focus": {
+                                "succeeded": "[color:blue]17607757019 登录070[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "071 17028129831",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17028129831",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129831 登录071[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "072 16223055823",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223055823",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055823 登录072[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "073 18577563246",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "18577563246",
+                            "focus": {
+                                "succeeded": "[color:blue]18577563246 登录073[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "074 16220249048",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249048",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249048 登录074[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "075 17028127465",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17028127465",
+                            "focus": {
+                                "succeeded": "[color:blue]17028127465 登录075[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "076 13469535162",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "13469535162",
+                            "focus": {
+                                "succeeded": "[color:blue]13469535162 登录076[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "077 16294677534",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16294677534",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677534 登录077[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "078 16223055712",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223055712",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055712 登录078[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "079 17028233275",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17028233275",
+                            "focus": {
+                                "succeeded": "[color:blue]17028233275 登录079[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "080 17022349379",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17022349379",
+                            "focus": {
+                                "succeeded": "[color:blue]17022349379 登录080[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "081 17601300598",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17601300598",
+                            "focus": {
+                                "succeeded": "[color:blue]17601300598 登录081[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "082 16220966095",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220966095",
+                            "focus": {
+                                "succeeded": "[color:blue]16220966095 登录082[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "083 17689839863",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17689839863",
+                            "focus": {
+                                "succeeded": "[color:blue]17689839863 登录083[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "084 16220960275",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220960275",
+                            "focus": {
+                                "succeeded": "[color:blue]16220960275 登录084[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "085 16229699342",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699342",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699342 登录085[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "086 16267616224",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16267616224",
+                            "focus": {
+                                "succeeded": "[color:blue]16267616224 登录086[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "087 17028129437",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "17028129437",
+                            "focus": {
+                                "succeeded": "[color:blue]17028129437 登录087[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "088 16223055704",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16223055704",
+                            "focus": {
+                                "succeeded": "[color:blue]16223055704 登录088[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "089 19317482853",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "19317482853",
+                            "focus": {
+                                "succeeded": "[color:blue]19317482853 登录089[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "090 16294677655",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16294677655",
+                            "focus": {
+                                "succeeded": "[color:blue]16294677655 登录090[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "091 16700471828",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16700471828",
+                            "focus": {
+                                "succeeded": "[color:blue]16700471828 登录091[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "092 13211452042",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "13211452042",
+                            "focus": {
+                                "succeeded": "[color:blue]13211452042 登录092[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "093 16261858468",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16261858468",
+                            "focus": {
+                                "succeeded": "[color:blue]16261858468 登录093[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "094 16220249875",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249875",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249875 登录094[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "095 16220249581",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249581",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249581 登录095[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "096 16700471848",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16700471848",
+                            "focus": {
+                                "succeeded": "[color:blue]16700471848 登录096[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "097 16229699801",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699801",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699801 登录097[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "098 16229699224",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16229699224",
+                            "focus": {
+                                "succeeded": "[color:blue]16229699224 登录098[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "099 16220249628",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "16220249628",
+                            "focus": {
+                                "succeeded": "[color:blue]16220249628 登录099[/color]"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "100 15678530946",
+                    "pipeline_override": {
+                        "输入手机号001": {
+                            "input_text": "15678530946",
+                            "focus": {
+                                "succeeded": "[color:blue]15678530946 登录100[/color]"
                             }
                         }
                     }
@@ -2797,6 +3956,92 @@
                 }
             ]
         },
+        "检测当日完成": {
+            "description": "运行过一遍后的查漏补缺，每日首次运行不要开启",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "输入密码":{
+                            "next": [
+                                "密码点击登录首次检测"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "作品浏览时间": {
+            "description": "每个作品浏览时间",
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "3s",
+                    "pipeline_override": {
+                        "视频收藏Color":{
+                            "post_delay": 3200
+                        }
+                    }
+                },
+                {
+                    "name": "5s",
+                    "pipeline_override": {
+                        "视频收藏Color":{
+                            "post_delay": 5200
+                        }
+                    }
+                },
+                {
+                    "name": "8s",
+                    "pipeline_override": {
+                        "视频收藏Color":{
+                            "post_delay": 8200
+                        }
+                    }
+                },
+                {
+                    "name": "10s",
+                    "pipeline_override": {
+                        "视频收藏Color":{
+                            "post_delay": 10200
+                        }
+                    }
+                },
+                {
+                    "name": "12s",
+                    "pipeline_override": {
+                        "视频收藏Color":{
+                            "post_delay": 12200
+                        }
+                    }
+                },
+                {
+                    "name": "15s",
+                    "pipeline_override": {
+                        "视频收藏Color":{
+                            "post_delay": 15200
+                        }
+                    }
+                },
+                {
+                    "name": "自定义",
+                    "option":[
+                        "自定义浏览时间"
+                    ],
+                    "pipeline_override": {
+                    }
+                }
+            ]
+        },
         "至作品时间": {
             "cases": [
                 {
@@ -2908,7 +4153,7 @@
                 }
             ]
         },
-        "浏览时间": {
+        "微博浏览时间": {
             "cases": [
                 {
                     "name": "3s",
@@ -4123,6 +5368,25 @@
                     }
                 }
             ]
+        },
+        "自定义浏览时间": {
+            "type": "input",
+            "label": "自定义浏览时间",
+            "description": "输入自定义浏览时间单位毫秒，例：填入3000为浏览3s",
+            "inputs": [
+                {
+                    "name": "浏览时间",
+                    "label": "$自定义浏览时间",
+                    "description": "输入自定义浏览时间单位毫秒，例：填入3000为浏览3s",
+                    "default": 3000,
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "视频收藏Color": {
+                    "post_delay": "{浏览时间}"
+                }
+            }
         },
         "账号登录": {
             "type": "input",
@@ -5514,6 +6778,12 @@
                         "图文滑动x1":{
                             "expected": "河南交通广播"
                         },
+                        "点击作品01if":{
+                            "expected": "河南交通广播"
+                        },
+                        "图文滑动x1if":{
+                            "expected": "河南交通广播"
+                        },
                         "选择大象号re":{
                             "expected": "河南信息广播"
                         },
@@ -5580,6 +6850,12 @@
                             "expected": "河南信息广播"
                         },
                         "图文滑动x1":{
+                            "expected": "河南信息广播"
+                        },
+                        "点击作品01if":{
+                            "expected": "河南信息广播"
+                        },
+                        "图文滑动x1if":{
                             "expected": "河南信息广播"
                         },
                         "选择大象号re":{
@@ -5650,6 +6926,12 @@
                         "图文滑动x1":{
                             "expected": "河南卫视"
                         },
+                        "点击作品01if":{
+                            "expected": "河南卫视"
+                        },
+                        "图文滑动x1if":{
+                            "expected": "河南卫视"
+                        },
                         "选择大象号re":{
                             "expected": "河南信息广播"
                         },
@@ -5716,6 +6998,12 @@
                             "expected": "大象新闻"
                         },
                         "图文滑动x1":{
+                            "expected": "大象新闻"
+                        },
+                        "点击作品01if":{
+                            "expected": "大象新闻"
+                        },
+                        "图文滑动x1if":{
                             "expected": "大象新闻"
                         },
                         "选择大象号re":{
@@ -5786,6 +7074,12 @@
                         "图文滑动x1":{
                             "expected": "大象财富"
                         },
+                        "点击作品01if":{
+                            "expected": "大象财富"
+                        },
+                        "图文滑动x1if":{
+                            "expected": "大象财富"
+                        },
                         "选择大象号re":{
                             "expected": "河南信息广播"
                         },
@@ -5852,6 +7146,12 @@
                             "expected": "都市报道"
                         },
                         "图文滑动x1":{
+                            "expected": "都市报道"
+                        },
+                        "点击作品01if":{
+                            "expected": "都市报道"
+                        },
+                        "图文滑动x1if":{
                             "expected": "都市报道"
                         },
                         "选择大象号re":{
@@ -5922,6 +7222,12 @@
                         "图文滑动x1":{
                             "expected": "大象帮"
                         },
+                        "点击作品01if":{
+                            "expected": "大象帮"
+                        },
+                        "图文滑动x1if":{
+                            "expected": "大象帮"
+                        },
                         "SelectDxh": {
                             "expected": "大象帮"
                         },
@@ -5979,6 +7285,12 @@
                             "expected": "潮新闻"
                         },
                         "图文滑动x1":{
+                            "expected": "潮新闻"
+                        },
+                        "点击作品01if":{
+                            "expected": "潮新闻"
+                        },
+                        "图文滑动x1if":{
                             "expected": "潮新闻"
                         },
                         "SelectDxh": {

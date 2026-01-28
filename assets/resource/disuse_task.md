@@ -260,5 +260,3 @@
 
                 ".\FlyIME.cmd" -noWindow
 
-
-        

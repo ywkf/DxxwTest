@@ -535,7 +535,8 @@
     "InputTitle": {
         "recognition": "OCR",
         "expected": [
-            "输入标题"
+            "输入标题",
+            "输人标题"
         ],
         "pre_delay": 500,
         "action": "Click",
@@ -554,8 +555,9 @@
             132
         ],
         "action": "Click",
-        "focus": true,
-        "succeeded": "检测到语录功能，使用XF语录",
+        "focus": {
+            "succeeded": "检测到语录功能，使用XF语录"
+        },
         "next": [
             "PublishXF02Tag",
             "PublishXF02Title"
