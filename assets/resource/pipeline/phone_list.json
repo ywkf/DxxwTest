@@ -563,9 +563,7 @@
     "点击关注p1":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注",
-            "十关注",
-            "十关注"
+            "^关注$"
         ],
         "action": "Click",
         "next":[
@@ -601,9 +599,7 @@
     "点击关注p2":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注",
-            "十关注",
-            "十关注"
+            "^关注$"
         ],
         "action": "Click",
         "next":[
@@ -638,9 +634,7 @@
     "点击关注p3":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注",
-            "十关注",
-            "十关注"
+            "^关注$"
         ],
         "action": "Click",
         "next":[
@@ -677,9 +671,7 @@
     "点击关注p4":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注",
-            "十关注",
-            "十关注"
+            "^关注$"
         ],
         "action": "Click",
         "next":[
@@ -714,9 +706,7 @@
     "点击关注p5":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注",
-            "十关注",
-            "十关注"
+            "^关注$"
         ],
         "action": "Click",
         "next":[
@@ -752,9 +742,7 @@
     "点击关注p6":{
         "recognition": "OCR",
         "expected":[
-            "\\+关注",
-            "十关注",
-            "十关注"
+            "^关注$"
         ],
         "action": "Click",
         "next":[

@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.60",
+    "version": "0.2.61",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -7608,7 +7608,7 @@
                     "pipeline_override": {
                         "领取积分开始":{
                             "next": [
-                                "每日任务开始"
+                                "观看微剧开始"
                             ]
                         }
                     }

@@ -34,7 +34,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "TaskImagetxt",
+            "任务微剧",
             "[JumpBack]TaskSwipe"
         ]
     },
@@ -55,6 +55,49 @@
         "duration": 300,
         "post_delay": 500
     },
+
+    "任务微剧": {
+        "recognition": "OCR",
+        "expected": "观看微剧",
+        "next": [
+            "任务观看微剧完成",
+            "任务观看微剧未完成"
+        ]
+    },
+    "任务观看微剧完成": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "任务微剧",
+        "roi_offset": [
+            0,
+            0,
+            392,
+            44
+        ],
+        "focus": {
+            "succeeded": "[color:blue]观看微剧已完成[/color]"
+        },
+        "next": [
+            "TaskImagetxt"
+        ]
+    },
+    "任务观看微剧未完成": {
+        "recognition": "OCR",
+        "expected": "去观看",
+        "roi": "任务微剧",
+        "roi_offset": [
+            0,
+            0,
+            392,
+            44
+        ],
+        "focus": {
+            "start": "[color:blue]观看微剧未完成，前去完成[/color]"
+        },
+        "next": [
+            "TaskImagetxt"
+        ]
+    },
     "TaskImagetxt": {
         "recognition": "OCR",
         "expected": "浏览内容",
@@ -71,13 +114,14 @@
             0,
             0,
             392,
-            44
+            60
         ],
         "focus": {
             "succeeded": "[color:blue]浏览内容已完成[/color]"
         },
         "next": [
-            "TaskComment"
+            "TaskComment",
+            "[JumpBack]TaskSwipe"
         ]
     },
     "TaskImagetxtUndone": {
@@ -88,7 +132,7 @@
             0,
             0,
             392,
-            44
+            60
         ],
         "focus": {
             "start": "[color:blue]浏览内容未完成，前去完成[/color]"

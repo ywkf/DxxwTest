@@ -451,5 +451,178 @@
         "next": [
             "Back"
         ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "观看微剧re":{
+        "recognition": "OCR",
+        "expected":[
+            "观看微剧"
+        ],
+        "next":[
+            "观看微剧去观看re"
+        ]
+    },
+    "观看微剧去观看re":{
+        "recognition": "OCR",
+        "expected":[
+            "去观看"
+        ],
+        "roi": "观看微剧re",
+        "roi_offset": [
+            0,
+            0,
+            392,
+            44
+        ],
+        "action": "Click",
+        "next":[
+            "热播剧集re",
+            "[JumpBack]热播剧集滑动re"
+        ]
+    },
+    "热播剧集滑动re": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 500
+    },
+    "热播剧集re":{
+        "recognition": "OCR",
+        "expected":[
+            "热播剧集"
+        ],
+        "next":[
+            "点击热播剧集更多re"
+        ]
+    },
+    "点击热播剧集更多re":{
+        "recognition": "OCR",
+        "expected":[
+            "更多"
+        ],
+        "roi": "热播剧集re",
+        "roi_offset": [
+            0,
+            0,
+            510,
+            0
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "next":[
+            "点击剧集re"
+        ]
+    },
+    "点击剧集re":{
+        "recognition": "OCR",
+        "expected":[
+            "\\d+集全"
+        ],
+        "action": "Click",
+        "timeout": 10000,
+        "on_error":[
+            "微剧滑动re"
+        ],
+        "next":[
+            "识别播放微剧re"
+        ]
+    },
+    "识别播放微剧re":{
+        "recognition": "OCR",
+        "expected":[
+            "完成观看微剧积分+3",
+            "完成观看微剧积分"
+        ],
+        "post_delay": 3000,
+        "max_hit":5,
+        "next":[
+            "微剧滑动re"
+        ]
+    },
+    "微剧滑动re": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 500,
+        "timeout": 6000,
+        "on_error":[
+            "微剧选集re",
+            "TaskCheck",
+            "[JumpBack]Back"
+        ],
+        "next":[
+            "识别播放微剧re"
+        ]
+    },
+    "微剧选集re":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "选集",
+            "永久免费"
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "next":[
+            "微剧选集2re"
+        ]
+    },
+    "微剧选集2re":{
+        "recognition": "OCR",
+        "expected":[
+            "1-30"
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "next":[
+            "微剧选集3re"
+        ]
+    },
+    "微剧选集3re":{
+        "recognition": "OCR",
+        "expected":[
+            "^1$"
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "next":[
+            "TaskCheck",
+            "[JumpBack]Back"
+        ]
     }
 }

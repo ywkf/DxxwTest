@@ -510,11 +510,26 @@
             "圈子分享.png"
         ],
         "roi": [455, 128, 265, 1152],
-        "action": "Click",
         "post_delay": 500,
         "next": [
-            "CCircleShareToQQ",
-            "[JumpBack]CCircleSwipe"
+            "圈子分享colorLine"    
+        ]
+    },
+    "圈子分享colorLine":{
+        "enabled": true,
+        "roi": "CCircleShare",
+        "order_by": "Vertical",
+        "recognition": "ColorMatch",
+        "upper":[102,102,102],
+        "lower":[102,102,102],
+        "connected": true,
+        "action": "Click",
+        "on_error": [
+            "新版圈子识别",
+            "CCircleCollect&Like"
+        ],
+        "next":[
+            "CCircleShareToQQ"
         ]
     },
     "CCircleShareToQQ": {
