@@ -69,6 +69,14 @@ def install_chores():
         install_path,
     )
     shutil.copy2(
+        working_dir / "UpdateSetting.ps1",
+        install_path,
+    )
+    shutil.copy2(
+        working_dir / "UpdateSetting.bat",
+        install_path,
+    )
+    shutil.copy2(
         working_dir / "README.md",
         install_path,
     )

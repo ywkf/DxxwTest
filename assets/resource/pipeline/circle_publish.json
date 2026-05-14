@@ -8,20 +8,16 @@
             "[JumpBack]Back"
         ]
     },
-    "视频循环处理": {
-        "enabled": true,
-        "action": "Command",
-        "exec": "cmd",
-        "args": [
-            "/c",
-            "D:\\edge download\\MaaDxxw-win-x86_64-v0.2.63-Full-v0.2.63\\视频循环处理.bat"
-        ],
-        "detach": false,
-        "post_delay": 3000,
-        "next": [
-            "LoadPicture"
-        ]
+
+
+
+
+    "视频循环处理Setting": {
     },
+    
+
+
+    
     "LoadPicture": {
         "enabled": true,
         "action": "StartApp",

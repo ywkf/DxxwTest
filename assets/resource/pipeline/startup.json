@@ -321,21 +321,16 @@
             "启动后输入手机号"
         ]
     },
-    "启动后输入手机号":{
-        "recognition": "OCR",
-        "expected": [
-            "请输入手机号",
-            "请输人手机号"
-        ],
-        "action": "InputText",
-        "input_text": "11111111111",
-        "focus": {
-            "succeeded": "[color:green]登录中...[/color]"
-        },
-        "next":[
-            "启动后点击密码输入框"
-        ]
+
+
+
+
+    "启动后输入手机号Setting":{
     },
+
+
+
+
     "启动后点击密码输入框": {
         "recognition": "OCR",
         "expected": [
@@ -347,19 +342,16 @@
             "启动后输入密码"
         ]
     },
-    "启动后输入密码":{
-        "recognition": "OCR",
-        "expected": [
-            "请输入密码",
-            "请输人密码"
-        ],
-        "action": "InputText",
-        "input_text": "12345678",
-        "next":[
-            "启动后输入完成返回",
-            "启动后密码点击登录"
-        ]
+
+
+
+
+    "启动后输入密码Setting":{
     },
+
+
+
+    
     "启动后输入完成返回":{
         "recognition": "OCR",
         "expected": [

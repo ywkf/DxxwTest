@@ -1,0 +1,44 @@
+{
+    "启动后输入手机号":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入手机号",
+            "请输人手机号"
+        ],
+        "action": "InputText",
+        "input_text": "11111111111",
+        "focus": {
+            "succeeded": "[color:green]登录中...[/color]"
+        },
+        "next":[
+            "启动后点击密码输入框"
+        ]
+    },
+    "启动后输入密码":{
+        "recognition": "OCR",
+        "expected": [
+            "请输入密码",
+            "请输人密码"
+        ],
+        "action": "InputText",
+        "input_text": "12345678",
+        "next":[
+            "启动后输入完成返回",
+            "启动后密码点击登录"
+        ]
+    },
+    "视频循环处理": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "cmd",
+        "args": [
+            "/c",
+            "D:\\edge download\\MaaDxxw-win-x86_64-v0.2.63-Full-v0.2.66\\视频循环处理.bat"
+        ],
+        "detach": false,
+        "post_delay": 3000,
+        "next": [
+            "LoadPicture"
+        ]
+    }
+}
