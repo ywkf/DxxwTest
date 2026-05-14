@@ -1,0 +1,502 @@
+{
+    "TaskAllComment": {
+        "enabled": true,
+        "post_delay": 1000,
+        "next": [
+            "输入法检测开启C",
+            "[JumpBack]Back"
+        ]
+    },
+
+
+    "输入法检测开启C": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.iflytek.inputmethod/.FlyIME"
+        ],
+        "detach": false,
+        "focus": {
+            "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
+        },
+        "next":[
+            "评论任务开始"
+        ]
+    },
+    "评论任务开始": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 500,
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "点击关注列表C": {
+        "recognition": "OCR",
+        "expected": "关注",
+        "action": "Click",
+        "post_delay": 8000,
+        "next": [
+            "检查关注列表C",
+            "关注列表返回C"
+        ]
+    },
+    "关注列表返回C": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "点击关注列表C"
+        ]
+    },
+    "检查关注列表C": {
+        "recognition": "OCR",
+        "expected": [
+            "已关注",
+            "互相关注"
+        ],
+        "post_delay": 2000,
+        "next": [
+            "选择大象号C",
+            "[JumpBack]关注列表滑动C"
+        ]
+    },
+    "关注列表滑动C": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            500,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ]
+    },
+    "选择大象号C": {
+        "recognition": "OCR",
+        "expected": [
+            "河南交通广播"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "post_delay": 1000,
+        "focus": {
+            "succeeded": "识别进入大象号成功",
+            "failed": "识别进入大象号失败，请检查所选账号是否在关注列表"
+        },
+        "next": [
+            "大象号初始滑动C",
+            "选择大象号2ndC"
+        ]
+    },
+    "选择大象号2ndC": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "选择大象号C"
+        ]
+    },
+    "大象号初始滑动C": {
+        "recognition": "OCR",
+        "expected": [
+            "评论",
+            "全部"
+        ],
+        "roi": [
+            0,
+            707,
+            720,
+            558
+        ],
+        "pre_delay": 200,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1000,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            650,
+            10,
+            10
+        ],
+        "duration": 300,
+        "post_delay": 500,
+        "post_wait_freezes": 200,
+        "next": [
+            "点击图文部分C",
+            "[JumpBack]大象号初始滑动C"
+        ]
+    },
+    "点击图文部分C": {
+        "recognition": "OCR",
+        "expected": "图文",
+        "roi": [0, 111, 720, 120],
+        "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_delay": 500,
+        "focus": {
+            "succeeded": "开始执行评论任务"
+        },
+        "next": [
+            "点击作品01C"
+        ]
+    },
+    "点击作品01C": {
+        "recognition": "OCR",
+        "expected": [
+            "河南交通广播"
+        ],
+        "roi": [2, 215, 718, 604],
+        "order_by": "Vertical",
+        "action": "Click",
+        "pre_delay": 3000,
+        "post_delay": 500,
+        "timeout": 10000,
+        "on_error":[
+            "返回点击作品C"
+        ],
+        "next": [
+            "图文评论点击输入框C"
+        ]
+    },
+    "返回点击作品C":{
+        "action": "Key",
+        "key": 4,
+        "next":[
+            "点击作品01"
+        ]
+    },
+    "图文评论点击输入框C": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论",
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "pre_delay": 800,
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "next": [
+            "点击大象新语C",
+            "[JumpBack]图文评论再次点击输入框C",
+            "[JumpBack]输入法检测开启reC"
+        ]
+    },
+    "图文评论再次点击输入框C": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "期待你",
+            "的评论",
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": [
+            50,
+            1215,
+            300,
+            30
+        ],
+        "pre_delay": 800,
+        "action": "Click",
+        "target": [
+            50,
+            1215,
+            300,
+            30
+        ]
+    },
+    "输入法检测开启reC": {
+        "enabled": true,
+        "action": "Command",
+        "exec": "Adb",
+        "args": [
+            "-s",
+            "127.0.0.1:16480",
+            "shell",
+            "ime",
+            "set",
+            "com.iflytek.inputmethod/.FlyIME"
+        ],
+        "detach": false,
+        "focus": {
+            "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
+        }
+    },
+    "点击大象新语C": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
+        "roi": [
+            0,
+            650,
+            720,
+            80
+        ],
+        "pre_delay": 500,
+        "action": "Click",
+        "next": [
+            "点击大象新语评论C"
+        ]
+    },
+    "点击大象新语评论C": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
+        "action": "Click",
+        "target": [
+            42,
+            476,
+            1,
+            1
+        ],
+        "next": [
+            "点击发表评论C",
+            "重新点击大象心语评论C"
+        ]
+    },
+    "重新点击大象心语评论C":{
+        "recognition": "OCR",
+        "expected":[
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": [21, 385, 574, 119],
+        "action": "Click",
+        "next":[
+            "点击发表评论C"
+        ]
+    },
+    "点击发表评论C": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "pre_delay": 32000,
+        "post_delay": 500,
+        "timeout": 10000,
+        "on_error":[
+            "作品完成返回01ifC"
+        ],
+        "next": [
+            "发送成功C",
+            "评论重复内容提示C",
+            "评论频率过高提示C",
+            "换一篇提示C",
+            "[JumpBack]再次点击发表评论C"
+        ]
+    },
+    "再次点击发表评论C": {
+        "recognition": "TemplateMatch",
+        "template": "发表.png",
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "Stop"
+        ]
+    },
+    "发送成功C":{
+        "recognition": "OCR",
+        "expected":[
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit":10,
+        "next":[
+            "重置点赞C"
+        ]
+    },
+
+    "评论重复内容提示C": {
+        "recognition": "OCR",
+        "expected": [
+            "不能发表重复内容",
+            "重复内容",
+            "复制粘贴",
+            "一样哦"
+        ],
+        "action": "Click",
+        "target": [197, 1230, 1, 1],
+        "post_delay": 11000,
+        "next": [
+            "点击大象新语C",
+            "重置点赞C"
+        ]
+    },
+    "评论频率过高提示C":{
+        "recognition": "OCR",
+        "expected": [
+            "停一停",
+            "好评论需要慢慢酝酿"
+        ],
+        "post_delay": 45000,
+        "next": [
+            "图文评论点击输入框C",
+            "重置点赞C"
+        ]
+    },
+    "换一篇提示C":{
+        "recognition": "OCR",
+        "expected": [
+            "换篇再聊"
+        ],
+        "post_delay": 30000,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    
+    "重置点赞C": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "like0g.png",
+            "like1g.png",
+            "n点赞g.png",
+            "n点赞1g.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "green_mask": true,
+        "post_delay": 800,
+        "next": [
+            "作品完成返回01C"
+        ]
+    },
+    "作品完成返回01C": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "图文滑动x1C"
+        ]
+    },
+    "图文滑动x1C":{
+        "recognition": "OCR",
+        "expected":[
+            "河南交通广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Swipe",
+        "begin": true,
+        "end": "点击作品01C",
+        "duration": 1000,
+        "post_delay": 500,
+        "next": [
+            "点击作品01C"
+        ]
+    },
+
+
+    "作品完成返回01ifC": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "next": [
+            "图文滑动x1ifC"
+        ]
+    },
+    "图文滑动x1ifC":{
+        "recognition": "OCR",
+        "expected":[
+            "河南交通广播"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Swipe",
+        "begin": true,
+        "end": "点击作品01C",
+        "duration": 1000,
+        "post_delay": 500,
+        "next": [
+            "点击作品01ifC"
+        ]
+    },
+    "点击作品01ifC": {
+        "recognition": "OCR",
+        "expected": [
+            "河南交通广播"
+        ],
+        "roi": [2, 215, 718, 604],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 500,
+        "timeout": 10000,
+        "on_error":[
+            "每日任务完成C"
+        ],
+        "next": [
+            "完成浏览内容积分+3ifC"
+        ]
+    },
+    "完成浏览内容积分+3ifC":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "完成浏览内容积分+3",
+            "完成浏览内容积分"
+        ],
+        "next":[
+            "作品完成返回01ifC"
+        ]
+    },
+    "每日任务完成C": {
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800,
+        "focus": {
+            "succeeded": "[color:blue]评论任务完成[/color]"
+        },
+        "next": [
+            "Back"
+        ]
+    }
+}

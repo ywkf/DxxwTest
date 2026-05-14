@@ -95,7 +95,7 @@
             "start": "[color:blue]观看微剧未完成，前去完成[/color]"
         },
         "next": [
-            "TaskImagetxt"
+            "观看微剧re"
         ]
     },
     "TaskImagetxt": {
@@ -138,7 +138,8 @@
             "start": "[color:blue]浏览内容未完成，前去完成[/color]"
         },
         "next": [
-            "每日任务开始"
+            "每日任务开始re",
+            "[JumpBack]Back"
         ]
     },
     "TaskComment": {
@@ -181,7 +182,8 @@
             "start": "[color:blue]评论未完成，前去完成[/color]"
         },
         "next": [
-            "每日任务开始"
+            "每日任务开始re",
+            "[JumpBack]Back"
         ]
     },
     "TaskNotification": {

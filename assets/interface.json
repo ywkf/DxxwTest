@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.63",
+    "version": "0.2.64",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -38,17 +38,19 @@
             "option": [
                 "账号选择",
                 "签到",
+                "是否评论任务",
                 "每日任务检测",
                 "启用输入法"
-            ],
-            "pipeline_override": {
-                "TaskImagetxtUndone": {
-                    "next": "每日任务开始re"
-                },
-                "TaskCommentIndone":{
-                    "next": "每日任务开始re"
-                }
-            }
+            ]
+        },
+        {
+            "name": "评论任务",
+            "entry": "TaskAllComment",
+            "description": "评论任务",
+            "option": [
+                "账号选择",
+                "启用输入法"
+            ]
         },
         {
             "name": "圈子点赞收藏 lite",
@@ -2907,7 +2909,7 @@
                 {
                     "name": "登录并启用输入法",
                     "option":[
-                        "端口号"
+                        "运行设置"
                     ],
                     "pipeline_override": {
                         "ReStartDxxw05":{
@@ -2931,7 +2933,7 @@
                 {
                     "name": "关闭输入法",
                     "option":[
-                        "端口号"
+                        "运行设置"
                     ],
                     "pipeline_override": {
                         "ReStartDxxw05":{
@@ -3072,17 +3074,29 @@
             ]
         },
         "加载素材": {
+            "description": "自动加载需要bat脚本和对应素材文件，并修改路径",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "否",
                     "pipeline_override": {
+                        "视频循环处理": {
+                            "enabled": false
+                        },
                         "LoadPicture": {
                             "enabled": false
                         }
                     }
                 },
                 {
-                    "name": "yes",
+                    "name": "手动",
+                    "pipeline_override": {
+                        "视频循环处理": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "自动",
                     "pipeline_override": {}
                 }
             ]
@@ -4892,7 +4906,8 @@
                         },
                         "TheDayBefore": {
                             "expected": [
-                                "2天前"
+                                "2天前",
+                                "\\d{2}-\\d{2}"
                             ],
                             "focus": {
                                 "succeeded": "检测到2天前"
@@ -4900,7 +4915,8 @@
                         },
                         "CTheDayBefore2": {
                             "expected": [
-                                "2天前"
+                                "2天前",
+                                "\\d{2}-\\d{2}"
                             ],
                             "focus": {
                                 "succeeded": "检测到2天前"
@@ -4927,7 +4943,8 @@
                         },
                         "TheDayBefore": {
                             "expected": [
-                                "3天前"
+                                "3天前",
+                                "\\d{2}-\\d{2}"
                             ],
                             "focus": {
                                 "succeeded": "检测到3天前"
@@ -4935,7 +4952,8 @@
                         },
                         "CTheDayBefore2": {
                             "expected": [
-                                "3天前"
+                                "3天前",
+                                "\\d{2}-\\d{2}"
                             ],
                             "focus": {
                                 "succeeded": "检测到3天前"
@@ -5436,9 +5454,8 @@
                 }
             }
         },
-        "端口号": {
+        "运行设置": {
             "type": "input",
-            "description": "输入模拟器端口号",
             "inputs": [
                 {
                     "name": "端口号",
@@ -5490,6 +5507,26 @@
                     ]
                 },
                 "输入法检测开启re": {
+                    "args": [
+                        "-s",
+                        "127.0.0.1:{端口号}",
+                        "shell",
+                        "ime",
+                        "set",
+                        "com.iflytek.inputmethod/.FlyIME"
+                    ]
+                },
+                "输入法检测开启C": {
+                    "args": [
+                        "-s",
+                        "127.0.0.1:{端口号}",
+                        "shell",
+                        "ime",
+                        "set",
+                        "com.iflytek.inputmethod/.FlyIME"
+                    ]
+                },
+                "输入法检测开启reC": {
                     "args": [
                         "-s",
                         "127.0.0.1:{端口号}",
@@ -6822,6 +6859,21 @@
                         "图文滑动x1if":{
                             "expected": "河南交通广播"
                         },
+                        "选择大象号C":{
+                            "expected": "河南交通广播"
+                        },
+                        "点击作品01C":{
+                            "expected": "河南交通广播"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "河南交通广播"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "河南交通广播"
+                        },
+                        "图文滑动x1ifC":{
+                            "expected": "河南交通广播"
+                        },
                         "选择大象号re":{
                             "expected": "河南信息广播"
                         },
@@ -6894,6 +6946,21 @@
                             "expected": "河南信息广播"
                         },
                         "图文滑动x1if":{
+                            "expected": "河南信息广播"
+                        },
+                        "选择大象号C":{
+                            "expected": "河南信息广播"
+                        },
+                        "点击作品01C":{
+                            "expected": "河南信息广播"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "河南信息广播"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "河南信息广播"
+                        },
+                        "图文滑动x1ifC":{
                             "expected": "河南信息广播"
                         },
                         "选择大象号re":{
@@ -6970,6 +7037,21 @@
                         "图文滑动x1if":{
                             "expected": "河南卫视"
                         },
+                        "选择大象号C":{
+                            "expected": "河南卫视"
+                        },
+                        "点击作品01C":{
+                            "expected": "河南卫视"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "河南卫视"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "河南卫视"
+                        },
+                        "图文滑动x1ifC":{
+                            "expected": "河南卫视"
+                        },
                         "选择大象号re":{
                             "expected": "河南信息广播"
                         },
@@ -7042,6 +7124,21 @@
                             "expected": "大象新闻"
                         },
                         "图文滑动x1if":{
+                            "expected": "大象新闻"
+                        },
+                        "选择大象号C":{
+                            "expected": "大象新闻"
+                        },
+                        "点击作品01C":{
+                            "expected": "大象新闻"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "大象新闻"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "大象新闻"
+                        },
+                        "图文滑动x1ifC":{
                             "expected": "大象新闻"
                         },
                         "选择大象号re":{
@@ -7118,6 +7215,21 @@
                         "图文滑动x1if":{
                             "expected": "大象财富"
                         },
+                        "选择大象号C":{
+                            "expected": "大象财富"
+                        },
+                        "点击作品01C":{
+                            "expected": "大象财富"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "大象财富"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "大象财富"
+                        },
+                        "图文滑动x1ifC":{
+                            "expected": "大象财富"
+                        },
                         "选择大象号re":{
                             "expected": "河南信息广播"
                         },
@@ -7192,14 +7304,29 @@
                         "图文滑动x1if":{
                             "expected": "都市报道"
                         },
+                        "选择大象号C":{
+                            "expected": "都市报道"
+                        },
+                        "点击作品01C":{
+                            "expected": "都市报道"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "都市报道"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "都市报道"
+                        },
+                        "图文滑动x1ifC":{
+                            "expected": "都市报道"
+                        },
                         "选择大象号re":{
-                            "expected": "河南交通广播"
+                            "expected": "都市报道"
                         },
                         "点击作品01re":{
-                            "expected": "河南交通广播"
+                            "expected": "都市报道"
                         },
                         "图文滑动x1re":{
-                            "expected": "河南交通广播"
+                            "expected": "都市报道"
                         },
                         "SelectDxh": {
                             "expected": "都市报道"
@@ -7266,6 +7393,21 @@
                         "图文滑动x1if":{
                             "expected": "大象帮"
                         },
+                        "选择大象号C":{
+                            "expected": "大象帮"
+                        },
+                        "点击作品01C":{
+                            "expected": "大象帮"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "大象帮"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "大象帮"
+                        },
+                        "图文滑动x1ifC":{
+                            "expected": "大象帮"
+                        },
                         "SelectDxh": {
                             "expected": "大象帮"
                         },
@@ -7329,6 +7471,21 @@
                             "expected": "潮新闻"
                         },
                         "图文滑动x1if":{
+                            "expected": "潮新闻"
+                        },
+                        "选择大象号C":{
+                            "expected": "潮新闻"
+                        },
+                        "点击作品01C":{
+                            "expected": "潮新闻"
+                        },
+                        "图文滑动x1C":{
+                            "expected": "潮新闻"
+                        },
+                        "点击作品01ifC":{
+                            "expected": "潮新闻"
+                        },
+                        "图文滑动x1ifC":{
                             "expected": "潮新闻"
                         },
                         "SelectDxh": {
@@ -7570,7 +7727,7 @@
                 {
                     "name": "yes",
                     "option":[
-                        "端口号"
+                        "运行设置"
                     ],
                     "pipeline_override": {
                     }
@@ -7610,6 +7767,42 @@
                             "next": [
                                 "观看微剧开始"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "是否评论任务": {
+            "description": "是否评论",
+            "cases": [
+                {
+                    "name": "评论",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "跳过评论",
+                    "pipeline_override": {
+                        "跳过评论":{
+                            "enabled": true
+                        },
+                        "图文评论点击输入框":{
+                            "enabled": false
+                        },
+                        "点击作品01":{
+                            "post_delay": 1200
+                        },
+                        "跳过评论re":{
+                            "enabled": true
+                        },
+                        "图文评论点击输入框re":{
+                            "enabled": false
+                        },
+                        "图文评论点击输入框ifre":{
+                            "enabled": false
+                        },
+                        "点击作品01re":{
+                            "post_delay": 1200
                         }
                     }
                 }

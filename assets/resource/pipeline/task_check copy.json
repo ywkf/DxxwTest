@@ -130,7 +130,8 @@
         "post_delay": 500,
         "timeout": 10000,
         "on_error":[
-            "图文评论点击输入框ifre"
+            "图文评论点击输入框ifre",
+            "跳过评论re"
         ],
         "next": [
             "完成浏览内容积分+3re"
@@ -144,7 +145,8 @@
             "完成浏览内容积分"
         ],
         "next":[
-            "图文评论点击输入框re"
+            "图文评论点击输入框re",
+            "跳过评论re"
         ]
     },
     "图文评论点击输入框re": {
@@ -176,16 +178,28 @@
         ]
     },
     "点击大象新语re": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
         "action": "Click",
+        "target": [
+            42,
+            476,
+            1,
+            1
+        ],
         "next": [
             "点击大象新语评论re"
         ]
     },
     "点击大象新语评论re": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
         "action": "Click",
         "target": [
             42,
@@ -213,6 +227,7 @@
     "点击发表评论re": {
         "recognition": "TemplateMatch",
         "template": "发表.png",
+        "pre_delay": 30000,
         "action": "Click",
         "post_delay": 800,
         "next": [
@@ -229,6 +244,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
+        "post_delay": 12000,
         "timeout": 6000,
         "on_error":[
             "重置点赞re"
@@ -243,7 +259,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 12000,
         "next":[
             "重置点赞re"
         ]
@@ -258,7 +274,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 10000,
+        "post_delay": 12000,
         "next": [
             "点击大象新语re",
             "重置点赞re"
@@ -270,7 +286,7 @@
             "停一停",
             "好评论需要慢慢酝酿"
         ],
-        "post_delay": 60000,
+        "post_delay": 45000,
         "next": [
             "图文评论点击输入框re",
             "重置点赞re"
@@ -281,6 +297,7 @@
         "expected": [
             "换篇再聊"
         ],
+        "post_delay": 45000,
         "next": [
             "重置点赞re"
         ]
@@ -314,20 +331,32 @@
         ]
     },
     "点击大象新语ifre": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
         "action": "Click",
+        "target": [
+            42,
+            476,
+            1,
+            1
+        ],
         "next": [
             "点击大象新语评论ifre"
         ]
     },
     "点击大象新语评论ifre": {
-        "recognition": "TemplateMatch",
-        "template": "大象新语.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
         "action": "Click",
         "target": [
             42,
-            473,
+            476,
             1,
             1
         ],
@@ -336,8 +365,12 @@
         ]
     },
     "点击发表评论ifre": {
-        "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
+        "pre_delay": 30000,
         "action": "Click",
         "post_delay": 800,
         "next": [
@@ -354,6 +387,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
+        "post_delay": 12000,
         "timeout": 6000,
         "on_error":[
             "每日任务完成re"
@@ -368,7 +402,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 12000,
         "next":[
             "重置点赞re"
         ]
@@ -383,7 +417,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 10000,
+        "post_delay": 12000,
         "next": [
             "点击大象新语ifre",
             "重置点赞re"
@@ -406,11 +440,20 @@
         "expected": [
             "换篇再聊"
         ],
+        "post_delay": 45000,
         "next": [
             "重置点赞re"
         ]
     },
+    "跳过评论re": {
+        "enabled": false,
+        "post_delay": 800,
+        "next": [
+            "作品完成返回01re"
+        ]
+    },
     "重置点赞re": {
+        "enabled": true,
         "post_delay": 800,
         "next": [
             "作品完成返回01re"

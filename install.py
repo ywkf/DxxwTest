@@ -65,6 +65,10 @@ def install_chores():
         install_path,
     )
     shutil.copy2(
+        working_dir / "视频循环处理.bat",
+        install_path,
+    )
+    shutil.copy2(
         working_dir / "README.md",
         install_path,
     )

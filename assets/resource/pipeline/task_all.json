@@ -9,7 +9,6 @@
         ]
     },
 
-
     "输入法检测开启": {
         "enabled": true,
         "action": "Command",
@@ -30,8 +29,6 @@
             "领取积分开始"
         ]
     },
-
-
     "输入法进入首页": {
         "enabled": true,
         "recognition": "TemplateMatch",
@@ -228,6 +225,7 @@
         "focus": {
             "succeeded": "签到已完成"
         },
+        "post_delay": 1000,
         "next": [
             "签到后滑动"
         ]
@@ -371,6 +369,7 @@
             44
         ],
         "action": "Click",
+        "post_delay": 2000,
         "next":[
             "热播剧集",
             "[JumpBack]热播剧集滑动"
@@ -435,7 +434,23 @@
         "order_by": "Vertical",
         "action": "Click",
         "next":[
-            "点击剧集"
+            "点击剧集",
+            "点击热度"
+        ]
+    },
+    "点击热度":{
+        "recognition": "OCR",
+        "expected":[
+            "\\d+万热度"
+        ],
+        "action": "Click",
+        "timeout": 10000,
+        "on_error":[
+            "微剧滑动"
+        ],
+        "next":[
+            "识别播放微剧",
+            "识别微剧广告"
         ]
     },
     "点击剧集":{
@@ -449,7 +464,8 @@
             "微剧滑动"
         ],
         "next":[
-            "识别播放微剧"
+            "识别播放微剧",
+            "识别微剧广告"
         ]
     },
     "识别播放微剧":{
@@ -460,6 +476,31 @@
         ],
         "post_delay": 3000,
         "max_hit":5,
+        "next":[
+            "微剧滑动"
+        ]
+    },
+    "识别微剧广告":{
+        "recognition": "OCR",
+        "expected":[
+            "广告",
+            "厂告"
+        ],
+        "pre_delay": 15000,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1100,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "duration": 500,
         "next":[
             "微剧滑动"
         ]
@@ -505,7 +546,7 @@
     "微剧选集2":{
         "recognition": "OCR",
         "expected":[
-            "1-30"
+            "^1-"
         ],
         "order_by": "Vertical",
         "action": "Click",
@@ -689,6 +730,7 @@
         "roi": [2, 215, 718, 604],
         "order_by": "Vertical",
         "action": "Click",
+        "pre_delay": 500,
         "post_delay": 500,
         "timeout": 10000,
         "on_error":[
@@ -697,7 +739,8 @@
         "next": [
             "图文点赞",
             "图文分享",
-            "图文评论点击输入框"
+            "图文评论点击输入框",
+            "跳过评论"
         ]
     },
     "返回点击作品":{
@@ -734,7 +777,8 @@
         "max_hit":6,
         "next": [
             "图文分享",
-            "图文评论点击输入框"
+            "图文评论点击输入框",
+            "跳过评论"
         ]
     },
     "图文分享": {
@@ -769,7 +813,8 @@
         ],
         "post_delay": 2000,
         "next":[
-            "图文评论点击输入框"
+            "图文评论点击输入框",
+            "跳过评论"
         ]
     },
     "图文分享到QQ": {
@@ -781,7 +826,22 @@
         "post_delay": 2000,
         "next": [
             "图文分享到QQ成功",
-            "图文评论点击输入框"
+            "图文评论点击输入框",
+            "图文分享到QQRe",
+            "跳过评论"
+        ]
+    },
+    "图文分享到QQRe": {
+        "recognition": "OCR",
+        "expected": "QQ",
+        "roi": [1, 387, 719, 893],
+        "pre_delay": 1000,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "图文分享到QQ成功",
+            "图文评论点击输入框",
+            "跳过评论"
         ]
     },
     "图文分享到QQ成功": {
@@ -792,7 +852,8 @@
         ],
         "post_delay": 500,
         "next": [
-            "图文评论点击输入框"
+            "图文评论点击输入框",
+            "跳过评论"
         ]
     },
     "图文评论点击输入框": {
@@ -918,6 +979,7 @@
         "template": "发表.png",
         "action": "Click",
         "post_delay": 500,
+        "pre_delay":32000,
         "timeout": 10000,
         "on_error":[
             "作品完成返回01if"
@@ -946,7 +1008,8 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "max_hit":11,
+        "post_delay": 10000,
+        "max_hit":10,
         "next":[
             "重置点赞"
         ]
@@ -962,7 +1025,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 10000,
+        "post_delay": 30000,
         "next": [
             "点击大象新语",
             "重置点赞"
@@ -974,7 +1037,7 @@
             "停一停",
             "好评论需要慢慢酝酿"
         ],
-        "post_delay": 42000,
+        "post_delay": 60000,
         "next": [
             "图文评论点击输入框",
             "重置点赞"
@@ -985,11 +1048,41 @@
         "expected": [
             "换篇再聊"
         ],
+        "post_delay": 45000,
         "next": [
             "重置点赞"
         ]
     },
     
+
+    "跳过评论": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template": [
+            "like0g.png",
+            "like1g.png",
+            "n点赞g.png",
+            "n点赞1g.png"
+        ],
+        "roi": [
+            405,
+            1188,
+            310,
+            75
+        ],
+        "action": "Click",
+        "target": [
+            652,
+            1210,
+            38,
+            42
+        ],
+        "green_mask": true,
+        "post_delay": 800,
+        "next": [
+            "作品完成返回01"
+        ]
+    },
     "重置点赞": {
         "action": "Click",
         "target": [
