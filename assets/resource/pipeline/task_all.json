@@ -247,8 +247,24 @@
         "post_delay": 1000,
         "next": [
             "允许大象新闻",
-            "Back"
+            "[JumpBack]签到后滑动re"
         ]
+    },
+    "签到后滑动re": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000
     },
     "允许大象新闻": {
         "recognition": "OCR",
@@ -435,8 +451,69 @@
         "action": "Click",
         "next":[
             "点击剧集",
-            "点击热度"
+            "点击热度",
+            "[JumpBack]观看时长榜单"
         ]
+    },
+    "观看时长榜单":{
+        "recognition": "OCR",
+        "expected":[
+            "观看时长榜单"
+        ],
+        "pre_delay": 500,
+        "action": "Key",
+        "key": 4,
+        "post_delay": 500,
+        "next":[
+            "退出榜单滑动"
+        ]
+    },
+    "退出榜单滑动":{
+        "recognition": "OCR",
+        "expected":[
+            "热播剧集"
+        ],
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 500,
+        "next":[
+            "退出榜单热播剧集"
+        ]
+    },
+    "退出榜单热播剧集":{
+        "recognition": "OCR",
+        "expected":[
+            "热播剧集"
+        ],
+        "next":[
+            "退出榜单点击更多"
+        ]
+    },
+    "退出榜单点击更多":{
+        "recognition": "OCR",
+        "expected":[
+            "更多"
+        ],
+        "roi": "退出榜单热播剧集",
+        "roi_offset": [
+            0,
+            0,
+            510,
+            0
+        ],
+        "order_by": "Vertical",
+        "action": "Click"
     },
     "点击热度":{
         "recognition": "OCR",
@@ -826,6 +903,7 @@
         "post_delay": 2000,
         "next": [
             "图文分享到QQ成功",
+            "图文分享到QQ成功2",
             "图文评论点击输入框",
             "图文分享到QQRe",
             "跳过评论"
@@ -840,6 +918,7 @@
         "post_delay": 2000,
         "next": [
             "图文分享到QQ成功",
+            "图文分享到QQ成功2",
             "图文评论点击输入框",
             "跳过评论"
         ]
@@ -850,6 +929,19 @@
             "完成分享积分+8",
             "分享操作正在后台进行"
         ],
+        "post_delay": 500,
+        "next": [
+            "图文评论点击输入框",
+            "跳过评论"
+        ]
+    },
+    "图文分享到QQ成功2": {
+        "recognition": "OCR",
+        "expected": [
+            "取消"
+        ],
+        "roi" : [1,1087,718,193],
+        "action": "Click",
         "post_delay": 500,
         "next": [
             "图文评论点击输入框",
@@ -932,16 +1024,30 @@
             "大象智语",
             "大象新语"
         ],
-        "roi": [
-            0,
-            650,
-            720,
-            80
-        ],
+        "roi" : [1,592,718,142],
         "pre_delay": 500,
         "action": "Click",
         "next": [
-            "点击大象新语评论"
+            "点击大象新语评论r"
+        ]
+    },
+    "点击大象新语评论r":{
+        "recognition": "OCR",
+        "expected":[
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": "点击大象新语",
+        "roi_offset": [
+            -16,
+            -301,
+            546,
+            120
+        ],
+        "action": "Click",
+        "next":[
+            "点击发表评论",
+            "[JumpBack]重新点击大象新语"
         ]
     },
     "点击大象新语评论": {
@@ -959,6 +1065,30 @@
         ],
         "next": [
             "点击发表评论",
+            "[JumpBack]重新点击大象新语"
+        ]
+    },
+    "test1": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
+        "next": [
+            "点击发表评论",
+            "[JumpBack]重新点击大象新语"
+        ]
+    },
+    "重新点击大象新语": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语",
+            "大象新语"
+        ],
+        "roi" : [1,592,718,142],
+        "pre_delay": 500,
+        "action": "Click",
+        "next": [
             "重新点击大象心语评论"
         ]
     },
@@ -968,11 +1098,14 @@
             "[一-龥]",
             "[\u4e00-\u9fa5]"
         ],
-        "roi": [21, 385, 574, 119],
-        "action": "Click",
-        "next":[
-            "点击发表评论"
-        ]
+        "roi": "重新点击大象新语",
+        "roi_offset": [
+            -16,
+            -301,
+            546,
+            120
+        ],
+        "action": "Click"
     },
     "点击发表评论": {
         "recognition": "TemplateMatch",
@@ -1109,7 +1242,7 @@
         "expected":[
             "河南交通广播"
         ],
-        "roi": [3, 213, 717, 1067],
+        "roi": [3, 213, 500, 1067],
         "order_by": "Vertical",
         "index": 1,
         "action": "Swipe",
@@ -1136,7 +1269,7 @@
         "expected":[
             "河南交通广播"
         ],
-        "roi": [3, 213, 717, 1067],
+        "roi": [3, 213, 500, 1067],
         "order_by": "Vertical",
         "index": 1,
         "action": "Swipe",

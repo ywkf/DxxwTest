@@ -254,7 +254,34 @@
                     "repeatable": true,
                     "repeat_count": 1,
                     "doc": "返回动作"
-                }
+                },
+                {
+                    "name": "圈子点赞收藏(自定义)",
+                    "entry": "CCircle",
+                    "description": "点击高级设置输入圈子名称（测试）",
+                    "repeatable": true,
+                    "repeat_count": 1,
+                    "option": [
+                        "自定义圈子",
+                        "是否评论lite",
+                        "何时结束",
+                        "每日分享任务",
+                        "圈子完成返回"
+                    ]
+                },
+                {
+                    "name": "圈子 发布作品(自定义)",
+                    "entry": "CirclePublish",
+                    "description": "在主页启动，发布视频作品到圈子\n需求准备素材至模拟器共享文件夹-“圈子作品1”文件夹，以及XF语录“Tag1”、“标题1”\n每次准备好素材后发布需要打开图库加载一次，或者第一个发布任务打开加载素材选项\n编号顺序为九宫格左上为1号",
+                    "repeatable": true,
+                    "repeat_count": 1,
+                    "option": [
+                        "客户端版本(发布)",
+                        "自定义发布圈子",
+                        "发布作品编号",
+                        "加载素材"   
+                    ]
+                },
 
                 cp MFAAvalonia/MFAAvalonia.exe MFAAvalonia/MFAUpdater.exe MFAAvalonia/MFAUpdater.runtimeconfig.json MFAAvalonia/av_libglesv2.dll MFAAvalonia/libHarfBuzzSharp.dll MFAAvalonia/libonigwrap.dll MFAAvalonia/libSkiaSharp.dll MFAAvalonia/uiohook.dll install/
 

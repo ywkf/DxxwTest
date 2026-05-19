@@ -555,6 +555,24 @@
             "PublishXF01"
         ]
     },
+
+
+    "自定义输入标题":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "输入标题",
+            "输人标题"
+        ],
+        "pre_delay": 500,
+        "action": "InputText",
+        "input_text": "今日动态",
+        "next": [
+            "XFBack01"
+        ]
+    },
+
+
     "PublishXF01": {
         "enabled": true,
         "recognition": "TemplateMatch",

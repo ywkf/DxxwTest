@@ -1,6 +1,6 @@
 {
     "name": "DxxwTest",
-    "version": "0.2.66",
+    "version": "0.2.67",
     "url": "https://github.com/ywkf/DxxwTest",
     "custom_title": "Dxxw",
     "default_controller": "adb",
@@ -32,9 +32,9 @@
             ]
         },
         {
-            "name": "每日任务(beta)",
+            "name": "每日任务",
             "entry": "TaskAll",
-            "description": "测试版本，最好在每日未浏览作品时执行",
+            "description": "最好在每日未浏览作品时执行",
             "option": [
                 "账号选择",
                 "签到",
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "name": "圈子点赞收藏 lite",
+            "name": "圈子点赞",
             "entry": "CCircle",
             "description": "点赞收藏圈子内容，默认评论列表账号\n选择1天前，会在1天前的内容后停止\n评论达到每日上限后不再评论\n新版客户端圈子选择1-5",
             "repeatable": true,
@@ -66,42 +66,15 @@
                 "圈子完成返回"
             ]
         },
+
         {
-            "name": "圈子点赞收藏(自定义)",
-            "entry": "CCircle",
-            "description": "点击高级设置输入圈子名称（测试）",
-            "repeatable": true,
-            "repeat_count": 1,
-            "option": [
-                "自定义圈子",
-                "是否评论lite",
-                "何时结束",
-                "每日分享任务",
-                "圈子完成返回"
-            ]
-        },
-        {
-            "name": "圈子 发布作品",
+            "name": "发布作品",
             "entry": "CirclePublish",
             "description": "在主页启动，发布视频作品到圈子\n需求准备素材至模拟器共享文件夹-“圈子作品1”文件夹，以及XF语录“Tag1”、“标题1”\n每次准备好素材后发布需要打开图库加载一次，或者第一个发布任务打开加载素材选项\n编号顺序为九宫格左上为1号",
-            "repeatable": true,
-            "repeat_count": 1,
             "option": [
                 "客户端版本(发布)",
                 "圈子选择(发布)",
-                "发布作品编号",
-                "加载素材"   
-            ]
-        },
-        {
-            "name": "圈子 发布作品(自定义)",
-            "entry": "CirclePublish",
-            "description": "在主页启动，发布视频作品到圈子\n需求准备素材至模拟器共享文件夹-“圈子作品1”文件夹，以及XF语录“Tag1”、“标题1”\n每次准备好素材后发布需要打开图库加载一次，或者第一个发布任务打开加载素材选项\n编号顺序为九宫格左上为1号",
-            "repeatable": true,
-            "repeat_count": 1,
-            "option": [
-                "客户端版本(发布)",
-                "自定义发布圈子",
+                "发布标题",
                 "发布作品编号",
                 "加载素材"   
             ]
@@ -112,7 +85,7 @@
             "description": "点赞收到的评论"
         },
         {
-            "name": "回赞与收藏(beta)",
+            "name": "回赞账号",
             "entry": "RepkyLike",
             "description": "进入对应的账号页面再启动或进入高级设置输入已关注账号名称，点赞收藏账号内容\n也可以回赞消息和新粉丝",
             "option": [
@@ -270,17 +243,6 @@
             "description": "客户端版本v5.6.0以上为新版",
             "cases": [
                 {
-                    "name": "旧版",
-                    "option":[
-                        "圈子选择"
-                    ],
-                    "pipeline_override": {
-                        "新版圈子识别":{
-                            "enabled": false
-                        }
-                    }
-                },
-                {
                     "name": "新版",
                     "option": [
                         "新版圈子选择"
@@ -326,20 +288,23 @@
                             "enabled": false
                         }
                     }
+                },
+                {
+                    "name": "旧版",
+                    "option":[
+                        "圈子选择"
+                    ],
+                    "pipeline_override": {
+                        "新版圈子识别":{
+                            "enabled": false
+                        }
+                    }
                 }
             ]
         },
         "客户端版本(发布)":{
             "description": "客户端版本v5.6.0以上为新版",
             "cases": [
-                {
-                    "name": "旧版",
-                    "option":[
-                        "作品相册"
-                    ],
-                    "pipeline_override": {
-                    }
-                },
                 {
                     "name": "新版",
                     "option": [
@@ -355,6 +320,14 @@
                         "选择圈子类型":{
                             "enabled": true
                         }
+                    }
+                },
+                {
+                    "name": "旧版",
+                    "option":[
+                        "作品相册"
+                    ],
+                    "pipeline_override": {
                     }
                 }
             ]
@@ -2888,7 +2861,7 @@
             ]
         },
         "启动后": {
-            "description": "启动后操作，默认账号已登录\n进入startup.json更改账号密码后可实现自动登录，若客户端保持登录则忽略",
+            "description": "启动后操作，默认账号已登录\n运行根目录UpdateSetting.bat文件，根据提示设置账号密码，\n或进入setting.json更改账号密码后可实现自动登录，若客户端保持登录则忽略",
             "cases": [
                 {
                     "name": "默认",
@@ -3074,7 +3047,7 @@
             ]
         },
         "加载素材": {
-            "description": "自动加载需要bat脚本和对应素材文件，并修改路径",
+            "description": "只需要第一个发布任务加载一次，自动加载需要bat脚本和对应素材文件，并修改路径",
             "cases": [
                 {
                     "name": "否",
@@ -3100,6 +3073,45 @@
                     "pipeline_override": {}
                 }
             ]
+        },
+        "发布标题": {
+            "description": "默认使用XF语录，需要自行添加",
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                    }
+                },
+                {
+                    "name": "自定义",
+                    "option":[
+                        "作品名称"
+                    ],
+                    "pipeline_override": {
+                    }
+                }
+            ]
+        },
+        "作品名称": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "作品名称",
+                    "label": "$作品名称",
+                    "default": "今日动态",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "自定义输入标题": {
+                    "input_text": "{作品名称}"
+                },
+                "InputTitle": {
+                    "next": [
+                        "自定义输入标题"
+                    ]
+                }
+            }
         },
         "作品相册": {
             "cases": [
@@ -3957,6 +3969,39 @@
                             "expected": [
                                 "七七四十九吖",
                                 "七七四十九叶"
+                            ]
+                        },
+                        "检测当天视频":{
+                            "next": [
+                                "特定账号点赞完成返回"
+                            ]
+                        },
+                        "检测当天完成":{
+                            "next": [
+                                "特定账号点赞完成返回"
+                            ]
+                        },
+                        "视频二次完成返回":{
+                            "next": [
+                                "特定账号点赞完成返回"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "慢慢来比较快 ",
+                    "pipeline_override": {
+                        "检测账号是否关注":{
+                            "expected": [
+                                "慢慢来比较快"
+                            ],
+                            "next": [
+                                "点击特定账号"
+                            ]
+                        },
+                        "点击特定账号":{
+                            "expected": [
+                                "慢慢来比较快"
                             ]
                         },
                         "检测当天视频":{
@@ -5397,8 +5442,6 @@
         },
         "自定义浏览时间": {
             "type": "input",
-            "label": "自定义浏览时间",
-            "description": "输入自定义浏览时间单位毫秒，例：填入3000为浏览3s",
             "inputs": [
                 {
                     "name": "浏览时间",
@@ -5414,15 +5457,12 @@
                 }
             }
         },
-        "账号登录": {
+        "账号设置": {
             "type": "input",
-            "label": "账号登录",
-            "description": "输入账号密码登录",
             "inputs": [
                 {
                     "name": "账号",
                     "label": "$账号",
-                    "description": "账号",
                     "default": "11111111111",
                     "pipeline_type": "string",
                     "verify": "^1[3-9]\\d{9}$"
@@ -5430,27 +5470,19 @@
                 {
                     "name": "密码",
                     "label": "$密码",
-                    "description": "密码",
                     "default": "12345678",
                     "pipeline_type": "string"
                 }
             ],
             "pipeline_override": {
                 "启动后输入手机号": {
-                    "input_text": [
-                        "{账号}"
-                    ],
+                    "input_text": "{账号}",
                     "focus": {
                         "succeeded": "[color:green]{账号} 登录中...[/color]"
                     }
                 },
                 "启动后输入密码": {
-                    "input_text": [
-                        "{密码}"
-                    ],
-                    "focus": {
-                        "succeeded": "[color:green]{账号} 登录中...[/color]"
-                    }
+                    "input_text": "{密码}"
                 }
             }
         },
@@ -5540,13 +5572,11 @@
         },
         "自定义账号": {
             "type": "input",
-            "label": "自定义账号",
-            "description": "输入账号名称（已关注）",
             "inputs": [
                 {
                     "name": "账号名称",
                     "label": "$账号名称",
-                    "description": "账号名称",
+                    "description": "输入账号名称（已关注）",
                     "default": "河南信息广播",
                     "pipeline_type": "string"
                 }
@@ -5568,15 +5598,102 @@
                 }
             }
         },
+        "自定义账号每日任务": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "账号名称",
+                    "label": "$账号名称",
+                    "description": "输入账号名称（已关注）",
+                    "default": "河南交通广播",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "选择大象号":{
+                    "expected": "{账号名称}"
+                },
+                "点击作品01":{
+                    "expected": "{账号名称}"
+                },
+                "图文滑动x1":{
+                    "expected": "{账号名称}"
+                },
+                "点击作品01if":{
+                    "expected": "{账号名称}"
+                },
+                "图文滑动x1if":{
+                    "expected": "{账号名称}"
+                },
+                "选择大象号C":{
+                    "expected": "{账号名称}"
+                },
+                "点击作品01C":{
+                    "expected": "{账号名称}"
+                },
+                "图文滑动x1C":{
+                    "expected": "{账号名称}"
+                },
+                "点击作品01ifC":{
+                    "expected": "{账号名称}"
+                },
+                "图文滑动x1ifC":{
+                    "expected": "{账号名称}"
+                },
+                "SelectDxh": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorSelectDxh": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorSelectDxhLive": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh001": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh002": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh003": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh004": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh005": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh006": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh007": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh008": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh009": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh0010": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh0011": {
+                    "expected": "{账号名称}"
+                },
+                "ErrorImagetxtSelectDxh0012": {
+                    "expected": "{账号名称}"
+                }
+            }
+        },
         "自定义圈子": {
             "type": "input",
-            "label": "自定义圈子",
-            "description": "输入圈子名称（热榜中）",
             "inputs": [
                 {
                     "name": "圈子名称",
                     "label": "$圈子名称",
-                    "description": "圈子名称",
+                    "description": "输入圈子名称（热榜中）",
                     "default": "无线“象”往",
                     "pipeline_type": "string"
                 }
@@ -5605,13 +5722,11 @@
         },
         "自定义发布圈子": {
             "type": "input",
-            "label": "自定义发布圈子",
-            "description": "输入圈子名称（热榜中）",
             "inputs": [
                 {
-                    "name": "发布圈子名称",
-                    "label": "$发布圈子名称",
-                    "description": "发布圈子名称",
+                    "name": "圈子名称",
+                    "label": "$圈子名称",
+                    "description": "输入圈子名称（热榜中）",
                     "default": "无线“象”往",
                     "pipeline_type": "string"
                 }
@@ -5624,9 +5739,9 @@
                 },
                 "PublishClickCircle": {
                     "expected": [
-                        "{发布圈子名称}"
+                        "{圈子名称}"
                     ],
-                    "succeeded": "已选择 {发布圈子名称} 圈子"
+                    "succeeded": "已选择 {圈子名称} 圈子"
                 }
             }
         },
@@ -6511,6 +6626,14 @@
                             }
                         }
                     }
+                },
+                {
+                    "name": "自定义",
+                    "option":[
+                        "自定义圈子"
+                    ],
+                    "pipeline_override": {
+                    }
                 }
             ]
         },
@@ -6718,6 +6841,14 @@
                                 "succeeded": "[color:green]已选择 象友汇 圈子[/color]"
                             }
                         }
+                    }
+                },
+                {
+                    "name": "自定义",
+                    "option":[
+                        "自定义发布圈子"
+                    ],
+                    "pipeline_override": {
                     }
                 }
             ]
@@ -7719,6 +7850,14 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "自定义",
+                    "option":[
+                        "自定义账号每日任务"
+                    ],
+                    "pipeline_override": {
+                    }
                 }
             ]
         },
@@ -7765,7 +7904,8 @@
                     "pipeline_override": {
                         "领取积分开始":{
                             "next": [
-                                "观看微剧开始"
+                                "观看微剧开始",
+                                "[JumpBack]Back"
                             ]
                         }
                     }
