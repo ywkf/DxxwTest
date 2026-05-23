@@ -26,10 +26,12 @@
             "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
         },
         "next":[
+            "领取积分开始C",
             "评论任务开始"
         ]
     },
     "评论任务开始": {
+        "enabled": false,
         "recognition": "TemplateMatch",
         "template": [
             "wodes.png",
@@ -49,6 +51,353 @@
             "[JumpBack]Back"
         ]
     },
+
+
+    "领取积分开始C": {
+        "enabled": true,
+        "next": [
+            "领取积分进入我的C",
+            "[JumpBack]Back"
+        ]
+    },
+    "领取积分进入我的C": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "wodes.png",
+            "wodes_.png"
+        ],
+        "roi": [
+            25,
+            1162,
+            679,
+            98
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 1000,
+        "next": [
+            "点击我的积分C",
+            "[JumpBack]Back"
+        ]
+    },
+    "点击我的积分C": {
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "我的积分滑动C"
+        ]
+    },
+    "我的积分滑动C": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000,
+        "next": [
+            "评论任务C",
+            "[JumpBack]签到后滑动reC"
+        ]
+    },
+    "签到后滑动reC": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000
+    },
+    "评论任务C": {
+        "recognition": "OCR",
+        "expected": "评论",
+        "roi" : [1,137,421,1143],
+        "next": [
+            "评论已完成",
+            "评论未完成C0",
+            "评论未完成C1",
+            "评论未完成C2",
+            "评论未完成C3",
+            "评论未完成C4",
+            "评论未完成C5",
+            "评论未完成C6",
+            "评论未完成C7",
+            "评论未完成C8",
+            "评论未完成C9",
+            "评论未完成C10"
+        ]
+    },
+    "评论已完成": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "focus": {
+            "succeeded": "[color:blue]评论已完成[/color]"
+        },
+        "next": [
+            "每日任务完成C"
+        ]
+    },
+    "评论未完成C0": {
+        "recognition": "OCR",
+        "expected": [
+            "0/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C0"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 0/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C1": {
+        "recognition": "OCR",
+        "expected": [
+            "1/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C1"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 1/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C2": {
+        "recognition": "OCR",
+        "expected": [
+            "2/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C2"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 2/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C3": {
+        "recognition": "OCR",
+        "expected": [
+            "3/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C3"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 3/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C4": {
+        "recognition": "OCR",
+        "expected": [
+            "4/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C4"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 4/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C5": {
+        "recognition": "OCR",
+        "expected": [
+            "5/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C5"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 5/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C6": {
+        "recognition": "OCR",
+        "expected": [
+            "6/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C6"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 6/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C7": {
+        "recognition": "OCR",
+        "expected": [
+            "7/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C7"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 7/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C8": {
+        "recognition": "OCR",
+        "expected": [
+            "8/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C8"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 8/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C9": {
+        "recognition": "OCR",
+        "expected": [
+            "9/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C9"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 9/10 [/color]"
+        },
+        "next": [
+            "点击关注列表C",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成C10": {
+        "recognition": "OCR",
+        "expected": [
+            "10/10"
+        ],
+        "roi": "评论任务C",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"C": "发送成功C10"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 10/10 [/color]"
+        },
+        "next": [
+            "每日任务完成C"
+        ]
+    },
+    
+
+
+
+
+
+
     "点击关注列表C": {
         "recognition": "OCR",
         "expected": "关注",
@@ -319,7 +668,7 @@
             "作品完成返回01ifC"
         ],
         "next": [
-            "发送成功C",
+            "[Anchor]C",
             "评论重复内容提示C",
             "评论频率过高提示C",
             "换一篇提示C",
@@ -335,19 +684,143 @@
             "Stop"
         ]
     },
-    "发送成功C":{
+
+
+
+
+    "发送成功C0": {
         "recognition": "OCR",
-        "expected":[
+        "expected": [
             "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
         "post_delay": 10000,
-        "max_hit":10,
-        "next":[
+        "max_hit": 10,
+        "next": [
             "重置点赞C"
         ]
     },
+    "发送成功C1": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 9,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C2": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 8,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C3": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 7,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C4": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 6,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C5": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 5,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C6": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 4,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C7": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 3,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C8": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 2,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+    "发送成功C9": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功",
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 10000,
+        "max_hit": 1,
+        "next": [
+            "重置点赞C"
+        ]
+    },
+
+
+
 
     "评论重复内容提示C": {
         "recognition": "OCR",

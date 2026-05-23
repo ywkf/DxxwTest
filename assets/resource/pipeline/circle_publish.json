@@ -24,6 +24,15 @@
         "package": "com.android.gallery3d",
         "post_delay": 3000,
         "next": [
+            "LoadPictureEnd"
+        ]
+    },
+    "LoadPictureEnd": {
+        "enabled": true,
+        "action": "StopApp",
+        "package": "com.android.gallery3d",
+        "post_delay": 1000,
+        "next": [
             "LoadDxxw"
         ]
     },
@@ -257,7 +266,7 @@
         "expected":[
             "下一步"
         ],
-        "roi": [359, 57, 361, 70],
+        "roi" : [1,50,719,100],
         "pre_delay": 500,
         "action": "Click",
         "next":[
@@ -267,10 +276,12 @@
     "点击下一步2":{
         "recognition": "OCR",
         "expected":[
-            "下一步"
+            "下一步",
+            "一步",
+            "取消"
         ],
-        "roi": [359, 57, 361, 70],
-        "pre_delay": 500,
+        "roi" : [1,50,719,100],
+        "pre_delay": 1000,
         "action": "Click",
         "next":[
             "InputTitle"
@@ -685,6 +696,7 @@
         ],
         "pre_delay": 800,
         "action": "Click",
+        "post_delay": 800,
         "next": [
             "选择圈子类型",
             "PublishClickCircle",
@@ -803,11 +815,62 @@
         "enabled": true,
         "recognition": "OCR",
         "expected":[
-            "AI生成"
+            "AI生成",
+            "添加自主声明"
         ],
-        "roi": [1, 614, 237, 666],
+        "roi" : [1,600,250,666],
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
         "next":[
-            "启用AI生成开关"
+            "启用AI生成开关",
+            "添加自主声明选项"
+        ]
+    },
+    "添加自主声明":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "添加自主声明"
+        ],
+        "roi" : [1,600,250,666],
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
+        "next":[
+            "添加自主声明选项"
+        ]
+    },
+    "添加自主声明选项":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "含AI生成内容",
+            "含AI生成",
+            "深度合成内容"
+        ],
+        "roi" : [1,352,719,928],
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
+        "next":[
+            "添加自主声明完成"
+        ]
+    },
+    
+    "添加自主声明完成":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "完成"
+        ],
+        "roi" : [1,256,719,411],
+        "pre_delay": 1000,
+        "action": "Click",
+        "post_delay": 1000,
+        "next":[
+            "PClickPublish",
+            "[JumpBack]PublishSwipeUp"
         ]
     },
     "启用AI生成开关":{
