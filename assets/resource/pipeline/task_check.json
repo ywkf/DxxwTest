@@ -182,7 +182,7 @@
             "start": "[color:blue]评论未完成，前去完成[/color]"
         },
         "next": [
-            "每日任务开始re",
+            "TaskAllComment",
             "[JumpBack]Back"
         ]
     },

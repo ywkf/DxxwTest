@@ -3,12 +3,9 @@ chcp 65001 >nul
 setlocal enabledelayedexpansion
 
 :: =============== 设置所有文件夹路径 ===============
-set "folder1=D:\edge download\视频批量剪辑大师\保存视频\圈子素材"			:: 源1	
-set "folder2=E:\Richard\Documents\MuMu共享文件夹\圈子作品1"				:: 输出1	
+set "folder1=D:\edge download\圈子素材"			:: 源1	
+set "folder2=E:\用户\Documents\MuMu共享文件夹\Movies"				:: 输出1	
 set "folder3=%folder1%\已处理视频"										:: 备份1	
-set "folder4=D:\edge download\视频批量剪辑大师\保存视频\舒压首选，柔和笛子伴奏+鸟鸣虫叫，简直不要太好听"				:: 源2
-set "folder5=E:\Richard\Documents\MuMu共享文件夹\圈子作品2"				:: 输出2	
-set "folder4_backup=%folder4%\已处理视频"								:: 备份2	
 
 :: =============== 第一部分：处理文件夹1的10个视频 ===============
 

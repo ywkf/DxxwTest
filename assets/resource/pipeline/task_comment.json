@@ -26,29 +26,7 @@
             "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
         },
         "next":[
-            "领取积分开始C",
-            "评论任务开始"
-        ]
-    },
-    "评论任务开始": {
-        "enabled": false,
-        "recognition": "TemplateMatch",
-        "template": [
-            "wodes.png",
-            "wodes_.png"
-        ],
-        "roi": [
-            25,
-            1162,
-            679,
-            98
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "post_delay": 500,
-        "next": [
-            "点击关注列表C",
-            "[JumpBack]Back"
+            "领取积分开始C"
         ]
     },
 
@@ -194,7 +172,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C1"},
+        "anchor": {"C": "发送成功C1", "Swipe": "图文滑动次数1"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 1/10 [/color]"
         },
@@ -215,7 +193,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C2"},
+        "anchor": {"C": "发送成功C2", "Swipe": "图文滑动次数1"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 2/10 [/color]"
         },
@@ -236,7 +214,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C3"},
+        "anchor": {"C": "发送成功C3", "Swipe": "图文滑动次数2"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 3/10 [/color]"
         },
@@ -257,7 +235,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C4"},
+        "anchor": {"C": "发送成功C4", "Swipe": "图文滑动次数2"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 4/10 [/color]"
         },
@@ -278,7 +256,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C5"},
+        "anchor": {"C": "发送成功C5", "Swipe": "图文滑动次数3"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 5/10 [/color]"
         },
@@ -299,7 +277,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C6"},
+        "anchor": {"C": "发送成功C6", "Swipe": "图文滑动次数3"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 6/10 [/color]"
         },
@@ -320,7 +298,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C7"},
+        "anchor": {"C": "发送成功C7", "Swipe": "图文滑动次数4"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 7/10 [/color]"
         },
@@ -341,7 +319,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C8"},
+        "anchor": {"C": "发送成功C8", "Swipe": "图文滑动次数4"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 8/10 [/color]"
         },
@@ -362,7 +340,7 @@
             575,
             50
         ],
-        "anchor": {"C": "发送成功C9"},
+        "anchor": {"C": "发送成功C9", "Swipe": "图文滑动次数5"},
         "focus": {
             "succeeded": "[color:blue]评论已完成 9/10 [/color]"
         },
@@ -418,8 +396,8 @@
     "检查关注列表C": {
         "recognition": "OCR",
         "expected": [
-            "已关注",
-            "互相关注"
+            "^已关注$",
+            "^互相关注$"
         ],
         "post_delay": 2000,
         "next": [
@@ -506,25 +484,134 @@
         "roi": [0, 111, 720, 120],
         "action": "Click",
         "pre_wait_freezes": 200,
-        "post_delay": 500,
+        "post_delay": 1200,
         "focus": {
             "succeeded": "开始执行评论任务"
         },
         "next": [
+            "账号名称识别",
+            "点击作品01C"
+        ]
+    },
+    "账号名称识别":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "post_delay": 500,
+        "next": [
+            "[Anchor]Swipe"
+        ]
+    },
+    "图文滑动次数1":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 1,
+        "next": [
+            "图文滑动次数1",
+            "点击作品01C"
+        ]
+    },
+    "图文滑动次数2":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 2,
+        "next": [
+            "图文滑动次数2",
+            "点击作品01C"
+        ]
+    },
+    "图文滑动次数3":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 3,
+        "next": [
+            "图文滑动次数3",
+            "点击作品01C"
+        ]
+    },
+    "图文滑动次数4":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 4,
+        "next": [
+            "图文滑动次数4",
+            "点击作品01C"
+        ]
+    },
+    "图文滑动次数5":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 5,
+        "next": [
+            "图文滑动次数5",
             "点击作品01C"
         ]
     },
     "点击作品01C": {
         "recognition": "OCR",
         "expected": [
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [2, 215, 718, 604],
         "order_by": "Vertical",
         "action": "Click",
         "pre_delay": 3000,
         "post_delay": 500,
-        "timeout": 10000,
+        "timeout": 20000,
         "on_error":[
             "返回点击作品C"
         ],
@@ -536,7 +623,7 @@
         "action": "Key",
         "key": 4,
         "next":[
-            "点击作品01"
+            "点击作品01C"
         ]
     },
     "图文评论点击输入框C": {
@@ -609,39 +696,47 @@
             "输入法检测开启.Action.Succeeded": "[color:blue]已开启输入法[/color]"
         }
     },
+ 
     "点击大象新语C": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "大象智语"
         ],
-        "roi": [
-            0,
-            650,
-            720,
-            80
-        ],
+        "roi" : [1,592,718,142],
         "pre_delay": 500,
         "action": "Click",
         "next": [
-            "点击大象新语评论C"
+            "点击大象新语评论rC"
         ]
     },
-    "点击大象新语评论C": {
+    "点击大象新语评论rC":{
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": "点击大象新语C",
+        "roi_offset": [
+            -16,
+            -301,
+            546,
+            120
         ],
         "action": "Click",
-        "target": [
-            42,
-            476,
-            1,
-            1
+        "next":[
+            "发表取色0C",
+            "[JumpBack]重新点击大象新语C"
+        ]
+    },
+    "重新点击大象新语C": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语"
         ],
+        "roi" : [1,592,718,142],
+        "pre_delay": 500,
+        "action": "Click",
         "next": [
-            "点击发表评论C",
             "重新点击大象心语评论C"
         ]
     },
@@ -651,39 +746,107 @@
             "[一-龥]",
             "[\u4e00-\u9fa5]"
         ],
-        "roi": [21, 385, 574, 119],
-        "action": "Click",
+        "roi": "重新点击大象新语C",
+        "roi_offset": [
+            -16,
+            -301,
+            546,
+            120
+        ],
+        "action": "Click"
+    },
+
+
+    "发表取色0C": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语"
+        ],
+        "roi" : [1,592,718,142],
+        "next": [
+            "发表取色1C"
+        ]
+    },
+    "发表取色1C":{
+        "recognition": "ColorMatch",
+        "upper": [255, 255, 255],
+        "lower": [237, 237, 237],
+        "connected": true,
+        "roi": "发表取色0C",
+        "roi_offset": [
+            0,
+            -15,
+            600,
+            30
+        ],
         "next":[
             "点击发表评论C"
         ]
     },
     "点击发表评论C": {
-        "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "recognition": "OCR",
+        "expected":[
+            "^发表$"
+        ],
+        "roi" : [1,592,718,142],
+        "color_filter": "发表取色1C",
         "action": "Click",
-        "pre_delay": 32000,
         "post_delay": 500,
-        "timeout": 10000,
+        "timeout": 20000,
         "on_error":[
+            "再次点击发表评论C1",
+            "重置点赞C"
+        ],
+        "next": [
+            "发送成功C",
+            "评论重复内容提示C",
+            "评论频率过高提示C",
+            "换一篇提示C"
+        ]
+    },
+    "发送成功C": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功"
+        ],
+        "timeout": 20000,
+        "on_error":[
+            "再次点击发表评论C1",
             "作品完成返回01ifC"
         ],
         "next": [
-            "[Anchor]C",
-            "评论重复内容提示C",
-            "评论频率过高提示C",
-            "换一篇提示C",
-            "[JumpBack]再次点击发表评论C"
+            "[Anchor]C"
         ]
     },
-    "再次点击发表评论C": {
-        "recognition": "TemplateMatch",
-        "template": "发表.png",
-        "action": "Click",
-        "post_delay": 800,
+    "再次点击发表评论C1": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语"
+        ],
+        "roi" : [1,592,718,142],
         "next": [
-            "Stop"
+            "再次点击发表评论C2"
         ]
     },
+    "再次点击发表评论C2": {
+        "recognition": "OCR",
+        "expected":[
+            "^发表$"
+        ],
+        "roi": "再次点击发表评论C1",
+        "roi_offset": [
+            0,
+            -15,
+            600,
+            30
+        ],
+        "color_filter": "发表取色1C",
+        "action": "Click",
+        "next":[
+            "点击发表评论C"
+        ]
+    },
+
 
 
 
@@ -691,11 +854,10 @@
     "发送成功C0": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 10,
         "next": [
             "重置点赞C"
@@ -704,11 +866,10 @@
     "发送成功C1": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 9,
         "next": [
             "重置点赞C"
@@ -717,11 +878,10 @@
     "发送成功C2": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 8,
         "next": [
             "重置点赞C"
@@ -730,11 +890,10 @@
     "发送成功C3": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 7,
         "next": [
             "重置点赞C"
@@ -743,11 +902,10 @@
     "发送成功C4": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 6,
         "next": [
             "重置点赞C"
@@ -756,11 +914,10 @@
     "发送成功C5": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 5,
         "next": [
             "重置点赞C"
@@ -769,11 +926,10 @@
     "发送成功C6": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 4,
         "next": [
             "重置点赞C"
@@ -782,11 +938,10 @@
     "发送成功C7": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 3,
         "next": [
             "重置点赞C"
@@ -795,11 +950,10 @@
     "发送成功C8": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 2,
         "next": [
             "重置点赞C"
@@ -808,11 +962,10 @@
     "发送成功C9": {
         "recognition": "OCR",
         "expected": [
-            "发送成功",
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
+        "post_delay": 45000,
         "max_hit": 1,
         "next": [
             "重置点赞C"
@@ -832,9 +985,10 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 11000,
+        "post_delay": 48000,
         "next": [
             "点击大象新语C",
+            "图文评论点击输入框C",
             "重置点赞C"
         ]
     },
@@ -844,7 +998,7 @@
             "停一停",
             "好评论需要慢慢酝酿"
         ],
-        "post_delay": 45000,
+        "post_delay": 46000,
         "next": [
             "图文评论点击输入框C",
             "重置点赞C"
@@ -855,7 +1009,7 @@
         "expected": [
             "换篇再聊"
         ],
-        "post_delay": 30000,
+        "post_delay": 50000,
         "next": [
             "重置点赞C"
         ]
@@ -882,17 +1036,29 @@
         ]
     },
     "作品完成返回01C": {
+        "pre_delay": 1500,
         "action": "Key",
         "key": 4,
         "post_delay": 800,
         "next": [
-            "图文滑动x1C"
+            "图文滑动x1C",
+            "[JumpBack]作品完成返回01C重新"
         ]
+    },
+    "作品完成返回01C重新": {
+        "recognition": "OCR",
+        "expected":[
+            "^已关注$",
+            "^己关注$"
+        ],
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800
     },
     "图文滑动x1C":{
         "recognition": "OCR",
         "expected":[
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [3, 213, 717, 1067],
         "order_by": "Vertical",
@@ -909,17 +1075,29 @@
 
 
     "作品完成返回01ifC": {
+        "pre_delay": 1500,
         "action": "Key",
         "key": 4,
         "post_delay": 800,
         "next": [
-            "图文滑动x1ifC"
+            "图文滑动x1ifC",
+            "[JumpBack]作品完成返回01ifC重新"
         ]
+    },
+    "作品完成返回01ifC重新": {
+        "recognition": "OCR",
+        "expected":[
+            "^已关注$",
+            "^己关注$"
+        ],
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800
     },
     "图文滑动x1ifC":{
         "recognition": "OCR",
         "expected":[
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [3, 213, 717, 1067],
         "order_by": "Vertical",
@@ -936,7 +1114,7 @@
     "点击作品01ifC": {
         "recognition": "OCR",
         "expected": [
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [2, 215, 718, 604],
         "order_by": "Vertical",

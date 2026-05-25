@@ -385,7 +385,7 @@
             44
         ],
         "action": "Click",
-        "post_delay": 2000,
+        "post_delay": 3200,
         "next":[
             "热播剧集",
             "[JumpBack]热播剧集滑动"
@@ -527,7 +527,7 @@
         ],
         "next":[
             "识别播放微剧",
-            "识别微剧广告"
+            "[JumpBack]识别微剧广告"
         ]
     },
     "点击剧集":{
@@ -542,7 +542,7 @@
         ],
         "next":[
             "识别播放微剧",
-            "识别微剧广告"
+            "[JumpBack]识别微剧广告"
         ]
     },
     "识别播放微剧":{
@@ -560,10 +560,10 @@
     "识别微剧广告":{
         "recognition": "OCR",
         "expected":[
-            "广告",
-            "厂告"
+            "上滑继续观看",
+            "可继续上滑观看"
         ],
-        "pre_delay": 15000,
+        "pre_delay": 6000,
         "action": "Swipe",
         "begin": [
             200,
@@ -579,8 +579,24 @@
         ],
         "duration": 500,
         "next":[
-            "微剧滑动"
+            "微剧广告滑动"
         ]
+    },
+    "微剧广告滑动": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 500
     },
     "微剧滑动": {
         "action": "Swipe",
@@ -604,7 +620,8 @@
             "[JumpBack]Back"
         ],
         "next":[
-            "识别播放微剧"
+            "识别播放微剧",
+            "[JumpBack]识别微剧广告"
         ]
     },
     "微剧选集":{
@@ -679,11 +696,313 @@
         "post_wait_freezes": 500,
         "post_delay": 500,
         "next": [
-            "点击关注列表",
+            "点击我的积分A",
             "[JumpBack]Back"
         ]
     },
-    "点击关注列表": {
+
+
+
+
+
+    "点击我的积分A": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "我的积分",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "我的积分滑动A"
+        ]
+    },
+    "我的积分滑动A": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000,
+        "next": [
+            "评论任务A",
+            "[JumpBack]签到后滑动reA"
+        ]
+    },
+    "签到后滑动reA": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            1200,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            100,
+            10,
+            10
+        ],
+        "post_delay": 1000
+    },
+    "评论任务A": {
+        "recognition": "OCR",
+        "expected": "评论",
+        "roi" : [1,137,421,1143],
+        "next": [
+            "评论已完成A",
+            "评论未完成A0",
+            "评论未完成A1",
+            "评论未完成A2",
+            "评论未完成A3",
+            "评论未完成A4",
+            "评论未完成A5",
+            "评论未完成A6",
+            "评论未完成A7",
+            "评论未完成A8",
+            "评论未完成A9"
+        ]
+    },
+    "评论已完成A": {
+        "recognition": "OCR",
+        "expected": "已领取",
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A10"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成[/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A0": {
+        "recognition": "OCR",
+        "expected": [
+            "0/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A0"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 0/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A1": {
+        "recognition": "OCR",
+        "expected": [
+            "1/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A1", "SwipeA": "图文滑动次数A1"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 1/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A2": {
+        "recognition": "OCR",
+        "expected": [
+            "2/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A2", "SwipeA": "图文滑动次数A1"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 2/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A3": {
+        "recognition": "OCR",
+        "expected": [
+            "3/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A3", "SwipeA": "图文滑动次数A2"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 3/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A4": {
+        "recognition": "OCR",
+        "expected": [
+            "4/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A4", "SwipeA": "图文滑动次数A2"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 4/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A5": {
+        "recognition": "OCR",
+        "expected": [
+            "5/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A5", "SwipeA": "图文滑动次数A3"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 5/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A6": {
+        "recognition": "OCR",
+        "expected": [
+            "6/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A6", "SwipeA": "图文滑动次数A3"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 6/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A7": {
+        "recognition": "OCR",
+        "expected": [
+            "7/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A7", "SwipeA": "图文滑动次数A4"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 7/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A8": {
+        "recognition": "OCR",
+        "expected": [
+            "8/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A8", "SwipeA": "图文滑动次数A4"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 8/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+    "评论未完成A9": {
+        "recognition": "OCR",
+        "expected": [
+            "9/10"
+        ],
+        "roi": "评论任务A",
+        "roi_offset": [
+            0,
+            -10,
+            575,
+            50
+        ],
+        "anchor": {"A": "发送成功A9", "SwipeA": "图文滑动次数A5"},
+        "focus": {
+            "succeeded": "[color:blue]评论已完成 9/10 [/color]"
+        },
+        "next": [
+            "点击关注列表A",
+            "[JumpBack]Back"
+        ]
+    },
+
+
+
+
+    "点击关注列表A": {
         "recognition": "OCR",
         "expected": "关注",
         "action": "Click",
@@ -697,14 +1016,14 @@
         "action": "Key",
         "key": 4,
         "next": [
-            "点击关注列表"
+            "点击关注列表A"
         ]
     },
     "检查关注列表": {
         "recognition": "OCR",
         "expected": [
-            "已关注",
-            "互相关注"
+            "^已关注$",
+            "^互相关注$"
         ],
         "post_delay": 2000,
         "next": [
@@ -730,7 +1049,7 @@
     "选择大象号": {
         "recognition": "OCR",
         "expected": [
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
@@ -791,25 +1110,144 @@
         "roi": [0, 111, 720, 120],
         "action": "Click",
         "pre_wait_freezes": 200,
-        "post_delay": 500,
+        "post_delay": 1200,
         "focus": {
             "succeeded": "开始执行浏览任务"
         },
         "next": [
+            "账号名称识别A",
             "点击作品01"
         ]
     },
+
+
+
+    "账号名称识别A":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "post_delay": 500,
+        "next": [
+            "[Anchor]SwipeA",
+            "点击作品01"
+        ]
+    },
+    "图文滑动次数A1":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别A",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 1,
+        "next": [
+            "图文滑动次数A1",
+            "点击作品01"
+        ]
+    },
+    "图文滑动次数A2":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别A",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 2,
+        "next": [
+            "图文滑动次数A2",
+            "点击作品01"
+        ]
+    },
+    "图文滑动次数A3":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别A",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 3,
+        "next": [
+            "图文滑动次数A3",
+            "点击作品01"
+        ]
+    },
+    "图文滑动次数A4":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别A",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 4,
+        "next": [
+            "图文滑动次数A4",
+            "点击作品01"
+        ]
+    },
+    "图文滑动次数A5":{
+        "recognition": "OCR",
+        "expected":[
+            "^河南交通广播$"
+        ],
+        "roi": [3, 213, 717, 1067],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Swipe",
+        "begin": true,
+        "end": "账号名称识别A",
+        "duration": 1000,
+        "post_delay": 500,
+        "max_hit": 5,
+        "next": [
+            "图文滑动次数A5",
+            "点击作品01"
+        ]
+    },
+
+
+
+
+
+
     "点击作品01": {
         "recognition": "OCR",
         "expected": [
-            "河南交通广播"
+            "^河南交通广播$"
         ],
-        "roi": [2, 215, 718, 604],
+        "roi": [2, 215, 500, 604],
         "order_by": "Vertical",
         "action": "Click",
         "pre_delay": 500,
-        "post_delay": 500,
-        "timeout": 10000,
+        "post_delay": 1000,
+        "timeout": 16000,
         "on_error":[
             "返回点击作品"
         ],
@@ -851,7 +1289,7 @@
             38,
             42
         ],
-        "max_hit":6,
+        "max_hit":8,
         "next": [
             "图文分享",
             "图文评论点击输入框",
@@ -867,14 +1305,28 @@
         "pre_delay": 1000,
         "action": "Click",
         "post_delay": 500,
-        "max_hit":9,
+        "max_hit":10,
         "next": [
             "图文分享到QQ",
             "收藏未知错误",
-            "[JumpBack]再次点击分享"
+            "再次点击分享"
         ]
     },
     "再次点击分享":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "n分享.png"
+        ],
+        "roi": [1, 1188, 719, 92],
+        "pre_delay": 1000,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "图文分享到QQ",
+            "[JumpBack]再次点击分享re"
+        ]
+    },
+    "再次点击分享re":{
         "recognition": "TemplateMatch",
         "template": [
             "n分享.png"
@@ -903,9 +1355,9 @@
         "post_delay": 2000,
         "next": [
             "图文分享到QQ成功",
-            "图文分享到QQ成功2",
+            "[JumpBack]图文分享到QQ取消re",
             "图文评论点击输入框",
-            "图文分享到QQRe",
+            "[JumpBack]图文分享到QQRe",
             "跳过评论"
         ]
     },
@@ -915,13 +1367,7 @@
         "roi": [1, 387, 719, 893],
         "pre_delay": 1000,
         "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "图文分享到QQ成功",
-            "图文分享到QQ成功2",
-            "图文评论点击输入框",
-            "跳过评论"
-        ]
+        "post_delay": 2000
     },
     "图文分享到QQ成功": {
         "recognition": "OCR",
@@ -932,10 +1378,20 @@
         "post_delay": 500,
         "next": [
             "图文评论点击输入框",
+            "[JumpBack]图文分享到QQ取消",
             "跳过评论"
         ]
     },
-    "图文分享到QQ成功2": {
+    "图文分享到QQ取消": {
+        "recognition": "OCR",
+        "expected": [
+            "取消"
+        ],
+        "roi" : [1,1087,718,193],
+        "action": "Click",
+        "post_delay": 500
+    },
+    "图文分享到QQ取消re": {
         "recognition": "OCR",
         "expected": [
             "取消"
@@ -944,8 +1400,34 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "图文评论点击输入框",
-            "跳过评论"
+            "图文分享取消re"
+        ]
+    },
+    "图文分享取消re": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "n分享.png"
+        ],
+        "roi": [1, 1188, 719, 92],
+        "pre_delay": 1000,
+        "action": "Click",
+        "post_delay": 500,
+        "max_hit":12,
+        "next": [
+            "图文分享到QQ取消Re",
+            "[JumpBack]再次点击分享"
+        ]
+    },
+    "图文分享到QQ取消Re": {
+        "recognition": "OCR",
+        "expected": "QQ",
+        "roi": [1, 387, 719, 893],
+        "pre_delay": 1000,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "[JumpBack]图文分享到QQRe",
+            "Stop"
         ]
     },
     "图文评论点击输入框": {
@@ -963,8 +1445,9 @@
             300,
             30
         ],
-        "pre_delay": 800,
+        "pre_delay": 1000,
         "action": "Click",
+        "post_delay": 1000,
         "target": [
             50,
             1215,
@@ -1021,8 +1504,7 @@
     "点击大象新语": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "大象智语"
         ],
         "roi" : [1,592,718,142],
         "pre_delay": 500,
@@ -1046,44 +1528,14 @@
         ],
         "action": "Click",
         "next":[
-            "点击发表评论",
-            "[JumpBack]重新点击大象新语"
-        ]
-    },
-    "点击大象新语评论": {
-        "recognition": "OCR",
-        "expected":[
-            "大象智语",
-            "大象新语"
-        ],
-        "action": "Click",
-        "target": [
-            42,
-            476,
-            1,
-            1
-        ],
-        "next": [
-            "点击发表评论",
-            "[JumpBack]重新点击大象新语"
-        ]
-    },
-    "test1": {
-        "recognition": "OCR",
-        "expected":[
-            "大象智语",
-            "大象新语"
-        ],
-        "next": [
-            "点击发表评论",
+            "发表取色0",
             "[JumpBack]重新点击大象新语"
         ]
     },
     "重新点击大象新语": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "大象智语"
         ],
         "roi" : [1,592,718,142],
         "pre_delay": 500,
@@ -1107,46 +1559,238 @@
         ],
         "action": "Click"
     },
+    "发表取色0": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语"
+        ],
+        "roi" : [1,592,718,142],
+        "next": [
+            "发表取色1"
+        ]
+    },
+    "发表取色1":{
+        "recognition": "ColorMatch",
+        "upper": [255, 255, 255],
+        "lower": [237, 237, 237],
+        "connected": true,
+        "roi": "发表取色0",
+        "roi_offset": [
+            0,
+            -15,
+            600,
+            30
+        ],
+        "next":[
+            "点击发表评论"
+        ]
+    },
     "点击发表评论": {
-        "recognition": "TemplateMatch",
-        "template": "发表.png",
+        "recognition": "OCR",
+        "expected":[
+            "^发表$"
+        ],
+        "roi" : [1,592,718,142],
+        "color_filter": "发表取色1",
         "action": "Click",
-        "post_delay": 500,
-        "pre_delay":32000,
-        "timeout": 10000,
+        "timeout": 20000,
         "on_error":[
+            "再次点击发表评论1",
+            "重置点赞"
+        ],
+        "next": [
+            "发送成功A",
+            "评论重复内容提示",
+            "评论频率过高提示",
+            "换一篇提示"
+        ]
+    },
+    "发送成功A": {
+        "recognition": "OCR",
+        "expected": [
+            "发送成功"
+        ],
+        "timeout": 20000,
+        "on_error":[
+            "再次点击发表评论1",
             "作品完成返回01if"
         ],
         "next": [
-            "发送成功",
-            "评论重复内容提示",
-            "评论频率过高提示",
-            "换一篇提示",
-            "[JumpBack]再次点击发表评论"
+            "[Anchor]A"
         ]
     },
-    "再次点击发表评论": {
-        "recognition": "TemplateMatch",
-        "template": "发表.png",
-        "action": "Click",
-        "post_delay": 800,
-        "next": [
-            "Stop"
-        ]
-    },
-    "发送成功":{
+
+
+
+    "再次点击发表评论1": {
         "recognition": "OCR",
         "expected":[
-            "发送成功",
+            "大象智语"
+        ],
+        "roi" : [1,592,718,142],
+        "next": [
+            "再次点击发表评论2"
+        ]
+    },
+    "再次点击发表评论2": {
+        "recognition": "OCR",
+        "expected":[
+            "^发表$"
+        ],
+        "roi": "再次点击发表评论1",
+        "roi_offset": [
+            0,
+            -15,
+            600,
+            30
+        ],
+        "color_filter": "发表取色1",
+        "action": "Click",
+        "next":[
+            "点击发表评论"
+        ]
+    },
+
+
+
+
+    "发送成功A0": {
+        "recognition": "OCR",
+        "expected": [
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 10000,
-        "max_hit":10,
-        "next":[
+        "post_delay": 45000,
+        "max_hit": 10,
+        "next": [
             "重置点赞"
         ]
     },
+    "发送成功A1": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 9,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A2": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 8,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A3": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 7,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A4": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 6,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A5": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 5,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A6": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 4,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A7": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 3,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A8": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 2,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A9": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 1,
+        "next": [
+            "重置点赞"
+        ]
+    },
+    "发送成功A10": {
+        "recognition": "OCR",
+        "expected": [
+            "完成评论积分+5",
+            "完成评论积分"
+        ],
+        "post_delay": 45000,
+        "max_hit": 1,
+        "next": [
+            "重置点赞"
+        ]
+    },
+
+
+
+
+
 
     "评论重复内容提示": {
         "recognition": "OCR",
@@ -1158,9 +1802,10 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 30000,
+        "post_delay": 48000,
         "next": [
             "点击大象新语",
+            "图文评论点击输入框",
             "重置点赞"
         ]
     },
@@ -1181,7 +1826,7 @@
         "expected": [
             "换篇再聊"
         ],
-        "post_delay": 45000,
+        "post_delay": 46000,
         "next": [
             "重置点赞"
         ]
@@ -1230,17 +1875,29 @@
         ]
     },
     "作品完成返回01": {
+        "pre_delay": 1500,
         "action": "Key",
         "key": 4,
         "post_delay": 800,
         "next": [
-            "图文滑动x1"
+            "图文滑动x1",
+            "[JumpBack]作品完成返回01重新"
         ]
+    },
+    "作品完成返回01重新": {
+        "recognition": "OCR",
+        "expected":[
+            "^已关注$",
+            "^己关注$"
+        ],
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800
     },
     "图文滑动x1":{
         "recognition": "OCR",
         "expected":[
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [3, 213, 500, 1067],
         "order_by": "Vertical",
@@ -1257,17 +1914,29 @@
 
 
     "作品完成返回01if": {
+        "pre_delay": 1500,
         "action": "Key",
         "key": 4,
         "post_delay": 800,
         "next": [
-            "图文滑动x1if"
+            "图文滑动x1if",
+            "[JumpBack]作品完成返回01if重新"
         ]
+    },
+    "作品完成返回01if重新": {
+        "recognition": "OCR",
+        "expected":[
+            "^已关注$",
+            "^己关注$"
+        ],
+        "action": "Key",
+        "key": 4,
+        "post_delay": 800
     },
     "图文滑动x1if":{
         "recognition": "OCR",
         "expected":[
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [3, 213, 500, 1067],
         "order_by": "Vertical",
@@ -1284,7 +1953,7 @@
     "点击作品01if": {
         "recognition": "OCR",
         "expected": [
-            "河南交通广播"
+            "^河南交通广播$"
         ],
         "roi": [2, 215, 718, 604],
         "order_by": "Vertical",

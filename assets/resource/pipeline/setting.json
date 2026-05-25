@@ -27,6 +27,19 @@
             "启动后密码点击登录"
         ]
     },
+    "已登录账号":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "用户111"
+        ],
+        "focus": {
+            "succeeded": "[color:blue]账号已登录[/color]"
+        },
+        "next":[
+            "Stop"
+        ]
+    },
     "视频循环处理": {
         "enabled": true,
         "action": "Command",

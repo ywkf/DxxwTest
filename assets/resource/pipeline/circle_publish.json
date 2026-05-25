@@ -563,7 +563,8 @@
         "pre_delay": 500,
         "action": "Click",
         "next": [
-            "PublishXF01"
+            "PublishXF01",
+            "[JumpBack]关闭自动粘贴"
         ]
     },
 
@@ -583,7 +584,16 @@
         ]
     },
 
-
+    "关闭自动粘贴":{
+        "enabled": true,
+        "recognition": "TemplateMatch",
+        "template" : "xf叉号.png",
+        "roi" : [1,732,719,96],
+        "pre_delay": 500,
+        "action": "Click",
+        "target": [685,770,5,5],
+        "post_delay": 500
+    },
     "PublishXF01": {
         "enabled": true,
         "recognition": "TemplateMatch",
@@ -594,6 +604,7 @@
             719,
             132
         ],
+        "pre_delay": 500,
         "action": "Click",
         "focus": {
             "succeeded": "检测到语录功能，使用XF语录"
@@ -654,6 +665,37 @@
         "next": [
             "SelectCircle",
             "[JumpBack]PublishSwipeUp"
+        ]
+    },
+
+    "不发布到圈子":{
+        "enabled": true,
+        "recognition": "OCR",
+        "expected":[
+            "发布到圈子"
+        ],
+        "next":[
+            "不发布到圈子2"
+        ]
+    },
+    "不发布到圈子2":{
+        "recognition": "ColorMatch",
+        "upper" : [66,160,223],
+        "lower" : [66,160,223],
+        "connected": true,
+        "roi": "不发布到圈子",
+        "roi_offset": [
+            0,
+            -12,
+            520,
+            26
+        ],
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
+        "next":[
+            "准备发布",
+            "SelectTag01"
         ]
     },
     "PublishSwipeUp": {

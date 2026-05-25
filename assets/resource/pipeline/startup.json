@@ -240,20 +240,7 @@
         ]
     },
 
-    "已登录账号":{
-        "enabled": true,
-        "recognition": "OCR",
-        "expected":[
-            "用户_",
-            "申请认证"
-        ],
-        "focus": {
-            "succeeded": "[color:blue]账号已登录[/color]"
-        },
-        "next":[
-            "Stop"
-        ]
-    },
+
     "启动后登录账号":{
         "enabled": true,
         "recognition": "OCR",
