@@ -527,13 +527,15 @@
         ],
         "next":[
             "识别播放微剧",
-            "[JumpBack]识别微剧广告"
+            "[JumpBack]识别微剧广告",
+            "识别播放微剧0"
         ]
     },
     "点击剧集":{
         "recognition": "OCR",
         "expected":[
-            "\\d+集全"
+            "\\d+集全",
+            "更新至\\d"
         ],
         "action": "Click",
         "timeout": 10000,
@@ -542,7 +544,18 @@
         ],
         "next":[
             "识别播放微剧",
-            "[JumpBack]识别微剧广告"
+            "[JumpBack]识别微剧广告",
+            "识别播放微剧0"
+        ]
+    },
+    "识别播放微剧0":{
+        "recognition": "OCR",
+        "expected":[
+            "第一集"
+        ],
+        "post_delay": 5000,
+        "next":[
+            "微剧滑动"
         ]
     },
     "识别播放微剧":{
@@ -552,7 +565,7 @@
             "完成观看微剧积分"
         ],
         "post_delay": 3000,
-        "max_hit":5,
+        "max_hit":6,
         "next":[
             "微剧滑动"
         ]
@@ -613,7 +626,36 @@
             10
         ],
         "duration": 500,
-        "timeout": 6000,
+        "pre_delay": 5000,
+        "timeout": 10000,
+        "on_error":[
+            "微剧选集",
+            "每日任务开始",
+            "[JumpBack]Back"
+        ],
+        "next":[
+            "识别播放微剧",
+            "[JumpBack]识别微剧广告",
+            "微剧滑动2"
+        ]
+    },
+    "微剧滑动2": {
+        "action": "Swipe",
+        "begin": [
+            200,
+            600,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            400,
+            10,
+            10
+        ],
+        "duration": 500,
+        "pre_delay": 5000,
+        "timeout": 10000,
         "on_error":[
             "微剧选集",
             "每日任务开始",
@@ -624,6 +666,8 @@
             "[JumpBack]识别微剧广告"
         ]
     },
+
+
     "微剧选集":{
         "enabled": true,
         "recognition": "OCR",
@@ -1658,7 +1702,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 10,
@@ -1670,7 +1715,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 9,
@@ -1682,7 +1728,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 8,
@@ -1694,7 +1741,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 7,
@@ -1706,7 +1754,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 6,
@@ -1718,7 +1767,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 5,
@@ -1730,7 +1780,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 4,
@@ -1742,7 +1793,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 3,
@@ -1754,7 +1806,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 2,
@@ -1766,7 +1819,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 1,
@@ -1778,7 +1832,8 @@
         "recognition": "OCR",
         "expected": [
             "完成评论积分+5",
-            "完成评论积分"
+            "完成评论积分",
+            "审核通过后，"
         ],
         "post_delay": 45000,
         "max_hit": 1,

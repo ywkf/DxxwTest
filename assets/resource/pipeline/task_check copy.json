@@ -180,36 +180,32 @@
     "点击大象新语re": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "大象智语"
         ],
+        "roi" : [1,592,718,142],
+        "pre_delay": 500,
         "action": "Click",
-        "target": [
-            42,
-            476,
-            1,
-            1
-        ],
         "next": [
             "点击大象新语评论re"
         ]
     },
+
     "点击大象新语评论re": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": "点击大象新语re",
+        "roi_offset": [
+            -16,
+            -301,
+            546,
+            120
         ],
         "action": "Click",
-        "target": [
-            42,
-            476,
-            1,
-            1
-        ],
         "next": [
-            "点击发表评论re",
-            "重新点击大象心语评论re"
+            "发表取色0re"
         ]
     },
     "重新点击大象心语评论re":{
@@ -221,13 +217,58 @@
         "roi": [21, 385, 574, 119],
         "action": "Click",
         "next":[
-            "点击发表评论re"
+            "发表取色0re"
         ]
     },
+    "发表取色0re": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语"
+        ],
+        "roi" : [1,592,718,142],
+        "next": [
+            "发表取色1re"
+        ]
+    },
+    "发表取色1re":{
+        "recognition": "ColorMatch",
+        "upper": [255, 255, 255],
+        "lower": [237, 237, 237],
+        "connected": true,
+        "roi": "发表取色0re",
+        "roi_offset": [
+            0,
+            -15,
+            600,
+            30
+        ],
+        "next":[
+            "点击发表评论rere"
+        ]
+    },
+    "点击发表评论rere": {
+        "recognition": "OCR",
+        "expected":[
+            "^发表$"
+        ],
+        "roi" : [1,592,718,142],
+        "color_filter": "发表取色1re",
+        "action": "Click",
+        "timeout": 20000,
+        "next": [
+            "发送成功re",
+            "评论重复内容提示re",
+            "评论频率过高提示re",
+            "换一篇提示re"
+        ]
+    },
+
+
+
     "点击发表评论re": {
         "recognition": "TemplateMatch",
         "template": "发表.png",
-        "pre_delay": 30000,
+        "pre_delay": 10000,
         "action": "Click",
         "post_delay": 800,
         "next": [
@@ -237,6 +278,9 @@
             "换一篇提示re"
         ]
     },
+
+
+
     "发送成功re":{
         "recognition": "OCR",
         "expected":[
@@ -244,7 +288,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 12000,
+        "post_delay": 500,
         "timeout": 6000,
         "on_error":[
             "重置点赞re"
@@ -259,7 +303,7 @@
             "完成评论积分+5",
             "完成评论积分"
         ],
-        "post_delay": 12000,
+        "post_delay": 40000,
         "next":[
             "重置点赞re"
         ]
@@ -274,7 +318,7 @@
         ],
         "action": "Click",
         "target": [197, 1230, 1, 1],
-        "post_delay": 12000,
+        "post_delay": 40000,
         "next": [
             "点击大象新语re",
             "重置点赞re"
@@ -333,16 +377,11 @@
     "点击大象新语ifre": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "大象智语"
         ],
+        "roi" : [1,592,718,142],
+        "pre_delay": 500,
         "action": "Click",
-        "target": [
-            42,
-            476,
-            1,
-            1
-        ],
         "next": [
             "点击大象新语评论ifre"
         ]
@@ -350,20 +389,78 @@
     "点击大象新语评论ifre": {
         "recognition": "OCR",
         "expected":[
-            "大象智语",
-            "大象新语"
+            "大象智语"
         ],
+        "roi" : [1,592,718,142],
+        "pre_delay": 500,
         "action": "Click",
-        "target": [
-            42,
-            476,
-            1,
-            1
-        ],
         "next": [
-            "点击发表评论ifre"
+            "点击大象新语评论ifre1"
         ]
     },
+    "点击大象新语评论ifre1":{
+        "recognition": "OCR",
+        "expected":[
+            "[一-龥]",
+            "[\u4e00-\u9fa5]"
+        ],
+        "roi": "点击大象新语ifre",
+        "roi_offset": [
+            -16,
+            -301,
+            546,
+            120
+        ],
+        "action": "Click",
+        "next":[
+            "发表取色0if"
+        ]
+    },
+
+    "发表取色0if": {
+        "recognition": "OCR",
+        "expected":[
+            "大象智语"
+        ],
+        "roi" : [1,592,718,142],
+        "next": [
+            "发表取色1if"
+        ]
+    },
+    "发表取色1if":{
+        "recognition": "ColorMatch",
+        "upper": [255, 255, 255],
+        "lower": [237, 237, 237],
+        "connected": true,
+        "roi": "发表取色0if",
+        "roi_offset": [
+            0,
+            -15,
+            600,
+            30
+        ],
+        "next":[
+            "点击发表评论ifrere"
+        ]
+    },
+    "点击发表评论ifrere": {
+        "recognition": "OCR",
+        "expected":[
+            "^发表$"
+        ],
+        "roi" : [1,592,718,142],
+        "color_filter": "发表取色1if",
+        "action": "Click",
+        "timeout": 20000,
+        "next": [
+            "发送成功ifre",
+            "评论重复内容提示ifre",
+            "评论频率过高提示ifre",
+            "换一篇提示ifre"
+        ]
+    },
+
+
     "点击发表评论ifre": {
         "recognition": "OCR",
         "expected":[
@@ -380,6 +477,8 @@
             "换一篇提示ifre"
         ]
     },
+
+
     "发送成功ifre":{
         "recognition": "OCR",
         "expected":[
@@ -578,13 +677,15 @@
         "order_by": "Vertical",
         "action": "Click",
         "next":[
-            "点击剧集re"
+            "点击剧集re",
+            "点击热度re"
         ]
     },
     "点击剧集re":{
         "recognition": "OCR",
         "expected":[
-            "\\d+集全"
+            "\\d+集全",
+            "更新至\\d"
         ],
         "action": "Click",
         "timeout": 10000,
@@ -592,8 +693,47 @@
             "微剧滑动re"
         ],
         "next":[
-            "识别播放微剧re"
+            "识别播放微剧re",
+            "[JumpBack]识别微剧广告re"
         ]
+    },
+    "点击热度re":{
+        "recognition": "OCR",
+        "expected":[
+            "\\d+万热度"
+        ],
+        "action": "Click",
+        "timeout": 10000,
+        "on_error":[
+            "微剧滑动re"
+        ],
+        "next":[
+            "识别播放微剧re",
+            "[JumpBack]识别微剧广告re"
+        ]
+    },
+    
+    "识别微剧广告re":{
+        "recognition": "OCR",
+        "expected":[
+            "上滑继续观看",
+            "可继续上滑观看"
+        ],
+        "pre_delay": 6000,
+        "action": "Swipe",
+        "begin": [
+            200,
+            1100,
+            10,
+            10
+        ],
+        "end": [
+            200,
+            800,
+            10,
+            10
+        ],
+        "duration": 500
     },
     "识别播放微剧re":{
         "recognition": "OCR",
@@ -622,7 +762,8 @@
             10
         ],
         "duration": 500,
-        "timeout": 6000,
+        "pre_delay": 5000,
+        "timeout": 10000,
         "on_error":[
             "微剧选集re",
             "TaskCheck",
